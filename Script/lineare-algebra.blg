@@ -12,12 +12,12 @@ A level-1 auxiliary file: komplexe-zahlen.aux
 A level-1 auxiliary file: vektorraeume.aux
 A level-1 auxiliary file: lineare-abbildungen.aux
 A level-1 auxiliary file: determinanten.aux
-A level-1 auxiliary file: rekurrenz-gleichungen.aux
+A level-1 auxiliary file: eigenwerte.aux
 The style file: alpha.bst
-Database file #1: /Users/karldrstroetmann/Dropbox/Kurse/cs.bib
+Database file #1: cs.bib
 You've used 7 entries,
             2543 wiz_defined-function locations,
-            611 strings with 5283 characters,
+            611 strings with 5234 characters,
 and the built_in function-call counts, 2253 in all, are:
 = -- 211
 > -- 84
