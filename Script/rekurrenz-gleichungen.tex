@@ -384,7 +384,7 @@ V = \left(
 \end{array}\right)
 \]
 Diese Matrix ist in der Mathematik als \emph{Vandermonde}'sche Matrix bekannt.  
-Es läßt sich zeigen, dass ein Gleichungs-System, das mit dieser Matrix gebildet wird,
+Es lässt sich zeigen, dass ein Gleichungs-System, das mit dieser Matrix gebildet wird,
 genau dann eindeutig lösbar ist, wenn die Nullstellen $\lambda_i$ für $i=1,\cdots,k$
 paarweise verschieden sind.
 \vspace*{0.2cm}
@@ -512,7 +512,7 @@ Im allgemeinen nennen wir die Rekurrenz-Gleichung \\[0.2cm]
 \hspace*{1.3cm} $a_{n+k} = \sum\limits_{i=0}^{k-1} c_{i} \cdot a_{n+i}$ \\[0.2cm]
 \emph{entartet}, wenn das charakteristische Polynom \\[0.2cm]
 \hspace*{1.3cm} $\chi(x) = x^k - \sum\limits_{i=0}^{k-1} c_{i} \cdot x^{i}$  \\[0.2cm]
-weniger als $k$ verschiedene Nullstellen hat.  Dann läßt sich folgendes
+weniger als $k$ verschiedene Nullstellen hat.  Dann lässt sich folgendes
 zeigen:  Hat das charakteristische Polynom $\chi(x)$ eine $r$-fache Nullstelle
 $\lambda$, gilt also \\[0.2cm]
 \hspace*{1.3cm} $\chi(x) = (x - \lambda)^r \cdot \phi(x)$ \\[0.2cm]
@@ -526,7 +526,7 @@ mit einem geeigneten Polynom $\phi(x)$, so sind die Folgen
 \end{enumerate}
 Lösungen der Rekurrenz-Gleichung (\ref{eq:erg}).  Durch eine geeignete Linear-Kombination dieser
 Lösungen zusammen mit den Lösungen, die sich aus den anderen Nullstellen des Polynoms $\phi$
-ergeben, läßt sich dann immer eine Lösung finden, die auch den Anfangs-Bedingungen genügt.
+ergeben, lässt sich dann immer eine Lösung finden, die auch den Anfangs-Bedingungen genügt.
 \vspace*{0.3cm}
 
 \noindent
@@ -557,9 +557,9 @@ $k$ mit konstanten Koeffizienten und konstanter Inhomogenität} hat die Form
 }
 \end{Definition}
 
-Wie läßt sich die inhomogene Rekurrenz-Gleichung (\ref{eq:lihrg}) lösen? Wir zeigen
+Wie lässt sich die inhomogene Rekurrenz-Gleichung (\ref{eq:lihrg}) lösen? Wir zeigen
 zunächst, wie sich eine \emph{spezielle Lösung} der Rekurrenz-Gleichung (\ref{eq:lihrg})
-finden läßt.  Dazu betrachten wir das charakteristische Polynom \\[0.2cm]
+finden lässt.  Dazu betrachten wir das charakteristische Polynom \\[0.2cm]
 \hspace*{1.3cm} 
 $\chi(x) = x^k - \sum\limits_{i=0}^{k-1} c_{i} \cdot x^i$
 \\[0.2cm]
@@ -574,7 +574,7 @@ Wir betrachten die beiden Fälle getrennt.
 
       Dann erhalten wir eine spezielle Lösung von (\ref{eq:lihrg}) durch den Ansatz \\[0.2cm]
       \hspace*{1.3cm} $a_n = \delta$ \quad für alle $n \in \mathbb{N}$. \\[0.2cm]
-      Den Wert von $\delta$ bestimmen wir durch Einsetzen, es muß für alle $n\in \mathbb{N}$ gelten: \\[0.2cm]
+      Den Wert von $\delta$ bestimmen wir durch Einsetzen, es muss für alle $n\in \mathbb{N}$ gelten: \\[0.2cm]
       \hspace*{1.3cm} 
       $\delta = \sum\limits_{i=0}^{k-1} c_{i} \cdot \delta + c_{-1}$.
       \\[0.2cm]
@@ -594,7 +594,7 @@ Wir betrachten die beiden Fälle getrennt.
       In diesem Fall versuchen wir, eine spezielle Lösung von (\ref{eq:lihrg}) durch den
       Ansatz \\[0.2cm]
       \hspace*{1.3cm} $a_n = \varepsilon \cdot n $ \\[0.2cm]
-      zu finden.  Den Wert $\varepsilon$ erhalten wir durch Einsetzen, es muß für 
+      zu finden.  Den Wert $\varepsilon$ erhalten wir durch Einsetzen, es muss für 
       alle $n\in\mathbb{N}$ gelten: \\[0.2cm]
       \hspace*{1.3cm} 
       $\varepsilon \cdot (n + k) = \sum\limits_{i=0}^{k-1} c_{i} \cdot \varepsilon \cdot (n + i) + c_{-1}$  
@@ -1031,7 +1031,7 @@ Stellen Sie dazu eine Rekurrenz-Gleichung für $s_n$ auf und lösen Sie diese.
 \subsection{Weitere Rekurrenz-Gleichungen}
 Die Lösung allgemeiner Rekurrenz-Gleichungen kann beliebig schwierig sein und
 es gibt viele Fälle, in denen eine gegebene Rekurrenz-Gleichungen überhaupt keine Lösung
-hat, die sich durch elementare Funktionen als geschlossene Formel ausdrücken läßt.
+hat, die sich durch elementare Funktionen als geschlossene Formel ausdrücken lässt.
 Wir wollen an Hand einer etwas komplizierteren Rekurrenz-Gleichung, die uns später bei der Behandlung der
 durchschnittlichen Komplexität des Quick-Sort-Algorithmus wiederbegegnen wird, zeigen, dass im Allgemeinen bei
 der Lösung einer Rekurrenz-Gleichung Kreativität gefragt ist.
@@ -1145,7 +1145,7 @@ multiplizieren.  Bezeichnen wir diesen Faktor mit $p(n)$, so erhalten wir die Re
 \[ 
 p(n) \cdot f(n) \cdot a_n = p(n) \cdot g(n) \cdot a_{n-1} + p(n) \cdot h(n).
 \]
-Das Ziel ist dabei, den Faktor $p(n)$ so zu wählen, dass der Koeffizient von $a_n$ die selbe Form hat wie der
+Das Ziel ist dabei, den Faktor $p(n)$ so zu wählen, dass der Koeffizient von $a_n$ dieselbe Form hat wie der
 Koeffizient von $a_{n-1}$, es soll also
 \begin{equation}
   \label{eq:chomogen}
@@ -1160,7 +1160,7 @@ Rekurrenz-Gleichung
 \[ 
 b_n = b_{n-1} + p(n) \cdot h(n).
 \]
-Diese Gleichung läßt sich mit dem Teleskop-Verfahren auf eine Summe zurückführen und die Lösung der
+Diese Gleichung lässt sich mit dem Teleskop-Verfahren auf eine Summe zurückführen und die Lösung der
 ursprünglichen Gleichung kann schließlich über die Formel
 \[ 
 a_n = \frac{1}{p(n) \cdot f(n)} \cdot b_n
