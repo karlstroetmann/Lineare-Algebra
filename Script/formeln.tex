@@ -1,0 +1,309 @@
+\chapter{Prädikatenlogische Formeln}
+Der Begriff der \emph{prädikatenlogischen Formel} wird in dieser Vorlesung eine zentrale
+Rolle spielen.  Wir werden prädikatenlogische Formeln als \emph{Abkürzungen} definieren.  
+Zunächst motivieren wir die Verwendung solcher Formeln.
+
+\section{Warum Formeln}
+Betrachten wir einmal den folgenden mathematischen Text: 
+\begin{center}
+\begin{minipage}{14cm}
+{\em 
+  Addieren wir zwei Zahlen und bilden dann das Quadrat dieser Summe, so ist das Ergebnis das
+  selbe, wie wenn wir zunächst beide Zahlen einzeln quadrieren, diese Quadrate aufsummieren 
+  und dazu noch das Produkt der beiden Zahlen zweifach hinzu addieren.
+}
+\end{minipage}
+\end{center}
+Der mathematische Satz, der hier ausgedrückt wird, ist Ihnen aus der Schule bekannt,
+es handelt sich um den ersten Binomischen Satz.  Um dies zu sehen, führen wir für die
+in dem Text genannten zwei Zahlen die Variablen $a$ und $b$ ein und übersetzen dann die 
+in dem obigen Text auftretenden Teilsätze in Terme.  Die folgende Tabelle zeigt diesen Prozeß: \\[0.3cm]
+\hspace*{1.3cm} 
+\begin{tabular}{ll}
+  \emph{Addieren wir zwei Zahlen} & $a+b$ \\
+  \emph{bilden das Quadrat dieser Summe} & $(a+b)^2$ \\
+  \emph{beide Zahlen einzeln quadrieren} & $a^2$, $b^2$ \\
+  \emph{diese Quadrate aufsummieren} & $a^2 + b^2$ \\
+  \emph{das Produkt der beiden Zahlen \ldots} & $a\cdot b$ \\
+  \emph{\ldots zweifach hinzu addieren} & $a^2 + b^2 + 2\cdot a \cdot b $ \\
+  \emph{} & $ $ \\
+\end{tabular} \\
+Insgesamt finden wir so, dass der obige Text zu der folgenden Formel äquivalent ist: \\[0.1cm]
+\hspace*{1.3cm} $(a+b)^2 = a^2 + b^2 + 2\cdot a\cdot b$. \\[0.1cm]
+Für den mathematisch Geübten ist diese Formel offensichtlich leichter zu verstehen ist als
+der oben angegebene Text.  Aber die Darstellung von mathematischen Zusammenhängen durch
+Formeln bietet neben der verbesserten Lesbarkeit noch zwei weitere Vorteile:
+\begin{enumerate}
+\item Formeln sind \emph{manipulierbar}, d.~h.~wir können mit Formeln \emph{rechnen}.
+      Außerdem lassen Formeln sich aufgrund ihrer vergleichsweise einfachen Struktur auch 
+      mit Hilfe von Programmen bearbeiten und analysieren.  Beim heutigen Stand der Technik ist
+      es hingegegen nicht möglich, natürlichsprachlichen Text mit dem Rechner vollständig
+      zu analysieren und zu verstehen.
+\item Darüber hinaus läßt sich die Bedeutung von Formeln mathematisch definieren und
+      steht damit zweifelsfrei fest.  Eine solche mathematische Definition der Bedeutung
+      ist für natürlichsprachlichen Text so nicht möglich, da
+      natürlichsprachlicher Text oft mehrdeutig ist und die genaue Bedeutung nur
+      aus dem Zusammenhang hervorgeht.
+\end{enumerate}
+
+\section{Formeln als Kurzschreibweise}
+Nach dieser kurzen Motivation führen wir zunächst Formeln als Abkürzungen ein und stellen
+der Reihe nach die Ingredienzen vor, die wir zum Aufbau einer Formel benötigen. 
+\begin{enumerate}
+\item \emph{Variablen}
+
+      Variablen dienen uns als Namen für verschieden Objekte.  Oben haben wir beispielsweise 
+      für die beiden zu addierenden Zahlen die Variablen $a$ und $b$ eingeführt.  Die Idee bei
+      der Einführung einer Variable ist, dass diese ein Objekt bezeichnet, dessen Identität 
+      noch nicht feststeht.
+\item \emph{Konstanten}
+
+      Konstanten bezeichnen  Objekte, deren Identität schon feststeht. 
+      In der Mathematik werden beispielsweise Zahlen wie $1$ oder $\pi$ als Konstanten verwendet.
+      Würden wir Aussagen über den biblischen Stammbaum als Formeln darstellen, so würden
+      wir  \texttt{Adam} und \texttt{Eva} als Konstanten verwenden.
+
+      \begin{center}
+      \begin{minipage}{13.4cm}  
+        { \footnotesize
+          \setlength{\baselineskip}{9pt} 
+          Dieses letzte Beispiel mag Sie vielleicht verwundern, weil Sie davon
+          ausgehen, dass Formeln nur dazu benutzt werden, mathematische oder allenfalls
+          technische Zusammenhänge zu beschreiben.  Der logische Apparat ist aber
+          keineswegs auf eine Anwendung in diesen Bereichen beschränkt.  Gerade auch
+          Sachverhalte aus dem täglichen Leben lassen sich mit Hilfe von Formeln präzise
+          beschreiben.  Das ist auch notwendig, denn wir wollen ja später unsere Formeln
+          zur Analyse von Programmen benutzen und diese Programme werden sich durchaus
+          auch mit der Lösung von Problemen beschäftigen, die ihren Ursprung außerhalb der
+          Technik haben. \par} 
+      \end{minipage}
+      \end{center}
+
+      Variablen und Konstanten werden zusammenfassend auch als \emph{atomare Terme}
+      bezeichnet.  Das Attribut \emph{atomar} bezieht sich hierbei auf die Tatsache,
+      dass diese Terme sich nicht weiter in Bestandteile zerlegen lassen.  Im Gegensatz
+      dazu stehen die \emph{zusammengesetzten Terme}.  Dies sind Terme, die mit Hilfe von 
+      Funktions-Zeichen aus anderen Termen aufgebaut werden.
+
+\item \emph{Funktions-Zeichen}
+
+      Funktions-Zeichen benutzen wir, um aus Variablen und Konstanten neue Ausdrücke aufzubauen,
+      die wiederum Objekte bezeichnen.  In dem obigen Beispiel haben wir das Funktions-Zeichen
+      ``$+$'' benutzt und mit diesem Funktions-Zeichen aus den Variablen $a$ und $b$ den Ausdruck $a+b$
+      gebildet.  Allgemein nennen wir Ausdrücke, die sich aus Variablen, Konstanten und Funktions-Zeichen 
+      bilden lassen, \emph{Terme}.  
+
+      Das Funktions-Zeichen ``$+$'' ist zweistellig, aber natürlich gibt es auch einstellige und
+      mehrstellige Funktions-Zeichen. Ein Beispiel aus der Mathematik für ein einstelliges Funktions-Zeichen ist 
+      das Zeichen ``$\sqrt{\rule{0pt}{9pt}\quad}$''.  Ein weiteres Beispiel
+      ist durch das Zeichen ``$\mathtt{\sin}$'' gegeben, dass in der Mathematik für die
+      Sinus-Funktion verwendet wird.
+
+      Allgemein gilt: Ist $f$ ein $n$-stelliges Funktions-Zeichen und sind 
+       $t_1, \cdots, t_n$ Terme,
+      so kann mit Hilfe des Funktions-Zeichen $f$  daraus der neue Term \\[0.1cm]
+      \hspace*{1.3cm} $f(t_1,\cdots,t_n)$ \\[0.1cm]
+      gebildet werden.  Diese Schreibweise, bei der zunächst das Funktions-Zeichen
+      gefolgt von einer öffnenden Klammer angegeben wird und anschließend die Argumente
+      der Funktion durch Kommata getrennt aufgelistet werden, gefolgt von einer
+      schließenden Klammer, ist der ``Normalfall''.  Diese Notation wird auch als \emph{Präfix-Notation}
+      bezeichnet. Bei einigen zweistelligen Funktions-Zeichen hat es sich aber eingebürgert, diese in einer
+      \emph{Infix-Notation} darzustellen, d.~h.~solche Funktions-Zeichen werden zwischen
+      die Terme geschrieben. In der Mathematik liefern die  Funktions-Zeichen ``$+$'',
+      ``$-$'', ``$\cdot $'' und ``$/$'' hierfür Beispiele.  Schließlich gibt es noch Funktions-Zeichen,
+      die auf ihr Argument folgen.  Ein Beispiel dafür ist das Zeichen ``\texttt{!}'' zur
+      Bezeichnung der Fakultät\footnote{
+      Für eine positive natürliche Zahl $n$ ist die \emph{Fakultät} von $n$ als das Produkt aller
+      natürlichen Zahlen von $1$ bis $n$ definiert.  Die Fakultät von $n$ wird mit $n!$ bezeichnet, 
+      es gilt also $n! = 1 \cdot 2 \cdot 3 \cdot \dots \cdot (n-1) \cdot n$.}
+      denn für die Fakultät einer Zahl $n$ hat sich in der Mathematik
+      die Schreibweise ``$n!$'' eingebürgert.  Eine solche Notation wird als \emph{Postfix-Notation}
+      bezeichnet.
+\item \emph{Prädikate}
+
+      Prädikate stellen zwischen verschiedenen Objekten eine Beziehung her.  Ein wichtiges Prädikat
+      ist das Gleichheits-Prädikat, dass durch das Gleichheits-Zeichen ``$=$'' dargestellt
+      wird. Setzen wir zwei Terme $t_1$ und $t_2$ durch das Gleichheits-Zeichen in Beziehung,
+      so erhalten wir die \emph{Formel} $t_1 = t_2$.
+
+      Genau wie Funktions-Zeichen auch hat jedes Prädikat eine vorgegebene \emph{Stelligkeit}.
+      Diese gibt an, wie viele Objekte durch das Prädikat in Relation gesetzt werden.  Im Falle des
+      Gleichheits-Zeichens ist die Stelligkeit 2, aber es gibt auch Prädikate mit anderen Stelligkeiten.
+      Zum Beispiel könnten wir ein Prädikat ``\texttt{istQuadrat}'' definieren, dass für natürliche
+      Zahlen ausdrückt, dass diese Zahl eine Quadrat-Zahl ist.  Ein solches Prädikat wäre dann
+      einstellig.
+
+      Ist allgemein $p$ ein $n$-stelliges Prädikats-Zeichen und sind die
+      Ausdrücke $t_1, \cdots, t_n$
+      Terme, so kann aus diesen Bestandteilen die \emph{Formel} \\[0.1cm]
+      \hspace*{1.3cm} $p(t_1,\cdots,t_n)$ \\[0.1cm]
+      gebildet werden.  Formeln von dieser Bauart bezeichnen wir auch als \emph{atomare Formel}, denn
+      sie ist zwar aus Termen, nicht jedoch aus aus anderen Formeln zusammengesetzt.
+
+      Genau wie bei zweistelligen  Funktions-Zeichen hat sich auch bei zweistelligen
+      Prädikats-Zeichen eine \emph{Infix-Notation} eingebürgert.
+      Das Prädikats-Zeichen ``$=$'' liefert ein Beispiel hierfür, denn wir schreiben
+      ``$a=b$'' statt ``$=(a,b)$''.  Andere Prädikats-Zeichen, für die sich eine
+      Infix-Notation eingebürgert hat, sind die Prädikats-Zeichen ``$<$'', 
+      ``$\leq$'', ``$>$'' und ``$\geq$'', die zum Vergleich von Zahlen benutzt werden. 
+\item \emph{Junktoren} 
+
+      Junktoren werden dazu benutzt, Formeln mit einander in Beziehung zu setzen.  Der einfachste Junktor
+      ist das ``\emph{und}''. Haben wir zwei Formeln $F_1$ und $F_2$ und wollen ausdrücken, dass sowohl
+      $F_1$ als auch $F_2$ gültig ist, so schreiben wir \\[0.1cm]
+      \hspace*{1.3cm} $F_1 \wedge F_2$ \\[0.1cm]
+      und lesen dies als ``$F_1$ \emph{und} $F_2$''.  Die nachfolgende Tabelle listet alle
+      Junktoren auf, die wir verwenden werden: \\[0.2cm]
+      \hspace*{1.3cm} 
+      \begin{tabular}{|l|l|}
+      \hline
+      Junktor & Bedeutung \\
+      \hline
+      \hline
+        $\neg F$ & nicht $F$ \\
+      \hline
+        $F_1 \wedge F_2$ & $F_1$ und $F_2$ \\
+      \hline
+        $F_1 \vee F_2$ & $F_1$ oder $F_2$ \\
+      \hline
+        $F_1 \rightarrow F_2$ & wenn $F_1$, dann $F_2$ \\
+      \hline
+        $F_1 \leftrightarrow F_2$ &  $F_1$ genau dann, wenn $F_2$ \\
+      \hline
+      \end{tabular}
+
+      Hier ist noch zu bemerken, dass es bei komplexeren Formeln zur Vermeidung von Mehrdeutigkeiten
+      notwendig ist, diese geeignet zu klammern.  Bezeichnen beispielsweise
+      $P$, $Q$ und $R$ atomare Formeln,
+      so können wir unter Zuhilfenahme von Klammern daraus  die folgenden Formeln bilden: \\[0.1cm]
+      \hspace*{1.3cm}  $P \rightarrow (Q \vee R)$ \quad und \quad $(P \rightarrow Q) \vee R$. \\[0.1cm]
+      Umgangssprachlich würden beide Formeln wie folgt interpretiert: 
+      \begin{center}
+      \begin{minipage}{12cm}
+        \textsl{Aus $P$ folgt $Q$ oder $R$.}
+      \end{minipage}
+      \end{center}
+      Die mathematische Schreibweise ist hier im Gegensatz zu der umgangssprachlichen Formulierung
+      eindeutig.
+
+      Die Verwendung von vielen Klammern vermindert die Lesbarkeit einer Formel.  Um
+      Klammern einsparen zu können, vereinbaren wir daher ähnliche Bindungsregeln, wie wir
+      sie aus der Schulmathematik kennen.  Dort wurde vereinbart, dass ``$+$'' und ``$-$'' schwächer
+      binden als  ``$\cdot $'' und ``$/$'' und damit ist gemeint, dass \\[0.1cm]
+      \hspace*{1.3cm} $x + y \cdot z$  \quad als \quad $x + (y \cdot z)$ \\[0.1cm]
+      interpretiert wird.  Ähnlich vereinbaren wir hier, dass ``$\neg$'' stärker bindet als ``$\wedge$''
+      und ``$\vee$'' und dass diese beiden Operatoren stärker binden als
+      ``$\rightarrow$''.  Schließlich bindet der Operator ``$\leftrightarrow$'' 
+      schwächer als alle anderen Operatoren.  Mit diesen Vereinbarungen lautet die Formel \\[0.1cm]
+      \hspace*{1.3cm} $P \wedge Q \rightarrow R \leftrightarrow \neg R \rightarrow \neg P \vee \neg Q$ \\[0.1cm]
+      dann in einer vollständig geklammerten Schreibweise \\[0.1cm]
+      \hspace*{1.3cm}  
+      $\bigl((P \wedge Q) \rightarrow R\bigr) \leftrightarrow \bigl(\,(\neg R) \rightarrow ((\neg P) \vee (\neg Q))\,\bigr)$. 
+      
+     \item \emph{Quantoren}
+      geben an, in welcher Weise eine Variable in einer Formel verwendet wird. Wir kennen zwei
+      Quantoren, den All-Quantor ``$\forall$'' und den Existenz-Quantor ``$\exists$''.  Eine Formel der Form\\[0.1cm]
+      \hspace*{1.3cm} $\forall x: F$ \\[0.1cm]
+      lesen wir als ``\emph{für alle $x$ gilt $F$}'' und eine Formel der Form \\[0.1cm]
+      \hspace*{1.3cm} $\exists x: F$ \\[0.1cm]
+      wird als ``\emph{es gibt ein $x$, so dass $F$ gilt}'' gelesen.  In dieser Vorlesung
+      werden wir üblicherweise \emph{qualifizierte Quantoren} verwenden.  Die Qualifizierung
+      gibt dabei an, in welchem Bereich die durch die Variablen bezeichneten Objekte liegen müssen.
+      Im Falle des All-Quantors schreiben wir dann \\[0.1cm]
+      \hspace*{1.3cm} $\forall x \in M: F$ \\[0.1cm]
+      und lesen dies als ``\emph{für alle $x$ aus $M$ gilt $F$}''.  Hierbei bezeichnet $M$
+      eine Menge. Dies ist nur eine abkürzende Schreibweise,
+      die wir wie folgt definieren können: \\[0.1cm]
+      \hspace*{1.3cm} $\forall x \in M: F \stackrel{de\!f}{\Longleftrightarrow} \forall x\colon (x\in M \rightarrow F)$ 
+
+      Entsprechend
+      lautet die Notation für den Existenz-Quantor \\[0.1cm]
+      \hspace*{1.3cm}  $\exists x \in M: F$ \\[0.1cm]
+      und das wird dann  als ``\emph{es gibt ein $x$ aus $M$, so dass $F$ gilt}'' gelesen.  
+      Formal läßt sich das als \\[0.1cm]
+      \hspace*{1.3cm} $\exists x \in M: F \stackrel{de\!f}{\Longleftrightarrow} \exists x\colon (x\in M \wedge F)$ \\[0.1cm]
+      definieren.       Wir verdeutlichen die Schreibweisen durch eine Beispiel.  Die Formel \\[0.1cm]
+      \hspace*{1.3cm} $\forall x \in \mathbb{R}: \exists n \in \mathbb{N} : n > x$ \\[0.1cm]
+      lesen wir wie folgt:
+      \begin{center}
+        {\em
+        \begin{minipage}{12cm}
+          Für alle $x$ aus $\mathbb{R}$ gilt: Es gibt ein $n$ aus $\mathbb{N}$, so dass
+          $n$ größer als $x$ ist.
+        \end{minipage}
+        }
+      \end{center}
+      Hier steht $\mathbb{R}$ für die reellen Zahlen und $\mathbb{N}$ bezeichnet die natürlichen Zahlen.
+      Die obige Formel drückt also aus, dass es zu jeder reellen Zahl $x$ eine natürlich Zahl $n$ gibt, 
+      so dass $n$ größer als $x$ ist.
+
+      Treten in einer Formel Quantoren und Junktoren gemischt auf, so stellt sich die
+      Frage, was stärker bindet.  Wir vereinbaren, dass Quantoren stärker binden als
+      Junktoren.  In der folgenden Formel sind die Klammern also notwendig: \\[0.1cm]
+      \hspace*{1.3cm} 
+      $\forall x \colon \bigl(p(x) \wedge q(x)\bigr)$. 
+\end{enumerate}
+
+\section{Beispiele für Terme und Formeln}
+Um die Konzepte ``Term'' und ``Formel'' zu verdeutlichen, geben wir im folgenden einige
+Beispiele an.  Wir wählen ein Beispiel aus dem täglichen Leben und geben Terme und Formeln an, die sich mit
+Verwandschaftsbeziehungen beschäftigen.  Wir beginnen damit, dass wir die Konstanten,
+Variablen, Funktions-Zeichen und Prädikats-Zeichen festlegen.
+\begin{enumerate}
+\item Als \emph{Konstanten} verwenden wir die Wörter \\[0.1cm]
+      \hspace*{1.3cm} ``\texttt{adam}'', ``\texttt{eva}'', ``\texttt{kain}'' und ``\texttt{abel}'',
+      ``\texttt{lisa}''.
+\item Als \emph{Variablen} verwenden wir die Buchstaben \\[0.1cm]
+      \hspace*{1.3cm} ``$x$'', ``$y$'' und ``$z$''.
+\item Als \emph{Funktions-Zeichen} verwenden wir die Wörter \\[0.1cm]
+      \hspace*{1.3cm} ``\texttt{vater}'' und ``\texttt{mutter}''. \\[0.1cm]
+      Diese beiden Funktions-Zeichen sind einstellig. 
+\item Als \emph{Prädikats-Zeichen} verwenden wir die Wörter \\[0.1cm]
+      \hspace*{1.3cm} ``\texttt{bruder}'', ``\texttt{schwester}'', 
+      ``\texttt{männlich}'' und ``\texttt{weiblich}''. \\[0.1cm]
+      Hier sind die Prädikats-Zeichen ``\texttt{männlich}'' und ``\texttt{weiblich}'' einstellig,
+      während ``\texttt{bruder}'' und ``\texttt{schwester}'' zweistellig sind. 
+      Als weiteres zweistelliges Prädikats-Zeichen verwenden wir das Gleichheits-Zeichen ``$=$''.
+\end{enumerate}
+Eine solche Ansammlung von Konstanten,
+Variablen, Funktions-Zeichen und Prädikats-Zeichen bezeichen wir auch als
+\emph{Signatur}.  Wir geben zunächst einige Terme an, die sich mit dieser Signatur
+bilden lassen:
+\begin{enumerate}
+\item ``\texttt{kain}'' ist ein Term, denn ``\texttt{kain}'' ist eine Konstante.
+\item ``$\mathtt{vater}(\mathtt{kain})$'' ist ein Term, denn ``\texttt{kain}''
+      ist ein Term und ``\texttt{vater}'' ist ein einstelliges Funktions-Zeichen.
+\item ``$\mathtt{mutter}\bigl(\mathtt{vater}(\mathtt{kain})\bigr)$'' ist ein Term, denn ``$\mathtt{vater}(\mathtt{kain})$'' ist
+      ein Term und ``\texttt{mutter}'' ist ein einstelliges Funktions-Zeichen,
+\item ``$\texttt{männlich}(\mathtt{kain})$'' ist eine Formel, denn
+      ``\texttt{kain}'' ist ein Term und
+      ``\texttt{männlich}'' ist ein einstelliges Prädikats-Zeichen.
+\item ``$\texttt{männlich}(\mathtt{lisa})$'' ist ebenfalls eine Formel, denn
+      ``\texttt{lisa}'' ist ein Term. 
+
+      Dieses Beispiel zeigt, dass Formeln durchaus auch falsch sein können.  Die bisher
+      gezeigten Formeln sind alle atomar.  Wir geben nun Beispiele für zusammengesetzte
+      Formeln.
+\item ``$\mathtt{vater}(x) = \mathtt{vater}(y) \wedge \mathtt{mutter}(x) = \mathtt{mutter}(y)
+         \rightarrow       \mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$''
+      
+      ist eine Formel, die aus den beiden Formeln \\[0.1cm]
+      \hspace*{1.3cm}  ``$\mathtt{vater}(x) = \mathtt{vater}(y) \wedge \mathtt{mutter}(x) = \mathtt{mutter}(y)$'' \quad und \\[0.1cm]
+      \hspace*{1.3cm}  ``$\mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$'' \\[0.1cm]
+      aufgebaut ist.  
+\item ``$\forall x\colon \forall y\colon \mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$''   ist eine Formel.
+\end{enumerate}
+Die Formel Nr.~7 ist intuitiv gesehen falsch. 
+Auch die Formel Nr.~6 ist falsch, wenn wir davon ausgehen, dass niemand sein eigener
+Bruder ist.
+Um die Begriffe ``\emph{wahr}'' und ``\emph{falsch}'' für Formeln streng definieren zu können,
+ist es notwendig, die \emph{Interpretation} der verwendeten Signatur festzulegen. 
+Anschaulich gesehen definiert eine \emph{Interpretation} die Bedeutung der \emph{Symbole},
+also der Konstanten, Funktions- und Prädikats-Zeichen, aus denen die Signatur besteht.
+Exakt kann der Begriff aber erst angegeben werden, wenn Hilfsmittel aus der Mengenlehre
+zur Verfügung stehen.  Dieser wenden wir uns jetzt zu.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

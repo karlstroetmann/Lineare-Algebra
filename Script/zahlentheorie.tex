@@ -1,0 +1,2290 @@
+\chapter{Zahlentheorie*}
+In diesem Kapitel beschäftigen wir uns mit den ganzen Zahlen.  Am Ende des Kapitels werden
+wir ausreichend Theorie entwickelt haben, um die Funktionsweise des
+RSA-Verschlüsselungs-Algorithmus verstehen zu können.  
+Wir beginnen unsere Überlegungen damit, dass wir den Begriff der Teilbarkeit von Zahlen
+analysieren und uns ein wenig mit modularer Arithmetik beschäftigen.
+
+\section{Teilbarkeit und modulare Arithmetik}
+
+\begin{Definition}[Teiler]
+  Es seien $a$ und $b$ natürlichen Zahlen.  Dann ist $a$ ein Teiler von $b$, wenn es eine
+  natürliche Zahl $c$ gibt, so dass $a \cdot c = b$ gilt.  In diesem Fall schreiben wir $a \teilt b$.
+  Formal können wir die Teilbarkeitsrelation also wie folgt definieren:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a \teilt b \df \exists c \in \mathbb{N}: b = a \cdot c$.
+\end{Definition}
+
+\remark
+Offenbar gilt $1 \teilt n$ für alle natürlichen Zahlen $n$, denn für alle $n \in \mathbb{N}$ gilt 
+$n = 1 \cdot n$.   Aus der Gleichung $0 = n \cdot 0$ folgt analog, dass $n \teilt 0$ für alle 
+$n \in \mathbb{N}$ gilt.  Schließlich zeigt die Gleichung $n = n \cdot 1$, dass $n \teilt n$
+für alle natürlichen Zahlen $n$ gilt.
+\vspace*{0.3cm}
+
+Für eine positive natürliche Zahl $a$ bezeichnen wir die Menge aller Teiler von $a$ mit
+$\texttt{teiler}(a)$.  Es gilt also
+\[ \texttt{teiler}(a) = \{ q \in \mathbb{N} \mid \exists k \in \mathbb{N}: k \cdot q = a \}. \]
+Die Menge aller gemeinsamen Teiler zweier positiver natürlicher Zahlen
+$a$ und $b$ bezeichnen wir mit $\texttt{gt(a,b)}$.  Es gilt
+\[ \texttt{gt}(a,b) = \texttt{teiler}(a) \cap \texttt{teiler}(b). \]
+Der größte gemeinsame Teiler von $a$ und $b$ ist als das Maximum dieser Menge definiert,
+es gilt also 
+\[ \texttt{ggt}(a,b) = \max\bigl(\texttt{gt}(a,b)\bigr). \]
+
+\begin{Satz}[Divison mit Rest]
+  \label{satz:division_mit_rest}
+  Sind $a$ und $b$ natürliche Zahlen mit $b \not= 0$, so gibt es eindeutig bestimmte natürliche Zahlen 
+  $q$ und $r$, so dass 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a = q \cdot b + r$ \quad mit $r < b$
+  \\[0.2cm]
+  gilt.  Wir nennen dann $q$ den \emph{Ganzzahl-Quotienten} und $r$ den \emph{Rest} der ganzzahligen
+  Divison von $a$ durch $b$.  Als Operator für die Ganzzahl-Divison verwenden wir ``$\div$''
+  und für die Bildung des Rests verwenden wir den Operator ``\texttt{\%}''.
+  Damit gilt 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $q = a \div b$ \quad und \quad $r = a \modulo b$.
+\end{Satz}  
+
+\proof
+Zunächst zeigen wir die Existenz der Zahlen $q$ und $r$ mit den oben behaupteten Eigenschaften.
+Dazu definieren wir eine Menge $M$ von natürlichen Zahlen wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$M := \{ p \in \mathbb{N} \mid p \cdot b \leq a \}$.
+\\[0.2cm]
+Diese Menge ist nicht leer, es gilt $0 \in M$, da $0 \cdot b \leq a$ ist.
+Außerdem können wir sehen, dass $(a+1) \not\in M$ ist, denn
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a+1) \cdot b = a \cdot b + b > a \cdot b \geq a$, \quad denn $b \geq 1$.
+\\[0.2cm]
+Damit ist auch klar, dass alle Zahlen, die größer als $a$ sind, keine Elemente
+von $M$ sein können.  Insgesamt wissen wir jetzt, dass die Menge nicht leer ist und dass alle
+Elemente von $M$ kleiner-gleich $a$ sind.  Folglich muss die Menge $M$ eine Maximum haben.
+Wir definieren
+\\[0.2cm]
+\hspace*{1.3cm}
+$q := \max(M)$ \quad und \quad $r := a - q \cdot b$.
+\\[0.2cm]
+Wegen $q \in M$ wissen wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \geq q \cdot b$
+\\[0.2cm]
+gilt, woraus wir $r \geq 0$ schließen können und damit ist $r \in \mathbb{N}$.
+
+Da wir $q$ als Maximum der Menge $M$ definiert haben, wissen wir weiter, dass
+die Zahl $q + 1$ kein Element der Menge $M$ sein kann, denn sonst wäre $q$ nicht das Maximum.
+Also muss
+\\[0.2cm]
+\hspace*{1.3cm}
+$(q+1) \cdot b > a$
+\\[0.2cm]
+gelten.  Wir formen diese Ungleichung wie folgt um:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lrcll}
+                & (q + 1) \cdot b & > & a                  \\[0.1cm]   
+\Leftrightarrow & q \cdot b + b   & > & a                  \\[0.1cm]   
+\Leftrightarrow & b               & > & a - q \cdot b      \\[0.1cm]   
+\Leftrightarrow & b               & > & r & \mbox{nach Definition von $r$}. \\[0.1cm]   
+\end{array}
+$
+\\[0.2cm]
+Also haben wir jetzt die zweite Behauptung $r < b$ gezeigt.
+Aus der Definition von $r$ als $r = a - q \cdot b$ folgt sofort, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$a = q \cdot b + r$ 
+\\[0.2cm]
+gilt.  Damit haben $q$ und $r$ die behaupteten Eigenschaften.
+\vspace*{0.2cm}
+
+Als nächstes zeigen wir, dass $q$ und $r$ eindeutig bestimmt sind.  Dazu nehmen wir an,
+dass zu den gegebenen Werten von $a$ und $b$ vier Zahlen $q_1$, $q_2$, $r_1$ und $r_2$ mit den
+Eigenschaften 
+\\[0.2cm]
+\hspace*{1.3cm}
+$a = q_1 \cdot b + r_1$, \quad
+$a = q_2 \cdot b + r_2$, \quad 
+$r_1 < b$, \quad und \quad $r_2 < b$
+\\[0.2cm]
+existieren.  Wir müssen zeigen, dass dann $q_1 = q_2$ und $r_1 = r_2$ folgt.  Aus den beiden
+Gleichungen folgt zunächst
+\\[0.2cm]
+\hspace*{1.3cm}
+$q_1 \cdot b + r_1 = q_2 \cdot b + r_2$.
+\\[0.2cm]
+und diese Gleichung können wir umstellen zu
+\begin{equation}
+  \label{eq:division1}
+  (q_1 - q_2) \cdot b = r_2 - r_1  
+\end{equation}
+Wir können  ohne Beschränkung der Allgemeinheit annehmen, dass $r_2 \geq r_1$ ist, denn andernfalls
+können wir die Zahlen $r_1$ und $q_1$ mit den Zahlen $r_2$ und $q_2$ vertauschen.  Dann zeigt
+Gleichung (\ref{eq:division1}), dass $b$ ein Teiler von $r_2 - r_1$ ist.  Wegen $b > r_2 \geq r_1$ 
+wissen wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \leq r_2 - r_1 < b$
+\\[0.2cm]
+gilt.  Soll nun $b$ ein Teiler von $r_2 - r_1$ sein, so muss $r_2 - r_1 = 0$ also $r_2 = r_1$
+gelten.  Daraus folgt dann
+\\
+\hspace*{1.3cm}
+$(q_1 - q_2) \cdot b = 0$  
+\\[0.2cm]
+und wegen $b \not= 0$ muss auch $q_1 = q_2$ gelten. 
+\qed
+
+\exercise
+Wie müssen wir den obigen Satz ändern, damit er auch dann noch gilt, wenn  $a \in \mathbb{Z}$ ist?
+Formulieren Sie die geänderte Version des Satzes und beweisen Sie Ihre Version des Satzes!
+
+\remark
+In den meisten Programmier-Sprachen ist die ganzzahlige Division so implementiert, dass
+die Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a \div q) \cdot q + a \modulo q = a$
+\\[0.2cm]
+für $a < 0$ im Allgemeinen \underline{nicht} gilt!
+
+\vspace*{0.3cm}
+\noindent
+Mit dem letzten Satz können wir die Menge der Teiler einer natürlichen Zahl $a$ auch wie folgt definieren:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\texttt{teiler}(a) = \{ q \in \mathbb{N} \mid a \modulo q = 0 \}$.
+\vspace*{0.3cm}
+
+
+\noindent
+Wir erinnern an dieser Stelle an die Definition der Äquivalenz-Relationen $\approx_n$, die wir für 
+$n > 0$ im Abschnitt \ref{section:aequivalenz_relation} durch die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\approx_n \;:=\; \{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z} \colon k \cdot n = x - y \}$
+\\[0.2cm]
+definiert hatten.  Der nächste Satz zeigt, dass sich diese Relation auch etwas anders charakterisieren
+läßt. 
+
+\begin{Satz}
+Für $a,b \in \mathbb{N}$ und $n \in \mathbb{N}$ mit $n > 0$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \approx_n b \;\leftrightarrow\; a \modulo n = b \modulo n$.
+\end{Satz}
+  
+\proof
+Wir zerlegen den Beweis in zwei Teile:
+\begin{enumerate}
+\item ``$\Rightarrow$'':
+      Aus $a \approx_n b$ folgt nach Definition der Relation $\approx_n$, dass es ein $h \in \mathbb{Z}$ gibt mit
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a - b = h \cdot n$.
+      \\[0.2cm]
+      Definieren wir $l := b \div n$, so ist $l \in \mathbb{Z}$ und es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b = l \cdot n + b \modulo n$.
+      \\[0.2cm]
+      Setzen wir dies in die Gleichung für $a - b$ ein, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a - (l \cdot n + b \modulo n) = h \cdot n$,
+      \\[0.2cm]
+      was wir zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a = (h + l) \cdot l + b \modulo n$,
+      \\[0.2cm]
+      umstellen können.  Aus dieser Gleichung folgt wegen der im Satz von der Divison mit Rest 
+      (Satz \ref{satz:division_mit_rest})
+      gemachten Eindeutigkeits-Aussage, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \modulo n = b \modulo n$
+      \\[0.2cm]
+      gilt. \checkmark
+\item ``$\Leftarrow$'':
+      Es sei nun 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \modulo n = b \modulo n$ 
+      \\[0.2cm]
+      vorausgesetzt. Nach Definition des Modulo-Operators gibt es ganze Zahlen $k,l \in
+      \mathbb{Z}$, so dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \modulo n = a - k \cdot n$ \quad und \quad
+      $b \modulo n = b - l \cdot n$ 
+      \\[0.2cm]
+      gilt, so dass wir insgesamt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a - k \cdot n = b - l \cdot n$
+      \\[0.2cm]
+      haben.   Daraus folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a - b = (k - l) \cdot n$,
+      \\[0.2cm]
+      so dass $n$ ein Teiler von $(a- b)$ ist und dass heißt $a \approx_n b$. \checkmark \qed
+\end{enumerate}
+
+\begin{Satz}
+  Die Relation $\approx_n$ ist eine Kongruenz-Relation.
+\end{Satz}
+
+\proof
+Es gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+                & x \approx_n y                                \\[0.2cm]
+\Leftrightarrow & \exists k \in \mathbb{Z}: x - y = k \cdot n  \\[0.2cm]
+\Leftrightarrow & x - y \in n\mathbb{Z}                        \\[0.2cm]
+\Leftrightarrow & x \sim_{n\mathbb{Z}} y 
+\end{array}
+$
+\\[0.2cm]
+Damit sehen wir, dass die Relation $\approx_n$ mit der von dem Ideal $n\mathbb{Z}$
+erzeugten Kongruenz-Relation $\sim_{n\mathbb{Z}}$ übereinstimmt und folglich
+eine Kongruenz-Relation ist.  \qed
+
+%In dem Abschnitt über Äquivalenz-Relationen (Abschnitt \ref{section:aequivalenz_relation})
+%hatten wir bereits gezeigt, dass die Relation $\approx_n$ eine Äquivalenz-Relation ist.
+%Es bleibt daher nur zu zeigen, dass die Relation $\approx_n$ mit der Addition und der
+%Multiplikation verträglich ist.
+%\begin{enumerate}
+%\item Wir zeigen als erstes, dass die Relation $\approx_n$ mit der Addition verträglich
+%      ist.  Dazu ist zu zeigen, dass für alle $a_1, a_2, b_1, b_2 \in \mathbb{Z}$
+%      \\[0.2cm]
+%      \hspace*{1.3cm} 
+%      $a_1 \approx_n b_1 \wedge a_2 \approx_n b_2 \rightarrow a_1 + a_2 \approx_n b_1 + b_2$.
+%      \\[0.2cm]
+%      gilt.  Wir nehmen also an, dass $a_1 \approx_n a_2$ und $b_1 \approx_n b_2$ gilt und
+%      müssen zeigen, dass dann auch $a_1 + a_2 \approx_n b_1 + b_2$ richtig ist.  Nach
+%      Definition der Relation $\approx_n$ folgt aus den Voraussetzungen $a_1 \approx_n a_2$ und
+%      $b_1 \approx_n b_2$, dass es Zahlen $k,l \in \mathbb{Z}$ gibt, so dass
+%      \\[0.2cm]
+%      \hspace*{1.3cm} 
+%      $a_1 - a_2 = k \cdot n$ \quad und \quad $b_1 - b_2 = l \cdot n$ 
+%      \\[0.2cm]
+%      gilt.  Addieren wir diese beiden Gleichungen, so erhalten wir
+%      \\[0.2cm]
+%      \hspace*{1.3cm}
+%      $(a_1 - a_2) + (b_1 - b_2) = k \cdot n + l \cdot n$.
+%      \\[0.2cm]
+%      Diese Gleichung können wir zu
+%      \\[0.2cm]
+%      \hspace*{1.3cm}
+%      $(a_1 + b_1) - (a_2 + b_2) = (k + l) \cdot n$
+%      \\[0.2cm]
+%      umstellen und nach Definition der Relation $\approx_n$ haben wir damit
+%      \\[0.2cm]
+%      \hspace*{1.3cm}
+%      $a_1 + b_1 \approx_n a_2 + b_2$
+%      \\[0.2cm]
+%      gezeigt. \checkmark
+%\item Wir zeigen nun, dass die Relation $\approx_n$ mit der Multiplikation verträglich
+%      ist.  Dazu ist zu zeigen, dass für alle $a_1, a_2, b_1, b_2 \in \mathbb{Z}$
+%      \\[0.2cm]
+%      \hspace*{1.3cm} 
+%      $a_1 \approx_n b_1 \wedge a_2 \approx_n b_2 \rightarrow a_1 \cdot a_2 \approx_n b_1 \cdot b_2$.
+%      \\[0.2cm]
+%      gilt.  Wir nehmen also an, dass $a_1 \approx_n a_2$ und $b_1 \approx_n b_2$ gilt und
+%      müssen zeigen, dass dann auch $a_1 \cdot a_2 \approx_n b_1 \cdot b_2$ richtig ist.  Nach
+%      Definition der Relation $\approx_n$ folgt aus den Voraussetzungen $a_1 \approx_n a_2$ und
+%      $b_1 \approx_n b_2$, dass es Zahlen $k,l \in \mathbb{Z}$ gibt, so dass
+%      \\[0.2cm]
+%      \hspace*{1.3cm} 
+%      $a_1 - a_2 = k \cdot n$ \quad und \quad $b_1 - b_2 = l \cdot n$ 
+%      \\[0.2cm]
+%      gilt.  Nun rechnen wir wie folgt
+%      \\[0.2cm]
+%      \hspace*{1.3cm}
+%      $
+%      \begin{array}[t]{cl}
+%        & a_1 \cdot b_1 - a_2 \cdot b_2                                 \\[0.2cm]
+%      = & a_1 \cdot b_1 - a_1 \cdot b_2 + a_1 \cdot b_2 - a_2 \cdot b_2 \\[0.2cm]
+%      = & a_1 \cdot (b_1 - b_2) + (a_1 - a_2) \cdot b_2                 \\[0.2cm]
+%      = & a_1 \cdot l \cdot n + k \cdot n \cdot b_2                     \\[0.2cm]
+%      = & (a_1 \cdot l + k \cdot b_2) \cdot n.
+%      \end{array}
+%      $
+%      \\[0.2cm]
+%      Folglich ist die Differenz $a_1 \cdot b_1 - a_2 \cdot b_2$ ein Vielfaches von $n$ und
+%      nach Definition der Relation $\approx_n$ haben wir damit
+%      \\[0.2cm]
+%      \hspace*{1.3cm}
+%      $a_1 \cdot b_1 \approx_n a_2 \cdot b_2$
+%      \\[0.2cm]
+%      gezeigt. \checkmark \qed
+%\end{enumerate}
+
+
+Wir erinnern an dieser Stelle daran, dass wir im letzten Kapitel für natürliche Zahlen $k$
+die Menge $k\mathbb{Z}$ aller Vielfachen von $k$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$k\mathbb{Z} = \{ k \cdot z \mid z \in \mathbb{Z} \}$
+\\[0.2cm]
+definiert haben.  Außerdem hatten wir gezeigt, dass diese Mengen Ideale sind.
+Der nächste Satz zeigt, dass alle Ideale in dem Ring $\mathbb{Z}$ der ganzen Zahlen
+diese Form haben.
+
+\begin{Satz}[$\mathbb{Z}$ ist ein Haupt-Ideal-Ring] \lb
+Ist $I \subseteq \mathbb{Z}$ ein Ideal, so gibt es eine natürliche Zahl $k$, so dass $I = k\mathbb{Z}$
+gilt.
+\end{Satz}
+
+\proof
+Wir betrachten zwei Fälle:  Entweder ist $I = \{0\}$ oder nicht.
+\begin{enumerate}
+\item Fall: $I = \{ 0 \}$.
+
+      Wegen $\{ 0 \} = 0\mathbb{Z}$ ist die Behauptung in diesem Fall offensichtlich
+      wahr.
+\item Fall: $I \not= \{ 0 \}$.
+
+      Dann gibt es ein $l \in I$ mit $l \not= 0$.  Da $I$ ein Ideal ist, liegt mit $l$ auch $-l$ in dem
+      Ideal $I$.  Eine dieser beiden Zahlen ist positiv.  Daher ist die Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $M := \{ x \in I \mid x > 0 \}$
+      \\[0.2cm]
+      nicht leer und hat folglich ein Minimum $k = \min(M)$, für welches offenbar
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $k \in I$ \quad und \quad $k > 0$
+      \\[0.2cm]
+      gilt.  Wir behaupten, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $I = k\mathbb{Z}$
+      \\[0.2cm]
+      gilt.  Sei also $y \in I$.  Wir teilen $y$ durch $k$ und  nach dem Satz
+      über ganzzahlige Division mit Rest finden wir dann Zahlen $q \in \mathbb{Z}$ und $r \in \mathbb{N}$ mit
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y = q \cdot k + r$ \quad und \quad $0 \leq r < k$.
+      \\[0.2cm]
+      Aus der ersten Gleichung folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $r = y + (-q) \cdot k$.
+      \\[0.2cm]
+      Da nun sowohl $y \in I$ als auch $k \in I$ gilt und Ideale sowohl unter Multiplikation mit
+      beliebigen Ring-Elementen als auch unter Addition abgeschlossen sind, folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $r \in I$.
+      \\[0.2cm]
+      Nun ist einerseits $k = \min\bigl(\{x \in I \mid x > 0 \}\bigr)$, andererseits ist $r < k$.
+      Das geht beides zusammen nur, wenn
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $r = 0$
+      \\[0.2cm]
+      ist.  Damit haben wir dann aber
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y = q \cdot k$
+      \\[0.2cm]
+      gezeigt, woraus sofort
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \in k\mathbb{Z}$
+      \\[0.2cm]
+      folgt.  Da $y$ bei diesen Betrachtungen ein beliebiges Element der Menge $I$ war,
+      zeigt diese Überlegungen insgesamt, dass $I \subseteq k\mathbb{Z}$ gilt.  Aus der
+      Tatsache, dass $k \in I$ ist, folgt andererseits, dass $k\mathbb{Z} \subseteq I$
+      gilt, so dass wir insgesamt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $I = k\mathbb{Z}$
+      \\[0.2cm]
+      gezeigt haben.  \qed
+\end{enumerate}
+
+\remark
+Wir erinnern an dieser Stelle daran, dass wir für einen Ring 
+$\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ und ein
+Ring-Element $k \in R$ die Ideale der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{gen}(k) = \{ k \cdot x \mid x \in R \}$
+\\[0.2cm]
+als \emph{Haupt-Ideale} bezeichnet haben.  Der letzte Satz zeigt also, dass alle Ideale des Rings
+der ganzen Zahlen Haupt-Ideale sind.  Einen Ring mit der Eigenschaft, dass alle Ideale
+bereits Haupt-Ideale sind, bezeichnen wir als \emph{Haupt-Ideal-Ring}.  Der letzte Satz
+zeigt daher, dass der Ring der ganzen Zahlen ein Haupt-Ideal-Ring ist.
+
+\begin{Lemma}
+  Für $u,v \in \mathbb{N}$ gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $u\mathbb{Z} \subseteq v\mathbb{Z} \;\Leftrightarrow\; v \teilt u$.
+\end{Lemma}
+
+\proof
+Wir zerlegen den Beweis der Äquivalenz der beiden Aussagen in den Beweis der beiden Implikationen.
+\begin{enumerate}
+\item ``$\Rightarrow$'': Wegen $u = u \cdot 1$ gilt  
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u \in u\mathbb{Z}$
+      \\[0.2cm]
+      und aus der Voraussetzung $u\mathbb{Z} \subseteq v\mathbb{Z}$ folgt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u \in v\mathbb{Z}$.
+      \\[0.2cm]
+      Nach Definition der Menge $v\mathbb{Z}$ gibt es nun ein $k \in \mathbb{Z}$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u = v \cdot k$
+      \\[0.2cm]
+      gilt.  Nach der Definition der Teilbarkeit haben wir also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $v \teilt u$.
+\item ``$\Leftarrow$'':  Es sei jetzt $v \teilt u$ vorausgesetzt.  Dann gibt es ein $k \in \mathbb{N}$
+      mit 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u = v \cdot k$.
+      \\[0.2cm]
+      Sei weiter $a \in u\mathbb{Z}$ beliebig.  Nach Definition der Menge $u\mathbb{Z}$ gibt es also
+      ein $x \in \mathbb{Z}$ mit
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a = u \cdot x$.
+      \\[0.2cm]
+      Ersetzen wir in dieser Gleichung $u$ durch $v \cdot k$, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a = v \cdot (k \cdot x)$
+      \\[0.2cm]
+      und daraus folgt sofort
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \in v\mathbb{Z}$,
+      \\[0.2cm]
+      so dass wir insgesamt $u\mathbb{Z} \subseteq v\mathbb{Z}$ gezeigt haben.
+\end{enumerate}
+
+\begin{Satz}
+  Es sei $p$ eine Primzahl.  Dann ist das Ideal $p\mathbb{Z}$ ein maximales Ideal.
+\end{Satz}
+
+\proof
+Es sei $J \subseteq \mathbb{Z}$ ein Ideal, für das
+\\[0.2cm]
+\hspace*{1.3cm}
+$p\mathbb{Z} \subseteq J$ 
+\\[0.2cm]
+gilt.  Wir müssen zeigen, dass dann $J = p\mathbb{Z}$ oder $J = \mathbb{Z}$ gilt.  Da $\mathbb{Z}$ ein
+Haupt-Ideal-Ring ist, gibt es ein $q \in \mathbb{Z}$ mit
+\\[0.2cm]
+\hspace*{1.3cm}
+$J = q\mathbb{Z}$.
+\\[0.2cm]
+Damit haben wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+$p\mathbb{Z} \subseteq q\mathbb{Z}$
+\\[0.2cm]
+und nach dem letzten Lemma folgt daraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$q \teilt p$.
+\\[0.2cm]
+Da $p$ eine Primzahl ist, gibt es nur zwei Zahlen, die Teiler von $p$ sind: Die Zahl $1$ und die Zahl $p$.
+Wir haben also
+\\[0.2cm]
+\hspace*{1.3cm}
+$q = 1$ \quad oder \quad $q = p$,
+\\[0.2cm]
+woraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$J = 1\mathbb{Z} = \mathbb{Z}$ \quad oder \quad $J = p\mathbb{Z}$
+\\[0.2cm]
+folgt und damit ist das Ideal $p\mathbb{Z}$ ein maximales Ideal.  \qed
+
+\begin{Korollar}
+Falls $p$ eine Primzahl ist, dann ist $\mathbb{Z}_p := \mathbb{Z}/p\mathbb{Z}$ ein Körper.
+\end{Korollar}
+
+\proof
+Im letzten Kapitel haben wir gezeigt, dass für einen Ring $R$ und ein maximales Ideal
+$I \subseteq R$ der Faktor-Ring $R/I$ ein Körper ist.  Wir haben gerade gesehen, dass für eine Primzahl
+$p$ das Ideal $p\mathbb{Z}$ maximal ist.  Diese beiden Tatsachen ergeben zusammen die Behauptung. \qed
+
+\remark
+Bisher hatten alle Körper, die wir kennengelernt haben, unendlich viele Elemente.
+Der letzte Satz zeigt uns, dass es auch endliche Körper gibt.
+
+
+\begin{Satz}[Lemma von B\'ezout]
+\label{satz:bezout}
+  Es seien $a,b \in \mathbb{N}$.  Dann existieren $x,y \in \mathbb{Z}$, so dass
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\textsl{ggt}(a,b) = x \cdot a + y \cdot b$
+  \\[0.2cm]
+  gilt.  Der größte gemeinsame Teiler zweier natürlicher Zahlen $a$ und $b$ 
+  läßt sich also immer als ganzzahlige Linear-Kombination von $a$ und $b$ schreiben.
+\end{Satz}
+
+\proof
+Wir definieren die Menge $I$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$I := \bigl\{ x \cdot a + y \cdot b \mid x,y \in \mathbb{Z} \bigr\}$.
+\\[0.2cm]
+Wir zeigen, dass $I$ ein Ideal ist:
+\begin{enumerate}
+\item $0 = 0 \cdot a + 0 \cdot b \in I$.
+\item $I$ ist abgeschlossen unter Bildung des additiven Inversen:  Sei
+      $u = x \cdot a + y \cdot b \in I$.  Dann folgt sofort
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-u = (-x) \cdot a + (-y) \cdot b \in I$.
+\item $I$ ist abgeschlossen unter Addition: Seien  
+      $u = x_1 \cdot a + y_1 \cdot b \in I$ und $v = x_2 \cdot a + y_2 \cdot b \in I$.
+      dann folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $u + v = (x_1 + x_2) \cdot a + (y_1 + y_2) \cdot b \in I$.
+\item $I$ ist abgeschlossen unter Multiplikation mit beliebigen ganzen Zahlen.  
+      Sei $u = x \cdot a + y \cdot b \in I$ und $z \in \mathbb{Z}$.  Dann gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $z \cdot u = (z \cdot x) \cdot a + (z \cdot y) \cdot b \in I$.
+\end{enumerate}
+Da der Ring der ganzen Zahlen ein Haupt-Ideal-Ring ist, gibt es also eine Zahl $d \in \mathbb{N}$, 
+so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$I = d\mathbb{Z}$
+\\[0.2cm]
+gilt.  Setzen wir in der Definition von $I$ wahlweise $y = 0$ oder $x = 0$ ein, so sehen wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$a\mathbb{Z} \subseteq I$ \quad und \quad $b\mathbb{Z} \subseteq I$
+\\[0.2cm]
+gilt, woraus nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$a\mathbb{Z} \subseteq d\mathbb{Z}$ \quad und \quad $b\mathbb{Z} \subseteq d\mathbb{Z}$,
+\\[0.2cm]
+folgt.  Nach dem Lemma, das wir gerade bewiesen haben, folgt daraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$d \teilt a$ \quad und \quad $d \teilt b$.
+\\[0.2cm]
+Damit ist $d$ ein gemeinsamer Teiler von $a$ und $b$.  Wir zeigen, dass $d$ sogar der größte gemeinsame
+Teiler von $a$ und $b$ ist.  Dazu betrachten wir einen beliebigen anderen gemeinsamen Teiler $e$ von $a$ und
+$b$: 
+\\[0.2cm]
+\hspace*{1.3cm}
+$e \teilt a$ \quad und \quad $e \teilt b$.
+\\[0.2cm]
+Nach dem letzten Lemma folgt daraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$a\mathbb{Z} \subseteq e\mathbb{Z}$ \quad und \quad $b\mathbb{Z} \subseteq e\mathbb{Z}$.
+\\[0.2cm]
+Da wir das Ideal $I$ als $\bigl\{ x \cdot a + y \cdot b \mid x,y \in \mathbb{Z} \bigr\}$ definiert hatten,
+können wir nun sehen, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$I \subseteq e\mathbb{Z}$
+\\[0.2cm]
+gilt, denn für $x,y \in \mathbb{Z}$ haben wir einerseits $x \cdot a \in a\mathbb{Z} \subseteq e\mathbb{Z}$
+und andererseits $y \cdot b \in b\mathbb{Z} \subseteq e\mathbb{Z}$, so dass aufgrund der Abgeschlossenheit
+des Ideals $e\mathbb{Z}$ unter Addition insgesamt
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \cdot x + b \cdot y \in e\mathbb{Z}$
+\\[0.2cm]
+gilt.  Setzen wir in der Beziehung $I \subseteq e\mathbb{Z}$ für $I$ den Ausdruck $d\mathbb{Z}$ ein, haben
+wir also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$d\mathbb{Z} \subseteq e\mathbb{Z}$
+\\[0.2cm]
+gezeigt, was nach dem letzten Lemma zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$e \teilt d$
+\\[0.2cm]
+äquivalent ist.  Damit haben wir insgesamt gezeigt, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+ $d = \textsl{ggt}(a,b)$ 
+\\[0.2cm]
+gilt.  Wegen $I = d\mathbb{Z}$ und $d \in d\mathbb{Z}$ folgt also 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{ggt}(a,b) \in \bigl\{ x \cdot a + y \cdot b \mid x,y \in \mathbb{Z} \bigr\}$.
+\\[0.2cm]
+Damit gibt es dann $x,y \in \mathbb{Z}$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{ggt}(a,b) = x \cdot a + y \cdot b$
+\\[0.2cm]
+gilt.  \qed
+
+%Wir betrachten zunächst den Spezialfall, dass die Zahlen $a$ und $b$ teilerfremd sind und damit
+%$\textsl{ggt}(a,b) = 1$ gilt.  In diesem Fall sind also ganze Zahlen $x$ und $y$ zu finden, so dass
+%\begin{equation}
+%\label{eq:bezout1}
+%   1 = x \cdot a + y \cdot b
+%\end{equation}
+%gilt.  Wir definieren die Menge $M$ als die Menge aller positiven Linear-Kombination von $a$ und $b$:
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$M := \bigl\{ x \cdot a + y \cdot b \mid x,y \in \mathbb{Z} \wedge x \cdot a + y \cdot b > 0 \bigr\}$.
+%\\[0.2cm]
+%Es ist offensichtlich, dass die Menge $M$ nicht leer ist, denn für $x = 1$ und $y = 1$ gilt sicher
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$1 \cdot a + 1 \cdot b = a + b \geq 0$, \quad denn $a,b \in \mathbb{N}$.
+%\\[0.2cm]
+%Wir definieren $d$ als das Minimum von $M$:
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$d = \min (M)$.
+%\\[0.2cm]
+%Dann gibt es ganze Zahlen $x_d$ und $y_d$, so dass
+%\begin{equation}
+%\label{eq:bezout2}
+%d = x_d \cdot a + y_d \cdot b  
+%\end{equation}
+%gilt.  Wir zeigen nun, dass $d$ ein Teiler von $a$ ist.  Dazu dividieren wir $a$ durch $d$ und erhalten
+%natürliche Zahlen $q$ und $r$, so dass
+%\begin{equation} 
+%\label{eq:bezout3}
+%a = q \cdot d + r \quad \mbox{und} \quad r < d
+%\end{equation}
+%gilt.  Wir stellen die Gleichung für $a$ nach $r$ um und haben 
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$r = 1 \cdot a + (-q) \cdot d$.
+%\\[0.2cm]
+%Setzen wir hier die Gleichung (\ref{eq:bezout2}) für $d$ ein, so erhalten wir
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$r = 1 \cdot a + (-q) \cdot (x_d \cdot a + y_d \cdot b)$,
+%\\[0.2cm]
+%was wir zu
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$r = (1 -q \cdot x_d) \cdot a + (-q) \cdot y_d \cdot b$
+%\\[0.2cm]
+%umformen können.  Da $r$ eine natürliche Zahl ist, gilt sicher $r \geq 0$.  Wäre nun $r \not= 0$, so
+%wäre $r$ ein Element der Menge $M$, dass allerdings wegen der Ungleichung in (\ref{eq:bezout3})
+%kleiner als $d$ ist.  Auf der anderen Seite
+%hatten wir $d$ aber als Minimum der Menge $M$ definiert, es kann also in $M$ keine kleinere Zahl
+%geben.  Folglich muss $r= 0$ sein und aus Gleichung (\ref{eq:bezout3}) folgt nun
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$a = q \cdot d$.
+%\\[0.2cm]
+%Damit ist $d$ aber ein Teiler von $a$.  Genauso wir wir gezeigt haben, dass $d$ ein Teiler von $a$
+%ist, können wir auch sehen, dass $d$ ein Teiler von $b$ ist, denn die Definition von $d$ ist
+%symmetrisch bezüglich $a$ und $b$.  Daraus folgt nun aber, dass $d$ ein gemeinsamer Teiler von $a$
+%und $b$ ist.  Da wir $\textsl{ggt}(a,b) = 1$ vorausgesetzt haben, können wir schließen, dass $d = 1$
+%ist.  Damit schreibt sich Gleichung (\ref{eq:bezout2}) als
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$1 = x_d \cdot a + y_d \cdot b$
+%\\[0.2cm]
+%und $x_d$ und $y_d$ sind die Zahlen, die wir gesucht haben.
+%\vspace*{0.2cm}
+
+%Um den Beweis abzuschließen betrachten wir nun den Fall, in dem $\textsl{ggt}(a,b) \not=1$ ist.
+%Dann können wir sowohl $a$ als auch $b$ durch ihren gemeinsamen Teiler $\textsl{ggt}(a,b)$ teilen.
+%Wir definieren nun
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$a' := \bruch{a}{\textsl{ggt}(a,b)}$  \quad und \quad
+%$b' := \bruch{b}{\textsl{ggt}(a,b)}$.
+%\\[0.2cm]
+%Dann gilt offenbar $\textsl{ggt}(a', b') = 1$ und nach dem, was wir bereits bewiesen haben, gibt es
+%dann ganze Zahlen $x$ und $y$, so dass
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$1 = x \cdot a' + y \cdot b'$
+%\\[0.2cm]
+%gilt.  Setzen wir in dieser Gleichung die Definition von $a'$ und $b'$ ein, so erhalten wir
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$1 = x \cdot \bruch{a}{\textsl{ggt}(a,b)} + y \cdot \bruch{b}{\textsl{ggt}(a,b)}$.
+%\\[0.2cm]
+% Multiplizieren wir diese Gleichung mit $\textsl{ggt}(a,b)$, so finden wir
+%\\[0.2cm]
+%\hspace*{1.3cm}
+%$\textsl{ggt}(a,b) = x \cdot a + y \cdot b$.
+%\\[0.2cm]
+%Das ist aber genau das Ergebnis, das wir zeigen wollten.
+%\qed
+
+\remark
+Der Beweis des letzten Satzes war nicht konstruktiv.  Wir werden im nächsten Abschnitt ein
+Verfahren angeben, mit dessen Hilfe wir die Zahlen $x$ und $y$, für 
+$x \cdot a + y \cdot b = \textsl{ggt}(a, b)$ gilt, auch tatsächlich berechnen können.
+
+
+\section{Der Euklidische Algorithmus}
+Wir präsentieren nun einen Algorithmus zur Berechnung des größten gemeinsamen 
+Teilers zweier natürlicher Zahlen $x$ und $y$.
+ Abbildung \ref{fig:ggt.stlx} auf Seite \pageref{fig:ggt.stlx} zeigt eine
+\textsl{SetlX}-Funktion, die für gegebene positive natürliche Zahlen $x$ und $y$ den größten gemeinsamen  Teiler 
+$\textsl{ggt}(x,y)$ berechnet.  Diese Funktion implementiert den \emph{Euklid'schen
+Algorithmus} zur Berechnung des größten gemeinsamen Teilers.
+
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    // Precondition: x > 0 and y > 0.
+    ggtS := procedure(x, y) {
+        if (x < y) {
+            return ggt(x, y - x);
+        }
+        if (y < x) {
+            return ggt(x - y, y); 
+        }
+        // We must have x = y at this point.
+        return x;
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Der Euklidische Algorithmus zur Berechnung des größten gemeinsamen Teilers.}
+\label{fig:ggt.stlx}
+\end{figure}
+
+Um die Korrektheit des Euklidischen Algorithmus zu beweisen, benötigen wir das folgende Lemma.
+
+\begin{Lemma} \label{lemma:modulo1}
+Sind $x, y \in \mathbb{Z}$, so gilt für alle $n \in \mathbb{N}_1$
+\[ x \modulo n = 0 \wedge y \modulo n = 0 \;\leftrightarrow\; 
+   (x + y) \modulo n = 0 \wedge y \modulo n = 0. 
+\]  
+\end{Lemma}
+\textbf{Beweis}:  Die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$p \wedge q \;\leftrightarrow\; r \wedge q$
+\\[0.2cm]
+ist aussagenlogisch äquivalent zu der Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$q \rightarrow (p \leftrightarrow r)$
+\\[0.2cm]
+Daher reicht es, wenn wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$y \modulo n = 0 \rightarrow \bigl(x \modulo n = 0 \;\leftrightarrow\; (x + y) \modulo n = 0\bigr)$ 
+\\[0.2cm]
+nachweisen.  Unter Benutzung der Relation $\approx_n$ und bei weiterer Berücksichtigung
+der Tatsache, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+ $a \approx_n b \;\leftrightarrow\; a \modulo n = b \modulo n$ 
+\\[0.2cm]
+gilt, können wir diese Formel auch als
+\\[0.2cm]
+\hspace*{1.3cm}
+$y \approx_n 0 \rightarrow \bigl(x \approx_n 0 \;\leftrightarrow\; (x + y) \approx_n 0\bigr)$ 
+\\[0.2cm]
+schreiben.  Diese Formel folgt aber aus der schon früher bewiesenen Tatsache, dass
+$\approx_n$ eine Kongruenz-Relation ist.  Für die Richtung ``$\rightarrow$'' ist das
+unmittelbar klar und für die Richtung ``$\leftarrow$'' ist nur zu bemerken, dass aus
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x + y) \approx_n 0$ \quad und \quad $y \approx_n 0$, 
+\\[0.2cm]
+aus der Verträglichkeit der Relation $\approx_n$ mit der Addition selbstverständlich auch
+die Verträglichkeit mit der Subtraktion folgt, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = (x + y) - y \approx_n 0 - 0 = 0$, \quad also $x \approx_n 0$
+\\[0.2cm]
+folgt. \qed
+
+
+\begin{Korollar} \label{korollar:ggt}
+Sind $x$ und $y$ positive natürliche Zahlen, so gilt
+\[ \texttt{ggt}(x + y, y) = \texttt{ggt}(x,y). \]  
+\end{Korollar}
+
+\noindent
+\textbf{Beweis}: Das vorige Lemma zeigt, dass die Menge der gemeinsamen Teiler
+der beiden Paare $\langle x, y \rangle$ und $\langle x + y, y \rangle$ identisch sind,
+dass also 
+\[ \texttt{gt}(x,y) = \texttt{gt}(x + y, y) \]
+gilt.  Wegen
+\[ \texttt{ggt}(x,y) = \max\bigl(\texttt{gt}(x,y)\bigr) = \max\bigl(\texttt{gt}(x+y,y)\bigr)
+   = \texttt{ggt}(x+y,y)
+\]
+folgt die Behauptung. \hspace*{\fill} $\Box$
+
+
+\begin{Satz}[Korrektheit des Euklidischen Algorithmus] \label{satz:euklid_korrekt}
+Der Aufruf $\texttt{ggtS}(x, y)$ des in Abbildung \ref{fig:ggt.stlx} gezeigten Algorithmus berechnet 
+für zwei positive natürliche Zahlen $x$ und $y$ den größten gemeinsamen Teiler von $x$ und $y$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x, y \in \mathbb{N}: \mathtt{ggtS}(x, y) = \textsl{ggt}(x,y)$.
+\end{Satz}
+
+\proof
+Wir führen den Beweis der Behauptung durch \emph{Wertverlaufs-Induktion}.
+\begin{enumerate}
+\item Induktions-Anfang: 
+
+      Die Berechnung bricht genau dann ab, wenn $x = y$ ist.  In diesem Fall
+      wird als Ergebnis $x$ zurückgegeben, wir haben also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathtt{ggtS}(x, y) = x$
+      \\[0.2cm]
+      Andererseits gilt dann 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{ggt}(x,y) = \textsl{ggt}(x,x) = x$,
+      \\[0.2cm]
+      denn $x$ ist offenbar der größte gemeinsame Teiler von $x$ und $x$.
+\item Induktions-Schritt:  Hier gibt es zwei Fälle zu betrachten, $x < y$ und $y < x$.
+      \begin{enumerate}
+      \item $x < y$:
+            In diesem Fall sagt die Induktions-Voraussetzung, dass das Ergebnis des rekursiven Aufrufs 
+            der Funktion $\texttt{ggtS}()$ korrekt ist, wir dürfen also voraussetzen, dass
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{ggtS}(x, y - x) = \textsl{ggt}(x, y - x)$
+            \\[0.2cm]
+            gilt.  Zu zeigen ist
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{ggtS}(x, y) = \textsl{ggt}(x, y)$.
+            \\[0.2cm]
+            Der Nachweis verläuft wie folgt:
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $
+            \begin{array}[t]{lcll}
+             \texttt{ggtS}(x, y)    & = & \mathtt{ggtS}(x, y - x)               &    
+                                          \mbox{(nach Definition von $\texttt{ggtS}(x,y)$)} 
+                                          \\[0.1cm]
+                                    & \stackrel{IV}{=} &
+                                          \textsl{ggt}(x, y - x)                    \\[0.1cm]
+                                    & = & \textsl{ggt}(y - x, x) &
+                                          \mbox{(denn $\textsl{ggt}(a,b) = \textsl{ggt}(b,a)$)} \\[0.1cm]
+                                    & = & \textsl{ggt}\bigl((y - x) + x, x\bigr) &
+                                          \mbox{(nach Korollar \ref{korollar:ggt})} \\[0.1cm]
+                                    & = & \textsl{ggt}(y, x)                        \\[0.1cm]
+                                    & = & \textsl{ggt}(x, y)                        
+            \end{array}
+            $
+            \\[0.2cm]
+            und das war zu zeigen.
+      \item $y < x$:  
+            Dieser Fall ist analog zu dem vorhergehenden Fall und wird daher nicht weiter
+            ausgeführt.  
+      \end{enumerate}
+\end{enumerate}
+Um nachzuweisen, dass das in Abbildung \ref{fig:ggt.stlx} gezeigte Programm tatsächlich
+funktioniert, müssen wir noch zeigen, dass es in jedem Fall terminiert.  Dies folgt aber sofort
+daraus, dass die Summe der Argumente $x + y$ bei jedem rekursiven Aufruf kleiner wird: 
+\begin{enumerate}
+\item Falls $x < y$ ist, haben wir für die Summe der Argument des  rekursiven Aufrufs
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x + (y - x) = y < x + y$ \quad falls $x > 0$ ist.
+\item Falls $y < x$ ist, haben wir für die Summe der Argument des  rekursiven Aufrufs
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x - y) + y = x < x + y$ \quad falls $y > 0$ ist.
+\end{enumerate}
+Falls nun $x$ und $y$ beim ersten Aufruf von $0$ verschieden sind, so werden die Summen bei jedem
+Aufruf kleiner, denn es ist auch sichergestellt, dass bei keinem rekursiven Aufruf eines der
+Argumente von $\textsl{ggt}()$ den Wert $0$ annimmt: Falls $x < y$ ist, ist $y - x > 0$ und
+wenn $y < x$ ist, dann ist $x - y > 0$ und im Fall $x = y$ bricht die Rekursion ab.
+\qed
+\vspace*{0.3cm}
+
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    ggtS2 := procedure(x, y) {
+        if (y == 0) {
+            return x;
+        }
+        return ggt(y, x % y); 
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Der verbesserte Euklidische Algorithmus.}
+\label{fig:ggt2.stlx}
+\end{figure}
+
+Der in Abbildung \ref{fig:ggt.stlx} gezeigte Algorithmus ist nicht sehr effizient. 
+Abbildung \ref{fig:ggt2.stlx} zeigt eine verbesserte Version.  Um die Korrektheit der verbesserten
+Version beweisen zu können, benötigen wir einen weiteren Hilfssatz.
+
+\begin{Lemma} Für $x,y \in \mathbb{Z}$, $n \in \mathbb{N}_1$ und $k \in \mathbb{N}$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+  $x \modulo n = 0 \wedge y \modulo n = 0 \;\leftrightarrow\; 
+   (x - k \cdot y) \modulo n = 0 \wedge y \modulo n = 0
+  $.
+\end{Lemma}
+
+\proof
+Berücksichtigen wir, dass beispielsweise die Gleichung $x \modulo n = 0$ äquivalent zu 
+$x \approx_n 0$ ist, so können wir die obige Behauptung auch in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$y \approx_n 0 \rightarrow \bigl(x \approx_n 0 \leftrightarrow (x - k \cdot y) \approx_n 0\bigr)$
+\\[0.2cm]
+schreiben.  Diese Behauptung folgt aber aus der
+Tatsache, dass die Relation $\approx_n$ eine Kongruenz-Relation ist. \qed
+
+
+\begin{Korollar} \label{korollar:ggt2}
+Für $x,y \in \mathbb{Z}$ und $y \not= 0$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{ggt}(x,y) = \textsl{ggt}(y, x \modulo y)$.
+\end{Korollar}
+
+\proof
+Nach dem Satz über die Divison mit Rest gibt es eine Zahl $k \in \mathbb{Z}$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = k \cdot y + x \modulo y$
+\\[0.2cm]
+gilt.  Diese Gleichung formen wir zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \modulo y = x - k \cdot y$
+\\[0.2cm]
+um.  Dann haben wir für beliebige $n \in \mathbb{N}$ die folgende Kette von Äquivalenzen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lll}
+                & (x \modulo y)   \modulo n = 0 \wedge y \modulo n = 0   \\[0.2cm]
+\Leftrightarrow & (x - k \cdot y) \modulo n = 0 \wedge y \modulo n = 0   \\[0.2cm]
+\Leftrightarrow & x \modulo n = 0 \wedge y \modulo n = 0               &
+                  \mbox{nach der letzten Aufgabe}                        
+\end{array}
+$
+\\[0.2cm]
+Damit sehen wir aber, dass die Zahlen $x \modulo n$ und $y$ die selben gemeinsamen Teiler haben wie
+die Zahlen $x$ und $y$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{gt}(x \modulo n, y) = \textsl{gt}(x,y)$.
+\\[0.2cm]
+Daraus folgt sofort
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{ggt}(x \modulo n, y) = \textsl{ggt}(x,y)$
+\\[0.2cm]
+und wegen $\textsl{ggt}(a,b) = \textsl{ggt}(b,a)$ ist das die Behauptung. \qed
+
+\begin{Satz}[Korrektheit des verbesserten Euklidischen Algorithmus] \hspace*{\fill} \\
+Für die in Abbildung \ref{fig:ggt2.stlx} gezeigte Funktion $\textsl{ggtS2}()$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\texttt{ggtS2}(x,y) = \textsl{ggt}(x,y)$ \quad für $x,y \in \mathbb{N}$.
+\end{Satz}
+
+\proof
+Wir führen den Beweis wieder durch eine Wertverlaufs-Induktion.
+\begin{enumerate}
+\item Induktions-Anfang: $y = 0$.  In diesem Fall gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathtt{ggtS2}(x, 0) = x = \textsl{ggt}(x, 0)$.
+\item Induktions-Schritt: Falls $y \not= 0$ ist, haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+        \mathtt{ggtS2}(x, y) & = & \mathtt{ggtS2}(y, x \modulo y)              \\[0.2cm]
+                             & \stackrel{IV}{=} & \textsl{ggt}(y, x \modulo y) \\[0.2cm]
+                             & = & \textsl{ggt}(x, y),
+      \end{array}
+      $
+      \\[0.2cm]
+      wobei wir im letzten Schritt das Korollar \ref{korollar:ggt2} benutzt haben. 
+\end{enumerate}
+Es ist noch zu zeigen, dass ein Aufruf der Prozedur $\texttt{ggtS2}(x, y)$ für beliebige
+$x,y \in \mathbb{N}$ terminiert.  Wir können ohne Beschränkung der Allgemeinheit anehmen,
+dass $x \geq y$ ist, denn falls $x < y$ ist, dann gilt $x \modulo y = x$ und damit werden
+dann bei dem ersten rekursiven Aufruf $\mathtt{ggt}(y, x \modulo y)$ die Argumente $x$ und
+$y$ vertauscht.
+
+Sei also jetzt $y \leq x$.  Wir zeigen, dass diese Ungleichung dann auch bei jedem
+rekursiven Aufruf bestehen bleibt, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \modulo y < y$.
+\\[0.2cm]
+Weiter sehen wir, dass unter der Voraussetzung $y \leq x$ die Summe der Argumente bei
+jedem rekursiven Aufruf kleiner wird,
+denn wenn $y \leq x$ ist, haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$y + x \modulo y < y + x$, \quad da $x \modulo y < y \leq x$ ist.
+\\[0.2cm]
+Da die Summe zweier natürlicher Zahlen nur endlich oft verkleinert werden kann, 
+terminiert der Algorithmus.  
+\qed
+
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    eggt := procedure(x, y) {
+        if (y == 0) {
+            return [ 1, 0 ];
+        }
+        q := x / y;
+        r := x % y;
+        [ s, t ] := eggt(y, r);
+        return [ t, s - q * t ]; 
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Der erweiterte Euklidische Algorithmus.}
+\label{fig:eggt.stlx}
+\end{figure}
+
+Der Euklidische Algorithmus kann so erweitert werden, dass für gegebene Zahlen $x,y \in \mathbb{N}$
+zwei Zahlen $\alpha,\beta \in \mathbb{Z}$ berechnet werden, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\alpha \cdot x + \beta \cdot y = \textsl{ggt}(x, y)$
+\\[0.2cm]
+gilt.  Abbildung \ref{fig:eggt.stlx} zeigt eine entsprechende Erweiterung.
+
+\begin{Satz}[Korrektheit des erweiterten Euklidischen Algorithmus] \hspace*{\fill} \\ 
+  Die in Abbildung \ref{fig:eggt.stlx} gezeigte Funktion $\texttt{eggt}()$ erfüllt
+  folgende Spezifikation:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\forall x, y \in \mathbb{N}: \bigl(
+   \mathtt{eggt}(x, y) = [ \alpha, \beta ] \;\Rightarrow\; 
+   \alpha \cdot x + \beta \cdot y = \textsl{ggt}(x,y)\bigr)
+  $.
+\end{Satz}
+
+\proof
+Wir führen den Beweis durch Wertverlaufs-Induktion.
+\begin{enumerate}
+\item Induktions-Anfang: $y = 0$.
+
+      Es gilt $\mathtt{eggt}(x, 0) = [ 1, 0 ]$.  Also haben wir $\alpha = 1$ und $\beta = 0$. 
+      Offensichtlich gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha \cdot x + \beta \cdot y = 1 \cdot x + 0 \cdot y = x = \textsl{ggt}(x, 0)$.
+      \\[0.2cm]
+      und damit ist die Behauptung in diesem Fall gezeigt. 
+\item Induktions-Schritt: $y \not= 0$.
+
+      Nach Induktions-Voraussetzung wissen wir, dass für den rekursiven Aufruf $\textsl{eggt}(y, r)$
+      die Gleichung
+      \begin{equation}
+        \label{eq:eggt1}
+        s \cdot y + t \cdot r = \textsl{ggt}(y, r)
+      \end{equation}
+      richtig ist.  Nach dem Programm gilt $r = x \modulo y$ und nach der Definition
+      des Modulo-Operators ist $x \modulo y = x - (x \div y) \cdot y$.
+      Setzen wir dies in Gleichung (\ref{eq:eggt1}) ein, so erhalten wir
+      \begin{equation}
+        \label{eq:eggt2}
+        s \cdot y + t \cdot \bigl(x - (x \div y) \cdot y\bigr) = \textsl{ggt}(y, x \modulo y).        
+      \end{equation}
+      Stellen wir die linke Seite dieser Gleichung um und berücksichtigen weiter, dass nach 
+      Korollar \ref{korollar:ggt2} $\textsl{ggt}(y, x \modulo y) = \textsl{ggt}(x, y)$ gilt,
+      so vereinfacht sich Gleichung (\ref{eq:eggt2}) zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $t \cdot x + \bigl(s - (x \div y)\cdot t\bigr) \cdot y = \textsl{ggt}(x, y)$.        
+      \\[0.2cm]
+      In der Funktion $\mathtt{eggt}()$ ist $q$ als $x / y$ definiert, wobei dort der Operator
+      ``\texttt{/}''  aber
+      für die ganzzahlige Division mit Rest steht, so dass tatsächlich $q = x \div y$ gilt.  Damit
+      haben wir 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $t \cdot x + (s - q \cdot t) \cdot y = \textsl{ggt}(x, y)$
+      \\[0.2cm]
+      und das ist wegen $\alpha = t$ und $\beta = s - q \cdot t$ die Behauptung. 
+\end{enumerate}
+Der Nachweis der Terminierung ist der Selbe wie bei der Funktion $\textsl{ggtS2}()$ und
+wird daher nicht noch einmal angegeben. \qed
+
+
+\section{Der Fundamentalsatz der Arithmetik}
+\begin{Satz}[Lemma von Euler] \lb
+Es seien $a$ und $b$ natürliche Zahlen und $p$ sei eine Primzahl.  Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$p \mid a \cdot b \;\Rightarrow\; p \mid a  \vee p \mid b$.
+\\[0.2cm]
+In Worten: Wenn $p$ das Produkt zweier Zahlen teilt, dann muss $p$ eine der beiden Zahlen
+des Produkts teilen.  
+\end{Satz}
+
+\proof
+Wenn $p$ das Produkt $a \cdot b$ teilt, dann gibt es eine natürliche Zahl $c$, so dass
+\begin{equation}
+  \label{eq:leuklid1}
+  c \cdot p = a \cdot b
+\end{equation}
+ist.  Wir nehmen an, dass $p$ kein Teiler von $a$ ist.  Dann müssen wir zeigen, dass $p$ eine
+Teiler von $b$ ist.  Wenn $p$ kein Teiler von $a$ ist, dann folgt aus der Tatsache, dass
+$p$ eine Primzahl ist, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{ggt}(p, a) = 1$
+\\[0.2cm]
+gilt.  Nach dem Lemma von Bez\'out (Satz \ref{satz:bezout}) gibt es also ganze Zahlen $x$
+und $y$, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$1 = x \cdot p + y \cdot a$
+\\[0.2cm]
+gilt.  Wir multiplizieren diese Gleichung mit $b$ und erhalten
+\\[0.2cm]
+\hspace*{1.3cm}
+$b = x \cdot p \cdot b + y \cdot a \cdot b$.
+\\[0.2cm]
+An dieser Stelle nutzen wir aus, dass nach Gleichung (\ref{eq:leuklid1}) 
+$a \cdot b = c \cdot p$ gilt und formen die obige Gleichung für $b$ wie folgt um:
+\\[0.2cm]
+\hspace*{1.3cm}
+$b = x \cdot p \cdot b + y \cdot c \cdot p$.
+\\[0.2cm]
+Klammern wir hier $p$ aus, so haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$b = (x \cdot b + y \cdot c) \cdot p$.
+\\[0.2cm]
+und daraus sehen wir, dass $p$ ein Teiler von $b$ ist, was zu zeigen war. \qed
+\vspace*{0.3cm}
+
+Eine \emph{Primfaktor-Zerlegung} einer natürlichen Zahl $n$ ist ein Produkt der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$p_1 \cdot p_2 \cdot\; \dots \;\cdot p_k$,
+\\[0.2cm]
+wobei alle Faktoren $p_1$, $\cdots$, $p_k$ Primzahlen sind.  Beispielsweise ist
+\\[0.2cm]
+\hspace*{1.3cm}
+$2 \cdot 3 \cdot 3 \cdot 5$
+\\[0.2cm]
+eine Primfaktor-Zerlegung der Zahl 90.  Üblicherweise fassen wir dabei noch gleiche Faktoren
+zusammen, in dem oberen Beispiel würden wir also
+\\[0.2cm]
+\hspace*{1.3cm}
+$90 = 2 \cdot 3^2 \cdot 5$
+\\[0.2cm]
+schreiben.  Sind $p_1$, $\cdots$, $p_k$ verschiedene Primzahlen, die der Größe nach angeordnet sind,
+gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$p_1 < p_2 < \cdots < p_{i} < p_{i+1} < \cdots < p_k$,
+\\[0.2cm]
+und sind $e_1$, $\cdots$, $e_k$ positive natürliche Zahl, so nennen wir einen Ausdruck der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\prod\limits_{i=1}^k  p_i^{e_i} = p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k}$
+\\[0.2cm]
+eine \emph{kanonische Primfaktor-Zerlegung}.  Die Tasache, dass es für jede natürliche Zahl, die
+größer als $1$ ist, eine kanonische Primfaktor-Zerlegung gibt, die darüber hinaus noch eindeutig
+ist,  ist ein wesentliches Ergebnis der elementaren Zahlentheorie.
+
+
+\begin{Theorem}[Fundamentalsatz der Arithmetik]
+\label{theorem:fundamental-arithmetik} \lb
+  Es sei $n$ eine natürliche Zahlen größer als $1$.  Dann läßt sich $n$ auf genau eine Weise in der Form
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $n = p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k}$ \quad mit Primzahlen $p_1 < p_2 < \cdots < p_k$
+  \\[0.2cm]
+  und positiven ganzzahligen Exponenten $e_1, \cdots, e_n$ schreiben.
+\end{Theorem}
+
+\proof
+Wir zeigen zunächst die Existenz einer Primfaktor-Zerlegung für jede natürliche Zahl $n$ größer als
+1.  Wir führen diesen Nachweis durch Induktion nach $n$.
+\begin{enumerate}
+\item[I.A.] $n=2$:
+
+      Da $2$ eine Primzahl ist, können wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $n = 2^1$
+      \\[0.2cm]
+      schreiben und haben damit eine kanonische Primfaktor-Zerlegung gefunden.
+\item[I.S.] $2,\cdots,n\!-\!1 \mapsto n$: 
+
+      Wir führen eine Fallunterscheidung durch.
+      \begin{enumerate}
+      \item Fall: $n$ ist eine Primzahl.
+
+            Dann ist $n = n^1$  bereits eine kanonische Primfaktor-Zerlegung von $n$.
+      \item Fall: $n$ ist keine Primzahl.  
+
+            Dann gibt es natürliche Zahlen $a$ und $b$ mit
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $n = a \cdot b$ \quad und $a > 1$ und $b > 1$,
+            \\[0.2cm]
+            denn wenn es keine solche Zerlegung gäbe, wäre $n$ eine Primzahl. Damit ist klar, dass
+            sowohl $a < n$ als auch $b < n$ gilt.  Nach Induktions-Voraussetzung gibt es also
+            Primfaktor-Zerlegungen für $a$ und $b$:
+            \\[0.2cm]
+            \hspace*{1.3cm}
+             $a = p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k}$ \quad und \quad
+             $b = q_1^{f_1} \cdot \;\dots\; \cdot q_l^{f_l}$.
+            \\[0.2cm]
+            Multiplizieren wir diese Primfaktor-Zerlegungen, sortieren die Faktoren geeignet und
+            fassen wir dann noch Faktoren mit der gleichen Basis zusammen, so erhalten wir offenbar
+            eine Primfaktor-Zerlegung von $a \cdot b$ und damit von $n$.
+      \end{enumerate}
+\end{enumerate}
+Um den Beweis abzuschließen zeigen wir, dass die Primfaktor-Zerlegung eindeutig sein muss.
+Diesen Nachweis führen wir indirekt und nehmen an, dass $n$ die kleinste natürliche Zahl ist, die
+zwei verschiedene Primfaktor-Zerlegung hat, beispielsweise die beiden Zerlegungen
+\begin{equation}
+  \label{eq:hauptsatz-arithmetik1}
+n = p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k} \quad \mbox{und} \quad
+n = q_1^{f_1} \cdot \;\dots\; \cdot q_l^{f_l}.  
+\end{equation}
+Zunächst stellen wir fest, dass dann die Mengen
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{p_1, \cdots, p_k\}$ \quad und \quad
+$\{q_1, \cdots, q_l\}$ 
+\\[0.2cm]
+disjunkt sein müssen, denn wenn beispielsweise $p_i = q_j$ wäre, könnten wir die
+Primfaktor-Zerlegung durch $p_i$ teilen und hätten dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$p_1^{e_1} \cdot \;\dots\; \cdot p_i^{e_i-1} \cdot \;\dots\; \cdot p_k^{e_k} = n/p_i = n/q_j
+ = q_1^{f_1} \cdot \;\dots\; \cdot q_j^{f_j-1} \cdot \;\dots\; \cdot q_l^{f_l}$.
+\\[0.2cm]
+Damit hätte auch die Zahl $n/p_i$, die offenbar kleiner als $n$ ist, zwei verschiedene
+Primfaktor-Zerlegungen, was im Widerspruch zu 
+der Annahme steht, dass $n$ die kleinste Zahl mit zwei verschiedenen Primfaktor-Zerlegungen ist.
+Wir sehen also, dass die Primfaktoren $p_1$, $\cdots$, $p_k$ und \\ $q_1$, $\cdots$, $q_l$ 
+voneinander verschieden sein müssen.  Nun benutzen wir das Lemma von Euklid:  
+Aus 
+\\[0.2cm]
+\hspace*{1.3cm}
+$p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k} = q_1^{f_1} \cdot \;\dots\; \cdot q_l^{f_l}$
+\\[0.2cm]
+folgt zunächst, dass $p_1$ ein Teiler von dem Produkt $q_1^{f_1} \cdot \;\dots\; \cdot q_l^{f_l}$ ist.
+Nach dem Lemma von Euklid folgt nun, dass $p_1$ entweder $q_1^{f_1}$ oder 
+$q_2^{f_2} \cdot \;\dots\; \cdot q_l^{f_l}$ teilt.  Da $p_1$ von $q_1$ verschieden ist, kann $p_1$ kein
+Teiler von $q_1^{f_1}$ sein.  Durch Iteration dieses Arguments sehen wir, dass $p_1$ auch kein
+Teiler von $q_2^{f_2}$, $\cdots$, $q_{l-1}^{f_{l-1}}$ ist.  Schließlich bleibt als einzige
+Möglichkeit,  dass $p_1$ ein Teiler von
+ $q_l^{f_l}$ ist, was aber wegen $p_1 \not= q_l$ ebenfalls unmöglich ist.
+Damit haben wir einen Widerspruch zu der Annahme, dass $n$
+zwei verschiedene Primfaktor-Zerlegungen besitzt und der Beweis ist abgeschlossen.
+\qed
+\pagebreak
+
+\section{Die Eulersche $\varphi$-Funktion}
+Es sei $n \in \mathbb{N}$ mit $n > 0$ gegeben.  Die \emph{multiplikative Gruppe} $\mathbb{Z}_n^*$
+ist durch
+\\[0.2cm]
+\hspace*{1.3cm}
+$\zns{n} := \{ x \in \zn{n} \mid \exists y \in \zn{n} : x \cdot y \approx_n 1 \}$
+\\[0.2cm]
+definiert.  Die Menge $\zns{n}$ enthält also genau die Zahlen aus $\zn{n}$, die
+bezüglich der Multiplikation ein Inverses modulo $n$ haben.  Beispielsweise gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_5^* = \{ 1, 2, 3, 4 \}$,
+\\[0.2cm]
+denn alle Zahlen der Menge $\{ 1, 2, 3, 4 \}$ haben ein Inverses bezüglich der Multiplikation modulo
+$5$.
+\begin{enumerate}
+\item Wir haben $1 \cdot 1 \approx_5 1$, also ist $1$ das multiplikative Inverse modulo 5 von $1$.
+\item Wir haben $2 \cdot 3 = 6 \approx_5 1$, also ist $3$ das multiplikative Inverse modulo 5 von $2$.
+\item Wir haben $3 \cdot 2 = 6 \approx_5 1$, also ist $2$ das multiplikative Inverse modulo 5 von $3$.
+\item Wir haben $4 \cdot 4 = 16 \approx_5 1$, also ist $4$ das multiplikative Inverse modulo 5 von $4$.
+\end{enumerate}
+Auf der anderen Seite haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_4^* = \{ 1, 3 \}$,
+\\[0.2cm]
+denn $3 \cdot 3 = 9 \approx_4 1$, so dass die Zahl $3$ das multiplikative Inverse modulo 4 von $3$
+ist, aber die Zahl $2$ hat kein multiplikative Inverses modulo 4, denn wir haben $2 \cdot 2 = 4 \approx_4 0$.
+Generell kann eine Zahl $x$, für die es ein $y \not\approx_n 0$ mit
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \cdot y \approx_n 0$ 
+\\[0.2cm]
+gibt, kein multiplikatives Inverses haben, denn falls $z$ ein solches Inverses wäre, so könnten wir
+die obige Gleichung einfach von links mit $z$ multiplizieren und hätten dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$z \cdot x \cdot y \approx_n z \cdot 0$,
+\\[0.2cm]
+woraus wegen $z \cdot x \approx_n 1$ sofort $y \approx_n 0$ folgen würde, was im Widerspruch zu der
+Voraussetzung $y \not\approx_n 0$ steht.
+
+\remark
+Wir haben oben von der \emph{multiplikativen Gruppe} $\zns{n}$ gesprochen.  Wenn wir von
+einer Gruppe sprechen, dann meinen wir damit genau genommen nicht nur die Menge $\zns{n}$
+sondern die Struktur 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\langle \zns{n}, 1, \cdot_n \rangle$,
+\\[0.2cm]
+wobei die Funktion $\cdot_n : \zns{n} \times \zns{n} \rightarrow \zns{n}$ durch 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \cdot_n y := (x \cdot y) \modulo n$
+\\[0.2cm]
+definiert ist.  Dass die Menge $\zns{n}$ mit der so definierten Multiplikation tatsächlich
+zu einer Gruppe wird, folgt letzlich aus der Verträglichkeit der Relation $\approx_n$ mit der
+gewöhnlichen Multiplikation.  Die Details überlasse ich Ihnen in der folgenden Aufgabe.
+
+\exercise
+Zeigen Sie, dass die oben definierte Struktur $\langle \zns{n}, 1, \cdot_n \rangle$
+eine Gruppe ist.
+
+
+\begin{Definition}[Eulersche $\varphi$-Funktion] Für alle natürlichen Zahlen $n > 1$ definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi(n) := \textsl{card}\bigl(\zns{n}\bigr)$.
+\\[0.2cm]
+Um spätere Definitionen zu vereinfachen,  setzen wir außerdem $\varphi(1) := 1$. \qed
+\end{Definition}
+
+\begin{Satz}[Existenz von multiplikativen Inversen modulo $n$] 
+  \label{satz:multiplikatives-inverses}
+  \hspace*{\fill} \\
+  Es sei $n \in \mathbb{N}$ mit $n \geq 1$.
+  Eine Zahl $a \in \zn{n}$ hat genau dann ein multiplikatives Inverses modulo $n$, wenn
+  $\textsl{ggt}(a, n) = 1$ gilt.
+\end{Satz}
+
+\noindent
+\textbf{Beweis}: Wir zerlegen den Beweis in zwei Teile.
+\begin{enumerate}
+\item ``$\Rightarrow$'':  Wir nehmen an, dass $a$ ein multiplikatives Inverses hat und zeigen,
+      dass daraus $\textsl{ggt}(a,n) = 1$ folgt.
+
+      Bezeichnen wir das multiplikative Inverse modulo $n$ von $a$ mit $b$, so gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b \cdot a \approx_n 1$
+      \\[0.2cm]
+      Nach Definition der Relation $\approx_n$ gibt es dann eine natürliche Zahl $k$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b \cdot a = 1 + k \cdot n$
+      \\[0.2cm]
+      gilt.  Daraus folgt sofort
+      \begin{equation}
+        \label{eq:ba-minus-kn}
+      b \cdot a - k \cdot n = 1.         
+      \end{equation}
+      Sei nun $d$ ein gemeinsamer Teiler von $a$ und $n$.  Dann ist $d$ offenbar auch ein
+      gemeinsamer Teiler von $b \cdot a$ und $k \cdot n$ und weil allgemein gilt, dass ein
+      gemeinsamer Teiler zweier Zahlen $x$ und $y$ auch ein Teiler der Differenz $x - y$ ist, 
+      können wir folgern, dass $d$ auch ein Teiler von $b \cdot a - k \cdot n$ ist:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $d \teilt b \cdot a - k \cdot n$.
+      \\[0.2cm]
+      Aus Gleichung (\ref{eq:ba-minus-kn}) folgt nun, dass $d$ auch ein Teiler von $1$ ist.
+      Damit haben wir gezeigt, dass $a$ und $n$ nur den gemeinsamen Teiler $1$ haben:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{ggt}(a, n) = 1$.
+\item ``$\Leftarrow$'': Jetzt nehmen wir an, dass $\textsl{ggt}(a, n) = 1$ ist und zeigen, dass
+      $a$ dann ein multiplikatives Inverses modulo $n$ besitzt.
+
+      Sei also $\textsl{ggt}(a, n) = 1$.  Nach dem Lemma von Bez\'out (Satz \ref{satz:bezout})
+      gibt es also ganze Zahlen $x$ und $y$, so dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \cdot a + y \cdot n = 1$.
+      \\[0.2cm]
+      gilt. Stellen wir diese Gleichung um, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \cdot a = 1 - y \cdot n \approx_n 1$, \quad also $x \cdot a \approx_n 1$.
+      \\[0.2cm]
+      Damit ist $x$ das multiplikative Inverse von $a$ modulo $n$. \qed
+\end{enumerate}
+
+\begin{Korollar} \label{korollar:phi}
+Für alle natürlichen Zahlen $n > 1$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi(n) = \textsl{card}\bigl(\{x \in \zn{n} \mid \textsl{ggt}(x, n) = 1 \}\bigr)$. 
+\end{Korollar}
+
+
+\noindent
+Als Konsequenz des letzten Satzes können wir nun die Eulersche $\varphi$-Funktion für Potenzen von
+Primzahlen berechnen.
+
+\begin{Satz}[Berechnung der $\varphi$-Funktion für Primzahl-Potenzen]
+\label{satz:phi_primzahl} 
+Es sei $p$ eine Primzahl und $n$ eine positive natürliche Zahl.  Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi\bigl(p^n\bigr) = p^{n-1} \cdot (p - 1)$.  
+\end{Satz}
+
+\proof
+Nach Satz \ref{satz:multiplikatives-inverses} müssen wir zählen, welche Zahlen in der Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_{p^n} = \{0, 1, \cdots, p^n-1\}$ 
+\\[0.2cm]
+zu der Zahl $p^{n}$ teilerfremd sind, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi\bigl(p^n\bigr) = 
+ \textsl{card}\bigl(\{ x \in \mathbb{Z}_{p^n} \mid \textsl{ggt}(x, p^n) = 1 \}\bigr)
+$.
+\\[0.2cm]
+Wir definieren daher die Menge $A$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \{ x \in \mathbb{Z}_{p^n} \mid \textsl{ggt}(x, p^n) = 1 \}$.
+\
+\\[0.2cm]
+Weiter ist es nützlich, das Komplement dieser Menge bezüglich $\mathbb{Z}_{p^n}$ zu betrachten. Daher
+definieren wir 
+\\[-0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lrl}
+B & := & \mathbb{Z}_{p^n} \backslash A \\[0.1cm]
+  &  = & \mathbb{Z}_{p^n} \backslash \{ x \in \mathbb{Z}_{p^n} \mid \textsl{ggt}(x, p^n) = 1 \} \\[0.1cm]
+  &  = & \{ x \in \mathbb{Z}_{p^n} \mid \textsl{ggt}(x, p^n) > 1 \}.
+\end{array}
+$
+\\[0.2cm]
+Die Menge $B$ enthält also die Zahlen aus $\mathbb{Z}_{p^n}$, die mit $p^n$ einen gemeinsamen Teiler
+haben.  Da $p$ eine Primzahl ist, enthält die Menge $B$ folglich genau die Vielfachen  der Primzahl
+$p$, die kleiner als $p^n$ sind.  Daher können wir $B$ wie folgt schreiben:
+\\[0.2cm]
+\hspace*{1.3cm}
+$B := \bigl\{ y \cdot p \mid y \in \{ 0, 1, \cdots, p^{n-1} - 1\} \bigr\}$.
+\\[0.2cm]
+Offenbar gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}(B) = \textsl{card}\bigl(\{ 0, 1, \cdots, p^{n-1} - 1\}\bigr) = p^{n-1}$.
+\\[0.2cm]
+Andererseits folgt aus der Gleichung $A = \mathbb{Z}_{p^n} \backslash B$ sofort
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi\bigl(p^n\bigr) = \textsl{card}(A) = \textsl{card}\bigl(\mathbb{Z}_{p^n}\bigr) - \textsl{card}(B)
+                  = p^n - p^{n-1} = p^{n-1} \cdot (p - 1)$.
+\\[0.2cm]
+Damit ist der Beweis abgeschlossen. \qed
+\vspace*{0.3cm}
+
+Um  das Produkt $\varphi(p \cdot q)$ für zwei verschiedene Primzahlen $p$ und $q$ berechnen zu
+können, benötigen wir den folgenden Satz.
+
+\begin{Satz}[Chinesischer Restesatz, 1.~Teil] \hspace*{\fill} \\
+Es seien $m,n \in \mathbb{N}$ natürliche Zahlen größer als $1$ und es gelte $\textsl{ggt}(m,n) =1$.
+Weiter gelte $a \in \zn{m}$ und $b \in \zn{n}$. 
+Dann gibt es genau eine Zahl $x \in \zn{m \cdot n}$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \approx_m a$ \quad und \quad $x \approx_n b$
+\\[0.2cm]
+gilt.
+\end{Satz}
+
+\proof
+Wir zerlegen den Beweis in zwei Teile.  
+Zunächst zeigen wir, dass tatsächlich ein $x \in \zn{m \cdot n}$ existiert, das die beiden
+Gleichungen $x \approx_m a$ und  $x \approx_n b$ erfüllt sind.  Anschließend zeigen wir,
+dass dieses $x$ eindeutig bestimmt ist.
+\begin{enumerate}
+\item Aus der Voraussetzung,
+      dass $\textsl{ggt}(m,n) = 1$ folgt nach dem Satz über das multiplikative Inverse modulo
+      $n$ (Satz \ref{satz:multiplikatives-inverses}), dass die Zahl $m$ ein multiplikatives
+      Inverses modulo $n$ und die Zahl $n$ ein multiplikatives
+      Inverses modulo $m$ hat.  Bezeichnen wir diese Inversen mit $u$ bzw.~$v$, so gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $m \cdot u \approx_n 1$ \quad und \quad $n \cdot v \approx_m 1$.
+      \\[0.2cm]
+      Wir definieren nun
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x := (a \cdot n \cdot v + b \cdot m \cdot u) \modulo (m \cdot n)$.
+      \\[0.2cm]
+      Nach dem Satz über die Division mit Rest hat $x$ dann die Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x = a \cdot n \cdot v + b \cdot m \cdot u - k \cdot (m \cdot n)$
+      \\[0.2cm]
+      mit einem geeigneten $k$.  Nach Definition von $x$ ist klar, dass 
+      $x \in \mathbb{Z}_{m \cdot n}$ ist.  Einerseits folgt aus der Verträglichkeit der Relation
+      $\approx_m$ mit Addition und Multiplikation und der Tatsache, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $m \modulo m = 0$, \quad also $m \approx_m 0$
+      \\[0.2cm]
+      ist, dass auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b \cdot m \cdot u - k \cdot (m \cdot n) \approx_m 0$
+      \\[0.2cm]
+      gilt.  Andererseits folgt aus $n \cdot v \approx_m  1$, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \cdot n \cdot v \approx_m a$ 
+      \\[0.2cm]
+      gilt, so dass wir insgesamt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x = a \cdot n \cdot v + b \cdot m \cdot u - k \cdot (m \cdot n) \approx_m a$
+      \\[0.2cm]
+      haben.  Analog sehen wir, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \cdot n \cdot v - k \cdot (m \cdot n) \approx_n 0$
+      \\[0.2cm]
+      gilt.  Weiter folgt aus $m \cdot u \approx_n 1$, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $b \cdot m \cdot u \approx_m b$ 
+      \\[0.2cm]
+      gilt, so dass wir außerdem
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x = b \cdot m \cdot u + a \cdot n \cdot v - k \cdot (m \cdot n) \approx_n b$
+      \\[0.2cm]
+      haben. 
+\item Es bleibt die Eindeutigkeit von $x$ zu zeigen.  Wir nehmen dazu an, dass für 
+      $x_1, x_2\in \zn{m \cdot n}$ sowohl
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \approx_m a$ und $x_1 \approx_n b$, \quad als auch \quad
+      $x_2 \approx_m a$ und $x_2 \approx_n b$
+      \\[0.2cm]
+      gelte.  O.B.d.A.~gelte weiter $x_1 \leq x_2$.  Wir wollen zeigen, dass dann $x_1 = x_2$ gelten muss.
+      Aus $x_1 \approx_m a$ und $x_2 \approx_m a$ folgt $x_1 \approx_m x_2$.  Also gibt es
+      eine Zahl $k \in \mathbb{N}$, so 
+      dass 
+      \begin{equation}
+        \label{eq:china1}
+        x_2 = x_1 + k \cdot m  
+      \end{equation}
+      gilt.  Aus $x_1 \approx_n b$ und $x_2 \approx_n b$ folgt $x_1 \approx_n x_2$.  Also gibt es eine Zahl 
+      $l \in \mathbb{N}$, so dass 
+      \begin{equation}
+        \label{eq:china2}
+        x_2 = x_1 + l \cdot n  
+      \end{equation}
+      gilt.  Aus den Gleichungen  (\ref{eq:china1}) und (\ref{eq:china2}) folgt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $k \cdot m = x_2 - x_1 = l \cdot n$.
+      \\[0.2cm]
+      Da $m$ und $n$ teilerfremd sind, folgt daraus, dass $m$ ein Teiler von $l$ ist.  Es gibt also eine
+      natürliche Zahl $i$, so dass $l = i \cdot m$ ist.  Damit haben wir dann insgesamt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_2 - x_1 = i \cdot m \cdot n$.
+      \\[0.2cm]
+      Da andererseits sowohl $x_2$ als auch $x_1$ Elemente von $\zn{m \cdot n}$ sind, muss
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_2 - x_1 < m \cdot n$
+      \\[0.2cm]
+      sein.  Da $i$ eine natürlich Zahl ist, geht das nur, wenn $i = 0$ ist.  Wir haben also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_2 - x_1 = 0 \cdot m \cdot n = 0$
+      \\[0.2cm]
+      und folglich gilt $x_2 = x_1$. \qed
+\end{enumerate}
+
+
+\begin{Korollar}[Chinesischer Restesatz, 2.~Teil] \label{satz:china2} \lb
+Sind $m,n \in \mathbb{N}$ mit $\textsl{ggt}(m,n) =1$ und definieren
+ wir die Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pi : \zn{m \cdot n} \rightarrow \zn{m} \times \zn{n}$ \quad durch \quad
+$\pi(x) := \langle x \modulo m, x \modulo n \rangle$,
+\\[0.2cm]
+so ist Funktion $\pi$ bijektiv.  
+\end{Korollar}
+
+\proof
+Wir zeigen Injektivität
+und Surjektivität der Funktion getrennt.
+\begin{enumerate}
+\item Injektivität:  Es seien $x_1,x_2 \in \zn{m \cdot n}$ und es gelte $\pi(x_1) = \pi(x_2)$.  Nach
+      Definition der Funktion $\pi$ gilt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \modulo m = x_2 \modulo m$ \quad und \quad 
+      $x_1 \modulo n = x_2 \modulo n$.
+      \\[0.2cm]
+      Wir definieren $a := x_1 \modulo m$ und $b := x_1 \modulo n$ und haben dann sowohl
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \approx_m a$ \quad und \quad $x_1 \approx_n b$
+      \\[0.2cm]
+      als auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_2 \approx_m a$ \quad und \quad $x_2 \approx_n b$.
+      \\[0.2cm]
+      Nach dem Chinesischen Restesatz
+      gibt es aber nur genau ein $x \in \zn{m \cdot n}$, welches die beiden Gleichungen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \approx_m a$ \quad und \quad $x \approx_n b$.
+      \\[0.2cm]
+      gleichzeitig erfüllt.  Folglich muss $x_1 = x_2$ sein.
+\item Surjektivität: Nun sei $\langle a, b \rangle \in \zn{m} \times \zn{n}$ gegeben.  Wir müssen
+      zeigen, dass es ein $x \in \zn{m \cdot n}$ gibt, so dass $\pi(x) = \langle a, b \rangle$
+      gilt.  Nach dem Chinesischen Restesatz existiert ein $x \in \zn{m \cdot n}$, so dass
+      \\[-0.2cm]
+      \hspace*{1.3cm}
+      $x \approx_m a$ \quad und \quad $x \approx_n b$
+      \\[0.2cm]
+      gilt.  Wegen $a \in \zn{m}$ und $b \in \zn{n}$ gilt $a \modulo m = a$ und $b \modulo n = b$
+      und daher können wir die beiden Gleichungen auch 
+      in der Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \modulo m = a$ \quad und \quad $x \modulo n = b$
+      \\[0.2cm]
+      schreiben.  Damit gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pi(x) = \langle x \modulo m, x \modulo n \rangle = \langle a, b \rangle$
+      \\[0.2cm]
+      und der Beweis ist abgeschlossen.  \qed
+\end{enumerate}
+
+\exercise
+Versuchen Sie den Chinesischen Restesatz so zu verallgemeinern, dass er für eine beliebige
+Liste $[m_1, m_2, \cdots, m_k]$ von paarweise teilerfremden Zahlen gilt und beweisen
+Sie den verallgemeinerten Satz.
+
+\exercise
+Implementieren Sie ein Programm, das mit Hilfe des Chinesischen Restesatzes Systeme von
+Kongruenzen der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \modulo m_1 = a_1$, 
+$x \modulo m_2 = a_2$, $\cdots$,
+$x \modulo m_k = a_k$
+\\[0.2cm]
+lösen kann und lösen Sie mit diesem Programm das folgende Rätsel.
+\vspace*{0.2cm}
+
+\begin{minipage}[t]{0.9\linewidth}
+  A girl was carrying a basket of eggs, and a man riding a horse hit
+  the basket and broke all the eggs. Wishing to pay for the damage, he
+  asked the girl how many eggs there were. The girl said she did not
+  know, but she remembered that when she counted them by twos, there
+  was one left over; when she counted them by threes, there were two
+  left over; when she counted them by fours, there were three left
+  over; when she counted them by fives, there were four left; and when
+  she counted them by sixes, there were five left over. Finally, when
+  she counted them by sevens, there were none left over. `Well,' said
+  the man, `I can tell you how many you had.' What was his answer?
+\end{minipage}
+
+\begin{Satz} \label{satz:china3}
+  Es seien $m$ und $n$ positive natürliche Zahlen.
+  Dann gilt für alle positiven natürlichen Zahlen $x$ die Äquivalenz
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\textsl{ggt}(x, m \cdot n) = 1 \quad \Leftrightarrow \quad
+   \textsl{ggt}(x, m) = 1 \;\wedge\; \textsl{ggt}(x, n) = 1.
+  $
+\end{Satz}
+
+\proof
+Dies folgt aus dem Fundamentalsatz der Arithmetik und dem Lemma von Euler: Ist $p$ ein
+Primfaktor von $x$, so teilt $p$ das Produkt $m \cdot n$ genau dann, wenn es einen der
+Faktoren teilt. \qed
+
+
+
+\begin{Satz}[Produkt-Regel zur Berechnung der $\varphi$-Funktion] \lb
+  Es seien $m$ und $n$ natürliche Zahlen größer als $1$ und es gelte $\textsl{ggt}(m,n) = 1$.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\varphi(m \cdot n) = \varphi(m) \cdot \varphi(n)$.
+\end{Satz}
+
+\proof
+Nach Definition der Eulerschen $\varphi$-Funktion müssen wir zeigen, dass unter den gegebenen
+Voraussetzungen 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}(\zns{m \cdot n}) = \textsl{card}(\zns{m}) \cdot \textsl{card}(\zns{n})$
+\\[0.2cm]
+gilt.  Nach dem 2.~Teil des Chinesischen Restesatzes (Korollar \ref{satz:china2}) ist die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pi : \zn{m \cdot n} \rightarrow \zn{m} \times \zn{n}$ \quad mit
+$\pi(x) := \langle x \modulo m, x \modulo n \rangle$
+\\[0.2cm]
+eine Bijektion vom $\zn{m \cdot n}$ in das kartesische Produkt $\zn{m} \times \zn{n}$.  Offenbar gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\zns{m} \subseteq \zn{m}$, \quad
+$\zns{n} \subseteq \zn{n}$, \quad und \quad
+$\zns{m \cdot n} \subseteq \zn{m \cdot n}$.
+\\[0.2cm]
+Außerdem haben wir die folgende Kette von Schlussfolgerungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lll}
+            & x \in \zns{m \cdot n}  \\[0.2cm]
+\Rightarrow & \textsl{ggt}(x, m \cdot n) = 1 
+            & \mbox{nach Definition von $\zns{m \cdot n}$}                              \\[0.2cm]
+\Rightarrow & \textsl{ggt}(x, m) = 1 \wedge \textsl{ggt}(x, n) = 1 
+            & \mbox{Satz \ref{satz:china3}}                                             \\[0.2cm]
+\Rightarrow & \textsl{ggt}(x \modulo m, m) = 1 \wedge \textsl{ggt}(x \modulo n, n) = 1 
+              \\[0.2cm]
+\Rightarrow & x \modulo m \in \zns{m} \quad \mbox{und} \quad x \modulo n \in \zns{n}  \\[0.2cm]
+\Rightarrow & \langle x \modulo m, x \modulo n \rangle \in \zns{m} \times \zns{n}  \\[0.2cm]
+\end{array}
+$
+\\[0.2cm]
+Dies zeigt, dass die Funktion $\pi$ die Menge $\zns{m \cdot n}$ in das kartesische Produkt
+$\zns{m} \times \zns{n}$ abbildet.  Haben wir umgekehrt ein Paar $\langle a, b \rangle \in \zns{m} \times \zns{n}$ gegeben, 
+so zeigt zunächst der Chinesische Restesatz, dass es ein $x \in \zn{m \cdot n}$ gibt, für das 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \modulo m = a$ \quad und \quad $x \modulo n = b$ ist.
+\\[0.2cm]
+Weiter haben wir dann die folgende Kette von Schlussfolgerungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+            & a \in \zns{m} \wedge b \in \zns{n}                                        \\[0.2cm]
+\Rightarrow & \textsl{ggt}(a, m) = 1 \wedge \textsl{ggt}(b, n) = 1                      \\[0.2cm]
+\Rightarrow & \textsl{ggt}(x \modulo m, m) = 1 \wedge \textsl{ggt}(x \modulo n, n) = 1  \\[0.2cm]
+\Rightarrow & \textsl{ggt}(x, m) = 1 \wedge \textsl{ggt}(x, n) = 1                      \\[0.2cm]
+\Rightarrow & \textsl{ggt}(x, m \cdot n) = 1                                            \\[0.2cm]
+\Rightarrow & x \in \zns{m \cdot n}                                                     
+\end{array}
+$
+\\[0.2cm]
+Dies zeigt, dass die Einschränkung der Funktion $\pi$ auf die Menge $\zns{m \cdot n}$ eine
+surjektive Abbildung auf das kartesische Produkt $\zns{m} \times \zns{n}$ ist.  Da wir weiterhin
+wissen, dass die Funktion $\pi$ injektiv ist, müssen die Mengen $\zns{m \cdot n}$ und 
+ $\zns{m} \times \zns{n}$ die gleiche Anzahl von Elementen haben:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}(\zns{m \cdot n}) 
+  = \textsl{card}(\zns{m} \times \zns{n}) 
+  = \textsl{card}(\zns{m}) \cdot \textsl{card}(\zns{n}) 
+$
+\\[0.2cm]
+Also gilt $\varphi(m \cdot n) = \varphi(m) \cdot \varphi(n)$. 
+\qed
+\pagebreak
+
+
+\section{Die Sätze von Fermat und Euler}
+Der folgende Satz von Pierre de Fermat (160? - 1665) bildet die Grundlage verschiedener kryptografischer
+Verfahren. 
+
+\begin{Satz}[Kleiner Satz von Fermat] \hspace*{\fill} \\ 
+Es sei $p$ eine Primzahl.  Dann gilt für jede Zahl $k \in \zns{p}$
+\\[0.2cm]
+\hspace*{1.3cm}
+$k^{p-1} \approx_p 1$.  
+\end{Satz}
+
+\proof
+Wir erinnern zunächst an die Definition der multiplikativen Gruppe $\zns{p}$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\zns{p} := \{ x \in \zn{p} \mid \exists y \in \zn{p} : x \cdot y \approx_p 1 \}$.
+\\[0.2cm]
+Wir wissen nach Satz \ref{satz:phi_primzahl}, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}(\zns{p}) = \varphi(p) = p - 1$
+\\[0.2cm]
+gilt.  Da die $0$ sicher kein Inverses bezüglich der Multiplikation modulo $p$
+haben, müssen alle Zahlen aus der Menge $\{1, \cdots, p-1\}$ ein multiplikatives Inverses haben und
+es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\zns{p} = \{ 1, \cdots, p - 1\}$.
+\\[0.2cm]
+Diese Behauptung hätten wir alternativ auch aus dem Satz \ref{satz:multiplikatives-inverses} folgern
+können, denn für alle $x \in \{ 1, \cdots, p-1\}$ gilt $\textsl{ggt}(x, p) = 1$.
+
+Als nächstes definieren wir  eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \zns{p} \rightarrow \zns{p}$ \quad durch \quad $f(l) = (k \cdot l) \modulo p$.
+\\[0.2cm]
+Zunächst müssen wir zeigen, dass für alle $l \in \zns{p}$ tatsächlich 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(l) \in \zns{p}$
+\\[0.2cm]
+gilt.  Dazu ist zu zeigen, dass $(k \cdot l) \modulo p \not= 0$ gilt, denn sonst hätte $k \cdot l$
+kein multiplikatives Inverses.  Falls $k \cdot l \approx_p 0$ wäre, dann wäre $p$ ein Teiler von $k \cdot l$.
+Da $p$ eine Primzahl ist, müsste $p$ dann entweder $k$ oder $l$ teilen, was wegen $k,l < p$ nicht
+möglich ist.
+
+Als nächstes zeigen wir, dass die Funktion $f$ injektiv ist.  Seien also $l_1, l_2 \in \zns{p}$
+gegeben, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(l_1) = f(l_2)$
+\\[0.2cm]
+gilt.  Nach Definition der Funktion $f$ bedeutet dies
+\\[0.2cm]
+\hspace*{1.3cm}
+$(k \cdot l_1) \modulo p = (k \cdot l_2) \modulo p$, 
+\\[0.2cm]
+was wir auch kürzer als
+\\[0.2cm]
+\hspace*{1.3cm}
+$k \cdot l_1 \approx_p k \cdot l_2$, 
+\\[0.2cm]
+schreiben können.  Da $k \in \zns{p}$ ist, gibt es ein multiplikatives Inverses $h$ zu $k$, für das
+$h \cdot k \approx_p 1$ gilt.  Multiplizieren wir daher die obige Gleichung mit $h$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$h \cdot k \cdot l_1 \approx_p h \cdot k \cdot l_2$, 
+\\[0.2cm] 
+woraus sofort
+\\[0.2cm]
+\hspace*{1.3cm}
+$l_1 \approx_p l_2$ 
+\\[0.2cm]
+folgt.  Da sowohl $l_1$ als auch $l_2$ Elemente der Menge $\zns{p}$ sind, bedeutet dies $l_1 = l_2$ und
+damit ist die Injektivität der Funktion $f$ gezeigt.
+\vspace*{0.3cm}
+
+Nun folgt eine Zwischenüberlegung, die wir gleich benötigen.
+Ist allgemein $f: A \rightarrow B$ eine injektive Funktion, für die $n := \textsl{card}(A) = \textsl{card}(B)$ 
+ist, so muss $f$ auch surjektiv sein, was wir anschaulich wie folgt einsehen können:
+Wenn wir $n$ verschiedene Murmeln (die Elemente von $A$) auf $n$ Schubladen (die Elemente von $B$)
+verteilen müssen und wir (wegen der Injektivität von $f$) niemals zwei Murmeln in die selbe
+Schublade legen dürfen, dann müssen wir tatsächlich in jede Schublade eine Murmel legen und
+letzteres heißt, dass $f$ surjektiv sein muss.
+\vspace*{0.3cm}
+
+Wir wenden nun die Zwischenüberlegung an:
+Da $f$ eine Funktion von $\zns{p}$ nach $\zns{p}$ ist und trivialerweise $\textsl{card}(\zns{p})=\textsl{card}(\zns{p})$
+gilt, können wir aus der Injektivität von $f$ auf die Surjektivität von $f$ schließen.
+\vspace*{0.2cm}
+
+Der Schlüssel des Beweises liegt in der Betrachtung des folgenden Produkts:
+\\[0.2cm]
+\hspace*{1.3cm}
+$P := \prod\limits_{i=1}^{p-1} f(i) = f(1) \cdot f(2) \cdot \;\dots\; \cdot f(p-1)$.
+\\[0.2cm]
+Aufgrund der Tatsache, dass die Funktion $f:\zns{p} \rightarrow \zns{p}$ surjektiv ist, wissen  wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\zns{p}) = \zns{p}$
+\\[0.2cm]
+gilt. Schreiben  wir die Mengen auf beiden Seiten dieser Gleichung hin, so erhalten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl\{ f(1), f(2), \cdots, f(p-1) \bigr\} = \bigl\{ 1, 2, \cdots, p-1 \bigr\}$.
+\\[0.2cm]
+Damit können wir das oben definierte Produkt $P$ auch anders schreiben, es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(1) \cdot f(2) \cdot \;\dots\; \cdot f(p-1) = 1 \cdot 2 \cdot \;\dots\; \cdot (p-1)$,
+\\[0.2cm]
+denn auf beiden Seiten haben wir alle Elemente der Menge $\zns{p}$ aufmultipliziert, lediglich die
+Reihenfolge ist eine andere.  Setzen wir hier die Definition der Funktion $f$ ein, so
+folgt zunächst
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl((k \cdot 1) \modulo p\bigr) \cdot \bigl((k \cdot 2) \modulo p\bigr) \cdot \;\dots\; \cdot 
+ \bigl((k \cdot (p-1)) \modulo p\bigr) =
+  1 \cdot 2 \cdot \;\dots\; \cdot (p-1)$.
+\\[0.2cm]
+Da offenbar $(k \cdot i) \modulo p \approx_p k \cdot i$ gilt, folgt daraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$(k \cdot 1) \cdot (k \cdot 2) \cdot \;\dots\; \cdot \bigl(k\cdot(p-1)) \approx_p 
+  1 \cdot 2 \cdot \;\dots\; \cdot (p-1)$.
+\\[0.2cm]
+Ordnen wir die Terme auf der linken Seite dieser Gleichung um, so folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$k^{p-1} \cdot 1 \cdot \cdot 2 \cdot \;\dots\; \cdot \cdot(p-1) \approx_p 
+  1 \cdot 2 \cdot \;\dots\; \cdot (p-1)
+$.
+\\[0.2cm]
+Da die Zahlen $1$, $2$, $\cdots$, $p_1$ modulo $p$ ein multiplikatives Inverses haben, können diese Zahlen
+auf beiden Seiten der Gleichung herausgekürzt werden und wir erhalten
+\\[0.2cm]
+\hspace*{1.3cm}
+$k^{p-1} \approx_p 1$.
+\\[0.2cm]
+Das war gerade die Behauptung. \qed
+
+\begin{Korollar}
+  Es sei $p$ eine Primzahl.  Für alle $k \in \zn{p}$ gilt dann $k^p \approx_p k$.
+\end{Korollar}
+
+\proof
+Falls $k \in \zns{p}$ ist, folgt die Behauptung, indem wir die Gleichung $k^{p-1} \approx_p 1$
+mit $k$ multiplizieren.  Anderfalls gilt $k= 0$ und offenbar gilt $0^p = 0$. \qed
+\vspace*{0.3cm}
+
+Der kleine Satz von Fermat $a^{p-1} \approx_p 1$ läßt sich auf den Fall, dass $p$ keine Primzahl ist,
+verallgemeinern.  Es ist dann lediglich zu fordern, dass die Zahlen $a$ und $n$ teilerfremd sind und an
+Stelle des Exponenten $p - 1$ tritt nun die $\varphi$-Funktion.   Diese Verallgemeinerung wurde von Leonhard
+Euler (1707 -- 1783) gefunden.
+
+
+\begin{Satz}[Satz von Euler] \hspace*{\fill} \\ 
+Es sei $n \in \mathbb{N}$ und  $a \in \zns{n}$. Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$a^{\varphi(n)} \approx_n 1$.  
+\end{Satz}
+
+\proof
+Wir gehen aus von der Definition von
+\\[0.2cm]
+\hspace*{1.3cm}
+$\zns{n} := \{ x \in \zn{n} \mid \exists y \in \zn{n} : x \cdot y \approx_p 1 \}$
+\\[0.2cm]
+als der Menge aller der Zahlen, die ein multiplikatives Inverses bezüglich der Multiplikation modulo $n$
+haben.  Wir erinnern außerdem daran, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\zns{n} := \{ x \in \zn{n} \mid \textsl{ggt}(x, n) = 1 \}$
+\\[0.2cm]
+gilt.  Nach Definition der $\varphi$-Funktion gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}(\zns{n}) = \varphi(n)$.
+\\[0.2cm]
+gilt.  Analog zum Beweis des Satzes von Fermat definieren wir eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \zns{n} \rightarrow \zns{n}$ \quad durch \quad $f(l) = (a \cdot l) \modulo n$.
+\\[0.2cm]
+Zunächst müssen wir zeigen, dass für alle $l \in \zns{n}$ tatsächlich 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(l) \in \zns{n}$
+\\[0.2cm]
+gilt.  Dazu ist zu zeigen, dass $(a \cdot l) \modulo n \in \zns{n}$ ist.  
+Dies folgt aber sofort aus Satz \ref{satz:china3}, denn
+wegen $l \in \zns{n}$ und $a \in \zns{n}$ wissen wir, dass $\textsl{ggt}(l,n) = 1$ und
+$\textsl{ggt}(a,n) = 1$ ist und nach Satz \ref{satz:china3} folgt dann auch 
+$\textsl{ggt}(a \cdot l, n) = 1$, woraus $\textsl{ggt}\bigl((a \cdot l) \modulo n, n\bigr) = 1$
+folgt und letzteres ist zu $(a \cdot l) \modulo n \in \zns{n}$ äquivalent.
+
+
+Als nächstes zeigen wir, dass die Funktion $f$ injektiv ist.  Seien also $l_1, l_2 \in \zns{n}$
+gegeben, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(l_1) = f(l_2)$
+\\[0.2cm]
+gilt.  Nach Definition der Funktion $f$ bedeutet dies
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a \cdot l_1) \modulo n = (a \cdot l_2) \modulo n$, 
+\\[0.2cm]
+was wir auch kürzer als
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \cdot l_1 \approx_n a \cdot l_2$, 
+\\[0.2cm]
+schreiben können.  Da $a \in \zns{n}$ ist, gibt es ein multiplikatives Inverses $b$ zu $a$, für das
+$b \cdot a \approx_n 1$ gilt.  Multiplizieren wir daher die obige Gleichung mit $b$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$b \cdot a \cdot l_1 \approx_n b \cdot a \cdot l_2$, 
+\\[0.2cm] 
+woraus wegen $b \cdot a \approx_n 1$ sofort
+\\[0.2cm]
+\hspace*{1.3cm}
+$l_1 \approx_n l_2$ 
+\\[0.2cm]
+folgt.  Da sowohl $l_1$ als auch $l_2$ Elemente der Menge $\zns{n}$ sind, folgt $l_1 = l_2$ und
+damit ist die Injektivität der Funktion $f$ gezeigt.
+\vspace*{0.3cm}
+
+
+Genau wie im Beweis des kleinen Satzes von Fermat folgern wir nun aus der Injektivität der Funktion $f$, dass
+$f$ auch surjektiv sein muss und betrachten das folgende Produkt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$P := \prod\limits_{i \in \zns{n}} f(i)$.
+\\[0.2cm]
+Aufgrund der Tatsache, dass die Funktion $f:\zns{n} \rightarrow \zns{n}$ surjektiv ist, wissen  wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\zns{n}) = \zns{n}$
+\\[0.2cm]
+gilt. Daher können wir $P$ auch einfacher berechnen, es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$P = \prod\limits_{i \in \zns{n}} i$,
+\\[0.2cm] 
+die beiden Darstellungen von $P$ unterscheiden sich nur in der Reihenfolge der Faktoren.
+Damit haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\prod\limits_{i \in \zns{n}} f(i) = \prod\limits_{i \in \zns{n}} i$.
+\\[0.2cm]
+Auf der linken Seite setzen wir nun die Definition von $f$ ein und haben dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$\prod\limits_{i \in \zns{n}} (a \cdot i) \modulo n = \prod\limits_{i \in \zns{n}} i$,
+\\[0.2cm]
+woraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$a^{\textsl{card}(\zns{n})} \cdot \prod\limits_{i \in \zns{n}} i \approx_n \prod\limits_{i \in \zns{n}} i$
+\\[0.2cm]
+folgt.  Kürzen wir nun das Produkt $\prod\limits_{i \in \zns{n}} i$ auf beiden Seiten dieser Gleichung 
+weg und berücksichtigen, dass $\textsl{card}(\zns{n}) = \varphi(n)$ ist, so haben wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$a^{\varphi(n)} \approx_n 1$
+\\[0.2cm]
+bewiesen.  \qed
+\pagebreak
+
+\section{Der RSA-Algorithmus}
+In diesem Abschnitt sehen wir, wozu die $\varphi$-Funktion nützlich ist:  Wir präsentieren den
+Algorithmus von Rivest, Shamir und Adleman \cite{rivest:78} (kurz: RSA-Algorithmus), der zur Erstellung
+digitaler Signaturen verwendet werden kann.
+
+Der RSA-Algorithmus beginnt damit, dass wir zwei \emph{große} Primzahlen $p$ und $q$ mit $p \not= q$
+erzeugen.  \emph{Groß} heißt in diesem Zusammenhang, dass zur Darstellung der beiden Zahlen $p$ und $q$
+jeweils mehrere hundert Stellen benötigt werden.  Anschließend bilden wir das Produkt
+\\[0.2cm]
+\hspace*{1.3cm}
+$n := p \cdot q$.
+\\[0.2cm]
+Das Produkt $n$ machen wir öffentlich bekannt, aber die beiden Primzahlen $p$ und $q$ bleiben geheim.
+Weiter berechnen wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi(n) = \varphi(p \cdot q) = (p-1) \cdot (q-1)$
+\\[0.2cm]
+und suchen eine natürliche Zahl $e < (p-1) \cdot (q-1)$, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{ggt}\bigl(e, (p-1) \cdot (q-1)\bigr) = 1$
+\\[0.2cm]
+gilt.  Die Zahl $e$ wird wieder öffentlich bekannt gemacht.
+Aufgrund der Tatsache, dass die beiden Zahlen $e$ und $(p-1) \cdot (q-1)$
+teilerfremd sind, gilt $e \in \zns{(p-1) \cdot (q-1)}$ und damit hat die Zahl $e$ ein
+multiplikatives Inverses $d$ modulo  $(p-1)\cdot(q-1)$, es gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$d \cdot e \approx_{(p-1)\cdot(q-1)} 1$.
+\\[0.2cm]
+Wir erinnern an dieser Stelle daran, dass die Zahl $d$ mit Hilfe des erweiterten Euklid'schen Algorithmus
+berechnet werden kann, denn da $\textsl{ggt}\bigl(e, (p-1)\cdot(q-1)\bigr) = 1$ ist, liefert der
+Euklid'sche Algorithmus Zahlen $\alpha$ und $\beta$, für die
+\\[0.2cm]
+\hspace*{1.3cm}
+$\alpha \cdot e + \beta \cdot (p-1) \cdot (q-1) = 1$
+\\[0.2cm]
+gilt.  Definieren wir $d := \alpha \modulo \bigl((p-1) \cdot (q-1)\bigr)$, so sehen wir, dass in der Tat
+\\[0.2cm]
+\hspace*{1.3cm}
+$d \cdot e \approx_{(p-1)\cdot(q-1)} 1$.
+\\[0.2cm]
+gilt.  Die Zahl $d$ bleibt geheim.
+Wegen der letzten Gleichung gibt es ein $k \in \mathbb{N}$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$d \cdot e = 1 + k \cdot (p-1) \cdot (q-1)$
+\\[0.2cm]
+gilt.  
+Wir definieren eine \emph{Verschlüsselungs-Funktion}
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \zn{n} \rightarrow \zn{n}$ \quad durch \quad $f(x) := x^e \modulo n$.
+\\[0.2cm]
+Weiter definieren wir eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$g: \zn{n} \rightarrow \zn{n}$ \quad durch \quad $g(x) := x^d \modulo n$.
+\\[0.2cm]
+Wir behaupten, dass für alle $x$, die kleiner als $m := \min(p,q)$ sind, 
+\\[0.2cm]
+\hspace*{1.3cm}
+$g\bigl(f(x)\bigr) = x$ 
+\\[0.2cm]
+gilt.  Dies rechnen wir wie folgt nach:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+  g\bigl(f(x)\bigr) & = & g\bigl(x^e \modulo n\bigr)                      \\[0.2cm]
+                    & = & \bigl(x^e \modulo n\bigr)^d \modulo n           \\[0.2cm]
+                    & = & x^{e \cdot d} \modulo n                         \\[0.2cm]
+                    & = & x^{1 + k \cdot (p-1) \cdot (q-1)} \modulo n     \\[0.2cm]
+                    & = & x \cdot x^{k \cdot (p-1) \cdot (q-1)} \modulo n 
+\end{array}
+$
+\\[0.2cm]
+Um den Beweis abzuschließen, zeigen wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$x^{k \cdot (p-1) \cdot (q-1)} \modulo n = 1$
+\\[0.2cm]
+ist.   Da $x < \textsl{min}(p,q)$ gilt und $n = p \cdot q$ ist, haben wir $\textsl{ggt}(x,n) = 1$.
+Daher gilt nach dem Satz von Euler 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x^{\varphi(n)} \approx_n 1$.
+\\[0.2cm]
+Da $n = p \cdot q$ ist und da $p$ und $q$ als verschiedene Primzahlen sicher teilerfremd sind, wissen
+wir, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi(n) = \varphi(p \cdot q) = \varphi(p) \cdot \varphi(q) = (p-1) \cdot (q-1)$
+\\[0.2cm]
+gilt.  Damit folgt aus dem Satz von Euler, dass
+\begin{equation}
+  \label{eq:rsa3}
+  x^{(p-1) \cdot (q-1)} \approx_n 1
+\end{equation}
+gilt, woraus sofort 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x^{k \cdot (p-1) \cdot (q-1)} \approx_n 1$
+\\[0.2cm]
+folgt.  Diese Gleichung können wir auch als
+\\[0.2cm]
+\hspace*{1.3cm}
+$x^{k \cdot (p-1) \cdot (q-1)} \modulo n = 1$
+\\[0.2cm]
+schreiben.  Multiplizieren wir diese Gleichung mit $x$ und berücksichtigen, dass $x \modulo n = x$, denn
+$x < n$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$g\bigl(f(x)\bigr) = x \cdot x^{k \cdot (p-1) \cdot (q-1)} \modulo n = x$
+\\[0.2cm]
+und damit kann $g(x)$ tatsächlich als \emph{Entschlüsselungs-Funktion} benutzt werden um aus dem 
+kodierten Wert $f(x)$ den ursprünglichen Wert $x$ zurückzurechnen.
+\vspace*{0.3cm}
+
+Der RSA-Algorithmus funktioniert nun wie folgt: 
+\begin{enumerate}
+\item Zunächst wird die zu verschlüsselnde Nachricht in einzelne Blöcke aufgeteilt, die
+      jeweils durch Zahlen $x$ kodiert werden können, die kleiner als $p$ und $q$ sind.
+\item Jede solche Zahl $x$ wird nun zu dem Wert $x^e \modulo n$ verschlüsselt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \mapsto x^e \modulo n$.
+\item Der Empfänger der Nachricht kann aus dem verschlüsselten Wert $y = x^e \modulo n$ die
+      ursprüngliche Botschaft $x$ wieder entschlüsseln, indem er die Transformation
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \mapsto y^d \modulo n$
+      \\[0.2cm]
+      durchführt, denn wir hatten ja oben gezeigt, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x^e \modulo n)^d \modulo n = x$
+      \\[0.2cm]
+      ist.  Dazu muss er allerdings den Wert von $d$ kennen.  Dieser Wert von $d$ ist der geheime Schlüssel.
+\end{enumerate}
+In der Praxis ist es so, dass die Werte von $n$ und $e$ veröffentlicht werden, der Wert
+von $d$ bleibt geheim.   Um den Wert von $d$ zu berechnen, muss das Produkt 
+$(p-1) \cdot (q-1)$ berechnet werden, was übrigens gerade $\varphi(n)$ ist.  Nun ist
+bisher kein Algorithmus bekannt, mit dem ein Zahl $n$ effizient in Primfaktoren zerlegt
+werden kann.  Daher kann die Zahl $d$ nur mit sehr hohen Aufwand bestimmt werden.
+Folglich kann, da $n$ und $e$ öffentlich bekannt sind, jeder eine Nachricht verschlüsseln,
+aber nur derjenige, der auch $d$ kennt, kann die Nachricht wieder entschlüsseln.
+
+Der RSA-Algorithmus kann auch zum digitalen Signieren eingesetzt werden.  Dazu bleibt $e$ geheim und
+$d$ wird öffentlich gemacht. Eine Nachricht $x$ wird dann als $f(x)$ verschlüsselt.  Diese Nachricht kann
+jeder durch Anwendung der Funktion $x \mapsto g(x)$ wieder entschlüsseln, um aber eine gegebene Nachricht
+$x$ als $f(x)$ zu verschlüsseln, bedarf es der Kenntnis von $e$.
+
+%%% local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

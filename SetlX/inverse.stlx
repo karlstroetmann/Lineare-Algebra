@@ -1,0 +1,151 @@
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+// This program computes the inverse of a square matrix A.            //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
+// This procedure computes the inverse of the matrix a. The matrix a 
+// is represented as a list of its rows.
+inverse := procedure(a) {
+    print("Computing the inverse of:\n");
+    print(toString(a));
+    n := #a;              
+    e := identity(n);
+    for (i in [1 .. n]) {
+        print("Working on column $i$ of the following matrices:");
+        print(toString2(a, e));
+        r := pivot(a, n, i);
+        if (i != r) {
+            print("exchanging row $i$ with row $r$:");
+            [ a[i], a[r] ] := [ a[r], a[i] ];   
+            [ e[i], e[r] ] := [ e[r], e[i] ];
+            print(toString2(a, e));
+        }
+        if (a[i][i] == 0) {
+            print("WARNING: a[$i$,$i$] = 0");
+            print("The matrix a is not invertible!");
+            return;
+        }
+        f := 1 / a[i][i]; 
+        print("normalizing row $i$:");
+        for (j in [1 .. n]) {
+            a[i][j] *= f;
+            e[i][j] *= f;
+        }
+        print(toString2(a, e));
+        for (k in [1 .. n] | k != i) {
+            f := a[k][i];
+            print("subtracting $f$ times row $i$ from row $k$:");
+            for (j in [1 .. n]) {
+                a[k][j] -= f * a[i][j];
+                e[k][j] -= f * e[i][j];
+            }
+            print(toString2(a, e));
+        }    
+    }
+    return e;
+};
+// compute Kronecker's delta
+delta := procedure(i, j) {
+    if (i == j) { return 1; } else { return 0; }
+};
+// compute the identity matrix
+identity := procedure(n) {
+    return [ [ delta(i,j) : j in [1 .. n] ] : i in [1 .. n] ];
+};
+// Compute the row index j such that the absolute value of
+// a[j][i] is maximal among all j in in {i .. n}.
+pivot := procedure(a, n, i) {
+    r := i;  // index of row containing maximal element
+    for (j in [i+1 .. n]) {
+        if (abs(a[j][i]) > abs(a[r][i])) {
+            r := j;
+        }
+    }
+    return r;
+};
+
+////////////////////////////////////////////////////////////////////////
+//                                                                    //
+// Testing and printing.                                              //
+//                                                                    //
+////////////////////////////////////////////////////////////////////////
+
+// compute the matrix product of two square matrices
+product := procedure(a, b) {
+    n := #a;
+    r := [1 .. n];
+    return [ [ +/ [ a[i][j] * b[j][k] : j in r ] : k in r ] : i in r ];
+};
+
+// turns a quadratic matrix into a string
+toString := procedure(a) {
+    n := #a;
+    r := [1 .. n];
+    w := max({ #(a[i][j] + "") : i in r, j in r });
+    s := "";
+    for (i in r) {
+        for (j in r) {
+            s += pad(a[i][j], w) + " ";
+        }    
+        s += "\n";
+    }
+    return s;
+};
+
+// turns a pair of quadratic matrices into a string
+toString2 := procedure(a, b) {
+    n := #a;
+    r := [1 .. n];
+    w1 := max({ #(a[i][j] + "") : i in r, j in r });
+    w2 := max({ #(b[i][j] + "") : i in r, j in r });
+    s := "a =   " + " " * (n * (w1 + 1)) + " e = \n";
+    for (i in r) {
+        s += "    ";
+        for (j in r) {
+            s += pad(a[i][j], w1) + " ";
+        }    
+        s += "       ";
+        for (j in r) {
+            s += pad(b[i][j], w2) + " ";
+        }    
+        s += "\n";
+    }
+    return s;
+};
+
+// left pad string s to have length w
+pad := procedure(n, w) {
+    s := n + "";
+    return " " * (w - #s) + s;
+};
+
+test := procedure(a) {
+    b := inverse(a);
+    if (b == om) { return; }
+    print("The inverse of:\n\n$toString(a)$\nis\n\n$toString(b)$");
+    print("test: a * inverse(a) = \n");
+    print( toString(product(a, b)) );
+    print("test: inverse(a) * a = \n");
+    print( toString(product(b, a)) );
+};
+
+a := [ [ 1/7, 2/7, -1/7],
+       [ 1/7, 1/7,  2/7],
+       [ 2/7, 1/7,    0]
+     ];
+
+test(a);
+
+a := [ [1, 2, 3],
+       [4, 5, 6],
+       [7, 8, 9]
+     ];
+
+//test(a);
+
+a := [ [ 2,  3,  5],
+       [ 7, 11, 13],
+       [17, 19, 23]
+     ];
+
+// test(a);

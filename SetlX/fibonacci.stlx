@@ -1,0 +1,11 @@
+fibonacci := procedure(n) {
+    if (n in { 0, 1}) {
+        return 1;
+    }
+    return fibonacci(n-1) + fibonacci(n-2);
+};
+
+for (n in [0 .. 100]) {
+    print("fibonacci($n$) = $fibonacci(n)$");
+}
+

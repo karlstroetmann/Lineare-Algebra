@@ -1,0 +1,116 @@
+// The procedure call product(r1, r2) computes the relational
+// product r1 o r2.
+product := procedure(r1, r2) {
+    return { [x,z] : [x,y1] in r1, [y2,z] in r2 | y1 == y2 };
+};
+
+// Compute the set of all permutations on the set S_n = { 1, ..., n }
+allPermutations := procedure(n) {
+	return [ toPermutation(l) : l in toList({1 .. n}) ];
+};
+// transform a list into a relation
+toPermutation := procedure(l) {
+	return { [i, l[i]] : i in [1 .. #l] };
+};
+// For a given set s, this function computes the set of all those lists 
+// that contain each of the elements of s exactly once.  In effect, these 
+// are all permutations of the set s.
+toList := procedure(s) {
+    if (s == {}) {
+        return { [] };
+    }
+    return { [ x ] + l : x in s, l in toList(s - { x }) };
+};
+
+// Given a list of permutations sn, this function associates names with the 
+// elements of sn.
+makeMap := procedure(sn, nd) {
+    print("Printing elements of the group:\n");
+    map := {};
+    for (i in [ 1 .. #sn ]) {
+        name := "p" + fillZeros(i, nd);
+        map += { [ sn[i], name ] };
+        print("$name$ = $sn[i]$");
+    }
+    return map;
+};
+
+// find non-commuting elements
+findNC := procedure(n, map) {
+    sn := allPermutations(n);
+    for (x in sn) {
+        for (y in sn) {
+            xy := product(x, y);
+            yx := product(y, x);
+            if (xy != yx) {
+                pxy := map[xy];
+                pyx := map[yx];
+                px  := map[x];
+                py  := map[y];         
+                print("non-commuting permutations found:\n");
+                print("$px$ = $x$");
+                print("$py$ = $y$");
+                print("$pxy$ = $xy$");
+                print("$pyx$ = $yx$");
+                print("");
+                print("$px$ * $py$ = $pxy$");
+                print("$py$ * $px$ = $pyx$");
+                return;
+            }
+        }
+    }
+};
+
+countDigits := procedure(n) {
+    nf := n!;
+    nd := 1;
+    t  := 10;
+    while (t < nf) {
+        t *= 10;
+        nd += 1;
+    }
+    return nd;
+};
+
+fillZeros := procedure(i, nd) {
+    s := i + "";
+    while (#s < nd) {
+    s := "0" + s;
+    }
+    return s;
+};
+
+// compute and print the group table
+// only works if n <= 3 since otherwise the table gets too big
+groupTable := procedure(n) {
+    sn := allPermutations(n);
+    print(sn);
+    nd  := countDigits(n);
+    map := makeMap(sn, nd);
+    print("\nPrinting group table:\n");
+    s := " " * (1+floor(nd/2)) + "*" + " " * floor((nd + 1)/2) + " |";
+    for (i in [ 1 .. #sn ]) {
+        s += " p" + fillZeros(i, nd) + " |"; 
+    }
+    s += "\n" + "-" * (4 + nd) * (#sn+1) + "\n";  
+    for (px in sn) {
+        x := map[px];
+        s += " " + x + " |";
+        for (py in sn) {
+            pz := product(px, py);
+            y  := map[py];
+            z  := map[pz];
+            s += " " + z + " |";        
+        }
+        s += "\n" + "-" * (4 + nd) * (#sn+1) + "\n";
+    }
+    print(s);
+    return map;
+};
+
+test := procedure(n) {
+    map := groupTable(n);
+    findNC(n, map);
+};
+
+test(5);

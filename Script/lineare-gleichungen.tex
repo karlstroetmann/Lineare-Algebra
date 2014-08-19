@@ -1,0 +1,516 @@
+\chapter{Lineare Gleichungs-Systeme}
+Wir wollen uns in diesem Kapitel mit der Lösung \emph{linearer Gleichungs-Systeme} beschäftigen.
+Ein \emph{Gleichungs-System} ist dabei einfach eine Menge von Gleichungen, in denen verschiedene
+Variablen auftreten.  Bezeichnen wir die Variablen mit $x_1$, $\cdots$, $x_m$ und liegen die Gleichungen
+in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{i=1}^n a_{i,j} \cdot x_j = b_i$ \quad für alle $i=1,\cdots,m$
+\\[0.2cm]
+vor, wobei die Zahlen $a_{i,j}$ für $i = 1, \cdots,n$ und $j = 1, \cdots, m$ und $b_i$ für 
+$i = 1, \cdots, n$ entweder reell oder komplex sind, so nennen wir das Gleichungs-System \emph{linear}.
+Anstatt in der obigen kompakten Notation verwenden wir zu Darstellung eines solchen Gleichungs-Systems
+auch die folgende \emph{Matrix-Schreibweise}:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left(
+  \begin{array}[c]{ll c l}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,m} \\[0.2cm]
+    a_{2,1} & a_{2,2} & \cdots & a_{2,m} \\[0.2cm]
+    \vdots  & \vdots  & \ddots & \vdots  \\[0.2cm]
+    a_{n,1} & a_{n,2} & \cdots & a_{n,m} 
+  \end{array}
+ \right) \cdot \left(
+   \begin{array}[c]{l}
+     x_1 \\[0.2cm]
+     x_2 \\[0.2cm]
+     \vdots \\[0.2cm]
+     x_n 
+   \end{array}\right) = \left(
+   \begin{array}[c]{l}
+     b_1 \\[0.2cm]
+     b_2 \\[0.2cm]
+     \vdots \\[0.2cm]
+     b_n      
+   \end{array}
+   \right)
+$
+\\[0.2cm]
+Hier haben wir die Koeffizienten $a_{i,j}$ der Variablen $x_j$ zu der $n \times m$-\emph{Matrix}
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \left(
+  \begin{array}[c]{ll c l}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,m} \\[0.2cm]
+    a_{2,1} & a_{2,2} & \cdots & a_{2,m} \\[0.2cm]
+    \vdots  & \vdots  & \ddots & \vdots  \\[0.2cm]
+    a_{n,1} & a_{n,2} & \cdots & a_{n,m} 
+  \end{array}
+ \right)
+$
+\\[0.2cm]
+zusammengefasst.  Eine Matrix ist dabei nichts anderes als ein rechteckiges Schema, in dem die doppelt 
+indizierte Koeffizienten $a_{i,j}$ übersichtlich dargestellt werden können.  $n$ bezeichnet die Anzahl
+der Zeilen der Matrix, während $m$ die Anzahl der Spalten angibt.  Gleichzeitig haben wir oben  die
+Variablen $x_1, x_2, \cdots, x_m$ und die Konstanten  
+$b_1, b_2, \cdots, b_n$ als \emph{Vektoren} notiert.  Definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\vec{x} = \left(
+  \begin{array}[c]{l}
+     x_1    \\
+     \vdots \\
+     x_m       
+  \end{array}
+ \right)
+$ \quad und \quad
+$\vec{b} = \left(
+  \begin{array}[c]{l}
+     b_1    \\
+     \vdots \\
+     b_n       
+  \end{array}
+ \right)
+$
+\\[0.2cm]
+so können wir das oben gegebene System von linearen Gleichungen auch kurz in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \vec{x} = \vec{y}$
+\\[0.2cm]
+schreiben, wenn wir vereinbaren, dass die Multiplikation ``$\cdot$'' zwischen einer Matrix
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \left(
+  \begin{array}[c]{ll c l}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,m} \\[0.2cm]
+    a_{2,1} & a_{2,2} & \cdots & a_{2,m} \\[0.2cm]
+    \vdots  & \vdots  & \ddots & \vdots  \\[0.2cm]
+    a_{n,1} & a_{n,2} & \cdots & a_{n,m} 
+  \end{array}
+ \right)
+$
+\quad und einem Vektor \quad 
+$\vec{x} = \left(
+  \begin{array}[c]{l}
+     x_1    \\[0.2cm]
+     x_2    \\[0.2cm]
+     \vdots \\[0.2cm]
+     x_m       
+  \end{array}
+ \right)
+$ 
+\\[0.2cm]
+als der Vektor
+\\[0.2cm]
+\hspace*{1.3cm}
+$\vec{x} = \left(
+  \begin{array}[c]{l}
+     \sum\limits_{j=1}^m a_{1,j} \cdot x_j    \\[0.4cm]
+     \sum\limits_{j=1}^m a_{2,j} \cdot x_j    \\
+     \quad\vdots                                   \\[0.2cm]
+     \sum\limits_{j=1}^m a_{n,j} \cdot x_j    \\[0.4cm]
+  \end{array}
+ \right)
+$ 
+\\[0.2cm]
+definiert wird.  Betrachten wir zur Verdeutlichung ein Beispiel:  Die drei Gleichungen
+\begin{equation}
+  \label{eq:gauss0} 
+\begin{array}[c]{lllll}
+  3 \cdot x + 5 \cdot y + 3 \cdot z = 4, & \quad & \Rm{1} \\[0.2cm]
+  4 \cdot x + 3 \cdot y + 2 \cdot z = 3, & \quad & \Rm{2} \\[0.2cm]
+  2 \cdot x + 2 \cdot y + 1 \cdot z = 1, & \quad & \Rm{3}
+\end{array}
+\end{equation}
+die wir zur späteren Referenzierung mit römischen Zahlen nummeriert haben,
+können in Matrix-Schreibweise als
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\left(
+\begin{array}[c]{lll}
+  3  & 5 & 3  \\[0.1cm]
+  4  & 3 & 2  \\[0.1cm]
+  2  & 2 & 1  
+\end{array}
+\right) \cdot \left(
+  \begin{array}[c]{lll}
+    x \\[0.1cm] y \\[0.1cm] z
+  \end{array}
+\right) = \left(
+  \begin{array}[c]{lll}
+    4 \\[0.1cm] 3 \\[0.1cm] 1
+  \end{array}
+\right)
+$
+\\[0.2cm]
+geschrieben werden.  
+Zur Lösung eines solchen Gleichungs-Systems
+werden wir zwei verschiedene Verfahren diskutieren:  In diesem Kapitel betrachten wir das 
+\emph{Gauß'sche Eliminations-Verfahren}\footnote{
+  Das \emph{Gauß'sche Eliminations-Verfahren} wurde zwar nach Carl Friedrich Gauß benannt,
+  es war aber bereits lange vor Gauß bekannt.  Eine schriftliche Beschreibung des Verfahrens  findet
+  sich beispielsweise bereits bei Issac Newton, aber das Verfahren war schon deutlich vor Newton 
+  mathematisches Allgemeinwissen.},
+später werden wir sehen, wie sich lineare Gleichungs-Systeme mit Hilfe von
+\emph{Determinanten} lösen lassen.   
+
+\section{Das Gauß'sche Eliminations-Verfahren}
+Wir demonstrieren das Gauß'sche Eliminations-Verfahren zunächst an dem in (\ref{eq:gauss0}) gezeigten
+Beispiel.  Der Einfachheit halber benutzen wir hier noch keine Matrix-Schreibweise.
+Um die in (\ref{eq:gauss0}) angegebenen Gleichungen zu lösen, versuchen wir im ersten Schritt, die
+Variable $x$ aus der zweiten und der dritten Gleichung zu eliminieren.  Um $x$ aus der zweiten Gleichung
+loszuwerden, multiplizieren wir die erste Gleichung mit $-\frac{4}{3}$ und addieren die resultierende
+Gleichung zu der zweiten Gleichung.  Wegen $-\frac{4}{3} \cdot 3 \cdot x + 4 \cdot x = 0$ fällt die
+Variable $x$ dann aus der zweiten Gleichung heraus und wir erhalten statt der zweiten Gleichung die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$-\frac{4}{3} \cdot 5 \cdot y + 3 \cdot y -\frac{4}{3} \cdot 3 \cdot z + 2 \cdot z = -\frac{4}{3} \cdot 4 + 3$,
+\\[0.2cm]
+die wir noch zu der Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$-\frac{11}{3} \cdot y - 2 \cdot z = -\frac{7}{3}$
+\\[0.2cm]
+vereinfachen.  Um die Variable $x$ aus der dritten Gleichung zu eliminieren, multiplizieren wir die
+erste Gleichung mit $-\frac{2}{3}$ und addieren die so entstandene Gleichung zu der dritten Gleichung.  
+Wieder fällt der Term mit der Variablen $x$ weg und wir erhalten nun an Stelle der dritten Gleichung die
+Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(-\frac{2}{3} \cdot 5 + 2) \cdot y + (-\frac{2}{3} \cdot 3 + 1) \cdot z = -\frac{2}{3} \cdot 4 + 1$,
+\\[0.2cm]
+die wir zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$-\frac{4}{3} \cdot y + (-1) \cdot z = -\frac{5}{3}$,
+\\[0.2cm]
+vereinfachen.  Insgesamt haben wir damit das ursprüngliche Gleichungs-System zu dem äquivalenten
+Gleichungs-System 
+\begin{equation}
+  \label{eq:gauss1} 
+\begin{array}[c]{rcrcrcr}
+  3 \cdot x & + & 5 \cdot y             & + &    3 \cdot z & = &           4  \\[0.2cm]
+            &   & -\frac{11}{3} \cdot y & + & (-2) \cdot z & = & -\frac{7}{3} \\[0.2cm]
+            &   & -\frac{4}{3}  \cdot y & + & (-1) \cdot z & = & -\frac{5}{3}
+\end{array}
+\end{equation}
+umgeformt.  Um aus der letzten Gleichung die Variable $y$ zu entfernen, multiplizieren wir die zweite
+Gleichung mit
+\\[0.2cm]
+\hspace*{1.3cm}
+$\displaystyle -\frac{-\frac{4}{3}}{-\frac{11}{3}} = -\frac{4}{11}$
+\\[0.2cm]
+und addieren diese Gleichung zu der letzten Gleichung unseres Gleichungs-Systems.  Damit erhalten wir
+dann an Stelle der letzten Gleichung die neue Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left(-\frac{4}{11} \cdot (-2) + (-1)\right) \cdot z = 
+ \left(-\frac{4}{11}\right) \cdot \left(-\frac{7}{3}\right) - \frac{5}{3}
+$,
+\\[0.2cm]
+die wir zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left(-\frac{3}{11}\right) \cdot z = -\frac{9}{11}$
+\\[0.2cm]
+vereinfachen.  Insgesamt haben wir unser ursprüngliches Gleichungs-System jetzt zu dem Gleichungs-System
+\begin{equation}
+  \label{eq:gauss2} 
+\begin{array}[c]{rcrcrcr}
+  3 \cdot x & + & 5 \cdot y             & + &    3 \cdot z  & = &           4  \\[0.2cm]
+            &   & -\frac{11}{3} \cdot y & + & (-2) \cdot z  & = & -\frac{7}{3} \\[0.2cm]
+            &   &                       &   & -\frac{3}{11} \cdot z & = & -\frac{9}{11}
+\end{array}
+\end{equation}
+umgeformt.  Dieses Gleichungs-System hat, wie man sagt, \emph{obere Dreiecks-Form}, denn
+unterhalb der Diagonalen haben alle Einträge der Matrix den Wert $0$.
+Wir können es jetzt durch
+\emph{Rückwärts-Substitution} lösen, indem wir zunächst die letzte Gleichung nach $z$ auflösen, diesen
+Wert für $z$ dann in die zweite Gleichung einsetzten, die zweite Gleichung nach $y$ auflösen und weiter
+die Werte für $y$ und $z$ in der ersten Gleichung einsetzten, so dass wir schließlich den Wert von $x$
+bestimmen können.  Die Auflösung der letzten Gleichung nach $z$ liefert $z = 3$.  Setzen wir diesen Wert
+in der zweiten Gleichung ein, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm} $-\frac{11}{3} \cdot y - 6 = -\frac{7}{3}$,
+\\[0.2cm]
+was sich zu
+\\[0.2cm]
+\hspace*{1.3cm} $-\frac{11}{3} \cdot y = \frac{11}{3}$,
+\\[0.2cm]
+vereinfacht, woraus sofort $y = -1$ folgt.  Setzen wir nun die Werte von $x$ und $y$ in der ersten
+Gleichung ein, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm} $3 \cdot x - 5 + 9 = 4$,
+\\[0.2cm]
+woraus $x = 0$ folgt. Damit lautet die Lösung des ursprünglichen Gleichungs-Systems
+\\[0.2cm]
+\hspace*{1.3cm} 
+$x = 0$, \quad $y = -1$, \quad $z = 3$.
+\pagebreak
+
+\exercise
+Bestimmen  Sie die Lösung des folgenden Gleichungs-Systems mit Hilfe des Gauß'schen
+Eliminations-Verfahrens:
+\begin{equation*}
+\begin{array}[c]{l}
+  2 \cdot x + 1 \cdot y + 3 \cdot z = 2, \\[0.2cm]
+  1 \cdot x + 3 \cdot y + 2 \cdot z = 0, \\[0.2cm]
+  1 \cdot x + 2 \cdot y + 1 \cdot z = 0.
+\end{array}
+\end{equation*}
+\textbf{Hinweis}: Die Lösungen sind keine ganzen Zahlen.
+\vspace*{0.3cm}
+
+Wir beschreiben nun, wie ein lineares Gleichungs-System der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{j=1}^m a_{i,j} \cdot x_j = b_i$
+\\[0.2cm]
+für eine  gegebenen Matrix 
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \left(
+  \begin{array}[c]{ll c l}
+    a_{1,1} & a_{1,2} & \cdots & a_{1,m} \\[0.2cm]
+    a_{2,1} & a_{2,2} & \cdots & a_{2,m} \\[0.2cm]
+    \vdots  & \vdots  & \ddots & \vdots  \\[0.2cm]
+    a_{n,1} & a_{n,2} & \cdots & a_{n,m} 
+  \end{array}
+ \right)
+$
+\quad und einen gegebenen Vektor \quad
+$\vec{b} = \left(
+  \begin{array}[c]{l}
+     b_1    \\
+     \vdots \\[0.1cm]
+     b_n       
+  \end{array}
+ \right)
+$
+\\[0.2cm]
+gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen.
+\begin{enumerate}
+\item Im ersten Schritt eliminieren wir die Variable $x_1$ aus der 2-ten, 3-ten, $\cdots$, $n$-ten
+      Gleichung.  Um die Variable $x_1$ aus der $i$-ten Gleichung zu eliminieren, multiplizieren 
+      wir die erste Gleichung mit dem Faktor
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-\bruch{a_{i,1}}{a_{1,1}}$
+      \\[0.2cm]
+      und addieren die so multiplizierte erste Gleichung zu der $i$-ten Gleichung.  Wegen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-\bruch{a_{i,1}}{a_{1,1}} \cdot a_{1,1} \cdot x_1 + a_{i,1} \cdot x_1 = 0$
+      \\[0.2cm]
+      enthält die resultierende Gleichung die Variable $x_1$ nicht mehr.  Die neue $i$-te Gleichung
+      hat dann die Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\bigl(a_{i,2} - \bruch{a_{i,1}}{a_{1,1}} \cdot a_{1,1}\bigr) \cdot x_2 + \cdots + 
+       \bigl(a_{i,n} - \bruch{a_{i,1}}{a_{1,1}} \cdot a_{1,n}\bigr) \cdot x_n =
+       b_{i} - \bruch{a_{i,1}}{a_{1,1}} \cdot b_{1}
+      $,
+      \\[0.2cm]
+      was sich unter Verwendung der Summen-Schreibweise auch kompakter in der Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\sum\limits_{j=2}^n \bigl(a_{i,j} - \bruch{a_{i,1}}{a_{1,1}} \cdot a_{1,j}\bigr) \cdot x_j =
+       b_{i} - \bruch{a_{i,1}}{a_{1,1}} \cdot b_{1}
+      $
+      \\[0.2cm]
+      schreiben läßt.
+
+      \textbf{Bemerkung}: An dieser Stelle fragen Sie sich vermutlich, was passiert, wenn
+      $a_{1,1} = 0$ ist, denn dann ist der Ausdruck $\frac{a_{i,1}}{a_{1,1}}$ offenbar undefiniert.
+      In so einem Fall vertauschen wir einfach die erste Gleichung mit einer anderen Gleichung,
+      für die der Koeffizient der Variablen $x_1$ von $0$ verschieden ist.  In der Praxis hat es sich
+      bewährt, immer die Gleichung als erste zu nehmen, für die der Koeffizient der Variablen $x_1$ den
+      größten Betrag hat, denn dadurch fallen die bei  einer numerischen Rechnung zwangsläufig
+      auftretenden  Rundungsfehler weniger schwer ins Gewicht als wenn wir die
+      Reihenfolge der Gleichungen beliebig wählen.   Diese Verfahren wird als
+      \emph{partielle Pivotisierung} bezeichnet.
+\item Im $k$-ten Schritt nehmen wir an, dass wir die Variablen $x_1, \cdots, x_{k-1}$ bereits aus 
+      der $k$-ten, $(k+1)$-ten, $\cdots$, $n$-Gleichung entfernt haben und wollen nun die 
+      Variable $x_k$ aus der $(k+1)$-ten bis $n$-ten Gleichung entfernen. 
+      Um die Variable $x_k$ aus der $i$-ten Gleichung ($i \in \{ k+1,\cdots, n\}$)
+      zu entfernen multiplizieren wir die $k$-te Gleichung mit dem Faktor
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-\bruch{a_{i,k}}{a_{k,k}}$
+      \\[0.2cm]
+      und addieren die so multiplizierte $k$-te Gleichung zu der $i$-ten Gleichung.  Wegen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-\bruch{a_{i,k}}{a_{k,k}} \cdot a_{k,k} \cdot x_k + a_{i,k} \cdot x_k = 0$
+      \\[0.2cm]
+      enthält die resultierende Gleichung die Variable $x_k$ nicht mehr.  Die Variablen
+      $x_1$, $\cdots$, $x_{k-1}$ wurden aus der $i$-ten Gleichung bereits vorher 
+      eliminiert, so dass die neue $i$-te Gleichung
+      dann die Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\sum\limits_{j=k+1}^n \bigl(a_{i,j} - \bruch{a_{i,k}}{a_{k,k}} \cdot a_{k,j}\bigr) \cdot x_j =
+       b_{i} - \bruch{a_{i,k}}{a_{k,k}} \cdot b_{k}
+      $
+      \\[0.2cm]
+      hat.   Aus Gründen der numerischen Stabilität kann wieder eine partielle Pivotisierung durchgeführt
+      werden.  Wir wollen im folgenden voraussetzen, dass dies immer möglich ist, dass heißt wir setzen
+      voraus, dass es immer eine Gleichung unter den Gleichungen mit den Nummern $k,\cdots,n$ gibt,
+      in denen die Variable $x_k$ auch tatsächlich auftritt, so dass also immer für mindestens ein
+      $i \in \{ k, \cdots, n\}$ der Koeffizient $a_{i,k} \not= 0$ ist.  
+      Diese Voraussetzung ist äquivalent zu der Forderung, dass das ursprüngliche Gleichungs-System
+      eindeutig lösbar ist.
+\item Im letzten Schritt können wir voraussetzen, dass das Gleichungs-System eine obere Dreiecks-Form
+      hat.  Es bleiben nun noch $n$ Teilschritte zur Berechnung der Variablen $x_1,\cdots,x_n$.
+      \begin{enumerate}
+      \item Im ersten Teilschritt lösen wir die $n$-te Gleichung nach $x_n$ auf.
+            Die $n$-te Gleichung hat die Form
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $c_{n,n} \cdot x_n = d_n$,
+            \\[0.2cm] 
+            wobei wir die Koeffizienten $c_{n,n}$ und $d_n$ im zweiten Schritt berechnet haben.
+            Die Lösung dieser Gleichung ist dann offenbar
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $x_{n} = \bruch{d_n}{c_{n,n}}$.
+            \\[0.2cm]
+            Sollte nun $c_{n,n} = 0$ gelten, so ist das Gleichungs-System nicht eindeutig lösbar.
+      \item Im $i$-ten Teilschritt können wir voraussetzen, dass wir die Variablen
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $x_n$, $x_{n-1}$, $\cdots$, $x_{n-(i-2)}$ 
+            \\[0.2cm]
+            bereits berechnet haben.  Ziel ist nun die Bestimmung der Variablen $x_{n-(i-1)}$ mit Hilfe
+            der $\bigl(n-(i-1)\bigr)$-ten Gleichung.  Definieren wir zur Vereinfachung der Notation
+            $k = n - (i-1)$, so hat die $k$-te Gleichung die Form
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\sum\limits_{j=k}^n c_{k,j} \cdot x_j = d_k$.
+            \\[0.2cm]
+            Da nun die Variablen $x_{k+1},\cdots,x_n$ bereits bekannt sind, können wir diese Gleichung
+            nach $x_k$ auflösen und erhalten
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $x_k = \bruch{1}{c_{k,k}} \Bigl(d_k - \sum\limits_{j=k+1}^n c_{k,j} \cdot x_j\Bigr)$.
+            \\[0.2cm]
+            Sollte hier $c_{k,k} = 0$ gelten, so ist das Gleichungs-System nicht eindeutig lösbar.
+      \end{enumerate}
+\end{enumerate}
+
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    solve := procedure(a, b) {
+        [ a, b ] := eliminate(a, b);
+        x := solveTriangular(a, b);
+        return x;
+    };
+    eliminate := procedure(a, b) {
+        n := #a;    // number of equations
+        pivot := procedure(a, n, i) {
+            r := i;  // index of row containing maximal element
+            for (j in [i+1 .. n]) {
+                if (abs(a(j)(i)) > abs(a(r)(i))) {
+                    r := j;
+                }
+            }
+            return r;
+        };
+        for (i in [1 .. n]) {
+            r := pivot(a, n, i);
+            [ u, v ] := [ a(r), a(i) ];   
+            a(r) := v;
+            a(i) := u;
+            [ u, v ] := [ b(i), b(r) ];
+            b(i) := v;
+            b(r) := u;
+            for (j in [i+1 .. n]) {
+                f := 1.0 * a(j)(i) / a(i)(i);
+                a(j)(i) := 0;
+                for (k in [i+1 .. n]) {
+                    a(j)(k) -= f * a(i)(k);
+                }
+                b(j) -= f * b(i);
+            }    
+        }
+        return [ a, b ];
+    };
+    solveTriangular := procedure(a, b) {
+        x := [];
+        n := #a;    // number of equations
+        i := n;     // index to equation
+        for (i in [n, n-1 .. 1]) {
+            r := b(i);
+            r -= +/ { a(i)(k) * x(k) : k in [i+1 .. n] };
+            x(i) := 1.0 * r / a(i)(i);
+        }
+        return x;
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Implementierung des Gauß'schen Eliminations-Verfahrens in \textsl{SetlX}.}
+\label{fig:gauss.stlx}
+\end{figure}
+
+\noindent
+Abbildung \ref{fig:gauss.stlx} zeigt eine einfache Implementierung des Gauß'schen Algorithmus, welche die
+oben ausgeführten Überlegungen umsetzt.  Wir diskutieren das Programm nun im Detail.
+\begin{enumerate}
+\item Die Funktion $\textsl{solve}(a, b)$ erhält als erstes Argument $a$ die Matrix und
+      als zweites Argument $b$ die rechte Seite des linearen Gleichungs-Systems
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \cdot \vec{x} = b$
+      \\[0.2cm]
+      Zunächst bringen wir dieses Gleichungs-System in Zeile 2 mit Hilfe der Funktion \textsl{eliminate} auf
+      eine obere Dreiecks-Form.  Die Funktion \textsl{solveTriangular} löst dieses System dann durch
+      Rückwärts-Substitution.
+\item Die Funktion $\textsl{eliminate}(a, b)$ hat die Aufgabe, das Gleichungs-System $a \cdot \vec{x} = b$
+      in eine obere Dreiecks-Form zu überführen.  Wir gehen davon aus, dass die Matrix $a$ quadratisch ist. 
+      Dann ist das in Zeile 7 bestimmte $n$ sowohl die Anzahl der Zeilen der Matrix als auch die Anzahl
+      der Variablen.
+\item In den Zeilen 8 bis 16 definieren wir die lokale Funktion $\textsl{pivot}(a, n, i)$.  Diese Funktion 
+      hat die Aufgabe, diejenige Zeile $r$ in der Matrix $a$ zu finden, für die der Wert
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $|a_{j,i}|$ \quad für $j \in \{i, \cdots, n \}$
+      \\[0.2cm]
+      maximal wird.
+\item Die Schleife in Zeile 17 setzt voraus, dass die ersten $i$ Gleichungen bereits in oberer 
+      Dreiecksform vorliegen und das darüber hinaus die Variablen $x_1, \cdots, x_{i-1}$
+      bereits aus den Gleichungen $i, i+1, \cdots, n$  entfernt worden sind.
+      Ziel ist es,  die Variable $x_i$ aus der $(i+1)$-sten bis zur $n$-ten
+      Gleichung zu entfernen.  
+      \begin{enumerate}
+      \item Dazu wird  mit Hilfe des Funktions-Aufrufs $\textsl{pivot}(a,n,i)$
+            bestimmt, in welcher Zeile der Betrag $a_{j,i}$ maximal ist.
+      \item In den Zeilen 20 - 24 wird diese Zeile  mit der $i$-ten Zeile vertauscht.
+      \item Die \texttt{for}-Schleife in Zeile 25 zieht von der $j$-ten Zeile das
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\bruch{a_{j,i}}{a_{i,i}}$-fache 
+            \\[0.2cm]
+            der $i$-ten Zeile ab.
+      \end{enumerate}
+      Insgesamt hängt nun für jedes $i=1,\cdots,n$ die $i$-te Gleichung nur noch von den Variablen
+      $x_{i}, \cdots, x_{n}$ ab.
+\item In der Prozedur \textsl{solveTriangular} wird das Gleichungs-System, das jetzt in oberer Dreiecks-Form 
+      vorliegt, durch Rückwärts-Substitution gelöst.
+\end{enumerate}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

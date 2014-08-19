@@ -1,0 +1,34 @@
+load("signum.stlx");
+
+// This procedure computes the formula for det(A) where A is an n >< n matrix.
+determinant := procedure(n) {
+    det := "";
+    for (l in allPermutations(n)) {
+        if (signum(l) == 1) {
+            det += " " * 6 + " +" + product(n, l);
+        } else {
+            det += " " * 6 + " -" + product(n, l);
+        }
+    }
+    return det[10..];
+};
+
+product := procedure(n, l) {
+    p := " ";
+    for (i in [1 .. n]) {
+        if (i > 1) {
+            p += " * ";
+        }
+        p += "a[$i$, $l[i]$]";
+    }
+    return p + "\n";
+};
+
+test := procedure(n) {
+    print("n = $n$:\ndet(A) = $determinant(n)$");
+};
+
+test(2);
+test(3);
+test(4);
+test(5);

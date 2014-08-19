@@ -1,0 +1,1067 @@
+\chapter{Gruppen}
+In diesem Kapitel und dem nächsten Kapitel untersuchen wir algebraische Strukturen wie
+\href{http://de.wikipedia.org/wiki/Gruppe_(Mathematik)}{\emph{Gruppen}}, 
+\href{http://de.wikipedia.org/wiki/Ring_(Algebra)}{\emph{Ringe}}
+ und 
+\href{http://en.wikipedia.org/wiki/Field_(mathematics)}{\emph{Körper}}, 
+wobei wir in diesem Kapitel mit den Gruppen beginnen.
+Die Theorie der Gruppen ist ursprünglich aus dem Bestreben entstanden, Formeln für die
+Nullstellen von beliebigen Polynomen zu finden.  Später hat die Gruppentheorie auch in
+anderen Gebieten der Mathematik, Physik und Informatik zahlreiche Anwendungen gefunden.
+Wir werden die Definition einer Gruppe später bei der Definition eines Vektorraums benötigen, 
+denn ein Vektorraum ist eine kommutative Gruppe, für die zusätzlich eine Skalar-Multiplikation
+definiert ist.
+
+\section{Die Definition der Gruppe}
+\begin{Definition}[Gruppe]
+Ein Tripel $\langle G, e, \circ \rangle$ heißt \emph{Gruppe} falls folgendes gilt:
+\begin{enumerate}
+\item $G$ ist eine Menge.
+\item $e$ ist ein Element der Menge $G$.
+\item $\circ$ ist eine binäre Funktion auf der Menge $G$, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\circ : G \times G \rightarrow G$.
+      \\[0.2cm]
+      Wir schreiben den Funktions-Wert $\circ(x,y)$ als $x \circ y$ und benutzen
+      $\circ$ also als Infix-Operator.
+\item Es gilt
+      \\
+      \hspace*{1.3cm}
+      $e \circ x = x$ \quad für alle $x \in G$,
+      \\[0.2cm]
+      das Element $e$ ist also bezüglich der Operation $\circ$ ein \emph{links-neutrales}
+      Element.
+\item Für alle $x \in G$ gibt es ein $y \in G$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \circ x = e$
+      \\[0.2cm]
+      gilt.  Wir sagen, dass $y$ ein zu $x$ bezüglich der Operation $\circ$
+      \emph{links-inverses} Element ist.
+\item Es gilt das folgende \emph{Assoziativ-Gesetz}:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x \circ y) \circ z = x \circ (y \circ z)$ \quad für alle $x,y,z \in G$.
+\end{enumerate}
+Falls zusätzlich das Kommutativ-Gesetz
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x, y \in G: x \circ y = y \circ x$
+\\[0.2cm]
+gilt, dann sagen wir, dass $\langle G, e, \circ \rangle$ eine \emph{kommutative Gruppe} ist.
+\end{Definition}
+
+\examples
+Bevor wir Sätze über Gruppen beweisen, präsentieren wir zunächst einige Beispiele, an Hand
+derer klar wird, worum es bei Gruppen überhaupt geht.
+\begin{enumerate}
+\item $\langle \mathbb{Z}, 0, + \rangle$ ist eine kommutative Gruppe, denn es gilt:
+      \begin{enumerate}
+      \item $0 + x = x$ \quad für alle $x \in \mathbb{Z}$.
+      \item $-x + x = 0$ \quad für alle $x \in \mathbb{Z}$,
+        
+            und damit ist die Zahl $-x$ das \emph{Links-Inverse} der Zahl $x$ bezüglich
+            der Addition.
+      \item $(x + y) + z = x + (y + z)$ \quad für alle $x,y,z \in \mathbb{Z}$.
+      \item $x + y = y + x$ \quad für alle $x,y \in \mathbb{Z}$.
+      \end{enumerate}
+      Dieses Beispiel zeigt, dass der Begriff der Gruppe versucht, die Eigenschaften der
+      Addition auf den natürlichen Zahlen zu verallgemeinern.
+\item Definieren wir $\mathbb{Q}_+$ als die Menge der positiven rationalen Zahlen, also als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathbb{Q}_+ := \{ q \in \mathbb{Q} \mid q > 0 \}$
+      \\[0.2cm]
+      und bezeichnen wir mit
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\cdot : \mathbb{Q}_+ \times \mathbb{Q}_+ \rightarrow \mathbb{Q}_+$
+      \\[0.2cm]
+      die Multiplikation, so ist die Struktur $\langle \mathbb{Q}, 1, \cdot \rangle$ eine
+      kommutative Gruppe, denn es gilt: 
+      \begin{enumerate}
+      \item $1 \cdot q = q$ \quad für alle $q \in \mathbb{Q}_+$.
+      \item $\frac{1}{q} \cdot q = 1$ \quad für alle $q \in \mathbb{Q}_+$,
+        
+            und damit ist die Zahl $\frac{1}{q}$ das \emph{Links-Inverse} der Zahl $x$ bezüglich der
+            Multiplikation.
+      \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ \quad für alle $x,y,z \in \mathbb{Q}_+$.
+      \item $x \cdot y = y \cdot x$ \quad für alle $x,y \in \mathbb{Q}_+$.
+      \end{enumerate}
+\item In den letzten beiden Beispielen war die der Gruppe zu Grunde liegende Menge $G$
+      jedesmal unendlich.  Das dies keineswegs immer so ist, zeigt das nächste Beispiel.
+
+      Wir definieren die Menge $G$ als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $G := \{ e, a \}$
+      \\[0.2cm]
+      und definieren nun auf der Menge $G$ eine Verknüfung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\circ: G \times G \rightarrow G$
+      \\[0.2cm]
+      indem wir definieren:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+        e \circ e := e, & \quad & e \circ a := a, \\
+        a \circ e := a, & \quad & a \circ a := e. 
+      \end{array}
+      $
+      \\[0.2cm]
+      Dann ist $\langle G, e, \circ \rangle$ eine kommutative Gruppe, denn offenbar gilt für alle $x \in G$, dass 
+      $e \circ x = x$ ist und wir finden auch für jedes der beiden Elemente ein links-inverses Element:
+      Das Links-Inverse zu $e$ ist $e$ und das Links-Inverse zu $a$ ist $a$.  Es bleibt das
+      Assoziativ-Gesetz nachzuweisen.  Dazu müssen wir die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x \circ y) \circ z = x \circ (y \circ z)$
+      \\[0.2cm]
+      für alle Werte $x,y,z \in G$ prüfen.  Es gibt insgesamt 8 Fälle:
+      \begin{enumerate}
+      \item $(e \circ e) \circ e = e \circ e = e$ und $e \circ (e \circ e) = e \circ e = e$. $\checkmark$
+      \item $(e \circ e) \circ a = e \circ a = a$ und $e \circ (e \circ a) = e \circ a = a$. $\checkmark$
+      \item $(e \circ a) \circ e = a \circ e = a$ und $e \circ (a \circ e) = e \circ a = a$. $\checkmark$
+      \item $(e \circ a) \circ a = a \circ a = e$ und $e \circ (a \circ a) = e \circ e = e$. $\checkmark$
+      \item $(a \circ e) \circ e = a \circ e = a$ und $a \circ (e \circ e) = a \circ e = a$. $\checkmark$
+      \item $(a \circ e) \circ a = a \circ a = e$ und $a \circ (e \circ a) = a \circ a = e$. $\checkmark$
+      \item $(a \circ a) \circ e = e \circ e = e$ und $a \circ (a \circ e) = a \circ a = e$. $\checkmark$
+      \item $(a \circ a) \circ a = e \circ a = a$ und $a \circ (a \circ a) = a \circ e = a$. $\checkmark$
+      \end{enumerate}
+      Die Tatsache, dass die Verknüfung $\circ$ kommutativ ist, folgt unmittelbar aus der Definition.
+      Wir werden uns im Kapitel zur Zahlentheorie noch näher mit endlichen Gruppen auseinander
+      setzen.
+      \eox
+\end{enumerate}
+
+Bevor wir weitere Beispiele von Gruppen präsentieren, beweisen wir einige Sätze, die unmittelbar aus der
+Definition der Gruppen folgen.
+
+\begin{Satz}[Links-Inverses ist auch Rechts-Inverses] \lb
+  Ist $\langle G, e, \circ \rangle$ eine Gruppe, ist $a \in G$ ein beliebiges Element aus
+  $G$ und ist $b$ ein Links-Inverses zu $a$, gilt also
+  \\
+  \hspace*{1.3cm}
+  $b \circ a = e$,
+  \\[0.2cm]
+  dann ist $b$ auch ein Rechts-Inverses zu $a$, es gilt folglich
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a \circ b = e$.  
+\end{Satz}
+
+\proof
+Zunächst bemerken wir, dass das Element $b$ ebenfalls ein Links-Inverses haben muss.  Es gibt also ein 
+$c \in G$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$c \circ b = e$
+\\[0.2cm]
+gilt.  Nun haben wir die folgende Kette von Gleichungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  a \circ b & = & e \circ (a \circ b)           & \mbox{denn $e$ ist links-neutral,} \\[0.2cm]
+            & = & (c \circ b) \circ (a \circ b) 
+                & \mbox{denn $c$ ist links-invers zu $b$, also gilt $c \circ b = e$,}  \\[0.2cm]
+            & = & c \circ \bigl(b \circ (a \circ b)\bigr) 
+                & \mbox{Assoziativ-Gesetz}  \\[0.2cm]
+            & = & c \circ \bigl((b \circ a) \circ b\bigr) 
+                & \mbox{Assoziativ-Gesetz}  \\[0.2cm]
+            & = & c \circ \bigl(e \circ b\bigr) 
+                & \mbox{denn $b$ ist links-invers zu $a$, also gilt $b \circ a = e$,}  \\[0.2cm]
+            & = & c \circ b 
+                & \mbox{denn $e$ ist links-neutral}  \\[0.2cm]
+            & = & e 
+                & \mbox{denn $c$ ist links-invers zu $b$.}  
+\end{array}
+$
+\\[0.2cm]
+Insgesamt haben wir also $a \circ b = e$ bewiesen. \qed
+
+\remark
+Da jedes zu einem Element $a$ links-inverse Element $b$ auch rechts-invers ist, sprechen wir im folgenden
+immer nur noch von einem inversen Element und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+
+\begin{Satz}[Links-neutrales Element ist auch rechts-neutrales Element] \lb
+  Ist $\langle G, e, \circ \rangle$ eine Gruppe, so gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a \circ e = a$ \quad für alle $a \in G$.
+\end{Satz}
+
+\proof
+Es sei $a \in G$ beliebig und $b$ das zu $a$ inverse Element.  Dann haben wir die folgende Kette von
+Gleichungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  a \circ e & = & a \circ (b \circ a) 
+                & \mbox{denn $b$ ist invers zu $a$,} \\[0.2cm]
+            & = & (a \circ b) \circ a
+                & \mbox{Assoziativ-Gesetz} \\[0.2cm]
+            & = & e \circ a
+                & \mbox{denn $b$ ist invers zu $a$,} \\[0.2cm]
+            & = & a 
+                & \mbox{denn $e$ ist links-neutral.}
+\end{array}
+$
+\\[0.2cm]
+Wir haben also $a \circ e = a$ gezeigt. \qed
+
+\remark
+Da das links-neutrale Element $e$ einer Gruppe $\langle G, e, \circ \rangle$ auch rechts-neutral ist,
+sprechen wir im folgenden
+immer nur noch von einem neutralen Element und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+
+\begin{Satz}[Eindeutigkeit des neutralen Elements] \lb
+  Ist $\langle G, e, \circ \rangle$ eine Gruppe und ist $f \in G$ ein weiteres  Element, so dass
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $f \circ x = x$ \quad für alle $x \in G$ gilt,
+  \\[0.2cm]
+  so folgt schon $f = e$.
+\end{Satz}
+
+\proof
+Wir haben die folgende Kette von Gleichungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  f & = & f \circ e & \mbox{denn $e$ ist neutrales Element und damit auch rechts-neutral,} \\[0.2cm]
+    & = & e         & \mbox{denn $f \circ x = x$ für alle $x \in G$, also auch für $x = e$.} 
+\end{array}
+$
+\\[0.2cm]
+Also gilt $f = e$ gezeigt. \qed
+
+\remark
+Der letzte Satz zeigt, dass das neutrale Element eindeutig bestimmt ist.  Wir sprechen daher in Zukunft
+immer von \emph{dem} neutralen Element anstatt von \emph{einem} neutralen Element.
+
+\begin{Satz}[Eindeutigkeit des inversen Elements] \lb
+  Ist $\langle G, e, \circ \rangle$ eine Gruppe, ist $a \in G$ und sind $b,c$ beide invers zu $a$, so folgt
+  $b = c$:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $b \circ a = e \;\wedge\; c \circ a = e \;\rightarrow\; b = c$.
+\end{Satz}
+
+\proof
+Wir haben die folgende Kette von Gleichungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  c & = & c \circ e & \mbox{denn $e$ ist neutrales Element,} \\[0.2cm]
+    & = & c \circ (a \circ b) & \mbox{denn $b$ ist invers zu $a$,} \\[0.2cm]
+    & = & (c \circ a) \circ b & \mbox{Assoziativ-Gesetz} \\[0.2cm]
+    & = & e \circ b & \mbox{denn $c$ ist invers zu $a$,} \\[0.2cm]
+    & = & b & \mbox{denn $e$ ist neutrales Element.} \\[0.2cm]
+\end{array}
+$
+\\[0.2cm]
+Also ist $c = b$ gezeigt. \qed
+
+
+\remark Der letzte Satz zeigt, dass in einer Gruppe $\langle G, e, \circ \rangle$ für ein
+gegebenes Element $a$ das zugehörige inverse Element eindeutig bestimmt ist.  Damit können
+wir eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm} $^{-1}: G \rightarrow G$
+\\[0.2cm]
+definieren, die für alle $a \in G$ das zu $a$ inverse Element berechnet: Es gilt also
+\\[0.2cm]
+\hspace*{1.3cm} $a^{-1} \circ a = e$ \quad und \quad $a \circ a^{-1} = e$ \quad für alle $a \in G$.
+
+\remark
+Ist $\langle G, e, \circ \rangle$ eine Gruppe und sind die Operation $\circ$ und das neutrale Element 
+$e$ aus dem Zusammenhang klar, so sprechen wir einfach von der Gruppe $G$, obwohl wir formal korrekt
+eigentlich von der Gruppe $\langle G, e, \circ \rangle$ sprechen müssten.
+
+\begin{Satz}[$(a \circ b)^{-1} = b^{-1} \circ a^{-1}$] \lb
+  Ist $\langle G, e, \circ \rangle$ eine Gruppe und bezeichnen wir das zu $x$ inverse Element mit
+  $x^{-1}$, so gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $(a \circ b)^{-1} = b^{-1} \circ a^{-1}$ \quad für alle $a,b \in G$.
+\end{Satz}
+\pagebreak
+
+\proof
+Wir haben
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  (b^{-1} \circ a^{-1}) \circ (a \circ b) & = & b^{-1} \circ \bigl(a^{-1} \circ (a \circ b)\bigr) 
+                                              & \mbox{Assoziativ-Gesetz} \\[0.2cm]
+                                          & = & b^{-1} \circ \bigl((a^{-1} \circ a) \circ b\bigr) 
+                                              & \mbox{Assoziativ-Gesetz} \\[0.2cm]
+                                          & = & b^{-1} \circ (e \circ b) \\[0.2cm]
+                                          & = & b^{-1} \circ b \\[0.2cm]
+                                          & = & e \\[0.2cm]
+\end{array}
+$
+\\[0.2cm]
+Also gilt $(b^{-1} \circ a^{-1}) \circ (a \circ b) = e$ und damit ist gezeigt,  dass das Element
+$(b^{-1} \circ a^{-1})$ zu $a \circ b$ invers ist.  Da das inverse Element eindeutig bestimmt ist, folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a \circ b)^{-1} = b^{-1} \circ a^{-1}$. \qed
+
+
+\begin{Satz}[$(a^{-1})^{-1} = a$]
+  Ist $\langle G, e, \circ \rangle$ eine Gruppe und bezeichnen wir das zu $x$ inverse Element mit
+  $x^{-1}$, so gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $(a^{-1})^{-1} = a$ \quad für alle $a \in G$.
+  \\[0.2cm]
+  Das inverse Element des zu $a$ inversen Elements ist also wieder $a$.
+\end{Satz}
+
+\proof
+Wir haben
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  (a^{-1})^{-1} & = & (a^{-1})^{-1} \circ e
+                    & \mbox{$e$ ist auch rechts-neutral}                      \\[0.2cm]
+                & = & (a^{-1})^{-1} \circ (a^{-1} \circ a)
+                    & \mbox{denn $a^{-1} \circ a = e$}                        \\[0.2cm]
+                & = & \bigl((a^{-1})^{-1} \circ a^{-1}\bigr) \circ a
+                    & \mbox{Assoziativ-Gesetz}                                \\[0.2cm]
+                & = & e \circ a
+                    & \mbox{denn $(a^{-1})^{-1}$ ist das Inverse zu $a^{-1}$} \\[0.2cm]
+                & = & a
+\end{array}
+$
+\\[0.2cm]
+Also gilt $(a^{-1})^{-1} = a$. \qed
+
+
+\begin{Definition}[Halb-Gruppe]
+  Eine Paar $\langle G, \circ \rangle$ ist eine \emph{Halb-Gruppe}, falls gilt:
+  \begin{enumerate}
+  \item $G$ ist eine Menge,
+  \item $\circ$ ist eine binäre Funktion auf $G$, es gilt also
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\circ: G \times G \rightarrow G$.
+        \\[0.2cm]
+        Genau wie bei Gruppen schreiben wir $\circ$ als Infix-Operator.
+  \item Für den Operator $\circ$ gilt das Assoziativ-Gesetz
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $(x \circ y) \circ z = x \circ (y \circ z)$.
+  \end{enumerate}
+  Ist der Operator $\circ$ aus dem Zusammenhang klar, so sagen wir oft auch,
+  dass $G$ eine Halb-Gruppe ist.
+\end{Definition}
+
+\examples
+\begin{enumerate}
+\item Das Paar $\langle \mathbb{N}, + \rangle$ ist eine Halb-Gruppe.
+\item Das Paar $\langle \mathbb{Z}, \cdot \rangle$ ist eine Halb-Gruppe.
+\end{enumerate}
+
+\noindent
+Falls $G$ eine Gruppe ist, so lassen sich die Gleichungen
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \circ x = b$ \quad und \quad $y \circ a = b$
+\\[0.2cm]
+für alle $a,b \in G$ lösen: Durch Einsetzen verifzieren Sie sofort, dass $x := a^{-1} \circ b$
+eine Lösung der ersten Gleichung ist, während $y := b \circ a^{-1}$ die zweite Gleichung löst.
+Interessant ist nun, dass sich dies auch umkehren läßt, denn es gilt der folgende Satz.
+
+\begin{Satz} \label{satz:solvable}
+Ist $\langle G, \circ \rangle$ eine Halb-Gruppe, in der für alle Werte $a,b \in G$ die beiden Gleichungen 
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \circ x = b$ \quad und \quad $y \circ a = b$
+\\[0.2cm]  
+für die Variablen $x$ und $y$ eine Lösung in $G$ haben, dann
+gibt es ein neutrales Element $e \in G$, so 
+dass $\langle G, e, \circ \rangle$  eine Gruppe ist.
+\end{Satz}
+
+\proof
+Es sei $b$ ein beliebiges Element von $G$.  Nach Voraussetzung hat die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \circ b = b$
+\\[0.2cm]
+eine Lösung, die wir mit $e$ bezeichnen.  Für dieses $e$ gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$e \circ b = b$.
+\\[0.2cm]
+Es sei nun $a$ ein weiteres beliebiges Element von $G$.  Dann hat die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$b \circ y = a$
+\\[0.2cm]
+nach Voraussetzung ebenfalls eine Lösung, die wir mit $c$ bezeichnen.  Es gilt dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$b \circ c = a$.
+\\[0.2cm]
+Dann haben wir folgende Gleichungs-Kette
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  e \circ a & = & e \circ (b \circ c)
+                & \mbox{wegen $b \circ c = a$}  \\[0.2cm]
+            & = & (e \circ b) \circ c
+                & \mbox{Assoziativ-Gesetz}  \\[0.2cm]
+            & = & b \circ c
+                & \mbox{wegen $e \circ b = b$}  \\[0.2cm]
+            & = & a
+                & \mbox{wegen $b \circ c = a$.}  \\[0.2cm]
+\end{array}
+$
+\\[0.2cm]
+Wir haben also insgesamt für jedes $a \in G$ gezeigt, dass $e \circ a = a$ ist und damit ist
+$e$ ein links-neutrales Element bezüglich der Operation $\circ$.  Nach Voraussetzung hat nun 
+die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \circ a = e$
+\\[0.2cm]
+für jedes $a$ eine Lösung, nennen wir diese $d$.  Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$d \circ a = e$
+\\[0.2cm]
+und wir sehen, dass zu jedem $a \in G$ ein links-inverses Element existiert.
+Da das Assoziativ-Gesetz ebenfalls gültig ist, denn $\langle G, \circ \rangle$ ist eine Halb-Gruppe,
+ist $\langle G, e, \circ \rangle$ eine Gruppe.   \qed
+
+\remark Es sei $\langle G, e, \circ \rangle$ eine Gruppe, weiter sei $a,b,c \in G$ und es gelte
+\\[0.2cm]
+\hspace*{1.3cm} $a \circ c = b \circ c$.
+\\[0.2cm]
+Multiplizieren wir diese Gleichung auf beiden Seiten mit $c^{-1}$, so sehen wir, dass dann $a = b$ gelten
+muss.  Ähnlich folgt aus
+\\[0.2cm]
+\hspace*{1.3cm} $c \circ a = c \circ b$
+\\[0.2cm]
+die Gleichung $a = b$.  In einer Gruppe gelten also die beiden folgenden Kürzungs-Regeln:
+\\[0.2cm]
+\hspace*{1.3cm} 
+$a \circ c = b \circ c \rightarrow a = b$ \quad und \quad
+$c \circ a = c \circ b \rightarrow a = b$.
+\\[0.2cm]
+Interessant ist nun die Beobachtung, dass im Falle einer endlichen Halb-Gruppe 
+$\langle G, \circ \rangle$ aus der Gültigkeit der  
+Kürzungs-Regeln geschlossen werden kann, dass $G$ eine Gruppe ist.
+Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
+
+\begin{Definition}[injektiv]
+  Eine Funktion $f: M \rightarrow N$ ist \emph{injektiv} genau dann, wenn
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $f(x) = f(y) \rightarrow x = y$ \quad für alle $x,y\in M$ 
+  \\[0.2cm]
+  gilt.  Diese Forderung ist logisch äquivalent zu der Formel
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $x \not= y \rightarrow f(x) \not= f(y)$,
+  \\[0.2cm]
+  verschiedene Argumente werden also auf verschiedene Werte abgebildet.
+\end{Definition}
+
+\begin{Definition}[surjektiv]
+  Eine Funktion $f: M \rightarrow N$ ist \emph{surjektiv} genau dann, wenn
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\forall y \in N: \exists x \in M: f(x) = y$ 
+  \\[0.2cm]
+  gilt.  Jedes Element $y$ aus $N$ tritt also als Funktionswert auf.
+\end{Definition}
+
+\begin{Definition}[bijektiv] \lb
+  Eine Funktion $f: M \rightarrow N$ ist \emph{bijektiv} genau dann, wenn
+ $f$ sowohl injektiv als auch surjektiv ist.  
+\end{Definition}
+
+\begin{Satz}
+  Es sei $M$ eine endliche Menge und die Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f:M \rightarrow M$
+\\[0.2cm]
+sei injektiv.  Dann ist $f$ auch surjektiv.
+\end{Satz}
+
+\proof
+Da $f$ injektiv ist, werden verschiedene Argumente auch auf verschiedene Werte abgebildet.
+Damit hat die Funktion $f$ genau so viele Werte, wie sie Argumente hat, es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(f(M)\bigr) = \textsl{card}(M)$.
+\\[0.2cm]
+Hierbei steht $f(M)$ für das Bild der Menge $M$, es gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(M) = \bigl\{ f(x) \mid x \in M \bigr\}$.
+\\[0.2cm]
+Nun gilt aber $f(M) \subseteq M$ und wenn die Mengen $M$ und $f(M)$ die gleiche Anzahl Elemente haben, 
+dann kann das bei einer endlichen Menge nur dann gehen, wenn 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(M) = M$ 
+\\[0.2cm]
+gilt.  Setzen wir hier die Definition von $f(M)$ ein, so haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl\{ f(x) \mid x \in M \bigr\} = M$.
+\\[0.2cm]
+Damit gibt es also für jedes $y \in M$ ein $x \in M$, so dass $y = f(x)$ gilt und folglich ist $f$
+surjektiv.
+\qed
+
+\exercise
+  Es sei $M$ eine endliche Menge und die Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f:M \rightarrow M$
+\\[0.2cm]
+sei surjektiv.  Zeigen Sie, dass $f$ dann auch injektiv ist.
+
+\begin{Satz}
+  Es sei $\langle G, \circ \rangle$ eine endliche Halb-Gruppe, in der die beiden Kürzungs-Regeln
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a \circ c = b \circ c \rightarrow a = b$ \quad und \quad
+  $c \circ a = c \circ b \rightarrow a = b$
+  \\[0.2cm]
+  für alle $a,b,c \in G$ gelten.  Dann ist $G$ bereits eine Gruppe.
+\end{Satz}
+
+\proof Wir beweisen die Behauptung in dem wir zeigen, dass für alle $a,b \in G$ die beiden Gleichungen
+\\[0.2cm]
+\hspace*{1.3cm} $a \circ x = b$ \quad und \quad $y \circ a = b$
+\\[0.2cm]
+Lösungen haben, denn dann folgt die Behauptung aus Satz \ref{satz:solvable}.  Zunächst definieren wir für
+jedes $a \in G$ eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm} $f_a: G \rightarrow G$ \quad durch \quad $f_a(x) := a \circ x$.
+\\[0.2cm]
+Diese Funktionen $f_a(x)$ sind alle injektiv, denn aus
+\\[0.2cm]
+\hspace*{1.3cm} $f_a(x) = f_a(y)$
+\\[0.2cm]
+folgt nach Definition der Funktion $f_a$ zunächst
+\\[0.2cm]
+\hspace*{1.3cm} $a \circ x = a \circ y$
+\\[0.2cm]
+und aus der Gültigkeit der ersten Kürzungs-Regel folgt nun $x = y$.  Nach dem letzten Satz ist $f_a$ dann
+auch surjektiv.  Es gibt also zu jedem $b \in G$ ein $x \in G$ mit
+\\[0.2cm]
+\hspace*{1.3cm} $f_a(x) = b$ \quad beziehungsweise \quad $a \circ x = b$.
+\\[0.2cm]
+Damit haben wir gesehen, dass für beliebige $a,b \in G$ die Gleichung $a \circ x = b$ immer eine Lösung
+hat.  Genauso läßt sich  zeigen, dass für beliebige $a,b \in G$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$y \circ a = b$
+\\[0.2cm]
+eine Lösung hat.  Nach dem letzten Satz ist $G$ damit eine Gruppe.
+
+\section{Die Permutations-Gruppe $\mathcal{S}_n$}
+Bisher waren alle Gruppen, die wir kennengelernt haben, kommutativ.  Das ändert sich jetzt, denn wir
+werden gleich eine Gruppe kennen lernen, die nicht kommutativ ist.  Zunächst definieren wir für alle
+positiven natürlichen Zahlen $n \in \mathbb{N}$ die Menge $\mathbb{Z}_n^+$ als die Menge aller natürlichen Zahlen
+von $1$ bis $n$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_n^+ := \{ i \in \mathbb{N} \mid 1 \leq i \wedge i \leq n \}$.
+\\[0.2cm]
+Eine Relation $R \subseteq \mathbb{Z}_n^+ \times \mathbb{Z}_n^+$ heißt eine \emph{Permutation} genau dann, wenn $R$ auf $\mathbb{Z}_n^+$
+als bijektive Funktion aufgefasst werden kann und dass ist genau dann der Fall, wenn folgendes gilt:
+\begin{enumerate}
+\item Die Relation $R$ ist links-total auf $\mathbb{Z}_n^+$:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall x \in \mathbb{Z}_n^+: \exists y \in \mathbb{Z}_n^+: \pair(x,y) \in R$.
+\item Die Relation $R$ ist rechts-total auf $\mathbb{Z}_n^+$:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall y \in \mathbb{Z}_n^+: \exists x \in \mathbb{Z}_n^+: \pair(x,y) \in R$.
+\item Die Relation $R$ ist rechts-eindeutig:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall x, y_1, y_2 \in \mathbb{Z}_n^+: \pair(x,y_1) \in R \wedge \pair(x,y_2) \in R \rightarrow y_1 = y_2$.
+\end{enumerate}
+Aus der ersten und der dritten Forderung folgt, dass die Relation $R$ als Funktion
+\\[0.2cm]
+\hspace*{1.3cm} $R : \mathbb{Z}_n^+ \rightarrow \mathbb{Z}_n^+$
+\\[0.2cm]
+aufgefasst werden kann.  Aus der zweiten Forderung folgt, dass diese Funktion surjektiv ist.  Da die
+Menge $\mathbb{Z}_n^+$ endlich ist, ist die Funktion $R$ damit auch injektiv, denn wenn es ein $x_1,x_2,y \in \mathbb{Z}_n^+$
+gäbe, so dass
+\\[0.2cm]
+\hspace*{1.3cm} 
+$\pair(x_1,y) \in R$, \quad
+$\pair(x_2,y) \in R$, \quad und \quad
+$x_1 \not= x_2$
+\\[0.2cm]
+gelten würde, dann könnte $R$ nicht mehr surjektiv sein.  Wir definieren nun $\mathcal{S}_n$ als die Menge aller
+Permutationen auf der Menge $\mathbb{Z}_n^+$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{S}_n := \{ R \subseteq \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid \mbox{$R$ ist Permutation auf $\mathbb{Z}_n^+$} \}$.
+\\[0.2cm]
+Weiter definieren wir die identische Permutation $E_n$ auf $\mathbb{Z}_n^+$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$E_n := \{ \pair(x,x) \mid x \in \mathbb{Z}_n^+ \}$.
+\\[0.2cm]
+Wir erinnern an die Definition des relationalen Produkts, es gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$R_1 \circ R_2 := \{ \pair(x,z) \mid \exists y \in \mathbb{Z}_n^+: \pair(x,y) \in R_1 \wedge \pair(y,z) \in R_2 \}$.
+\\[0.2cm]
+Die entscheidende Beobachtung ist nun, dass $R_1 \circ R_2$ eine Permutation ist, wenn $R_1$ und $R_2$
+bereits Permutationen sind.
+
+\exercise
+Beweisen Sie
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall R_1, R_2 \in \mathcal{S}_n: R_1 \circ R_2 \in \mathcal{S}_n$.
+\qed
+
+
+\remark
+Wir hatten früher bereits gezeigt, dass für das relationale Produkt das Assoziativ-Gesetz gilt und wir
+haben ebenfalls gesehen, dass für die identische Permutation $E_n$ die Beziehung
+\\[0.2cm]
+\hspace*{1.3cm}
+$E_n \circ R = R$ \quad für alle $R \in \mathcal{S}_n$
+\\[0.2cm]
+gilt.  Weiter sehen wir: Ist $R \in \mathcal{S}_n$, so haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cll}
+   & R^{-1} \circ R \\[0.2cm]
+ = & \{ \pair(x,z) \in \mathbb{Z}_n^+\times \mathbb{Z}_n^+ \mid \exists y: 
+        \pair(x,y) \in R^{-1} \wedge \pair(y,z) \in R 
+     \} \\[0.2cm]
+ = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid 
+        \exists y: \pair(y,x) \in R \wedge \pair(y,z) \in R 
+     \} 
+   & \\[0.2cm]
+ = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid 
+        \exists y: x = z \}
+   & \mbox{denn $R$ ist rechts-eindeutig}    \\[0.2cm]
+ = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \}
+   &   \\[0.2cm]
+ = & E_n.
+\end{array}
+$
+\\[0.2cm]
+Folglich ist für eine Permutation $R$ der Ausdruck $R^{-1}$ tatsächlich das Inverse bezüglich des
+relationalen Produkts $\circ$.  Damit ist klar, dass die 
+Struktur $\langle \mathcal{S}_n, E_n, \circ \rangle$ eine Gruppe ist.
+Diese Gruppe trägt den Namen \emph{Permutations-Gruppe}.
+
+\exercise
+Zeigen Sie, dass $\mathcal{S}_3$ keine kommutative Gruppe ist.  Schreiben Sie dazu eine \textsl{SetlX}-Programm,
+dass zunächst die Menge $\mathcal{S}_3$ berechnet und anschließend überprüft, ob in dieser Menge das
+Kommutativ-Gesetz gilt.
+
+\section{Untergruppen und Faktor-Gruppen}
+\begin{Definition}[Untergruppe]
+  Es sei $\langle G, e, \circ \rangle$ eine Gruppe und es sei $U \subseteq G$.  Dann ist $U$ eine 
+  \emph{Untergruppe} von $G$, geschrieben $U \leq G$, falls folgendes gilt:
+  \begin{enumerate}
+  \item $\forall x, y \in U: x \circ y \in U$,
+
+        die Menge $U$ ist also unter der Operation $\circ$ abgeschlossen.
+  \item $e \in U$,
+
+        das neutrale Element der Gruppe $G$ ist also auch ein Element der Menge $U$.
+  \item Bezeichnen wir das zu $x \in G$ bezüglich der Operation $\circ$ inverse Element mit $x^{-1}$, 
+        so gilt
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\forall x \in U: x^{-1} \in U$,
+        \\[0.2cm]
+        die Menge $U$ ist also unter der Operation $\cdot^{-1}: x \mapsto x^{-1}$ abgeschlossen.
+  \end{enumerate}
+\end{Definition}
+
+\remark
+Falls $U$ eine Untergruppe der Gruppe $\langle G, e, \circ \rangle$ ist, dann ist 
+$\langle U, e, \circ_{|U} \rangle$
+offenbar eine Gruppe.  Hierbei bezeichnet $\circ_{|U}$ die Einschränkung der Funktion $\circ$ auf $U$, es
+gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$ für alle $x,y \in U$.
+
+\examples
+\begin{enumerate}
+\item In der Gruppe $\langle \mathbb{Z}, 0, + \rangle$ ist die Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2 \mathbb{Z} := \{ 2 \cdot x \mid x \in \mathbb{Z} \}$
+      \\[0.2cm]
+      der geraden Zahlen eine Untergruppe, denn wir haben:
+      \begin{enumerate}
+      \item Die Addition zweier gerader Zahlen liefert wieder eine gerade Zahl:
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $2 \cdot x + 2 \cdot y = 2 \cdot (x + y) \in 2 \mathbb{Z}$.
+      \item $0 \in 2 \mathbb{Z}$, denn $0 = 2 \cdot 0 \in \mathbb{Z}$.
+      \item Das bezüglich der Addition inverse Element einer geraden Zahl ist offenbar wieder gerade,
+            denn es gilt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $- (2 \cdot x) = 2 \cdot (-x) \in 2 \mathbb{Z}$.
+      \end{enumerate}
+\item Das letzte Beispiel läßt sich verallgemeinern: Ist $k \in \mathbb{N}$ und definieren wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $k \mathbb{Z} := \{ k \cdot x \mid x \in \mathbb{Z} \}$
+      \\[0.2cm]
+      als die Menge der Vielfachen von $k$, so läßt sich genau wie in dem letzten Beispiel zeigen, dass
+      die Menge $k\mathbb{Z}$ eine Untergruppe der Gruppe $\langle \mathbb{Z}, 0, + \rangle$ ist.
+\item Wir definieren die Menge $G$ als
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $G := \{ e, a, b, c \}$
+      \\[0.2cm]
+      und definieren auf der Menge $G$ eine Funktion $\circ: G \times G \rightarrow G$ durch
+      die folgende Verknüfungs-Tafel:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      \begin{tabular}[t]{l|llll}
+      $\circ$ & $e$ & $a$ & $b$ & $c$ \\
+      \hline
+          $e$ & $e$ & $a$ & $b$ & $c$ \\
+          $a$ & $a$ & $e$ & $c$ & $b$ \\
+          $b$ & $b$ & $c$ & $e$ & $a$ \\
+          $c$ & $c$ & $b$ & $a$ & $e$ \\
+      \end{tabular}
+      \\[0.2cm]
+      Wollen wir zu gegeben $x,y \in G$ den Wert $x \circ y$ mit Hilfe dieser Tabelle finden, so können
+      wir den Wert $x \circ y$ in der Zeile, die mit $x$ beschriftet ist und der Spalte, die mit $y$
+      beschriftet ist, finden.  Beispielsweise gilt $a \circ b = c$.  Es läßt sich zeigen, dass
+      $\langle G, e, \circ \rangle$ eine Gruppe ist.  Definieren wir die Mengen
+      \\[0.2cm]
+      \hspace*{1.3cm} $U := \{ e, a \}$, \quad $V := \{ e, b \}$, \quad und \quad $W := \{ e, c \}$, 
+      \\[0.2cm]
+      so können Sie leicht nachrechen, dass 
+      $U \leq G$, $V \leq G$ und $W \leq G$ gilt.
+\end{enumerate}
+
+\exercise
+Berechnen Sie alle Untergruppen der Gruppe $\langle \mathcal{S}_3, E_3, \circ \rangle$.
+\exend
+\vspace*{0.3cm}
+
+Untergruppen sind interessant, weil sich mit ihrer Hilfe unter bestimmten Umständen 
+neue Gruppen bilden lassen, sogenannte \emph{Faktor-Gruppen}.
+
+\begin{Definition}[Faktor-Gruppe]
+  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
+  Dann definieren wir für jedes $a \in G$ die Menge $a + U$ als
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a + U := \{ a + x \mid x \in U \}$.
+  \\[0.2cm]
+  Wir bezeichnen die Mengen $a + U$ als \emph{Nebenklassen von $G$ bezüglich $U$}.
+  Nun definieren wir die Menge $G/U$ (gelesen: $G$ modulo $U$) als
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $G/U := \bigl\{ a + U \mid a \in G \bigr\}$.
+  \\[0.2cm]
+  $G/U$ ist also die Menge der Nebenklassen von $G$ bezüglich $U$.
+  Weiter definieren wir ein Operation $+: G/U \times G/U \rightarrow G/U$ durch
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $(a + U) + (b + U) := (a + b) + U$.
+\end{Definition}
+
+\remark
+Zunächst ist gar nicht klar, dass die Definition
+\\[0.2cm]
+\hspace*{1.3cm}
+  $(a + U) + (b + U) := (a + b) + U$
+\\[0.2cm]
+überhaupt Sinn macht.  Wir müssen zeigen, dass für alle $a_1,a_2, b_1, b_2 \in G$
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_1 + U = a_2 + U \;\wedge\; b_1 + U = b_2 + U \;\Rightarrow\; (a_1 + b_1) + U = (a_2 + b_2) + U$
+\\[0.2cm]
+gilt, denn sonst ist die Operation $+$ auf den Nebenklassen von $G$ bezüglich $U$ nicht eindeutig
+definiert.  Um diesen Nachweis führen zu können, zeigen wir zunächst einen Hilfssatz, der uns darüber
+Aufschluss gibt, wann zwei Nebenklassen $a + U$ und $b + U$ gleich sind.
+
+\begin{Lemma}
+  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
+  Weiter seien $a,b \in G$.  Dann gilt:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a + U = b + U$ \quad g.d.w. \quad $a - b \in U$.
+\end{Lemma}
+
+\proof
+Wir zerlegen den Beweis in zwei Teile:
+\begin{enumerate}
+\item[``$\Rightarrow$'']:
+  Gelte $a + U = b + U$.  Wegen $0 \in U$ haben wir
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a = a + 0 \in a + U$
+  \\[0.2cm]
+  und wegen der Voraussetzung $a + U = b + U$ folgt daraus
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a \in b + U$.
+  \\[0.2cm]
+  Also gibt es ein $u \in U$, so dass
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a = b + u$
+  \\[0.2cm]
+  gilt.  Daraus folgt $a - b = u$ und weil $u \in U$ ist, haben wir also
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $a - b \in U$.  $\checkmark$
+\item[``$\Leftarrow$'']: Gelte nun $a - b \in U$.  Weil $U$ eine Untergruppe ist und Untergruppen zu jedem
+  Element auch das Inverse enthalten, gilt dann auch $-(a -b) \in U$, also $b - a \in U$.  Wir zeigen
+  nun, dass sowohl
+  \\[0.2cm]
+  \hspace*{1.3cm} 
+  $a + U \subseteq b + U$ \quad als auch \quad
+  $b + U \subseteq a + U$ 
+  \\[0.2cm]
+  gilt.
+  \begin{enumerate}
+  \item Sei $x \in a + U$.  Dann gibt es ein $u \in U$, so dass
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x = a + u$
+        \\[0.2cm]
+        gilt.  Daraus folgt
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x = b + \bigl((a - b) + u\bigr)$.
+        \\[0.2cm]
+        Nun ist aber nach Voraussetzung $a - b \in U$ und da auch $u \in U$ ist, folgt damit, dass auch
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $v := (a - b) + u \in U$
+        \\[0.2cm]
+        ist, denn die Untergruppe ist bezüglich der Addition abgeschlossen.  Damit haben wir
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x = b + v$ mit $v \in U$
+        \\[0.2cm]
+        und nach Definition von $b + U$ folgt dann $x \in b + U$.
+  \item Sei nun $x \in b + U$.  Dann gibt es ein $u \in U$, so dass
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x = b + u$
+        \\[0.2cm]
+        gilt.  Durch elementare Umformung sehen wir, dass
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x = a + \bigl((b - a) + u\bigr)$
+        \\[0.2cm]
+        gilt. Nun ist aber, wie oben gezeigt, $b - a \in U$ und da auch $u \in U$ ist, folgt damit, dass auch
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $v := (b - a) + u \in U$
+        \\[0.2cm]
+        ist.  Damit haben wir
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $x = a + v$ mit $v \in U$
+        \\[0.2cm]
+        und nach Definition von $a + U$ folgt nun $x \in a + U$. \qed
+  \end{enumerate}
+\end{enumerate}
+
+\exercise
+Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$ sei eine
+Untergruppe von $G$.   Wir definieren auf der Menge $G$ eine Relation $\approx_U$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \approx_U y \df x - y \in U$.
+\\[0.2cm]
+Zeigen Sie, dass $\approx_U$ eine Äquivalenz-Relation auf $G$ ist.
+\exend
+
+\begin{Lemma}
+  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
+  Weiter seien $a,b \in G$.  Dann ist 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $(a + U) + (b + U) := (a + b) + U$.
+  \\[0.2cm]
+  wohldefiniert.
+\end{Lemma}
+
+\proof
+Wir haben zu zeigen, dass für alle $a_1,a_2,b_1,b_2 \in G$ die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_1 + U = a_2 + U \;\wedge\; b_1 + U = b_2 + U \;\Rightarrow\; (a_1 + b_1) + U = (a_2 + b_2) + U$
+\\[0.2cm]
+gilt.  Sei also $a_1 + U = a_2 + U$ und $b_1 + U = b_2 + U$ vorausgesetzt.  
+Zu zeigen ist dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a_1 + b_1) + U = (a_2 + b_2) + U$.
+\\[0.2cm]
+Aus $a_1 + U = a_2 + U$ folgt nach dem letzten Lemma $a_1 - a_2 \in U$  und aus
+$b_1 + U = b_2 + U$ folgt $b_1 - b_2 \in U$.  Da $U$ unter der Operation $+$ abgeschlossen ist, folgt
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a_1 - a_2) + (b_1 - b_2) \in U$
+\\[0.2cm]
+und das ist äquivalent zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a_1 + b_1) - (a_2 + b_2) \in U$.
+\\[0.2cm]
+Aus der Rückrichtung des letzten  Lemmas folgt nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a_1 + b_1) + U = (a_2 + b_2) + U$.
+\\[0.2cm]
+Damit ist gezeigt, dass die Addition auf den Nebenklassen von $U$ wohldefiniert ist. 
+\qed
+
+\begin{Satz}
+ Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
+ Dann ist $\langle G/U, 0 + U, + \rangle$ mit der oben definierten Addition von Nebenklassen eine Gruppe.
+\end{Satz}
+
+\proof
+Der Beweis zerfällt in drei Teile.
+\begin{enumerate}
+\item $0 + U$ ist das links-neutrale Element, denn wir haben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(0 + U) + (a + U) = (0 + a) + U = a + U$ \quad für alle $a \in G$.
+\item $-a + U$ ist das links-inverse Element zu $a + U$, denn wir haben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(-a + U) + (a + U) = (-a + a) + U = 0 + U$ \quad für alle $a \in G$.
+\item Es gilt das Assoziativ-Gesetz, denn
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+        & \bigl((a + U) + (b + U)\bigr) + (c + U)   \\
+      = & \bigl((a + b) + U\bigr) + (c + U)         \\
+      = & \bigl((a + b) + c\bigr) + U               \\
+      = & \bigl(a + (b + c)\bigr) + U               \\
+      = & (a + U) + \bigl((b + c) + U\bigr)         \\
+      = & (a + U) + \bigl((b + U) + (c + U)\bigr)   \\
+      \end{array}
+      $
+      \\[0.2cm]
+      Damit ist alles gezeigt. \qed
+\end{enumerate}
+
+\example
+Wir haben früher bereits gesehen, dass die Mengen 
+\\[0.2cm]
+\hspace*{1.3cm}
+$k\mathbb{Z} := \bigr\{ k \cdot x \mid x \in \mathbb{Z} \bigr\}$
+\\[0.2cm]
+Untergruppen der Gruppe $\langle \mathbb{Z}, 0, + \rangle$ sind.  Der letzte Satz zeigt nun, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_k := \mathbb{Z}/(k\mathbb{Z}) = \bigl\{ l + k\mathbb{Z} \mid l \in \mathbb{Z} \}$
+\\[0.2cm]
+zusammen mit der durch
+\\[0.2cm]
+\hspace*{1.3cm}
+$(l_1 + k\mathbb{Z}) + (l_2 + k\mathbb{Z}) = (l_1 + l_2) + k\mathbb{Z}$
+\\[0.2cm]
+definierten Addition eine Gruppe ist, deren neutrales Element die Menge $0 + k\mathbb{Z} = k\mathbb{Z}$ ist.
+Es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$l_1 + k\mathbb{Z} = l_2 + k\mathbb{Z}$
+\\[0.2cm]
+genau dann, wenn
+\\[0.2cm]
+\hspace*{1.3cm}
+$l_1 - l_2 \in k\mathbb{Z}$
+\\[0.2cm]
+ist, und dass ist genau dann der Fall, wenn $l_1 - l_2$ ein Vielfaches von $k$ ist, wenn also
+$l_1 \approx_k l_2$ gilt.  Wie wir bereits früher gezeigt haben, ist dies genau dann der Fall, wenn
+\\[0.2cm]
+\hspace*{1.3cm}
+$l_1 \modulo k = l_2 \modulo k$
+\\[0.2cm]
+ist.  Damit sehen wir, dass die Menge $\mathbb{Z}/(k\mathbb{Z})$ aus genau $k$ verschiedenen Nebenklassen besteht, denn
+es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_k = \bigl\{ l + k\mathbb{Z} \mid l \in \{0, \cdots, k - 1\} \bigr\}$.
+\vspace*{0.2cm}
+
+\exercise
+Es sei $\langle G, e, \circ \rangle$ eine endliche kommutative Gruppe und es gelte $U \leq G$.
+Zeigen Sie, dass dann $\mathtt{card}(U)$ ein Teiler von $\mathtt{card}(G)$ ist. \exend
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Hinweis}: Zeigen Sie, dass alle Nebenklassen von $G$ bezüglich der Untergruppe $U$ die selbe
+Kardinalität haben.
+
+\exercise
+Es seien $\langle G_1, e_1, \circ\rangle$ und $\langle G_2, e_2, *\rangle$ kommutative Gruppen.
+Eine Abbildung
+\\[0.2cm]
+\hspace*{1.3cm}
+ $f: G_1 \rightarrow G_2$ 
+\\[0.2cm]
+ist ein \emph{Gruppen-Homomorphismus} genau dann, wenn 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(x \circ y) = f(x) * f(y)$ \quad f.a. $x,y \in G_1$
+\\[0.2cm]
+gilt.  Lösen Sie die folgenden Teilaufgaben:
+\begin{enumerate}
+\item Zeigen Sie, dass die Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f^{-1}(e_2) := \{ x \in G_1 \mid f(x) = e_2 \}$
+      \\[0.2cm]
+      eine Untergruppe von $G_1$ ist.
+\item Es sei $U \leq G_1$.  Zeigen Sie, dass dann auch 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(U) := \{ f(x) \mid x \in U \}$
+      \\[0.2cm]
+      eine Untergruppe von $G_2$ ist.
+      \exend
+\end{enumerate} 
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

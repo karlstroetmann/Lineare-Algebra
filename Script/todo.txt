@@ -1,0 +1,2 @@
+1. identische Relation aus S_n heisst bisher E_n, umbennen in id_n
+2. Z_n^+ in N_n umbenennen

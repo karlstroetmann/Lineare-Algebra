@@ -1,0 +1,151 @@
+// This procedure implements the Gaussian elimination in order so solve the 
+// linear system of equation 
+//     a x = b
+// Here a is an n times n matrix, b is a vector of length x and x is
+// a vector of length n.  a and b are given, x is computed if it exists.
+// The matrix a is represented by a list of lists.  Each list represents
+// a row of the matrix.
+solve := procedure(a, b) {
+    r := eliminate(a, b);
+	if (r == om) {
+		return;
+	}
+	[ a, b ] := r;
+    // prettyPrintSystem(a,b);
+    x := solveTriangular(a, b);
+    return x;
+};
+
+// This procedure transforms the system of equations
+// into upper triangular form.
+eliminate := procedure(a, b) {
+    n := #a;    // number of equations
+    pivot := procedure(a, n, i) {
+        r := i;  // index of row containing maximal element
+        for (j in [i+1 .. n]) {
+            if (abs(a[j][i]) > abs(a[r][i])) {
+                r := j;
+            }
+        }
+        return r;
+    };
+    for (i in [1 .. n]) {
+        // choose pivot element: find the row r such that
+        // a[j][r] is maximal for all j in { i .. m } 
+        r := pivot(a, n, i);
+        // swap row r with row j
+        [ a[i], a[r] ] := [ a[r], a[i] ];   
+        [ b[r], b[i] ] := [ b[i], b[r] ];
+        for (j in [i+1 .. n]) {
+            if (a[i][i] == 0) {
+                print("WARNING: a[$i$,$i$] = 0");
+                print("not uniquely solvable");
+				return;
+            }
+            f := a[j][i] / a[i][i];
+            a[j][i] := 0;
+            for (k in [i+1 .. n]) {
+                a[j][k] := a[j][k] - f * a[i][k];
+            }
+            b[j] := b[j] - f * b[i];
+        }    
+    }
+    return [ a, b ];
+};
+
+// This procedure solves a triangular system of equations
+// by back-substitution. 
+solveTriangular := procedure(a, b) {
+    x := [];
+    n := #a;    // number of equations
+    i := n;     // index to equation
+    for (i in [n, n-1 .. 1]) {
+        r := b[i];
+        r -= 0 +/ { a[i][k] * x[k] : k in [i+1 .. n] };
+        if (a[i][i] == 0) {
+            print("WARNING: a($i$,$i$) = 0");
+            print("not uniquely solvable");
+			return;
+        }
+        x[i] := r / a[i][i];
+    }
+    return x;
+};
+
+checkSolution := procedure(a, b, x) {
+    n := #b;
+    r := 0;
+    for (i in [1 .. n]) {
+        s := 0;
+        for (j in [1 .. n]) {
+            s += a[i][j] * x[j];
+        }
+        r += abs(s - b[i]);
+    }
+    print("error = $r$");
+};
+
+prettyPrintSystem := procedure(a, b) {
+    n := #a;    // number of equations
+    for (i in [1 .. n]) {
+        s := "";
+        for (j in [1 .. n]) {
+            s += a[i][j] + " * x" + j;
+            if (j < n) {
+                s += " + ";
+            } 
+        }    
+        s += " = " + b[i];
+        print(s);
+    }
+    print("");
+};
+
+prettyPrintSolution := procedure(x) {
+    for (i in [1 .. #x]) {
+        print("x$i$ = $x[i]$");
+    }
+    print("");
+};
+    
+run := procedure(a, b, rw time) {
+    // prettyPrintSystem(a,b);
+    start := now();
+    x := solve(a,b);
+    stop := now();
+    time += stop - start;
+    print("time for n = $#b$: $1.0 * (stop - start) / 1000$");
+	if (x == om) {
+		return;
+	}
+    // prettyPrintSolution(x);
+    checkSolution(a, b, x);
+};
+
+// If useDouble is set, the computation is done using doubles.
+// Otherwise, the computation is done using BigInteger.
+create := procedure(n, useDouble) {
+    if (useDouble) {
+        m := 1.0; 
+    } else {
+        m := 1;
+    }
+    a := [ [ m * random() : j in [ 1 .. n ] ] : i in [ 1 .. n ] ];
+    b := [ m * random() : i in [ 1 .. n ] ];
+    return [a, b];
+};
+
+if (params[1] == "true") {
+    print("using double");
+    flag := true;
+} else { 
+    print("using BigInteger");
+    flag := false;
+}
+
+time := 0;
+for (n in [100 .. 200]) {
+    [a, b] := create(n, flag);
+    run(a, b, time);
+}
+print("total time: $time * 0.001$");

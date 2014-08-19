@@ -1,0 +1,138 @@
+// This procedure implements the Gaussian elimination in order so solve the 
+// linear system of equation 
+//     a x = b
+// Here a is an m times n matrix, b is a vector of length m and x is
+// a vector of length n.  a and b are given, x is computed if it exists.
+// The matrix a is represented by a list of lists.  Each list represents
+
+solve := procedure(a, b) {
+    [ a, b ] := eliminate(a, b);
+    x := solveTriangular(a, b);
+    return x;
+};
+
+// This procedure transforms the system of equations
+// into upper triangular form.
+eliminate := procedure(a, b) {
+    pivot := procedure(a, i) {
+        m := #a;    // number of equations
+        n := #a(1); // number of variables
+        r := i;
+        for (j in [i+1 .. n]) {
+            if (abs(a(j)(i)) > abs(a(r)(i))) {
+                r := j;
+            }
+        }
+        return r;
+    };
+    m := #a;    // number of equations
+    n := #a(1); // number of variables
+    for (i in [1 .. m]) {
+        // choose pivot element: find the row r such that
+        // a(j)(r) is maximal for all j in { i .. m } 
+        r := pivot(a, i);
+        // swap row r with row j
+        for (j in [i .. m]) {
+            u := a(r)(j);   
+            v := a(i)(j);
+            a(r)(j) := v;
+            a(i)(j) := u;
+        }
+        u := b(i);
+        v := b(r);
+        b(i) := v;
+        b(r) := u;
+        for (j in [i+1 .. m]) {
+            f := 1.0 * a(j)(i) / a(i)(i);
+            a(j)(i) := 0;
+            for (k in [i+1 .. n]) {
+                a(j)(k) -= f * a(i)(k);
+            }
+            b(j) -= f * b(i);
+        }    
+    }
+    return [ a, b ];
+};
+
+// This procedure solves a triangular system of equations
+// by back-substitution. 
+solveTriangular := procedure(a, b) {
+    x := [];
+    m := #a;    // number of equations
+    n := #a(1); // number of variables
+    i := m;     // index to equation
+    j := n;     // index to variable
+    while (i > 0 && j > 0) {
+        r := b(i);
+        r -= +/ { a(i)(k) * x(k) : k in [j+1 .. n] };
+        if (a(i)(j) == 0) {
+            // 1. case: equation j is already satisfied 
+            //          and can be discarded
+            if (r == 0) {
+                print("equation number $i$ already satified");
+                i -= 1;
+            } else {
+                print("WARNING: Equation number $j$ not satisfiable!");
+                abort("unsovable");
+            }
+        }
+        x(j) := 1.0 * r / a(i)(j);
+        i -= 1;
+        j -= 1;            
+    }
+    return x;
+};
+
+check := procedure(a, b, x) {
+    n := #b;
+    r := 0;
+    for (i in [1 .. n]) {
+        s := 0;
+        for (j in [1 .. n]) {
+            s += a(i)(j) * x(j);
+        }
+        r += abs(s - b(i));
+    }
+    print("error = $r$");
+    print("\n");
+};
+ prettyPrintSystem := procedure(a, b) {
+    m := #a;    // number of equations
+    n := #a(1); // number of variables
+    for (i in [1 .. m]) {
+        s := "";
+        for (j in [1 .. n]) {
+            s += a(i)(j) + " * x" + j;
+            if (j < n) {
+                s += " + ";
+            } 
+        }    
+        s += " = " + b(i);
+        print(s);
+    }
+    print("");
+};
+
+prettyPrintSolution := procedure(x) {
+    for (i in [1 .. #x]) {
+        print("x$i$ = $x(i)$");
+    }
+};
+    
+run := procedure(a, b) {
+    prettyPrintSystem(a,b);
+    x := solve(a,b);
+    prettyPrintSolution(x);
+    check(a, b, x);
+};
+
+create := procedure(n) {
+    a := [ [ 1.0 * (i + j) ** 2 : j in [ 1 .. n ] ] : i in [ 1 .. n ] ];
+    b := [ i ** 2 : i in [ 1 .. n ] ];
+    return [a, b];
+};
+
+for (n in [2 .. 9]) {
+    [a, b] := create(n);
+    run(a, b);
+}

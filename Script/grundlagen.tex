@@ -1,0 +1,175 @@
+\chapter{Mathematische Grundlagen} 
+Die erste Informatik-Vorlesung legt die Grundlagen, die für das weitere Studium
+der Informatik benötigt werden.  Bei diesen Grundlagen handelt es sich im wesentlichen
+um die \emph{mathematische Logik} und die \emph{Mengenlehre}.  
+Als Anwendung dieser Grundlagen werden zwei Programmiersprachen vorgestellt:
+\begin{enumerate}
+\item \textsc{Setl} (\underline{set} \underline{l}anguage) ist eine mengenbasierte
+      Programmiersprache, in der dem Programmierer 
+      die Operationen der Mengenlehre zur Verfügung gestellt werden.
+\item \textsl{Prolog} (\underline{pro}gramming in \underline{log}ic) basiert
+      auf prädikatenlogischen Konzepten.
+\end{enumerate}
+Da insbesondere die mathematische Logik und die
+Mengenlehre sehr abstrakte Gebiete sind, bereiten sie erfahrungsgemäß vielen Studenten
+Schwierigkeiten.  Der Umgang mit dieser, auf den ersten Blick trocken anmutenden Materie fällt
+auch deshalb schwer, weil zunächst noch gar nicht klar ist, wozu Logik und Mengenlehre in der
+Informatik überhaupt benötigt werden.  Aus diesem Grunde möchte ich an den Anfang dieser
+Vorlesung eine Motivation stellen. Diese Motivation soll Ihnen zeigen, dass es zwingend
+notwendig ist, den Entwurf von Software und Hardware auf eine solide wissenschaftliche
+Grundlage zu stellen. 
+
+\section{Motivation und Überblick}
+Wir beginnen mit der Feststellung, dass informationstechnische Systeme 
+(im folgenden kurz als IT-Systeme bezeichnet) zu den komplexesten Systemen gehören, die
+die Menschheit je entwickelt hat.  Das läßt sich schon an dem Aufwand erkennen,
+der bei der Erstellung von IT-Systemen anfällt.  So sind im Bereich der Telekommunikations-Industrie
+IT-Projekte, bei denen mehr als 1000 Entwickler über mehrere Jahre zusammenarbeiten,
+die Regel.  Es ist offensichtlich, dass ein Scheitern solcher Projekte mit enormen
+ Kosten verbunden ist.  Einige Beispiele mögen dies verdeutlichen.
+\begin{enumerate}
+\item Am 9.~Juni 1996 stürzte die Rakete Ariane 5 auf ihrem Jungfernflug ab.
+      Ursache war ein Kette von Software-Fehlern:  Ein Sensor im Navigations-System
+      der Ariane 5 misst die horizontale Neigung und speichert diese zunächst als Gleitkomma-Zahl
+      mit einer Genauigkeit von 64 Bit ab.  Später wird dieser Wert dann in eine 
+      16 Bit Festkomma-Zahl konvertiert.
+      Bei dieser Konvertierung trat ein Überlauf ein, da die zu konvertierende Zahl
+      zu groß war, um als 16 Bit Festkomma-Zahl dargestellt werden zu können.
+      In der Folge gab das Navigations-System auf dem Datenbus, der dieses System mit
+      der Steuerungs-Einheit verbindet, eine Fehlermeldung aus.
+       Die Daten dieser Fehlermeldung wurden von der Steuerungs-Einheit als Flugdaten 
+      interpretiert.  Die Steuer-Einheit leitete daraufhin eine Korrektur des
+      Fluges ein, die dazu führte, dass die Rakete auseinander brach und die 
+      automatische Selbstzerstörung eingeleitet werden mußte.
+      Die Rakete war mit 4 Satelliten beladen. Der wirtschaftliche Schaden, der durch den Verlust dieser
+      Satelliten entstanden ist, lag bei mehreren 100 Millionen Dollar.
+      
+      Ein vollständiger Bericht über die Ursache des Absturzes des Ariane 5 findet sich
+      im Internet unter der Adresse \\[0.1cm]
+      \hspace*{1.3cm} \texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/ariane5rep.html}
+\item Die Therac 25 ist ein medizinisches Bestrahlungs-Gerät, das durch 
+      Software kontrolliert wird.  Durch  Fehler in dieser Software erhielten 1985
+      mindestens 6 Patienten eine Überdosis an Strahlung.  Drei dieser Patienten sind an den Folgen dieser 
+      Überdosierung gestorben. 
+
+      Einen detailierten Bericht über diese Unfälle finden Sie unter \\[0.1cm]
+      \hspace*{1.3cm} \texttt{http://courses.cs.vt.edu/\symbol{126}cs3604/lib/Therac\_25/Therac\_1.html}      
+\item Im ersten Golfkrieg konnte eine irakische \textsl{Scud} Rakete von dem \textsl{Patriot} Flugabwehrsystem
+      aufgrund eines Programmier-Fehlers in der Kontrollsoftware des Flugabwehrsystems
+      nicht abgefangen werden.  28 Soldaten verloren dadurch ihr Leben, 100 weitere wurden
+      verletzt. \\[0.1cm]
+      \hspace*{1.3cm} \texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/patriot.html}
+\item Im Internet finden Sie unter \\[0.1cm]
+      \hspace*{1.3cm} \texttt{http://www.cs.tau.ac.il/\symbol{126}nachumd/horror.html}
+      \\[0.1cm]
+      eine Auflistung von schweren Unfällen, die auf Software-Fehler zurückgeführt werden konnten.
+\end{enumerate}
+Diese Beispiele zeigen, dass bei der Konstruktion von IT-Systemen mit großer Sorgfalt
+und Präzision gearbeitet werden sollte.  Die Erstellung von IT-Systemen muß auf einer 
+wissenschaftlich fundierten Basis erfolgen, denn nur dann ist es möglich, die Korrekheit
+solcher Systeme zu \emph{verifizieren}, also mathematisch zu beweisen.
+Diese oben geforderte wissenschaftliche Basis für die Entwicklung von IT-Systemen ist die Informatik, 
+und diese hat ihre Wurzeln sowohl in der Mengenlehre als auch in der mathematischen
+Logik.  Diese beiden Gebiete werden uns daher im ersten Semester
+des Informatik-Studiums beschäftigen.
+
+Sowohl die Mengenlehre als auch die Logik haben unmittelbare praktische Anwendungen in der
+Informatik.
+\begin{enumerate}
+\item Die Mengenlehre und die damit verbundene Theorie der Relationen bietet die Grundlage
+      der Theorie der relationalen Datenbanken.  Außerdem basiert die Programmier-Sprache \textsc{Setl}
+      auf der Mengenlehre.
+\item Die Programmier-Sprache \textsl{Prolog}, die vorwiegend im Bereich der KI
+      (Künstliche Intelligenz) eingesetzt wird, setzt Konzepte der mathematischen
+      Logik um.  
+\end{enumerate}
+Neben den unmittelbaren Anwendungen von Logik und Mengenlehre hat die Beschäftigung mit
+diesen beiden Gebiete aber noch eine andere, sehr wichtige Funktion:
+Ohne die Einführung geeigneter Abstraktionen sind komplexe Systeme nicht beherrschbar.
+Kein Mensch ist in der Lage, alle Details eines Software-Systems, dass aus mehreren
+$100\,000$ Programm-Zeilen besteht, zu verstehen.   Die einzige Chance um ein solches
+System zu beherrschen besteht in der Einführung geeigneter Abstraktionen.
+Daher gehört ein überdurchschnittliches Abstraktionsvermögen zu den wichtigsten Werkzeugen
+eines Informatikers.  Die Beschäfigung mit Logik und Mengenlehre trainiert gerade dieses
+abstrakte Denkvermögen. 
+
+% Schließlich gibt es für Sie noch einen sehr gewichtigen Grund, sich intensiv mit Logik und
+% Mengenlehre zu beschäftigen, den ich Ihnen nicht verschweigen möchte:  Es handelt sich
+% dabei um die Klausur am Ende des ersten Semesters!  
+
+Aus meiner Erfahrung weiß ich, dass einige der Studenten sich unter dem Thema Informatik etwas Anderes
+vorgestellt haben als die Diskussion abstrakter Konzepte.  Für diese Studenten ist die Beherrschung
+einer Programmiersprache und einer dazugehörigen Programmierumgebung das Wesentliche der Informatik.
+Natürlich ist die Beherrschung einer Programmiersprache für einen Informatiker unabdingbar.  Sie
+sollten sich allerdings darüber im klaren sein, dass das damit verbundene Wissen sehr vergänglich
+ist, denn niemand kann heute sagen, in welcher Programmiersprache in 10 Jahren programmiert werden wird.
+Im Gegensatz dazu sind die mathematischen Grundlagen der Informatik wesentlich beständiger.
+
+
+\paragraph{Überblick über den Inhalt der Vorlesung:} 
+Im Rest dieses Kapitels werden wir zunächst den Begriff der 
+\emph{prädikatenlogischen Formel} auf einer informellen Ebene einführen.  Auf dieser Ebene
+werden wir prädikatenlogische Formeln zunächst nur als Abkürzungen vorstellen:
+Die Sprache der Prädikaten-Logik bietet uns einen Weg, komplizierte
+Zusammenhänge prägnanter und kürzer darzustellen, als dies mit den Mitteln der natürlichen
+Sprache möglich ist.  Um allerdings die Bedeutung prädikatenlogischer Formeln 
+mathematisch präzisieren zu können, benötigen wir einige Grundbegriffe aus der
+Mengenlehre, mit der wir uns im Rest des ersten Kapitels beschäftigen.
+
+Die Begriffs-Bildungen der Mengenlehre sind nicht sehr kompliziert, dafür aber um so
+abstrakter.  Um diese Begriffs-Bildungen konkreter werden zu lassen und darüber hinaus den
+Studenten ein Gefühl für die Nützlichkeit der Mengenlehre zu geben, stellen wir im zweiten
+Kapitel die Sprache \textsc{Setl2} vor.  Dies ist eine Programmier-Sprache, die auf der
+Mengenlehre aufgebaut ist.  Neben den klassischen Datentypen wie Zahlen und Strings gibt
+es hier als Datentypen zusätzlich Mengen.  Dadurch ist es in \textsc{Setl2} möglich,
+Algorithmen in der Sprache der Mengenlehre zu formulieren.  Solche Algorithmen sind zwar
+meistens nicht so effizient wie Implementierungen in einer klassischen
+Programmier-Sprache, aber dafür in der Regel wesentlich klarer (und damit schneller zu
+implementieren) als beispielsweise ein entsprechendes \textsl{C}-Programm.  
+Zusätzlich hat
+\textsc{Setl2} eine konzeptuelle Ähnlichkeit mit Datenbank-Abfrage-Sprachen wie
+beispielsweise \textsl{SQL}, so dass sich eine Vertrautheit mit den Konzepten dieser
+Sprache auch später noch als nützlich erweist.
+
+In dem dritten Kapitel widmen wir uns der \emph{Aussagen-Logik}.  Diese kann als ein Teil der
+Prädikaten-Logik aufgefasst werden. Die Handhabung aussagenlogischer Formeln ist einfacher als die
+Handhabung prädikatenlogischer Formeln.  Daher bietet sich die Aussagen-Logik gewissermassen als
+Trainings-Objekt an um mit den Methoden der Logik vertraut zu werden.  Die Aussagen-Logik hat
+gegenüber der Prädikaten-Logik noch einen weiteren Vorteil: Sie ist \emph{entscheidbar}, d.h.~wir
+können ein Programm schreiben, dass als Eingabe eine aussagenlogische Formel verarbeitet und welches
+dann entscheidet, ob diese Formel gültig ist.  Ein solches Programm existiert für beliebige Formeln
+der Prädikaten-Logik nicht.  Darüber hinaus gibt es in der Praxis eine Reihe von Problemen, die
+bereits mit Hilfe der Aussagenlogik gelöst werden können.  Beispielsweise läßt sich die Frage nach der
+Korrektheit kombinatorischer digitaler Schaltungen auf die Entscheidbarkeit einer aussagenlogischen
+Formel zurückführen.
+
+Im vierten Kapitel behandeln wir die Prädikatenlogik und analysieren den Begriff
+des prädikatenlogischen Beweises mit Hilfe eines \emph{Kalküls}.  Ein
+\emph{Kalkül} ist dabei ein formales Verfahren, einen mathematischen Beweis zu führen.
+Ein solches Verfahren läßt sich programmieren.  Der im vierten Kaptel vorgestellte
+\emph{Resolutions-Kalkül]} bildet  die Grundlage für die
+Programmier-Sprache \textsl{Prolog}, deren Grundzüge wir im fünften Kapitel
+skizzieren.  
+
+Zum Schluß möchte ich hier noch ein Paar Worte zum Gebrauch von neuer und alter
+Rechtschreibung und der Verwendung von Spell-Checkern in diesem Skript sagen.
+Dieses Skript wurde unter Verwendung strenger marktwirtschaftlicher Kriterien
+erstellt.  Im Klartext heißt das: Zeit ist Geld und als Dozent an der DHBW hat man
+weder das eine noch das andere.  Daher ist es sehr wichtig zu wissen, wo eine
+zusätzliche Investition von Zeit noch einen für die Studenten nützlichen Effekt
+bringt und wo dies nicht der Fall ist.  Ich habe mich an aktuellen
+Forschungs-Ergebnissen zum Nutzen der Rechtschreibung orientiert. Diese zeigen,
+daß es nicht wichtig ist, in welcher Reihenfolge die Bcushatebn in eniem Wrot
+setehn, das eniizge was wihtcig ist, ist dass der esrte und der ltzete Bcusthabe
+an der rcihitgen Psoiiton sthet. Der Rset knan ein ttolaer Böldisnn sien,
+trtodzem knan man ihn onhe Porbelme lseen. Das ist so, wiel wir nciht jdeen
+Buhctsaben eniezln lseen, snoedrn das Wrot als gseatmes.  Wie sie sheen, ist das
+tastcähilch der Flal. $\displaystyle\smiley$
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "logik"
+%%% End: 

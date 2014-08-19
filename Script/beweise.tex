@@ -1,0 +1,799 @@
+\chapter{Mathematische Beweise}
+Mathematik ist eine exakte Wissenschaft. Diese Exaktheit verdankt die Mathematik der
+Tatsache, dass Behauptungen \emph{bewiesen} werden können.  Der Begriff des \emph{Beweises} 
+ist daher für die Mathematik zentral.  
+In diesem Abschnitt gehen wir auf den mathematischen Beweisbegriff ein.  Wir beleuchten dabei nur die
+praktische Seite und stellen verschiedene Methoden des Beweisens vor.  Für eine theoretische Analyse des
+Beweis-Begriffs ist die \emph{mathematische Logik} zuständig, die ein Teil der Informatik-Vorlesung ist.
+Wir wenden uns hier den praktischen Beweis-Verfahren zu.
+Grob können wir zwischen vier Arten von Beweisen unterscheiden:
+\begin{enumerate}
+\item direkten Beweisen,
+\item indirekten Beweisen,
+\item Beweise durch Fallunterscheidung, 
+\item Beweise durch vollständige Induktion.
+\end{enumerate}
+
+\section{Direkte Beweise}
+Direkte Beweise sind die Beweise, die Sie bereits aus der Schule kennen.  Die wesentlichen Hilfsmittel eines direkten Beweises
+sind algebraische Umformungen und Fallunterscheidungen.  Wir geben ein einfaches Beispiel für einen
+direkten Beweis, benötigen dafür aber zunächst noch eine Definition.
+
+
+\begin{Definition}[Pythagoräische Tripel] \hspace*{\fill} \\
+Ein Tripel $\langle x, y, z \rangle \in \mathbb{N}\!\times\!\mathbb{N}\!\times\!\mathbb{N}$ heißt
+\emph{Pythagoräisches Tripel}, falls
+\\[0.2cm]
+\hspace*{1.3cm}
+$x^2 + y^2 = z^2$
+\\[0.2cm]
+gilt.  In diesem Fall sind die Zahlen $x$, $y$ und $z$ nach dem Satz des Pythagoras die Längen eines
+rechtwinkligen Dreiecks:  $x$ und $y$ sind die Längen der Katheten, während $z$ die Länge der Hypothenuse
+ist.
+\end{Definition}
+
+\example
+Das Tripel $\langle 3, 4, 5 \rangle$ ist ein pythagoräisches Tripel, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$3^2 + 4^2 = 9 + 16 = 25 = 5^2$. \eox
+
+
+\begin{Satz} 
+Es seien $u$ und $v$ positive natürliche Zahlen mit $u > v$.  Dann ist
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl\langle u^2 - v^2,\; 2 \cdot u \cdot v,\; u^2 + v^2 \bigr\rangle$
+\\[0.2cm]
+ein pythagoräisches Tripel.  
+\end{Satz}
+
+\proof
+Wir müssen zeigen, dass
+\begin{equation}
+  \label{eq:pyth}
+\bigl( u^2 - v^2 \bigr)^2 + \bigl(2 \cdot u \cdot v \bigr)^2 = \bigl(u^2 + v^2\bigr)^2  
+\end{equation}
+gilt.  Dazu vereinfachen wir die beiden Seiten dieser Gleichung auf algebraischem Wege.
+Wir benutzen dabei lediglich die beiden binomischen Formeln 
+$(a + b)^2 = a^2 + 2 \cdot a \cdot b + b^2$ und
+$(a - b)^2 = a^2 - 2 \cdot a \cdot b + b^2$.
+Die Rechnung verläuft wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+   & \bigl( u^2 - v^2 \bigr)^2 + \bigl(2 \cdot u \cdot v \bigr)^2 \\[0.2cm]
+ = & u^4 - 2 \cdot u^2 \cdot v^2 + v^4  + 4 \cdot u^2 \cdot v^2 \\[0.2cm]
+ = & u^4 + 2 \cdot u^2 \cdot v^2 + v^4 \\[0.2cm]
+ = & \bigl(u^2 + v^2\bigr)^2 
+\end{array}
+$
+\\[0.2cm]
+Damit haben wir die linke Seite der Gleichung (\ref{eq:pyth}) in die rechte Seite umgeformt. \qed
+\vspace*{0.2cm}
+
+
+\section{Indirekte Beweise}
+Wollen wir eine Aussage $A$ auf indirektem Wege nachweisen, so nehmen wir an, dass $A$
+nicht gilt, wir nehmen also an, dass die Aussage $\neg A$ richtig ist.  Wir versuchen dann
+weiter, aus dieser Annahme eine offensichtlich falsche Aussage herzuleiten, beispielsweise
+die Aussage, dass $1 = 2$ gilt.  Wenn dies gelingt, dann können wir rückwärts schließen,
+dass die Annahme $\neg A$ falsch sein muss und dass folglich die Aussage $A$ wahr ist.
+Wir geben einige Beispiele für indirekte Beweise.
+\vspace*{0.2cm}
+
+Bevor wir das erste Beispiel präsentieren können, wiederholen wir den Begriff der \emph{geraden} und
+\emph{ungeraden} Zahlen.  Eine natürliche Zahl $n$ ist gerade, wenn Sie durch $2$ teilbar ist.  Eine
+solche Zahl läßt sich also immer in der Form $n = 2 \cdot k$ mit $k \in \mathbb{N}$ schreiben.
+Eine natürliche Zahl $n$  ist ungerade, wenn sie nicht durch $2$ teilbar ist.  Eine ungerade Zahl
+hat bei Division durch $2$ also den Rest $1$ und läßt sich damit immer in der Form $2 \cdot k + 1$
+darstellen, wobei $k \in \mathbb{N}_0$ ist.
+
+\begin{Lemma} \label{lemma:b1}
+  Es seien $p \in \mathbb{N}$ und das Quadrat $p^2$ sei eine gerade Zahl.
+  Dann ist $p$ eine gerade Zahl.
+\end{Lemma}
+
+\proof
+Wir nehmen an, dass $p$ ungerade ist.  Damit läßt sich $p$  in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$p = 2 \cdot q + 1$ \quad mit \quad $q \in \mathbb{N}_0$
+\\[0.2cm]
+schreiben.  Bilden wir das Produkt $p^2 = p \cdot p$, so finden wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{rcl}
+  p \cdot p & = & (2 \cdot q + 1) \cdot (2 \cdot q + 1) \\[0.1cm]
+            & = & 4 \cdot q^2 + 4 \cdot q + 1           \\[0.1cm]
+            & = & 2 \cdot (2 \cdot q^2 + 2 \cdot q) + 1 
+\end{array}
+$
+\\[0.2cm]
+Da die Zahl $2 \cdot (2 \cdot q^2 + 2 \cdot q) + 1$ die Form $2 \cdot s + 1$ mit
+$s = (2 \cdot q^2 + 2 \cdot q)$ hat, handelt es sich um eine ungerade Zahl.
+Diese Zahl ist aber gleich $p^2$ und damit haben wir einen Widerspruch zur
+Voraussetzung erhalten.  Dieser Widerspruch zeigt, dass die Annahme, dass $p$ ungerade ist, falsch
+sein muss.  Folglich ist $p$ gerade.
+\qed
+
+\begin{Satz}
+  Die Quadratwurzel aus 2 ist irrational, es gilt $\sqrt{2} \not\in \mathbb{Q}$.
+\end{Satz}
+
+\proof
+Wir führen den Beweis indirekt und machen die Annahme, dass $\sqrt{2} \in \mathbb{Q}$ ist.  Jede positive
+rationale Zahl läßt sich in der Form $\bruch{p}{q}$ mit $p,q \in \mathbb{Q}$ schreiben.  Dabei können
+wir zusätzlich annehmen, dass  $p$ und $q$ keinen von 1 verschiedenen gemeinsamen Teiler haben, denn
+wenn $p$ und $q$ einen gemeinsamen Teiler $r > 1$ hätten, könnten wir durch $r$ kürzen.  Nach unserer 
+Annahme gilt also
+\begin{equation}
+  \label{eq:b1}
+  \sqrt{2} = \bruch{p}{q} \quad \mbox{mit $\textsl{ggt}(p,q) = 1$}.
+\end{equation}
+Die Funktion $\textsl{ggt}(p,q)$ berechnet hier den größten gemeinsamen Teiler von $p$ und $q$.   
+Da $p$ und $q$ keinen echten gemeinsamen Teiler mehr haben, einen eventuellen gemeinsamen Teiler
+haben wir ja gekürzt, gilt $\textsl{ggt}(p, q) = 1$.  Quadrieren wir  Gleichung (\ref{eq:b1}), so
+verschwindet die Quadratwurzel auf der linken Seite der Gleichung und wir erhalten die Gleichung
+\begin{equation}
+  \label{eq:b2}
+  2 = \bruch{p^2}{q^2}.
+\end{equation}
+Diese Gleichung multiplizieren wir mit $q^2$.  Das ergibt
+\begin{equation}
+  \label{eq:b3}
+  2 \cdot q^2 = p^2.
+\end{equation}
+Damit sehen wir, dass $2$ ein Teiler von $p^2$ ist.  Damit ist die Zahl $p^2 = p \cdot p$ also eine gerade Zahl.
+Nach dem eben bewiesenen Lemma muss dann auch die Zahl $p$ gerade sein.
+Also ist $2$ auch ein Teiler von $p$ und damit schreibt sich $p$ in der Form $p = 2 \cdot s$ mit $s
+\in \mathbb{N}$.  Setzen 
+wir die Gleichung $p = 2 \cdot s$ in Gleichung (\ref{eq:b3}) ein, so erhalten wir 
+\begin{equation}
+  \label{eq:b4}
+  2 \cdot q^2 = (2 \cdot s)^2 = 4 \cdot s^2.
+\end{equation}
+Diese Gleichung teilen wir durch $2$ und haben
+\begin{equation}
+  \label{eq:b5}
+  q^2 = (2 \cdot s)^2 = 2 \cdot s^2.
+\end{equation}
+Gleichung (\ref{eq:b5}) zeigt nun, dass $q^2$ eine gerade Zahl ist und wieder nach dem Lemma
+\ref{lemma:b1} können wir folgern, dass auch  $q$ gerade ist.  Folglich ist $q$ durch $2$ teilbar.
+Damit sind dann aber $p$ und $q$ nicht teilerfremd und wir haben einen Widerspruch zu der
+Annahme, dass $\sqrt{2}$ sich als Bruch $\bruch{p}{q}$ zweier natürlicher Zahlen $p$ und $q$
+darstellen läßt, denn einen solchen Bruch können wir immer so kürzen, dass $p$ und $q$ teilerfremd
+sind. 
+\qed
+
+
+Ein anderes typisches Beispiel für einen indirekten Beweis ist der Nachweis der
+Nicht-Abzählbarkeit der Menge Potenz-Menge der natürlichen Zahlen.
+
+\begin{Definition}[Abzählbar] \hspace*{\fill} \\
+Eine unendliche Menge $M$ heißt \emph{abzählbar unendlich}, wenn eine 
+\underline{sur}j\underline{ektive} Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow M$
+\\[0.2cm]
+existiert.  Zur Erinnerung: Eine Funktion $f:A \rightarrow B$ ist \emph{surjektiv} genau
+dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist.
+\end{Definition}
+
+Die Idee bei dieser Definition ist, dass die Menge  $M$ in einem gewissen Sinne nicht mehr Elemente hat
+als die Menge der natürlichen Zahlen, denn die Elemente können ja über die Funktion $f$
+aufgezählt werden, wobei wir eventuelle Wiederholung eines Elements zulassen wollen.
+
+\example
+Die Menge $\mathbb{Z}$ der ganzen Zahlen ist abzählbar, denn die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow \mathbb{Z}$,
+\\[0.2cm]
+die durch die Fallunterscheidung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(n) := \left\{ \begin{array}[c]{ll}
+                 (n - 1) / 2 + 1  & \mbox{falls $n \modulo 2 = 1$}  \\[0.2cm]
+                 - (n - 2) / 2          & \mbox{falls $n \modulo 2 = 0$}
+                 \end{array}
+         \right.
+$ 
+\\[0.2cm]
+definiert ist, ist surjektiv.  Um dies einzusehen, zeigen wir zunächst, dass $f$ wohldefiniert ist.
+Dazu ist zu zeigen, dass $f(n)$ tatsächlich in jedem Fall eine ganze Zahl ist.
+\begin{enumerate}
+\item $n \modulo 2 = 1$:  Dann ist $n$ ungerade, also ist $(n-1)$ gerade und die Division
+      $(n-1)/2$ liefert eine ganze Zahl.
+\item $n \modulo 2 = 0$:  In diesem Fall ist $n$ gerade.  Damit ist auch $(n-2)$ gerade und daher
+      liefert jetzt die Division $n/2$ eine ganze Zahl.
+\end{enumerate}
+Es bleibt zu zeigen, dass $f$ surjektiv ist.  Wir müssen also zeigen, dass es für jedes 
+$z \in \mathbb{Z}$ eine natürliche Zahl $n$ gibt, so dass $f(n) = z$ ist.  Wir führen diesen Nachweis
+mittels einer Fall-Unterscheidung:
+\begin{enumerate}
+\item Fall: $z > 0$.
+  
+      Wir definieren $n := 2 \cdot (z - 1) + 1$.  Wegen $z >0$ gilt $n > 0$ und damit ist $n$
+      tatsächlich eine natürliche Zahl.  Außerdem ist klar, dass $n$ ungerade ist. Daher gilt
+      \\[0.2cm]
+      \hspace*{0.3cm}
+      $f(n) = (n - 1)/2 + 1 = \bigl(\bigl(2 \cdot (z - 1) + 1\bigr) - 1\bigr)/2 + 1 
+            = \bigl(2 \cdot (z - 1)/2\bigr) + 1= z-1 + 1 = z
+      $.
+      \\[0.2cm]
+      Also gilt $f(n) = z$.
+\item Fall: $z \leq 0$.
+
+      Wir definieren $n := - 2 \cdot (z - 1)$.  Wegen $z \leq 0$ ist klar, dass $n$ eine gerade 
+      natürliche Zahl ist.  Damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(n) = -\bigl(-2 \cdot (z - 1) - 2\bigr)/2 = z$.
+      \\[0.2cm]
+      Also gilt ebenfalls $f(n) = z$.
+\end{enumerate}
+Damit ist die Sujektivität von $f$ gezeigt und somit ist $\mathbb{Z}$ abzählbar.
+\qed
+
+Den Beweis des letzten Satzes haben wir direkt geführt, aber zum Nachweis des nächsten Satzes werden wir
+einen indirekten Beweis benötigen.  Vorab noch eine Definition.
+
+\begin{Definition}[Überabzählbar] \lb
+Eine unendliche Menge heißt \emph{überabzählbar}, wenn sie nicht abzählbar ist.
+\end{Definition}
+
+\begin{Satz}
+  Die Potenzmenge der Menge der natürlichen Zahlen ist überabzählbar.
+\end{Satz}
+
+\proof
+Wir führen den Beweis indirekt und nehmen an, dass $2^{\mathbb{N}}$ abzählbar ist.  Dann gibt es also
+eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow 2^{\mathbb{N}}$,
+\\[0.2cm]
+die surjektiv ist.  Wir definieren nun die Menge $C$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$C := \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\}$.
+\\[0.2cm]
+Offenbar ist $C$ eine Teilmenge der Menge der natürlichen Zahlen und damit gilt $C \in 2^{\mathbb{N}}$.
+Da die Funktion $f$ nach unserer Annahme surjektiv ist, gibt es also eine natürliche Zahl $n_0$, so
+dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$C = f(n_0)$
+\\[0.2cm]
+gilt.  Wir untersuchen nun, ob $n_0 \in C$ gilt.  Dazu betrachten wir die folgende Kette von
+Äquivalenzen: 
+\\[-0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+                & n_0 \in C                                                      \\[0.2cm]
+\leftrightarrow & n_0 \in \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\} \\[0.2cm]
+\leftrightarrow & n_0 \not\in f(n_0)                                             \\[0.2cm]
+\leftrightarrow & n_0 \not\in C                                               
+\end{array}
+$
+\\[0.2cm]
+Wir haben also
+\\[0.2cm]
+\hspace*{1.3cm}
+$n_0 \in C \;\leftrightarrow\; n_0 \not\in C \qquad \lightning$
+\\[0.2cm]
+gezeigt und das ist ein offensichtlicher Widerspruch. \qed
+
+\remark
+Wir haben soeben gezeigt, dass es in gewisser Weise mehr Mengen von natürlichen Zahlen gibt, als es
+natürliche Zahlen gibt.  In ähnlicher Weise kann gezeigt werden, dass die Menge $\mathbb{R}$ der reellen
+Zahlen überabzählbar ist.  
+
+\exercise
+Zeigen Sie, dass das Intervall
+\\[0.2cm]
+\hspace*{1.3cm}
+$[0,1[ := \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
+\\[0.2cm]
+überabzählbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  für alle $i \in \mathbb{N}$
+\\[0.2cm]
+dargestellt sind, es gilt dann also
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = \sum\limits_{i=1}^\infty d_i \cdot \bigl(\frac{1}{10}\bigr)^{i}$.
+\\[0.2cm]
+Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
+nicht auf ``Periode Neun'' endet, es dürfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
+alle Ziffern $d_i$ den Wert $9$ haben:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}: i \geq n \rightarrow c_i = 9$.
+\\[0.2cm]
+Führen Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow [0,1[$
+\\[0.2cm]
+gibt, die die Menge $[0,1[$ aufzählt.  Dann gibt es auch eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$g: \mathbb{N} \times \mathbb{N} \rightarrow \{0, \cdots, 9\}$
+\\[0.2cm]
+so dass $g(n,i)$ die $i$-te Nachkommastelle von $f(n)$ berechnet:
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(n) = 0,g(n,1) g(n,2) g(n,3) \cdots$.
+\\[0.2cm]
+Konstruieren Sie nun mit Hilfe dieser Funktion $g$ eine Zahl $c \in [0,1[$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$c = 0,c_1c_2c_3 \cdots$
+\\[0.2cm]
+so, dass sich ein Widerspruch ergibt.  Orientieren Sie sich dabei an der Konstruktion der Menge $C$ im
+Beweis der Überabzählbarkeit von $2^\mathbb{N}$.  \exend
+
+\exercise
+Zeigen Sie, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{N}^\mathbb{N} := \{ f \mid f: \mathbb{N} \rightarrow \mathbb{N} \}$,
+\\[0.2cm]
+also die Menge aller Funktionen von $\mathbb{N}$ nach $\mathbb{N}$ überabzählbar ist.
+\exend
+
+\exercise
+Zeigen Sie, dass die Menge $\mathbb{Q}_+$ der positiven rationalen Zahlen abzählbar ist.
+\exend
+
+\section{Beweise durch Fallunterscheidung}
+Wir haben in dem Kapitel über Mengenlehre bereits eine ganze Reihe direkter Beweise gesehen.
+Dort war es oft notwendig, den Beweis in zwei Teile aufzuspalten.
+Um beispielsweise die Gleichheit zweier Mengen $A$ und $B$ zu zeigen, sind wir 
+häufig so vorgegangen, dass wir zunächst 
+$A \subseteq B$ und anschließend $B \subseteq A$ gezeigt haben.  So hatten wir beispielsweise  im
+letzten Kapitel nachgewiesen, dass für eine Äquivalenz-Relation $R$ aus der Beziehung $\pair(x,y) \in R$ die
+Gleichung $[x]_R = [y]_R$ gefolgert werden kann.  Beim Beweis durch \emph{Fallunterscheidung} teilen
+wir den Beweis ebenfalls in mehrere Teile auf.  Wir illustrieren das Konzept an einem Beispiel.
+
+\begin{Satz}
+  Es gibt irrationale Zahlen $x$ und $y$, so dass $x^y$ rational ist, es gilt also
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\exists x, y \in \mathbb{R}: x \not\in \mathbb{Q} \wedge y \not\in \mathbb{Q} \wedge x^y \in \mathbb{Q}$.
+\end{Satz}
+
+\proof
+Im letzten Abschnitt haben wir bereits gezeigt, dass die Zahl $\sqrt{2}$ irrational ist.  Wir
+betrachten nun die Zahl 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sqrt{2}^{\sqrt{2}}$.
+\\[0.2cm]
+Es gibt nur zwei Möglichkeiten: Entweder ist die Zahl $\sqrt{2}^{\sqrt{2}}$ rational oder nicht.  Wir
+untersuchen diese beiden Fälle getrennt.
+\begin{enumerate}
+\item Fall: $\sqrt{2}^{\sqrt{2}} \in \mathbb{Q}$.
+
+      In diesem Fall definieren wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x := \sqrt{2}$ \quad und \quad $y := \sqrt{2}$.  
+      \\[0.2cm]
+      Da wir bereits wissen,
+      dass $\sqrt{2} \not\in \mathbb{Q}$ ist, und da nach der Voraussetzung der
+      Fallunterscheidung $x^y \in \mathbb{Q}$ gilt, haben wir in diesem Fall bereits Zahlen $x$ und
+      $y$ mit der behaupteten Eigenschaft gefunden.
+\item Fall:  $\sqrt{2}^{\sqrt{2}} \not\in \mathbb{Q}$.
+
+      In diesem Fall definieren wir 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x := \sqrt{2}^{\sqrt{2}}$ \quad und \quad $y := \sqrt{2}$.
+      \\[0.2cm]
+      Jetzt ist $x$ nach der Voraussetzung der Fallunterscheidung irrational und dass $y$ irrational
+      ist, haben wir bereits früher bewiesen.  Außerdem gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds x^y = \bigl(\sqrt{2}^{\sqrt{2}}\bigr)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2} \cdot \sqrt{2})} = \sqrt{2}^{2} = 2 \in \mathbb{Q}$,
+      \\[0.2cm]
+      so dass die Behauptung auch im zweiten Fall bewiesen ist.  \qed
+\end{enumerate}
+
+Beachten Sie, dass es uns bei dem letzten Beweis nicht möglich war, die Zahlen $x$ und $y$ konkret
+anzugeben.  Wir wissen nur, dass entweder die beiden Zahlen
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 := \sqrt{2}$ und $y_1 := \sqrt{2}$ \quad oder \quad die Zahlen $x_2 := \sqrt{2}^{\sqrt{2}}$ und $y_2 := \sqrt{2}$.
+\\[0.2cm]
+die behauptete Eigenschaft 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \not\in \mathbb{Q} \wedge y \not\in \mathbb{Q} \wedge x^y \in \mathbb{Q}$
+\\[0.2cm]
+haben, aber der obige Beweis sagt nichts darüber, welches der beiden Paare $\pair(x_1,y_1)$ und
+$\pair(x_2,y_2)$ tatsächlich die obige Eigenschaft hat.  Das war für den gerade angegebenen Beweis
+auch nicht erforderlich: Wir haben nur gezeigt, dass es ein Paar $\pair(x,y)$ mit der Eigenschaft
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \not\in \mathbb{Q} \wedge y \not\in \mathbb{Q} \wedge x^y \in \mathbb{Q}$
+\\[0.2cm]
+geben muss, aber wir waren nicht in der Lage, $x$ und $y$ konkret auszurechnen.  Daher ist der obige
+Beweis kein \emph{konstruktiver} Beweis:  Zwar zeigt der Beweis die Existenz eines Paares
+$\pair(x,y)$ mit den gewünschten Eigenschaften, aber das Paar $\pair(x,y)$ kann nicht konkret
+angegeben werden.
+
+\remark
+Aus dem \href{http://en.wikipedia.org/wiki/Gelfond%27s_theorem}{Gelfond-Schneider-Theorem}
+kann gefolgert werden, dass $\sqrt{2}^{\sqrt{2}} \not\in \mathbb{Q}$ gilt.  Der Nachweis dieses
+Theorem liegt aufgrund seiner Tiefe deutlich außerhalb des Rahmens einer einführenden Mathematik-Vorlesung.
+
+\exercise
+Zeigen Sie, dass für alle $n \in \mathbb{N}$ die Zahl
+\\[0.2cm]
+\hspace*{1.3cm}
+$5 \cdot n^3 + 10 \cdot n$
+\\[0.2cm]
+stets durch $3$ teilbar ist.  \exend
+
+% 5 * n * (n^2 + 2)
+%
+% n = 3 * k + 1
+% n^2 + 2 = 9 * k + 6 * k + 1 + 2
+%
+% n = 3 * k + 2
+% n^2 + 2 = 9 * k + 6 * k + 4 + 2
+
+\section{Induktions-Beweise}
+Die wichtigste Beweismethode in der Informatik ist der Beweis durch vollständige Induktion. Es sei
+$F(n)$ eine Formel, in der die Variable $n$ vorkommt.  Um eine Aussage der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}: F(n)$
+\\[0.2cm]
+zu beweisen, können wir wie folgt vorgehen.
+\begin{enumerate}
+\item Zunächst zeigen wir, dass die Aussage für $n=1$ richtig ist, wir weisen also die Gültigkeit der
+      Formel $F(1)$ nach.
+
+      Dieser Schritt wird als \emph{Induktions-Anfang} bezeichnet.
+\item Dann zeigen wir, dass die Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall n \in \mathbb{N} : \bigl( F(n) \rightarrow F(n+1)\bigr)$
+      \\[0.2cm]
+      gilt, wir zeigen also, dass jedesmal, wenn $F(n)$ gilt, auch $F(n+1)$ richtig sein muss.
+
+      Dieser Schritt wird als \emph{Induktions-Schritt} bezeichnet.
+\end{enumerate}
+Insgesamt können wir dann schließen, dass die Formel $F(n)$ für alle natürlichen Zahlen gilt, denn
+zunächst wissen wir, dass $F(1)$ gilt, nach dem Induktions-Schritt gilt dann auch $F(2)$, daraus folgt
+dass auch $F(3)$ gilt, woraus wir auf die Gültigkeit von $F(4)$ schließen können.  Durch Fortführung
+dieser Argumentation schließen wir insgesamt, dass $F(n)$ für jede beliebige Zahl richtig ist.  Diese
+Argumentation ist zunächst informal. Ein exakter Beweis folgt.
+
+\begin{Satz}
+  Es sei $F(x)$ eine Formel. Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $F(1) \wedge \bigl(\forall n \in \mathbb{N}:F(n) \rightarrow F(n+1)\bigr) \rightarrow 
+   \forall n \in \mathbb{N}: F(n)
+  $.
+\end{Satz}
+
+\proof
+Wir nehmen an, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$F(1) \wedge \bigl(\forall n \in \mathbb{N}:F(n) \rightarrow F(n+1)\bigr)$
+\\[0.2cm]
+richtig ist und zeigen, dass dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}:F(n)$
+\\[0.2cm]
+gilt.  Den Nachweis dieser Behauptung führen wir indirekt und nehmen an, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\neg\bigl(\forall n \in \mathbb{N}:F(n)\bigr)$
+\\[0.2cm]
+gilt.  Das ist aber äquivalent zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$\exists n \in \mathbb{N}:\neg F(n)$.
+\\[0.2cm]
+Wir definieren eine Menge $M$ als die Menge aller der Zahlen, für die $F(n)$ falsch ist:
+\\[0.2cm]
+\hspace*{1.3cm}
+$M := \bigl\{ n \in \mathbb{N} \bigm| \neg F(n) \bigr\}$.
+\\[0.2cm]
+Nach unserer Annahme ist $M$ nicht leer.  Dann muss aber $M$ ein kleinstes Element haben.  Wir definieren
+$n_0$ als das Minimum von $M$.
+\\[0.2cm]
+\hspace*{1.3cm}
+$n_0 := \min( M) = \min\bigl(\bigl\{ n \in \mathbb{N} \bigm| \neg F(n) \bigr\}\bigr)$.
+\\[0.2cm]
+Also haben wir $\neg F(n_0)$ und wissen außerdem, dass für alle $n < n_0$ die Formel $F(n)$ gilt, denn
+sonst wäre $n_0$ ja nicht das Minimum der Menge $M$.
+
+Weiter schließen wir dann aus der Tatsache, dass $F(1)$ gilt, dass $n_0 \not= 1$ ist.  
+Aus $n_0 -1 < n_0$ folgt nun, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$F(n_0 - 1)$
+\\[0.2cm]
+gilt.  Aus der Formel $\forall n \in \mathbb{N}: F(n) \rightarrow F(n+1)$ können wir dann folgern, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$F((n_0-1) +1)$
+\\[0.2cm] 
+gilt.  Also gilt $F(n_0)$ und das ist ein Widerspruch zur Definition von $n_0$. \qed
+
+Wir geben nun einige typische Beispiele für Induktions-Beweise.  Die in diesen Sätzen behaupteten
+Summenformeln sollten Sie sich gut merken, denn diese Formeln werden bei der Analyse der Komplexität
+von Algorithmen häufig verwendet.
+
+\begin{Satz} Es gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ \quad für alle $n \in \mathbb{N}$.
+\end{Satz}
+
+\proof
+Wir führen den Beweis durch Induktion nach $n$.
+\begin{enumerate}
+\item Induktions-Anfang: $n=1$.
+
+      Wir haben einerseits
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\sum\limits_{i=1}^1 i = 1$
+      \\[0.2cm]
+      und andererseits gilt auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\frac{1}{2} \cdot 1 \cdot (1+1) = 1$.
+      \\[0.2cm]
+      Damit ist die Behauptung für $n=1$ richtig.
+\item Induktions-Schritt: $n \mapsto n+1$.
+
+      Wir können nun voraussetzen, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$
+      \\[0.2cm]
+      für ein gegebenes festes $n$ gilt.  Diese Voraussetzung wird als \emph{Induktions-Voraussetzung}
+      bezeichnet.  Wir müssen dann nachweisen, dass  die Behauptung auch
+      für $n+1$ gilt, zu zeigen ist also 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\sum\limits_{i=1}^{n+1} i = \frac{1}{2} \cdot (n+1) \cdot \bigl((n+1)+1\bigr)$.
+      \\[0.2cm]
+      Wir formen beide Seiten dieser Gleichung getrennt um und beginnen mit der linken Seite.
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cll}
+        &\ds \sum\limits_{i=1}^{n+1} i                                                       \\[0.5cm]
+      = &\ds \sum\limits_{i=1}^{n} i + (n+1)          & \mbox{nach Definition der Summe}     \\[0.5cm]
+      = &\ds \frac{1}{2} \cdot n \cdot (n+1) + (n+1)  & \mbox{nach Induktions-Voraussetzung} \\[0.3cm]
+      = &\ds \frac{1}{2} \cdot \bigl( n^2 + n  + 2 \cdot(n+1)\bigr)  & \mbox{Hauptnenner} \\[0.3cm]
+      = &\ds \frac{1}{2} \cdot \bigl( n^2 + 3 \cdot n  + 2 \bigr)  
+      \end{array}
+      $
+      \\[0.2cm]
+      Nun formen wir die rechte Seite um:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+         &\ds \frac{1}{2} \cdot (n+1) \cdot \bigl((n+1)+1\bigr) \\[0.3cm]
+       = &\ds \frac{1}{2} \cdot (n+1) \cdot (n+2)               \\[0.3cm]
+       = & \ds \frac{1}{2} \cdot (n^2  + 2 \cdot n + n + 2)     \\[0.3cm]
+       = &\ds \frac{1}{2} \cdot (n^2  + 3 \cdot n + 2)  
+      \end{array}
+      $
+      \\[0.2cm]
+      Da beide Seiten identisch sind, ist der Beweis erbracht. \qed
+\end{enumerate}
+
+
+\exercise
+Zeigen Sie, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{i=1}^{n} i^2 = \frac{1}{6} \cdot n \cdot (n+1) \cdot (2 \cdot n + 1)$ \quad
+für alle $n \in \mathbb{N}$ 
+\\[0.2cm]
+gilt.  \exend
+
+\exercise
+Zeigen Sie, dass im Falle $q \not= 1$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\sum\limits_{i=0}^{n} q^i = \bruch{q^{n+1} - 1}{q - 1}$ \quad
+für alle $n \in \mathbb{N}_0$ 
+\\[0.2cm]
+gilt.  Wie lautet die Formel im Falle $q=1$? \exend
+
+
+\begin{Satz}[Mächtigkeit der Potenz-Menge]
+Es sei $M$ eine endliche Menge.  Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(2^M\bigr) = 2^{\textsl{card}(M)}$.
+\end{Satz}
+
+\proof
+Es sei $n := \textsl{card}(M)$.  Dann hat $M$ die Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$M = \{ x_1, x_2, \cdots, x_n \}$.
+\\[0.2cm]
+Wir zeigen durch Induktion nach $n$, dass Folgendes gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(2^M\bigr) = 2^n$.
+\begin{enumerate}
+\item Induktions-Anfang: $n = 0$.
+
+      Dann gilt  $M = \{\}$ und für die Potenz-Menge $2^M$ finden wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^M = 2^{\{\}} = \bigl\{ \{\} \bigr\}$.
+      \\[0.2cm]
+      Die Potenz-Menge der leeren Menge hat also genau ein Element.  Daher gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}\bigl(2^{\{\}}\bigr) = \textsl{card}\bigl(\bigl\{ \{\} \bigr\}\bigr) = 1$.
+      \\[0.2cm]
+      Auf der anderen Seite haben wir 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^{\textsl{card}(\{\})} = 2^0 = 1$.
+\item Induktions-Schritt: $n \mapsto n + 1$.
+
+      Wenn $\textsl{card}(M) = n+1$ ist, dann hat $M$ die Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $M = \{ x_1, x_2, \cdots x_n, x_{n+1}\}$.
+      \\[0.2cm]
+      Es gibt zwei verschiedene Arten von Teilmengen von $M$: Solche, die $x_{n+1}$ enthalten und
+      solche, die $x_{n+1}$ nicht enthalten.  Dementsprechend können wir die Potenz-Menge $2^M$ wie folgt
+      aufteilen:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^M = \bigl\{ K \in 2^M \bigm| x_{n+1}     \in K \bigr\} \cup
+             \bigl\{ K \in 2^M \bigm| x_{n+1} \not\in K \bigr\} 
+      $
+      \\[0.2cm]
+      Wir bezeichnen die erste dieser Mengen mit $A$, die zweite nennen wir $B$:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A := \bigl\{ K \in 2^M \bigm| x_{n+1}     \in K \bigr\}$, \quad
+      $B := \bigl\{ K \in 2^M \bigm| x_{n+1} \not\in K \bigr\}$.
+      \\[0.2cm]
+      Offenbar sind die Mengen $A$ und $B$ disjunkt: $A \cap B = \emptyset$.  Daher folgt aus der Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^M = A \cup B$,
+      \\[0.2cm]
+      dass die Anzahl der Elemente von $2^M$ gleich der Summe der Anzahl der Elemente in $A$ und der
+      Anzahl der Elemente in $B$ ist:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}\bigl(2^M\bigr) = \textsl{card}(A) + \textsl{card}(B)$.
+      \\[0.2cm]
+      Die Menge $B$ enthält genau die Teilmengen von $M$, die $x_{n+1}$ nicht enthalten.  Das sind dann 
+      aber genau die Teilmengen der Menge $\{x_1,\cdots, x_n\}$, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B = 2^{\{x_1,\cdots, x_n\}}$.
+      \\[0.2cm]
+      Nach Induktions-Voraussetzung wissen wir daher, dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}(B) = \textsl{card}\bigl(2^{\{x_1,\cdots, x_n\}}\bigr) \stackrel{IV}{=}
+       2^{\textsl{card}(\{x_1,\cdots, x_n\})} = \displaystyle 2^n
+      $
+      \\[0.2cm]
+      gilt.  Als nächstes zeigen wir, dass die Menge $A$ genau so viele Elemente hat, wie die Menge $B$.
+      Zu diesem Zweck konstruieren wir eine bijektive Funktion $f$, die jedem $K \in B$ eindeutig eine
+      Menge $f(K) \in A$ zuordnet:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f: B \rightarrow A$ \quad ist definiert durch \quad $f(K) := K \cup \{ x_{n+1} \}$.
+      \\[0.2cm]
+      Die Umkehrfunktion $f^{-1}: A \rightarrow B$ kann offenbar durch die Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f^{-1}(K) := K \backslash \{ x_{n+1} \}$
+      \\[0.2cm]
+      definiert werden.  Damit ist aber klar, dass die Mengen $A$ und $B$ gleich viele Elemente haben:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}(A) = \textsl{card}(B)$.
+      \\[0.2cm]
+      Insgesamt haben wir jetzt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+        \textsl{card}\bigl(2^M\bigr) & = & \textsl{card}(A) + \textsl{card}(B) \\[0.2cm]
+                                     & = & \textsl{card}(B) + \textsl{card}(B) \\[0.2cm]
+                                     & = & 2 \cdot \textsl{card}(B)            \\[0.2cm]
+                                     & = & 2 \cdot 2^n                         \\[0.2cm]
+                                     & = & 2^{n+1}.
+      \end{array}
+      $
+      \\[0.2cm]
+      Wir haben also $\textsl{card}\bigl(2^M\bigr) = 2^{n+1}$ bewiesen.  Damit ist der Induktions-Schritt
+      abgeschlossen und der Beweis der Behauptung ist erbracht. \qed
+\end{enumerate}
+
+\exercise  
+Zeigen Sie, dass jede natürliche Zahl $n \geq 2$ entweder eine Primzahl ist oder aber sich als  
+Produkt von zwei oder mehr Primzahlen darstellen lässt.  
+\exend  
+
+ 
+\exercise
+Es sei $x \in \mathbb{R}$.  Zeigen Sie, dass für alle positiven natürlichen Zahlen die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$(1+x)^{n} \geq 1 + n \cdot x$
+\\[0.2cm]
+gilt.  
+\exend
+
+
+\exercise 
+Zeigen Sie, dass die Zahl $2^{2 \cdot n} - 1$ für alle positiven natürlichen Zahlen $n$ durch $3$
+teilbar ist,
+\exend 
+\pagebreak
+
+\exercise
+Ein \emph{Triomino} ist eine Figur, die aus einem Quadrat der Länge 2 dadurch entsteht, dass in
+einer  der Ecken des ursprünglich gegebenen Quadrates der Länge 2 ein Quadrat der Länge 1
+ausgeschnitten ist.  Abbildung \ref{fig:triomino.eps} zeigt 
+ein Triomino, bei dem die rechte obere Ecke ausgeschnitten ist.  Beweisen Sie, dass Sie ein 
+\href{http://de.wikipedia.org/wiki/Schachbrett}{Schachbrett}, bei dem eines der Eckfelder
+ausgeschnitten ist, vollständig so durch Triominos so überdecken können, dass die einzelnen
+Triominos sich nicht überlappen.  Dabei ist vorausgesetzt, dass die einzelnen Felder des
+Schachbretts Quadrate der Länge 1 sind.
+
+\begin{figure}[!ht]
+  \centering
+  \epsfig{file=Abbildungen/triomino.eps, scale=0.7}
+  \caption{Ein Triomino.}
+  \label{fig:triomino.eps}
+\end{figure}
+
+\vspace*{0.2cm}
+ 
+\noindent  
+\textbf{Hinweis 1:}  Beim Beweis einer mathematischen Behauptung ist es manchmal einfacher, zunächst  
+ein  Ergebnis zu beweisen, was allgemeiner ist als die eigentlich zu beweisende Behauptung.  Das mag  
+zwar kontraintuitiv erscheinen, weil Sie dann ja offensichtlich mehr beweisen müssen, aber dieses  
+Beispiel soll Ihnen zeigen, dass es tatsächlich Fälle gibt, wo Sie das Problem am einfachsten durch  
+Verallgemeinerung lösen können.  
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Hinweis 2:}  Um diese Aufgabe lösen zu können, müssen Sie kein Schachspieler sein.
+Für den Zweck der Aufgabe reicht es zu wissen, dass ein Schachbrett ein Quadrat der Länge 8 ist (was immer
+dabei die Längeneinheit ist), das in $8 \times 8$ Quadrate der Länge 1 unterteilt ist.
+\exend  
+
+%%% local Variables: 
+%%% Mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

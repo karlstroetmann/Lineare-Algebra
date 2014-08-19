@@ -1,0 +1,1508 @@
+\chapter{Lineare Abbildungen}
+Der Begriff der \emph{linearen Abbildungen} ist neben dem Begriff des Vektor-Raums einer der zentralen Begriffe in der Theorie der
+linearen Algebra.  In diesem Kapitel führen wir lineare Abbildungen ein und zeigen, wie diese
+durch \emph{Matrizen} dargestellt werden können.  Wir definieren Addition und Multiplikation
+von Matrizen und zeigen, dass bestimmte Matrizen bezüglich der Multiplikation ein \emph{Inverses} besitzen.
+Wir führen sogenannte \emph{Elementar-Matrizen} ein und demonstrieren, wie sich mit Hilfe von
+Elementar-Matrizen das Inverse einer Matrix berechnen lässt.  
+
+Im Rest dieses Abschnittes bezeichnet
+$\mathbb{K}$ einen Körper.  In den Anwendungen wird es sich dabei meistens um den Körper
+$\mathbb{R}$ der reellen Zahlen oder den Körper $\mathbb{C}$ der komplexen Zahlen handeln.
+
+\section{Definition der linearen Abbildungen}
+\begin{Definition}[$\mathcal{L}(V, W)$]
+Es seien $V$ und $W$ zwei $\mathbb{K}$-Vektor-Räume.  Eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f:V \rightarrow W$
+\\[0.2cm]
+ist eine \emph{lineare Abbildung} von $V$ nach $W$ genau dann, wenn Folgendes gilt:
+\begin{enumerate}
+\item $\forall \mathbf{x}, \mathbf{y} \in V: f(\mathbf{x} + \mathbf{y}) = f(\mathbf{x}) + f(\mathbf{y})$,
+
+      eine lineare Abbildung ist mit der Addition verträglich.
+\item $\forall \alpha \in \mathbb{K}: \forall \mathbf{x} \in V: f(\alpha \cdot \mathbf{x}) = \alpha \cdot f(\mathbf{x})$,
+
+      eine lineare Abbildung ist auch mit der Skalar-Multiplikation verträglich.
+\end{enumerate}
+Die Menge aller linearen Abbildungen von $V$ nach $W$ wird mit $\mathcal{L}(V, W)$ bezeichnet, es
+gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{L}(V, W) := \{ f \in W^V \mid \mbox{$f$ ist lineare Abbildung} \}$.
+\\[0.2cm]
+Auf der Menge $\mathcal{L}(V, W)$ definieren wir eine Addition
+\\[0.2cm]
+\hspace*{1.3cm}
+$+: \mathcal{L}(V, W) \times \mathcal{L}(V, W) \rightarrow \mathcal{L}(V, W)$
+\\[0.2cm]
+punktweise, dass heisst für $f,g \in \mathcal{L}(V, W)$ definieren wir die lineare Abbildung $f+g$,
+indem wir fordern, dass für alle $\mathbf{x} \in V$
+\\[0.2cm]
+\hspace*{1.3cm}
+$(f+g)(\mathbf{x}) := f(\mathbf{x}) + g(\mathbf{x})$ 
+\\[0.2cm]
+gilt.  Weiter definieren wir die Null-Abbildung $\mathbf{0}: V \rightarrow W$, indem wir für alle
+$\mathbf{x} \in V$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{0}(\mathbf{x}) := \mathbf{0}$
+\\[0.2cm]
+setzen.  Schließlich definieren wir eine Skalar-Multiplikation von Elementen des Körpers
+$\mathbb{K}$ mit linearen Abbildung aus $\mathcal{L}(V,W)$.  Diese Skalar-Multiplikation bezeichnen
+wir durch den Operator ``$\cdot$''.  Es ist also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\cdot: \mathbb{K} \times \mathcal{L}(V, W) \rightarrow \mathcal{L}(V, W)$
+\\[0.2cm]
+und wir definieren für alle $\alpha \in \mathbb{K}$, $f \in \mathcal{L}(V, W)$ und alle $\mathbf{x} \in V$
+\\[0.2cm]
+\hspace*{1.3cm}
+$(\alpha \cdot f)(\mathbf{x}) := \alpha \cdot f(x)$.
+ \eoxs
+\end{Definition}
+
+\exercise
+Es seien $V$ und $W$ zwei $\mathbb{K}$-Vektor-Räume und $\mathcal{L}(V, W)$ bezeichne die oben
+definierte Menge der linearen Abbildungen von $V$ nach $W$.  Beweisen Sie die folgenden Behauptungen:
+\begin{enumerate}
+\item Wenn $f,g \in \mathcal{L}(V,W)$ ist,  dann gilt $f+g \in \mathcal{L}(V, W)$.
+\item Wenn $\alpha \in \mathbb{K}$ und $f \in \mathcal{L}(V,W)$ ist,  dann gilt  $\alpha \cdot f \in \mathcal{L}(V, W)$.
+\item $\bigl\langle \langle \mathcal{L}(V, W), \mathbf{0}, + \rangle, \cdot \rangle$ ist ein $\mathbb{K}$-Vektor-Raum.
+      \eoxs
+\end{enumerate}
+
+\remark
+Wir können die beiden Eigenschaften, die in der Definition einer linearen Abbildung gefordert werden, zu 
+einer einzigen Eigenschaft zusammenfassen, denn die Abbildung $f:V \rightarrow W$ ist genau dann linear, wenn
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall \alpha, \beta \in \mathbb{K}: \forall \mathbf{x}, \mathbf{y} \in V: f(\alpha \cdot \mathbf{x} + \beta \cdot \mathbf{y}) = \alpha \cdot f(\mathbf{x}) + \beta \cdot f(\mathbf{y})$
+\\[0.2cm]
+gilt.  Weiter bemerken wir, dass für eine lineare Abbildung $f:V \rightarrow W$ immer
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\mathbf{0}) = \mathbf{0}$
+\\[0.2cm]
+gilt, denn wir haben
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\mathbf{0}) = f(0 \cdot \mathbf{0}) = 0 \cdot f(\mathbf{0}) = \mathbf{0}$.
+\eoxs
+
+\remark
+In der Literatur wird eine lineare Abbildung $f:V \rightarrow W$ von einem Vektor-Raum $V$ in einen
+Vektor-Raum $W$ auch als ein \emph{Vektor-Raum-Homomorphismus} oder kürzer als ein
+\emph{Homomorphismus} bezeichnet.  Ist die Abbildung $f$ außerdem noch injektiv, so heißt $f$ ein
+\emph{Monomorphismus}.  Ist $f$ surjektiv, so sprechen wir von einem \emph{Epimorphismus} und wenn
+$f$ sowohl injektiv als auch surjektiv ist, dann ist $f$ ein \emph{Isomorphismus}.  Gilt $V = W$,
+hat $f$ also die Form $f: V \rightarrow V$, so nennen wir $f$ einen \emph{Endomorphismus} und wenn
+sowohl $V=W$ gilt, als auch die Funktion $f$ bijektiv ist, dann ist $f$ ein \emph{Automorphismus}. 
+Der Übersichtlichkeit halber fassen wir diese Begriffe wie folgt zusammen:
+\begin{enumerate}
+\item  Wenn $f \in \mathcal{L(V,W)}$ ist, dann ist $f$ ein Homomorphismus.
+\item  Wenn $f \in \mathcal{L(V,W)}$ injektiv ist, dann ist $f$ ein Monomorphismus. 
+\item  Wenn $f \in \mathcal{L(V,W)}$ surjektiv ist, dann ist $f$ ein Epimorphismus. 
+\item  Wenn $f \in \mathcal{L(V,W)}$ bijektiv ist, dann ist $f$ ein Isomorphismus. 
+\item  Wenn $f \in \mathcal{L(V,V)}$ ist, dann ist $f$ ein Endomorphismus.  
+\item  Wenn $f \in \mathcal{L(V,V)}$ bijektiv ist, dann ist $f$ ein Automorphismus.  
+\eox
+\end{enumerate}
+
+In der englischen Literatur wird ein  Endomorphismus $f \in \mathcal{L}(V,V)$ auch als ein
+\emph{Operator auf $V$} bezeichnet.  Wir definieren zur Abkürzung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{L}(V) := \mathcal{L}(V,V)$.
+\\[0.2cm]
+Folglich bezeichnet $\mathcal{L}(V)$ die Menge der Operatoren auf dem Vektor-Raum $V$.
+\eoxs
+
+\example
+Es sei $\mathbb{K}^\mathbb{N}$ der Vektor-Raum der $\mathbb{K}$-wertigen Folgen.  Wir definieren
+eine Abbildung $L$, die eine gegebene Folge um das erste Element verkürzt, die also die Folge nach
+links schiebt.  Formal setzen wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$L\bigl( (x_n)_{n\in \mathbb{N}} \bigr) := (x_{n+1})_{n\in\mathbb{N}}$.
+\\[0.2cm]
+Weniger formal aber dafür intuitiver könnten wir auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$L\bigl( (x_0, x_1, x_2, x_3, \cdots) \bigr) := (x_1, x_2, x_3, \cdots)$
+\\[0.2cm]
+schreiben.  Dann ist die Abbildung $L$ eine lineare Abbildung auf $\mathbb{K}^\mathbb{N}$.
+\eoxs
+
+\example
+Es sei $\mathcal{C}(R)$ die Menge der stetigen Funktionen auf $\mathbb{R}$ und $\mathcal{D}(\mathbb{R})$ die Menge aller Funktionen
+$f:\mathbb{R} \rightarrow \mathbb{R}$, die überall differenzierbar sind und deren Ableitung stetig ist.  Definieren wir eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$\frac{d\;}{dx}: \mathcal{D}(\mathbb{R}) \rightarrow \mathcal{C}(\mathbb{R})$ \quad durch $\frac{d\;}{dx}(f) := f'(x)$,
+\\[0.2cm]
+wobei $f'(x)$ die Ableitung der Funktion $f$ an der Stelle $x$ ist, so ist die Funktion $\frac{d\;}{dx}$ eine lineare Abbildung,
+denn für die Ableitung gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f + \beta \cdot \frac{d\;}{dx} g$. \eoxs
+
+
+\subsection{Kern und Bild einer linearen Abbildung}
+\begin{Definition}[Kern]
+  Es seien $V$ und $W$ zwei Vektor-Räume und $f:V \rightarrow W$ sei ein lineare Abbildung.  Dann definieren wir 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\textsl{Kern}(f) := \{ \mathbf{x} \in V \mid f(\mathbf{x}) = \mathbf{0} \}$.
+  \\[0.2cm] 
+  Der Kern einer linearen Abbildung ist also die Menge aller Vektoren aus $V$, die auf den Null-Vektor abgebildet werden.  \eoxs
+\end{Definition}
+
+\begin{Satz}
+  Ist $f:V \rightarrow W$ eine lineare Abbildung, so ist $\textsl{Kern}(f)$ ein Untervektor-Raum von $V$.
+\end{Satz}
+
+\proof
+Wir haben die drei Eigenschaften von Untervektor-Räumen nachzuweisen. 
+\begin{enumerate}
+\item Wir haben oben bereits gesehen, dass für eine lineare Abbildung
+      $f(\mathbf{0}) = \mathbf{0}$ gilt.  Daraus folgt sofort $\mathbf{0} \in \textsl{Kern}(f)$.
+\item Seien $\mathbf{x}, \mathbf{y} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{x}) = \mathbf{0}$ \quad und \quad $f(\mathbf{y}) = \mathbf{0}$. 
+      \\[0.2cm]
+      Daraus folgt zunächst
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{x}) + f(\mathbf{y}) = \mathbf{0} + \mathbf{0} = \mathbf{0}$
+      \\[0.2cm]
+      und da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{x} + \mathbf{y}) = \mathbf{0}$
+      \\[0.2cm]
+      umformen, was uns zeigt, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathbf{x} + \mathbf{y} \in \textsl{Kern}(f)$ 
+      \\[0.2cm]
+      ist, so dass die Menge $\textsl{Kern}(f)$ unter der Addition abgeschlossen ist.
+\item Sei $\alpha \in \mathbb{K}$ und $\mathbf{x} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{x}) = \mathbf{0}$. 
+      \\[0.2cm]
+      Daraus folgt zunächst
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha \cdot f(\mathbf{x}) = \alpha \cdot \mathbf{0} = \mathbf{0}$
+      \\[0.2cm]
+      und da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\alpha \cdot \mathbf{x}) = \mathbf{0}$
+      \\[0.2cm]
+      umformen, was uns zeigt, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha \cdot \mathbf{x} \in \textsl{Kern}(f)$ 
+      \\[0.2cm]
+      ist, so dass die Menge $\textsl{Kern}(f)$ auch unter der Skalar-Multiplikation abgeschlossen ist. \qeds
+\end{enumerate}
+
+\begin{Satz}
+  Es seien $V$ und $W$ Vektor-Räume und $f:V \rightarrow W$ sei eine lineare Abbildung.
+  Dann ist $f$ genau dann injektiv, wenn $\textsl{Kern}(f) = \{ \mathbf{0} \}$ gilt.
+\end{Satz}
+
+\proof
+Wir zerlegen den Beweis in zwei Teile.
+\begin{enumerate}
+\item[``$\Rightarrow$'':] Wir nehmen zunächst an, dass $f$ injektiv ist.  Es ist klar, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{0}) = \mathbf{0}$
+      \\[0.2cm]
+      gilt und damit gilt sicher $\mathbf{0} \in \textsl{Kern}(f)$.  Sei nun zusätzlich $\mathbf{y} \in \textsl{Kern}(f)$, es
+      gelte also 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{y}) = \mathbf{0}$.
+      \\[0.2cm]
+      Da $f$ injektiv ist, folgt aus $f(\mathbf{y}) = \mathbf{0}$ und $f(\mathbf{0}) = \mathbf{0}$
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathbf{y} = \mathbf{0}$
+      \\[0.2cm]
+      und damit ist $\textsl{Kern}(f) = \{ \mathbf{0} \}$ gezeigt.
+\item[``$\Leftarrow$'':] Wir setzen jetzt $\textsl{Kern}(f) = \{ \mathbf{0} \}$ voraus.  Falls für $\mathbf{x}, \mathbf{y} \in V$
+      nun
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{x}) = f(\mathbf{y})$
+      \\[0.2cm]
+      gilt, so können wir diese Gleichung auf Grund der Linearität von $f$ zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\mathbf{x} - \mathbf{y}) = \mathbf{0}$
+      \\[0.2cm]
+      umschreiben.  Daraus folgt aber
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathbf{x} - \mathbf{y} \in \textsl{Kern}(f)$
+      \\[0.2cm]
+      und da wir $\textsl{Kern}(f) = \{ \mathbf{0} \}$ vorausgesetzt hatten, folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathbf{x} - \mathbf{y} = 0$
+      \\[0.2cm]
+      woraus wir auf $\mathbf{x} = \mathbf{y}$ schließen können und das war zu zeigen.  \qeds
+\end{enumerate}
+
+\begin{Definition}[Bild]
+Es seien $V$ und $W$ Vektor-Räume und $f:V \rightarrow W$ sei eine lineare Abbildung.  Dann 
+definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{Bild}(f) := \{ f(\mathbf{x}) \mid \mathbf{x} \in V \}$
+\\[0.2cm]
+als die Menge der Abbilder aller Vektoren aus $V$ unter der Abbildung $f$.
+\eoxs
+\end{Definition}
+
+\exercise
+Zeigen Sie: Ist $f: V \rightarrow W$ eine lineare Abbildung, so ist $\textsl{Bild}(f)$ ein Untervektor-Raum von $W$.
+\eoxs
+
+\begin{Satz}[Dimensions-Satz]
+  Es seien $V_1$ und $V_2$ endlich-dimensionale Vektor-Räume und die Funktion $f: V_1 \rightarrow V_2$ sei eine lineare Abbildung.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\textsl{dim}(V_1) = \textsl{dim}\bigl(\textsl{Kern}(f)\bigr) + \textsl{dim}\bigl(\textsl{Bild}(f)\bigr)$.
+\end{Satz}
+
+\proof
+Es sei $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $\textsl{Kern}(f)$.  Ist $B$ eine Basis von $V_1$, so können wir mit Hilfe des
+Basis-Austausch-Satzes eine Menge $W$ finden, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$B \backslash W \cup \{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$
+\\[0.2cm]
+wieder eine Basis von $V_1$ ist.  Es gelte
+\\[0.2cm]
+\hspace*{1.3cm}
+$B \backslash W = \{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$.
+\\[0.2cm]
+Dann ist also insgesamt die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{  \mathbf{x}_1, \cdots, \mathbf{x}_m,  \mathbf{y}_1, \cdots, \mathbf{y}_n \}$
+\\[0.2cm]
+eine Basis von $V_1$, so dass $\textsl{dim}(V_1) = m + n$.  Wir müssen daher nur noch zeigen, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{dim}\bigl(\textsl{Bild}(f)\bigr) = n$ 
+\\[0.2cm] 
+gilt.  Dazu zeigen wir, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$
+\\[0.2cm]
+eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
+\begin{enumerate}
+\item Wir zeigen:
+      Die Menge $\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
+
+      Sei $\mathbf{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\mathbf{y} \in V_1$, so dass $\mathbf{z} = f(\mathbf{y})$ ist.
+      Nun ist die Menge $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m,  \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ eine Basis von $V_1$. 
+      Folglich muss es Skalare $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ geben, so dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_m \cdot \mathbf{x}_m + \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n = \mathbf{y}$
+      \\[0.2cm]
+      ist.  Wenden wir auf diese Gleichung die lineare Abbildung $f$ an und berücksichtigen, dass
+      $f(\mathbf{x}_i) = \mathbf{0}$ ist für alle $i \in \{1,\cdots,m\}$, denn $\mathbf{x}_i \in \textsl{Kern}(f)$, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_1 \cdot f(\mathbf{y}_1) + \cdots + \beta_n \cdot f(\mathbf{y}_n) = \mathbf{z}$.
+      \\[0.2cm]
+      Damit haben wir $\mathbf{z}$ aber als Linear-Kombination der Menge  $\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$ 
+      dargestellt und das war zu zeigen.
+\item Wir zeigen: Die Menge $\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$ ist linear unabhängig.
+  
+      Seien $\beta_1, \cdots, \beta_n \in \mathbb{K}$ und gelte
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_1 \cdot f(\mathbf{y}_1) + \cdots + \beta_n \cdot f(\mathbf{y}_n) = \mathbf{0}$.
+      \\[0.2cm]
+      Da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n) = \mathbf{0}$
+      \\[0.2cm]
+      umschreiben.  Daraus folgt aber
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n \in \textsl{Kern}(f)$.
+      \\[0.2cm]
+      Da $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $\textsl{Kern}(f)$ ist, muss es also
+      Skalare $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ geben, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_n \cdot \mathbf{x}_n = \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n$
+      \\[0.2cm]
+      gilt.  Diese Gleichung können wir zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_n \cdot \mathbf{x}_n + (-\beta_1) \cdot \mathbf{y}_1 + \cdots + (-\beta_n) \cdot \mathbf{y}_n = \mathbf{0}$
+      \\[0.2cm]
+      umstellen.  Da die Menge $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m,  \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ eine Basis von $V_1$ ist,
+      folgt daraus
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 = 0 \wedge \cdots \wedge \alpha_m = 0 \wedge -\beta_1 = 0 \wedge \cdots \wedge -\beta_n = 0$.
+      \\[0.2cm]
+      Damit haben also die $\beta_i$ alle den Wert $0$ und das war zu zeigen. \qeds
+\end{enumerate}
+\remark
+Der Dimensions-Satz wird in der Literatur auch als \emph{Rang-Satz} bezeichnet.
+\eoxs
+
+\exercise
+Es sei $V$ ein endlich-dimensionaler $\mathbb{K}$-Vektor-Raum und es sei $f \in \mathcal{L}(V)$.
+Zeigen Sie, dass $f$ genau dann surjektiv ist, wenn $f$ injektiv ist. \exend
+
+
+\section{Matrizen}
+Es seien $V$ und $W$ Vektor-Räume und $f$ sei eine lineare Abbildung.  Weiter sei
+$\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $V$ und 
+$\{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ sei eine Basis von $W$.  Für alle $j \in \{1,\cdots,m\}$ ist zunächst
+$f(\mathbf{x}_j)$ ein Vektor aus $W$ und da $\{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ ein Basis von $W$ ist, 
+gibt es dann eindeutig bestimmte Skalare $a_{i,j}$, so dass der Vektor $f(\mathbf{x}_j)$ sich als
+Linear-Kombination 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\mathbf{x}_j) = \sum\limits_{i=1}^n a_{i,j} \cdot \mathbf{y}_i$
+\\[0.2cm]
+schreiben lässt.  Ist nun allgemein $\mathbf{x}$ ein Vektor aus $V$, so lässt sich $\mathbf{x}$ in der Form 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{x} = \sum\limits_{j=1}^m \beta_j \cdot \mathbf{x}_j$
+\\[0.2cm]
+schreiben, denn $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ ist ja eine Basis von $V$.  Wenden wir auf diese Gleichung die Funktion $f$ an, 
+so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+  f(\mathbf{x}) & = & f\left(\sum\limits_{j=1}^m \beta_j \cdot \mathbf{x}_j\right)                    \\[0.5cm]
+                & = & \sum\limits_{j=1}^m \beta_j \cdot f(\mathbf{x}_j)                               \\[0.5cm]
+                & = & \sum\limits_{j=1}^m \beta_i \cdot \sum\limits_{i=1}^n a_{i,j} \cdot \mathbf{y}_i \\[0.5cm]
+                & = &  \sum\limits_{i=1}^n \left(\sum\limits_{j=1}^m a_{i,j} \cdot \beta_j\right) \cdot \mathbf{y}_i. \\[0.5cm]
+\end{array}
+$
+\\[0.2cm]
+Damit sehen wir, dass lineare Abbildung $f$ in dem Moment, wo wir die Basen
+$\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ von $V$ und $\{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ von $W$
+festgelegt haben, vollständig durch die $n \cdot m$ Zahlen $\bigl(a_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,m}$ festgelegt werden.  Diese Zahlen werden 
+daher zu einer $n \times m$ \emph{Matrix}
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \left(
+      \begin{array}[c]{lcl}
+      a_{1,1} & \cdots & a_{1,m} \\
+      \vdots & \ddots & \vdots \\
+      a_{n,1} & \cdots & a_{n,m} \\
+      \end{array}
+      \right)
+$
+\\[0.2cm]
+zusammengefasst.  Die Menge aller $n \times m$ Matrizen mit Koeffizienten $a_{i,j} \in \mathbb{K}$
+für alle $i \in \{1,\cdots,n\}$ und $j \in \{1,\cdots,m\}$ schreiben wir als $\mathbb{K}^{n \times
+  m}$.
+
+\begin{Definition}[$\mathcal{M}(f)$]
+Sind $V$ und $W$ zwei $\mathbb{K}$-Vektor-Räume und bilden die Vektoren $\mathbf{x}_1, \cdots, \mathbf{x}_m$
+und $\mathbf{y}_1, \cdots, \mathbf{y}_n$ eine Basis von $V$ beziehungsweise von $W$ und ist weiter
+$f \in \mathcal{L}(V, W)$, so bezeichnen wir die oben definierte Matrix $A \in \mathbb{K}^{n \times m}$ 
+mit $\mathcal{M}(f)$, wir setzen also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{M}(f) := A$. 
+\eoxs
+\end{Definition}
+
+\remark
+Eigentlich ist die Schreibweise $\mathcal{M}(f)$ nur dann eindeutig, wenn die Vektoren
+$\mathbf{x}_1, \cdots, \mathbf{x}_m$ und $\mathbf{y}_1, \cdots, \mathbf{y}_n$ festgelegt sind.  Es
+gibt Autoren, die deswegen die Notation
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{M}(f;\mathbf{x}_1, \cdots, \mathbf{x}_m; \mathbf{y}_1, \cdots, \mathbf{y}_n)$
+\quad an Stelle von \quad $\mathcal{M}(f)$
+\\[0.2cm]
+schreiben.  Diese Schreibweise ist mir aber zu schwerfällig.  Wir
+setzen im Folgenden voraus, dass immer, wenn die Funktion $\mathcal{M}$ verwendet wird, 
+klar ist, auf Basis welcher Vektoren $\mathbf{x}_1, \cdots, \mathbf{x}_m$ und $\mathbf{y}_1, \cdots, \mathbf{y}_n$  
+der Ausdruck $\mathcal{M}(f)$ definiert ist.
+
+Zusätzlich ist noch die folgende Spitzfindigkeit zu beachten:  Wenn wir sagen, dass 
+$B = \{\mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $V$ ist, dann ist die Reihenfolge der
+Vektoren nicht festgelegt, denn eine Basis ist eine Menge und dort gibt es keine
+Reihenfolge.  Daher ist die oben definierte Abbildung $\mathcal{M}: \mathcal{L}(V,W) \rightarrow\mathbb{K}^{n \times m}$ 
+streng genommen nur dann eindeutig definiert, wenn wir die Reihenfolge der Vektoren in den
+beteiligten Basen fixieren. 
+Wir setzen im Folgenden voraus, dass es in den Anwendungen von $\mathcal{M}$ immer eine kanonische
+Reihenfolge der Elemente der beiden beteiligten Basen gibt, auf die wir uns bei der Definition von
+$\mathcal{M}(f)$ dann beziehen können.
+\eox
+
+
+ Ist $A \in \mathbb{K}^{n \times m}$ eine Matrix und ist 
+\\[0.5cm]
+\hspace*{1.3cm}
+$\mathbf{x} = \left(
+      \begin{array}[c]{c}
+      x_{1}  \\
+      \vdots \\
+      x_{m}  \\
+      \end{array}
+    \right) \in \mathbb{K}^m
+$,
+\\[0.5cm]
+so definieren wir das \emph{Produkt} $A \cdot \mathbf{x}$ als den Vektor
+\\[0.5cm]
+\hspace*{1.3cm}
+$\mathbf{y} := A \cdot \mathbf{x} = \left(
+      \begin{array}[c]{c}
+      \sum\limits_{j=1}^m a_{1,j} \cdot x_{j}  \\
+      \vdots \\
+      \sum\limits_{j=1}^m a_{i,j} \cdot x_{j}  \\
+      \vdots \\
+      \sum\limits_{j=1}^m a_{n,j} \cdot x_{j}  \\
+      \end{array}
+      \right). 
+$
+\\[0.5cm]
+Zur Berechnung der $i$-ten Komponente des Vektors $A \cdot \mathbf{x}$ wird der Vektor $\mathbf{x}$
+also komponentenweise mit der $i$-ten Zeile der Matrix $A$ multipliziert und diese Produkte werden
+dann aufaddiert.
+
+\remark
+Wir hatten die Vektoren aus $\mathbb{K}^n$ ursprünglich als Listen der Form $\mathbf{x} = [x_1, \cdots, x_n]$ mit
+$x_i \in \mathbb{K}$ für alle $i\in\{1,\cdots,n\}$ definiert.  Diese Schreibweise ist wesentlich
+platzsparender als die Schreibweise
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{x} = \left(
+      \begin{array}[c]{c}
+      x_{1}  \\
+      \vdots \\
+      x_{m}  \\
+      \end{array}
+      \right),
+$
+\\[0.2cm]
+bei der wir $\mathbf{x}$ als \emph{Spalten-Vektor} bezeichnen.  Im Zusammenhang mit der
+Multiplikation von Matrizen mit Vektoren ist die Spaltenschreibweise allerdings 
+suggestiver, so dass wir Vektoren in Zusammenhang mit der Matrizen-Multiplikation in der
+Spaltenschreibweise darstellen.
+\eoxs 
+
+\exercise
+Es sei $A \in \mathbb{K}^{n \times m}$.  Zeigen Sie, dass die Abbildung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{K} ^m \rightarrow \mathbb{K}^n$,
+\\[0.2cm]
+die für alle $\mathbf{x} \in \mathbb{K}^m$ durch
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\mathbf{x}) := A \cdot \mathbf{x}$
+\\[0.2cm]
+definiert ist, eine lineare Abbildung ist.
+\exend
+
+
+\subsection{Addition und Skalar-Multiplikation von Matrizen}
+Es seien $A,B \in \mathbb{K}^{n \times m}$ und in Komponentenschreibweise gelte $A = (a_{i,j})$ und
+$B = (b_{i,j})$, wobei der Index $i$ von $1$ bis $n$ und der Index $j$ von $1$ bis $m$ läuft.  Dann
+definieren wir die Summe $C := A + B$ so, dass $C = (a_{i,j} + b_{i,j})$ gilt, die Komponenten der
+Matrix $C$ werden also durch Addition der Komponenten von $A$ und $B$  definiert.  Mit dieser
+Definition ist leicht zu sehen, dass für beliebige Vektoren $\mathbf{x} \in \mathbb{K}^m$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$(A + B) \cdot \mathbf{x} = A \cdot \mathbf{x} + B \cdot \mathbf{x}$
+\\[0.2cm]
+gilt.  Dieses Distributiv-Gesetz ist der Grund dafür, dass die Addition von Matrizen wie oben
+angegeben definiert wird.
+
+
+Für Matrizen lässt sich außerdem eine Skalar-Multiplikation definieren:  Ist $\alpha \in \mathbb{K}$
+und ist $A \in \mathbb{K}^{n \times m}$, wobei $A = (a_{i,j})$ gilt, so definieren wir die $n \times m$ Matrix 
+$C := \alpha \cdot A$ so, dass in Komponentenschreibweise $C = (\alpha \cdot a_{i,j})$ gilt.  Mit
+dieser Definition gilt für beliebige Vektoren $\mathbf{x} \in \mathbb{K}^m$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\alpha \cdot (A \cdot \mathbf{x}) = (\alpha \cdot A) \cdot \mathbf{x} = A \cdot (\alpha \cdot \mathbf{x})$.
+\\[0.2cm]
+Diese Gleichungen zeigen, dass die Skalar-Multiplikation für Matrizen mit der Multiplikation einer
+Matrix mit einem Vektor verträglich ist.
+
+\remark
+Nachdem wir die Addition und Skalar-Multiplikation von Matrizen definiert haben, ist leicht
+nachzurechnen, dass die Menge $\mathbb{K}^{n \times m}$ der $n \times m$ Matrizen mit diesen
+Operationen zu einem Vektor-Raum wird.  Das neutrale Element bezüglich der Addition ist die
+Null-Matrix, deren sämtliche Komponenten den Wert $0$ haben.
+
+\remark
+Sind $V$ und $W$ zwei endlich-dimensionale Vektor-Räume mit Basen
+$\{\mathbf{x}_1, \cdots, \mathbf{x}_m\}$ und $\{\mathbf{y}_1, \cdots, \mathbf{y}_n\}$ und sind $f, g \in \mathcal{L}(V, W)$ und ist $\alpha \in \mathbb{K}$, so gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{M}(f+g) := \mathcal{M}(f) + \mathcal{M}(g)$ \quad und \quad
+$\mathcal{M}(\alpha \cdot f) := \alpha \cdot \mathcal{M}(f)$.
+\\[0.2cm]
+Diese beiden Eigenschaften motivieren nachträglich sowohl die Definition der Addition von Matrizen
+als auch die Definition der Skalar-Multiplikation einer Matrizen.  
+Sie zeigen, dass $\mathcal{M}$ eine lineare Abbildung des Vektor-Raums $\mathcal{L}(V,W)$ in den Vektor-Raum $\mathcal{K}^{m \times n}$ ist.  
+Es handelt sich bei dieser Abbildung um einen Isomorphismus.
+\eoxs
+
+
+
+\subsection{Matrizen-Multiplikation}
+Sind $l,m,n \in \mathbb{N}$ und sind $A \in \mathbb{K}^{m \times l}$ und $B \in \mathbb{K}^{n \times m}$
+Matrizen, so können wir zwei lineare Abbildungen 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f : \mathbb{K}^l \rightarrow \mathbb{K}^m$  \quad und \quad $g: \mathbb{K}^m\rightarrow\mathbb{K}^n$
+\\[0.2cm]
+durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(\mathbf{x}) := A \cdot \mathbf{x}$ \quad f.a.~$\mathbf{x} \in \mathbb{K}^l$,
+ \quad und \quad
+ $g(\mathbf{y}) := B \cdot \mathbf{y}$ \quad f.a.~$\mathbf{y} \in \mathbb{K}^m$,
+ \\[0.2cm]
+definieren.  Da der Werte-Bereich der Funktion $f$ eine Teilmenge des Definitions-Bereichs der
+Funktion $g$ ist, können wir die beiden Funktionen zu einer neuen Funktion $h$ verknüpfen, indem wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$h(\mathbf{x}) := (g \circ f)(\mathbf{x}) = g(f(\mathbf{x}))$
+\\[0.2cm]
+definieren.  Sie können leicht nachweisen, dass die Funktion $h$ wieder eine lineare Funktion ist
+und dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$h:\mathbb{K}^l \rightarrow \mathbb{K}^n$
+\\[0.2cm]
+gilt.  Folglich muss sich die Funktion $h$ ebenfalls durch eine $l \times n$ Matrix $C$ darstellen
+lassen, die wir nun berechnen wollen.  Es gilt
+\\[0.5cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+   h(\mathbf{x}) & = & g(f(\mathbf{x})) \\[0.2cm]
+                 & = & B \cdot (A \cdot \mathbf{x}) \\[0.2cm]
+                 & = & B \cdot \left(\begin{array}[c]{c}
+                                     \vdots                          \\
+                                     \sum\limits_{j=1}^l a_{i,j} \cdot x_{j}  \\
+                                     \vdots                          \\
+                                     \end{array}
+                               \right)                                  \\[1.2cm]
+                 & = & \left(\begin{array}[c]{c}
+                            \vdots \\
+                            \sum\limits_{k=1}^m b_{i,k} \cdot \left(\sum\limits_{j=1}^l a_{k,j} \cdot x_{j}\right)  \\
+                            \vdots \\
+                            \end{array}
+                       \right)                                          \\[1.2cm]
+                 & = & \left(\begin{array}[c]{c}
+                            \vdots \\
+                            \sum\limits_{j=1}^l  \left(\sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}\right) \cdot x_{j}  \\
+                            \vdots \\
+                            \end{array}
+                       \right).                                          
+\end{array}
+$
+\\[0.2cm]
+Definieren wir also die Komponenten der Matrix $C = (c_{i,j})$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f.a. $i \in \{1,\cdots,n\}, j \in\{1,\cdots,m\}$,
+\\[0.2cm]
+so sehen wir, dass diese Matrix das selbe bewirkt, wie die sukzessive Anwendung der Matrizen $A$ und
+$B$.  Daher definieren wir für eine 
+$n \times m$ Matrix $B \in \mathbb{K}^{n \times m}$ der Form $B = (b_{i,k})$ und eine $m \times l$ Matrix
+$A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})$ die Produkt-Matrix $C= B \cdot A$ als die
+ Matrix $C = (c_{i,j})$, deren Komponenten durch die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f.a. $i \in \{1,\cdots,n\}, j \in\{1,\cdots,l\}$,
+\\[0.2cm]
+gegeben sind.
+
+\remark
+Sind $V_1$, $V_2$ und $V_3$ Vektor-Räume mit
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{dim}(V_1) = l$, \quad
+$\mathtt{dim}(V_2) = m$ \quad und \quad
+$\mathtt{dim}(V_3) = n$ 
+\\[0.2cm] 
+und gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+ $f \in \mathcal{L}(V_1, V_2)$ und $g \in \mathcal{L}(V_2, V_3)$,
+\\[0.2cm]
+dann haben wir die Matrizen-Multiplikation gerade so definiert, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{M}(g \circ f) = \mathcal{M}(g) \cdot \mathcal{M}(f)$
+\\[0.2cm]
+gilt.  \eoxs
+
+\exercise
+Zeigen Sie, dass für die Matrizen-Multiplikation das Assoziativ-Gesetz gilt.
+\eoxs
+
+\exercise
+Beweisen oder widerlegen Sie, dass die Matrizen-Multiplikation kommutativ ist.
+\eox
+
+Unser Ziel im Rest dieses Abschnittes ist es zu zeigen, dass bestimmte \emph{quadratische Matrizen} ein
+Inverses besitzen.  Dabei nennen wir eine Matrix $A \in \mathbb{K}^{m \times n}$ \emph{quadratisch}
+falls $m = n$ ist.  Um für die Matrizen-Multiplikation ein neutrales Element definieren zu können,
+definieren wir zunächst das nach 
+\href{http://de.wikipedia.org/wiki/Leopold_Kronecker}{Leopold Kronecker} benannte \emph{Kronecker-Delta}.
+\pagebreak
+
+\begin{Definition}[Kronecker-Delta]
+  Für $i,j \in \mathbb{N}$ definieren wir
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\delta_{i,j} := \left\{
+                  \begin{array}[c]{ll}
+                    1 & \mbox{falls $i = j$;} \\
+                    0 & \mbox{falls $i \not= j$}.
+                  \end{array}
+                  \right.
+  $
+\eoxs
+\end{Definition}
+
+Damit sind wir in der Lage, für alle $n \in \mathbb{N}$ eine \emph{Einheits-Matrix} $\mathrm{E}_n$ zu
+definieren.  Wir definieren $\mathrm{E}_n \in \mathbb{K}^{n \times n}$ als die Matrix, die nur auf der
+fallenden Diagonale mit Einsen besetzt ist, alle anderen Einträge sind Null.  Formal
+gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$,
+\\[0.2cm]
+wobei $\delta_{i,j}$ das eben definierte Kronecker-Delta bezeichnet.  
+Im Falle $n = 2$ haben wir beispielsweise
+\\[0.2cm]
+\hspace*{1.3cm}
+$E_2 := \left(
+  \begin{array}[c]{ll}
+    1 & 0 \\
+    0 & 1 \\
+  \end{array}
+  \right)
+$
+\\[0.2cm]
+und im Falle $n = 3$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$E_3 := \left(
+  \begin{array}[c]{lll}
+    1 & 0 & 0 \\
+    0 & 1 & 0 \\
+    0 & 0 & 1 \\
+  \end{array}
+  \right)
+$.
+\\[0.2cm]
+Ist $A \in \mathbb{K}^{m \times n}$,
+so gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \mathrm{E}_n = A$,
+\\[0.2cm]
+denn wenn wir $C := A \cdot \mathrm{E}_n$ definieren und in Komponentenschreibweise $C = (c_{i,j})$ haben, so
+gilt nach der Definition der Matrizen-Multiplikation
+\\[0.2cm]
+\hspace*{1.3cm}
+$c_{i,j} = \sum\limits_{k=1}^n a_{i,k} \cdot \delta_{k,j} = a_{i,j}$,
+\\[0.2cm]
+wobei wir bei der letzten Gleichung ausgenutzt haben, dass auf Grund der Definition des
+Kronecker-Deltas von der Summe nur der Term mit $k = j$ übrig bleibt.  Genauso lässt sich auch
+zeigen, dass $E_m \cdot A = A$ ist.
+
+\begin{Definition}[Invertierbare Matrix]
+  Eine quadratische Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{invertierbar} genau dann, wenn
+  es eine Matrix $B \in \mathbb{K}^{n \times n}$ gibt, so dass 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $A \cdot B = B \cdot A = \mathrm{E}_n$
+  \\[0.2cm]
+  gilt.  In diesem Fall definieren wir $A^{-1} := B$ und sagen, dass $B$ das \emph{Inverse} der
+  Matrix $A$ ist.  \qed
+\end{Definition}
+
+\remark
+Wenn es eine Matrix $B$ gibt, so dass $A \cdot B = E_n$ gilt, dann kann gezeigt werden, dass daraus
+bereits $B \cdot A = E_n$ folgt. \eox
+
+\exercise
+Es sei $A \in \mathbb{K}^{2 \times 2}$ gegeben als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+       \begin{array}[c]{rr}
+         a & b \\
+         c & d 
+       \end{array}
+     \right)
+$
+\\[0.2cm]
+und es gelte $a \cdot d \not= b \cdot c$.  Zeigen Sie, dass die Matrix $A$ ein Inverses hat und
+berechnen Sie dieses Inverse.
+Machen Sie dazu den Ansatz
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^{-1}  = \left(
+       \begin{array}[c]{rr}
+         e & f \\
+         g & h 
+       \end{array}
+     \right)
+$
+\\[0.2cm]
+und bestimmen Sie die Zahlen $e$, $f$, $g$ und $h$ aus der Forderung, dass $A^{-1} \cdot A = E_2$
+gelten muss.
+\eoxs
+
+\remark
+Ein lineares Gleichungs-System mit $n$ Gleichungen und $n$ Variablen lässt sich in der Form
+$A \cdot \mathbf{x} = \mathbf{x}$ schreiben, wobei $A \in \mathbb{K}^{n \times n}$ ist.
+  Beispielsweise können wir das lineare Gleichungs-System
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[c]{lllcl}
+  1 \cdot x_1 + 2 \cdot x_2 + 3 \cdot x_3 = 4 \\ 
+  5 \cdot x_1 + 6 \cdot x_2 + 7 \cdot x_3 = 8 \\ 
+  9 \cdot x_1 + 6 \cdot x_2 + 3 \cdot x_3 = 1 \\ 
+\end{array}
+$
+\\[0.2cm]
+kürzer als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \textbf{x} = \textbf{b}$
+\\[0.2cm]
+schreiben, wenn wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \left(
+  \begin{array}[c]{lll}
+    1 & 2 & 3 \\
+    5 & 6 & 7 \\
+    9 & 6 & 3 \\
+  \end{array}
+  \right)
+$ \quad und \quad
+$\mathbf{b} := \left(
+  \begin{array}[c]{l}
+    4 \\
+    8 \\
+    1 \\
+  \end{array}
+  \right)
+$
+\\[0.2cm]
+definieren.  Wenn wir nun Glück haben und die Matrix $A$ invertierbar ist, so können wir die
+Gleichung $A \cdot \mathbf{x} = \mathbf{b}$ von links mit $A^{-1}$ multiplizieren.  Dann erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^{-1} \cdot A \cdot \mathbf{x} = A^{-1} \cdot \mathbf{b}$
+\\[0.2cm]
+was wegen $A^{-1} \cdot A \cdot \mathbf{x} = \mathrm{E}_n \cdot \mathbf{x} = \mathbf{x}$ zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{x} = A^{-1} \cdot \mathbf{b}$
+\\[0.2cm]
+äquivalent ist.  Falls wir also in der Lage sind, die Matrix $A$ zu invertieren,  dann können wir anschließend
+das Lösen der Gleichung $A \cdot \mathbf{x} = \mathbf{b}$  auf eine Matrix-Multiplikation zurück
+führen.  Da das Inverse $A^{-1}$ nicht von dem Vektor $\mathbf{b}$ abhängt, ist dies dann ein
+sinnvolles Vorgehen, wenn die Gleichung $A \cdot \mathbf{x} = \mathbf{b}$ für mehrere verschiedene Werte von
+$\mathbf{b}$ gelöst werden soll.  \eoxs
+
+\begin{Definition}
+  Es sei $n\in\mathbb{N}$, $k \in \{1,\cdots,m\}$ und $l \in \{1,\cdots,n\}$.  Dann 
+  definieren wir die $n \times n$ \emph{Atomar-Matrix} $\mathrm{A}(k,l)$ so, dass in Komponentenschreibweise
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathrm{A}_n(k,l) = (\delta_{i,k} \cdot \delta_{l,j})_{{i = 1, \cdots, n} \atop {j = 1, \cdots, n}}$
+  \\[0.2cm]
+  gilt.  Die Atomar-Matrix $\mathrm{A}(k,l)$ hat damit genau in der $k$-ten Zeile in der $l$-ten Spalte eine
+  Eins und alle anderen Einträge der Matrix sind Null.  \eoxs
+\end{Definition}
+
+\exercise
+Es gelte $B \in \mathbb{K}^{n \times n}$ und $\mathrm{A}_n(k,l) \in \mathbb{K}^{n \times n}$ sei eine Atomar-Matrix.  
+Wir definieren $C := \mathrm{A}_n(k,l) \cdot B$.  Zeigen Sie, dass in $C$ in genau eine Zeile von $0$ verschiedene
+Werte auftreten.  Dies ist die $k$-te Zeile und die Werte, die hier auftreten, sind die Werte, die in
+der $l$-ten Zeile von $B$ stehen.   Der Effekt der Multiplikation von $A(\mathrm{k},l)$ mit $B$ besteht also darin,
+dass die $l$-te Zeile in die $k$-te Zeile verschoben wird und dass alle anderen Zeilen gelöscht
+werden.  Schreiben wir die Matrix $B$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$B = \left(
+  \begin{array}[c]{c}
+    \mathbf{b}_1 \\
+    \vdots       \\
+    \mathbf{b}_n 
+  \end{array} 
+\right)
+$, 
+\\[0.2cm]
+wobei $\mathbf{b}_i$ die $i$-te Zeile der Matrix $B$ bezeichnet, die wir als Vektor auffassen und
+ist $l < k$, dann gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{A}_n(k,l) \cdot B = \mathrm{A}_n(k,l) \cdot \left(
+  \begin{array}[c]{c}
+    \mathbf{b}_1 \\
+    \vdots       \\
+    \mathbf{b}_l \\
+    \vdots       \\
+    \mathbf{b}_k \\
+    \vdots       \\
+    \mathbf{b}_n 
+  \end{array}
+\right) = \left(
+  \begin{array}[c]{c}
+    \mathbf{0} \\
+    \vdots       \\
+    \mathbf{0}   \\
+    \vdots       \\
+    \mathbf{b}_l \\
+    \vdots       \\
+    \mathbf{0} 
+  \end{array}
+\right),
+$
+\\[0.2cm]
+falls $l < k$ ist.
+\eox
+
+Wir definieren nun drei verschiedene Arten von sogenannten \emph{Elementar-Matrizen}.  Die 
+Zeilen-Additions-Matrizen $\mathrm{ZA}_n(k,l, \alpha)$ addieren das $\alpha$-fache der $l$-ten Zeile zur
+$k$-ten Zeile, die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauscht die $k$-te Zeile mit der
+$l$-ten Zeile und die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ multipliziert die $k$-te Zeile
+mit $\alpha$.  
+
+\begin{Definition}[Elementar-Matrizen]
+  Es sei $n \in \mathbb{N}$ mit $n \geq 1$.  Weiter seien $k,l \in \{1,\cdots,n\}$ und es sei
+  $\alpha \in \mathbb{K}$, wobei zusätzlich $\alpha \not= 0$ zu gelten hat.  Dann definieren wir die
+  Elementar-Matrizen wie folgt:
+  \begin{enumerate}
+  \item Für $k\not=l$ wird die $n \times n$ Zeilen-Additions-Matrix $\mathrm{ZA}_n(k,l,\alpha)$ durch
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\mathrm{ZA}_n(k,l,\alpha) := \mathrm{E}_n + \alpha \cdot \mathrm{A}_n(k,l)$
+        \\[0.2cm]
+        definiert.  Multiplizieren wir $\mathrm{ZA}_n(k,l,\alpha)$ von rechts mit einer $n \times n$ Matrix
+        $B$, so erhalten wir
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\mathrm{ZA}_n(k,l,\alpha) \cdot B := \mathrm{E}_n \cdot B + \alpha \cdot \mathrm{A}_n(k,l) \cdot B = B + \alpha \cdot \mathrm{A}_n(k,l) \cdot B$.
+        \\[0.2cm]
+        Die Matrix $\mathrm{A}_n(k,l) \cdot B$ besteht aus der $l$-ten Zeile von $B$, die allerdings
+        in die $k$-te Zeile verschoben wird.  Damit besteht der Effekt der Multiplikation
+        $\mathrm{ZA}_n(k,l,\alpha) \cdot B$ darin, dass die $l$-te Zeile von $B$  mit $\alpha$ multipliziert
+        zur $k$-ten Zeile von $B$ hinzu addiert wird.  Im Falle $l < k$ gilt also
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\mathrm{ZA}_n(k,l,\alpha) \cdot B = \mathrm{ZA}_n(k,l,\alpha) \cdot \left(
+          \begin{array}[c]{c}
+            \mathbf{b}_1 \\
+            \vdots       \\
+            \mathbf{b}_l \\
+            \vdots       \\
+            \mathbf{b}_k \\
+            \vdots       \\
+            \mathbf{b}_n 
+          \end{array}
+        \right) = \left(
+          \begin{array}[c]{c}
+            \mathbf{b}_1 \\
+            \vdots       \\
+            \mathbf{b}_l   \\
+            \vdots       \\
+            \mathbf{b}_k + \alpha \cdot \mathbf{b}_l \\
+            \vdots       \\
+            \mathbf{b}_n 
+          \end{array}
+        \right).
+        $       
+\item Die $n \times n$ Zeilen-Permutations-Matrix $\mathrm{ZP}_n(k,l)$ wird durch die Gleichung 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZP}_n(k,l) := \mathrm{E}_n + \mathrm{A}_n(k,l) + \mathrm{A}_n(l,k) - \mathrm{A}_n(k,k) - \mathrm{A}_n(l,l)$.
+      \\[0.2cm]
+      definiert.  Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
+      $\mathrm{ZP}_n(k,l)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$ mit der
+      $l$-ten Zeile von $B$ vertauscht wird, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+        $\mathrm{ZP}_n(k,l) \cdot B = \mathrm{ZP}_n(k,l) \cdot \left(
+          \begin{array}[c]{c}
+            \mathbf{b}_1 \\
+            \vdots       \\
+            \mathbf{b}_l \\
+            \vdots       \\
+            \mathbf{b}_k \\
+            \vdots       \\
+            \mathbf{b}_n 
+          \end{array}
+        \right) = \left(
+          \begin{array}[c]{c}
+            \mathbf{b}_1 \\
+            \vdots       \\
+            \mathbf{b}_k \\
+            \vdots       \\
+            \mathbf{b}_l \\
+            \vdots       \\
+            \mathbf{b}_n 
+          \end{array}
+        \right).
+        $       
+      \\[0.2cm]
+      Dies können wir wie folgt einsehen: 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZA}_n(k,l) \cdot B = B + \mathrm{A}_n(k,l) \cdot B+ \mathrm{A}_n(l,k) \cdot B - \mathrm{A}_n(k,k) \cdot B - \mathrm{A}_n(l,l) \cdot B$
+      \\[0.2cm]
+      Der Term $\mathrm{A}_n(k,l) \cdot B$ transportiert die $l$-Zeile von $B$ in die $k$-te Zeile, 
+      der Term $\mathrm{A}_n(l,k) \cdot B$ transportiert die $k$-te Zeile von $B$ in
+      die $l$-te Zeile und die beiden Terme $-\mathrm{A}_n(k,k) \cdot B$ und $-\mathrm{A}_n(l,l) \cdot B$ 
+      entfernen die $k$-te Zeile beziehungsweise die $l$-te Zeile von $B$.
+\item Die $n \times n$ Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ wird für $\alpha \not= 0$ durch die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZM}_n(k, \alpha) := E_n + (\alpha - 1) \cdot \mathrm{A}_n(k, k) $
+      \\[0.2cm]
+      definiert.  Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
+      $\textrm{ZM}_n(k,\alpha)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$
+      mit $\alpha$ multipliziert wird, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+        $\mathrm{ZM}_n(k,\alpha) \cdot B = \mathrm{ZM}_n(k,\alpha) \cdot \left(
+          \begin{array}[c]{c}
+            \mathbf{b}_1 \\
+            \vdots       \\
+            \mathbf{b}_k \\
+            \vdots       \\
+            \mathbf{b}_n 
+          \end{array}
+        \right) = \left(
+          \begin{array}[c]{c}
+            \mathbf{b}_1 \\
+            \vdots       \\
+            \alpha \cdot \mathbf{b}_k \\
+            \vdots       \\
+            \mathbf{b}_n 
+          \end{array}
+        \right).
+        $       
+      \\[0.2cm]
+      Dies können wir wie folgt einsehen: 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZM}_n(k, \alpha) \cdot B = B + (\alpha - 1) \cdot \mathrm{A}_n(k,k) \cdot B$
+      \\[0.2cm]
+      Es wir also zu $B$ das $(1-\alpha)$-fache der $k$-ten Zeile von $B$zur $k$-ten Zeile hinzu
+      addiert und damit steht die $k$-te Zeile im Ergebnis insgesamt $1 + (\alpha-1) = \alpha$-mal.  \eoxs
+ \end{enumerate}
+\end{Definition}
+
+Die entscheidende Beobachtung ist nun die, dass die oben definierten Elementar-Matrizen alle  invertierbar sind, im Einzelnen gilt:
+\begin{enumerate}
+\item $\bigl(\mathrm{ZA}_n(k,l,\alpha)\bigr)^{-1} =  \mathrm{ZA}_n(k,l,-\alpha)$,
+
+      denn für $k \not= l$ zieht die Anwendung der Matrix $\mathrm{ZA}_n(k,l,-\alpha)$ auf eine
+      Matrix $B$ das $\alpha$-fache der $l$-ten Zeile von der $k$-ten Zeile ab.  Wenn wir also das Produkt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZA}_n(k,l,-\alpha) \cdot \mathrm{ZA}_n(k,l,\alpha) \cdot \mathrm{E}_n$
+      \\[0.2cm]
+      betrachten, so addiert die Anwendung von $\mathrm{ZA}_n(k ,l,\alpha)$ auf die
+      Einheits-Matrix $\mathrm{E}_n$ zunächst das $\alpha$-fache der $l$-ten Zeile von 
+      $\mathrm{E}_n$ zur $k$-ten Zeile, das dann durch die anschließende Anwendung von 
+      $\mathrm{ZA}_n(k,l,-\alpha)$ wieder abgezogen wird.  Damit gilt insgesamt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZA}_n(k,l,-\alpha) \cdot \mathrm{ZA}_n(k,l,\alpha) \cdot \mathrm{E}_n = \mathrm{E}_n$,
+      \\[0.2cm]
+      was wir zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZA}_n(k,l,-\alpha) \cdot \mathrm{ZA}_n(k,l,\alpha) = \mathrm{E}_n$,
+      \\[0.2cm]
+      vereinfachen können.  Genauso lässt sich die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{ZA}_n(k,l,\alpha) \cdot \mathrm{ZA}_n(k,l,-\alpha) = \mathrm{E}_n$,
+      \\[0.2cm]
+      zeigen.
+\item $\bigl(\mathrm{ZP}_n(k,l)\bigr)^{-1} = \mathrm{ZP}_n(k,l)$,
+
+      denn wenn wir die $k$-te Zeile mit der $l$-ten Zeile vertauschen und in der resultierenden
+      Matrix wieder die $k$-te Zeile mit der $l$-ten Zeile vertauschen, sind wir wieder bei der
+      Matrix, mit der wir gestartet sind.
+\item $\bigl(\mathrm{ZM}_n(k,\alpha)\bigr)^{-1} = \mathrm{ZM}_n(k,\alpha^{-1})$,
+
+      denn wenn wir die $k$-te Zeile erst mit $\alpha$ multiplizieren und in der resultierenden
+      Matrix  die $k$-te Zeile mit $\alpha^{-1}$ multiplizieren, haben wir die Matrix wegen der
+      Gleichung  $\alpha^{-1} \cdot \alpha = 1$ insgesamt nicht verändert.  Dabei muss natürlich
+      $\alpha \not= 0$ gelten, aber das ist bei den Elementar-Matrizen der Form 
+      $\mathrm{ZM}_n(k,\alpha)$ vorausgesetzt.
+\end{enumerate}
+
+\section{Berechnung des Inversen einer Matrix}
+Wir haben nun alles Material zusammen um für eine gegebene Matrix $A \in \mathbb{K}^{n \times n}$
+überprüfen zu können, ob es zu $A$ eine inverse Matrix $A^{-1}$ gibt und diese gegebenenfalls auch
+zu berechnen.  Die Idee, die dem Verfahren, dass wir gleich präsentieren werden, zu Grunde liegt,
+besteht darin, dass wir die Matrix $A$ solange mit Elementar-Matrizen $\mathrm{ZE}_i$
+multiplizieren, bis wir die Matrix $A$ zur Einheits-Matrix $\mathrm{E}_n$ reduziert haben.  
+Wir konstruieren also eine endliche Folge von Elementar-Matrizen 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{ZE}_1$, $\cdots$, $\mathrm{ZE}_k$,
+\\[0.2cm]
+so, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{ZE}_k \cdot \mbox{\dots} \cdot \mathrm{ZE}_1 \cdot A = \mathrm{E}_n$
+\\[0.2cm]
+gilt, denn dann haben wir offenbar
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^{-1} = \mathrm{ZE}_k \cdot \mbox{\dots} \cdot \mathrm{ZE}_1$.
+\\[0.2cm]
+Die Elementar-Matrizen werden dabei nicht explizit berechnet, denn es reicht, wenn wir die
+Umformungen, die den Elementar-Matrizen entsprechen, auf die Einheits-Matrix $\mathrm{E}_n$
+anwenden.  Wir berechnen $A^{-1}$ dann nach der Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^{-1} = \mathrm{ZE}_k \cdot \mbox{\dots} \cdot \mathrm{ZE}_1 \cdot \mathrm{E}_n$.
+\\[0.2cm]
+Bei dieser letzten Gleichung müssen wir keine Matrizen-Multiplikationen durchführen, denn wir wissen
+ja, welchen Effekt die Multiplikation einer Elementar-Matrix $\mathrm{ZE}_i$ mit einer Matrix
+$\mathrm{B}$ hat:  Je nachdem, um was für eine Elementar-Matrix es sich handelt, addieren wir das
+$\alpha$-fache einer Zeile zu einer anderen Zeile, wir vertauschen zwei Zeilen oder wir
+multiplizieren eine Zeile mit einem Skalar. 
+
+Die Transformation der Matrix $A \in \mathbb{K}^n$ verläuft in $n$ Schritten, wobei wir im $i$-ten
+Schritt dafür sorgen, dass die $i$-te Spalte der Matrix gleich dem $i$-ten Einheits-Vektor
+$\mathbf{e}_i$ wird.  Dabei hat der $i$-te Einheits-Vektor in der $i$-ten Komponente eine $1$, alle
+anderen Komponenten sind $0$.  Im $i$-ten Schritt können wir davon ausgehen, dass in den ersten $i-1$
+Spalten bereits die Einheits-Vektoren $\mathbf{e}_1$ bis $\mathbf{e}_{i-1}$ stehen.
+Um auch die $i$-te Spalte entsprechend zu transformieren, suchen wir zunächst diejenige Zeile 
+$j \in \{i, \cdots, n\}$ für die $|a_{j,i}|$ maximal wird.  Theoretisch würde es an dieser Stelle
+reichen, einfach irgend eine Zeile $j \in \{i, \cdots, n\}$ zu wählen, für die $a_{j,i} \not= 0$ 
+ist.  Das hier vorgestellte Verfahren, bei dem wir immer den Zeilen-Index $j$ bestimmen, für den
+$a_{j,i}$ maximal ist, hat aber den Vorteil, dass es weniger anfällig für Rundungs-Fehler ist als
+das naive Vorgehen, bei dem $j$ einfach so gewählt wird, dass $a_{j,i} \not= 0$ ist.  Falls 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall j \in \{i, \cdots, n\} : a_{j,i} = 0$ 
+\\[0.2cm]
+gilt, dann lässt sich die Matrix nicht mehr zur Einheits-Matrix umformen und es kann gezeigt werden,
+dass die Matrix $A$ dann nicht invertierbar ist.  Falls wir einen Index $j$ wie oben beschrieben
+finden können, dann vertauschen wir die $i$-te Zeile mit der $j$-ten Zeile und dividieren
+anschließend die $i$-te Zeile durch das Element $a_{i,i}$.  Damit steht in der $i$-ten Zeile der
+$i$-ten Spalte schon mal eine $1$.  Damit die anderen Einträge der $i$-ten Spalte $0$ werden,
+subtrahieren wir anschließend für alle $k \in \{ 1, \cdots, n \} \backslash \{i\}$ das $a_{k,i}$-fache der $i$-ten
+Zeile von der $k$-ten Zeile.
+
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    inverse := procedure(a) {
+        n := #a;              
+        e := identity(n);
+        for (i in [1 .. n]) {
+            r := pivot(a, n, i);
+            [ a[i], a[r] ] := [ a[r], a[i] ];   
+            [ e[i], e[r] ] := [ e[r], e[i] ];
+            if (a[i][i] == 0) { return; }
+            f := 1 / a[i][i]; 
+            for (j in [1 .. n]) {
+                a[i][j] *= f; e[i][j] *= f;
+            }
+            for (k in [1 .. n] | k != i) {
+                f := a[k][i];
+                for (j in [1 .. n]) {
+                    a[k][j] -= f * a[i][j];
+                    e[k][j] -= f * e[i][j];
+                }
+            }    
+        }
+        return e;
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Berechnung der Inversen einer Matrix $a$.}
+\label{fig:inverse.stlx}
+\end{figure}
+
+Abbildung \ref{fig:inverse.stlx} auf Seite \pageref{fig:inverse.stlx} zeigt eine Implementierung des oben beschriebenen Algorithmus in
+der Sprache \href{http://randoom.org/Software/SetlX}{\textsc{SetlX}}, 
+die leichter zu verstehen ist, als die oben gegebene rein textuelle Beschreibung.  Wir diskutieren
+diese Implementierung jetzt Zeile für Zeile:
+\begin{enumerate}
+\item Die Funktion \texttt{inverse} bekommt als Argument eine quadratische Matrix \texttt{a}, die 
+      als Liste von Listen dargestellt wird, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathtt{a} = [\mathtt{a}[1], \cdots, \mathtt{a}[n]]$.
+      \\[0.2cm]
+      Dabei ist $\mathtt{a}[i]$ gerade die $i$-te Zeile der Matrix $\mathtt{a}$.  Auf die Komponente
+      $\mathtt{a}_{i,j}$ kann dann mittels des Ausdrucks $\mathtt{a}[i][j]$ zugegriffen werden.
+\item Zunächst wird in Zeile 2 mit Hilfe des Operators \texttt{\#}
+      die Dimension $n$ der Matrix berechnet: Das ist gerade die Länge der
+      Liste \texttt{a}.
+\item Das Prinzip der Berechnung der inversen Matrix $\mathtt{a}^{-1}$ ist, dass $\mathtt{a}$
+      mittels elementarer Zeilen-Umformungen in die Einheits-Matrix $\mathrm{E}_n$ überführt wird.
+      Gleichzeitig werden diese Zeilen-Umformungen auf die Einheits-Matrix $\mathrm{E}_n$ angewendet
+      und am Ende enthält dann die umgeformte Einheits-Matrix das Inverse der Matrix $\mathtt{a}$.
+ 
+      Zu diesem Zweck berechnen wir in Zeile 3 die Einheits-Matrix $\mathrm{E}_n$ mit Hilfe der
+      Funktion \texttt{identity}.  Die Implementierung dieser Funktion wird in Abbildung
+      \ref{fig:inverse.stlx-pivot} auf Seite \pageref{fig:inverse.stlx-pivot} gezeigt.
+\item Im $i$-ten Durchlauf der Schleife in Zeile 4 wird erreicht, dass die $i$-te Spalte von
+      $\mathtt{a}$ mit dem $i$-ten Einheits-Vektor $\mathbf{e}_i$ übereinstimmt.
+      \begin{enumerate}
+      \item Zunächst suchen wir mit der in Zeile $5$ aufgerufenen Funktion \texttt{pivot}
+            nach der Zeile $r$, für die der Betrag $|\mathtt{a}[i][r]|$ unter allen 
+            $r \in \{i, \cdots,n \}$ maximal wird.  Diese Zeile wird dann in Zeile 6 des Programms mit der $i$-ten Zeile
+            vertauscht.  Anschließend wird in Zeile 7 die selbe Operation auf der Matrix $\mathtt{e}$ ausgeführt.
+
+              Die Implementierung der dabei verwendeten Funktion $\mathtt{pivot}$ wird in Abbildung
+              \ref{fig:inverse.stlx-pivot} gezeigt.
+      \item Falls nach der Vertauschung von Zeile $i$ und Zeile $r$ die Komponente
+            $\mathtt{a}[i][i]$ den Wert $0$ hat, dann haben alle
+            Elemente in der $i$-ten Spalte ab dem Index $i$ den Wert $0$ und dann kann $\mathtt{a}$ nicht
+            invertierbar sein.  Dies wird in Zeile 8 des Programms überprüft: Falls 
+            $\mathtt{a}[i][i] = 0$ ist, wird die Funktion abgebrochen, ohne ein Ergebnis zurück zu
+            liefern. 
+      \item Ansonsten teilen wir in Zeile 11 des Programms die $i$-Zeile von \texttt{a} und
+            \texttt{e} durch $\mathtt{a}[i][i]$.  Anschließend hat $a[i][i]$ natürlich den Wert $1$.
+      \item In der Schleife in Zeile 13 des Programms subtrahieren wir das $\mathtt{a}[k][i]$-fache
+            der $i$-ten Zeile von der $k$-ten Zeile.  Da die $i$-te Zeile an der Position $i$
+            mittlerweile den Wert $1$ hat, führt das dazu, dass danach der Wert von
+            $\mathtt{a}[k][i]$ verschwindet, so dass in der $i$-ten Spalte alle Werte
+            $\mathtt{a}[i][k]$ für $k \not= i$ gleich $0$ sind.
+      \end{enumerate}
+      Nachdem $i$ den Wert $n$ erreicht hat, ist die ursprüngliche Matrix $\mathtt{a}$ zur
+      Einheits-Matrix reduziert worden, sofern das Programm nicht vorher in Zeile 8 ergebnislos  
+      abgebrochen wurde.  Gleichzeitig enthält dann die Variable $\mathtt{e}$ das Inverse der
+      ursprünglich gegebenen Matrix.
+\end{enumerate}
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.8cm,
+                  xrightmargin  = 0.8cm,
+                ]
+    delta := procedure(i, j) {
+        if (i == j) { return 1; } else { return 0; }
+    };
+    identity := procedure(n) {
+        return [ [ delta(i,j) : j in [1 .. n] ] : i in [1 .. n] ];
+    };
+    pivot := procedure(a, n, i) {
+        r := i;  // index of row containing maximal element
+        for (j in [i+1 .. n]) {
+            if (abs(a[j][i]) > abs(a[r][i])) {
+                r := j;
+            }
+        }
+        return r;
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Implementierung der in Abbildung \ref{fig:inverse.stlx} benötigten Hilfsfunktionen.}
+\label{fig:inverse.stlx-pivot}
+\end{figure}
+\pagebreak
+
+\example
+Wir testen das Programm, indem wir versuchen, das Inverse der Matrix
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}[c]{lll}
+    1 & 2 & 3     \\
+    2 & 3 & 1     \\
+    3 & 1 & 2            
+  \end{array}\right)
+$
+\\[0.2cm]
+zu berechnen.  Dazu wird in dem Programm die Variable $\mathtt{e}$ mit der Einheits-Matrix $E_3$
+initialisiert.  Danach haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{lll}
+    1 & 2 & 3     \\
+    2 & 3 & 1     \\
+    3 & 1 & 2            
+  \end{array}\right)
+$
+\quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{lll}
+    1 & 0 & 0     \\
+    0 & 1 & 0     \\
+    0 & 0 & 1            
+  \end{array}\right)
+$
+ \\[0.2cm]
+\begin{enumerate}
+\item Im ersten Schritt suchen wir die Zeile der Matrix $\mathtt{a}$, für die in der ersten Spalte
+      das größte Element steht.  Im vorliegenden Fall ist das die dritte Zeile, denn es gilt $\mathtt{a}_{3,1} = 3$
+      und alle anderen Einträge in der ersten Spalte sind kleiner als $3$.  Daher vertauschen wir die
+      erste Zeile mit der dritten Zeile und finden für die Matrizen $\mathtt{a}$ und $\mathtt{e}$
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{lll}
+    3 & 1 & 2     \\
+    2 & 3 & 1     \\
+    1 & 2 & 3     
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{lll}
+    0 & 0 & 1     \\
+    0 & 1 & 0     \\
+    1 & 0 & 0            
+  \end{array}\right)
+$
+\\[0.2cm]
+
+\item Im nächsten Schritt normalisieren wir die erste Zeile, indem wir durch $\mathtt{a}_{1,1}$
+      teilen.  Danach haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{lll}
+    1 & \frac{1}{3} & \frac{2}{3} \\[0.2cm]
+    2 &           3 &          1  \\[0.2cm]
+    1 &           2 &          3     
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{lll}
+    0 & 0 & \frac{1}{3}     \\
+    0 & 1 &           0     \\
+    1 & 0 &           0            
+  \end{array}\right)
+$
+\\[0.2cm]
+      Unser nächstes Ziel ist es, alle Einträge $\mathtt{a}_{i,1}$ in der ersten Spalte, für die 
+      $i \not=1$ ist, durch Addition der ersten Zeile zur $i$-ten Zeile zu entfernen.  Dazu dienen
+      die folgenden beiden Schritte:
+\item Im nächsten Schritt subtrahieren wir das $2$-fache der ersten Zeile von der zweiten Zeile
+      und erhalten:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 & \frac{1}{3} &  \frac{2}{3} \\[0.2cm]
+    0 & \frac{7}{3} & -\frac{1}{3} \\[0.2cm]
+    1 &           2 &          3     
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+    0 & 0 &  \frac{1}{3}     \\[0.2cm]
+    0 & 1 & -\frac{2}{3}     \\[0.2cm]
+    1 & 0 &           0            
+  \end{array}\right)
+$
+\item Jetzt subtrahieren wir die erste Zeile von der dritten Zeile:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 & \frac{1}{3} &  \frac{2}{3} \\[0.2cm]
+    0 & \frac{7}{3} & -\frac{1}{3} \\[0.2cm]
+    0 & \frac{5}{3} &  \frac{7}{3}      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+    0 & 0 &  \frac{1}{3}     \\[0.2cm] 
+    0 & 1 & -\frac{2}{3}     \\[0.2cm]
+    1 & 0 & -\frac{1}{3}            
+  \end{array}\right)
+$
+\item In den folgenden Schritten geht es darum, die zweite Spalte der Matrix $\mathtt{a}$ in den
+      Einheits-Vektor $\mathbf{e}_2$ zu überführen.  Zunächst überprüfen wir, für welches $j \geq 2$
+      der Betrag $|\mathtt{a}_{2,j}|$ maximal wird.  In diesem Fall ist der Betrag in der zweiten
+      Zeile bereits maximal, so dass wir an dieser Stelle keine Zeilen-Vertauschung vornehmen müssen.
+      Wir müssen die zweite Zeile aber noch normalisieren und multiplizieren daher die zweite Zeile
+      mit $\frac{3}{7}$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 & \frac{1}{3} &  \frac{2}{3} \\[0.2cm]
+    0 &           1 & -\frac{1}{7} \\[0.2cm]
+    0 & \frac{5}{3} &  \frac{7}{3}      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+    0 &           0 &  \frac{1}{3}   \\[0.2cm] 
+    0 & \frac{3}{7} & -\frac{2}{7}   \\[0.2cm]
+    1 &           0 & -\frac{1}{3}            
+  \end{array}\right)
+$
+\item Im nächsten Schritt geht es darum, die Matrix $\mathtt{a}$ durch Addition eines geeigneten
+      Vielfachen der zweiten Zeile zur ersten Zeile so zu verändern, dass $\mathtt{a}_{2,1} = 0$
+      wird.  Wir subtrahieren daher $\frac{1}{3}$ der zweiten Zeile von der ersten Zeile und
+      erhalten 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 &           0 &  \frac{5}{7} \\[0.2cm]
+    0 &           1 & -\frac{1}{7} \\[0.2cm]
+    0 & \frac{5}{3} &  \frac{7}{3}      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+    0 & -\frac{1}{7} &  \frac{3}{7}   \\[0.2cm] 
+    0 &  \frac{3}{7} & -\frac{2}{7}   \\[0.2cm]
+    1 &            0 & -\frac{1}{3}            
+  \end{array}\right)
+$
+\item Anschließend subtrahieren wir $\frac{5}{3}$ der zweiten Zeile von der dritten Zeile und finden
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 &           0 &  \frac{5}{7} \\[0.2cm]
+    0 &           1 & -\frac{1}{7} \\[0.2cm]
+    0 &           0 &  \frac{18}{7}      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+    0 & -\frac{1}{7} &  \frac{3}{7}   \\[0.2cm] 
+    0 &  \frac{3}{7} & -\frac{2}{7}   \\[0.2cm]
+    1 & -\frac{5}{7} &  \frac{1}{7}            
+  \end{array}\right)
+$
+\item In den verbleibenden Schritten geht es darum, die dritte Spalte der Matrix $\mathtt{a}$ in den
+      Einheits-Vektor $\mathbf{e}_3$ zu überführen.  Wir beginnen damit, dass wir die dritte Zeile
+      durch $\frac{18}{7}$ teilen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 &           0 &  \frac{5}{7} \\[0.2cm]
+    0 &           1 & -\frac{1}{7} \\[0.2cm]
+    0 &           0 &            1      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+    0            & -\frac{1}{7}  &  \frac{3}{7}   \\[0.2cm] 
+    0            &  \frac{3}{7}  & -\frac{2}{7}   \\[0.2cm]
+    \frac{7}{18} & -\frac{5}{18} &  \frac{1}{18}            
+  \end{array}\right)
+$
+\item Jetzt ziehen wir $\frac{5}{7}$ der dritten Zeile von der ersten Zeile ab:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 &           0 &            0 \\[0.2cm]
+    0 &           1 & -\frac{1}{7} \\[0.2cm]
+    0 &           0 &            1      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+   -\frac{5}{18} &  \frac{1}{18} &  \frac{7}{18}  \\[0.2cm] 
+    0            &  \frac{3}{7}  & -\frac{2}{7}   \\[0.2cm]
+    \frac{7}{18} & -\frac{5}{18} &  \frac{1}{18}            
+  \end{array}\right)
+$
+\item Im letzten Schritt addieren wir $\frac{1}{7}$ der dritten Zeile zur zweiten Zeile:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{a} = \left(
+  \begin{array}[c]{rrr}
+    1 &           0 &            0 \\[0.2cm]
+    0 &           1 &            0 \\[0.2cm]
+    0 &           0 &            1      
+  \end{array}\right)
+$ \quad und \quad
+$\mathtt{e} = \left(
+  \begin{array}[c]{rrr}
+   -\frac{5}{18} &  \frac{1}{18} &  \frac{7}{18}  \\[0.2cm] 
+    \frac{1}{18} &  \frac{7}{18} & -\frac{5}{18}   \\[0.2cm]
+    \frac{7}{18} & -\frac{5}{18} &  \frac{1}{18}            
+  \end{array}\right)
+$
+\end{enumerate}
+Damit haben wir das Inverse unserer ursprünglichen Matrix gefunden, es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\left(
+  \begin{array}[c]{lll}
+    1 & 2 & 3     \\
+    2 & 3 & 1     \\
+    3 & 1 & 2            
+  \end{array}\right)^{-1} = \left(
+  \begin{array}[c]{rrr}
+   -\frac{5}{18} &  \frac{1}{18} &  \frac{7}{18}  \\[0.2cm] 
+    \frac{1}{18} &  \frac{7}{18} & -\frac{5}{18}   \\[0.2cm]
+    \frac{7}{18} & -\frac{5}{18} &  \frac{1}{18}            
+  \end{array}\right)
+$.
+\eox
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

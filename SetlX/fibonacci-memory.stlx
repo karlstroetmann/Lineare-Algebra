@@ -1,0 +1,15 @@
+fibonacci := procedure(n) {
+    l := [1, 1] + [2 .. n];
+    for (k in [ 2 .. n ]) {
+        l(k+1) := l(k) + l(k-1);
+    }
+    return l(n+1);
+};
+
+for (n in [0 .. 100]) {
+    print("fibonacci($n$) = $fibonacci(n)$");
+}
+
+n := 10000;
+print("fibonacci($n$) = $fibonacci(n)$");
+

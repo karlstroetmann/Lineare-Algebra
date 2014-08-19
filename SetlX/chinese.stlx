@@ -1,0 +1,57 @@
+// Given a list 
+//      m = [ m_1, m_2, ..., m_k ]
+// of numbers that are mutually prime to each other and a list
+//      a = [ a_1, a_2, ..., a_k ]
+// such that 0 <= a_i < m_i, the procedure chinese returns a number x
+// such that
+//       x % m_i = a_i for all i in {1, ..., k}.
+chinese := procedure(m, a) {
+    k := #m;
+    n := */ m;
+    p := [ n / m(i) : i in [ 1 .. k ] ];
+    q := [ inverse(p(i), m(i)) : i in [ 1 .. k ] ];
+    return (+/ [ a(i) * p(i) * q(i) : i in [ 1 .. k ] ]) % n;
+};
+
+// This function computes the inverse of x modulo n, therefore we have
+// x * inverse(x) % n = 1.
+inverse := procedure(x, n) {
+    [ s, t ] := eggt(x, n);
+    return s;
+};
+
+// Given positive natural numbers x and y, egg(x,y) returns a list
+// [ s, t ] such that s * x + t * y = ggt(x, y).
+eggt := procedure(x, y) {
+    if (y == 0) {
+        return [ 1, 0 ];
+    }
+    q := x / y;
+    r := x % y;
+    [ s, t ] := eggt(y, r);
+    return [ t, s - q * t ]; 
+};
+
+// This procedure solves the following puzzle, which is due to the indish
+// mathematican Brahmagupta (598 - 698 A.D.):
+//     A girl was carrying a basket of eggs, and a man riding a horse hit
+//     the basket and broke all the eggs. Wishing to pay for the damage, he
+//     asked the girl how many eggs there were. The girl said she did not
+//     know, but she remembered that when she counted them by twos, there
+//     was one left over; when she counted them by threes, there were two
+//     left over; when she counted them by fours, there were three left
+//     over; when she counted them by fives, there were four left; and when
+//     she counted them by sixes, there were five left over. Finally, when
+//     she counted them by sevens, there were none left over. `Well,' said
+//     the man, `I can tell you how many you had.' What was his answer?
+solve := procedure() {
+    x := chinese([3, 4, 5, 7], [2, 3, 4, 0]);
+    print("The girl had at least $x$ eggs in her basket.");
+    print("This can be checked as follows:");
+    for (i in [2 .. 7]) {
+        print("     $x$ % $i$ = $x % i$"); 
+    }
+};
+
+solve();
+

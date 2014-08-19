@@ -1,0 +1,34 @@
+// For a given permutation r, this function computes the set of all inversions of
+// r. The permutation r is represented as a list.
+inv := procedure(r) {
+    n := #r;
+    return { [k,l] : [k, l] in {1 .. n} >< {1 .. n} | k < l && r[k] > r[l] };
+};
+
+// Tis function computes the sign of the permutation l.  
+signum := procedure(l) {
+    return (-1) ** #inv(l);
+};
+
+// For a given positive natural number n, this function computes the set 
+// Sn, which is the set of all permutations of n elements.  These permutations
+// are represented as lists.
+allPermutations := procedure(n) {
+    if (n == 1) {
+        return { [1] };
+    }
+    return { p[..k-1] + [n] + p[k..]: p in allPermutations(n-1), k in [1..n] };
+};
+
+test := procedure(n) {
+    for (n in [1..n]) {
+        sn := allPermutations(n);
+        print("For n = $n$ there are $#sn$ permutations.");
+        for (p in sn) {
+            print("inv($p$) = $inv(p)$");    
+            print("signum($p$) = $signum(p)$");    
+        }
+    }
+};
+
+//test(4);

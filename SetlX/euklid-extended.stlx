@@ -1,0 +1,32 @@
+// Given positive natural numbers x and y, egg(x,y) returns a list
+// [ s, t ] such that s * x + t * y = ggt(x, y).
+eggt := procedure(x, y) {
+    if (y == 0) {
+        return [ 1, 0 ];
+    }
+    q := x \ y;
+    r := x % y;
+    [ s, t ] := eggt(y, r);
+    print("eggt($x$, $y$) = $[ t, s - q * t ]$");
+    return [ t, s - q * t ]; 
+};
+
+
+ggt := procedure(x, y) {
+    if (y == 0) {
+        return x;
+    }
+    return ggt(y, x % y); 
+};
+
+// for (x in { 2 .. 100 }) {
+//     for (y in { 2.. 100 }) {
+//         [ s, t ] := eggt(x,y);
+//         print("eggt(", x, ", ", y, ") = ", [ s, t ]);
+//         if (s * x + t * y != ggt(x,y)) {
+//             print("ERROR: x = ", x, ", y = ", y);
+//         }
+//     }
+// }
+
+print(eggt(49, 17));

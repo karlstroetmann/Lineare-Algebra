@@ -1,0 +1,12 @@
+ggtS := procedure(x, y) {
+    if (y == 0) {
+        return x;
+    }
+    return ggtS(y, x % y); 
+};
+
+for (x in { 2 .. 100 }) {
+    for (y in { 2 .. 100 }) {
+        print("ggt( $x$, $y$ ) = $ggtS(x,y)$");
+    }
+}

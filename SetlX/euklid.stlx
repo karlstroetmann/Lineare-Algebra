@@ -1,0 +1,17 @@
+ggtS := procedure(x, y) {
+    if (x < y) {
+        return ggtS(x, y - x);
+    }
+    if (y < x) {
+        return ggtS(x - y, y); 
+    }
+    // We must have x = y at this point.
+    return x;
+};
+
+for (x in { 2 .. 100 }) {
+    for (y in { 2 .. 100 }) {
+        print("ggt( $x$, $y$) = $ggtS(x,y)$");
+    }
+}
+

@@ -1,0 +1,585 @@
+\chapter{Eigenwerte und Eigenvektoren}
+Eigenwerte und Eigenvektoren gehören zu den wichtigsten Anwendungen der linearen Algebra:
+\begin{enumerate}
+\item Die \href{http://de.wikipedia.org/wiki/Schrödingergleichung}{Schrödinger-Gleichung}
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathrm{H} \Psi = \mathrm{E} \cdot \Psi$
+      \\[0.2cm]
+      ist eine Eigenwert-Gleichung.  Hier ist $\mathrm{H}$ der sogenannte
+      \href{http://de.wikipedia.org/wiki/Hamilton-Operator}{Hamilton-Operator}, der auf die
+      \href{http://de.wikipedia.org/wiki/Wellenfunktion}{Wellenfunktion} $\Psi$ angewendet wird.
+      Dabei kommt wieder die Wellenfunktion $\Psi$ als Ergebnis heraus, allerdings multipliziert mit
+      dem Eigenwert $\mathrm{E}$, der als die Energie der Wellenfunktion $\Psi$ interpretiert werden kann.
+
+      Die Schrödinger-Gleichung ist die Grundlage der \href{http://de.wikipedia.org/wiki/Quantenmechanik}{Quanten-Mechanik}.
+      Natürlich erwarte ich von Ihnen nicht, dass Sie diese Gleichung verstehen.  Ich habe diese
+      Gleichung als erstes aufgelistet, weil dies einerseits früher einer der wichtigsten Anwendung von
+      Eigenvektoren war und weil ich andererseits selber im Rahmen meiner Diplomarbeit im
+      wesentlichen nichts anderes gemacht habe, als auf numerischem Wege Schrödinger-Gleichungen zu
+      lösen.  Um die Schrödinger-Gleichungen numerisch zu lösen, wird der Hamilton-Operator zunächst
+      durch eine Matrix approximiert und anschließend werden die Eigenwerte dieser Matrix berechnet.
+\item In der Informatik werden Eigenvektoren unter anderem bei der 
+      \emph{Unabhängigkeits-Analyse} benötigt.  Die Unabhängigkeits-Analyse kann beispielsweise dazu
+      benutzt werden, das
+      \href{http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi}{Cocktail-Party-Problem} zu lösen.
+      Bei diesem Problem geht es darum, verschiedene Geräuschquellen zu isolieren:  Stellen
+      Sie sich vor, Sie sind auf einer Cocktail-Party.  Im Hintergrund spielt ein Klavier und Sie
+      unterhalten sich mit einem Gesprächspartner.  Ihre Ohren hören sowohl das Klavier als auch den
+      Gesprächspartner, aber solange Sie noch nicht zu viele Cocktails getrunken haben, ist Ihr
+      Gehirn in der Lage, das, was Ihr Gesprächspartner Ihnen erzählt, aus 
+      dem Gesamtgeräusch heraus zu filtern.  
+
+      Neben dem Cocktail-Party-Problem gibt es zahlreiche anderen Anwendungen der
+      Unabhängigkeits-Analyse sowohl in der Informatik im Bereich des 
+      \emph{Data-Minings} als auch in vielen anderen Bereichen der Wissenschaft.
+\item Eine andere Anwendung von Eigenvektoren ist die Lösung von
+      solchen Rekurrenz-Gleichungen, die bei Komplexitätsanalyse von Algorithmen auftreten.
+\item Die Liste der Anwendungen von Eigenvektoren ließe sich problemlos fortsetzen.  Allerdings
+      würden Ihnen die meisten Anwendungen zum jetzigen Zeitpunkt Ihres Studiums noch wenig sagen.
+      Daher spare ich mir hier weitere Beispiele.
+\end{enumerate}
+In diesem Kapitel führen wir zunächst Eigenwerte und Eigenvektoren ein und zeigen dann, wie sich 
+lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren lösen lassen.  
+\pagebreak
+
+\section{Definition und Berechnung von Eigenwerten}
+\begin{Definition}[Eigenwert]
+Es sei $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix.  Ein Vektor $\mathbf{x} \in \mathbb{K}^n$ mit $\mathbf{x} \not=\mathbf{0}$
+ist ein \emph{Eigenvektor} der Matrix $A$ zum \emph{Eigenwert} $\lambda \in \mathbb{K}$ genau dann, wenn  
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \mathbf{x} = \lambda \cdot \mathbf{x}$
+\\[0.2cm]
+gilt.  \eoxs
+\end{Definition}
+
+\example
+Die Matrix $A \in \mathbb{R}^{2 \times 2}$ sei als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}{ll}
+    2 & 1 \\
+    1 & 2
+  \end{array}
+  \right)
+$
+\\[0.2cm]
+gegeben.  Die Vektoren $\mathbf{x}$ und $\mathbf{y}$ seien definiert als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{x} = \left(
+\begin{array}{r}
+  1 \\
+  1    
+\end{array}\right)
+$ \quad und \quad 
+$\mathbf{y} = \left(
+\begin{array}{r}
+  1 \\
+  -1    
+\end{array}
+\right)
+$
+\\[0.2cm]
+Dann gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \mathbf{x} = \left(
+\begin{array}{r}
+  3 \\
+  3    
+\end{array}\right) = 3 \cdot \mathbf{x}$ \quad und \quad
+$A \cdot \mathbf{y} = \left(
+\begin{array}{r}
+  1 \\
+  -1    
+\end{array}\right) = 1 \cdot \mathbf{y}$.
+\\[0.2cm]
+Folglich ist $\mathbf{x}$ eine Eigenvektor von $A$ zum Eigenwert $3$, während $\mathbf{y}$ ein
+Eigenvektor von $A$ zum Eigenwert $1$ ist.  \eox
+
+\remark
+Der Begriff des Eigenwerts und des Eigenvektors lässt sich auf beliebige lineare Operatoren
+ausdehnen.  Ist $\mathrm{H} \in \mathcal{L}(V)$ ein Operator auf dem Vektor-Raum $V$, so ist
+$\mathbf{x} \in V$ genau dann ein Eigenvektor zum Eigenwert $\lambda$, wenn 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{H}(\mathbf{x}) = \lambda \cdot \mathbf{x}$
+\\[0.2cm]
+gilt.  Beispielsweise hat der Differential-Operator 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{D}: \mathcal{C}^\infty(\mathbb{R}) \rightarrow  \mathcal{C}^\infty(\mathbb{R})$, 
+\\[0.2cm]
+der auf dem Raum 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{C}^\infty := \bigl\{ f \in \mathbb{R}^\mathbb{R} \mid \mbox{$f$ ist beliebig oft  differenzierbar} \bigr\}$
+\\[0.2cm]
+durch die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathrm{D}(f) := \displaystyle\frac{\mathrm{d}f}{\mathrm{d}x}$
+\\[0.2cm]
+definiert ist, die Funktion $x \mapsto e^x$ als Eigenvektor zum Eigenwert $1$.  
+Der Vektor-Raum $\mathcal{C}^\infty$ der unendlich oft differenzierbaren Funktionen ist
+unendlich-dimensional und hat daher eine wesentlich komplexere Struktur als die
+endlich-dimensionalen Vektor-Räume, mit denen wir uns im Rest dieser Vorlesung beschäftigen werden.
+Da bei endlich-dimensionalen Vektor-Räumen jede lineare Abbildung durch eine Matrix dargestellt
+werden kann, verlieren wir nichts, wenn wir uns auf die Bestimmung von Eigenvektoren und Eigenwerten
+von Matrizen beschränken. 
+\eox
+
+Der folgende Satz stellt einen Zusammenhang zwischen Eigenwerten und Determinanten her.  Dieser Satz
+ist der Grund, warum wir den Begriff der Determinanten im letzten Kapitel 
+eingeführt haben.
+
+\begin{Satz}
+  Es sei $A \in \mathbb{K}^{n \times n}$.  Dann ist $\lambda \in \mathbb{K}$ genau dann ein
+  Eigenwert von $A$, wenn 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathtt{det}(\lambda \cdot \mathrm{E}_n - A) = 0$
+  \\[0.2cm]
+  gilt. 
+\end{Satz}
+\pagebreak
+
+\proof
+Falls $\mathbf{x} \not= \mathbf{0}$ ein Eigenvektor von $A$ zum Eigenwert $\lambda$ ist, so haben wir die folgende
+Kette von Äquivalenzen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[b]{lll}
+                  & \exists \mathbf{x} \in \mathbb{K}^n: \mathbf{x} \not=\mathbf{0} \wedge A \cdot \mathbf{x}  = \lambda \cdot \mathbf{x} \\
+\Leftrightarrow   & \exists \mathbf{x} \in \mathbb{K}^n: \mathbf{x} \not=\mathbf{0} \wedge A \cdot \mathbf{x} - \lambda \cdot \mathrm{E}_n \cdot \mathbf{x} = \mathbf{0} \\
+\Leftrightarrow   & \exists \mathbf{x} \in \mathbb{K}^n: \mathbf{x} \not=\mathbf{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \mathbf{x} = \mathbf{0} \\
+\Leftrightarrow   & \mathtt{Kern}(A - \lambda \cdot \mathrm{E}_n) \not= \{\mathbf{0}\} \\
+\Leftrightarrow   & \mbox{$A - \lambda \cdot \mathrm{E}_n$ ist nicht invertierbar} \\
+\Leftrightarrow   & \mathtt{det}(A - \lambda \cdot \mathrm{E}_n) = 0  \\
+\Leftrightarrow   & \mathtt{det}(\lambda \cdot \mathrm{E}_n - A) = 0  
+\end{array}
+$
+\qed
+
+Nach dem letzten Satz sind die Eigenwerte genau die Werte $\lambda$, für die der Ausdruck 
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\mathtt{det}(\lambda \cdot \mathrm{E}_n- A)$
+\\[0.2cm]
+den Wert $0$ annimmt.  Berechnen wir diesen Ausdruck mit Hilfe der von Leibniz angegebenen Formel,
+so erhalten wir ein Polynom in der Unbestimmten $\lambda$.  Dieses Polynom heisst das
+\emph{charakteristische Polynom} der Matrix $A$ und ist formal als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_n - A)$
+\\[0.2cm]
+definiert.  Die Nullstellen von $\chi_A$ sind also gerade die Eigenwerte von $A$, formal gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lambda$ ist Eigenwert von $A$ \quad g.d.w. \quad $\chi_A(\lambda) = 0$.
+
+
+
+\example
+Die Matrix $A \in \mathbb{R}^{2 \times 2}$ sei wie oben als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}{ll}
+    2 & 1 \\
+    1 & 2
+  \end{array}
+  \right)
+$
+\\[0.2cm]
+gegeben.  Dann kann das charakteristische Polynom $\chi_A(\lambda)$ wie folgt berechnet werden:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+  \chi_A(\lambda) & = & \mathtt{det}(\lambda \cdot \mathrm{E}_n - A) \\[0.2cm]
+                  & = & \mathtt{det}\left(\begin{array}{cc}
+                                          \lambda - 2 & -1          \\
+                                                    -1 & \lambda - 2
+                                          \end{array}
+                        \right) \\[0.4cm]
+                  & = & (\lambda - 2) \cdot (\lambda - 2) - (-1) \cdot (-1) \\[0.2cm]
+                  & = & \lambda^2 - 4 \cdot \lambda + 4 - 1 \\[0.2cm]
+                  & = & \lambda^2 - 4 \cdot \lambda + 3 \\[0.2cm]
+                  & = & (\lambda - 3) \cdot (\lambda - 1). 
+\end{array}
+$
+\\[0.2cm]
+Offenbar hat dieses Polynom die Nullstellen $\lambda = 3$ und $\lambda = 1$.  Um beispielsweise den
+Eigenvektor zum Eigenwert $\lambda = 3$ zu berechnen, müssen wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\left(
+  \begin{array}{ll}
+    2 & 1 \\
+    1 & 2 
+  \end{array}
+\right) \cdot \left(\begin{array}{l} x_1 \\ x_2 \end{array}\right) = 3 \cdot \left(\begin{array}{l} x_1 \\ x_2 \end{array}\right)
+$
+\\[0.2cm]
+lösen.  Das liefert die beiden Gleichungen
+\\[0.2cm]
+\hspace*{1.8cm}
+$2 \cdot x_1 + x_2 = 3 \cdot x_1$ \quad und \quad  $x_1 + 2 \cdot x_2 = 3 \cdot x_2$
+\\
+die wir zu
+\\
+\hspace*{1.8cm}
+$-x_1 + x_2 = 0$ \quad und \quad  $x_1 - x_2 = 0$.
+\\[0.2cm]
+vereinfachen.
+Offenbar ist die zweite Gleichung zur ersten Gleichung äquivalent und kann daher weggelassen
+werden.  Da wir dann nur noch eine Gleichung aber zwei Unbekannte haben, können wir eine der
+Unbekannten frei wählen. Wie müssen lediglich darauf achten, dass der Vektor
+ $\left(x_1 \atop x_2\right)$ vom Nullvektor verschieden ist.  Wir setzen daher $x_1 := 1$ und
+ finden dann $x_2 = 1$.  Damit haben wir den Vektor $\mathbf{x} = \left(1 \atop 1\right)$
+als Eigenvektor der Matrix $A$ zum Eigenwert $3$ gefunden.
+\pagebreak
+
+\exercise
+Überlegen Sie sich, für welche Werte von $a$, $b$ und $c$ die Matrix 
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}{ll}
+    a & b \\
+    b & c
+  \end{array}
+\right)
+$
+\\[0.2cm]
+zwei verschiedene reelle Eigenwerte besitzt. \eox
+
+\exercise
+Für welche Werte von $\varphi$ hat die Matrix
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}{rr}
+    \cos(\varphi) & \sin(\varphi) \\
+    -\sin(\varphi) & \cos(\varphi)
+  \end{array}
+\right)
+$
+\\[0.2cm]
+keinen reellen Eigenwert? \eoxs
+
+\begin{Definition}[Diagonalisierbarkeit]
+Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{diagonalisierbar} genau dann, wenn die Matrix
+ $n$ linear unabhängige Eigenvektoren besitzt.  \eoxs 
+\end{Definition}
+
+\remark
+Ist  $A \in \mathbb{K}^{n \times n}$ diagonalisierbar, so gibt es also $n$ verschiedene Vektoren
+$\mathbf{x}_1, \cdots, \mathbf{x}_n$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \mathbf{x}_i = \lambda_i \cdot \mathbf{x}_i$ \quad für alle $i=\{1,\cdots,n\}$
+\\[0.2cm]
+gilt. Fassen wir die $n$ Eigenvektoren $\mathbf{x}_i$ zu einer $n \times n$ Matrix $X$ zusammen, die
+wir als
+\\[0.2cm]
+\hspace*{1.3cm}
+$X = (\mathbf{x}_1, \cdots, \mathbf{x}_n)$
+\\[0.2cm]
+schreiben, wobei die $\textbf{x}_i$ die Spalten der Matrix $X$ sind, so gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot X = (\lambda_1 \cdot \mathbf{x}_1, \cdots, \lambda_n \cdot \mathbf{x}_n) = X \cdot D$,
+\\[0.2cm]
+wobei wir die Matrix $D$ als Diagonal-Matrix definieren, deren Diagonal-Elemente die Eigenwerte
+$\lambda_i$ sind, während alle anderen Einträge den Wert $0$ haben.  Damit gilt 
+\\[0.2cm]
+\hspace*{1.3cm}
+$D = \left(
+  \begin{array}{llllll}
+    \lambda_1 & 0         & 0         & \cdots & 0 & 0 \\ 
+    0         & \lambda_2 & 0         & \cdots & 0 & 0 \\
+    0         & 0         & \lambda_3 & \cdots & 0 & 0 \\
+    \vdots    & \vdots    & \vdots    & \ddots & \vdots & \vdots \\
+    0         & 0         & 0         & \cdots  & \lambda_{n-1} & 0 \\
+    0         & 0         & 0         & \cdots & 0 & \lambda_n 
+  \end{array}
+\right)
+$.
+\\[0.2cm]
+In Komponentenschreibweise können wir die Matrix $D$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$D = (d_{i,j})$ \quad mit $d_{i,j} := \lambda_i \cdot \delta_{i,j}$ \quad für alle $i,j\in \{1,\cdots,n\}$
+\\[0.2cm]
+schreiben, wobei $\delta_{i,j}$ das bereits früher definierte
+\href{http://de.wikipedia.org/wiki/Kronecker-Delta}{Kronecker-Delta} bezeichnet.  Da die $n$
+Vektoren $\mathbf{ x}_1, \cdots, \mathbf{x}_n$ linear unabhängig sind, ist 
+die Matrix $X = (\mathbf{x}_1, \cdots, \mathbf{x}_n)$ invertierbar.  Damit können wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot X = X \cdot D$
+\\[0.2cm]
+von rechts mit der Matrix $X^{-1}$ multiplizieren und erhalten
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = X \cdot D \cdot X^{-1}$.
+\\[0.2cm]
+Dies ist nützlich, wenn wir Potenzen der Matrix $A$ bilden wollen.  Beispielsweise gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^2 = X \cdot D \cdot X^{-1} \cdot X \cdot D \cdot X^{-1} = X \cdot D^2 \cdot X^{-1}$
+\\[0.2cm]
+und durch eine einfache Induktion nach $k$ können wir nach dem selben Prinzip zeigen, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$A^k = X \cdot D^k \cdot X^{-1}$ \quad für alle $k \in \mathbb{N}$
+\\[0.2cm]
+gilt.  Diese Beobachtung ist deswegen nützlich, weil die Potenzen der Diagonal-Matrix $D$ wesentlich
+leichter zu berechnen sind als die Potenzen von $A$, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$D^k = \left(
+  \begin{array}{llllll}
+    \lambda_1^k & 0         & 0         & \cdots & 0 & 0 \\ 
+    0           & \lambda_2^k & 0         & \cdots & 0 & 0 \\
+    0           & 0         & \lambda_3^k & \cdots & 0 & 0 \\
+    \vdots      & \vdots    & \vdots    & \ddots & \vdots & \vdots \\
+    0           & 0         & 0         & \cdots  & \lambda_{n-1}^k & 0 \\
+    0           & 0         & 0         & \cdots & 0 & \lambda_n^k 
+  \end{array}
+\right)
+$.
+\\[0.2cm]
+Diese Beobachtung wird uns im nächsten Abschnitt die Berechnung der
+\href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} ermöglichen. 
+
+\section{Die Berechnung der Fibonacci-Zahlen}
+Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{Fibonacci-Zahlen} ist rekursiv durch die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_{n+2} = f_{n+1} + f_n$
+\\[0.2cm]
+zusammen mit den Anfangs-Bedingungen $f_0 = 0$ und $f_1 = 1$ definiert.   Eine Gleichung der obigen Form
+wird als \emph{lineare Rekurrenz-Gleichung} bezeichnet.  Solche Gleichungen werden uns später bei
+der Abschätzung der Komplexität von Algorithmen häufig begegnen und wir zeigen nun am Beispiel der
+Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung lösen lässt.  Dazu definieren wir
+zunächst die Matrix $A$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$A := \left(
+  \begin{array}{ll}
+    0 & 1 \\
+    1 & 1 
+  \end{array}
+\right)
+$.
+\\[0.2cm]
+Weiter definieren wir den Vektor $\mathbf{x}_n$ für alle $n \in \mathbb{N}$ als 
+$\ds\mathbf{x}_n := \left(f_n \atop f_{n+1}\right)$.  Dann haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{x}_{n+1} = A \cdot \mathbf{x}_n$ \quad für alle $n \in \mathbb{N}$,
+\\[0.2cm]
+denn wenn wir die Gleichung $\mathbf{x}_{n+1} = A \cdot \mathbf{x}_n$ komponentenweise schreiben,
+dann bekommen wir die beiden Gleichungen
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{lcl}
+  f_{n+1} & = & 0 \cdot f_n + 1 \cdot f_{n+1}, \\[0.2cm]
+  f_{n+2} & = & 1 \cdot f_n + 1 \cdot f_{n+1}. 
+\end{array}
+$
+\\[0.2cm]
+Die erste dieser beiden Gleichungen ist trivial, die zweite Gleichung ist nichts anderes als die
+Rekurrenz-Gleichung für die Fibonacci-Zahlen.  Aus der Gleichung $\mathbf{x}_{n+1} = A \cdot\mathbf{x}_n$ 
+folgt durch eine triviale Induktion nach $n$, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbf{x}_n = A^n \cdot\mathbf{x}_0$
+\\[0.2cm]
+gilt, wobei $A^0 = \mathrm{E}_2$ ist und $\mathbf{x}_0 = \left(0 \atop 1\right)$ gilt.  Wollen wir
+Potenzen $A^n$ berechnen, so ist es zweckmäßig, die Matrix $A$ vorher zu diagonalisieren.  Wir
+berechnen zunächst das charakteristische Polynom von $A$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_2 - A) 
+ = \mathtt{det}\left(
+   \begin{array}{rr}
+     \lambda  &  -1 \\
+     -1       & \lambda - 1
+   \end{array}
+   \right) = \lambda \cdot (\lambda - 1) - 1 = \lambda^2 - \lambda - 1
+$.
+\\[0.2cm]
+Nun bestimmen wir die Nullstellen von $\chi_A(\lambda)$, denn das sind die Eigenwerte von $A$:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{ll}
+                & \chi_A(\lambda) = 0 \\[0.2cm]
+\Leftrightarrow & \lambda^2 - \lambda - 1 = 0 \\[0.2cm] 
+\Leftrightarrow & \lambda^2 - \lambda     = 1 \\[0.2cm]
+\Leftrightarrow & \lambda^2 - \lambda + \left(\frac{1}{2}\right)^2 = 1 + \frac{1}{4} \\[0.4cm]
+\Leftrightarrow & \ds\left(\lambda - \frac{1}{2}\right)^2 = \frac{5}{4} \\[0.4cm]
+\Leftrightarrow & \ds\lambda = \frac{1}{2} + \frac{\sqrt{5}}{2} \;\vee\; \lambda = \frac{1}{2} - \frac{\sqrt{5}}{2} 
+\end{array}
+$
+\\[0.2cm]
+Wir definieren daher
+\\[0.2cm]
+\hspace*{1.3cm}
+$\lambda_1 = \frac{1}{2}\cdot(1 + \sqrt{5})$ \quad und \quad $\lambda_2 = \frac{1}{2}\cdot(1 - \sqrt{5})$.
+\\[0.2cm]
+Als nächstes müssen wir die Eigenvektoren bestimmen, die diesen beiden Eigenwerten zugeordnet sind.
+Bezeichnen wir den Eigenvektor, der $\lambda_1$ zugeordnet ist, als $\ds\mathbf{y} := \left(y_1 \atop y_2\right)$, 
+so haben wir also
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \cdot \mathbf{y} = \lambda_1 \cdot \mathbf{y}$
+\\[0.2cm]
+und aus dieser Gleichung folgt, dass für die Komponenten $y_1$ und $y_2$
+\\[0.2cm]
+\hspace*{1.3cm}
+$y_2 = \lambda_1 \cdot y_1$  \quad und \quad $y_1 + y_2 = \lambda_1 \cdot y_2$
+\\[0.2cm]
+gelten muss.  Es lässt sich zeigen, dass die zweite Gleichung aus der ersten folgt.
+Setzen wir $y_1 := 1$, so erhalten wir aus der ersten Gleichung $y_2 = \lambda_1$.
+Damit hat der Eigenvektor $\mathbf{y}$ die Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\mathbf{y} = \left(1 \atop \lambda_1\right)$.
+\\[0.2cm]
+Auf analoge Weise finden wie für den zweiten Eigenvektor $\ds\mathbf{z} =  \left(z_1 \atop z_2\right)$
+das Ergebnis
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\mathbf{z} =  \left(1 \atop \lambda_2\right)$.
+\\[0.2cm]
+Damit hat die Matrix der Eigenvektoren die Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$X := \left(
+  \begin{array}{ll}
+            1 &         1 \\
+    \lambda_1 & \lambda_2 
+  \end{array}
+  \right)
+$.
+\\[0.2cm]
+Diese Matrix hat die Determinante $\mathtt{det}(X) = \lambda_2 - \lambda_1 = -\sqrt{5}$.
+Wir hatten in einer Übungsaufgabe eine Formel zur Berechnung des Inversen einer beliebigen $2 \times 2$ Matrix
+hergeleitet.  Nach dieser Formel ist das Inverse der Matrix $X$ durch
+\\[0.2cm]
+\hspace*{1.3cm}
+$X^{-1} = -\bruch{1}{\sqrt{5}} \cdot \left( 
+  \begin{array}{rr}
+    \lambda_2 & -1 \\
+    -\lambda_1 & 1
+  \end{array}
+\right) = \bruch{1}{\sqrt{5}} \cdot \left( 
+  \begin{array}{rr}
+    -\lambda_2 & 1 \\
+    \lambda_1 & -1
+  \end{array}
+\right) 
+$
+\\[0.2cm]
+gegeben.  Damit gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+ \mathbf{x}_n & =&  A^n \cdot \left(
+   \begin{array}{l}
+    0 \\ 1     
+   \end{array}
+\right) = 
+ \left(
+  \begin{array}{ll}
+            1 &         1 \\
+    \lambda_1 & \lambda_2 
+  \end{array}
+  \right) \cdot
+ \left(
+  \begin{array}{ll}
+    \lambda_1^n &       0 \\
+             0  & \lambda_2^n 
+  \end{array}
+  \right) \cdot \bruch{1}{\sqrt{5}} \cdot \left( 
+  \begin{array}{rr}
+    -\lambda_2 & 1 \\
+    \lambda_1 & -1
+  \end{array}
+\right) \cdot \left(
+  \begin{array}{l}
+     0 \\ 1    
+  \end{array}
+\right) \\[0.4cm]
+   & = & \bruch{1}{\sqrt{5}} \cdot
+ \left(
+  \begin{array}{ll}
+            1 &         1 \\
+    \lambda_1 & \lambda_2 
+  \end{array}
+  \right) \cdot
+ \left(
+  \begin{array}{ll}
+    \lambda_1^n &       0 \\
+             0  & \lambda_2^n 
+  \end{array}
+  \right) \cdot \left(
+    \begin{array}{r}
+     1 \\ -1      
+    \end{array}
+\right) \\[0.4cm]
+   & = & \bruch{1}{\sqrt{5}} \cdot
+ \left(
+  \begin{array}{ll}
+            1 &         1 \\
+    \lambda_1 & \lambda_2 
+  \end{array}
+  \right) \cdot
+ \left(
+  \begin{array}{r}
+    \lambda_1^n  \\
+   -\lambda_2^n 
+  \end{array} 
+  \right) \\[0.4cm]
+   & = & \bruch{1}{\sqrt{5}} \cdot
+ \left(
+  \begin{array}{c}
+    \lambda_1^n - \lambda_2^n \\[0.2cm]
+   \lambda_1^{n+1} - \lambda_2^{n+1} 
+  \end{array} 
+  \right) 
+\end{array}
+$
+\\[0.2cm]
+Die erste Komponente von $\mathbf{x}_n$ ist gleich $f_n$.  Daher haben wir für die $n$-te
+Fibonacci-Zahl $f_n$ die Gleichung 
+\\[0.2cm]
+\hspace*{3.3cm}
+\colorbox{orange}{\framebox{\framebox{$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$}}}
+\\[0.2cm]
+gefunden.
+
+\exercise
+Lösen Sie die Rekurrenz-Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_{n+2} = 3 \cdot a_{n+1} - 2 \cdot a_n$ \quad für die Anfangs-Bedingungen $a_0 = 0$, $a_1 = 1$
+\\[0.2cm]
+mit Hilfe der in diesem Abschnitt vorgestellten Methode.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

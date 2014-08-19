@@ -1,0 +1,1283 @@
+\chapter{Ringe und Körper}
+In diesem Abschnitt behandeln wir 
+\href{http://de.wikipedia.org/wiki/Ring_(Algebra)}{\emph{Ringe}} und 
+\href{http://en.wikipedia.org/wiki/Field_(mathematics)}{\emph{Körper}}.  Diese Begriffe werde ich gleich erklären.
+Im Folgenden möchte ich einen kurzen Überblick über den Aufbau dieses Kapitels geben.  Da Sie Ringe und
+Körper  noch nicht kennen, wird dieser Überblick notwendigerweise informal und
+unpräzise sein.  Es geht mir hier nur darum, dass Sie eine, zunächst sicher noch verschwommene, Vorstellung
+von dem, was Sie in diesem Kapitel erwartet, bekommen.
+
+Ringe sind Strukturen, in denen
+sowohl eine Addition, eine Subtraktion und als auch eine Multiplikation vorhanden ist und außerdem für diese
+Operationen ein Distributiv-Gesetz gilt.  Bezüglich der Addition muss die Struktur dabei eine kommutative
+Gruppe sein. Ein typisches Beispiel für einen Ring ist die Struktur der ganzen
+Zahlen. Ein Ring ist ein Körper, wenn zusätzlich auch noch eine Division möglich ist.
+Ein typisches Beispiel ist die Struktur der rationalen Zahlen.
+
+Es gibt zwei wichtige Methoden um mit Hilfe eines Rings einen Körper zu konstruieren.
+Die erste Methode funktioniert in sogenanten Integritäts-Ringen, dass sind solche Ringe, in denen sich 
+das neutrale Element der Addition, also die $0$, nicht als Produkt zweier von $0$ verschiedenener Elemente 
+darstellen läßt.  Dann läßt sich nämlich aus einem Integritäts-Ring, der bezüglich der
+Multiplikation ein 
+neutrales Element enthält, ein sogenannter Quotienten-Körper erzeugen.  Die Konstruktion dieses Körpers
+verläuft analog zu der Konstruktion der rationalen Zahlen aus den reellen Zahlen.
+
+Die zweite Methode funktioniert mit Hilfe sogenannter \emph{maximaler Ideale}.  Wir werden in Ringen zunächst
+\emph{Ideale} definieren.  Dabei sind Ideale das Analogon zu Untergruppen in der Gruppen-Theorie.
+Anschließend zeigen wir, wie sich mit Hilfe eines Ideals $I$ auf einem Ring $R$ eine Kongruenz-Relation
+erzeugen läßt.  Die Konstruktion ist dabei analog zur Konstruktion der
+Faktor-Gruppe aus dem letzten Abschnitt.  Für \emph{maximale Ideale} werden wir schließlich zeigen,
+dass der so erzeugte Faktor-Ring sogar ein Körper ist.
+
+\section{Definition und Beispiele}
+\begin{Definition}[Ring]
+Ein $4$-Tupel $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ ist ein \emph{Ring}, falls gilt:
+\begin{enumerate}
+\item $\langle R, 0, + \rangle$ ist eine kommutative Gruppe,
+\item $\cdot: R \times R \rightarrow R$ ist eine Funktion für welche die folgenden Gesetze gelten:
+      \begin{enumerate}
+      \item Assoziativ-Gesetz:  Für alle $x, y,z \in R$ gilt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $(x \cdot y) \cdot z = x \cdot (y \cdot z)$.
+      \item Distributiv-Gesetze: Für alle $x, y,z \in R$ gilt
+            \\[0.2cm]
+            \hspace*{1.3cm} 
+            $x \cdot (y + z) = x \cdot y + x \cdot z$ \quad und \quad
+            $(x + y) \cdot z = x \cdot z + y \cdot z$.
+      \end{enumerate}
+\end{enumerate}
+Die Operation ``$+$'' nennen wir die Addition auf dem Ring $\mathcal{R}$, die Operation ``$\cdot$'' bezeichnen 
+wir als Multiplikation.
+$\mathcal{R}$ ist ein \emph{kommutativer Ring} falls zusätzlich für die Multiplikation
+das Kommutativ-Gesetz
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \cdot y = y \cdot x$ \quad für alle $x,y \in R$
+\\[0.2cm]
+gilt.  Wir sagen, dass $R$ eine \emph{Eins} hat, wenn es für die Multiplikation ein Element $e$ gibt, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$e \cdot x = x \cdot e = x$ \quad für alle $x \in R$
+\\[0.2cm]
+gilt.  Dieses Element $e$ heißt dann die \emph{Eins} des Rings.  In diesem Fall schreiben wir
+$\mathcal{R} = \langle R, 0, e, +, \cdot \rangle$, wir geben die Eins also explizit in der Struktur an.
+\end{Definition}
+
+\remark
+Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen der obigen Definition.
+\begin{enumerate}
+\item In jedem Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $0 \cdot x = 0$,
+      \\[0.2cm]
+      denn wir haben die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcll}
+        0 \cdot x & = & (0 + 0) \cdot x 
+                      & \mbox{denn $0 + 0 = 0$} \\[0.2cm]
+                  & = & 0 \cdot x + 0 \cdot x
+                      & \mbox{Distributiv-Gesetz}
+      \end{array}
+      $
+      \\[0.2cm]
+      Wenn wir nun auf beiden Seiten der eben gezeigten Gleichung 
+      $0 \cdot x$ abziehen, dann erhalten wir die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $0 = 0 \cdot x$.
+      \\[0.2cm]
+      Genauso gilt natürlich auch $x \cdot 0 = 0$. 
+\item Bezeichnen wir das bezüglich der Addition $+$ zu einem Element $x$ inverse Element mit $-x$,
+      so gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-(x \cdot y) = (-x) \cdot y = x \cdot (-y)$.
+      \\[0.2cm]
+      Wir zeigen die erste dieser beiden Gleichungen, die zweite läßt sich analog nachweisen.
+      Um zu zeigen, dass $-(x \cdot y) = (-x) \cdot y$ ist, reicht es nachzuweisen, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \cdot y + (-x) \cdot y = 0$
+      \\[0.2cm]
+      ist, denn das Inverse ist in einer Gruppe eindeutig bestimmt.  Die letzte Gleichung folgt aber sofort
+      aus dem Distributiv-Gesetz, denn wir haben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+      x \cdot y + (-x) \cdot y & = & (x + - x) \cdot y \\[0.2cm]
+                               & = & 0 \cdot y \\[0.2cm]
+                               & = & 0.
+      \end{array}
+      $
+\end{enumerate}
+
+
+\examples
+\begin{enumerate}
+\item Die Struktur $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$ ist ein kommutativer
+      Ring mit  Eins.  
+\item Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ ist ebenfalls ein kommutativer Ring mit
+      Eins.   
+\end{enumerate}
+In dieser Vorlesung werden wir nur solche Ringe betrachten, die erstens kommutativ sind und
+zweitens eine Eins haben. 
+Ein wichtiger Spezialfall ist der Fall eines kommutativen Rings 
+$\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ mit Eins, 
+für den die Struktur $\langle R \backslash \{0\}, 1, \cdot \rangle$
+eine Gruppe ist.  Dieser Spezialfall liegt beispielsweise bei dem Ring  
+$\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ vor.  In einem solchen Fall sprechen wir von einem \emph{Körper}.  Die formale
+Definition folgt.
+\pagebreak
+
+
+\begin{Definition}[Körper]
+Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Körper}, falls gilt:
+\begin{enumerate}
+\item $\langle K, 0, + \rangle$ ist eine kommutative Gruppe,
+\item $\langle K \backslash \{ 0 \}, 1, \cdot \rangle$ ist ebenfalls eine kommutative Gruppe,
+\item Es gilt das Distributiv-Gesetz: Für alle $x, y,z \in K$ haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm} 
+      $x \cdot (y + z) = x \cdot y + x \cdot z$.
+\end{enumerate}
+Wieder nennen wir die  Operation ``$+$'' die \emph{Addition}, während wir die Operation ``$\cdot$'' 
+als die \emph{Multiplikation} bezeichnen.
+\end{Definition}
+
+Unser Ziel ist es später, Ringe zu Körpern zu erweitern.  Es gibt bestimmte Ringe, in
+denen dies auf keinen Fall möglich ist.  Betrachten wir als Beispiel den Ring
+$\mathcal{R} := \langle \{ 0, 1, 2, 3 \}, 0, 1, +_4, \cdot_4 \rangle$, bei dem die Operationen
+``$+_4$'' und ``$\cdot_4$'' wie folgt definiert sind:
+\\[0.2cm]
+\hspace*{1.3cm}
+$x +_4 y := (x + y) \modulo 4$ \quad und \quad
+$x \cdot_4 y := (x \cdot y) \modulo 4$.
+\\[0.2cm]
+Es läßt sich zeigen, dass die so definierte Struktur $\mathcal{R}$ ein Ring ist.  In
+diesem Ring gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$2 \cdot_4 2 = 4 \modulo 4 = 0$.
+\\[0.2cm]
+Falls es uns gelingen würde, den Ring $\mathcal{R}$ so zu einem Körper 
+$\mathcal{K} = \langle K, 0, 1, +_4, \cdot_4 \rangle$ zu erweitern, dass 
+$\{0,1,2,3\} \subseteq K$ gelten würde, so müsste die Zahl 
+$2$ in diesem Körper ein Inverses $2^{-1}$ haben.  Wenn wir dann die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$2 \cdot_4 2 = 0$
+\\[0.2cm]
+auf beiden Seiten mit $2^{-1}$ multiplizieren würden, hätten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$2 = 0$
+\\[0.2cm]
+hergeleitet.  Dieser Wiederspruch zeigt, dass sich der Ring $\mathcal{R}$ sicher nicht zu
+einem Körper erweitern läßt.
+
+\begin{Definition}[Integritäts-Ring]
+  Ein Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ heißt \emph{nullteilerfrei}, wenn
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\forall a, b \in R: \bigl(a \cdot b = 0 \rightarrow a = 0 \vee b = 0\bigr)$
+  \\[0.2cm]
+  gilt, die Zahl $0$ läßt sich in einem nullteilerfreien Ring also nur als triviales Produkt darstellen.
+  Ein nullteilerfreier, kommutativer Ring, der eine Eins hat, wird als \emph{Integritäts-Ring} bezeichnet.
+\end{Definition}
+
+\remark
+In einem nullteilerfreien Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ 
+gilt die folgende \emph{Streichungs-Regel}:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall a,b,c \in R: \bigl(a \cdot c = b \cdot c \wedge c \not= 0 \rightarrow a = b)$.
+
+\proof
+Wir nehmen an, dass $c \not = 0$ ist und dass $a \cdot c = b \cdot c$ gilt.  Es ist dann $a = b$ zu zeigen. 
+Wir formen die Voraussetzung  $a \cdot c = b \cdot c$ wie folgt um
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cll}
+            & a \cdot c = b \cdot c      & \mid - b \cdot c \\[0.2cm]
+\Rightarrow & a \cdot c - b \cdot c  = 0                    \\[0.2cm]
+\Rightarrow & (a - b) \cdot c = 0                           \\[0.2cm]
+\Rightarrow & (a - b) = 0 & \mbox{denn $\mathcal{R}$ ist nullteilerfreier und $c \not= 0$} \\[0.2cm]
+\Rightarrow & a = b.
+\end{array}
+$
+\\[0.2cm]
+Damit ist der Beweis abgeschlossen. \qed
+\vspace*{0.2cm}
+
+Ist $R$ ein Ring und ist $\sim$ eine Äquivalenz-Relationen auf $R$,
+so läßt sich auf dem Quotienten-Raum $R/\!\sim$ unter bestimmten Umständen ebenfalls eine Ring-Struktur
+definieren.   Das funktioniert aber nur, wenn die Addition und die Multiplikation des Rings in gewisser
+Weise mit der Äquivalenz-Relationen \emph{verträglich} sind.  In diesem Fall nennen wir dann $\sim$ eine
+\emph{Kongruenz-Relation} auf $R$.  Die formale Definition folgt.
+
+\begin{Definition}[Kongruenz-Relation]
+Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und $\sim\; \subseteq R \times R$ sei eine
+Äquivalenz-Relation auf $R$.   Wir nennen $\sim$ eine \emph{Kongruenz-Relation} falls zusätzlich
+die folgenden beiden Bedingungen erfüllt sind:
+\begin{enumerate}
+\item $\forall a_1, a_2, b_1, b_2 \in R: 
+       \bigl(a_1 \sim a_2 \wedge b_1 \sim b_2 \rightarrow a_1 + b_1 \sim a_2 + b_2\bigr)
+      $,
+
+      die Relation $\sim$ ist also \emph{verträglich} mit der Addition auf $R$.
+\item $\forall a_1, a_2, b_1, b_2 \in R: 
+       \bigl(a_1 \sim a_2 \wedge b_1 \sim b_2 \rightarrow a_1 \cdot b_1 \sim a_2 \cdot b_2\bigr)
+      $,
+
+      die Relation $\sim$ ist also auch mit der Multiplikation auf $R$ \emph{verträglich}.
+\end{enumerate}
+\end{Definition}
+  
+Falls $\sim$ eine Kongruenz-Relation auf einem Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ist,
+lassen sich die Operationen ``$+$'' und ``$\cdot$'' auf die Menge $R/\!\sim$ der von $\sim$ erzeugten
+Äquivalenz-Klassen fortsetzen, denn in diesem Fall können wir für $a,b \in R$ definieren:
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a]_\sim + [b]_\sim := [ a + b ]_\sim$ \quad und \quad
+$[a]_\sim \cdot [b]_\sim := [ a \cdot b ]_\sim$.
+\\[0.2cm]
+Um nachzuweisen, dass diese Definitionen tatsächlich Sinn machen, betrachten wir vier
+ Elemente $[a_1]_\sim, [a_2]_\sim, [b_1]_\sim, [b_2]_\sim \in R/\!\sim$, für die
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a_1]_\sim = [a_2]_\sim$ \quad und \quad
+$[b_1]_\sim = [b_2]_\sim$ 
+\\[0.2cm]
+gilt.  Wir müssen zeigen, dass dann auch 
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a_1 + b_1]_\sim = [a_2 + b_2]_\sim$
+\\[0.2cm]
+gilt.  An dieser Stelle erinnern wir daran, dass nach Satz \ref{satz:aequivalenz-klassen}
+allgemein für eine beliebige Äquivalenz-Relation $R$ auf einer Menge $M$ die Beziehung
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a]_R = [b]_R \;\leftrightarrow\; a \mathop{R} b$
+\\[0.2cm]
+gilt.  Damit folgt aus den Voraussetzungen $[a_1]_\sim = [a_2]_\sim$ und $[b_1]_\sim = [b_2]_\sim$, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_1 \sim a_2$ \quad und \quad $b_1 \sim b_2$
+\\[0.2cm]
+gilt.
+Da die Äquivalenz-Relation $\sim$ mit der Operation ``$+$'' verträglich ist, folgt daraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_1 + b_1 \sim  a_2 + b_2$ 
+\\[0.2cm]
+und damit gilt wieder nach Satz \ref{satz:aequivalenz-klassen} 
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a_1 + b_1]_\sim = [a_2 + b_2]_\sim$. 
+\\[0.2cm]
+Genauso läßt sich zeigen, dass auch die Multiplikation $\cdot$ auf $R/\!\sim$ wohldefiniert ist.
+Mit den obigen  Definitionen von $+$ und $\cdot$ haben wir nun eine Struktur 
+$\mathcal{R}/\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$ geschaffen, die als der
+\emph{Faktor-Ring} $\mathcal{R}$ modulo $\sim$ bezeichnet wird. 
+Der nächste Satz zeigt, dass es sich bei dieser Struktur tatsächlich um einen Ring handelt.
+
+\begin{Satz}[Faktor-Ring] \label{satz:faktor_ring} 
+  Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und ist
+  $\sim$ eine Kongruenz-Relation auf diesem Ring, so ist die Struktur 
+  $\mathcal{R}/\!\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$
+  mit den oben für Äquivalenz-Klassen definierten Operationen $+$ und $\cdot$ ein kommutativer 
+  Ring mit Eins. 
+\end{Satz}
+
+\proof
+Wir weisen die Eigenschaften, die einen Ring auszeichnen, einzeln nach.
+\begin{enumerate}
+\item Für die Operation ``$+$'' gilt das Assoziativ-Gesetz, denn für alle 
+      $[a]_\sim, [b]_\sim, [c]_\sim \in R/\!\sim$ gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+            [a]_\sim + \bigl([b]_\sim + [c]_\sim\bigr) 
+      & = & [a]_\sim + [b + c]_\sim                     \\[0.2cm]
+      & = & [a + (b + c)]_\sim                          \\[0.2cm]
+      & = & [(a + b) + c]_\sim                          \\[0.2cm]
+      & = & [a + b]_\sim + [c]_\sim                     \\[0.2cm]
+      & = & \bigl([a]_\sim + [b]_\sim\bigr) + [c]_\sim. 
+      \end{array}
+      $
+\item Für die Operation ``$+$'' gilt das Kommutativ-Gesetz, denn für alle $[a]_\sim, [b]_\sim \in R/\!\sim$ gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $[a]_\sim + [b]_\sim = [a + b]_\sim = [b + a]_\sim = [b]_\sim + [a]_\sim$.
+\item $[0]_\sim$ ist das neutrale Element bezüglich der Addition, denn für alle $[a]_\sim \in R/\!\sim$ gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $[a]_\sim + [0]_\sim = [a + 0]_\sim = [a]_\sim$.
+\item Ist $[a]_\sim \in R/\!\sim$ und bezeichnet $-a$ das additive Inverse von $a$ in $R$, so ist das
+      additive Inverse von  $[a]_\sim$ durch 
+      die Äquivalenz-Klasse $[-a]_\sim$ gegeben, denn wir haben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $[a]_\sim + [-a]_\sim = [a + -a]_\sim = [0]_\sim$.
+\item Die Nachweise, dass auch für den  Operator ``$\cdot$'' dass Assoziativ- und das Kommutativ-Gesetz 
+      sind völlig analog zu den entsprechenden Beweisen für den Operator ``$+$''.
+      Ebenso ist der Nachweis, dass die Äquivalenz-Klasse $[1]_\sim$ das neutrale Element bezüglich des Operators 
+      ``$\cdot$'' ist, analog zu dem Nachweis, dass die Äquivalenz-Klasse $[0]_\sim$ das neutrale Element
+      bezüglich des Operators ``$+$'' ist.
+\item Als letztes weisen wir die Gültigkeit des Distributiv-Gesetzes nach.
+      Es seien  $[a]_\sim, [b]_\sim, [c]_\sim$ beliebige Äquivalenz-Klassen aus $R/\!\sim$. Dann gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+            [a]_\sim \cdot \bigl([b]_\sim + [c]_\sim\bigr) 
+      & = & [a]_\sim \cdot [b + c]_\sim                        \\[0.2cm]
+      & = & [a \cdot (b + c)]_\sim                             \\[0.2cm]
+      & = & [a \cdot b + a \cdot c]_\sim                       \\[0.2cm]
+      & = & [a \cdot b]_\sim + [a \cdot c]_\sim                \\[0.2cm]
+      & = & [a]_\sim \cdot [b]_\sim + [a]_\sim \cdot [c]_\sim. 
+      \end{array}
+      $
+\end{enumerate}
+Damit ist gezeigt, dass $\mathcal{R}/\!\sim$ ein kommutativer Ring mit Eins ist. \qed
+
+\exercise
+Es sei $\mathcal{K} = \langle K, 0_K, 1_K, +, \cdot \rangle$ ein Körper und die Menge $K$ sei endlich.
+Dann können wir durch eine Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{count}: \mathbb{N} \rightarrow K$
+\\[0.2cm]
+definieren, welche die natürlichen Zahlen $\mathbb{N}$ in den Körper $K$ abbildet.  Die Definition
+von $\mathtt{count}$ erfolgt durch Induktion:
+\begin{enumerate}
+\item[I.A.:] $n = 0$:
+
+             $\mathtt{count}(0) := 0_K$.
+
+             Beachten Sie hier, dass die $0$, die auf der linken Seite dieser Gleichung auftritt,
+             eine natürliche Zahl ist, während die $0_K$ auf der rechten Seite dieser Gleichung
+             das neutrale Element der Addition in dem Körper $\mathcal{K}$ bezeichnet.
+\item[I.S.:] $n \mapsto n + 1$.
+
+             $\mathtt{count}(n+1) := \mathtt{count}(n) + 1_K$.
+
+             Auch hier bezeichnet die $1$ auf der linken Seite der Definition eine natürliche Zahl,
+             während die $1_K$ auf der rechten Seite dieser Gleichung das neutrale Element der
+             Multiplikation in dem Körper $\mathcal{K}$ bezeichnet.
+\end{enumerate}
+Falls die Menge $K$ endlich ist, definieren wir die \emph{Charakteristik}
+$\mathtt{char}(\mathcal{K})$ des Körpers $\mathcal{K}$ als die kleinste natürliche Zahl $k$, für die
+$\mathtt{count}(k) = 0_K$ gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{char}(\mathcal{K}) = \min\bigl(\{ k \in \mathbb{N} \mid k \geq 1 \wedge \mathtt{count}(k) = 0_K \}\bigr)$.
+\\[0.2cm]
+Zeigen Sie, dass die Charakteristik eines endlichen Körpers immer eine Primzahl ist.
+
+\exercise
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\begin{enumerate}
+\item Zeigen Sie, dass es einen Körper $K$ mit drei Elementen gibt.
+\item Zeigen Sie, dass es einen Körper $K$ mit vier Elementen gibt. \exend
+\end{enumerate}
+\renewcommand{\labelenumi}{\arabic{enumi}.}
+
+
+
+\section{Konstruktion des Quotienten-Körpers$^*$}
+Betrachten wir einen Integritäts-Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$, der selbst noch
+kein Körper ist, so können wir uns fragen, in welchen Fällen es möglich ist, aus diesem
+Ring einen Körper zu konstruieren.  Wir versuchen bei einer solchen Konstruktion ähnlich
+vorzugehen wie bei der Konstruktion der rationalen Zahlen $\mathbb{Q}$ aus den ganzen
+Zahlen $\mathbb{Z}$.  Es sei also ein Integritäts-Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$
+gegeben.  Dann definieren wir zunächst die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$Q := \bigl\{ \pair(x,y) \in R \times R \mid y \not= 0 \bigr\}$
+\\[0.2cm]
+der formalen Brüche.  Weiter definieren wir eine Relation 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sim \;\subseteq Q \times Q$
+\\[0.2cm]
+auf $Q$ indem wir festsetzen, dass für alle $\pair(x_1,y_1), \pair(x_2,y_2) \in Q$ das Folgende gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x_1, y_1) \;\sim\; \pair(x_2, y_2) \df x_1 \cdot y_2 = x_2 \cdot y_1$.
+
+\begin{Satz}
+Die oben definierte Relation  $\sim$ ist eine Äquivalenz-Relation auf der Menge $Q$.
+\end{Satz}
+
+\proof
+Wir müssen zeigen, dass die Relation reflexiv, symmetrisch und transitiv ist.
+\begin{enumerate}
+\item Reflexivität: Für alle Paare $\pair(x,y) \in Q$ gilt nach Definition der Relation $\sim$:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cll}
+                      & \pair(x,y) \sim \pair(x,y) \\[0.2cm]
+      \Leftrightarrow & x \cdot y = x \cdot y.
+      \end{array}
+      $
+      \\[0.2cm]
+      Da die letzte Gleichung offensichtlich wahr ist, ist die Reflexivität nachgewiesen. \checkmark
+\item Symmetrie: Wir müssen zeigen, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_1, y_1) \sim \pair(x_2, y_2) \rightarrow \pair(x_2, y_2) \sim \pair(x_1, y_1)$
+      \\[0.2cm]
+      gilt.  Wir nehmem also an, dass $\pair(x_1, y_1) \sim \pair(x_2, y_2)$ gilt, und zeigen, dass 
+      daraus 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_2, y_2) \sim \pair(x_1, y_1)$ 
+      \\[0.2cm]
+      folgt.  Die Annahme 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_1, y_1) \sim \pair(x_2, y_2)$
+      \\[0.2cm]
+      ist nach Definition von $\sim$ äquivalent zu der Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_2 = x_2 \cdot y_1$.
+      \\[0.2cm]
+      Diese Gleichung drehen wir um und erhalten
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_2 \cdot y_1 = x_1 \cdot y_2$.
+      \\[0.2cm]
+      Nach Definition der Relation $\sim$ gilt dann
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_2, y_2) \sim \pair(x_1, y_1)$
+      \\[0.2cm]
+      und das war zu zeigen. $\checkmark$
+\item Transitivität: Wir müssen zeigen, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_1, y_1) \sim \pair(x_2, y_2) \;\wedge\; \pair(x_2, y_2) \sim \pair(x_3, y_3)
+       \;\rightarrow\; \pair(x_1, y_1) \sim \pair(x_3, y_3)
+      $
+      \\[0.2cm]
+      gilt.  Wir nehmen also an, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_1, y_1) \sim \pair(x_2, y_2)$  \quad und \quad
+      $\pair(x_2, y_2) \sim \pair(x_3, y_3)$
+      \\[0.2cm]
+      gilt und zeigen, dass daraus $\pair(x_1,y_1) \sim \pair(x_3, y_3)$ folgt.  Nach Definition von $\sim$
+      folgt aus unserer Annahme, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_2 = x_2 \cdot y_1$  \quad und \quad
+      $x_2 \cdot y_3 = x_3 \cdot y_2$
+      \\[0.2cm]
+      gilt.  Wir multiplizieren die erste dieser beiden Gleichungen mit $y_3$ und die zweite Gleichung mit 
+      $y_1$.  Dann erhalten wir die Gleichungen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_2 \cdot y_3 = x_2 \cdot y_1 \cdot y_3$  \quad und \quad
+      $x_2 \cdot y_3 \cdot y_1 = x_3 \cdot y_2 \cdot y_1$
+      \\[0.2cm]
+      Da für den Operator ``$\cdot$'' das Kommutativ-Gesetzes gilt, können wir diese Gleichungen auch in der 
+      Form 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_3 \cdot y_2 = x_2 \cdot y_3 \cdot y_1$  \quad und \quad
+      $x_2 \cdot y_3 \cdot y_1 = x_3 \cdot y_1 \cdot y_2$
+      \\[0.2cm]
+      schreiben.  Setzen wir diese Gleichungen zusammen, so sehen wir, dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_3 \cdot y_2 = x_3 \cdot y_1 \cdot y_2$
+      \\[0.2cm]
+      gilt.
+      Da der betrachtete Ring nullteilerfrei ist und wir nach Definition von $Q$ wissen, 
+      dass $y_2 \not= 0$ ist, können  wir hier die Streichungs-Regel benutzen und
+      $y_2$ aus der letzten Gleichung herauskürzen.  Dann erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_3 = x_3 \cdot y_1$. 
+      \\[0.2cm]
+      Nach Definition der Relation $\sim$ haben wir jetzt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x_1, y_1) \sim \pair(x_3, y_3)$
+      \\[0.2cm]
+      und das war zu zeigen. \checkmark       \qed
+
+      \textbf{Bemerkung}: Würden wir in der Definition 
+      $Q := \bigl\{ \pair(x, y) \in R \times R \mid y \not= 0 \bigr\}$
+      die Bedingung $y \not= 0$ weglassen, so würde 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x, y) \sim \pair(0, 0)$ \quad für alle $x,y \in R$
+      \\[0.2cm]
+      gelten und damit wäre dann die Relation $\sim$ nicht mehr transitiv.
+\end{enumerate}
+Auf der Menge $Q$ definieren wir jetzt Operatoren ``$+$'' und ``$\cdot$''.
+Den Operator $+: Q \times Q \rightarrow Q$  definieren wir durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x,y) + \pair(u,v) := \pair(x \cdot v + u \cdot y, y \cdot v)$.
+\\[0.2cm]
+Motiviert ist diese Definition durch die Addition von Brüchen, bei der wir die beteiligten Brüche
+zunächst auf den Hauptnenner bringen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bruch{a}{b} + \bruch{c}{d} = \bruch{a \cdot d + c \cdot b}{b \cdot d}$.
+\\[0.2cm]
+Die Äquivalenz-Relation $\sim$ erzeugt auf der Menge $Q$ der formalen Brüche den Quotienten-Raum
+$Q/\!\sim$.
+Unser Ziel ist es, auf diesem Quotienten-Raum 
+eine Ringstruktur zu definieren.  Damit dies möglich ist zeigen wir, dass die oben definierte
+Funktion $+$ mit der auf $Q$ definierten Äquivalenz-Relationen $\sim$ 
+verträglich ist.  Es gelte also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x_1,y_1) \sim \pair(x_2,y_2)$ \quad und \quad
+$\pair(u_1,v_1) \sim \pair(u_2,v_2)$.
+\\[0.2cm]
+Nach Definition der Äquivalenz-Relation $\sim$ heißt das
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \cdot y_2 = x_2 \cdot y_1$ \quad und \quad
+$u_1 \cdot v_2 = u_2 \cdot v_1$.
+\\[0.2cm]
+Zu zeigen ist dann
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x_1 \cdot v_1 + u_1 \cdot y_1,\, y_1 \cdot v_1) \sim 
+ \pair(x_2 \cdot v_2 + u_2 \cdot y_2,\, y_2 \cdot v_2)$.
+\\[0.2cm]
+Nach Definition der Äquivalenz-Relation $\sim$ ist dies äquivalent zu der Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x_1 \cdot v_1 + u_1 \cdot y_1) \cdot y_2 \cdot v_2 = 
+ (x_2 \cdot v_2 + u_2 \cdot y_2) \cdot y_1 \cdot v_1
+$.
+\\[0.2cm]
+Multiplizieren wir dies mittels des Distributiv-Gesetzes aus und benutzen wir weiter das
+Kommutativ-Gesetz für die Multiplikation, so ist die letzte Gleichung äquivalent zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \cdot y_2 \cdot v_1 \cdot v_2 + u_1 \cdot v_2 \cdot y_1 \cdot y_2 = 
+ x_2 \cdot y_1 \cdot v_1 \cdot v_2 + u_2 \cdot v_1 \cdot y_1 \cdot y_2
+$.
+\\[0.2cm]
+Formen wir die linke Seite dieser Gleichung durch Verwendung der Voraussetzungen 
+$x_1 \cdot y_2 = x_2 \cdot y_1$  und $u_1 \cdot v_2 = u_2 \cdot v_1$ um, so erhalten wir
+die offensichtlich wahre Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_2 \cdot y_1 \cdot v_1 \cdot v_2 + u_2 \cdot v_1 \cdot y_1 \cdot y_2 = 
+ x_2 \cdot y_1 \cdot v_1 \cdot v_2 + u_2 \cdot v_1 \cdot y_1 \cdot y_2
+$.
+\\[0.2cm]
+Damit haben wir die Verträglichkeit des oben definierten Operators ``$+$'' nachgewiesen.
+Folglich kann die oben definierte Funktion $+$ auf den Quotienten-Raum $Q/\!\sim$ durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl[\pair(x,y)\bigr]_\sim + \bigl[\pair(u,v)\bigr]_\sim := 
+ \bigl[\pair(x \cdot v + u \cdot y, y \cdot v)\bigr]_\sim
+$
+\\[0.2cm]
+fortgesetzt werden.  Die Äquivalenz-Klasse
+$\bigl[\pair(0,1)\bigr]_\sim$
+ist bezüglich der Operation ``$+$'' das neutrale Element, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl[\pair(0,1)\bigr]_\sim + \bigl[\pair(x,y)\bigr]_\sim = 
+ \bigl[\pair(0 \cdot y + x \cdot 1, 1 \cdot y)\bigr]_\sim = 
+ \bigl[\pair(x, y)\bigr]_\sim
+$.
+\\[0.2cm]
+Es gilt weiter
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl[\pair(0,1)\bigr]_\sim = \bigl[\pair(0,y)\bigr]_\sim$ \quad für alle $y \not= 0$,
+\\[0.2cm]
+denn wir haben
+\\[0.2cm]
+\hspace*{1.3cm}
+$0 \cdot y = 0 \cdot 1$.
+\\[0.2cm]
+Das bezüglich der Operation ``$+$'' zu $\bigl[\pair(x,y)\bigr]_\sim$ inverse Element ist
+$\bigl[\pair(-x,y)\bigr]_\sim$, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+      \bigl[\pair(-x,y)\bigr]_\sim + \bigl[\pair(x,y)\bigr]_\sim 
+& = & \bigl[\pair(-x \cdot y + x \cdot y,\, y \cdot y)\bigr]_\sim      \\[0.2cm]
+& = & \bigl[\pair((-x + x) \cdot y,\, y \cdot y)\bigr]_\sim      \\[0.2cm]
+& = & \bigl[\pair(0,\, y \cdot y)\bigr]_\sim      \\[0.2cm]
+& = & \bigl[\pair(0,\, 1) \bigr]_\sim.
+\end{array}
+$
+\vspace*{0.2cm}
+
+\noindent
+Als nächstes definieren wir auf der Menge $Q$ den Operator $\cdot: Q \times Q \rightarrow Q$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x,y) \cdot \pair(u,v) := \pair(x \cdot u, y \cdot v)$.
+\\[0.2cm]
+Auch dies wird durch die Analogie für Brüche motiviert, denn für Brüche gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bruch{a}{b} \cdot \bruch{c}{d} = \bruch{a \cdot c}{b \cdot d}$.
+\\[0.2cm]
+Nun zeigen wir, dass die Operation ``$\cdot$'' mit der Äquivalenz-Relation $\sim$ verträglich ist.
+Es gelte also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x_1,y_1) \sim \pair(x_2,y_2)$ \quad und \quad
+$\pair(u_1,v_1) \sim \pair(u_2,v_2)$.
+\\[0.2cm]
+Nach Definition der Äquivalenz-Relation $\sim$ folgt daraus
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \cdot y_2 = x_2 \cdot y_1$ \quad und \quad
+$u_1 \cdot v_2 = u_2 \cdot v_1$.
+\\[0.2cm]
+Zu zeigen ist 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\pair(x_1 \cdot u_1,\, y_1 \cdot v_1) \sim  \pair(x_2 \cdot u_2,\, y_2 \cdot v_2)$.
+\\[0.2cm]
+Dies ist nach Definition der Relation $\sim$ äquivalent zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$x_1 \cdot u_1 \cdot y_2 \cdot v_2 = x_2 \cdot u_2 \cdot y_1 \cdot v_1$.
+\\[0.2cm]
+Diese Gleichung erhalten wir aber sofort, wenn wir die beiden Gleichungen
+$x_1 \cdot y_2 = x_2 \cdot y_1$ und $u_1 \cdot v_2 = u_2 \cdot v_1$ mit einander multiplizieren.
+Folglich kann der Operator ``$\cdot$'' durch die Definition
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl[\pair(x,y)\bigr]_\sim \cdot \bigl[\pair(u,v)\bigr]_\sim := 
+ \bigl[\pair(x \cdot u, y \cdot v)\bigr]_\sim
+$
+\\[0.2cm]
+auf den Quotienten-Raum $Q/\!\sim$ fortgesetzt werden.
+Das bezüglich der Operation ``$\cdot$'' neutrale Element ist $\bigl[\pair(1,\,1)\bigr]_\sim$, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+      \bigl[\pair(1,\,1)\bigr]_\sim \cdot  \bigl[\pair(x,\,y)\bigr]_\sim
+& = & \bigl[\pair(1 \cdot x,\,1 \cdot y)\bigr]_\sim                      \\[0.2cm]
+& = & \bigl[\pair(x,\,y)\bigr]_\sim.
+\end{array}
+$
+\\[0.2cm]
+Das bezüglich der Operation ``$\cdot$'' zu $\bigl[\pair(x,y)\bigr]_\sim$ inverse Element ist nur definiert,
+falls
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\bigl[\pair(x,y)\bigr]_\sim \not= \bigl[\pair(0,1)\bigr]_\sim$ 
+\\[0.2cm]
+ist.  Wir formen diese Ungleichung um:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lrcl}
+                & \bigl[\pair(x,y)\bigr]_\sim & \not= & \bigl[\pair(0,1)\bigr]_\sim  \\[0.2cm]
+\Leftrightarrow & \pair(x,y) & \not\sim & \pair(0,1)                                 \\[0.2cm]
+\Leftrightarrow & x \cdot 1  & \not=    & 0 \cdot y                                  \\[0.2cm]
+\Leftrightarrow & x          & \not=    & 0. 
+\end{array}
+$
+\\[0.2cm]
+Damit sehen wir, dass wir zu dem Ausdruck $\bigl[\pair(x,y)\bigr]_\sim$ nur dann ein bezüglich der Operation
+``$\cdot$'' inverses Element angeben müssen, wenn $x \not= 0$ ist.  Wir behaupten, dass für $x \not= 0$
+das Element
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl[\pair(y,x)\bigr]_\sim$
+\\[0.2cm]
+zu $\bigl[\pair(x,y)\bigr]_\sim$ invers ist, denn es gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+      \bigl[\pair(y,x)\bigr]_\sim \cdot \bigl[\pair(x,y)\bigr]_\sim 
+& = & \bigl[\pair(y \cdot x,x \cdot y)\bigr]_\sim                   \\[0.2cm]
+& = & \bigl[\pair(x \cdot y,x \cdot y)\bigr]_\sim                   \\[0.2cm]
+& = & \bigl[\pair(1, 1)\bigr]_\sim                   \\[0.2cm]
+\end{array}
+$
+\\[0.2cm]
+denn offenbar gilt $\pair(x \cdot y,x \cdot y) \sim \pair(1,1)$.
+\vspace*{0.2cm}
+
+Um zu zeigen, dass die Struktur 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{R}/\!\sim :=
+\Bigl\langle Q/\!\sim, \bigl[\pair(0,1)\bigr]_\sim, \bigl[\pair(1,1)\bigr]_\sim, +, \cdot \Bigr\rangle$
+\\[0.2cm]
+mit den oben definierten Operationen ``$+$'' und ``$\cdot$'' ein Körper ist, bleibt nachzuweisen,
+dass für die Operatoren ``$+$'' und ``$\cdot$'' jeweils das Assoziativ-Gesetz und das Kommutativ-Gesetz gilt. 
+Zusätzlich muss das Distributiv-Gesetz nachgewiesen werden.
+\begin{enumerate}
+\item Der Operator ``$+$'' ist in $Q$ assoziativ, denn für beliebige
+      Paare $\pair(x_1,y_1),\pair(x_2,y_2),\pair(x_3,y_3) \in Q$ gilt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+        & \bigl(\pair(x_1, y_1) + \pair(x_2, y_2)\bigr) + \pair(x_3, y_3)                      \\[0.2cm]
+      = & \bigr(\pair(x_1 \cdot y_2 + x_2 \cdot y_1, y_1 \cdot y_2)\bigr) + \pair(x_3, y_3)    \\[0.2cm]
+      = & \pair((x_1 \cdot y_2 + x_2 \cdot y_1) \cdot y_3 + x_3 \cdot y_1 \cdot y_2,\,
+                y_1 \cdot y_2 \cdot y_3)                                                       \\[0.2cm]
+      = & \pair(x_1 \cdot y_2 \cdot y_3 + x_2 \cdot y_1 \cdot y_3 + x_3 \cdot y_1 \cdot y_2,\, 
+                y_1 \cdot y_2 \cdot y_3)                                                       \\[0.2cm]
+      \end{array}
+      $
+      \\[0.2cm]
+      Auf der anderen Seite haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+        & \pair(x_1, y_1) + \bigl(\pair(x_2, y_2) + \pair(x_3, y_3)\bigr)                      \\[0.2cm]
+      = & \pair(x_1, y_1) + \bigl(\pair(x_2 \cdot y_3 + x_3 \cdot y_2,\, y_2 \cdot y_3)\bigr)  \\[0.2cm]
+      = & \pair(x_1 \cdot y_2 \cdot y_3 + (x_2 \cdot y_3 + x_3 \cdot y_2) \cdot y_1,\,
+                y_1 \cdot y_2 \cdot y_3)                                                       \\[0.2cm]
+      = & \pair(x_1 \cdot y_2 \cdot y_3 + x_2 \cdot y_1 \cdot y_3 + x_3 \cdot y_1 \cdot y_2,\, 
+                y_1 \cdot y_2 \cdot y_3)                                                       \\[0.2cm]
+      \end{array}
+      $
+      \\[0.2cm]
+      Da dies mit dem oben abgeleiteten Ergebnis übereinstimmt, haben wir die Gültigkeit des 
+      Assoziativ-Gesetzes  nachgewiesen.
+\item Der Operator ``$+$'' ist in $Q$ kommutativ, denn für beliebige
+      Paare $\pair(x_1,y_1),\pair(x_2,y_2) \in Q$ gilt:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+        & \pair(x_1, y_1) + \pair(x_2, y_2)               \\[0.2cm]
+      = & \pair(x_1 \cdot y_2 + x_2 \cdot y_1, y_1 \cdot y_2)   \\[0.2cm]
+      = & \pair(x_2 \cdot y_1 + x_1 \cdot y_2, y_2 \cdot y_1)   \\[0.2cm]
+      = & \pair(x_2, y_2) + \pair(x_1, y_1).               \\[0.2cm]
+      \end{array}
+      $
+      \\[0.2cm]
+      Genau wie oben folgt nun, dass das Kommutativ-Gesetz auch in $Q/\!\sim$ gilt.
+\item Den Nachweis der Assoziativität und der Kommutativität des Multiplikations-Operators
+      überlasse ich Ihnen zur Übung.
+
+      \exercise
+      Zeigen Sie, dass in $Q/\sim$ für die Multiplikation sowohl das Assoziativ-Gesetz als auch das
+      Kommutativ-Gesetz gilt.
+\item Zum Nachweis des Distributiv-Gesetzes in $Q/\!\sim$ 
+      zeigen wir, dass für alle Paare \\
+      $\pair(x_1,y_1),\, \pair(x_2,y_2),\, \pair(x_3,y_3) \in Q$
+      folgendes gilt:
+      \\[0.2cm]
+      \hspace*{0.3cm}
+      $
+      \bpr(x_1,y_1) \cdot \Bigl(\bpr(x_2,y_2) + \bpr(x_3,y_3)\Bigr) =
+      \bpr(x_1,y_1) \cdot \bpr(x_2,y_2) + \bpr(x_1,y_1) \cdot \bpr(x_3,y_3)
+      $.
+      \\[0.2cm]
+      Wir werten die linke und rechte Seite dieser Gleichung getrennt aus und beginnen mit der
+      linken Seite. 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+        & \bpr(x_1,y_1) \cdot \Bigl(\bpr(x_2,y_2) + \bpr(x_3,y_3)\Bigr)                     \\[0.2cm]
+      = & \bpr(x_1,y_1) \cdot \bpr(x_2 \cdot y_3 + x_3 \cdot y_2,\,y_2 \cdot y_3)           \\[0.2cm]
+      = & \bpr(x_1 \cdot \kla x_2 \cdot y_3 + x_3 \cdot y_2\klz,\,y_1 \cdot y_2 \cdot y_3)  \\[0.2cm]
+      = & \bpr(x_1 \cdot x_2 \cdot y_3 + x_1 \cdot x_3 \cdot y_2,\,y_1 \cdot y_2 \cdot y_3) \\[0.2cm]
+      \end{array}
+      $
+      \\[0.2cm]
+      Wir werten nun die rechte Seite aus.
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+      & \bpr(x_1,y_1) \cdot \bpr(x_2,y_2) + \bpr(x_1,y_1) \cdot \bpr(x_3,y_3)        \\[0.2cm]
+      = & \bpr(x_1 \cdot x_2,\, y_1 \cdot y_2) + \bpr(x_1 \cdot x_3,\,y_1 \cdot y_3)   \\[0.2cm]
+      = & \bpr(x_1 \cdot x_2 \cdot y_1 \cdot y_3 + x_1 \cdot x_3 \cdot y_1 \cdot y_2,\, 
+      y_1 \cdot y_2 \cdot y_1 \cdot y_3). 
+      \end{array}
+      $
+      \\[0.2cm]
+      Allgemein haben wir bereits gesehen, dass für $c \not= 0$, $c \in R$ und beliebige $a,b \in R$ die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\bpr(a,b) = \bpr(a \cdot c,\,b \cdot c)$
+      \\[0.2cm]
+      gilt.  Wenden wir diese Gleichung  auf die oben für die linke und rechte Seite des
+      Distributiv-Gesetzes erzielten Ergebnisse an, so sehen wir, dass beide Seiten gleich sind.
+      Damit ist die Gültigkeit des Distributiv-Gesetzes in $Q/\!\sim$ nachgewiesen.  
+\end{enumerate}
+Damit haben wir nun gezeigt, dass die Struktur
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{Quot}(\mathcal{R}) := \langle Q/\!\sim, \bpr(0,1), \bpr(1,1), +, \cdot \rangle$ 
+\\[0.2cm]
+ein Körper ist.  Dieser Körper wird als der von $\mathcal{R}$ erzeugte \emph{Quotienten-Körper} bezeichnet.
+
+
+\section{Ideale und Faktor-Ringe$^*$}
+Der im Folgenden definierte Begriff des \emph{Ideals} hat in der Theorie der Ringe eine ähnliche
+Stellung wie der Begriff der Untergruppe in der Theorie der Gruppen.
+\begin{Definition}[Ideal]
+Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutatives Ring mit Eins.
+Eine Teilmenge $I \subseteq R$ ist ein \emph{Ideal in $\mathcal{R}$} falls folgendes gilt:
+\begin{enumerate}
+\item $\langle I, 0, + \rangle \leq \langle R, 0, + \rangle$,
+
+      die Struktur $\langle I, 0, + \rangle$ ist also eine Untergruppe der Gruppe $\langle R, 0, + \rangle$.
+\item $\forall a \in I: \forall b \in R: b \cdot a \in I$,
+
+      für alle Elemente $a$ aus dem Ideal $I$ ist das Produkt mit einem beliebigen Element
+      $b$ aus dem Ring $R$ wieder ein Element aus dem Ideal.
+\end{enumerate}
+
+\remark
+An dieser Stelle sollten Sie sich noch einmal die Definition einer Untergruppe ins
+Gedächtnis rufen:  Es gilt $\langle I, 0, + \rangle \leq \langle R, 0, + \rangle$ genau
+dann, wenn folgende Bedingungen erfüllt sind:
+\begin{enumerate}
+\item $0 \in I$,
+\item $a,b \in I \rightarrow a + b \in I$,
+\item $a \in I \rightarrow -a \in I$.
+\end{enumerate}
+Beachten Sie außerdem, dass in der Formel 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall a \in I: \forall b \in R: b \cdot a \in I$,
+\\[0.2cm]
+der zweite All-Quantor nicht nur über die Elemente aus $I$ läuft, sondern über alle Elemente
+von $R$.  
+
+\examples
+\begin{enumerate}
+\item Die Menge alle geraden Zahlen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2 \mathbb{Z} = \{ 2 \cdot x \mid x \in \mathbb{Z} \}$
+      \\[0.2cm]
+      ist ein Ideal in dem Ring $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$ der ganzen
+      Zahlen, denn wir haben
+      \begin{enumerate}
+      \item $0 \in 2\mathbb{Z}$, da $0 = 2 \cdot 0$ ist und somit ist $0$ eine gerade Zahl.
+      \item Sind $a$, $b$ gerade Zahlen, so gibt es $x,y \in \mathbb{Z}$ mit $a = 2 \cdot x$ und 
+            $b = 2 \cdot y$.  Daraus folgt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $a + b = 2 \cdot x + 2 \cdot y = 2 \cdot (x + y)$
+            \\[0.2cm]
+            und damit ist auch $a+b$ eine gerade Zahl.
+      \item Ist $a \in 2\mathbb{Z}$, so gibt es $x \in \mathbb{Z}$ mit $a = 2 \cdot x$.  Dann gilt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $-a = - 2 \cdot x = 2 \cdot (-x)$
+            \\[0.2cm]
+            und damit ist auch $-a$ eine gerade Zahl.
+      \item Ist $a$ eine gerade Zahl und ist $b \in \mathbb{Z}$, so gibt es zunächst eine
+            Zahl $x \in \mathbb{Z}$ mit $a = 2 \cdot x$.  Daraus folgt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $a \cdot b = (2 \cdot x) \cdot b = 2 \cdot (x \cdot b)$
+            \\[0.2cm]
+            und das ist offenbar wieder eine gerade Zahl.
+      \end{enumerate}
+\item Das letzte Beispiel läßt sich verallgemeinern: Es sei $k \in \mathbb{Z}$. Dann ist die Menge 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $k\mathbb{Z} := \{ a \cdot k \mid a \in \mathbb{Z} \}$
+      \\[0.2cm]
+      der Vielfachen von $k$  ein Ideal in dem Ring $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$.
+      Der Nachweis ist anlog zu dem oben geführten Nachweis, dass $2\mathbb{Z}$ ein Ideal
+      in dem Ring der ganzen Zahlen ist.
+\item Wir verallgemeinern das letzte Beispiel für beliebige kommutative Ringe mit Eins.
+      Es sei also $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring
+      mit Eins und es sei $a \in R$.  Dann definieren wir die Menge
+      \\
+      \hspace*{1.3cm}
+      $\textsl{gen}(k) := \{ k \cdot x \mid x \in R \}$
+      \\[0.2cm]
+      aller Vielfachen von $k$ in $R$.  Wir zeigen, dass diese Menge ein Ideal in
+      $\mathcal{R}$ ist.
+      \begin{enumerate}
+      \item $0 \in \textsl{gen}(k)$, da $0 = k \cdot 0$ gilt. 
+      \item Sind $a, b \in \textsl{gen}(k)$, so gibt es $x,y \in R$ mit $a = k \cdot x$ und 
+            $b = k \cdot y$.  Daraus folgt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $a + b = k \cdot x + k \cdot y = k \cdot (x + y)$
+            \\[0.2cm]
+            und folglich gilt $a+b \in \textsl{gen}(k)$.
+      \item Ist $a \in \textsl{gen}(k)$, so gibt es ein $x \in R$ mit $a = k \cdot x$.  Dann gilt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $-a = - (k \cdot x) = k \cdot (-x) \in \textsl{gen}(a)$.
+      \item Ist $a \in \textsl{gen}(k)$ und ist $b \in \mathbb{Z}$, so gibt es zunächst ein
+            $x \in R$ mit $a = k \cdot x$.  Daraus folgt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $a \cdot b = (k \cdot x) \cdot b = k \cdot (x \cdot b) \in \textsl{gen}(k)$.
+      \end{enumerate}
+      Die Menge $\textsl{gen}(a)$ wird das von $a$ \emph{erzeugte Ideal} genannt.
+      Ideale dieser Form werden in der Literatur als \emph{Haupt-Ideale} bezeichnet.
+\item Wieder sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.  Dann
+      sind die Mengen $\{0\}$ und $R$ offenbar wieder Ideale von $R$.  Wir nennen  die Menge $\{0\}$
+      das Null-Ideal und $R$ das Eins-Ideal.  Diese beiden Ideale werden auch als die \emph{trivialen}
+      Ideale bezeichnet.
+\end{enumerate}
+\end{Definition}
+
+
+Mit Hilfe von Idealen läßt sich auf einem Ring eine Kongruenz-Relation erzeugen.  Ist $I$ ein Ideal auf
+dem kommutativen Ring mit Eins $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$, so definieren wir eine Relation $\sim_I$ auf
+$R$ durch die Forderung
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \sim_I b \df a - b \in I$.
+\\[0.2cm]
+Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
+\begin{enumerate}
+\item $\sim_I$ ist reflexiv auf $R$, denn für alle $x \in R$ gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cl}
+                      & x \sim_I x   \\[0.2cm] 
+      \Leftrightarrow & x - x \in I  \\[0.2cm] 
+      \Leftrightarrow & 0 \in I  
+      \end{array}
+      $
+      \\[0.2cm]
+      Da ein Ideal insbesondere eine Untergruppe ist, gilt $0 \in I$ und damit ist $x \sim_I x$
+      gezeigt. \checkmark
+\item Wir zeigen: $\sim_I$ ist symmetrisch.  Sei $x \sim_I y$ gegeben.  Nach Definition der
+      Relation $\sim_I$ folgt  
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x - y \in I$.
+      \\[0.2cm]
+      Da eine Untergruppe bezüglich der Bildung des additiven Inversen abgeschlossen ist, gilt dann auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-(x - y) = y - x \in I$.
+      \\[0.2cm]
+      Wieder nach Definition der Relation $\sim_I$ heißt das 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $y \sim_I x$.  
+      \checkmark
+\item Wir zeigen: $\sim_I$ ist transitiv.  Es gelte
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \sim_I y$ \quad und \quad $y \sim_I z$.
+      \\[0.2cm]
+      Nach Definition der Relation $\sim_I$ folgt daraus
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x - y \in I$ \quad und \quad $y - z \in I$.
+      \\[0.2cm]
+      Da Ideale unter Addition abgeschlossen sind, folgt daraus
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x - z = (x - y) + (y - z) \in I$.
+      \\[0.2cm]
+      Nach Definition der Relation $\sim_I$ heißt das 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \sim_I z$.  
+      \checkmark
+\item Wir zeigen: $\sim_I$ ist mit der Addition auf dem Ring $\mathcal{R}$ verträglich.  Es sei
+      also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \sim_I x_2$ \quad und \quad $y_1 \sim_I y_2$ 
+      \\[0.2cm]
+      gegeben.  Zu zeigen ist, dass dann auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 + y_1 \sim_I x_2 + y_2$
+      \\[0.2cm]
+      gilt.  Aus den Voraussetzungen $x_1 \sim_I x_2$  und $y_1 \sim_I y_2$ folgt nach Definition
+      der Relation $\sim_I$, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 - x_2 \in I$ \quad und \quad $y_1 - y_2 \in I$ 
+      \\[0.2cm]
+      gilt.  Addieren wir diese Gleichungen und berücksichtigen, dass das Ideal $I$ unter Addition
+      abgeschlossen ist, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x_1 - x_2) + (y_1 - y_2) \in I$.
+      \\[0.2cm]
+      Wegen $(x_1 - x_2) + (y_1 - y_2) = (x_1 + y_1) - (x_2 + y_2)$ folgt daraus
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x_1 + y_1) - (x_2 + y_2) \in I$
+      \\[0.2cm]
+      und nach Definition der Relation $\sim_I$ heißt das
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 + y_1 \sim_I x_2 + y_2$. \checkmark
+\item Wir zeigen: $\sim_I$ ist mit der Multiplikation auf dem Ring $\mathcal{R}$ verträglich.
+      Es sei also wieder
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \sim_I x_2$ \quad und \quad $y_1 \sim_I y_2$ 
+      \\[0.2cm]
+      gegeben.  Diesmal ist zu zeigen, dass daraus
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_1 \sim_I x_2 \cdot y_2$
+      \\[0.2cm]
+      folgt.  Aus den Voraussetzungen $x_1 \sim_I x_2$  und $y_1 \sim_I y_2$ folgt nach Definition
+      der Relation $\sim_I$ zunächst, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 - x_2 \in I$ \quad und \quad $y_1 - y_2 \in I$ 
+      \\[0.2cm]
+      gilt.  Da ein Ideal unter Multiplikation mit beliebigen Elementen des Rings abgeschlossen ist,
+      folgt daraus, dass auch
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x_1 - x_2) \cdot y_2 \in I$ \quad und \quad $x_1 \cdot (y_1 - y_2) \in I$ 
+      \\[0.2cm]
+      gilt. Addieren wir diese Gleichungen und berücksichtigen, dass das Ideal $I$ unter Addition
+      abgeschlossen ist, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(x_1 - x_2) \cdot y_2 + x_1 \cdot (y_1 - y_2) \in I$.
+      \\[0.2cm]
+      Nun gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+            (x_1 - x_2) \cdot y_2 + x_1 \cdot (y_1 - y_2) 
+      & = & x_1 \cdot y_2 - x_2 \cdot y_2 + x_1 \cdot y_1 - x_1 \cdot y_2 \\[0.2cm]
+      & = & x_1 \cdot y_1 - x_2 \cdot y_2
+      \end{array}
+      $
+      \\[0.2cm]
+      Also haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_1 - x_2 \cdot y_2 \in I$
+      \\[0.2cm] 
+      gezeigt. Nach Definition der Relation $\sim_I$ ist das äquivalent zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x_1 \cdot y_1 \sim_I x_2 \cdot y_2$. 
+      \\[0.2cm]
+      und das war zu zeigen. \checkmark 
+\end{enumerate}
+
+Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und ist $I$ ein
+Ideal dieses Rings, so haben wir gerade gezeigt, dass die von diesem Ideal erzeugte Relation $\sim_I$
+eine Kongruenz-Relation auf $\mathcal{R}$ ist.  Nach dem Satz über Faktor-Ringe
+(das war Satz \ref{satz:faktor_ring} auf Seite \pageref{satz:faktor_ring}) folgt nun, dass die Struktur
+\\[0.2cm]
+\hspace*{1.3cm}
+ $\mathcal{R}/I := \langle R/\!\sim_I, [0]_{\sim_I}, [1]_{\sim_I}, +, \cdot \rangle$
+\\[0.2cm]
+ein Ring ist.  In bestimmten Fällen ist diese Struktur sogar ein Körper.  Das werden wir jetzt näher
+untersuchen.
+
+\begin{Definition}[maximales Ideal]
+  Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.  Ein Ideal
+  $I$ von $\mathcal{R}$ mit $I \not= R$ ist ein \emph{maximales Ideal} genau dann, wenn für jedes andere Ideal
+  $J$ von $\mathcal{R}$ gilt:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $I \subseteq J \rightarrow J = I \vee J = R$.
+  \\[0.2cm]
+  Das Ideal ist also maximal, wenn es zwischen dem Ideal $I$ und dem Eins-Ideal $R$ keine 
+  weiteren Ideale gibt.
+\end{Definition}
+
+Der nächste Satz zeigt uns, in welchen Fällen wir mit Hilfe eines Ideals einen Körper konstruieren
+können. 
+\begin{Satz}[Faktor-Ringe maximaler Ideale sind Körper] \lb
+  Es $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und
+  $I$ sei ein maximales Ideal in $\mathcal{R}$.  Dann ist der Faktor-Ring
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathcal{R}/I := \langle R/\!\sim_I, [0]_{\sim_I}, [1]_{\sim_I}, +, \cdot \rangle$
+  \\[0.2cm]
+  ein Körper.
+\end{Satz}
+
+\proof  
+Es ist zu zeigen, dass es für jede Äquivalenz-Klasse $[a]_{\sim_I} \not= [0]_{\sim_I}$ ein
+multiplikatives Inverses, also eine Äquivalenz-Klasse $[b]_{\sim_I}$ existiert, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a]_{\sim_I} \cdot [b]_{\sim_I} = [1]_{\sim_I}$
+\\[0.2cm]
+gilt.  Nach unserer Definition des Multiplikations-Operators ``$\cdot$'' auf $R/\!\!\sim_I$ ist diese Gleichung
+äquivalent zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$[a \cdot b]_{\sim_I} = [1]_{\sim_I}$
+\\[0.2cm] 
+und nach dem Satz über die Charakterisierung der Äquivalenz-Klassen (\ref{satz:aequivalenz-klassen} auf
+Seite \pageref{satz:aequivalenz-klassen})  ist diese Gleichung genau dann erfüllt, wenn
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \cdot b \sim_I 1$
+\\[0.2cm]
+gilt.  Nach Definition der Aquivalenz-Relation $\sim_I$ können wir diese Bedingung als
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \cdot b - 1 \in I$
+\\[0.2cm]
+schreiben.  Genauso sehen wir, dass die Bedingung $[a]_{\sim_I} \not= [0]_{\sim_I}$ zu $a - 0 \not\in I$ äquivalent ist.
+Wir müssen also für alle $a \in R$ mit $a \not\in I$ ein $b \in R$ finden, so dass $a \cdot b - 1 \in I$
+gilt.
+\\[0.2cm]
+\hspace*{1.3cm}
+zu zeigen: \quad 
+$\forall a \in R:\bigl(a \not \in I \rightarrow \exists b \in R: a \cdot b - 1 \in I\bigr)$
+\hspace*{\fill} $(*)$
+\\[0.2cm]
+Wir definieren eine Menge $J$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$J := \bigl\{ a \cdot x + y \mid x \in R \wedge y \in I \bigr\}$.
+\\[0.2cm]
+Wir zeigen, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
+\begin{enumerate}
+\item Wir zeigen, dass $0 \in J$ ist.
+ 
+      Da $I$ eine Ideal ist, gilt $0 \in I$.  Setzen wir in der Definition von
+      $x := 0$ und $y := 0$, was wegen $0 \in I$ möglich ist, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $a \cdot 0 + 0 \in J$, \quad also \quad $0 \in J$.
+      \checkmark
+\item Wir zeigen, dass $J$ abgeschlossen ist unter Addition.
+
+      Es gelte $a \cdot x_1 + y_1 \in J$ und $a \cdot x_2 + y_2 \in J$ und es seien
+      $x_1,x_2 \in R$ und $y_1,y_2 \in I$.  Ofensichtlich ist dann auch $x_1 + x_2 \in R$ und
+      da $I$ unter Addition abgeschlossen ist, folgt $y_1 + y_2 \in I$.  Dann haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(a \cdot x_1 + y_1) + (a \cdot x_2 + y_2) = a \cdot (x_1 + x_2) + (y_1 + y_2) \in J$.
+      \checkmark
+\item Wir zeigen, dass $J$ mit jeder Zahl $z$ auch das zugehörige additive Inverse $-z$ enthält.
+
+      Es gelte $a \cdot x + y \in J$, wobei
+      $x \in R$ und $y \in I$ gelte.  Offensichtlich ist dann auch $-x \in R$ und
+      da mit $y$ auch $-y$ ein Element von $I$ ist, haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $-(a \cdot x + y) = a \cdot (-x) + (-y) \in J$.
+      \checkmark
+\item Wir zeigen, dass $J$ unter Multiplikation mit beliebigen Elementen des Rings abgeschlossen ist.
+
+      Es gelte $a \cdot x + y \in J$ mit $x \in R$ und $y \in J$.  Weiter sei $k \in R$.
+      Dann gilt auch $k \cdot y \in I$, denn $I$ ist ja ein Ideal. Offensichtlich gilt $k \cdot x \in R$.
+      Also haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $k \cdot (a \cdot x + y) = a \cdot (k \cdot x) + (k \cdot y) \in J$.
+      \checkmark
+\end{enumerate}
+Damit ist gezeigt, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
+Offenbar ist $J$ eine Obermenge von $I$, denn für alle $y \in I$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$y = a \cdot 0 + y \in J$, \quad also $I \subseteq J$.
+\\[0.2cm]
+Als nächstes bemerken wir, dass das Ideal $J$ von dem Ideal $I$ verschieden ist, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$a = a \cdot 1 + 0 \in J$, \quad aber \quad $a \not\in I$.
+\\[0.2cm]
+Nun ist die Voraussetzung, dass das Ideal $I$ maximal ist.  Da $J \not= I$ aber $I \subseteq J$ ist,
+kann jetzt nur noch $J = R$ gelten.  Wegen $1 \in R$ folgt also $1 \in J$.  Damit gibt es 
+ein $x \in R$ und ein $y \in I$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$1 = a \cdot x + y$
+\\[0.2cm]
+gilt.  Aus  $y \in I$ folgt $-y \in I$ und damit haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \cdot x - 1 = -y \in I$.
+\\[0.2cm]
+Setzen wir $b := x$, so haben wir damit die Formel $(*)$ nachgewiesen. \qed
+
+\exercise
+Es seien $a,b \in \mathbb{N}$ mit $0 < a < b$ und die Zahlen $a, b$ seien teilerfremd, es gelte also
+$\mathtt{ggt}(a,b) = 1$.  Zeigen Sie durch Induktion über $b \in \mathbb{N}$, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\exists k,l \in \mathbb{Z}: k \cdot a + l \cdot b = 1$
+\\[0.2cm]
+gilt.  
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Hinweis}: Im Induktions-Schritt ist es nicht sinnvoll, von $b$ auf $b+1$ zu schließen.  Statt dessen
+sollten Sie im Induktions-Schritt versuchen, die Behauptung für $b$ aus der Tatsache zu folgern,
+dass die Behauptung für sowohl für $b-a$ als auch für $a$ gilt. \exend
+
+\remark
+Beim Beweis einer Behauptung, die für natürliche Zahlen gezeigt werden soll, hilft es manchmal, die
+Behauptung zunächst für kleine Zahlen zu überprüfen, denn das liefert oft eine Idee für den allgemeinen
+Fall. 
+\pagebreak
+
+
+\exercise
+Wir betrachten den Ring der ganzen Zahlen $\mathbb{Z}$.  Es sei $p \in \mathbb{Z}$ und wir
+definieren die Menge $p\mathbb{Z}$ als
+\\[0.2cm]
+\hspace*{1.3cm}
+$p\mathbb{Z} := \{ k \cdot p \mid k \in \mathbb{Z} \}$.
+\\[0.2cm]
+Zeigen Sie, dass die Menge $p\mathbb{Z}$ genau dann ein maximales Ideal in dem Ring $\mathbb{Z}$
+ist, wenn $p$ eine Primzahl ist.
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Hinweis}: Um zu zeigen, dass für eine Primzahl $p$ die Menge $p\mathbb{Z}$ ein maximales
+Ideal ist, ist es sinnvoll anzunehmen, dass es ein Ideal $I$
+gibt, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$p\mathbb{Z} \subseteq I$ \quad und \quad $I \not= p\mathbb{Z}$
+\\[0.2cm]
+gilt.  Sie müssen zeigen, dass in diesem Fall $I = \mathbb{Z}$ ist und dazu reicht es zu zeigen,
+dass $1 \in I$ ist.  Um diesen Nachweis zu führen, betrachten Sie die
+kleinste natürliche Zahl $r \in I \backslash p\mathbb{Z}$ und wenden anschließend auf $r$ und $p$
+den in der vorhergehenden Aufgabe gezeigten Satz an. \exend 
+
+\exercise
+Zeigen Sie, dass der Faktor-Ring $\mathbb{Z}_p := \mathbb{Z}/p\mathbb{Z}$ genau dann ein Körper ist,
+wenn $p$ eine Primzahl ist.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "lineare-algebra"
+%%% End: 

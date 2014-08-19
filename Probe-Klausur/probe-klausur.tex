@@ -1,0 +1,202 @@
+\documentclass{article}
+\usepackage{german}
+\usepackage{fancyvrb}
+\usepackage[latin1]{inputenc}
+
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+
+\usepackage{a4wide}
+\usepackage{amssymb}
+\usepackage{epsfig}
+
+\setlength{\textwidth}{15cm}
+
+\newcommand{\bruch}[2]{\displaystyle\frac{#1}{#2}}
+\def\pair(#1,#2){\langle #1, #2 \rangle}
+\newcommand{\punkte}[1]{\hspace*{\fill} \mbox{(#1 Punkte)}}
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
+
+\newcounter{aufgabe}
+
+\newcommand{\exercise}{\vspace*{0.3cm}
+\stepcounter{aufgabe}
+
+\noindent
+\textbf{Aufgabe \arabic{aufgabe}}: }
+
+\newcommand{\solution}{\vspace*{0.3cm}
+
+\noindent
+\textbf{Lösung:}\ }
+
+
+\begin{document}
+
+\noindent
+{\large  Aufgaben zur Vorlesung  ``{\sl Mathematik \texttt{I}}''}
+\vspace{0.5cm}
+\exercise
+Für zwei Mengen $A$ und $B$ werde die \emph{symmetrische Differenz} $A \oplus B$ durch die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$A \oplus B := (A \cup B) \backslash (A \cap B)$
+\\[0.2cm]
+definiert.  \underline{Beweisen} Sie die folgenden Eigenschaften der symmetrischen Differenz:
+\begin{enumerate}
+\item $(A \oplus B) \oplus C = A \oplus (B \oplus C)$.
+\item $A \oplus B = A \oplus C \rightarrow B = C$.
+\end{enumerate}
+Beweisen oder widerlegen Sie die folgenden Gleichungen:
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item $A \cap (B \oplus C) = (A \cap B) \oplus (A \cap C)$.
+\item $A \cup (B \oplus C) = (A \cup B) \oplus (A \cup C)$.
+\end{enumerate}
+
+\exercise
+Beweisen Sie die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{i=1}^n i \cdot (i+1) = \frac{1}{3} \cdot n \cdot (n+1) \cdot (n+2)$.
+\\[0.2cm]
+
+
+\exercise
+Es sei $M$ eine beliebige Menge.  Beweisen Sie die folgende Behauptung: 
+\\[0.2cm]
+\hspace*{1.3cm}
+Wenn eine Relation $R \subseteq M \times M$
+transitiv ist, dann ist auch die Relation $R \circ R$ transitiv.
+
+
+\exercise
+Welche Bedingungen müssen die Zahlen $\alpha$, $\beta$, $\gamma$ und $\delta$ erfüllen,
+damit das Gleichungssystem 
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[c]{lcl}
+  \alpha \cdot x + \beta  \cdot y & = & b_1  \\[0.2cm]
+  \gamma \cdot x + \delta \cdot y & = & b_2  
+\end{array}
+$
+\\[0.2cm]
+in den Unbekannten $x$ und $y$ für beliebige Zahlen $b_1$ und $b_2$  eine eindeutige Lösung hat?
+
+\exercise
+Bestimmen Sie alle komplexe Zahlen $z$, für die die Gleichung $z^3 = -1$ gilt.
+Machen Sie dazu den Ansatz $z = a + b \cdot i$ mit $a,b \in \mathbb{R}$ und bestimmen Sie $a$ und $b$.
+
+\exercise
+Lösen Sie die Rekurrenz-Gleichung \\[0.2cm]
+\hspace*{1.3cm} $a_{n+2} = 3 \cdot a_{n+1} -2 \cdot a_n$ \\[0.2cm]
+für die Anfangs-Bedingungen $a_0 = 0$ und $a_1 = 1$.
+
+\exercise
+Es sei $\mathcal{G} = \langle G, e, \circ \rangle$ eine kommutative Gruppe und es sei $a \in G$.
+Beweisen oder widerlegen Sie, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$U_a := \{ a \circ g \mid g \in G \}$
+\\[0.2cm]
+eine Untergruppe von $\mathcal{G}$ ist!
+
+\exercise
+Für welche Werte von $p$ und $q$ hat die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x^3 - p \cdot x - q = 0$
+\\[0.2cm]
+genau eine reelle Lösung?
+
+\pagebreak
+\exercise 
+Es sei $G := \mathbb{Q}\backslash \{1\}$.  Wir definieren auf $G$ eine Operation
+\\[0.2cm]
+\hspace*{1.3cm} $\circ: G \times G \rightarrow G$ 
+\\[0.2cm]
+durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$a \circ b := a + b - a \cdot b$.
+\\[0.2cm]
+Zeigen Sie, dass die Struktur $\langle G, 0, \circ \rangle$ eine Gruppe ist.
+
+
+
+\exercise Es sei $\langle G, e, \cdot \rangle$ eine kommutative Gruppe, für welche die Menge $G$
+endlich ist.  Weiter sei $n := \textsl{card}(G)$, $G$ hat also die Form
+\\[0.2cm]
+\hspace*{1.3cm} $G = \{ a_1, a_2, \cdots, a_n \}$
+\\[0.2cm]
+Zeigen Sie, dass
+\\[0.2cm]
+\hspace*{1.3cm} $g^n = e$ \quad für alle $g \in G$ gilt.
+\\[0.2cm]
+\textbf{Hinweis 1}: Betrachten Sie die beiden Produkte
+\\[0.2cm]
+\hspace*{1.3cm} 
+$p_1 := a_1 \cdot a_2 \cdot {\dots} \cdot a_n$ \quad und \quad
+$p_2 := (a_1 \cdot g) \cdot (a_2 \cdot g) \cdot {\dots} \cdot (a_n \cdot g)$ 
+\\[0.2cm]
+und zeigen Sie, dass die beiden Produkte gleich sind.  Überlegen Sie sich dazu, wie die
+Menge der Faktoren des Produkts $p_2$ aus der  Menge der Faktoren des Produkts $p_1$
+hervorgeht.
+\vspace{0.2cm}
+
+\noindent
+\textbf{Hinweis 2}: In der Vorlesung wurde gezeigt, dass für eine endliche Menge $M$ jede
+injektive Funktion $f:M \rightarrow M$ auch surjektiv ist.
+
+
+\exercise
+Zeigen Sie mit vollständiger Induktion:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall n \in \mathbb{N}: 
+ \Bigl( n \geq 8 \rightarrow \exists a, b \in \mathbb{N}: 3 \cdot a + 5 \cdot b = n\Bigr)
+$.
+
+\exercise
+Es seien $\langle G, 1, \cdot \rangle$ und $\langle F, 0, + \rangle$ zwei kommutative Gruppen.
+Weiter sei eine Abbildung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi : G \rightarrow F$ 
+\\[0.2cm]
+gegeben, die folgende Eigenschaften hat:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\varphi(1) = 0$, \quad $\varphi(a^{-1}) = -\varphi(a)$, 
+\quad und \quad $\varphi(a \cdot b) := \varphi(a) + \varphi(b)$. 
+\\[0.2cm]
+Weiter sei $U$ eine Untergruppe von $F$.
+Wir definieren auf $G$ eine Relation $=_\varphi$ durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x =_\varphi y$ \quad g.d.w. \quad $\varphi(x) - \varphi(y) \in U$.
+\\[0.2cm]
+Zeigen Sie, dass die Relation $=_\varphi$ eine Äquivalenz-Relation auf $G$ ist, die mit
+der auf $G$ definierten Operation $\cdot$ verträglich ist.
+
+\exercise
+Bestimmen Sie alle Eigenwerte und Eigenvektoren der Matrix
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}{lll}
+    1 & 1 & 1 \\
+    1 & 1 & 0 \\
+    1 & 0 & 1
+  \end{array}
+\right)
+$.
+\\[0.2cm]
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
