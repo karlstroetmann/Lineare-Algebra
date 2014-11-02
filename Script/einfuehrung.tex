@@ -1,7 +1,8 @@
 \chapter{Einführung}
 Das vorliegende Skript ist die Grundlage der Mathematik-Vorlesung des ersten Semesters.
-Gleich zu Beginn eine Warnung: Da ich diese Vorlesung gegenüber der letzten Vorlesung
-umstrukturiert habe, ist das Skript an mehreren Stellen lückenhaft.    
+Einige Kapitel und Abschnitte in diesem Skript sind mit einem ``$^*$'' versehen.  
+Der dort vorgestellte Stoff ist für die Klausur nicht relevant.  Das Skript enthält diese Abschnitte
+um eine der vielen Anwendungen der Mathematik, die Kryptologie, präsentieren zu können.
 
 \section{Motivation}
 Bevor wir uns in die Mathematik stürzen, sollten wir uns überlegen, warum wir als
@@ -15,8 +16,9 @@ Informatiker überhaupt Mathematik brauchen.
       \hspace*{1.3cm}
       $\texttt{Informatik} = \texttt{Information} + \texttt{Mathematik}$
       \\[0.2cm]
-      symbolisiert wird.  Das hat zur Folge, dass sich die Informatik an vielen Stellen
-      mathematischer Sprech- und Denkweisen bedient.  Um diese verstehen zu können, ist eine 
+      symbolisiert wird.  Aufgrund der Tatsache, dass die Informatik aus der Mathematik gewachsen
+      ist, bedient sich die Informatik an vielen Stellen
+      mathematischer Sprech- und Denkweisen.  Um diese verstehen zu können, ist eine 
       Vertrautheit mit der formalen mathematischen Denkweise unabdingbar.
 \item Mathematik schult das abstrakte Denken und genau das wird in der Informatik ebenfalls
       benötigt.  Ein komplexes Sofware-System, dass von hunderten von Programmierern über Jahre
@@ -32,7 +34,7 @@ Informatiker überhaupt Mathematik brauchen.
             Rekurrenz-Gleichung
             \\[0.2cm]
             \hspace*{1.3cm}
-            $a_{n+2} = a_{n+1} + a_n$  \quad und die Anfangs-Bedingungen $a_0$ und $a_1 = 1$
+            $a_{n+2} = a_{n+1} + a_n$  \quad und die Anfangs-Bedingungen $a_0 = 0$ und $a_1 = 1$
             \\[0.2cm]
             definiert werden.  Wir können mit der oberen Rekurrenz-Gleichung sukzessive die verschiedenen
             Werte der Folge $(a_n)_n$ berechnen und finden 
@@ -106,8 +108,6 @@ Informatiker überhaupt Mathematik brauchen.
             verletzt. \\[0.2cm]
             \hspace*{1.3cm} 
             \href{http://www.ima.umn.edu/~arnold/disasters/patriot.html}{\texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/patriot.html}}.
-            \pagebreak
-
       \item Im Internet finden Sie unter \\[0.2cm]
             \hspace*{1.3cm} 
             \href{http://www.cs.tau.ac.il/~nachumd/horror.html}{\texttt{http://www.cs.tau.ac.il/\symbol{126}nachumd/horror.html}}
@@ -124,7 +124,7 @@ Informatiker überhaupt Mathematik brauchen.
       des Informatik-Studiums beschäftigen.  Obwohl sowohl die Logik als auch die Mengenlehre zur
       Mathematik gehören, werden wir uns in dieser Mathematik-Vorlesung nur mit der Mengenlehre und
       der linearen Algebra beschäftigen.  Die Behandlung der Logik erfolgt dann im Rahmen der
-      Mathematik-Vorlesung. 
+      Informatik-Vorlesung. 
 \end{enumerate}
 
 % Schließlich gibt es für Sie noch einen sehr gewichtigen Grund, sich intensiv mit Logik und
@@ -150,7 +150,7 @@ ich im Rahmen der Vorlesung behandeln werde.
       \end{enumerate}
       aufgebaut.
       Wir werden  Junktoren und Quantoren zunächst
-      als reine Abkürzungen einführen.  Im Rahmen der Informatik-Vorlesung werden wir die Bedeutung
+      als reine Abkürzungen einführen.  Im Rahmen der Logik-Vorlesung werden wir die Bedeutung
       und Verwendung von Junktoren und Quantoren weiter untersuchen.
 \item Mengenlehre
 
@@ -159,7 +159,7 @@ ich im Rahmen der Vorlesung behandeln werde.
       Grundlage an dieser Stelle für das weitere Studium unabdingbar.
 \item Beweis-Prinzipien
 
-      In der Informatiker benötigen wir im wesentlichen drei Arten von Beweisen:
+      In der Informatik benötigen wir im wesentlichen vier Arten von Beweisen:
       \begin{enumerate}
       \item Ein \emph{direkter Beweis} folgert eine zu beweisende Aussage mit Hilfe elementarer 
             logischer Schlüsse und algebraischer Umformungen.  Diese Art von Beweisen kennen Sie
@@ -180,14 +180,15 @@ ich im Rahmen der Vorlesung behandeln werde.
             Beispielsweise werden wir zeigen, dass die Summenformel
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\ds\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ \quad
+            $\ds\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ 
+            \\[0.2cm]
             für alle natürlichen Zahlen $n \in \mathbb{N}$ gilt.
       \end{enumerate}
 \item Grundlagen der Algebra
 
       Wir besprechen \emph{Gruppen}, \emph{Ringe} und \emph{Körper}.  Diese abstrakten Konzepte
       verallgemeinern  die Rechenregeln, die Sie von den reellen Zahlen kennen.  Sie bilden darüber
-      hinaus dir Grundlage für die lineare Algebra.
+      hinaus die Grundlage für die lineare Algebra.
 \item Zahlentheorie
   
       Dieses Skript enthält ein \underline{o}p\underline{tionales} Kapitel, in dem wir uns mit der mit der
@@ -238,7 +239,8 @@ wird.  Ich möchte Sie darum bitten, mir solche Fehler per Email unter der Adress
 \hspace*{1.3cm}
 \texttt{karl.stroetmann\symbol{64}dhbw-mannheim.de}
 \\[0.2cm]
-mitzuteilen.
+mitzuteilen.  Alternativ können Sie mir auch über
+\href{https://github.com}{\texttt{https://github.com}} einen \texttt{pull}-Request schicken.
 
 \section{Literaturhinweise}
 Zum Schluss dieser Einführung möchte ich noch einige Hinweise auf die Literatur geben.  Dabei möchte
