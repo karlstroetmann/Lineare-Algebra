@@ -34,7 +34,7 @@ Für den mathematisch Geübten ist diese Formel offensichtlich leichter zu versteh
 der oben angegebene Text.  Aber die Darstellung von mathematischen Zusammenhängen durch
 Formeln bietet neben der verbesserten Lesbarkeit noch zwei weitere Vorteile:
 \begin{enumerate}
-\item Formeln sind \emph{manipulierbar}, d.~h.~wir können mit Formeln \emph{rechnen}.
+\item Formeln sind \emph{manipulierbar}, d.h.~wir können mit Formeln \emph{rechnen}.
       Außerdem lassen Formeln sich aufgrund ihrer vergleichsweise einfachen Struktur auch 
       mit Hilfe von Programmen bearbeiten und analysieren.  Beim heutigen Stand der Technik ist
       es hingegegen nicht möglich, natürlichsprachlichen Text mit dem Rechner vollständig
@@ -108,7 +108,7 @@ der Reihe nach die Ingredienzen vor, die wir zum Aufbau einer Formel benötigen.
       der Funktion durch Kommata getrennt aufgelistet werden, gefolgt von einer
       schließenden Klammer, ist der ``Normalfall''.  Diese Notation wird auch als \emph{Präfix-Notation}
       bezeichnet. Bei einigen zweistelligen Funktions-Zeichen hat es sich aber eingebürgert, diese in einer
-      \emph{Infix-Notation} darzustellen, d.~h.~solche Funktions-Zeichen werden zwischen
+      \emph{Infix-Notation} darzustellen, d.h.~solche Funktions-Zeichen werden zwischen
       die Terme geschrieben. In der Mathematik liefern die  Funktions-Zeichen ``$+$'',
       ``$-$'', ``$\cdot $'' und ``$/$'' hierfür Beispiele.  Schließlich gibt es noch Funktions-Zeichen,
       die auf ihr Argument folgen.  Ein Beispiel dafür ist das Zeichen ``\texttt{!}'' zur
@@ -119,6 +119,22 @@ der Reihe nach die Ingredienzen vor, die wir zum Aufbau einer Formel benötigen.
       denn für die Fakultät einer Zahl $n$ hat sich in der Mathematik
       die Schreibweise ``$n!$'' eingebürgert.  Eine solche Notation wird als \emph{Postfix-Notation}
       bezeichnet.
+
+      Benutzen wir Funktions-Zeichen nicht nur in der Präfix-Notation, sondern auch als Infix- oder
+      Postfix-Operatoren, so müssen wir zusätzlich die \emph{Bindungsstärke} und
+      \emph{Assoziativität} dieser Operatoren festlegen.  Beispielsweise ist die Bindungsstärke des
+      Operators ``$\cdot$'' in der üblichen Verwendung als Infix-Operator höher als die
+      Bindungsstärke des Operators ``$+$''.  Daher wird der Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $1 + 2 \cdot 3$ \quad implizit in der Form \quad $1 + (2 \cdot 3)$
+      \\[0.2cm]
+      geklammmert.  Weiter ist der Operator ``\texttt{-}'' links-assoziativ.  Daher wird der Ausdruck
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $1 - 2 - 3$ \quad in der Form \quad $(1 - 2) - 3$
+      \\[0.2cm]
+      berechnet.
 \item \emph{Prädikate}
 
       Prädikate stellen zwischen verschiedenen Objekten eine Beziehung her.  Ein wichtiges Prädikat

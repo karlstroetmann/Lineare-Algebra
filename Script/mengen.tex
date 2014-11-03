@@ -7,7 +7,7 @@ Mathematikern zunehmends Kopfzerbrechen bereitete.
 Begründet wurde die Mengenlehre in wesentlichen Teilen von Georg Cantor (1845 -- 1918).
 Die erste Definition des Begriffs der Menge lautete etwa wie folgt \cite{cantor:1895}:
 \begin{center}
-\emph{Eine \emph{Menge} ist eine \emph{wohldefinierte} Ansammlung von \emph{Elementen}.}    
+Eine \emph{Menge} ist eine \emph{wohldefinierte} Ansammlung von \emph{Elementen}.
 \end{center}
 Das Attribut ``\emph{wohldefiniert}'' drückt dabei aus, dass wir für 
 eine vorgegebene Menge $M$ und ein Objekt $x$ stets klar sein muss, ob das Objekt $x$
@@ -138,11 +138,10 @@ Mengen von Zahlen:
       $\Bigl\{ \bruch{p}{q} \mid\, p \in \mathbb{Z} \wedge q \in \mathbb{N} \Bigr\}$
 \item $\mathbb{R}$: Menge der reellen Zahlen.
 
-      Wie die reellen Zahlen tatsächlich konstruiert werden, kann ich Ihnen erst im
-      zweiten Semester zeigen.
+      Eine mathematisch saubere Definition der reellen Zahlen erfordert einiges an Aufwand.  Wir
+      werden die Konstruktion der rellen Zahlen im zweiten Semester kennenlernen.
 \end{enumerate}
-In der Mathematik wird gezeigt, wie sich diese Mengen aus der Menge der natürlichen Zahlen
-erzeugen lassen.
+
 
 \section{Das Auswahl-Prinzip}
 Das \emph{Auswahl-Prinzip} ist eine Abschwächung des Komprehensions-Axiom.  Die Idee
@@ -196,7 +195,7 @@ von $M$ verstehen.  Wir schreiben $2^M$ für die Potenz-Menge von $M$.  Dann gilt
 \example
 Wir bilden  die Potenz-Menge der Menge $\{1,2,3\}$.  Es gilt: \\[0.2cm]
 \hspace*{1.3cm} $2^{\{1,2,3\}} = \big\{ \{\},\, \{1\}, \, \{2\},\, \{3\},\, \{1,2\}, \, \{1,3\}, \, \{2,3\},\, \{1,2,3\}\big\}$. \\[0.2cm]
-Diese Menge hat $8 = 2^3$ Elemente.  Allgemein kann durch Induktion über die Anzahl der
+Diese Menge hat $8 = 2^3$ Elemente.  Allgemein kann durch \emph{Induktion} über die Anzahl der
 Elemente der Menge $M$ gezeigt werden, dass die 
 Potenz-Menge einer Menge $M$, die aus $m$ verschiedenen Elementen besteht, insgesamt $2^m$ 
 Elemente enthält.  Bezeichnen wir die Anzahl der Elemente einer endlichen Menge mit
@@ -217,7 +216,7 @@ Formal kann die Vereinigung als
 definiert werden.
 
 
-\example: 
+\example 
 Ist  $M = \{1,2,3\}$ und $N = \{2,5\}$, so gilt: \\[0.2cm]
 \hspace*{1.3cm} $\{1,2,3\} \cup \{2,5\} = \{1,2,3,5\}$.  \eox
 
@@ -246,7 +245,7 @@ $M$ und $N$ als die Menge aller Elemente, die sowohl in $M$ als auch in $N$
 auftreten.  Wir bezeichen den Schnitt von $M$ und $N$ mit $M \cap N$.
 Formal können wir $M \cap N$ als 
 \\[0.2cm]
-\hspace*{1.3cm} $M \cap N := \{ x \mid x \in M \wedge x \in N \}$
+\hspace*{1.3cm} $M \cap N := \{ x \mid x \in M \wedge x \in N \}$.
 \\[0.2cm]
 definieren.
 
@@ -283,7 +282,7 @@ definiert werden. In der Literatur findet sich für die obige Menge auch die Schr
 \[ f(M) = \bigl\{ f(x) \;|\; x \in M \}. \]
 
 \example
-Die Menge $Q$ aller Quadrat-Zahlen kann als 
+Die Menge $Q$ aller positiven Quadrat-Zahlen kann als 
 \[ Q := \{ y \mid \exists x \in \mathbb{N}: y = x^2\} \]
 definiert werden.  Alternativ können wir auch 
 \[ Q = \bigl\{ x^2 \mid x \in \mathbb{N} \bigr\} \]
@@ -336,9 +335,8 @@ postulieren wir das folgende \emph{Extensionalitäts-Axiom} für Mengen:
 Mathematisch können wir diesen Sachverhalt durch die Formel
 \\[0.2cm]
 \hspace*{1.3cm} $M = N \;\leftrightarrow\; \forall x: (x \in M \leftrightarrow x \in N)$ 
-ausdrücken.
 \\[0.2cm]
-Eine wichtige Konsequenz aus diesem Axiom ist die Tatsache, dass die Reihenfolge, mit der
+ausdrücken.  Eine wichtige Konsequenz aus diesem Axiom ist die Tatsache, dass die Reihenfolge, mit der
 Elemente in einer Menge aufgelistet werden, keine Rolle spielt.  Beispielsweise gilt \\[0.2cm]
 \hspace*{1.3cm} $\{1,2,3\} = \{3,2,1\}$, \\[0.2cm]
 denn beide Mengen enthalten dieselben Elemente.
@@ -393,7 +391,16 @@ Wir haben die folgende Kette von Äquivalenzen: \\[0.3cm]
 \leftrightarrow & (x \in K \backslash M) \;\wedge\; (x \in K \backslash N) \\
 \leftrightarrow & x \in (K \backslash M) \cap (K \backslash N). \\
 \end{array}$ \\[0.3cm]
-Die übrigen Gleichungen können nach dem selben Schema hergeleitet werden.
+Wir haben beim dritten Schritt dieser Äquivalenz-Kette ausgenutzt, dass eine
+Disjunktion der Form $F \vee G$ genau dann falsch ist, wenn sowohl $F$ als auch $G$ falsch ist,
+formal gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\neg (F \vee G) \leftrightarrow \neg F \wedge \neg G$.
+\\[0.2cm]
+Wir werden diese Äquivalenz im Rahmen der Logik-Vorlesung noch formal beweisen.
+
+Die übrigen der oben aufgeführten Gleichungen können nach dem selben Schema hergeleitet werden.
 
 \exercise
 Beweisen Sie die folgenden Gleichungen:
@@ -412,8 +419,6 @@ die Formel $\neg\; x \in M$, formal: \\[0.2cm]
 \hspace*{1.3cm} $x \notin M \;\stackrel{de\!f}{\Longleftrightarrow}\; \neg\; x \in M$.
 \\[0.2cm]
 Eine analoge Notation verwenden wir auch für das Gleichheitszeichen:
-\\[0.2cm]
-\hspace*{1.3cm} 
 $x \not= y \;\stackrel{de\!f}{\Longleftrightarrow}\; \neg\; (x = y)$.
 
 \section{Binäre Relationen}
@@ -532,13 +537,13 @@ dass $\langle x, y \rangle \in R$ gilt.
 Eine binäre Relation $R \subseteq M \times N$ heißt \emph{links-total auf $M$}, wenn \\[0.2cm]
 \hspace*{1.3cm} $\forall x \in M \colon \exists y \in N \colon \pair(x,y) \in R$ \\[0.2cm]
 gilt. Dann gibt es für alle $x$ aus der Menge $M$ ein $y$ aus der Menge $N$, so dass
-$\pair(x,y)$ in der Menge  $R$ liegt.  Die Relation $R_3$ aus dem obigen Beispiel ist
+$\pair(x,y)$ in der Menge  $R$ liegt.  Die Relation $R_3$ aus dem letzten Beispiel ist
 links-total, denn jedem Element aus $M$ wird durch $R_3$ ein Element aus $N$ zugeordnet.
 
 Analog nennen wir eine binäre Relation $R \subseteq M \times N$  \emph{rechts-total auf $N$}, wenn \\[0.2cm]
 \hspace*{1.3cm} $\forall y \in N \colon \exists x \in M \colon \pair(x,y) \in R$ \\[0.2cm]
 gilt. Dann gibt es für alle $y$ aus der Menge $N$ ein $x$ aus der Menge $M$, so dass
-$\pair(x,y)$ in der Menge  $R$ liegt.  Die Relation $R_3$ aus dem obigen Beispiel ist
+$\pair(x,y)$ in der Menge  $R$ liegt.  Die Relation $R_3$ aus dem letzten Beispiel ist
 nicht rechts-total, denn dem Element $5$ aus $N$ wird durch $R_3$ kein Element aus $M$
 zugeordnet, denn für alle $\pair(x,y) \in R_3$ gilt $y \not= 5$.
 
@@ -622,21 +627,25 @@ $R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon(\pair(x,y) \in R \w
 Offenbar gilt $R \circ Q \subseteq L \times N$.
 Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \emph{Komposition} von
 $Q$ und $R$ bezeichnet.  In der Theorie der Datenbanken werden Sie dem relationalen Produkt
-wiederbegegnen.  
+wiederbegegnen, denn der 
+\href{http://en.wikipedia.org/wiki/Join_(SQL)}{\emph{Join}-Operator}, der in
+Datenbankabfrage-Sprachen wie 
+\href{http://en.wikipedia.org/wiki/SQL}{\textsc{Sql}} benutzt wird, ist eine Verallgemeinerung des
+relationalen Produkts.
 \vspace{0.2cm}
 
-\noindent
-\textbf{Beispiel}: 
+\example
 Es sei $L = \{1,2,3\}$, $M = \{4,5,6\}$ und $N = \{7,8,9\}$.  Weiter seien die Relationen
 $Q$ und $R$ wie folgt gegeben: \\[0.2cm]
 \hspace*{1.3cm} $R = \{ \pair(1,4), \pair(1,6), \pair(3,5) \}$ \quad und \quad
                 $Q = \{ \pair(4,7), \pair(6,8), \pair(6,9) \}$. \\[0.2cm]
 Dann gilt \\[0.2cm]
-\hspace*{1.3cm} $R \circ Q = \{ \pair(1,7), \pair(1,8), \pair(1,9) \}$.
+\hspace*{1.3cm} $R \circ Q = \{ \pair(1,7), \pair(1,8), \pair(1,9) \}$. \eox
 \vspace{0.2cm}
 
 
 \noindent
+\textbf{Behauptung}:
 Ist $R \subseteq L \times M$ eine funktionale Relation auf $L$ und 
 ist $Q \subseteq M \times N$ eine funktionale Relation auf $M$, so ist auch 
 $R \circ Q$ eine funktionale Relation auf $L$ und die Funktion $f_{R \circ Q}$
@@ -644,7 +653,11 @@ kann wie folgt aus den Funktionen $f_R$ und $f_Q$ berechnet werden:
 \\[0.2cm]
 \hspace*{1.3cm}
 $f_{R \circ Q}(x) = f_Q\bigl(f_R(x)\bigr)$.
-\\[0.2cm]
+
+
+\exercise
+Beweisen Sie diese Behauptung! \eox
+
 
 \noindent
 \textbf{Bemerkung}: In einigen Lehrbüchern wird das relationale Produkt, 
@@ -669,8 +682,7 @@ definiert ist, die Gleichung
 $\textsl{graph}(g \circ f) = R \circ Q = \textsl{graph}(g) \circ \textsl{graph}(f)$.
 \\[0.2cm]
  Die von uns verwendete Definition hat den Vorteil, dass später die Berechnung des transitiven
-Abschlusses einer Relation intuitiver wird.  \qed
-
+Abschlusses einer Relation intuitiver wird.  \eox
 
 
 \example
@@ -722,11 +734,7 @@ gegeben:
 \hline
   \end{tabular} 
 \end{center}
-Diese Relation könnte dann zur Rechnungsstellung weiter verwendet werden. \qed
-
-\noindent
-\textbf{Bemerkung}: In der Theorie der Datenbanken wird der Begriff der Komposition zweier
-Relationen zu dem Begriff des \emph{Joins} verallgemeninert.
+Diese Relation könnte dann zur Rechnungsstellung weiter verwendet werden. \eox
 
 
 \subsection{Eigenschaften des relationalen Produkts}
@@ -876,28 +884,31 @@ erbracht. \hspace*{\fill} $\Box$
 \vspace{0.2cm}
 
 \exercise
-Zeigen Sie, dass die Formel
-\\[0.2cm]
-\hspace*{1.3cm}  $R \circ (Q_1 \cup Q_2) = (R \circ Q_1) \cup (R \circ Q_2)$, 
-\\[0.2cm]
-richtig ist.  \exend
-\vspace{0.3cm}
+Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $R_1,R_2 \subseteq N \times L$. 
+\begin{enumerate}
+\item Beweisen oder widerlegen Sie die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}  $R \circ (Q_1 \cup Q_2) = (R \circ Q_1) \cup (R \circ Q_2)$.
+\item Beweisen oder widerlegen Sie die Behauptung 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $R \circ (Q_1 \cap Q_2) = (R \circ Q_1) \cap (R \circ Q_2)$. \eox
+\end{enumerate}
 
-Interessant ist noch zu bemerken, dass für den Schnitt von Relationen
-und dem Kompositions-Operator kein Distributivgesetz gilt, die Gleichung
+\remark
+Im Folgenden weisen wir dem Operator $\circ$ eine höhere Priorität zu als den Operatoren $\cap$ und
+$\cup$.  Dadurch lässt sich dann ein Gleichung wie 
 \\[0.2cm]
-\hspace*{1.3cm}
-$(R_1 \cap R_2) \circ Q = R_1 \circ Q \cap R_2 \circ Q$
+\hspace*{1.3cm}  
+$R \circ (Q_1 \cup Q_2) = (R \circ Q_1) \cup (R \circ Q_2)$.
 \\[0.2cm]
-ist im Allgemeinen falsch.  Um diese Behauptung zu belegen, benötigen wir ein Gegenbeispiel.
-Dazu definieren wir die Relationen $R_1$, $R_2$ und $Q$ wie folgt: \\[0.2cm]
-\hspace*{1.3cm} $R_1 := \{ \pair(1,2) \}$, \quad $R_2 := \{ \pair(1,3) \}$ \quad und \quad
-                $Q = \{ \pair(2,4), \pair(3,4) \}$. \\[0.2cm]
-Dann gilt \\[0.2cm]
-\hspace*{1.3cm} $R_1 \circ Q = \{ \pair(1,4) \}$, \quad $R_2 \circ Q = \{ \pair(1,4) \}$, \quad also
-                $R_1 \circ Q \cap R_2 \circ Q = \{ \pair(1,4) \}$, \\[0.2cm]
-aber andererseits haben wir \\[0.2cm]
-\hspace*{1.3cm} $(R_1 \cap R_2) \circ Q  = \emptyset \circ Q = \emptyset \not= \{\pair(1,4) \} = R_1 \circ Q  \cap R_2 \circ Q$. 
+einfacher als
+\\[0.2cm]
+\hspace*{1.3cm}  
+$R \circ (Q_1 \cup Q_2) = R \circ Q_1 \cup R \circ Q_2$
+\\[0.2cm]
+schreiben. \eox
+
 
 \subsection{Identische Relation} 
 Ist $M$ eine Menge, so definieren wir die \emph{identische Relation} $\id_M \subseteq M \times M$
@@ -924,7 +935,7 @@ Nun ist $\pair(x,y) \in \id_M$ genau dann, wenn $x = y$ ist, also gilt
 Es gilt die folgende Äquivalenz
 \[ \bigl( \exists y: x = y \wedge \pair(y,z) \in R \bigr) \leftrightarrow \pair(x,z) \in R. \]
 Diese Äquivalenz ist leicht einzusehen:  Falls $\exists y: x = y \wedge \pair(y,z) \in R$
-gilt, so muss dass $y$ dessen Existenz gefordert wird, den Wert $x$ haben und dann gilt
+gilt, so muss das $y$ dessen Existenz gefordert wird, den Wert $x$ haben und dann gilt
 natürlich auch $\pair(x,z) \in R$.  Gilt andererseits $\pair(x,z) \in R$, so definieren
 wir $y := x$.  Für das so definierte $y$ gilt offensichtlich 
 $x = y \wedge \pair(y,z) \in R$.  Unter Verwendung der oberen Äquivalenz haben wir 
@@ -1007,8 +1018,10 @@ berücksichtigen, denn dann hat die Inklusions-Bedingung die Form
 \[ \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \subseteq
    \bigl\{ \pair(x,y) \mid \pair(x,y) \in R \bigr\}. \]
 Nach der Definition der Teilmengen-Beziehung ist diese Bedingung gleichwertig zu der Formel
-\[ \forall x, y \in M \colon \bigl(\pair(x,y) \in R \rightarrow\pair(y,x) \in R\bigr). 
-   \hspace*{6.6cm} \Box \]
+\[ \forall x, y \in M \colon \bigl(\pair(y,x) \in R \rightarrow\pair(x,y) \in R\bigr). 
+\]
+Vertauschen wir hier die Rollen der Variablen $x$ und $y$, so ist dies gerade die Bedingung, dass
+die Relation $R$ symmetrisch ist. \qed
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times M$  ist \emph{anti-symmetrisch} falls gilt: \\[0.2cm]
@@ -1023,23 +1036,28 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
 
 \noindent
 \textbf{Beweis}:
-Wir nehmen zunächst an, dass $R$ anti-symmetrisch ist und folglich
-\[ \forall x, y \in M \colon \pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y \]
-gilt und zeigen, dass aus dieser Voraussetzung die Inklusions-Beziehung
-$R \cap R^{-1} \subseteq \id_{M}$ folgt.  Sei also $\pair(x,y) \in R \cap R^{-1}$.
-Dann gilt einerseits $\pair(x,y) \in R$ und andererseits folgt aus $\pair(x,y) \in R^{-1}$,
-dass auch $\pair(y,x) \in R$ ist.  Dann folgt aber aus der Voraussetzung sofort $x=y$
-und das impliziert $\pair(x,y) \in \id_M$, womit $R \cap R^{-1} \subseteq \id_{M}$ 
-gezeigt ist.
+\begin{enumerate}
+\item[``$\Rightarrow$'':]
+      Wir nehmen zunächst an, dass $R$ anti-symmetrisch ist und folglich
+      \[ \forall x, y \in M \colon \pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y \]
+      gilt und zeigen, dass aus dieser Voraussetzung die Inklusions-Beziehung
+      $R \cap R^{-1} \subseteq \id_{M}$ folgt.  Sei also $\pair(x,y) \in R \cap R^{-1}$.
+      Dann gilt einerseits $\pair(x,y) \in R$ und andererseits folgt aus $\pair(x,y) \in R^{-1}$,
+      dass auch $\pair(y,x) \in R$ ist.  Dann folgt aber aus der Anti-Symmetrie von $R$ sofort $x=y$
+      und das impliziert $\pair(x,y) \in \id_M$, womit $R \cap R^{-1} \subseteq \id_{M}$ 
+      gezeigt ist.
+\item[``$\Leftarrow$'':]
+      Wir nehmen nun an, dass $R \cap R^{-1} \subseteq \id_{M}$ gilt und zeigen, dass daraus
+      die Gültigkeit von 
+      \[ \forall x, y \in M \colon \pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y \]
+      folgt.  Seien also $x,y \in M$ und es gelte $\pair(x,y) \in R$ und $\pair(y,x) \in R$.
+      Wir müssen zeigen, dass daraus $x=y$ folgt.  Aus $\pair(y,x) \in R$ folgt 
+      $\pair(x,y) \in R^{-1}$.  Also gilt $\pair(x,y) \in R \cap R^{-1}$.
+      Aus der Inklusions-Beziehung $R \cap R^{-1} \subseteq \id_{M}$ folgt dann
+      $\pair(x,y) \in \id_M$ und daraus folgt sofort $x = y$. \hspace*{\fill}
+      \qed
+\end{enumerate}
 
-Wir nehmen nun an, dass $R \cap R^{-1} \subseteq \id_{M}$ gilt und zeigen, dass daraus
-die Gültigkeit von 
-\[ \forall x, y \in M \colon \pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y \]
-folgt.  Seien also $x,y \in M$ und es gelte $\pair(x,y) \in R$ und $\pair(y,x) \in R$.
-Wir müssen zeigen, dass daraus $x=y$ folgt.  Aus $\pair(y,x) \in R$ folgt 
-$\pair(x,y) \in R^{-1}$.  Also gilt $\pair(x,y) \in R \cap R^{-1}$.
-Aus der Inklusions-Beziehung $R \cap R^{-1} \subseteq \id_{M}$ folgt dann
-$\pair(x,y) \in \id_M$ und daraus folgt sofort $x = y$. \hspace*{\fill} $\Box$
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times M$  ist \emph{transitiv} falls gilt: \\[0.2cm]
@@ -1054,21 +1072,23 @@ $R \circ R \subseteq R$ ist.
 \end{Satz}
 
 \noindent
-\textbf{Beweis}:  Wir nehmen zunächst an, dass $R$ transitiv ist und damit
-\[ \forall x, y, z \in M \colon \pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R \]
-gilt und zeigen, dass daraus $R \circ R \subseteq R$ folgt.
-Sei also $\pair(x,z) \in R \circ R$.  Nach Definition des relationalen Produkts gibt es
-dann ein $y$, so dass $\pair(x,y) \in R$ und $\pair(y,z) \in R$ gilt.
-Nach Voraussetzung gilt jetzt $\pair(x,z) \in R$ und das war zu zeigen.
-
-Wir nehmen nun an, dass die Inklusion $R \circ R \subseteq R$ gilt und zeigen, dass daraus
-\[ \forall x, y, z \in M \colon \pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R \]
-folgt.  Seien also $x,y,z \in M$ mit $\pair(x,y) \in R$ und $\pair(y,z) \in R$ gegeben.
-Nach Definition des relationalen Produkts gilt dann $\pair(x,z) \in R \circ R$ und aus
-der Voraussetzung $R \circ R \subseteq R$ folgt  $\pair(x,z) \in R$. \hspace*{\fill} $\Box$
-\vspace*{0.2cm}
-
-
+\textbf{Beweis}: 
+\begin{enumerate}
+\item[``$\Rightarrow$'':] 
+      Wir nehmen zunächst an, dass $R$ transitiv ist und damit
+      \[ \forall x, y, z \in M \colon \pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R \]
+      gilt und zeigen, dass daraus $R \circ R \subseteq R$ folgt.
+      Sei also $\pair(x,z) \in R \circ R$.  Nach Definition des relationalen Produkts gibt es
+      dann ein $y$, so dass $\pair(x,y) \in R$ und $\pair(y,z) \in R$ gilt.
+      Da $R$ transitiv ist, gilt jetzt $\pair(x,z) \in R$ und das war zu zeigen.
+\item[``$\Leftarrow$'':]
+      Wir nehmen nun an, dass die Inklusion $R \circ R \subseteq R$ gilt und zeigen, dass daraus
+      \[ \forall x, y, z \in M \colon \pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R \]
+      folgt.  Seien also $x,y,z \in M$ mit $\pair(x,y) \in R$ und $\pair(y,z) \in R$ gegeben.
+      Nach Definition des relationalen Produkts gilt dann $\pair(x,z) \in R \circ R$ und aus
+      der Voraussetzung $R \circ R \subseteq R$ folgt  $\pair(x,z) \in R$. 
+\qed
+\end{enumerate} 
 
 \noindent
 \textbf{Beispiele}:  In den ersten beiden Beispielen sei $M = \{1,2,3\}$.
@@ -1111,10 +1131,12 @@ transitiven Relation erweitern.  Dazu definieren wir für alle $n \in \mathbb{N}_
 Potenzen $R^n$ durch Induktion über $n$.
 \begin{enumerate}
 \item Induktions-Anfang: $n= 0$.  Wir setzen \\[0.2cm]
-      \hspace*{1.3cm} $R^0 := \id_M$
+      \hspace*{1.3cm} $R^0 := \id_M$.
 \item Induktions-Schritt: $n \rightarrow n + 1$. Nach Induktions-Voraussetzung ist $R^n$
-      bereits definiert. Daher können wir $R^{n+1}$ definieren als \\[0.2cm]
-      \hspace*{1.3cm} $R^{n+1} = R \circ R^n$.
+      bereits definiert. Daher können wir $R^{n+1}$ als \\[0.2cm]
+      \hspace*{1.3cm} $R^{n+1} = R \circ R^n$
+      \\[0.2cm]
+      definieren.
 \end{enumerate}
 Wir benötigen später das folgende Potenz-Gesetz:  Für beliebige 
 natürliche Zahlen $k,l \in \mathbb{N}_0$ gilt:
