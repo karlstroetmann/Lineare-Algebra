@@ -591,7 +591,7 @@ Rechts-Eindeutigkeit von $R$ folgt dann, dass dieses $y$ eindeutig bestimmt ist.
 Ist umgekehrt eine Funktion \mbox{$f:M \rightarrow N$} gegeben, so können wir dieser Funktion
 eine Relation $\textsl{graph}(f) \subseteq M \times N$ zuordnen, indem wir definieren: 
 \[ \textsl{graph}(f) := \bigl\{ \pair(x,f(x)) \mid  x\in M \bigr\}. \]
-Die so definierte Relation $\textsl{graph}(f)$ ist links-total, denn die Funktion $f$
+Die so definierte Relation $\textsl{graph}(f)$ ist links-total auf $M$, denn die Funktion $f$
 berechnet ja für jedes $x \el M$ ein Ergebnis und die Relation ist rechts-eindeutig,
 denn die Funktion berechnet für jedes Argument immer nur ein Ergebnis. \eox
 
@@ -638,9 +638,9 @@ Zu einer  Relation $R \subseteq M \times N$ definieren wir die \emph{inverse} Re
 $R^{-1} \subseteq N \times M$ wie folgt: \\[0.2cm]
 \hspace*{1.3cm} $R^{-1} := \bigl\{ \pair(y,x) \mid \pair(x,y) \in R  \bigr\}$. \\[0.2cm]
 Aus dieser Definition folgt sofort, dass $R^{-1}$ rechts-eindeutig ist genau dann, wenn
-$R$ links-eindeutig ist.  Außerdem ist $R^{-1}$ links-total genau dann, wenn $R$
-rechts-total ist.  Ist eine Relation sowohl links-eindeutig als auch rechts-eindeutig und
-außerdem sowohl links-total als auch rechts-total, so nennen wir sie auch \emph{bijektiv}.
+$R$ links-eindeutig ist.  Außerdem ist $R^{-1}$ links-total auf $N$ genau dann, wenn $R$
+rechts-total auf $N$ ist.  Ist eine Relation sowohl links-eindeutig als auch rechts-eindeutig und
+außerdem sowohl links-total auf $M$ als auch rechts-total auf $N$, so nennen wir sie auch \emph{bijektiv}.
 In diesem Fall lässt sich neben der Funktion
 $f_R$ auch eine Funktion $f_{R^{-1}}$ definieren.  Die Definition der letzten Funktion
 lautet ausgeschrieben: \\[0.2cm]
