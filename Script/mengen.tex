@@ -1135,14 +1135,26 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
 \end{enumerate}
 
 \exercise
-Eine Relation $R \subseteq M \times M$ ist \emph{asymmetrisch} genau dann, wenn $R$ nicht
-symmetrisch ist.  
 \begin{enumerate}
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
-      anti-symmetrisch, aber nicht asymmetrisch ist.
+      sowohl anti-symmetrisch als auch symmetrisch ist.
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
-      asymmetrisch, aber nicht anti-symmetrisch ist. \eox
+      weder anti-symmetrisch noch symmetrisch ist. \eox
 \end{enumerate}
+
+\remark
+In der Literatur finden Sie noch den Begriff der \emph{Asymmetrie}.  Dort wird eine Relation 
+$R \subseteq M^2$ als \emph{asymmetrisch} definiert, wenn 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x, y \in M: \bigl(\pair(x,y) \in R \rightarrow \pair(y,x) \not\in R \bigr)$
+\\[0.2cm]
+gilt.  Beachten Sie, dass der Begriff der \emph{Asymmetrie} \underline{nicht} die Negation des Begriffs der
+\emph{Symmetrie} ist:  Zwar kann eine symmetrische Relation nicht asymmetrisch sein, aber es gibt
+Relationen, die weder asymmetrisch noch symmetrisch sind.  In dieser Vorlesung spielt der Begriff
+der \emph{Asymmetrie} keine Rolle.  Für Sie reicht es zu wissen, dass \emph{Anti-Symmetrie} und
+\emph{Asymmetrie} zwei verschiedene Begriffe sind.
+\eox
 
 \begin{Definition}[transitiv]
 Eine Relation $R \subseteq M \times M$  ist \emph{transitiv} falls gilt: \\[0.2cm]
@@ -1284,7 +1296,6 @@ Potenzen $R^n$ durch Induktion über $n$.
   wie folgt definiert: \\[-0.1cm]
   \hspace*{1.3cm} $\bigcup\limits_{i=1}^{\infty} A_n = A_1 \cup A_2 \cup A_3 \cup \cdots $. \eox
 \end{Definition}
-\pagebreak
 
 \begin{Satz}
 Es sei $M$ eine Menge und $R \subseteq M \times M$ eine binäre Relation auf $M$.
@@ -1302,7 +1313,7 @@ Dann hat die oben definierte Relation $R^+$ die folgenden Eigenschaften:
 \textbf{Beweis}:
 \begin{enumerate}
 \item Wir zeigen zunächst, dass $R^+$ transitiv ist. Dazu müssen wir die Gültigkeit der Formel
-      \[ \forall x, y, z: \pair(x,y) \in R^+ \wedge \pair(y,z) \in R^+ \rightarrow \pair(x,z) \in R^+ \]
+      \[ \forall x, y, z: \bigl(\pair(x,y) \in R^+ \wedge \pair(y,z) \in R^+ \rightarrow \pair(x,z) \in R^+\bigr) \]
 nachweisen.  Wir nehmen also an, dass $\pair(x,y) \in R^+$ und $\pair(y,z) \in R^+$
 gilt und zeigen, dass aus dieser Voraussetzung auf $\pair(x,z) \in R^+$ geschlossen
 werden kann.  Nach Definition von $R^+$ haben wir 
@@ -1636,6 +1647,7 @@ Ist $R \subseteq M \times M$ eine Äquivalenz-Relation, so gilt:
 \item $\forall x, y \el M \colon \bigl(\neg x \mathop{R} y \rightarrow [x]_R \cap [y]_R = \emptyset\bigr)$.
 \end{enumerate}
 \end{Satz}
+\pagebreak
 
 \remark
 Da für $x,y\el M$ entweder $x \mathop{R} y$ oder $\neg (x \mathop{R} y)$ gilt, zeigen die
@@ -1644,7 +1656,6 @@ oder disjunkt sind:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x, y \el M: \bigl([x]_R = [y]_R \vee [x]_R \cap [y]_R = \emptyset\bigr)$. \eox
-\pagebreak
 
 \proof
 Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
@@ -1803,7 +1814,6 @@ $R := \bigl\{ \pair(x,y) \in M \times M \mid \exists K \in \mathcal{P}: \bigl(x 
 \\[0.2cm]
 so ist $R$ eine Äquivalenz-Relation auf $M$.
 \end{Satz}
-\pagebreak
 
 \proof
 Wir haben zu zeigen dass die Relation $R$ reflexiv, symmetrisch und
@@ -1888,6 +1898,7 @@ transitiv ist.
       \qed
 \end{enumerate}
 \pagebreak
+
 
 \section{Partielle und totale Ordnungen}
 Eine Relation $R \subseteq M \times M$  ist eine 
