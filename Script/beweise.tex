@@ -20,9 +20,9 @@ sind algebraische Umformungen und Fallunterscheidungen.  Wir geben ein einfaches
 direkten Beweis, benötigen dafür aber zunächst noch eine Definition.
 
 
-\begin{Definition}[Pythagoräische Tripel] \hspace*{\fill} \\
+\begin{Definition}[Pythagoreische Tripel] \hspace*{\fill} \\
 Ein Tripel $\langle x, y, z \rangle \in \mathbb{N}\!\times\!\mathbb{N}\!\times\!\mathbb{N}$ heißt
-\emph{Pythagoräisches Tripel}, falls
+\emph{Pythagoreisches Tripel}, falls
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^2 + y^2 = z^2$
@@ -33,7 +33,7 @@ ist.
 \end{Definition}
 
 \example
-Das Tripel $\langle 3, 4, 5 \rangle$ ist ein pythagoräisches Tripel, denn es gilt
+Das Tripel $\langle 3, 4, 5 \rangle$ ist ein pythagoreisches Tripel, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. \eox
@@ -45,7 +45,7 @@ Es seien $u$ und $v$ positive natürliche Zahlen mit $u > v$.  Dann ist
 \hspace*{1.3cm}
 $\bigl\langle u^2 - v^2,\; 2 \cdot u \cdot v,\; u^2 + v^2 \bigr\rangle$
 \\[0.2cm]
-ein pythagoräisches Tripel.  
+ein pythagoreisches Tripel.  
 \end{Satz}
 
 \proof
@@ -71,7 +71,48 @@ $
 $
 \\[0.2cm]
 Damit haben wir die linke Seite der Gleichung (\ref{eq:pyth}) in die rechte Seite umgeformt. \qed
-\vspace*{0.2cm}
+
+Als ein weiteres Beispiel für einen direkten Beweis betrachten wir das folgende Logarithmen-Gesetz.
+
+\begin{Satz}
+  Es seien $a,b,c$ positive reelle Zahlen.  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\ds\log_a(b) = \frac{\log_c(b)}{\log_c(a)}$.
+\end{Satz}
+
+\proof
+Nach Definition des Logarithmus gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$b = a^{\log_a(b)}$.
+\\[0.2cm]
+Nehmen  wir auf beiden Seiten dieser Gleichung den Logarithmus zur Basis $c$, erhalten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\log_c(b) = \log_c\bigl(a^{\log_a(b)}\bigr)$.
+\\[0.2cm]
+Auf Grund des Logarithmen-Gesetzes $\log_c(a^x) = x \cdot \log_c(x)$ ist diese Gleichung zu
+der  Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\log_c(b) = \log_a(b) \cdot \log_c(a)$
+\\[0.2cm]
+äquivalent.  Teilen wir beide Seiten dieser Gleichung durch $\log_c(a)$, so erhalten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\frac{\log_c(b)}{\log_c(a)} = \log_a(b)$
+\\[0.2cm]
+und haben damit die Behauptung bewiesen.
+\qed
+
+\remark
+Der letzte Satz zeigt Ihnen, wie Sie den Logarithmus zu einer beliebigen Basis mit einem
+Taschenrechner berechnen können, auf dem nur der natürliche Logarithmus fest verdrahtet ist, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\log_a(b) = \frac{\ln(b)}{\ln(a)}$.
+\eox
 
 
 \section{Indirekte Beweise}
@@ -80,7 +121,7 @@ nicht gilt, wir nehmen also an, dass die Aussage $\neg A$ richtig ist.  Wir vers
 weiter, aus dieser Annahme eine offensichtlich falsche Aussage herzuleiten, beispielsweise
 die Aussage, dass $1 = 2$ gilt.  Wenn dies gelingt, dann können wir rückwärts schließen,
 dass die Annahme $\neg A$ falsch sein muss und dass folglich die Aussage $A$ wahr ist.
-Wir geben einige Beispiele für indirekte Beweise.
+Wir geben später einige Beispiele für indirekte Beweise.
 \vspace*{0.2cm}
 
 Bevor wir das erste Beispiel präsentieren können, wiederholen wir den Begriff der \emph{geraden} und
@@ -758,7 +799,7 @@ gilt.
 Zeigen Sie, dass die Zahl $2^{2 \cdot n} - 1$ für alle positiven natürlichen Zahlen $n$ durch $3$
 teilbar ist,
 \exend 
-\pagebreak
+
 
 \exercise
 Ein \emph{Triomino} ist eine Figur, die aus einem Quadrat der Länge 2 dadurch entsteht, dass in
