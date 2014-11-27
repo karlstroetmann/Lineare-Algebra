@@ -15,8 +15,8 @@ Grob können wir zwischen vier Arten von Beweisen unterscheiden:
 \end{enumerate}
 
 \section{Direkte Beweise}
-Direkte Beweise sind die Beweise, die Sie bereits aus der Schule kennen.  Die wesentlichen Hilfsmittel eines direkten Beweises
-sind algebraische Umformungen und Fallunterscheidungen.  Wir geben ein einfaches Beispiel für einen
+Direkte Beweise sind die Beweise, die Sie bereits aus der Schule kennen.  Das wesentliche Hilfsmittel eines direkten Beweises
+sind algebraische Umformungen.  Wir geben ein einfaches Beispiel für einen
 direkten Beweis, benötigen dafür aber zunächst noch eine Definition.
 
 
@@ -137,7 +137,7 @@ darstellen, wobei $k \in \mathbb{N}_0$ ist.
 \end{Lemma}
 
 \proof
-Wir nehmen an, dass $p$ ungerade ist.  Damit lässt sich $p$  in der Form
+Wir führen den Beweis indirekt und nehmen an, dass $p$ ungerade ist.  Damit lässt sich $p$  in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $p = 2 \cdot q + 1$ \quad mit \quad $q \in \mathbb{N}_0$
@@ -211,10 +211,10 @@ sind.
 
 
 Ein anderes typisches Beispiel für einen indirekten Beweis ist der Nachweis der
-Nicht-Abzählbarkeit der Menge Potenz-Menge der natürlichen Zahlen.
+Nicht-Abzählbarkeit der Potenz-Menge der natürlichen Zahlen.
 
 \begin{Definition}[Abzählbar] \hspace*{\fill} \\
-Eine unendliche Menge $M$ heißt \emph{abzählbar unendlich}, wenn eine 
+Eine unendliche Menge $M$ heißt \emph{abzählbar}, wenn eine 
 \underline{sur}j\underline{ektive} Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -226,7 +226,7 @@ dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist.
 
 Die Idee bei dieser Definition ist, dass die Menge  $M$ in einem gewissen Sinne nicht mehr Elemente hat
 als die Menge der natürlichen Zahlen, denn die Elemente können ja über die Funktion $f$
-aufgezählt werden, wobei wir eventuelle Wiederholung eines Elements zulassen wollen.
+aufgezählt werden, wobei wir eventuelle Wiederholungen eines Elements zulassen wollen.
 
 \example
 Die Menge $\mathbb{Z}$ der ganzen Zahlen ist abzählbar, denn die Funktion
@@ -317,16 +317,16 @@ gilt.  Wir untersuchen nun, ob $n_0 \in C$ gilt.  Dazu betrachten wir die folgen
 $
 \begin{array}[t]{cl}
                 & n_0 \in C                                                      \\[0.2cm]
-\leftrightarrow & n_0 \in \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\} \\[0.2cm]
-\leftrightarrow & n_0 \not\in f(n_0)                                             \\[0.2cm]
-\leftrightarrow & n_0 \not\in C                                               
+\Leftrightarrow & n_0 \in \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\} \\[0.2cm]
+\Leftrightarrow & n_0 \not\in f(n_0)                                             \\[0.2cm]
+\Leftrightarrow & n_0 \not\in C                                               
 \end{array}
 $
 \\[0.2cm]
 Wir haben also
 \\[0.2cm]
 \hspace*{1.3cm}
-$n_0 \in C \;\leftrightarrow\; n_0 \not\in C \qquad \lightning$
+$n_0 \in C \;\Leftrightarrow\; n_0 \not\in C \qquad \lightning$
 \\[0.2cm]
 gezeigt und das ist ein offensichtlicher Widerspruch. \qed
 
@@ -524,7 +524,7 @@ Argumentation ist zunächst informal. Ein exakter Beweis folgt.
   Es sei $F(x)$ eine Formel. Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $F(1) \wedge \bigl(\forall n \in \mathbb{N}:F(n) \rightarrow F(n+1)\bigr) \rightarrow 
+  $F(1) \wedge \forall n \in \mathbb{N}:\bigl(F(n) \rightarrow F(n+1)\bigr) \rightarrow 
    \forall n \in \mathbb{N}: F(n)
   $.
 \end{Satz}
@@ -533,7 +533,7 @@ Argumentation ist zunächst informal. Ein exakter Beweis folgt.
 Wir nehmen an, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$F(1) \wedge \bigl(\forall n \in \mathbb{N}:F(n) \rightarrow F(n+1)\bigr)$
+$F(1) \wedge \forall n \in \mathbb{N}:\bigl(F(n) \rightarrow F(n+1)\bigr)$
 \\[0.2cm]
 richtig ist und zeigen, dass dann
 \\[0.2cm]
@@ -565,12 +565,13 @@ Also haben wir $\neg F(n_0)$ und wissen außerdem, dass für alle $n < n_0$ die Fo
 sonst wäre $n_0$ ja nicht das Minimum der Menge $M$.
 
 Weiter schließen wir dann aus der Tatsache, dass $F(1)$ gilt, dass $n_0 \not= 1$ ist.  
-Aus $n_0 -1 < n_0$ folgt nun, dass
+Aus $n_0 -1 < n_0$ folgt nun, dass $n_0-1 \not\in M$ ist, denn $n_0$ ist ja das Minimum von $M$.
+Aus  $n_0-1 \not\in M$ folgt nach Definition von $M$, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $F(n_0 - 1)$
 \\[0.2cm]
-gilt.  Aus der Formel $\forall n \in \mathbb{N}: F(n) \rightarrow F(n+1)$ können wir dann folgern, dass
+gilt.  Aus der Formel $\forall n \in \mathbb{N}:\bigl( F(n) \rightarrow F(n+1)\bigr)$ können wir dann folgern, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $F((n_0-1) +1)$
@@ -578,7 +579,7 @@ $F((n_0-1) +1)$
 gilt.  Also gilt $F(n_0)$ und das ist ein Widerspruch zur Definition von $n_0$. \qed
 
 Wir geben nun einige typische Beispiele für Induktions-Beweise.  Die in diesen Sätzen behaupteten
-Summenformeln sollten Sie sich gut merken, denn diese Formeln werden bei der Analyse der Komplexität
+Summenformeln sollten Sie sich gut merken, denn diese Formeln werden später bei der Analyse der Komplexität
 von Algorithmen häufig verwendet.
 
 \begin{Satz} Es gilt 
@@ -770,7 +771,7 @@ $\textsl{card}\bigl(2^M\bigr) = 2^n$.
         \textsl{card}\bigl(2^M\bigr) & = & \textsl{card}(A) + \textsl{card}(B) \\[0.2cm]
                                      & = & \textsl{card}(B) + \textsl{card}(B) \\[0.2cm]
                                      & = & 2 \cdot \textsl{card}(B)            \\[0.2cm]
-                                     & = & 2 \cdot 2^n                         \\[0.2cm]
+                                     & \stackrel{IV}{=} & 2 \cdot 2^n                         \\[0.2cm]
                                      & = & 2^{n+1}.
       \end{array}
       $
