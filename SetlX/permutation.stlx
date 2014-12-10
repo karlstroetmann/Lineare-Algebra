@@ -76,7 +76,7 @@ fillZeros := procedure(i, numberDigits) {
 };
 
 // Compute the group table and print it.  This will only work if n is less or
-// equal than 4, since otherwise the table will be far to big to fit on the
+// equal than 4, since otherwise the table will be far too big to fit on the
 // screen.  For example, the permutation group S5 already has 5! = 120 different
 // elements.
 groupTable := procedure(n) {
