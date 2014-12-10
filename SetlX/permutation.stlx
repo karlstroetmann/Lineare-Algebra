@@ -1,12 +1,12 @@
 // The procedure call product(r1, r2) computes the relational
 // product r1 o r2.
 product := procedure(r1, r2) {
-    return { [x,z] : [x,y1] in r1, [y2,z] in r2 | y1 == y2 };
+    return { [x,z] : [x,y] in r1, [y,z] in r2 };
 };
 
 // Compute the set of all permutations on the set S_n = { 1, ..., n }
 allPermutations := procedure(n) {
-	return [ toPermutation(l) : l in toList({1 .. n}) ];
+	return [ toPermutation(l) : l in allLists({1 .. n}) ];
 };
 // transform a list into a relation
 toPermutation := procedure(l) {
@@ -15,11 +15,11 @@ toPermutation := procedure(l) {
 // For a given set s, this function computes the set of all those lists 
 // that contain each of the elements of s exactly once.  In effect, these 
 // are all permutations of the set s.
-toList := procedure(s) {
+allLists := procedure(s) {
     if (s == {}) {
         return { [] };
     }
-    return { [ x ] + l : x in s, l in toList(s - { x }) };
+    return { [ x ] + l : x in s, l in allLists(s - { x }) };
 };
 
 // Given a list of permutations sn, this function associates names with the 
@@ -61,30 +61,26 @@ findNC := procedure(n, map) {
     }
 };
 
+// Count the number of digits needed to represent n!, which is n factorial.
 countDigits := procedure(n) {
-    nf := n!;
-    nd := 1;
-    t  := 10;
-    while (t < nf) {
-        t *= 10;
-        nd += 1;
-    }
-    return nd;
+    return ceil(log(n!)/log(10));
 };
 
-fillZeros := procedure(i, nd) {
+// Convert the number i to a string that has a given size
+fillZeros := procedure(i, numberDigits) {
     s := i + "";
-    while (#s < nd) {
-    s := "0" + s;
+    while (#s < numberDigits) {
+        s := "0" + s;
     }
     return s;
 };
 
-// compute and print the group table
-// only works if n <= 3 since otherwise the table gets too big
+// Compute the group table and print it.  This will only work if n is less or
+// equal than 4, since otherwise the table will be far to big to fit on the
+// screen.  For example, the permutation group S5 already has 5! = 120 different
+// elements.
 groupTable := procedure(n) {
-    sn := allPermutations(n);
-    print(sn);
+    sn  := allPermutations(n);
     nd  := countDigits(n);
     map := makeMap(sn, nd);
     print("\nPrinting group table:\n");
@@ -92,7 +88,8 @@ groupTable := procedure(n) {
     for (i in [ 1 .. #sn ]) {
         s += " p" + fillZeros(i, nd) + " |"; 
     }
-    s += "\n" + "-" * (4 + nd) * (#sn+1) + "\n";  
+    verticalBar := "\n" + "-" * (4 + nd) * (#sn+1) + "\n";  
+    s += verticalBar;
     for (px in sn) {
         x := map[px];
         s += " " + x + " |";
@@ -102,7 +99,7 @@ groupTable := procedure(n) {
             z  := map[pz];
             s += " " + z + " |";        
         }
-        s += "\n" + "-" * (4 + nd) * (#sn+1) + "\n";
+        s += verticalBar;
     }
     print(s);
     return map;
@@ -113,4 +110,5 @@ test := procedure(n) {
     findNC(n, map);
 };
 
-test(5);
+test(3);
+// test(4);  // You need a huge screen to see this group!

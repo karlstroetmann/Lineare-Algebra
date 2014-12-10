@@ -185,7 +185,8 @@ Insgesamt haben wir also $a \circ b = e$ bewiesen. \qed
 
 \remark
 Da jedes zu einem Element $a$ links-inverse Element $b$ auch rechts-invers ist, sprechen wir im Folgenden
-immer nur noch von einem inversen Element und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+immer nur noch von einem \emph{inversen Element} und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+\eox
 
 \begin{Satz}[Links-neutrales Element ist auch rechts-neutrales Element] \lb
   Ist $\langle G, e, \circ \rangle$ eine Gruppe, so gilt
@@ -217,7 +218,8 @@ Wir haben also $a \circ e = a$ gezeigt. \qed
 \remark
 Da das links-neutrale Element $e$ einer Gruppe $\langle G, e, \circ \rangle$ auch rechts-neutral ist,
 sprechen wir im Folgenden
-immer nur noch von einem neutralen Element und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+immer nur noch von einem \emph{neutralen Element} und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+\eox
 
 \begin{Satz}[Eindeutigkeit des neutralen Elements] \lb
   Ist $\langle G, e, \circ \rangle$ eine Gruppe und ist $f \in G$ ein weiteres  Element, so dass
@@ -244,6 +246,7 @@ Also gilt $f = e$ gezeigt. \qed
 \remark
 Der letzte Satz zeigt, dass das neutrale Element eindeutig bestimmt ist.  Wir sprechen daher in Zukunft
 immer von \emph{dem} neutralen Element anstatt von \emph{einem} neutralen Element.
+\eox
 
 \begin{Satz}[Eindeutigkeit des inversen Elements] \lb
   Ist $\langle G, e, \circ \rangle$ eine Gruppe, ist $a \in G$ und sind $b,c$ beide invers zu $a$, so folgt
@@ -279,11 +282,13 @@ wir eine Funktion
 definieren, die für alle $a \in G$ das zu $a$ inverse Element berechnet: Es gilt also
 \\[0.2cm]
 \hspace*{1.3cm} $a^{-1} \circ a = e$ \quad und \quad $a \circ a^{-1} = e$ \quad für alle $a \in G$.
+\eox
 
 \remark
 Ist $\langle G, e, \circ \rangle$ eine Gruppe und sind die Operation $\circ$ und das neutrale Element 
 $e$ aus dem Zusammenhang klar, so sprechen wir einfach von der Gruppe $G$, obwohl wir formal korrekt
-eigentlich von der Gruppe $\langle G, e, \circ \rangle$ sprechen müssten.
+eigentlich von der Gruppe $\langle G, e, \circ \rangle$ sprechen müssten. 
+\eox
 
 \begin{Satz}[$(a \circ b)^{-1} = b^{-1} \circ a^{-1}$] \lb
   Ist $\langle G, e, \circ \rangle$ eine Gruppe und bezeichnen wir das zu $x$ inverse Element mit
@@ -466,6 +471,7 @@ Interessant ist nun die Beobachtung, dass im Falle einer endlichen Halb-Gruppe
 $\langle G, \circ \rangle$ aus der Gültigkeit der  
 Kürzungs-Regeln geschlossen werden kann, dass $G$ eine Gruppe ist.
 Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
+\eox
 
 \begin{Definition}[injektiv]
   Eine Funktion $f: M \rightarrow N$ ist \emph{injektiv} genau dann, wenn
@@ -479,6 +485,7 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
   $x \not= y \rightarrow f(x) \not= f(y)$,
   \\[0.2cm]
   verschiedene Argumente werden also auf verschiedene Werte abgebildet.
+\eox
 \end{Definition}
 
 \begin{Definition}[surjektiv]
@@ -488,56 +495,129 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
   $\forall y \in N: \exists x \in M: f(x) = y$ 
   \\[0.2cm]
   gilt.  Jedes Element $y$ aus $N$ tritt also als Funktionswert auf.
+\eox
 \end{Definition}
 
 \begin{Definition}[bijektiv] \lb
   Eine Funktion $f: M \rightarrow N$ ist \emph{bijektiv} genau dann, wenn
  $f$ sowohl injektiv als auch surjektiv ist.  
+\eox
 \end{Definition}
 
 \begin{Satz}
-  Es sei $M$ eine endliche Menge und die Funktion 
+  Es sei $M$ eine endliche nicht-leere Menge und die Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
 $f:M \rightarrow M$
 \\[0.2cm]
 sei injektiv.  Dann ist $f$ auch surjektiv.
+\eox
 \end{Satz}
 
 \proof
-Da $f$ injektiv ist, werden verschiedene Argumente auch auf verschiedene Werte abgebildet.
-Damit hat die Funktion $f$ genau so viele Werte, wie sie Argumente hat, es gilt
+Da $M$ endlich ist, können wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{card}\bigl(f(M)\bigr) = \textsl{card}(M)$.
+$n := \textsl{card}(M)$
 \\[0.2cm]
-Hierbei steht $f(M)$ für das Bild der Menge $M$, es gilt also
-\\[0.2cm]
-\hspace*{1.3cm}
-$f(M) = \bigl\{ f(x) \mid x \in M \bigr\}$.
-\\[0.2cm]
-Nun gilt aber $f(M) \subseteq M$ und wenn die Mengen $M$ und $f(M)$ die gleiche Anzahl Elemente haben, 
-dann kann das bei einer endlichen Menge nur dann gehen, wenn 
-\\[0.2cm]
-\hspace*{1.3cm}
-$f(M) = M$ 
-\\[0.2cm]
-gilt.  Setzen wir hier die Definition von $f(M)$ ein, so haben wir
-\\[0.2cm]
-\hspace*{1.3cm}
-$\bigl\{ f(x) \mid x \in M \bigr\} = M$.
-\\[0.2cm]
-Damit gibt es also für jedes $y \in M$ ein $x \in M$, so dass $y = f(x)$ gilt und folglich ist $f$
-surjektiv.
-\qed
+definieren und haben dann $n \in \mathbb{N}$.  Wir führen den Beweis der Behauptung nun durch
+Induktion nach $n$.
+\begin{enumerate}
+\item[I.A.:] $n = 1$.
 
-\exercise
-  Es sei $M$ eine endliche Menge und die Funktion 
+             Dann hat $M$ die Form $M = \{ x_1 \}$.  In diesem Fall gibt es nur eine einzige Funktion
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $f: M \rightarrow M$
+             \\[0.2cm]
+             und für diese Funktion muss $f(x_1) = x_1$ gelten.  Offenbar ist diese Funktion 
+             surjektiv. $\surd$
+\item[I.S.:] $n \mapsto n+1$.
+
+             Wir führen den Nachweis in diesem Fall indirekt und nehmen an, dass $f$ nicht
+             surjektiv ist.  Dann gibt es also ein Element $y \in M$, das nicht als Funktionswert
+             von $f$ auftritt.  Damit gilt 
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\forall x \in M: f(x) \not= y$.
+             \\[0.2cm]
+             Wir definieren  $N := M \backslash \{ y \}$.  Offenbar hat die Menge $N$
+             ein Element weniger als die Menge $M$ und damit gilt
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\textsl{card}(N) = n$,
+             \\[0.2cm]
+             denn $\textsl{card}(M) = n+1$.  Wir definieren auf der Menge $N$ die Funktion
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $g:N \rightarrow N$
+             \\[0.2cm]
+             durch die Festlegung
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $g(x) := f(x)$ \quad für alle $x \in N$.
+             \\[0.2cm]
+             Da die Funktion $f$ injektiv ist, muss auch die Funktion $g$ injektiv sein, denn aus
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $g(x_1) = g(x_2)$
+             \\[0.2cm]
+             folgt sofort
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $f(x_1) = f(x_2)$
+             \\[0.2cm]
+             und wegen der Injektivität von $f$ impliziert das
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $x_1 = x_2$.
+             \\[0.2cm]
+             Nach Induktions-Voraussetzung ist die Funktion $g:N \rightarrow N$ daher 
+             surjektiv.  Die Ungleichung
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\forall x \in M: f(x) \not= y$ 
+             \\[0.2cm]
+             gilt auch, wenn wir für $x$ den Wert $y$ einsetzen, denn $y \in M$.  Damit haben wir dann
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $f(y) \not= y$
+             \\[0.2cm]
+             und daraus können wir folgern, dass $f(y) \in N$ ist.  Da die Funktion $g$ auf $N$
+             surjektiv ist, gibt es aber ein $z \in N$, so dass
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $g(z) = f(y)$
+             \\[0.2cm]
+             ist.  Da außerdem $g(z) = f(z)$ ist, haben wir
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $f(z) = f(y)$.
+             \\[0.2cm]
+             Da die Funktion $f$ injektiv ist, folgt daraus $z = y$.  Das kann aber nicht
+             sein, denn $z \in N$, aber $y \not\in N$.  Dieser Widerspruch zeigt, dass die Funktion
+             $f$ surjektiv sein muss.  \qed
+\end{enumerate}
+
+\begin{Satz}
+  Es sei $M$ eine endliche nicht-leere Menge und die Funktion 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $f:M \rightarrow M$
+  \\[0.2cm]
+  sei surjektiv.  Dann ist $f$ auch injektiv.
+\end{Satz}
+
+\proof
+Es sei $M = \{x_1, \cdots, x_n \}$.  Wir führen den Beweis indirekt und nehmen an, dass $f$ nicht injektiv
+ist.  Dann gibt es $x_i, x_j \in M$ mit $f(x_i) = f(x_j)$.  Damit enthält dann aber die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
-$f:M \rightarrow M$
+$\{ f(x_1), \cdots, f(x_n) \}$
 \\[0.2cm]
-sei surjektiv.  Zeigen Sie, dass $f$ dann auch injektiv ist.
+weniger als $n$ Elemente und dann kann $f$ nicht mehr surjektiv sein.  Dieser Widerspruch zeigt, dass $f$
+injektiv sein muss.
+\qed
 
 \begin{Satz}
   Es sei $\langle G, \circ \rangle$ eine endliche Halb-Gruppe, in der die beiden Kürzungs-Regeln
@@ -553,7 +633,7 @@ sei surjektiv.  Zeigen Sie, dass $f$ dann auch injektiv ist.
 \\[0.2cm]
 \hspace*{1.3cm} $a \circ x = b$ \quad und \quad $y \circ a = b$
 \\[0.2cm]
-Lösungen haben, denn dann folgt die Behauptung aus Satz \ref{satz:solvable}.  Zunächst definieren wir für
+eine Lösung $x$ bzw. $z$ haben, denn dann folgt die Behauptung aus Satz \ref{satz:solvable}.  Zunächst definieren wir für
 jedes $a \in G$ eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm} $f_a: G \rightarrow G$ \quad durch \quad $f_a(x) := a \circ x$.
@@ -572,12 +652,12 @@ auch surjektiv.  Es gibt also zu jedem $b \in G$ ein $x \in G$ mit
 \hspace*{1.3cm} $f_a(x) = b$ \quad beziehungsweise \quad $a \circ x = b$.
 \\[0.2cm]
 Damit haben wir gesehen, dass für beliebige $a,b \in G$ die Gleichung $a \circ x = b$ immer eine Lösung
-hat.  Genauso lässt sich  zeigen, dass für beliebige $a,b \in G$ die Gleichung
+$x$ hat.  Genauso lässt sich  zeigen, dass für beliebige $a,b \in G$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $y \circ a = b$
 \\[0.2cm]
-eine Lösung hat.  Nach dem letzten Satz ist $G$ damit eine Gruppe.
+eine Lösung $y$ hat.  Dann ist $G$ nach Satz \ref{satz:solvable} eine Gruppe. \qed
 
 \section{Die Permutations-Gruppe $\mathcal{S}_n$}
 Bisher waren alle Gruppen, die wir kennengelernt haben, kommutativ.  Das ändert sich jetzt, denn wir
@@ -609,15 +689,8 @@ Aus der ersten und der dritten Forderung folgt, dass die Relation $R$ als Funkti
 \hspace*{1.3cm} $R : \mathbb{Z}_n^+ \rightarrow \mathbb{Z}_n^+$
 \\[0.2cm]
 aufgefasst werden kann.  Aus der zweiten Forderung folgt, dass diese Funktion surjektiv ist.  Da die
-Menge $\mathbb{Z}_n^+$ endlich ist, ist die Funktion $R$ damit auch injektiv, denn wenn es ein $x_1,x_2,y \in \mathbb{Z}_n^+$
-gäbe, so dass
-\\[0.2cm]
-\hspace*{1.3cm} 
-$\pair(x_1,y) \in R$, \quad
-$\pair(x_2,y) \in R$, \quad und \quad
-$x_1 \not= x_2$
-\\[0.2cm]
-gelten würde, dann könnte $R$ nicht mehr surjektiv sein.  Wir definieren nun $\mathcal{S}_n$ als die Menge aller
+Menge $\mathbb{Z}_n^+$ endlich ist, ist die Funktion $R$ damit auch injektiv.
+Wir definieren nun $\mathcal{S}_n$ als die Menge aller
 Permutationen auf der Menge $\mathbb{Z}_n^+$:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -641,7 +714,7 @@ Beweisen Sie
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall R_1, R_2 \in \mathcal{S}_n: R_1 \circ R_2 \in \mathcal{S}_n$.
-\qed
+\exend
 
 
 \remark
@@ -664,11 +737,8 @@ $
         \exists y: \pair(y,x) \in R \wedge \pair(y,z) \in R 
      \} 
    & \\[0.2cm]
- = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid 
-        \exists y: x = z \}
-   & \mbox{denn $R$ ist rechts-eindeutig}    \\[0.2cm]
  = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \}
-   &   \\[0.2cm]
+    & \mbox{denn $R$ ist rechts-eindeutig}    \\[0.2cm]
  = & E_n.
 \end{array}
 $
@@ -677,11 +747,13 @@ Folglich ist für eine Permutation $R$ der Ausdruck $R^{-1}$ tatsächlich das Inve
 relationalen Produkts $\circ$.  Damit ist klar, dass die 
 Struktur $\langle \mathcal{S}_n, E_n, \circ \rangle$ eine Gruppe ist.
 Diese Gruppe trägt den Namen \emph{Permutations-Gruppe}.
+\eox
 
 \exercise
 Zeigen Sie, dass $\mathcal{S}_3$ keine kommutative Gruppe ist.  Schreiben Sie dazu eine \textsl{SetlX}-Programm,
 dass zunächst die Menge $\mathcal{S}_3$ berechnet und anschließend überprüft, ob in dieser Menge das
 Kommutativ-Gesetz gilt.
+\exend
 
 \section{Untergruppen und Faktor-Gruppen}
 \begin{Definition}[Untergruppe]
@@ -702,6 +774,7 @@ Kommutativ-Gesetz gilt.
         \\[0.2cm]
         die Menge $U$ ist also unter der Operation $\cdot^{-1}: x \mapsto x^{-1}$ abgeschlossen.
   \end{enumerate}
+\eox
 \end{Definition}
 
 \remark
@@ -712,6 +785,7 @@ gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$ für alle $x,y \in U$.
+\eox
 
 \examples
 \begin{enumerate}
@@ -767,6 +841,7 @@ $\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$
       \\[0.2cm]
       so können Sie leicht nachrechen, dass 
       $U \leq G$, $V \leq G$ und $W \leq G$ gilt.
+      \eox
 \end{enumerate}
 
 \exercise
@@ -811,6 +886,9 @@ $a_1 + U = a_2 + U \;\wedge\; b_1 + U = b_2 + U \;\Rightarrow\; (a_1 + b_1) + U 
 gilt, denn sonst ist die Operation $+$ auf den Nebenklassen von $G$ bezüglich $U$ nicht eindeutig
 definiert.  Um diesen Nachweis führen zu können, zeigen wir zunächst einen Hilfssatz, der uns darüber
 Aufschluss gibt, wann zwei Nebenklassen $a + U$ und $b + U$ gleich sind.
+\eox
+\pagebreak
+
 
 \begin{Lemma}
   Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
@@ -981,6 +1059,7 @@ Der Beweis zerfällt in drei Teile.
       \\[0.2cm]
       Damit ist alles gezeigt. \qed
 \end{enumerate}
+\pagebreak
 
 \example
 Wir haben früher bereits gesehen, dass die Mengen 
@@ -1024,12 +1103,13 @@ $\mathbb{Z}_k = \bigl\{ l + k\mathbb{Z} \mid l \in \{0, \cdots, k - 1\} \bigr\}$
 
 \exercise
 Es sei $\langle G, e, \circ \rangle$ eine endliche kommutative Gruppe und es gelte $U \leq G$.
-Zeigen Sie, dass dann $\mathtt{card}(U)$ ein Teiler von $\mathtt{card}(G)$ ist. \exend
+Zeigen Sie, dass dann $\mathtt{card}(U)$ ein Teiler von $\mathtt{card}(G)$ ist. 
 \vspace*{0.2cm}
 
 \noindent
 \textbf{Hinweis}: Zeigen Sie, dass alle Nebenklassen von $G$ bezüglich der Untergruppe $U$ dieselbe
 Kardinalität haben.
+\exend
 
 \exercise
 Es seien $\langle G_1, e_1, \circ\rangle$ und $\langle G_2, e_2, *\rangle$ kommutative Gruppen.
