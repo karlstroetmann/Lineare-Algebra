@@ -350,7 +350,7 @@ Damit ist gezeigt, dass $\mathcal{R}/\!\sim$ ein kommutativer Ring mit Eins ist.
 
 \exercise
 Es sei $\mathcal{K} = \langle K, 0_K, 1_K, +, \cdot \rangle$ ein Körper und die Menge $K$ sei endlich.
-Dann können wir durch eine Funktion 
+Dann können wir eine Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathtt{count}: \mathbb{N} \rightarrow K$
@@ -378,9 +378,29 @@ $\mathtt{char}(\mathcal{K})$ des Körpers $\mathcal{K}$ als die kleinste natürlic
 $\mathtt{count}(k) = 0_K$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{char}(\mathcal{K}) = \min\bigl(\{ k \in \mathbb{N} \mid k \geq 1 \wedge \mathtt{count}(k) = 0_K \}\bigr)$.
+$\mathtt{char}(\mathcal{K}) = \min\bigl(\{ k \in \mathbb{N} \mid \mathtt{count}(k) = 0_K \}\bigr)$.
 \\[0.2cm]
-Zeigen Sie, dass die Charakteristik eines endlichen Körpers immer eine Primzahl ist.
+Zeigen Sie, dass für einen endlichen Körpers $\mathcal{K}$ das Folgende gilt:
+\begin{enumerate}
+\item[(a)] Die Menge $\bigl\{ k \in \mathbb{N} \mid \mathtt{count}(k) = 0_K \bigr \}$
+           ist nicht leer, die Charakteristik eines endlichen Körpers ist also wohldefiniert.
+
+           \noindent
+           \textbf{Hinweis}:
+           Da die Menge $K$ endlich ist, ist auch die Menge
+           \\[0.2cm]
+           \hspace*{1.3cm}
+           $\{ \mathtt{count}(n) | n \in \mathbb{N} \}$
+           \\[0.2cm]
+           endlich.  Also muss es $n, m \in \mathbb{N}$ geben, so dass
+           \\[0.2cm]
+           \hspace*{1.3cm}
+           $\mathtt{count}(n) = \mathtt{count}(m)$
+           \\[0.2cm]
+           gilt.
+\item[(b)] Die Charakteristik $\mathtt{char}(\mathcal{K})$ ist eine Primzahl. \eox
+\end{enumerate}
+
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -1226,6 +1246,7 @@ gilt.  Aus  $y \in I$ folgt $-y \in I$ und damit haben wir
 $a \cdot x - 1 = -y \in I$.
 \\[0.2cm]
 Setzen wir $b := x$, so haben wir damit die Formel $(*)$ nachgewiesen. \qed
+\pagebreak
 
 \exercise
 Es seien $a,b \in \mathbb{N}$ mit $0 < a < b$ und die Zahlen $a, b$ seien teilerfremd, es gelte also
@@ -1246,7 +1267,6 @@ dass die Behauptung für sowohl für $b-a$ als auch für $a$ gilt. \exend
 Beim Beweis einer Behauptung, die für natürliche Zahlen gezeigt werden soll, hilft es manchmal, die
 Behauptung zunächst für kleine Zahlen zu überprüfen, denn das liefert oft eine Idee für den allgemeinen
 Fall. 
-\pagebreak
 
 
 \exercise

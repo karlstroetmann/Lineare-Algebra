@@ -1029,7 +1029,7 @@ Damit ist gezeigt, dass die Addition auf den Nebenklassen von $U$ wohldefiniert 
 
 \begin{Satz}
  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
- Dann ist $\langle G/U, 0 + U, + \rangle$ mit der oben definierten Addition von Nebenklassen eine Gruppe.
+ Dann ist $\langle G/U, 0 + U, + \rangle$ mit der oben definierten Addition von Nebenklassen eine kommutative Gruppe.
 \end{Satz}
 
 \proof
@@ -1053,11 +1053,20 @@ Der Beweis zerfällt in drei Teile.
       = & \bigl((a + b) + c\bigr) + U               \\
       = & \bigl(a + (b + c)\bigr) + U               \\
       = & (a + U) + \bigl((b + c) + U\bigr)         \\
-      = & (a + U) + \bigl((b + U) + (c + U)\bigr)   \\
+      = & (a + U) + \bigl((b + U) + (c + U)\bigr).  \\
       \end{array}
       $
+\item Es gilt das Kommutativ-Gesetz, denn
       \\[0.2cm]
-      Damit ist alles gezeigt. \qed
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{cll}
+        & (a + U) + (b + U) \\
+      = & (a + b) + U       \\
+      = & (b + a) + U & \mbox{denn $G$ ist eine kommutative Gruppe} \\
+      = & (b + U) + (a + U). & \hspace*{\fill} \Box
+      \end{array}
+      $
 \end{enumerate}
 \pagebreak
 
@@ -1139,6 +1148,73 @@ gilt.  Lösen Sie die folgenden Teilaufgaben:
       eine Untergruppe von $G_2$ ist.
       \exend
 \end{enumerate} 
+\pagebreak
+
+\section{Monoide}
+Zum Schluss dieses Kapitels definieren wir den Begriff eines \emph{Monoiden}.  Vereinfacht gesagt sind
+Monoide solche Halbgruppen, in denen es ein neutrales Element gibt.  Die formale Definition folgt.
+
+
+\begin{Definition}[Monoid]
+  Ein Tripel $\langle G, \circ \rangle$ ist ein \emph{Monoid} genau dann, wenn Folgendes gilt:
+  \begin{enumerate}
+  \item $G$ ist eine Menge,
+  \item $\circ: G \times G \rightarrow G$ und es gelten die folgenden beiden Gesetze:
+  \begin{enumerate}
+  \item Es gilt das Assoziativ-Gesetz
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $(a \circ b) \circ c = a \circ (b \circ c)$ \quad für alle $a,b,c \in G$.
+  \item Es existiert ein neutrales Element, es gibt also ein $e \in G$, so dass
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $e \circ a = a \circ e = a$ 
+        \\[0.2cm]
+        für alle $a \in G$ gilt. \eox
+  \end{enumerate}
+  \end{enumerate}
+\end{Definition}
+
+\examples
+\begin{enumerate}
+\item Die Struktur $\langle \mathbb{Z}, \cdot \rangle$ ist ein Monoid, denn für die Multiplikation
+      ganzer Zahlen gilt das Assoziativ-Gesetz und die Zahl $1$ ist bezüglich der Multiplikation ein
+      neutrales Element.
+\item Es sei $\Sigma$ ein Alphabet, also ein Menge von Buchstaben und $\Sigma^*$ sei die Menge aller
+      Wörter, die aus Buchstaben von $\Sigma$ gebildet werden können.  In der Informatik bezeichnen
+      wir diese Wörter als Strings.  Wir definieren für Strings eine Multiplikation
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\cdot: \Sigma^* \times \Sigma^* \rightarrow \Sigma^*$
+      \\[0.2cm]
+      als \emph{Konkatenation}, für zwei Strings $x$ und $y$ setzen wir also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \cdot y := xy$,
+      \\[0.2cm]
+      wobei mit $xy$ der String gemeint ist, denn wir durch Hintereinanderschreiben der Buchstaben
+      aus $x$ und $y$ erhalten.  Ist beispielsweise $x = \texttt{\symbol{34}ab\symbol{34}}$ und $y = \texttt{\symbol{34}dc\symbol{34}}$,
+      so gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x \cdot y = \texttt{\symbol{34}abdc\symbol{34}}$.
+      \\[0.2cm]
+      Weiter definieren wie $\varepsilon$ als den leeren String, wir setzen also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\varepsilon = \texttt{\symbol{34}\symbol{34}}$.
+      \\[0.2cm]
+      Dann ist $\varepsilon$ ein neutrales Element bezüglich der Konkatenation von Strings.  Da
+      außerdem für die Konkatenation von Strings das Assoziativ-Gesetz gilt, ist $\langle \Sigma^*, \cdot \rangle$ ein
+      Monoid. 
+      \eox
+\end{enumerate}
+
+\exercise
+Zeigen Sie, dass in einem Monoiden $\langle G, \circ \rangle$ das neutrale Element eindeutig
+bestimmt ist.  
+\eox
+
 
 
 %%% Local Variables: 
