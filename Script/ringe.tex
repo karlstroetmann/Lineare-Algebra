@@ -61,7 +61,9 @@ gilt.  Wir sagen, dass $R$ eine \emph{Eins} hat, wenn es für die Multiplikation 
 $e \cdot x = x \cdot e = x$ \quad für alle $x \in R$
 \\[0.2cm]
 gilt.  Dieses Element $e$ heißt dann die \emph{Eins} des Rings.  In diesem Fall schreiben wir
-$\mathcal{R} = \langle R, 0, e, +, \cdot \rangle$, wir geben die Eins also explizit in der Struktur an.
+$\mathcal{R} = \langle R, 0, e, +, \cdot \rangle$, wir geben die Eins also explizit in der Struktur
+an.
+\eox
 \end{Definition}
 
 \remark
@@ -111,7 +113,7 @@ Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen de
       \begin{array}[t]{lcl}
       x \cdot y + (-x) \cdot y & = & (x + - x) \cdot y \\[0.2cm]
                                & = & 0 \cdot y \\[0.2cm]
-                               & = & 0.
+                               & = & 0. \hspace*{\fill} \diamond
       \end{array}
       $
 \end{enumerate}
@@ -122,8 +124,9 @@ Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen de
 \item Die Struktur $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$ ist ein kommutativer
       Ring mit  Eins.  
 \item Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ ist ebenfalls ein kommutativer Ring mit
-      Eins.   
+      Eins.   \eox
 \end{enumerate}
+
 In dieser Vorlesung werden wir nur solche Ringe betrachten, die erstens kommutativ sind und
 zweitens eine Eins haben. 
 Ein wichtiger Spezialfall ist der Fall eines kommutativen Rings 
@@ -146,7 +149,7 @@ Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{Kö
       $x \cdot (y + z) = x \cdot y + x \cdot z$.
 \end{enumerate}
 Wieder nennen wir die  Operation ``$+$'' die \emph{Addition}, während wir die Operation ``$\cdot$'' 
-als die \emph{Multiplikation} bezeichnen.
+als die \emph{Multiplikation} bezeichnen. \eox
 \end{Definition}
 
 Unser Ziel ist es später, Ringe zu Körpern zu erweitern.  Es gibt bestimmte Ringe, in
@@ -187,7 +190,9 @@ einem Körper erweitern lässt.
   $\forall a, b \in R: \bigl(a \cdot b = 0 \rightarrow a = 0 \vee b = 0\bigr)$
   \\[0.2cm]
   gilt, die Zahl $0$ lässt sich in einem nullteilerfreien Ring also nur als triviales Produkt darstellen.
-  Ein nullteilerfreier, kommutativer Ring, der eine Eins hat, wird als \emph{Integritäts-Ring} bezeichnet.
+  Ein nullteilerfreier, kommutativer Ring, der eine Eins hat, wird als \emph{Integritäts-Ring}
+  bezeichnet.
+\eox
 \end{Definition}
 
 \remark
@@ -196,6 +201,7 @@ gilt die folgende \emph{Streichungs-Regel}:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall a,b,c \in R: \bigl(a \cdot c = b \cdot c \wedge c \not= 0 \rightarrow a = b)$.
+\eox
 
 \proof
 Wir nehmen an, dass $c \not = 0$ ist und dass $a \cdot c = b \cdot c$ gilt.  Es ist dann $a = b$ zu zeigen. 
@@ -236,6 +242,7 @@ die folgenden beiden Bedingungen erfüllt sind:
       $,
 
       die Relation $\sim$ ist also auch mit der Multiplikation auf $R$ \emph{verträglich}.
+      \eox
 \end{enumerate}
 \end{Definition}
   
@@ -263,7 +270,7 @@ gilt.  An dieser Stelle erinnern wir daran, dass nach Satz \ref{satz:aequivalenz
 allgemein für eine beliebige Äquivalenz-Relation $R$ auf einer Menge $M$ die Beziehung
 \\[0.2cm]
 \hspace*{1.3cm}
-$[a]_R = [b]_R \;\leftrightarrow\; a \mathop{R} b$
+$[a]_R = [b]_R \;\leftrightarrow\; \langle a, b \rangle \in R$
 \\[0.2cm]
 gilt.  Damit folgt aus den Voraussetzungen $[a_1]_\sim = [a_2]_\sim$ und $[b_1]_\sim = [b_2]_\sim$, dass
 \\[0.2cm]
@@ -802,7 +809,7 @@ Zusätzlich muss das Distributiv-Gesetz nachgewiesen werden.
       überlasse ich Ihnen zur Übung.
 
       \exercise
-      Zeigen Sie, dass in $Q/\sim$ für die Multiplikation sowohl das Assoziativ-Gesetz als auch das
+      Zeigen Sie, dass in $Q/\!\sim$ für die Multiplikation sowohl das Assoziativ-Gesetz als auch das
       Kommutativ-Gesetz gilt.
 \item Zum Nachweis des Distributiv-Gesetzes in $Q/\!\sim$ 
       zeigen wir, dass für alle Paare \\
@@ -864,18 +871,19 @@ Stellung wie der Begriff der Untergruppe in der Theorie der Gruppen.
 Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutatives Ring mit Eins.
 Eine Teilmenge $I \subseteq R$ ist ein \emph{Ideal in $\mathcal{R}$} falls folgendes gilt:
 \begin{enumerate}
-\item $\langle I, 0, + \rangle \leq \langle R, 0, + \rangle$,
+\item $I \leq R$,
 
-      die Struktur $\langle I, 0, + \rangle$ ist also eine Untergruppe der Gruppe $\langle R, 0, + \rangle$.
+      die Struktur $I$ ist also eine Untergruppe der Gruppe $\langle R, 0, + \rangle$.
 \item $\forall a \in I: \forall b \in R: b \cdot a \in I$,
 
       für alle Elemente $a$ aus dem Ideal $I$ ist das Produkt mit einem beliebigen Element
-      $b$ aus dem Ring $R$ wieder ein Element aus dem Ideal.
+      $b$ aus dem Ring $R$ wieder ein Element aus dem Ideal. \eox
 \end{enumerate}
+\end{Definition}
 
 \remark
 An dieser Stelle sollten Sie sich noch einmal die Definition einer Untergruppe ins
-Gedächtnis rufen:  Es gilt $\langle I, 0, + \rangle \leq \langle R, 0, + \rangle$ genau
+Gedächtnis rufen:  Es gilt $I \leq R$ genau
 dann, wenn folgende Bedingungen erfüllt sind:
 \begin{enumerate}
 \item $0 \in I$,
@@ -888,7 +896,7 @@ Beachten Sie außerdem, dass in der Formel
 $\forall a \in I: \forall b \in R: b \cdot a \in I$,
 \\[0.2cm]
 der zweite All-Quantor nicht nur über die Elemente aus $I$ läuft, sondern über alle Elemente
-von $R$.  
+von $R$.  \eox
 
 \examples
 \begin{enumerate}
@@ -964,8 +972,8 @@ von $R$.
       sind die Mengen $\{0\}$ und $R$ offenbar wieder Ideale von $R$.  Wir nennen  die Menge $\{0\}$
       das Null-Ideal und $R$ das Eins-Ideal.  Diese beiden Ideale werden auch als die \emph{trivialen}
       Ideale bezeichnet.
+      \eox
 \end{enumerate}
-\end{Definition}
 
 
 Mit Hilfe von Idealen lässt sich auf einem Ring eine Kongruenz-Relation erzeugen.  Ist $I$ ein Ideal auf
@@ -1132,6 +1140,7 @@ untersuchen.
   \\[0.2cm]
   Das Ideal ist also maximal, wenn es zwischen dem Ideal $I$ und dem Eins-Ideal $R$ keine 
   weiteren Ideale gibt.
+  \eox
 \end{Definition}
 
 Der nächste Satz zeigt uns, in welchen Fällen wir mit Hilfe eines Ideals einen Körper konstruieren
@@ -1267,7 +1276,7 @@ dass die Behauptung für sowohl für $b-a$ als auch für $a$ gilt. \exend
 Beim Beweis einer Behauptung, die für natürliche Zahlen gezeigt werden soll, hilft es manchmal, die
 Behauptung zunächst für kleine Zahlen zu überprüfen, denn das liefert oft eine Idee für den allgemeinen
 Fall. 
-
+\eox
 
 \exercise
 Wir betrachten den Ring der ganzen Zahlen $\mathbb{Z}$.  Es sei $p \in \mathbb{Z}$ und wir
@@ -1296,6 +1305,7 @@ den in der vorhergehenden Aufgabe gezeigten Satz an. \exend
 \exercise
 Zeigen Sie, dass der Faktor-Ring $\mathbb{Z}_p := \mathbb{Z}/p\mathbb{Z}$ genau dann ein Körper ist,
 wenn $p$ eine Primzahl ist.
+\eox
 
 %%% Local Variables: 
 %%% mode: latex
