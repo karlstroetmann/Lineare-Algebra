@@ -110,5 +110,5 @@ test := procedure(n) {
     findNC(n, map);
 };
 
-test(3);
-// test(4);  // You need a huge screen to see this group!
+// test(3);
+test(4);  // You need a huge screen to see this group!
