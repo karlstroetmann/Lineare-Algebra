@@ -489,13 +489,13 @@ $z = r \cdot \bigl(\cos(\varphi) + i \cdot \sin(\varphi)\bigr)$
 gilt, so ist offenbar für alle $k \in \{ 0, 1, \cdots, n - 1 \}$ die Zahl
 \\[0.2cm]
 \hspace*{1.3cm}
-$\displaystyle r = \zeta_n^k \cdot \sqrt[n]{r\,} \cdot 
+$\displaystyle s = \zeta_n^k \cdot \sqrt[n]{r\,} \cdot 
      \biggl(\cos\Bigl(\frac{\varphi}{n}\Bigr) + i \cdot \sin\Bigl(\frac{\varphi}{n}\Bigr) \biggr)
 $
 \\[0.2cm] 
-eine Lösung der Gleichung $r^n = z$.
+eine Lösung der Gleichung $s^n = z$.
 
-\example Wir berechnen alle Lösungen der Gleichung $r^3 = 1 + i$.  Dazu müssen wir zuächst die Zahl $1 +
+\example Wir berechnen alle Lösungen der Gleichung $r^3 = 1 + i$.  Dazu müssen wir zunächst die Zahl $1 +
 i$ in trigonometrischen Koordinaten darstellen.  Setzen wir
 \\[0.2cm]
 \hspace*{1.3cm} $\varphi = \arctan\Bigl(\bruch{1}{1}\Bigr) = \arctan(1) = \bruch{\pi}{4}$,
@@ -737,7 +737,7 @@ $v$ mit $\zeta_3^2$, so haben wir
 \hspace*{1.3cm}
 $3 \cdot \zeta_3 \cdot u \cdot \zeta_3^2 \cdot v = 3 \cdot \zeta_3^3 \cdot u \cdot v = 3 \cdot u \cdot v = p$,
 \\[0.2cm]
-denn offenbar gilt $\zeta_3^3 = 1$.  Als eine weitere Lösung erhalten wir dann
+denn aus der Tatsache, dass $\zeta_3$ die dritte Einheitswurzel ist, folgt $\zeta_3^3 = 1$.  Als eine weitere Lösung erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -814,11 +814,13 @@ Welche komplexen Zahlen $z \in \mathbb{C}$ lassen sich in der Form
 $\bruch{1 + i \cdot x}{1 - i \cdot x} = z$ \quad mit $x \in \mathbb{R}$
 \\[0.2cm]
 schreiben? 
+\vspace*{0.2cm}
 
 \noindent
 \textbf{Hinweis}:  Machen Sie für $z$ den Ansatz $z = a + b \cdot i$ mit $a,b \in \mathbb{R}$ und
 setzen Sie diesen Ansatz in der obigen Gleichung für $z$ ein.  
 \exend
+\pagebreak
 
 \exercise
 Bestimmen Sie mit Hilfe der Cardanischen Formel alle Lösungen der Gleichung 
@@ -913,7 +915,7 @@ positiv ist.  Dies ist einer von vielen Gründen, warum die komplexen Zahlen so w
 \noindent
 Der Beweis des Fundamentalsatzes der Algebra benötigt Hilfsmittel aus der Analysis, die wir nicht
 zur Verfügung haben.  Der Beweis ist auch nicht ganz einfach: Das können Sie beispielsweise der
-Tatsache entnehmen, das der bedeutendste Mathematiker, der je gelebt hat, 
+Tatsache entnehmen, dass der bedeutendste Mathematiker, der je gelebt hat, 
 \href{http://de.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gauß}
 diesen Satz 1799 in seiner Dissertation bewiesen hat.  Der Beweis, den Gauß damals gab, enthielt
 allerdings noch eine Lücke.  Der erste vollständige Beweis des Fundamentalsatzes der Algebra wurde 
