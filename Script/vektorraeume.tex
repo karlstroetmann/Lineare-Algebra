@@ -12,20 +12,20 @@ der Definition eines Vektor-Raums.
 
 \section{Definition und Beispiele}
 \begin{Definition}[Vektor-Raum]
-Ein Paar $\mathcal{V} = \bigl\langle \langle V, \mathbf{0}, + \rangle, \cdot \bigr\rangle$ ist ein \emph{$\mathbb{K}$-Vektor-Raum} falls gilt:
+Ein Paar $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein \emph{$\mathbb{K}$-Vektor-Raum} falls gilt:
 \begin{enumerate}
 \item $\mathbb{K}$ ist ein Körper.  
 
       In allen Beispielen, die uns in dieser Vorlesung begegnen werden,
       ist $\mathbb{K}$ entweder der Körper der reellen Zahlen $\mathbb{R}$ oder der Körper der komplexen Zahlen $\mathbb{C}$. 
-\item $\langle V, \mathbf{0}, + \rangle$ ist eine kommutative Gruppe.
+\item $\langle V, \vec{0}, + \rangle$ ist eine kommutative Gruppe.
 \item $\cdot: \mathbb{K} \times V \rightarrow V$ ist eine Abbildung, die jeder Zahl $\lambda \in \mathbb{K}$ und jedem 
-      $\mathbf{x} \in V$ ein Element $\lambda \cdot \mathbf{x} \in V$ zuordnet. 
+      $\vec{x} \in V$ ein Element $\lambda \cdot \vec{x} \in V$ zuordnet. 
       Diese Funktion  wird als \emph{Skalar-Multiplikation} bezeichnet und üblicherweise in Infix-Notation geschrieben.
 
       Die Skalar-Multiplikation muss außerdem den folgenden Gesetzen genügen:
       \begin{enumerate}
-      \item $(\alpha \cdot \beta)  \cdot \mathbf{x} =  \alpha \cdot (\beta \cdot \mathbf{x})$ \quad f.a.  $\alpha,\beta \in \mathbb{K}$,  $\mathbf{x} \in V$.
+      \item $(\alpha \cdot \beta)  \cdot \vec{x} =  \alpha \cdot (\beta \cdot \vec{x})$ \quad f.a.  $\alpha,\beta \in \mathbb{K}$,  $\vec{x} \in V$.
 
             Beachten Sie, dass der Operator ``$\cdot$'', der hier in dem Ausdruck $(\alpha \cdot \beta)$ auftritt, die Multiplikation in dem Körper $\mathbb{K}$ bezeichnet, 
             während alle anderen Auftreten des Operators ``$\cdot$'' die Skalar-Multiplikation bezeichnen.
@@ -33,26 +33,26 @@ Ein Paar $\mathcal{V} = \bigl\langle \langle V, \mathbf{0}, + \rangle, \cdot \bi
             Dieses Gesetz wird als das \emph{Assoziativ-Gesetz} bezeichnet.  Es drückt
             aus, dass die Multiplikation in dem Körper $\mathbb{K}$ mit der Skalar-Multiplikation
             verträglich ist.
-      \item $(\alpha + \beta) \cdot \mathbf{x} = \alpha \cdot \mathbf{x} + \beta \cdot \mathbf{x}$ \quad f.a.  $\alpha,\beta \in \mathbb{K}$,  $\mathbf{x} \in V$.
+      \item $(\alpha + \beta) \cdot \vec{x} = \alpha \cdot \vec{x} + \beta \cdot \vec{x}$ \quad f.a.  $\alpha,\beta \in \mathbb{K}$,  $\vec{x} \in V$.
 
             Beachten Sie, dass der Operator ``$+$'', der  hier in dem Ausdruck $(\alpha + \beta)$ auftritt, die Addition in dem Körper $\mathbb{K}$ bezeichnet, 
             während der Operator ``$+$'' in dem Ausdruck auf der rechten Seite dieser Gleichung die
-            Addition in der Gruppe $\langle V, \mathbf{0}, + \rangle$ bezeichnet.  Daher sagt dieses Gesetz,
+            Addition in der Gruppe $\langle V, \vec{0}, + \rangle$ bezeichnet.  Daher sagt dieses Gesetz,
             dass die Addition in dem Körper $\mathbb{K}$ mit der Addition in dem Vektor-Raum
             $\mathcal{V}$ verträglich ist.
-      \item $\alpha \cdot (\mathbf{x} + \mathbf{y}) = \alpha \cdot \mathbf{x} + \alpha \cdot \mathbf{y}$ \quad f.a. $\alpha \in \mathbb{K}$,  $\mathbf{x}, \mathbf{y} \in V$.
+      \item $\alpha \cdot (\vec{x} + \vec{y}) = \alpha \cdot \vec{x} + \alpha \cdot \vec{y}$ \quad f.a. $\alpha \in \mathbb{K}$,  $\vec{x}, \vec{y} \in V$.
 
             Dieses Gesetz drückt aus, dass die Skalar-Multiplikation mit der Addition im Vektor-Raum
             $\mathcal{V}$ verträglich ist.
 
             Die letzten beiden Gesetze werden als \emph{Distributiv-Gesetze} bezeichnet.
-      \item $1 \cdot \mathbf{x} = \mathbf{x}$ \quad f.a. $\mathbf{x} \in V$.  
+      \item $1 \cdot \vec{x} = \vec{x}$ \quad f.a. $\vec{x} \in V$.  
 
             Dieses Gesetz drückt aus, dass das neutrale Element der Multiplikation des Körpers
             $\mathbb{K}$ auch bezüglich der Skalar-Multiplikation ein neutrales Element ist. 
       \end{enumerate}
 \end{enumerate} 
-Ist $\mathcal{V} = \bigl\langle \langle V, \mathbf{0}, + \rangle, \cdot \bigr\rangle$  ein $\mathbb{K}$-Vektor-Raum, so bezeichnen wir die Elemente der Menge
+Ist $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$  ein $\mathbb{K}$-Vektor-Raum, so bezeichnen wir die Elemente der Menge
 $V$ als \emph{Vektoren}, während die Elemente aus dem Körper $\mathbb{K}$ 
 \emph{Skalare} genannt werden.  Den Körper $\mathbb{K}$ nennen wir den
 \emph{Skalaren-Körper} des Vektor-Raums $\mathcal{V}$.  
@@ -60,14 +60,15 @@ $V$ als \emph{Vektoren}, während die Elemente aus dem Körper $\mathbb{K}$
 \end{Definition}
 
 \remark
-Es ist üblich, Vektoren von Skalaren durch Fettdruck zu unterscheiden.  Da an der Tafel
-oder auf dem Tablet ein Fettdruck schlecht möglich ist, werden die Vektoren dort mit 
-Pfeilen verziert, wir schreiben dann also $\vec{x}$ an Stelle von $\mathbf{x}$.
+Es ist in der Literatur üblich, Vektoren von Skalaren durch Fettdruck zu unterscheiden.  
+Da aber an der Tafel oder auf dem Papier ein Fettdruck kaum möglich ist, habe ich mich dazu entschlosen, 
+Vektoren durch Pfeilen kenntlich zu machen.
+\eox
 
-Falls bei einer Menge $V$ aus dem Zusammenhang klar ist, was das neutrale Element ``$\mathbf{0}$'' ist und
+Falls bei einer Menge $V$ aus dem Zusammenhang klar ist, was das neutrale Element ``$\vec{0}$'' ist und
 wie die Operatoren ``$+$'' und ``$\cdot$'' zu  definieren sind, so dass
- $\bigl\langle \langle V, \mathbf{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum wird, dann sprechen wir in Zukunft von
-$V$ als $\mathbb{K}$-Vektor-Raum und meinen damit, dass das Tripel $\bigl\langle \langle V, \mathbf{0}, +
+ $\bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum wird, dann sprechen wir in Zukunft von
+$V$ als $\mathbb{K}$-Vektor-Raum und meinen damit, dass das Tripel $\bigl\langle \langle V, \vec{0}, +
 \rangle, \mathbb{K}, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum ist.  
 Falls darüber hinaus klar ist, um welchen Körper es sich bei $\mathbb{K}$ handelt, so sprechen wir
 einfach von einem Vektor-Raum anstatt von einem $\mathbb{K}$-Vektor-Raum. 
@@ -78,7 +79,7 @@ Wir haben die Menge $\mathbb{K}^n$ als die Menge aller Listen der Länge $n$ defi
 Setzen wir zunächst
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0} := \underbrace{[0, \cdots, 0]}_n$ 
+$\vec{0} := \underbrace{[0, \cdots, 0]}_n$ 
 \\[0.2cm]
 und definieren dann eine Addition ``$+$'' auf $\mathbb{K}^n$ komponentenweise durch
 \\[0.2cm]
@@ -88,7 +89,7 @@ $[x_1, \cdots, x_n] + [y_1, \cdots, y_n] := [x_1 + y_1, \cdots, x_n + y_n]$,
 so können Sie leicht nachrechnen, dass mit diesen Definitionen das Tripel
 \\[0.2cm]
 \hspace*{1.3cm}
-$\langle \mathbb{K}^n, \mathbf{0}, +\rangle$
+$\langle \mathbb{K}^n, \vec{0}, +\rangle$
 \\[0.2cm]
 eine kommutative Gruppe ist.  Definieren wir weiter die Skalar-Multiplikation $\cdot$ durch
 \\[0.2cm]
@@ -99,7 +100,7 @@ wobei in den Ausdrücken $\alpha \cdot x_i$ der Operator ``$\cdot$'' die Multipli
 dann lässt sich mit etwas Rechenaufwand einsehen, dass das Paar
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl\langle \langle \mathbb{K}^n, \mathbf{0}, + \rangle, \cdot \bigr\rangle$ 
+$\bigl\langle \langle \mathbb{K}^n, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
 \\[0.2cm]
 ein $\mathbb{K}$-Vektor-Raum ist.  Der Kürze halber werden wir in Zukunft einfach von $\mathbb{K}^n$ als Vektor-Raum reden, wobei wir dann in Wahrheit das obige Paar meinen. 
 \eox
@@ -136,17 +137,17 @@ $f \in\mathbb{R}^{\mathbb{R}}$ definieren wir die Funktion $\alpha \cdot f$ als
 $(\alpha \cdot f)(x) := \alpha \cdot f(x)$ \quad f.a. $x \in \mathbb{R}$.
 \\[0.2cm]
 Dann ist auch  $\alpha \cdot f$ eine Funktion von $\mathbb{R}$ nach $\mathbb{R}$.  
-Schließlich definieren wir eine Funktion $\mathbf{0}:
-\mathbb{R} \rightarrow \mathbb{R}$, indem wir
+Schließlich definieren wir eine Funktion
+ $\vec{0}:\mathbb{R} \rightarrow \mathbb{R}$, indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0}(x) := 0$ \quad f.a. $x \in \mathbb{R}$ 
+$\vec{0}(x) := 0$ \quad f.a. $x \in \mathbb{R}$ 
 \\[0.2cm]
-setzen.  Offensichtlich  gilt $\mathbf{0} \in \mathbb{R}^{\mathbb{R}}$.  Nun können Sie
+setzen.  Offensichtlich  gilt $\vec{0} \in \mathbb{R}^{\mathbb{R}}$.  Nun können Sie
 leicht nachprüfen, dass die so definierte Struktur
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl\langle \langle \mathbb{R}^{\mathbb{R}}, \mathbf{0}, + \rangle, \cdot \bigr\rangle$
+$\bigl\langle \langle \mathbb{R}^{\mathbb{R}}, \vec{0}, + \rangle, \cdot \bigr\rangle$
 \\[0.2cm]
 ein Vektor-Raum ist.  Das folgt letzlich daraus, dass das Assoziativ-Gesetz und das Distributiv-Gesetz für reelle Zahlen
 gilt.
@@ -166,9 +167,9 @@ und die Skalar-Multiplikation durch
 \hspace*{1.3cm}
 $\alpha \cdot \bigl(x_n\bigr)_{n\in\mathbb{N}} := \bigl(\alpha \cdot x_n \bigr)_{n\in\mathbb{N}}$
 \\[0.2cm]
-und definieren wir $\mathbf{0}$ als die Folge $(0)_{n\in\mathbb{N}}$, also als die Folge,
+und definieren wir $\vec{0}$ als die Folge $(0)_{n\in\mathbb{N}}$, also als die Folge,
 deren sämtliche Glieder den Wert $0$ haben, so lässt sich zeigen, dass die Struktur
- $\bigl\langle\langle\mathbb{K}^\mathbb{N}, \mathbf{0}, +\rangle, \cdot\rangle$  ein Vektor-Raum ist.
+ $\bigl\langle\langle\mathbb{K}^\mathbb{N}, \vec{0}, +\rangle, \cdot\rangle$  ein Vektor-Raum ist.
 \eox
 
 
@@ -176,11 +177,11 @@ deren sämtliche Glieder den Wert $0$ haben, so lässt sich zeigen, dass die Struk
 Es sei $\bigl\langle \langle V, 0, +\rangle, \cdot\bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum.  Beweisen Sie:
 \renewcommand{\labelenumi}{(\alph{enumi})}
 \begin{enumerate}
-\item $0 \cdot \mathbf{x} = \mathbf{0}$ \quad f.a. $\mathbf{x} \in V$,
-\item $\forall \alpha \in \mathbb{K}: \forall \mathbf{x} \in V: \bigl(\alpha \cdot \mathbf{x} = \mathbf{0} \rightarrow \alpha = 0 \vee \mathbf{x} = 0\bigr)$,
-\item $(-1) \cdot \mathbf{x} = -\mathbf{x}$ \quad f.a. $\mathbf{x} \in V$,
+\item $0 \cdot \vec{x} = \vec{0}$ \quad f.a. $\vec{x} \in V$,
+\item $\forall \alpha \in \mathbb{K}: \forall \vec{x} \in V: \bigl(\alpha \cdot \vec{x} = \vec{0} \rightarrow \alpha = 0 \vee \vec{x} = 0\bigr)$,
+\item $(-1) \cdot \vec{x} = -\vec{x}$ \quad f.a. $\vec{x} \in V$,
 
-      wobei hier mit $-\mathbf{x}$ das additive Inverse von $x$ in der Gruppe $\langle V, \mathbf{0}, +\rangle$
+      wobei hier mit $-\vec{x}$ das additive Inverse von $x$ in der Gruppe $\langle V, \vec{0}, +\rangle$
       bezeichnet wird. 
       \eoxs
 \end{enumerate}
@@ -192,18 +193,18 @@ ein.  Dazu definieren wir zunächst, was wir unter einem \emph{Erzeugenden-System
 verstehen und wann eine Menge von Vektoren \emph{linear unabhängig} ist.
 
 \begin{Definition}[Linear-Kombination]
-Es sei $\mathcal{V}$ ein $\mathbb{K}$-Vektor-Raum.  Ein Vektor $\mathbf{x} \in \mathcal{V}$ ist eine
-\emph{Linear-Kombination} der Vektor $\mathbf{y}_1, \cdots, \mathbf{y}_n \in \mathcal{V}$ genau dann, wenn es Skalare
+Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum.  Ein Vektor $\vec{x} \in V$ ist eine
+\emph{Linear-Kombination} der Vektoren $\vec{y}_1, \cdots, \vec{y}_n \in V$ genau dann, wenn es Skalare
 $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ gibt, so dass die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \alpha_1 \cdot \mathbf{y}_1 + \cdots + \alpha_n \cdot \mathbf{y}_n$
+$\vec{x} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n$
 \\[0.2cm]
-gilt.  Zusätzlich müssen die Vektoren $\mathbf{y}_i$ alle paarweise verschieden sein.
+gilt.  Zusätzlich müssen die Vektoren $\vec{y}_i$ alle paarweise verschieden sein.
 Die obige Gleichung werden wir in Zukunft der Kürze halber gelegentlich auch in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \sum\limits_{i=1}^n \alpha_i \cdot \mathbf{y}_i$
+$\vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i$
 \\[0.2cm]
 schreiben.
 \eoxs
@@ -213,32 +214,33 @@ schreiben.
 Definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{y}_1 := [1, 0, 2]$, \quad  $\mathbf{y}_2 := [1, 2, 0]$, \quad  $\mathbf{y}_3 := [0, -1, 3]$  \quad und \quad  $\mathbf{x} := [3, 1, 11]$,
+$\vec{y}_1 := [1, 0, 2]$, \quad  $\vec{y}_2 := [1, 2, 0]$, \quad  $\vec{y}_3 := [0, -1, 3]$  \quad und \quad  $\vec{x} := [3, 1, 11]$,
 \\[0.2cm]
-so ist $\mathbf{x}$ eine Linear-Kombination der Vektoren $\mathbf{y}_1$, $\mathbf{y}_2$, $\mathbf{y}_3$, denn es gilt
+so ist $\vec{x}$ eine Linear-Kombination der Vektoren $\vec{y}_1$, $\vec{y}_2$, $\vec{y}_3$, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = 1 \cdot \mathbf{y}_1 + 2 \cdot \mathbf{y}_2 + 3 \cdot \mathbf{y}_3$.  \eoxs
+$\vec{x} = 1 \cdot \vec{y}_1 + 2 \cdot \vec{y}_2 + 3 \cdot \vec{y}_3$.  \eoxs
 
 \begin{Definition}[linear unabhängig]
-Es sei $V$ ein Vektor-Raum.  Eine Menge $B \subseteq V$ ist \\ \emph{linear unabhängig} genau dann, wenn 
+Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein Vektor-Raum.  
+Eine Menge $B \subseteq V$ ist \\ \emph{linear unabhängig} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\forall \alpha_1, \cdots, \alpha_n \in \mathbb{K}: \forall \mathbf{x_1}, \cdots,
-\mathbf{x_n} \in B:$ \\
+$\forall n \in \mathbb{N}:\forall \alpha_1, \cdots, \alpha_n \in \mathbb{K}: \forall \vec{x_1}, \cdots,
+\vec{x_n} \in B:$ \\
 \hspace*{2.3cm} $\left(
- \mbox{$\mathbf{x}_i$ paarweise verschieden} \wedge \sum\limits_{i=1}^n \alpha_i \cdot \mathbf{x}_i = \mathbf{0} \;\Rightarrow\; \forall i \in
+ \mbox{$\vec{x}_i$ paarweise verschieden} \wedge \sum\limits_{i=1}^n \alpha_i \cdot \vec{x}_i = \vec{0} \;\Rightarrow\; \forall i \in
  \{1,\cdots,n\}: \alpha_i = 0\right)
 $
 \\[0.2cm]
-gilt.  Mit anderen Worten:  Der Nullvektor $\mathbf{0}$ lässt sich nur als die sogenannte
+gilt.  Mit anderen Worten:  Der Nullvektor $\vec{0}$ lässt sich nur als die sogenannte
 \emph{triviale Linear-Kombination} aus Vektoren der Menge $B$ darstellen.  Demgegenüber heißt eine
 Menge $B \subseteq V$ \emph{linear abhängig} genau dann, wenn $B$ nicht linear unabhängig ist.  In
-diesem Fall gibt es dann Vektoren $\mathbf{x}_1$, $\cdots$, $\mathbf{x}_n \in B$, die paarweise
+diesem Fall gibt es dann Vektoren $\vec{x}_1$, $\cdots$, $\vec{x}_n \in B$, die paarweise
 verschieden sind, sowie Skalare $\alpha_1,\cdots,\alpha_n \in \mathbb{K}$, so dass einerseits
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sum\limits_{i=1}^n \alpha_i \cdot \mathbf{x}_i = \mathbf{0}$, \quad aber andererseits auch \quad
+$\sum\limits_{i=1}^n \alpha_i \cdot \vec{x}_i = \vec{0}$, \quad aber andererseits auch \quad
 $\exists i \in \{1,\cdots,n\}: \alpha_i \,\not=\, 0$
 \\[0.2cm]
 gilt.  
@@ -249,14 +251,14 @@ gilt.
 Definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{y}_1 := [1, 0, 2]$, \quad  $\mathbf{y}_2 := [1, 2, 0]$ \quad und \quad $\mathbf{y}_3 := [0, -1, 3]$,
+$\vec{y}_1 := [1, 0, 2]$, \quad  $\vec{y}_2 := [1, 2, 0]$ \quad und \quad $\vec{y}_3 := [0, -1, 3]$,
 \\[0.2cm]
-so ist die Menge $B := \{ \mathbf{y}_1, \mathbf{y}_2, \mathbf{y}_3 \}$
+so ist die Menge $B := \{ \vec{y}_1, \vec{y}_2, \vec{y}_3 \}$
 linear unabhängig.  Zum Beweis dieser Behauptung nehmen wir zunächst an, dass es $\alpha_1$,
 $\alpha_2$ und $\alpha_3$, gibt, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0} = \alpha_1 \cdot [1,0,2] + \alpha_2 \cdot [1,2,0] + \alpha_3 \cdot [0,-1,3]$
+$\vec{0} = \alpha_1 \cdot [1,0,2] + \alpha_2 \cdot [1,2,0] + \alpha_3 \cdot [0,-1,3]$
 \\[0.2cm]
 gilt.  Ersetzen wir $\mathbb{0}$ durch die Liste $[0,0,0]$ und rechnen die rechte Seite
 dieser Gleichung aus, so erhalten wir die Gleichung
@@ -279,40 +281,43 @@ $0 = 2 \cdot (- \alpha_2) + 3 \cdot 2 \cdot \alpha_2$,
 \\[0.2cm]
 die wir auch als $0 = 4 \cdot \alpha_2$ schreiben können.  Daraus folgt aber sofort $\alpha_2 = 0$
 und das impliziert dann auch $\alpha_1 = 0$ und $\alpha_3 = 0$.  Damit haben wir gezeigt, dass die drei
-Vektoren $\mathbf{y}_1$, $\mathbf{y}_2$, $\mathbf{y}_3$ sich nur trivial zu dem Null-Vektor
-$\mathbf{0}$ kombinieren lassen.  Folglich ist die Menge $B$ linear unabhängig.
+Vektoren $\vec{y}_1$, $\vec{y}_2$, $\vec{y}_3$ sich nur trivial zu dem Null-Vektor
+$\vec{0}$ kombinieren lassen.  Folglich ist die Menge $B$ linear unabhängig.
 \eox
 
 \begin{Definition}[Erzeugenden-System]
-  Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $B \subseteq V$.  Die Teilmenge $B$ ist ein
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
+  und $B \subseteq V$.  Die Teilmenge $B$ ist ein
   \emph{Erzeugenden-System} des Vektor-Raums $V$ genau dann, wenn sich jeder Vektor 
-  $\mathbf{x} \in V$ als Linear-Kombination von Vektoren aus $B$ schreiben lässt. 
+  $\vec{x} \in V$ als Linear-Kombination von Vektoren aus $B$ schreiben lässt. 
   Als Formel schreibt sich dies wie folgt:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall \mathbf{x} \in V: \exists n \in \mathbb{N}: \exists  \mathbf{y}_1, \cdots,
-  \mathbf{y}_n \in B: \exists \alpha_1, \cdots, \alpha_n \in \mathbb{K}: 
-  \mathbf{x} = \sum\limits_{i=1}^n \alpha_i \cdot \mathbf{y}_i
+  $\forall \vec{x} \in V: \exists n \in \mathbb{N}: \exists  \vec{y}_1, \cdots,
+  \vec{y}_n \in B: \exists \alpha_1, \cdots, \alpha_n \in \mathbb{K}: 
+  \vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i
   $. \eoxs
 \end{Definition}
 
-Für jeden Vektor-Raum $V$ gibt es ein triviales Erzeugenden-System, den natürlich ist die gesamte
-Menge $V$ ein Erzeugenden-System von $V$.  Um das einzusehen, setzen wir für einen gegebenen Vektor
-$\mathbf{x} \in V$ in der obigen Definition $n:=1$, $\mathbf{y}_1 := \mathbf{x}$ und $\alpha_1 := 1$
+Für jeden Vektor-Raum $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
+gibt es ein triviales Erzeugenden-System, den natürlich ist die gesamte 
+Menge $V$ ein Erzeugenden-System von $\mathcal{V}$.  Um das einzusehen, setzen wir für einen gegebenen Vektor
+$\vec{x} \in V$ in der obigen Definition $n:=1$, $\vec{y}_1 := \vec{x}$ und $\alpha_1 := 1$
 und haben dann trivialerweise
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = 1 \cdot \mathbf{x} = 1 \cdot \mathbf{y}_1$,
+$\vec{x} = 1 \cdot \vec{x} = 1 \cdot \vec{y}_1$,
 \\[0.2cm]
-womit $\mathbf{x}$ als Linear-Kombination von Elementen der Menge $V$ dargestellt ist.  Aber
+womit $\vec{x}$ als Linear-Kombination von Elementen der Menge $V$ dargestellt ist.  Aber
 natürlich ist ein solches Erzeugenden-System nicht sonderlich interessant.  Interessanter sind
 Erzeugenden-Systeme, die möglichst wenige Elemente haben, die also bezüglich der Anzahl
 der Elemente \emph{minimal} sind.  Dies führt zu der folgenden zentralen Definition.
 \pagebreak
 
 \begin{Definition}[Basis]
-  Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $B \subseteq V$.  Die Teilmenge $B$ ist eine
-  \emph{Basis} von $V$, wenn Folgendes gilt:
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
+  und $B \subseteq V$.  Die Teilmenge $B$ ist eine
+  \emph{Basis} von $V$, wenn das Folgende gilt:
   \begin{enumerate}
   \item $B$ ist ein Erzeugenden-System von $V$ und
   \item $B$ ist linear unabhängig.  \eoxs
@@ -323,95 +328,97 @@ der Elemente \emph{minimal} sind.  Dies führt zu der folgenden zentralen Definit
 Der nächste Satz zeigt, dass eine Basis eine \underline{maximale} Menge linear unabhängiger Vektoren ist.
 
 \begin{Satz}
-  Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $B$ sei eine Basis von $V$.  Ist $\mathbf{x} \in V \backslash B$,
-  so ist die Menge $B \cup \{ \mathbf{x} \}$ linear abhängig.
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
+  ein $\mathbb{K}$-Vektor-Raum und $B$ sei eine Basis von $\mathcal{V}$.  Ist $\vec{x} \in V \backslash B$,
+  so ist die Menge $B \cup \{ \vec{x} \}$ linear abhängig.
 \end{Satz}
 
 \proof
-Da $B$ eine Basis ist, ist $B$ insbesondere auch ein Erzeugenden-System von $V$.  Damit gibt es ein
-$n \in \mathbb{N}$ und Vektoren $\mathbf{y}_1,\cdots,\mathbf{y}_n \in B$ sowie Skalare $\alpha_1, \cdots,\alpha_n \in \mathbb{K}$,
+Da $B$ eine Basis ist, ist $B$ insbesondere auch ein Erzeugenden-System von $\mathcal{V}$.  Damit gibt es ein
+$n \in \mathbb{N}$ und Vektoren $\vec{y}_1,\cdots,\vec{y}_n \in B$ sowie Skalare $\alpha_1, \cdots,\alpha_n \in \mathbb{K}$,
 so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \alpha_1 \cdot \mathbf{y}_1 + \cdots + \alpha_n \cdot \mathbf{y}_n$
+$\vec{x} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n$
 \\[0.2cm]
-gilt.  O.B.d.A. können wir hier davon ausgehen, dass die Vektoren $\mathbf{y}_i$ paarweise
-verschieden sind, denn wenn für $i\not= j$ die Gleichung $\mathbf{y}_i = \mathbf{y}_j$
-gelten sollte, so können wir den Vektor $\mathbf{y}_j$ in der obigen Summe fallen lassen,
+gilt.  O.B.d.A. können wir hier davon ausgehen, dass die Vektoren $\vec{y}_i$ paarweise
+verschieden sind, denn wenn für $i\not= j$ die Gleichung $\vec{y}_i = \vec{y}_j$
+gelten sollte, so können wir den Vektor $\vec{y}_j$ in der obigen Summe fallen lassen,
 indem wir $\alpha_i$ durch $\alpha_i + \alpha_j$ ersetzen.
 
-Stellen wir die obige Gleichung für $\mathbf{x}$ zu der Gleichung
+Stellen wir die obige Gleichung für $\vec{x}$ zu der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0} = (-1) \cdot \mathbf{x} + \alpha_1 \cdot \mathbf{y}_1 + \cdots + \alpha_n \cdot \mathbf{y}_n$
+$\vec{0} = (-1) \cdot \vec{x} + \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n$
 \\[0.2cm]
 um, so haben wir eine nicht-triviale Linear-Kombination des Null-Vektors aus Vektoren der Menge 
-$B \cup \{ \mathbf{x} \}$ gefunden.  Dies zeigt, dass die Menge $B \cup \{ \mathbf{x} \}$ linear abhängig
+$B \cup \{ \vec{x} \}$ gefunden.  Dies zeigt, dass die Menge $B \cup \{ \vec{x} \}$ linear abhängig
 ist. \qeds
 
 \exercise
-Überlegen Sie, an welcher Stelle die Voraussetzung $\mathbf{x} \not\in B$ in dem obigen Beweis benutzt wird!
+Überlegen Sie, an welcher Stelle die Voraussetzung $\vec{x} \not\in B$ in dem obigen Beweis benutzt wird!
 \eox
 
 \noindent
 Der letzte Satz lässt sich in dem folgenden Sinne umkehren.
 
 \begin{Satz}
-  Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $B \subseteq V$.  Falls $B$ eine \emph{maximale} linear
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
+  und $B \subseteq V$.  Falls $B$ eine \emph{maximale} linear 
   unabhängige Teilmenge von $V$ ist, falls also gilt:
   \begin{enumerate}
   \item $B$ ist linear unabhängig und
-  \item für alle Vektoren $\mathbf{x} \in V \backslash B$ ist die Menge $B \cup \{ \mathbf{x} \}$
+  \item für alle Vektoren $\vec{x} \in V \backslash B$ ist die Menge $B \cup \{ \vec{x} \}$
         linear abhängig,
   \end{enumerate}
   dann ist $B$ schon eine Basis von $V$.
 \end{Satz}
 
 \proof
-Wir müssen nur noch zeigen, dass $B$ ein Erzeugenden-System von $V$ ist.  Dazu ist nachzuweisen,
-dass sich jeder Vektor $\mathbf{x} \in V$ als Linear-Kombination von Vektoren aus $B$ schreiben
+Wir müssen nur noch zeigen, dass $B$ ein Erzeugenden-System von $\mathcal{V}$ ist.  Dazu ist nachzuweisen,
+dass sich jeder Vektor $\vec{x} \in V$ als Linear-Kombination von Vektoren aus $B$ schreiben
 lässt.  Wir unterscheiden zwei Fälle:
 \begin{enumerate}
-\item $\mathbf{x} \in B$.
+\item $\vec{x} \in B$.
 
-      In diesem Fall setzen wir $n := 1$, $\mathbf{y}_1 := \mathbf{x}$ und $\alpha_1 := 1$.  Damit
+      In diesem Fall setzen wir $n := 1$, $\vec{y}_1 := \vec{x}$ und $\alpha_1 := 1$.  Damit
       gilt offenbar
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} = \alpha_1 \cdot \mathbf{y}_1$
+      $\vec{x} = \alpha_1 \cdot \vec{y}_1$
       \\[0.2cm]
       und wir haben die gesuchte Linear-Kombination gefunden.
-\item $\mathbf{x} \not\in B$.
+\item $\vec{x} \not\in B$.
 
-      Nach Voraussetzung ist die Menge $B \cup \{ \mathbf{x} \}$ linear abhängig.  Damit lässt sich
-      der Null-Vektor als nicht-triviale Linear-Kombination von Vektoren aus $B \cup \{\mathbf{x}\}$
+      Nach Voraussetzung ist die Menge $B \cup \{ \vec{x} \}$ linear abhängig.  Damit lässt sich
+      der Null-Vektor als nicht-triviale Linear-Kombination von Vektoren aus $B \cup \{\vec{x}\}$
       schreiben.  Nun gibt es zwei Möglichkeiten:
       \begin{enumerate}
-      \item Der Vektor $\mathbf{x}$ wird bei dieser Linear-Kombination gar nicht benötigt.
+      \item Der Vektor $\vec{x}$ wird bei dieser Linear-Kombination gar nicht benötigt.
             Dann hätten wir aber eine nicht-triviale Linear-Kombination des Null-Vektors aus
             Vektoren der Menge $B$.  Da die Menge $B$ nach Voraussetzung linear unabhängig ist,
             kann dieser Fall nicht eintreten.
-      \item Der Vektor $\mathbf{x}$ tritt in der nicht-trivialen Linear-Kombination des
-            Null-Vektors auf.  Es gibt dann ein $n \in \mathbb{N}$, sowie Vektoren $\mathbf{y}_1,
-            \cdots, \mathbf{y}_n$ und Skalare $\alpha_1, \cdots, \alpha_n, \alpha_{n+1}$,
+      \item Der Vektor $\vec{x}$ tritt in der nicht-trivialen Linear-Kombination des
+            Null-Vektors auf.  Es gibt dann ein $n \in \mathbb{N}$, sowie Vektoren $\vec{y}_1,
+            \cdots, \vec{y}_n$ und Skalare $\alpha_1, \cdots, \alpha_n, \alpha_{n+1}$,
             so dass 
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\mathbf{0} = \alpha_1 \cdot \mathbf{y}_1 + \cdots + \alpha_n \cdot \mathbf{y}_n + \alpha_{n+1} \cdot \mathbf{x}$
+            $\vec{0} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n + \alpha_{n+1} \cdot \vec{x}$
             \\[0.2cm]
-            gilt.  Hierbei muss $\alpha_{n+1} \not=0$ gelten, denn sonst würde $\mathbf{x}$ in der
+            gilt.  Hierbei muss $\alpha_{n+1} \not=0$ gelten, denn sonst würde $\vec{x}$ in der
             Linear-Kombination gar nicht benötigt und idesen Fall haben wir ja bereits
             ausgeschlossen.  Damit 
             können wir die obige Gleichung zu
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\mathbf{x} = -\bruch{\alpha_1}{\alpha_{n+1}} \cdot \mathbf{y}_1 - \cdots - \bruch{\alpha_n}{\alpha_{n+1}} \cdot \mathbf{y}_n$
+            $\vec{x} = -\bruch{\alpha_1}{\alpha_{n+1}} \cdot \vec{y}_1 - \cdots - \bruch{\alpha_n}{\alpha_{n+1}} \cdot \vec{y}_n$
             \\[0.2cm] 
-            umstellen.  Diese Gleichung zeigt, dass $\mathbf{x}$ sich als Linear-Kombination von Vektoren aus
+            umstellen.  Diese Gleichung zeigt, dass $\vec{x}$ sich als Linear-Kombination von Vektoren aus
             $B$ schreiben lässt und das war zu zeigen. 
       \end{enumerate}
 \end{enumerate}
-Insgesamt haben wir jetzt gezeigt, dass sich jeder Vektor $\mathbf{x}\in V$ als Linear-Kombination
+Insgesamt haben wir jetzt gezeigt, dass sich jeder Vektor $\vec{x}\in V$ als Linear-Kombination
 von Vektoren aus $B$ schreiben lässt und damit ist $B$ ein Erzeugenden-System von $V$.  \qed
 
 Die letzten beiden Sätze lassen sich dahingehen zusammenfassen, dass eine Menge
@@ -420,189 +427,192 @@ Teilmenge von $V$ ist.  Die nächsten beide Sätze zeigen, dass sich eine Basis au
 Erzeugenden-System charakterisieren lässt.
 
 \begin{Satz}
-  Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $B$ sei eine Basis von $V$.  Ist $\mathbf{x} \in B$,
-  so ist die Menge $B \backslash \{ \mathbf{x} \}$ kein Erzeugenden-System von $V$.
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein
+  $\mathbb{K}$-Vektor-Raum und $B$ sei eine Basis von $\mathcal{V}$.  Ist $\vec{x} \in B$,
+  so ist die Menge $B \backslash \{ \vec{x} \}$ kein Erzeugenden-System von $\mathcal{V}$.
 \end{Satz}
 
 \proof
-Wir führen den Beweis indirekt und nehmen an, dass die Menge $B \backslash \{ \mathbf{x} \}$ ein 
-Erzeugenden-System von $V$ ist.  Dann müsste sich insbesondere auch der Vektor $\mathbf{x}$ als
-Linear-Kombination von Vektoren aus  $B \backslash \{ \mathbf{x} \}$ schreiben lassen.  Es gäbe dann
-also ein $n \in \mathbb{N}$ sowie Vektoren  $\mathbf{y}_1, \cdots, \mathbf{y}_n \in B\backslash \{\mathbf{x}\}$ und Skalare 
+Wir führen den Beweis indirekt und nehmen an, dass die Menge $B \backslash \{ \vec{x} \}$ ein 
+Erzeugenden-System von $\mathcal{V}$ ist.  Dann müsste sich insbesondere auch der Vektor $\vec{x}$ als
+Linear-Kombination von Vektoren aus  $B \backslash \{ \vec{x} \}$ schreiben lassen.  Es gäbe dann
+also ein $n \in \mathbb{N}$ sowie Vektoren  $\vec{y}_1, \cdots, \vec{y}_n \in B\backslash \{\vec{x}\}$ und Skalare 
 $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \alpha_1 \cdot \mathbf{y_1} + \cdots + \alpha_n \cdot \mathbf{y}_n$
+$\vec{x} = \alpha_1 \cdot \vec{y_1} + \cdots + \alpha_n \cdot \vec{y}_n$
 \\[0.2cm]
 gelten würde.  Diese Gleichung können wir zu
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0} =  \alpha_1 \cdot \mathbf{y_1} + \cdots + \alpha_n \cdot \mathbf{y}_n + (-1) \cdot \mathbf{x}$
+$\vec{0} =  \alpha_1 \cdot \vec{y_1} + \cdots + \alpha_n \cdot \vec{y}_n + (-1) \cdot \vec{x}$
 \\[0.2cm]
-umstellen.  Da die Vektoren $\mathbf{y}_1, \cdots, \mathbf{y}_n, \mathbf{x}$ verschiedene Vektoren aus $B$ sind,
+umstellen.  Da die Vektoren $\vec{y}_1, \cdots, \vec{y}_n, \vec{x}$ verschiedene Vektoren aus $B$ sind,
 hätten wir damit eine nicht-triviale Linear-Kombination des Null-Vektors gefunden, was der Tatsache
 widerspricht, dass die Menge $B$ als Basis insbesondere linear unabhängig ist. \qed
 
-Der letzte Satz zeigt, dass eine Basis ein \emph{minimales Erzeugenden-System} des Vektor-Raums $V$
+Der letzte Satz zeigt, dass eine Basis ein \emph{minimales Erzeugenden-System} des Vektor-Raums $\mathcal{V}$
 ist.  Wie wir jetzt sehen werden, lässt sich dieser Satz auch umkehren.
 
 \begin{Satz}
-  Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $B \subseteq V$.  Falls $B$ eine \emph{minimales Erzeugenden-System}
-  von $V$ ist, falls also gilt:
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
+  und $B \subseteq V$.  Falls $B$ eine \emph{minimales Erzeugenden-System}
+  von $\mathcal{V}$ ist, falls also gilt:
   \begin{enumerate}
-  \item $B$ ist ein Erzeugenden-System von $V$ und
-  \item für alle Vektoren $\mathbf{x} \in B$ ist die Menge $B \backslash \{ \mathbf{x} \}$
-        kein Erzeugenden-System von $V$,
+  \item $B$ ist ein Erzeugenden-System von $\mathcal{V}$ und
+  \item für alle Vektoren $\vec{x} \in B$ ist die Menge $B \backslash \{ \vec{x} \}$
+        kein Erzeugenden-System von $\mathcal{V}$,
   \end{enumerate}
-  dann ist $B$ schon eine Basis von $V$.
+  dann ist $B$ schon eine Basis von $\mathcal{V}$.
 \end{Satz}
 
 \proof
-Da die Menge $B$ nach Voraussetzung bereits ein Erzeugenden-System von $V$ ist, müssen wir
+Da die Menge $B$ nach Voraussetzung bereits ein Erzeugenden-System von $\mathcal{V}$ ist, müssen wir
 lediglich zeigen, dass $B$ linear unabhängig ist.  Wir führen auch diesen Beweis als
 Widerspruchsbeweis und nehmen an, dass $B$ linear abhängig wäre.  Mit dieser Annahme finden wir eine
 nicht-triviale Linear-Kombination des Null-Vektors mit Hilfe von Vektoren aus $B$, wir finden also
-ein $n \in \mathbb{N}$ sowie paarweise verschiedene Vektoren $\mathbf{y}_1, \cdots, \mathbf{y}_n \in B$ und Skalare
+ein $n \in \mathbb{N}$ sowie paarweise verschiedene Vektoren $\vec{y}_1, \cdots, \vec{y}_n \in B$ und Skalare
 $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0} =  \alpha_1 \cdot \mathbf{y}_1 + \cdots + \alpha_n \cdot \mathbf{y}_n$
+$\vec{0} =  \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n$
 \\[0.2cm]
 gilt, wobei wenigstens einer der Skalare $\alpha_i$ von $0$ verschieden ist.  Sei also $\alpha_i \not= 0$. 
 Dann können wir die obige Gleichung zu 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds(-\alpha_i) \cdot \mathbf{y_i} = \sum\limits_{j=1 \atop j\not=i}^n \alpha_j \cdot \mathbf{y}_j$
+$\ds(-\alpha_i) \cdot \vec{y_i} = \sum\limits_{j=1 \atop j\not=i}^n \alpha_j \cdot \vec{y}_j$
 \\[0.2cm]
 umstellen.  Da $\alpha_i \not= 0$ ist, können wir durch $\alpha_i$ teilen und finden
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \mathbf{y_i} = \sum\limits_{j=1 \atop j\not=i}^n \bruch{-\alpha_j}{\alpha_i} \cdot \mathbf{y}_j$.
+$\ds \vec{y_i} = \sum\limits_{j=1 \atop j\not=i}^n \bruch{-\alpha_j}{\alpha_i} \cdot \vec{y}_j$.
 \\[0.2cm]
-Die letzte Gleichung zeigt, dass sich $\mathbf{y}_i$ als Linear-Kombination der Vektoren
-$\mathbf{y}_1, \cdots, \mathbf{y}_{i-1}$,  $\mathbf{y}_{i+1}, \cdots, \mathbf{y}_n$ schreiben lässt.  Wir werden jetzt zeigen, dass damit dann auch die Menge
-$B \backslash \{ \mathbf{y_i} \}$ ein Erzeugenden-System von $V$ ist.  Sei dazu $\mathbf{x}$ ein
-beliebiger Vektor aus $V$.  Da $B$ ein Erzeugenden-System von $V$ ist, gibt es zunächst ein $m \in
-\mathbb{N}$ sowie Vektoren $\mathbf{z}_1, \cdots, \mathbf{z}_m \in B$ und Skalare $\beta_1, \cdots,
+Die letzte Gleichung zeigt, dass sich $\vec{y}_i$ als Linear-Kombination der Vektoren
+$\vec{y}_1, \cdots, \vec{y}_{i-1}$,  $\vec{y}_{i+1}, \cdots, \vec{y}_n$ schreiben lässt.  Wir werden jetzt zeigen, dass damit dann auch die Menge
+$B \backslash \{ \vec{y_i} \}$ ein Erzeugenden-System von $V$ ist.  Sei dazu $\vec{x}$ ein
+beliebiger Vektor aus $V$.  Da $B$ ein Erzeugenden-System von $\mathcal{V}$ ist, gibt es zunächst 
+ein $m \in\mathbb{N}$ sowie Vektoren $\vec{z}_1, \cdots, \vec{z}_m \in B$ und Skalare $\beta_1, \cdots,
 \beta_m \in \mathbb{K}$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds \mathbf{x} = \sum\limits_{j=1}^m \beta_j \cdot \mathbf{z}_j$
+$\ds \vec{x} = \sum\limits_{j=1}^m \beta_j \cdot \vec{z}_j$
 \\[0.2cm]
-gilt.   Falls alle Vektoren $\mathbf{z}_j$ von $\mathbf{y}_i$ verschieden sind,  ist nichts mehr zu
-zeigen, denn dann haben wir $\mathbf{x}$ bereits als Linear-Kombination von Vektoren der Menge $B \backslash \{\mathbf{y_i}\}$ 
-geschrieben.  Sollte allerdings eines der $\mathbf{z}_j$, sagen wie
-$\mathbf{z}_k$, mit $\mathbf{y_i}$ identisch sein, dann können wir die obige Gleichung wie folgt
+gilt.   Falls alle Vektoren $\vec{z}_j$ von $\vec{y}_i$ verschieden sind,  ist nichts mehr zu
+zeigen, denn dann haben wir $\vec{x}$ bereits als Linear-Kombination von Vektoren der Menge $B \backslash \{\vec{y_i}\}$ 
+geschrieben.  Sollte allerdings eines der $\vec{z}_j$, sagen wie
+$\vec{z}_k$, mit $\vec{y_i}$ identisch sein, dann können wir die obige Gleichung wie folgt
 umschreiben:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\mathbf{x} = \sum\limits_{j=1 \atop j \not=k}^m \beta_j \cdot \mathbf{z}_j + 
-              \beta_k \cdot \sum\limits_{j=1 \atop j \not= i} \bruch{-\alpha_j}{\alpha_i} \cdot \mathbf{y}_j
+$\ds\vec{x} = \sum\limits_{j=1 \atop j \not=k}^m \beta_j \cdot \vec{z}_j + 
+              \beta_k \cdot \sum\limits_{j=1 \atop j \not= i} \bruch{-\alpha_j}{\alpha_i} \cdot \vec{y}_j
 $
 \\[0.2cm]
-Auch in diesem Fall haben wir also $\mathbf{x}$ als Linear-Kombination von Vektoren der Menge 
-$B \backslash \{ \mathbf{y}_i \}$ schreiben können.  Dies zeigt, dass die Menge
-$B \backslash \{ \mathbf{y}_i \}$ bereits ein Erzeugenden-System von $V$ ist und steht im
+Auch in diesem Fall haben wir also $\vec{x}$ als Linear-Kombination von Vektoren der Menge 
+$B \backslash \{ \vec{y}_i \}$ schreiben können.  Dies zeigt, dass die Menge
+$B \backslash \{ \vec{y}_i \}$ bereits ein Erzeugenden-System von $\mathcal{V}$ ist und steht im
 Widerspruch dazu, dass $B$ ein minimales Erzeugenden-System ist.  Dieser Widerspruch zeigt, dass die
 Annahme, dass $B$ linear abhängig ist, falsch sein muss. \qeds
 
 \exercise
-Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und es gelte $B := \{ \mathbf{x}_1, \cdots, \mathbf{x}_n \} \subseteq V$.
-Zeigen Sie:  $B$ ist genau dann eine Basis von $V$, wenn sich jeder Vektor $\mathbf{y} \in V$ in
+Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum und es gelte $B := \{ \vec{x}_1, \cdots, \vec{x}_n \} \subseteq V$.
+Zeigen Sie:  $B$ ist genau dann eine Basis von $\mathcal{V}$, wenn sich jeder Vektor $\vec{y} \in V$ in
 eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben lässt.
 \eox
 
 \begin{Lemma}[Austausch-Lemma]
-  Es sei $V$ ein Vektor-Raum, $B$ eine Basis von $V$, $U \subseteq B$, $\mathbf{x} \in V\backslash B$ und die
-  Menge $U \cup \{ \mathbf{x} \}$ sei linear unabhängig.
-  Dann gibt es einen Vektor $\mathbf{y} \in B \backslash U$, so dass die Menge
- $\bigl(B \backslash \{ \mathbf{y} \}\bigr) \cup \{ \mathbf{x} \}$ wieder eine Basis von $V$ ist.
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$
+  ein Vektor-Raum, $B$ eine Basis von $\mathcal{V}$, $U \subseteq B$, $\vec{x} \in V\backslash B$ und die
+  Menge $U \cup \{ \vec{x} \}$ sei linear unabhängig.
+  Dann gibt es einen Vektor $\vec{y} \in B \backslash U$, so dass die Menge
+ $\bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ wieder eine Basis von $\mathcal{V}$ ist.
 \end{Lemma}
 
 \proof
-Da $B$ eine Basis ist, lässt sich $\mathbf{x}$ als Linear-Kombination von Vektoren aus $B$
+Da $B$ eine Basis ist, lässt sich $\vec{x}$ als Linear-Kombination von Vektoren aus $B$
 darstellen.  Es gibt also ein $n \in \mathbb{N}$, Skalare $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ 
-und Vektoren $\mathbf{y}_1, \cdots, \mathbf{y}_n\in B$, so dass 
+und Vektoren $\vec{y}_1, \cdots, \vec{y}_n\in B$, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \sum\limits_{i=1}^n \alpha_i \cdot \mathbf{y}_i$ 
+$\vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i$ 
 \\[0.2cm]
-gilt.  Da die Menge $U \cup \{ \mathbf{x} \}$ linear unabhängig ist, ist $\mathbf{x}$ sicher von $\mathbf{0}$
+gilt.  Da die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, ist $\vec{x}$ sicher von $\vec{0}$
 verschieden und damit können nicht alle $\alpha_i$ den Wert $0$ haben.  O.B.d.A.~können wir sogar fordern,
-dass alle $\alpha_i \not= 0$ sind, denn falls $\alpha_i = 0$ wäre, würden wir den Term $\alpha_i \cdot \mathbf{y}_i$
+dass alle $\alpha_i \not= 0$ sind, denn falls $\alpha_i = 0$ wäre, würden wir den Term $\alpha_i \cdot \vec{y}_i$
 in der obigen Summe einfach weglassen.
-Aus der Tatsache, dass die Menge $U \cup \{ \mathbf{x} \}$ linear unabhängig ist, folgt außerdem, dass in der obigen Darstellung
-nicht alle Vektoren $\mathbf{y}_i$ Elemente der Menge $U$ sind, denn wir können die obige Gleichung zu
+Aus der Tatsache, dass die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, folgt außerdem, dass in der obigen Darstellung
+nicht alle Vektoren $\vec{y}_i$ Elemente der Menge $U$ sind, denn wir können die obige Gleichung zu
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0} = \sum\limits_{i=1}^n \alpha_i \cdot \mathbf{y}_i + (-1) \cdot \mathbf{x}$ 
+$\vec{0} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i + (-1) \cdot \vec{x}$ 
 \\[0.2cm]
-umstellen und wenn nun alle $\mathbf{y}_i \in U$ wären, dann würde das der linearen Unabhängigkeit von
-$U \cup \{\mathbf{x} \}$ widersprechen.  Es gibt also ein $k \in \{1,\cdots,n\}$, so dass $\mathbf{y}_k \in B \backslash U$ ist.  Wir definieren
-\\[0.2cm]
-\hspace*{1.3cm}
-$\mathbf{y} := \mathbf{y}_k$, \quad woraus bereits $\mathbf{y} \in B \backslash U$ folgt.
-\\[0.2cm]
-Außerdem bemerken wir, dass $\mathbf{y}_i \in B \backslash \{\mathbf{y}\}$ ist für alle
-$i \in \{1,\cdots,n\} \backslash \{k\}$, denn die Vektoren $\mathbf{y}_i$ sind paarweise verschieden.
-Wir stellen die obige Gleichung für $\mathbf{x}$ wie folgt um:
+umstellen und wenn nun alle $\vec{y}_i \in U$ wären, dann würde das der linearen Unabhängigkeit von
+$U \cup \{\vec{x} \}$ widersprechen.  Es gibt also ein $k \in \{1,\cdots,n\}$, so dass $\vec{y}_k \in B \backslash U$ ist.  Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \sum\limits_{i=1 \atop i \not= k}^n \alpha_i \cdot \mathbf{y}_i +  \alpha_k \cdot \mathbf{y}$.
+$\vec{y} := \vec{y}_k$, \quad woraus bereits $\vec{y} \in B \backslash U$ folgt.
 \\[0.2cm]
-Diese Gleichung lösen wir nach $\mathbf{y}$ auf und erhalten
+Außerdem bemerken wir, dass $\vec{y}_i \in B \backslash \{\vec{y}\}$ ist für alle
+$i \in \{1,\cdots,n\} \backslash \{k\}$, denn die Vektoren $\vec{y}_i$ sind paarweise verschieden.
+Wir stellen die obige Gleichung für $\vec{x}$ wie folgt um:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\mathbf{y} = \bruch{1}{\alpha_k} \cdot \mathbf{x} - \sum\limits_{i=1 \atop i \not= k}^n
-\bruch{\alpha_i}{\alpha_k} \cdot \mathbf{y}_i$. \hspace*{\fill} $(*)$
+$\vec{x} = \sum\limits_{i=1 \atop i \not= k}^n \alpha_i \cdot \vec{y}_i +  \alpha_k \cdot \vec{y}$.
+\\[0.2cm]
+Diese Gleichung lösen wir nach $\vec{y}$ auf und erhalten
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\vec{y} = \bruch{1}{\alpha_k} \cdot \vec{x} - \sum\limits_{i=1 \atop i \not= k}^n
+\bruch{\alpha_i}{\alpha_k} \cdot \vec{y}_i$. \hspace*{\fill} $(*)$
 \\[0.2cm]
 Wir müssen nun zeigen, dass die Menge 
 \\[0.2cm]
 \hspace*{1.3cm}
- $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$
+ $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
 \\[0.2cm]
 eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
 \begin{enumerate}
-\item Als erstes zeigen wir, dass  $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$ ein Erzeugenden-System von $V$ ist.
+\item Als erstes zeigen wir, dass  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
 
-      Dazu betrachten wir einen beliebigen Vektor $\mathbf{z} \in V$.  Da $B$ ein Erzeugenden-System
-      ist, lässt sich $\mathbf{z}$ als Linear-Kombination von Vektoren aus $B$ darstellen.  Es gibt
+      Dazu betrachten wir einen beliebigen Vektor $\vec{z} \in V$.  Da $B$ ein Erzeugenden-System
+      ist, lässt sich $\vec{z}$ als Linear-Kombination von Vektoren aus $B$ darstellen.  Es gibt
       also ein $m \in \mathbb{N}$, Skalare $\beta_1, \cdots, \beta_m \in \mathbb{K}$ und 
-      Vektoren $\mathbf{u}_1, \cdots, \mathbf{u}_m \in B$, so dass
+      Vektoren $\vec{u}_1, \cdots, \vec{u}_m \in B$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{z} = \sum\limits_{j=1}^m \beta_j \cdot \mathbf{u}_j$
+      $\vec{z} = \sum\limits_{j=1}^m \beta_j \cdot \vec{u}_j$
       \\[0.2cm]
-      gilt.  Falls nun alle $\mathbf{u}_j$ von dem Vektor $\mathbf{y}$ verschieden sind, 
-      dann haben wir $\mathbf{z}$ bereits als Linear-Kombination von Vektoren der Menge
-      $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$ dargestellt und der Beweis ist
-      abgeschlossen.  Andernfalls gilt $\mathbf{u}_l = \mathbf{y}$ für ein $l \in \{1,\cdots,m\}$.
+      gilt.  Falls nun alle $\vec{u}_j$ von dem Vektor $\vec{y}$ verschieden sind, 
+      dann haben wir $\vec{z}$ bereits als Linear-Kombination von Vektoren der Menge
+      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$ dargestellt und der Beweis ist
+      abgeschlossen.  Andernfalls gilt $\vec{u}_l = \vec{y}$ für ein $l \in \{1,\cdots,m\}$.
       In diesem Fall haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \mathbf{u}_j + \beta_l \cdot \mathbf{y}$.
+      $\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j + \beta_l \cdot \vec{y}$.
       \\[0.2cm]
-      Hier setzen wir für $\mathbf{y}$ den Wert ein, den wir in der Gleichung $(*)$ oben gefunden
+      Hier setzen wir für $\vec{y}$ den Wert ein, den wir in der Gleichung $(*)$ oben gefunden
       haben. Das liefert
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\mathbf{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \mathbf{u}_j +
-      \bruch{\beta_l}{\alpha_k} \cdot \mathbf{x} - \sum\limits_{i=1 \atop i \not= k}^n
-      \bruch{\beta_l \cdot \alpha_i}{\alpha_k} \cdot \mathbf{y}_i$.
+      $\ds\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j +
+      \bruch{\beta_l}{\alpha_k} \cdot \vec{x} - \sum\limits_{i=1 \atop i \not= k}^n
+      \bruch{\beta_l \cdot \alpha_i}{\alpha_k} \cdot \vec{y}_i$.
       \\[0.2cm]
       In dieser Darstellung sind nun alle der beteiligten Vektoren Elemente der Menge
-      $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$.  Damit haben wir also gezeigt, dass der
-      Vektor $\mathbf{z}$ als Linear-Kombination dieser Menge dargestellt werden kann.
-      Da $\mathbf{z}$ ein beliebiger Vektor aus $V$ war, ist damit gezeigt, dass die Menge
-      $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$ ein Erzeugenden-System von $V$ ist.
-\item Als nächstes ist nachzuweisen, dass die Menge  $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$
+      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$.  Damit haben wir also gezeigt, dass der
+      Vektor $\vec{z}$ als Linear-Kombination dieser Menge dargestellt werden kann.
+      Da $\vec{z}$ ein beliebiger Vektor aus $V$ war, ist damit gezeigt, dass die Menge
+      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
+\item Als nächstes ist nachzuweisen, dass die Menge  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
       linear unabhängig ist.  Dazu nehmen wir an, dass wir eine Linear-Kombination von Vektoren aus
-      der Menge $B \backslash \{ \mathbf{y} \} \cup \{ \mathbf{x} \}$ haben, die den Null-Vektor ergibt.
+      der Menge $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ haben, die den Null-Vektor ergibt.
       Wir haben dann also ein $m \in \mathbb{N}$, Skalare $\gamma_1, \cdots, \gamma_m, \delta \in \mathbb{K}$,
-      sowie paarweise verschiedene Vektoren $\mathbf{v}_1, \cdots, \mathbf{v}_m \in B \backslash \{ \mathbf{y} \}$, so dass
+      sowie paarweise verschiedene Vektoren $\vec{v}_1, \cdots, \vec{v}_m \in B \backslash \{ \vec{y} \}$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{0} = \sum\limits_{j=1}^m \gamma_j \cdot \mathbf{v}_j + \delta \cdot \mathbf{x}$
+      $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \delta \cdot \vec{x}$
       \\[0.2cm]
       gilt.  Wir müssen nun zeigen, dass $\gamma_j = 0$ für alle $j \in \{1,\cdots,n\}$ gilt und dass außerdem 
       $\delta = 0$ ist.  Wir führen diesen Nachweis durch eine Fallunterscheidung.
@@ -610,40 +620,41 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       \item $\delta = 0$.  Dann haben wir
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\mathbf{0} = \sum\limits_{j=1}^m \gamma_j \cdot \mathbf{v}_j$
+            $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$
             \\[0.2cm]
-            und da die Vektoren $\mathbf{v}_j$ Elemente der linear unabhängigen Menge $B$ sind, folgt 
+            und da die Vektoren $\vec{v}_j$ Elemente der linear unabhängigen Menge $B$ sind, folgt 
             $\gamma_j = 0$ für alle $j \in \{1,\cdots,m\}$.   
-      \item $\delta \not= 0$.  Jetzt setzen wir für $\mathbf{x}$ in der Darstellung des Null-Vektors den Wert 
+      \item $\delta \not= 0$.  Jetzt setzen wir für $\vec{x}$ in der Darstellung des Null-Vektors den Wert 
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\mathbf{x} = \sum\limits_{j=1 \atop j \not= k}^n \alpha_j \cdot \mathbf{y}_j +  \alpha_k \cdot \mathbf{y}$
+            $\vec{x} = \sum\limits_{j=1 \atop j \not= k}^n \alpha_j \cdot \vec{y}_j +  \alpha_k \cdot \vec{y}$
             \\[0.2cm]
             ein und erhalten
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\mathbf{0} = \sum\limits_{j=1}^m \gamma_j \cdot \mathbf{v}_j + \sum\limits_{i=1 \atop i \not= k}^n \delta\cdot \alpha_i \cdot \mathbf{y}_i + \delta\cdot \alpha_k \cdot \mathbf{y}$.
+            $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \sum\limits_{i=1 \atop i \not= k}^n \delta\cdot \alpha_i \cdot \vec{y}_i + \delta\cdot \alpha_k \cdot \vec{y}$.
             \\[0.2cm]
-            Die Vektoren $\mathbf{v}_j$ sowie die Vektoren $\mathbf{y}_i$ mit $i \not= k$ sind Elemente der Menge
-            $B \backslash \{ \mathbf{y} \}$.  Da $\mathbf{y} = \mathbf{y}_k \in B$ ist,  haben wir dann insgesamt eine Linear-Kombination des Null-Vektors aus
+            Die Vektoren $\vec{v}_j$ sowie die Vektoren $\vec{y}_i$ mit $i \not= k$ sind Elemente der Menge
+            $B \backslash \{ \vec{y} \}$.  Da $\vec{y} = \vec{y}_k \in B$ ist,  haben wir dann insgesamt eine Linear-Kombination des Null-Vektors aus
             Elementen der Menge $B$.  Da die Menge $B$ linear unabhängig ist, folgt zunächst, dass der Koeffizient
             $\delta\cdot \alpha_k = 0$  ist.  Wegen $\alpha_k \not= 0$ folgt daraus $\delta = 0$.
             Damit haben wir jetzt die Gleichung
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\mathbf{0} = \sum\limits_{j=1}^m \gamma_j \cdot \mathbf{v}_j$.
+            $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$.
             \\[0.2cm]
             Aus der linearen Unabhängigkeit von $B$ folgt nun $\gamma_j = 0$ für alle $j \in \{1, \cdots, m\}$ und das
             war zu zeigen. \qed
       \end{enumerate}
 \end{enumerate}
 
-Das gerade bewiesene Lemma zeigt uns, dass wir in einer Basis einen beliebigen von dem Nullvektor verschiedenen Vektor $\mathbf{x}$
+Das gerade bewiesene Lemma zeigt uns, dass wir in einer Basis einen beliebigen von dem Nullvektor verschiedenen Vektor $\vec{x}$
 gegen einen Vektor der Basis austauschen können.  Der nächste Satz verallgemeinert diesen Tatbestand und zeigt, dass wir
 in einer Basis $B$ eine linear unabhängige Menge $U$ gegen Elemente aus $B$ austauschen können.
 
 \begin{Satz}[Basis-Austausch-Satz]
-  Es sei $V$ ein Vektor-Raum und $B$ sei eine Basis von $V$.  Weiter sei $U \subseteq V$ linear unabhängig.
+  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
+  und $B$ sei eine Basis von $V$.  Weiter sei $U \subseteq V$ linear unabhängig.
   Dann gibt es eine Teilmenge $W \subseteq B$, so dass 
   \begin{enumerate}
   \item $\bigl(B \backslash W\bigr) \cup U$  eine Basis von V ist  und außerdem gilt
@@ -654,8 +665,8 @@ in einer Basis $B$ eine linear unabhängige Menge $U$ gegen Elemente aus $B$ aust
 \proof
 Die Idee bei diesem Beweis besteht darin, dass wir die Elemente der Menge $U$ mit Hilfe
 des Austausch-Lemmas sukzessive gegen Elemente der Menge $B$ austauschen.  Für jedes
-Element $\mathbf{x}$ aus der Menge $U$ finden wir dabei ein $\mathbf{y}$ aus der Menge
-$B$, so dass wir in der Basis $B$ das Element $\mathbf{y}$ durch $\mathbf{x}$ ersetzen können.
+Element $\vec{x}$ aus der Menge $U$ finden wir dabei ein $\vec{y}$ aus der Menge
+$B$, so dass wir in der Basis $B$ das Element $\vec{y}$ durch $\vec{x}$ ersetzen können.
 Um diese Argumentation formal wasserdicht zu machen, definieren wir $n :=
 \textsl{card}(U)$ und führen 
 den exakten Beweis durch Induktion nach $n$. 
@@ -671,40 +682,40 @@ den exakten Beweis durch Induktion nach $n$.
              ist dann nichts mehr zu zeigen, denn $B$ ist nach Voraussetzung eine Basis von $V$.
 \item[I.S.:] $n \mapsto n+1$. 
 
-             Es gilt jetzt $\textsl{card}(U) = n + 1$. Da $U$ damit nicht leer ist, gibt es einen Vektor $\mathbf{x} \in U$. Wir definieren 
-             $U' := U \backslash \{ \mathbf{x} \}$.  Damit folgt $\textsl{card}(U') = n$.  Nach Induktions-Voraussetzung
+             Es gilt jetzt $\textsl{card}(U) = n + 1$. Da $U$ damit nicht leer ist, gibt es einen Vektor $\vec{x} \in U$. Wir definieren 
+             $U' := U \backslash \{ \vec{x} \}$.  Damit folgt $\textsl{card}(U') = n$.  Nach Induktions-Voraussetzung
              finden wir daher eine Menge $W' \subseteq B$, so dass einerseits
              \\[0.2cm]
              \hspace*{1.3cm}
              $\textsl{card}(W')= \textsl{card}(U') = n$ 
              \\[0.2cm]
              und andererseits die Menge $\bigl(B \backslash W'\bigr) \cup U'$  eine Basis von $V$ ist.  Wir wenden nun das Austausch-Lemma
-             auf die Basis $\bigl(B \backslash W'\bigr) \cup U'$, den Vektor $\mathbf{x}$ und die Menge $U'$ an.  Damit finden wir 
-             ein $\mathbf{y} \in B \backslash W'$, so dass
+             auf die Basis $\bigl(B \backslash W'\bigr) \cup U'$, den Vektor $\vec{x}$ und die Menge $U'$ an.  Damit finden wir 
+             ein $\vec{y} \in B \backslash W'$, so dass
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \mathbf{y} \}\bigr) \cup \{ \mathbf{x} \}$
+             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$
              \\[0.2cm]
-             eine Basis von $V$ ist.  Wir definieren nun
+             eine Basis von $\mathcal{V}$ ist.  Wir definieren nun
              \\[0.2cm]
              \hspace*{1.3cm}
-             $W := W' \cup \{ \mathbf{y} \}$ \quad und erinnern daran, dass \quad
-             $U = U' \cup \{ \mathbf{x} \}$ 
+             $W := W' \cup \{ \vec{y} \}$ \quad und erinnern daran, dass \quad
+             $U = U' \cup \{ \vec{x} \}$ 
              \\[0.2cm]
              gilt.  Damit haben wir dann
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \mathbf{y} \}\bigr) \cup \{ \mathbf{x} \} = (B \backslash W) \cup U$.
+             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \} = (B \backslash W) \cup U$.
              \\[0.2cm]
              Außerdem gilt
              \\[0.2cm]
              \hspace*{1.3cm}
              $
              \begin{array}[t]{lcl}
-               \textsl{card}(W) & = & \textsl{card}(W' \cup \{\mathbf{y}\}) \\
+               \textsl{card}(W) & = & \textsl{card}(W' \cup \{\vec{y}\}) \\
                                 & = & \textsl{card}(W') + 1        \\
                                 & = & \textsl{card}(U') + 1        \\
-                                & = & \textsl{card}(U' \cup \{ \mathbf{x} \}) \\
+                                & = & \textsl{card}(U' \cup \{ \vec{x} \}) \\
                                 & = & \textsl{card}(U).
              \end{array}
              $.
@@ -713,7 +724,7 @@ den exakten Beweis durch Induktion nach $n$.
 \end{enumerate}
 
 \begin{Korollar}
-  Ist $V$ ein Vektor-Raum, $B$ eine Basis von $V$ und $U \subseteq V$ linear unabhängig,
+  Ist $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum, $B$ eine Basis von $\mathcal{V}$ und $U \subseteq V$ linear unabhängig,
   so gilt $\textsl{card}(U) \leq \textsl{card}(B)$.
 \end{Korollar}
 
@@ -726,10 +737,10 @@ wegen $\textsl{card}(W) = \textsl{card}(U)$ folgt die Behauptung. \qed
 Haben wir zwei verschiedene Basen $B_1$ und $B_2$ eines Vektor-Raums $B$, so können wir mit dem letzten Korollar sowohl
 $\textsl{card}(B_2) \leq \textsl{card}(B_1)$ als auch $\textsl{card}(B_1) \leq \textsl{card}(B_2)$ folgern.   Das zeigt,
 dass zwei verschiedene Basen eines Vektor-Raums dieselbe Anzahl von Elementen haben. 
-Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir sie als die \emph{Dimension} des Vektor-Raums $V$ und definieren
+Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir sie als die \emph{Dimension} des Vektor-Raums $\mathcal{V}$ und definieren
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{dim}(V) := n$.
+$\textsl{dim}(\mathcal{V}) := n$.
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -742,17 +753,28 @@ $\textsl{dim}(V) := n$.
 
 
 \section{Untervektor-Räume}
+\remark
+Um in den folgenden Abschnitten die Notation nicht zu schwerfällig werden zu lassen, werden wir im Falle eines
+$\mathbb{K}$-Vektor-Raums $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
+nicht mehr zwischen der Struktur $\bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$
+und der Menge $V$ unterscheiden und statt dessen die Menge $V$ als $\mathbb{K}$-Vektor-Raum bezeichnen.  Sie
+sollten sich darüber im Klaren sein, dass wir dann eigentlich nicht die Menge $V$ meinen, sondern
+die Struktur $\bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$.  Falls der Körper
+$\mathbb{K}$ für die Diskussion unwichtig  ist, sprechen wir auch kürzer einfach von einem Vektor-Raum.
+\eox
+
 Ist $V$ ein Vektor-Raum und ist $U \subseteq V$, so dass $U$ für sich betrachtet ebenfalls ein
 Vektor-Raum ist, so bezeichnen wir $U$ als
-\emph{Untervektor-Raum} von $V$.  Eine zu dem eben Gesagten äquivalente Definition folgt.
+\emph{Untervektor-Raum} von $\mathcal{V}$.  Eine zu dem eben Gesagten äquivalente Definition folgt.
 
 \begin{Definition}[Untervektor-Raum]
-Es sei $\bigl\langle \langle V, \mathbf{0}, +\rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum und es gelte $U \subseteq V$.
-Dann ist $U$ ein Untervektor-Raum von $V$ genau dann, wenn Folgendes gilt:
+Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und es gelte $U \subseteq V$.
+Dann ist $U$ ein Untervektor-Raum von $V$ genau dann, 
+wenn Folgendes gilt:
 \begin{enumerate}
-\item $\mathbf{0} \in U$,
-\item $\forall \mathbf{x}, \mathbf{y} \in U: \mathbf{x} + \mathbf{y} \in U$ \quad und \quad
-\item $\forall \alpha \in \mathbb{K}: \forall \mathbf{x} \in U: \alpha \cdot \mathbf{x} \in U$.  \eoxs
+\item $\vec{0} \in U$,
+\item $\forall \vec{x}, \vec{y} \in U: \vec{x} + \vec{y} \in U$ \quad und \quad
+\item $\forall \alpha \in \mathbb{K}: \forall \vec{x} \in U: \alpha \cdot \vec{x} \in U$.  \eoxs
 \end{enumerate}
 \end{Definition}
 
@@ -763,38 +785,38 @@ der Tatsache, dass diese Gesetze schon in $V$ gelten und damit erst recht in $U$
 $V$. 
 
 \example
-Es sei $V = \mathbb{R}^3$.  Ist weiter $\mathbf{z} = [ z_1, z_2, z_3 ] \in \mathbb{R}^3$ und definieren wir
+Es sei $V = \mathbb{R}^3$.  Ist weiter $\vec{z} = [ z_1, z_2, z_3 ] \in \mathbb{R}^3$ und definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$U := \{ \alpha \cdot \mathbf{z} \mid \alpha \in \mathbb{R} \}$,
+$U := \{ \alpha \cdot \vec{z} \mid \alpha \in \mathbb{R} \}$,
 \\[0.2cm]
 so ist $U$ ein Untervektor-Raum des $\mathbb{R}^3$.
 
 \proof
 Es sind drei Eigenschaften zu prüfen:
 \begin{enumerate}
-\item Offenbar gilt $\mathbf{0} = 0 \cdot \mathbf{z} \in U$ und damit ist die erste Eigenschaft bereits gezeigt.
-\item Seien $\mathbf{x}, \mathbf{y} \in U$.  Dann gibt es $\alpha, \beta \in \mathbb{R}$, so dass
+\item Offenbar gilt $\vec{0} = 0 \cdot \vec{z} \in U$ und damit ist die erste Eigenschaft bereits gezeigt.
+\item Seien $\vec{x}, \vec{y} \in U$.  Dann gibt es $\alpha, \beta \in \mathbb{R}$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} = \alpha \cdot \mathbf{z}$ \quad und \quad $\mathbf{y} = \beta \cdot \mathbf{z}$
+      $\vec{x} = \alpha \cdot \vec{z}$ \quad und \quad $\vec{y} = \beta \cdot \vec{z}$
       \\[0.2cm]
       gilt.  Daraus folgt unter Benutzung des Distributiv-Gesetzes
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} + \mathbf{y} = \alpha \cdot \mathbf{z} + \beta \cdot \mathbf{z} = (\alpha + \beta) \cdot \mathbf{z} \in U$.
+      $\vec{x} + \vec{y} = \alpha \cdot \vec{z} + \beta \cdot \vec{z} = (\alpha + \beta) \cdot \vec{z} \in U$.
 \item Sei nun $\alpha \in \mathbb{R}$ und $z \in U$.  Dann gibt es ein $\beta \in \mathbb{R}$, so dass
-      $\mathbf{x} = \beta \cdot \mathbf{z}$ gilt.  Mit Hilfe des Assoziativ-Gesetzes schließen wir nun wie folgt:
+      $\vec{x} = \beta \cdot \vec{z}$ gilt.  Mit Hilfe des Assoziativ-Gesetzes schließen wir nun wie folgt:
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot \mathbf{x} = \alpha \cdot (\beta \cdot \mathbf{z}) = (\alpha \cdot \beta) \cdot \mathbf{z} \in U$.
+      $\alpha \cdot \vec{x} = \alpha \cdot (\beta \cdot \vec{z}) = (\alpha \cdot \beta) \cdot \vec{z} \in U$.
       \qeds
 \end{enumerate}
 
 \remark
 Geometrisch handelt es sich bei der Menge $U$ um eine Gerade, die durch den Nullpunkt geht.
 Das nächste Beispiel verallgemeinert das letzte Beispiel in dem nun nicht mehr ein einzelner Vektor
-$\mathbf{z}$ den Raum $U$ erzeugt, sondern der Untervektor-Raum durch eine beliebige Menge $M$ von Vektoren
+$\vec{z}$ den Raum $U$ erzeugt, sondern der Untervektor-Raum durch eine beliebige Menge $M$ von Vektoren
 erzeugt wird.
 
 \example
@@ -803,8 +825,8 @@ $\textsl{span}_\mathbb{K}(M)$ als die Menge aller endlichen Linear-Kombinationen
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{span}_\mathbb{K}(M) := 
- \bigl\{ \alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_n \cdot \mathbf{x}_n \mid n \in \mathbb{N} \wedge \forall i \in
- \{1,\cdots,n\}:\alpha_i \in \mathbb{K} \wedge \mathbf{x}_i \in M \bigr\}
+ \bigl\{ \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n \mid n \in \mathbb{N} \wedge \forall i \in
+ \{1,\cdots,n\}:\alpha_i \in \mathbb{K} \wedge \vec{x}_i \in M \bigr\}
 $.
 \\[0.2cm]
 Dann ist die so definierte Menge $\textsl{span}_\mathbb{K}(M)$ ein Untervektor-Raum von $V$.
@@ -812,42 +834,42 @@ Dann ist die so definierte Menge $\textsl{span}_\mathbb{K}(M)$ ein Untervektor-R
 \proof
 Es sind drei Eigenschaften zu prüfen.
 \begin{enumerate}
-\item Da $M$ nicht leer ist, finden wir ein $\mathbf{v} \in M$.  Offenbar gilt
+\item Da $M$ nicht leer ist, finden wir ein $\vec{v} \in M$.  Offenbar gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{0} = 0 \cdot \mathbf{v} \in \textsl{span}_\mathbb{K}(M)$.      
-\item Es seien $\mathbf{x}, \mathbf{y} \in \textsl{span}_\mathbb{K}(M)$.  Dann gibt es $m,n \in \mathbb{N}$,
+      $\vec{0} = 0 \cdot \vec{v} \in \textsl{span}_\mathbb{K}(M)$.      
+\item Es seien $\vec{x}, \vec{y} \in \textsl{span}_\mathbb{K}(M)$.  Dann gibt es $m,n \in \mathbb{N}$,
       sowie $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ und
-      $\mathbf{x}_1, \cdots, \mathbf{x}_m, \mathbf{y}_1, \cdots, \mathbf{y}_n \in M$, so dass 
+      $\vec{x}_1, \cdots, \vec{x}_m, \vec{y}_1, \cdots, \vec{y}_n \in M$, so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} = \alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_m \cdot \mathbf{x}_m$ \quad und \quad
-      $\mathbf{y} = \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n$ 
+      $\vec{x} = \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m$ \quad und \quad
+      $\vec{y} = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$ 
       \\[0.2cm]
       gilt. Damit haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
       $
-       \mathbf{x} + \mathbf{y} =  
-          \alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_m \cdot \mathbf{x}_m +
-          \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n \in \textsl{span}_\mathbb{K}(M)
+       \vec{x} + \vec{y} =  
+          \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m +
+          \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n \in \textsl{span}_\mathbb{K}(M)
       $
       \\[0.2cm]
       denn die Summe 
-      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_m \cdot \mathbf{x}_m + \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n$
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
       ist auch wieder eine Linear-Kombination von Vektoren aus $M$.
-\item Nun sei $\mathbf{x} \in \textsl{span}_\mathbb{K}(M)$ und $\alpha \in \mathbb{K}$.
+\item Nun sei $\vec{x} \in \textsl{span}_\mathbb{K}(M)$ und $\alpha \in \mathbb{K}$.
       Dann gibt es zunächst ein $n \in \mathbb{N}$ sowie Skalare $\beta_1, \cdots, \beta_n$
-      und Vektoren $\mathbf{x}_1, \cdots, \mathbf{x}_n \in M$, so dass
+      und Vektoren $\vec{x}_1, \cdots, \vec{x}_n \in M$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} = \beta_1 \cdot \mathbf{x}_1 + \cdots + \beta_m \cdot \mathbf{x}_m$
+      $\vec{x} = \beta_1 \cdot \vec{x}_1 + \cdots + \beta_m \cdot \vec{x}_m$
       \\[0.2cm]
       gilt.  Damit haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot \mathbf{x} = \alpha \cdot (\beta_1 \cdot \mathbf{x}_1 + \cdots + \beta_m \cdot \mathbf{x}_m) =
-       (\alpha \cdot \beta_1) \cdot \mathbf{x}_1 + \cdots + (\alpha \cdot \beta_m) \cdot \mathbf{x}_m \in
+      $\alpha \cdot \vec{x} = \alpha \cdot (\beta_1 \cdot \vec{x}_1 + \cdots + \beta_m \cdot \vec{x}_m) =
+       (\alpha \cdot \beta_1) \cdot \vec{x}_1 + \cdots + (\alpha \cdot \beta_m) \cdot \vec{x}_m \in
        \textsl{span}_\mathbb{K}(M)$.
       \qeds
 \end{enumerate}
@@ -878,40 +900,40 @@ Wir haben drei Eigenschaften nachzuweisen.
 \item Da $U_1$ und $U_2$ Untervektor-Räume sind, gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{0} \in U_1$ \quad und \quad $\mathbf{0} \in U_2$, \quad woraus sofort \quad
-      $\mathbf{0} \in U_1 \cap U_2$ \quad folgt.
-\item Seien $\mathbf{x}, \mathbf{y} \in U_1 \cap U_2$.  Dann gilt natürlich
+      $\vec{0} \in U_1$ \quad und \quad $\vec{0} \in U_2$, \quad woraus sofort \quad
+      $\vec{0} \in U_1 \cap U_2$ \quad folgt.
+\item Seien $\vec{x}, \vec{y} \in U_1 \cap U_2$.  Dann gilt natürlich
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} \in U_1$, \quad 
-      $\mathbf{x} \in U_2$, \quad 
-      $\mathbf{y} \in U_1$, \quad und \quad
-      $\mathbf{y} \in U_2$.
+      $\vec{x} \in U_1$, \quad 
+      $\vec{x} \in U_2$, \quad 
+      $\vec{y} \in U_1$, \quad und \quad
+      $\vec{y} \in U_2$.
       \\[0.2cm] 
       Da $U_1$ und $U_2$ Untervektor-Räume sind, folgt dann
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} + \mathbf{y} \in U_1$ \quad und \quad $\mathbf{x} + \mathbf{y} \in U_2$,
+      $\vec{x} + \vec{y} \in U_1$ \quad und \quad $\vec{x} + \vec{y} \in U_2$,
       \\[0.2cm]
       also insgesamt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} + \mathbf{y} \in U_1 \cap U_2$.
-\item Sei nun $\mathbf{x} \in U_1 \cap U_2$ und $\alpha \in \mathbb{K}$.  Daraus folgt sofort
+      $\vec{x} + \vec{y} \in U_1 \cap U_2$.
+\item Sei nun $\vec{x} \in U_1 \cap U_2$ und $\alpha \in \mathbb{K}$.  Daraus folgt sofort
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} \in U_1$ \quad und \quad
-      $\mathbf{x} \in U_2$.
+      $\vec{x} \in U_1$ \quad und \quad
+      $\vec{x} \in U_2$.
       \\[0.2cm] 
       Da $U_1$ und $U_2$ Untervektor-Räume sind, können wir folgern, dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot \mathbf{x} \in U_1$ \quad und \quad $\alpha \cdot \mathbf{x} \in U_2$
+      $\alpha \cdot \vec{x} \in U_1$ \quad und \quad $\alpha \cdot \vec{x} \in U_2$
       \\[0.2cm]
       gilt, so dass wir insgesamt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot \mathbf{x} \in U_1 \cap U_2$
+      $\alpha \cdot \vec{x} \in U_1 \cap U_2$
       \\[0.2cm]
       haben.  \qeds
 \end{enumerate}

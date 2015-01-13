@@ -925,12 +925,12 @@ immer in der Form
 \hspace*{1.3cm}
 $A = \left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_n
   \end{array}
   \right)
 $
 \\[0.2cm]
-angeben.  Dabei bezeichnet $\mathbf{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = (a_{i,j})$, es
+angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = (a_{i,j})$, es
 gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -945,11 +945,11 @@ $a_i = [a_{i,1}, \cdots, a_{i,n}]$.
   \hspace*{1.3cm}
 $\mathtt{det}\left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_l \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right) = - \mathtt{det}\left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a_k} \\ \vdots \\ \mathbf{a}_l \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
 $.
@@ -959,14 +959,14 @@ Hier ist
 \hspace*{1.3cm}
 $A = \left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a_k} \\ \vdots \\ \mathbf{a}_l \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right),
 $
 \quad während die Matrix \quad
 $\left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a_l} \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a_l} \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
 $
@@ -983,7 +983,7 @@ hervorgeht, es gilt also
 $\tau(A) :=
 \left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a_l} \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a_l} \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
 $. 
@@ -1103,36 +1103,36 @@ also, dass in dem Fall, dass die Matrix $A$ die Form
 \hspace*{1.3cm}
 $\mathtt{det}\left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} \right)
 $
 \\[0.2cm]
 hat und sich die $k$-te Zeile als 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{a}_k = \mathbf{b} + \mathbf{c}$
+$\vec{a}_k = \vec{b} + \vec{c}$
 \\[0.2cm]
 schreiben lässt, Folgendes gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
 $\mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right) =
 \mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{b} + \mathbf{c}\\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{b} + \vec{c}\\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
  = \mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{b} \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{b} \\ \vdots \\ \vec{a}_n
   \end{array}  \right)
 +
    \mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{c} \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{c} \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
 $.
@@ -1145,31 +1145,31 @@ also, dass in dem Fall, dass die Matrix $A$ die Form
 \hspace*{1.3cm}
 $\mathtt{det}\left(
   \begin{array}{ll}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} \right)
 $
 \\[0.2cm]
 hat und sich die $k$-te Zeile als 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{a}_k = \lambda \cdot \mathbf{b}$
+$\vec{a}_k = \lambda \cdot \vec{b}$
 \\[0.2cm]
 schreiben lässt, Folgendes gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
 $\mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right) =
 \mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \lambda \cdot \mathbf{b} \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \lambda \cdot \vec{b} \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
  = \lambda \cdot \mathtt{det}\left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{b} \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{b} \\ \vdots \\ \vec{a}_n
   \end{array}  \right)
 $.
 \eoxs
@@ -1186,15 +1186,15 @@ die Determinante eine normierte, alternierende Multilinear-Form ist:
 \item Alternierend ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}(\cdots, \mathbf{ a}_ k, \cdots, \mathbf{ a}_l, \cdots) = -\mathtt{det}(\cdots, \mathbf{ a}_l, \cdots, \mathbf{ a}_k, \cdots)$
+      $\mathtt{det}(\cdots, \vec{ a}_ k, \cdots, \vec{ a}_l, \cdots) = -\mathtt{det}(\cdots, \vec{ a}_l, \cdots, \vec{ a}_k, \cdots)$
       \\[0.2cm]
       gilt.  Das Vertauschen zweier Spalten ändert das Vorzeichen der Determinante.
 \item Multilinear ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}(\cdots, \alpha \cdot \mathbf{a} + \beta \cdot \mathbf{b}, \cdots) = 
-         \alpha \cdot \mathtt{det}(\cdots, \mathbf{a}, \cdots) +
-         \beta  \cdot \mathtt{det}(\cdots, \mathbf{b}, \cdots)
+      $\mathtt{det}(\cdots, \alpha \cdot \vec{a} + \beta \cdot \vec{b}, \cdots) = 
+         \alpha \cdot \mathtt{det}(\cdots, \vec{a}, \cdots) +
+         \beta  \cdot \mathtt{det}(\cdots, \vec{b}, \cdots)
       $
       \\[0.2cm]
       gilt.  Die Determinanten-Funktion ist also in jeder Spalte sowohl additiv als auch homogen.
@@ -1249,13 +1249,13 @@ Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, folgt $\mathtt{det
   \hspace*{1.3cm}
   $A = \left(
   \begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_l \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_n
   \end{array} \right)
   $ \quad
   hat, gilt also \quad
   $B = 
   \left(\begin{array}{c}
-    \mathbf{a}_1 \\ \vdots \\ \mathbf{a_k} \\ \vdots \\ \mathbf{a}_l + \lambda \cdot \mathbf{a}_k \\ \vdots \\ \mathbf{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
 $.
@@ -1272,7 +1272,7 @@ Zunächst betrachten wir die Matrix
 \hspace*{1.3cm}
   $C := \left(
   \begin{array}{c}
-    \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_k \\ \vdots 
+    \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_k \\ \vdots 
   \end{array} \right)
   $,
 \\[0.2cm]
@@ -1288,11 +1288,11 @@ multiplizieren, so haben wir wegen der Homogenität der Funktion $\mathtt{det}$
 \hspace*{1.3cm}
 $\mathtt{det}(D) = \mathtt{det}\left(
   \begin{array}{c}
-    \vdots \\ \mathbf{a}_k \\ \vdots \\ \lambda \cdot \mathbf{a}_k \\ \vdots 
+    \vdots \\ \vec{a}_k \\ \vdots \\ \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} \right) =
   \lambda \cdot \mathtt{det}\left(
   \begin{array}{c}
-    \vdots \\ \mathbf{a}_k \\ \vdots \\ \mathbf{a}_k \\ \vdots 
+    \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_k \\ \vdots 
   \end{array} \right)
 = \lambda \cdot \mathtt{det}(C) = \lambda \cdot 0 = 0
 $.
@@ -1304,16 +1304,16 @@ $
 \begin{array}[b]{lcl}
 \mathtt{det}(B) & = & 
   \mathtt{det}\left(\begin{array}{c}
-    \vdots \\ \mathbf{a_k} \\ \vdots \\ \mathbf{a}_l + \lambda \cdot \mathbf{a}_k \\ \vdots 
+    \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} 
   \right) \\[1.5cm]
  & = &
 \mathtt{det}\left(\begin{array}{c}
-  \vdots \\ \mathbf{a_k} \\ \vdots \\ \mathbf{a}_l \\ \vdots 
+  \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l \\ \vdots 
   \end{array} 
   \right) +
   \mathtt{det}\left(\begin{array}{c}
-    \vdots \\ \mathbf{a_k} \\ \vdots \\ \lambda \cdot \mathbf{a}_k \\ \vdots 
+    \vdots \\ \vec{a_k} \\ \vdots \\ \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} 
   \right) \\[1.5cm]
  & = & \mathtt{det}(A) + \mathtt{det}(D) \\[0.2cm]
@@ -1329,8 +1329,8 @@ Spalten der Matrix $A$ die Zeilen der Matrix $A^t$.
 \eox
 
 \begin{Lemma}
-  Ist $A = (\mathbf{a}_1, \cdots, \mathbf{a}_n) \in \mathbb{K}^{n \times n}$ und ist die Menge der
-  Spalten der Matrix $A$, also die Menge $\{ \mathbf{a}_1, \cdots, \mathbf{a}_n \}$, linear abhängig,
+  Ist $A = (\vec{a}_1, \cdots, \vec{a}_n) \in \mathbb{K}^{n \times n}$ und ist die Menge der
+  Spalten der Matrix $A$, also die Menge $\{ \vec{a}_1, \cdots, \vec{a}_n \}$, linear abhängig,
   so gilt
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -1339,37 +1339,37 @@ Spalten der Matrix $A$ die Zeilen der Matrix $A^t$.
 
 \proof
 Zunächst bemerken wir, dass die Determinante eine Matrix $B$ sicher dann den Wert $0$ hat, wenn eine
-der Spalten von $B$ der Null-Vektor $\mathbf{0}$ ist.  Dies können wir wie folgt aus der Homogenität
+der Spalten von $B$ der Null-Vektor $\vec{0}$ ist.  Dies können wir wie folgt aus der Homogenität
 der Determinanten-Funktion schließen: Nehmen wir an, dass die $i$-te Spalte von $B$ der Null-Vektor
 ist, es gelte also
 \\[0.2cm]
 \hspace*{1.3cm}
-$B = (\mathbf{b}_1,\cdots, \mathbf{b}_{i-1}, \mathbf{0}, \mathbf{b}_{i+1}, \cdots, \mathbf{b}_n)$.
+$B = (\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n)$.
 \\[0.2cm]
 Dann haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
- \mathtt{det}(B) & = & \mathtt{det}(\mathbf{b}_1,\cdots, \mathbf{b}_{i-1}, \mathbf{0}, \mathbf{b}_{i+1}, \cdots, \mathbf{b}_n) \\[0.2cm] 
-                 & = & \mathtt{det}(\mathbf{b}_1,\cdots, \mathbf{b}_{i-1}, 0 \cdot \mathbf{0}, \mathbf{b}_{i+1}, \cdots, \mathbf{b}_n) \\[0.2cm]  
-                 & = & 0 \cdot \mathtt{det}(\mathbf{b}_1,\cdots, \mathbf{b}_{i-1}, \mathbf{0}, \mathbf{b}_{i+1}, \cdots, \mathbf{b}_n) \\[0.2cm]  
+ \mathtt{det}(B) & = & \mathtt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm] 
+                 & = & \mathtt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, 0 \cdot \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm]  
+                 & = & 0 \cdot \mathtt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm]  
                  & = & 0.
 \end{array}
 $
 \\[0.2cm]
-Aus der Voraussetzung, dass die Menge $\{\mathbf{a}_1, \cdots, \mathbf{a}_n\}$ linear abhängig ist, folgt,
+Aus der Voraussetzung, dass die Menge $\{\vec{a}_1, \cdots, \vec{a}_n\}$ linear abhängig ist, folgt,
 dass es Skalare $\lambda_1,\cdots, \lambda_n \in \mathbb{K}$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lambda_1 \cdot \mathbf{a}_1 + \cdots + \lambda_n \cdot \mathbf{a}_n = \mathbf{0}$,
+$\lambda_1 \cdot \vec{a}_1 + \cdots + \lambda_n \cdot \vec{a}_n = \vec{0}$,
 \\[0.2cm]
 wobei wenigstens für ein $k \in \{1,\cdots,n\}$ die Ungleichung $\lambda_k \not= 0$ gilt.
 Teilen wir die obige Gleichung dann durch dieses $\lambda_k$ und bringen die Ausdrücke mit $i\not=k$
 auf die andere Seite der Gleichung, so folgt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{a}_k = - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \mathbf{a}_i$.
+$\vec{a}_k = - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i$.
 \\[0.2cm]
 Durch wiederholtes Anwenden des letzten Satzes können wir zur $k$-ten Spalte der Matrix $A$
 nacheinander das $-\bruch{\lambda_i}{\lambda_k}$-fache der $i$-ten Spalte für alle $i \in \{1,\cdots,n\} \backslash \{k\}$ 
@@ -1378,24 +1378,24 @@ hinzuaddieren, ohne dass sich dabei der Wert der Determinante der Matrix ändert:
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  \mathtt{det}(A) & = & \mathtt{det}(\mathbf{a}_1, \cdots, \mathbf{a}_k, \cdots, \mathbf{a}_n) \\[0.2cm]
-                  & = & \mathtt{det}(\mathbf{a}_1, \cdots, 
-                        \mathbf{a}_k - \bruch{\lambda_1}{\lambda_k} \cdot \mathbf{a_1}, \cdots, \mathbf{a}_n) \\[0.2cm]
-                  & = & \mathtt{det}(\mathbf{a}_1, \cdots, 
-                        \mathbf{a}_k -\bruch{\lambda_1}{\lambda_k} \cdot \mathbf{a_1} - \bruch{\lambda_2}{\lambda_k} \cdot \mathbf{a_2},
-                        \cdots, \mathbf{a}_n) \\[0.2cm] 
+  \mathtt{det}(A) & = & \mathtt{det}(\vec{a}_1, \cdots, \vec{a}_k, \cdots, \vec{a}_n) \\[0.2cm]
+                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                        \vec{a}_k - \bruch{\lambda_1}{\lambda_k} \cdot \vec{a_1}, \cdots, \vec{a}_n) \\[0.2cm]
+                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                        \vec{a}_k -\bruch{\lambda_1}{\lambda_k} \cdot \vec{a_1} - \bruch{\lambda_2}{\lambda_k} \cdot \vec{a_2},
+                        \cdots, \vec{a}_n) \\[0.2cm] 
                   & = & \vdots \\
-                  & = & \mathtt{det}(\mathbf{a}_1, \cdots, 
-                        \mathbf{a}_k - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \mathbf{a}_i,
-                        \cdots, \mathbf{a}_n) \\[0.2cm] 
-                  & = & \mathtt{det}(\mathbf{a}_1, \cdots, 
-                        \mathbf{0},
-                        \cdots, \mathbf{a}_n) \\[0.2cm] 
+                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                        \vec{a}_k - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i,
+                        \cdots, \vec{a}_n) \\[0.2cm] 
+                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                        \vec{0},
+                        \cdots, \vec{a}_n) \\[0.2cm] 
                  & = & 0.
 \end{array}
 $
 \\[0.2cm]
-Im letzten Schritt haben wir dann eine Matrix, deren $k$-te Spalte den Wert $\mathbf{0}$ hat und
+Im letzten Schritt haben wir dann eine Matrix, deren $k$-te Spalte den Wert $\vec{0}$ hat und
 nach der am Beginn dieses Beweises gemachten Bemerkung ist die Determinante dieser Matrix $0$.
 \qed
 
@@ -1404,10 +1404,10 @@ Genau wie wir für eine lineare Abbildung $f\in \mathcal{L}(V,W)$ im letzten Kapi
 $\mathtt{Kern}(f)$ und $\mathtt{Bild}(f)$ definiert haben, können wir auch für eine Matrix $A \in \mathbb{K}^{n \times m}$, die
 Mengen $\mathtt{Kern}(A)$ und $\mathtt{Bild}(A)$ definieren:
 \begin{enumerate}
-\item $\mathtt{Kern}(A) := \bigl\{ \mathbf{x} \in \mathbb{K}^m \bigm| A \cdot \mathbf{x} = \mathbf{0} \bigr\}$, 
-\item $\mathtt{Bild}(A) := \bigl\{ A \cdot \mathbf{x} \bigm| \mathbf{x} \in  \mathbb{K}^m \bigr\}$.
+\item $\mathtt{Kern}(A) := \bigl\{ \vec{x} \in \mathbb{K}^m \bigm| A \cdot \vec{x} = \vec{0} \bigr\}$, 
+\item $\mathtt{Bild}(A) := \bigl\{ A \cdot \vec{x} \bigm| \vec{x} \in  \mathbb{K}^m \bigr\}$.
 \end{enumerate}
-Da die Abbildung $\mathbf{x} \mapsto A \cdot \mathbf{x}$ eine lineare Abbildung ist, ist $\mathtt{Kern}(A)$ ein Unter-Vektorraum 
+Da die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$ eine lineare Abbildung ist, ist $\mathtt{Kern}(A)$ ein Unter-Vektorraum 
 von $\mathbb{K}^m$ und $\mathtt{Bild}(A)$ ist ein Unter-Vektorraum von $\mathbb{K}^n$.  Nach dem Dimensions-Satz folgt dann
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1420,13 +1420,13 @@ $\mathtt{dim}(\mathtt{Kern}(A)) = 0 \;\Leftrightarrow\; n = \mathtt{dim}(\mathtt
 \\[0.2cm]
 Wir nehmen im Folgenden an, dass $\mathtt{dim}(\mathtt{Kern}(A)) = 0$ ist und damit auch
 $n = \mathtt{dim}(\mathtt{Bild}(A))$ gilt.  Die Bedingung $\mathtt{dim}(\mathtt{Kern}(A)) = 0$
-impliziert, dass die Abbildung $\mathbf{x} \mapsto A \cdot \mathbf{x}$ injektiv ist, während
-die Bedingung $\mathtt{dim}(\mathtt{Bild}(A)) = n$ impliziert, dass die Abbildung $\mathbf{x} \mapsto A \cdot \mathbf{x}$
+impliziert, dass die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$ injektiv ist, während
+die Bedingung $\mathtt{dim}(\mathtt{Bild}(A)) = n$ impliziert, dass die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$
 surjektiv ist.  Folglich ist diese Abbildung insgesamt bijektiv und besitzt damit eine Umkehr-Abbildung.
-Bezeichnen wir die Abbildung $\mathbf{x} \mapsto A  \cdot x$ mit $f$, setzen wir also
+Bezeichnen wir die Abbildung $\vec{x} \mapsto A  \cdot x$ mit $f$, setzen wir also
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\mathbf{x}) := A \cdot \mathbf{x}$
+$f(\vec{x}) := A \cdot \vec{x}$
 \\[0.2cm]
 und bezeichnen wir die Umkehr-Abbildung mit $f^{-1}$, so können wir sehen, dass $f^{-1}$ ebenfalls
 eine lineare Abbildung ist, denn es gilt
@@ -1434,12 +1434,12 @@ eine lineare Abbildung ist, denn es gilt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{ll}
-                & f^{-1}(\mathbf{x} + \mathbf{y}) = f^{-1}(\mathbf{x}) + f^{-1}(\mathbf{y}) \\[0.2cm]
-\Leftrightarrow & f\bigl(f^{-1}(\mathbf{x} + \mathbf{y})\bigr) = f\bigl(f^{-1}(\mathbf{x}) + f^{-1}(\mathbf{y})\bigr) \\
+                & f^{-1}(\vec{x} + \vec{y}) = f^{-1}(\vec{x}) + f^{-1}(\vec{y}) \\[0.2cm]
+\Leftrightarrow & f\bigl(f^{-1}(\vec{x} + \vec{y})\bigr) = f\bigl(f^{-1}(\vec{x}) + f^{-1}(\vec{y})\bigr) \\
                 & \mbox{denn $f$ ist injektiv} \\[0.2cm] 
-\Leftrightarrow & \mathbf{x} + \mathbf{y} = f\bigl(f^{-1}(\mathbf{x})) + f\bigl(f^{-1}(\mathbf{y})\bigr) \\
+\Leftrightarrow & \vec{x} + \vec{y} = f\bigl(f^{-1}(\vec{x})) + f\bigl(f^{-1}(\vec{y})\bigr) \\
                 & \mbox{denn $f$ ist linear} \\[0.2cm] 
-\Leftrightarrow & \mathbf{x} + \mathbf{y} = \mathbf{x} + \mathbf{y}.
+\Leftrightarrow & \vec{x} + \vec{y} = \vec{x} + \vec{y}.
 \end{array}
 $
 \\[0.2cm]
@@ -1447,16 +1447,16 @@ Folglich lässt sich die Umkehr-Abbildung $f^{-1}$ wieder durch eine Matrix $B$ d
 sich die beiden Gleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
-$f^{-1}\bigl(f(\mathbf{x})\bigr) = \mathbf{x}$ \quad und \quad
-$f\bigl(f^{-1}(\mathbf{x})\bigr) = \mathbf{x}$ 
+$f^{-1}\bigl(f(\vec{x})\bigr) = \vec{x}$ \quad und \quad
+$f\bigl(f^{-1}(\vec{x})\bigr) = \vec{x}$ 
 \\[0.2cm]
 dann in der Form 
 \\[0.2cm]
 \hspace*{1.3cm}
-$B \cdot A \cdot \mathbf{x} = \mathbf{x}$ \quad und \quad
-$A \cdot B \cdot \mathbf{x} = \mathbf{x}$ 
+$B \cdot A \cdot \vec{x} = \vec{x}$ \quad und \quad
+$A \cdot B \cdot \vec{x} = \vec{x}$ 
 \\[0.2cm]
-schreiben lassen.  Weil diese Gleichungen für alle $\mathbf{x} \in \mathbb{K}^n$ gelten, folgt
+schreiben lassen.  Weil diese Gleichungen für alle $\vec{x} \in \mathbb{K}^n$ gelten, folgt
 \\[0.2cm]
 \hspace*{1.3cm}
 $B \cdot A = \mathrm{E}_n$ \quad und \quad $A \cdot B = \mathrm{E}_n$,
@@ -1465,7 +1465,7 @@ wobei $\mathrm{E}_n$ die $n \times n$ Einheits-Matrix bezeichnet.  Damit ist $B$
 Matrix, es gilt also $B = A^{-1}$. 
 
 \begin{Lemma}
-  Die Matrix $A \in \mathbf{K}^{n \times n}$ sei invertierbar.  Dann gilt $\mathtt{det}(A) \not= 0$.
+  Die Matrix $A \in \vec{K}^{n \times n}$ sei invertierbar.  Dann gilt $\mathtt{det}(A) \not= 0$.
 \end{Lemma}
 
 \proof
@@ -1526,23 +1526,23 @@ Den Nachweis dieser Behauptung führen wir durch eine Fallunterscheidung nach der
       \hspace*{1.3cm}
         $\mathrm{ZP}_n(k,l) \cdot B = \mathrm{ZP}_n(k,l) \cdot \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_l \\
+            \vec{b}_l \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right) = \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_l \\
+            \vec{b}_l \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right).
         $       
@@ -1565,19 +1565,19 @@ Den Nachweis dieser Behauptung führen wir durch eine Fallunterscheidung nach der
       \hspace*{1.3cm}
         $\mathrm{ZM}_n(k,\alpha^{-1}) \cdot B = \mathrm{ZM}_n(k,\alpha^{-1}) \cdot \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right) = \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \alpha^{-1} \cdot \mathbf{b}_k \\
+            \alpha^{-1} \cdot \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right).
         $       
@@ -1630,20 +1630,20 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      Lemma folgen, dass $\mathtt{det}(A) \not= 0$ wäre.  Folglich kann $A$ nicht invertierbar sein.
 \item[``$\Leftarrow$'']
 
-     Nun sei $A$ nicht invertierbar.  Dann gilt $\mathtt{Kern}(A) \not= \{\mathbf{0}\}$.  Also gibt
-     es einen Vektor $\mathbf{x}$, so dass $A \cdot \mathbf{x} = \mathbf{0}$ ist.  Schreiben wir
+     Nun sei $A$ nicht invertierbar.  Dann gilt $\mathtt{Kern}(A) \not= \{\vec{0}\}$.  Also gibt
+     es einen Vektor $\vec{x}$, so dass $A \cdot \vec{x} = \vec{0}$ ist.  Schreiben wir
      $A$ als
      \\[0.2cm]
      \hspace*{1.3cm}
-     $A = (\mathbf{a}_1, \cdots, \mathbf{a}_n)$,
+     $A = (\vec{a}_1, \cdots, \vec{a}_n)$,
      \\[0.2cm]
-     wobei $\mathbf{a}_1,\cdots,\mathbf{a}_n$ die der Spalten-Vektoren von $A$ sind, so folgt aus
-     der Gleichung $A \cdot \mathbf{x} = \mathbf{0}$ die Gleichung
+     wobei $\vec{a}_1,\cdots,\vec{a}_n$ die der Spalten-Vektoren von $A$ sind, so folgt aus
+     der Gleichung $A \cdot \vec{x} = \vec{0}$ die Gleichung
      \\[0.2cm]
      \hspace*{1.3cm}
-     $\sum\limits_{i=1}^n x_i \cdot \mathbf{a}_i = \mathbf{0}$,
+     $\sum\limits_{i=1}^n x_i \cdot \vec{a}_i = \vec{0}$,
      \\[0.2cm]
-     wobei hier die $x_i$ die Komponenten des Vektors $\mathbf{x}$ bezeichnen.  Damit sind aber die
+     wobei hier die $x_i$ die Komponenten des Vektors $\vec{x}$ bezeichnen.  Damit sind aber die
      Spalten-Vektoren der Matrix $A$ linear abhängig und nach einem früher bewiesenen Lemma folgt
      $\mathtt{det}(A) = 0$. \qed
 \end{enumerate}

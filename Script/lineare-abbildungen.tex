@@ -19,10 +19,10 @@ $f:V \rightarrow W$
 \\[0.2cm]
 ist eine \emph{lineare Abbildung} von $V$ nach $W$ genau dann, wenn Folgendes gilt:
 \begin{enumerate}
-\item $\forall \mathbf{x}, \mathbf{y} \in V: f(\mathbf{x} + \mathbf{y}) = f(\mathbf{x}) + f(\mathbf{y})$,
+\item $\forall \vec{x}, \vec{y} \in V: f(\vec{x} + \vec{y}) = f(\vec{x}) + f(\vec{y})$,
 
       eine lineare Abbildung ist mit der Addition verträglich.
-\item $\forall \alpha \in \mathbb{K}: \forall \mathbf{x} \in V: f(\alpha \cdot \mathbf{x}) = \alpha \cdot f(\mathbf{x})$,
+\item $\forall \alpha \in \mathbb{K}: \forall \vec{x} \in V: f(\alpha \cdot \vec{x}) = \alpha \cdot f(\vec{x})$,
 
       eine lineare Abbildung ist auch mit der Skalar-Multiplikation verträglich.
 \end{enumerate}
@@ -38,16 +38,16 @@ Auf der Menge $\mathcal{L}(V, W)$ definieren wir eine Addition
 $+: \mathcal{L}(V, W) \times \mathcal{L}(V, W) \rightarrow \mathcal{L}(V, W)$
 \\[0.2cm]
 punktweise, das heißt für $f,g \in \mathcal{L}(V, W)$ definieren wir die lineare Abbildung $f+g$,
-indem wir fordern, dass für alle $\mathbf{x} \in V$
+indem wir fordern, dass für alle $\vec{x} \in V$
 \\[0.2cm]
 \hspace*{1.3cm}
-$(f+g)(\mathbf{x}) := f(\mathbf{x}) + g(\mathbf{x})$ 
+$(f+g)(\vec{x}) := f(\vec{x}) + g(\vec{x})$ 
 \\[0.2cm]
-gilt.  Weiter definieren wir die Null-Abbildung $\mathbf{0}: V \rightarrow W$, indem wir für alle
-$\mathbf{x} \in V$
+gilt.  Weiter definieren wir die Null-Abbildung $\vec{0}: V \rightarrow W$, indem wir für alle
+$\vec{x} \in V$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{0}(\mathbf{x}) := \mathbf{0}$
+$\vec{0}(\vec{x}) := \vec{0}$
 \\[0.2cm]
 setzen.  Schließlich definieren wir eine Skalar-Multiplikation von Elementen des Körpers
 $\mathbb{K}$ mit linearen Abbildung aus $\mathcal{L}(V,W)$.  Diese Skalar-Multiplikation bezeichnen
@@ -56,10 +56,10 @@ wir durch den Operator ``$\cdot$''.  Es ist also
 \hspace*{1.3cm}
 $\cdot: \mathbb{K} \times \mathcal{L}(V, W) \rightarrow \mathcal{L}(V, W)$
 \\[0.2cm]
-und wir definieren für alle $\alpha \in \mathbb{K}$, $f \in \mathcal{L}(V, W)$ und alle $\mathbf{x} \in V$
+und wir definieren für alle $\alpha \in \mathbb{K}$, $f \in \mathcal{L}(V, W)$ und alle $\vec{x} \in V$
 \\[0.2cm]
 \hspace*{1.3cm}
-$(\alpha \cdot f)(\mathbf{x}) := \alpha \cdot f(x)$.
+$(\alpha \cdot f)(\vec{x}) := \alpha \cdot f(x)$.
  \eoxs
 \end{Definition}
 
@@ -69,7 +69,7 @@ definierte Menge der linearen Abbildungen von $V$ nach $W$.  Beweisen Sie die fo
 \begin{enumerate}
 \item Wenn $f,g \in \mathcal{L}(V,W)$ ist,  dann gilt $f+g \in \mathcal{L}(V, W)$.
 \item Wenn $\alpha \in \mathbb{K}$ und $f \in \mathcal{L}(V,W)$ ist,  dann gilt  $\alpha \cdot f \in \mathcal{L}(V, W)$.
-\item $\bigl\langle \langle \mathcal{L}(V, W), \mathbf{0}, + \rangle, \cdot \rangle$ ist ein $\mathbb{K}$-Vektor-Raum.
+\item $\bigl\langle \langle \mathcal{L}(V, W), \vec{0}, + \rangle, \cdot \rangle$ ist ein $\mathbb{K}$-Vektor-Raum.
       \eoxs
 \end{enumerate}
 
@@ -78,17 +78,17 @@ Wir können die beiden Eigenschaften, die in der Definition einer linearen Abbild
 einer einzigen Eigenschaft zusammenfassen, denn die Abbildung $f:V \rightarrow W$ ist genau dann linear, wenn
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall \alpha, \beta \in \mathbb{K}: \forall \mathbf{x}, \mathbf{y} \in V: f(\alpha \cdot \mathbf{x} + \beta \cdot \mathbf{y}) = \alpha \cdot f(\mathbf{x}) + \beta \cdot f(\mathbf{y})$
+$\forall \alpha, \beta \in \mathbb{K}: \forall \vec{x}, \vec{y} \in V: f(\alpha \cdot \vec{x} + \beta \cdot \vec{y}) = \alpha \cdot f(\vec{x}) + \beta \cdot f(\vec{y})$
 \\[0.2cm]
 gilt.  Weiter bemerken wir, dass für eine lineare Abbildung $f:V \rightarrow W$ immer
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\mathbf{0}) = \mathbf{0}$
+$f(\vec{0}) = \vec{0}$
 \\[0.2cm]
 gilt, denn wir haben
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\mathbf{0}) = f(0 \cdot \mathbf{0}) = 0 \cdot f(\mathbf{0}) = \mathbf{0}$.
+$f(\vec{0}) = f(0 \cdot \vec{0}) = 0 \cdot f(\vec{0}) = \vec{0}$.
 \eoxs
 
 \remark
@@ -154,7 +154,7 @@ $\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f
   Es seien $V$ und $W$ zwei Vektor-Räume und $f:V \rightarrow W$ sei ein lineare Abbildung.  Dann definieren wir 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\textsl{Kern}(f) := \{ \mathbf{x} \in V \mid f(\mathbf{x}) = \mathbf{0} \}$.
+  $\textsl{Kern}(f) := \{ \vec{x} \in V \mid f(\vec{x}) = \vec{0} \}$.
   \\[0.2cm] 
   Der Kern einer linearen Abbildung ist also die Menge aller Vektoren aus $V$, die auf den Null-Vektor abgebildet werden.  \eoxs
 \end{Definition}
@@ -167,54 +167,54 @@ $\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f
 Wir haben die drei Eigenschaften von Untervektor-Räumen nachzuweisen. 
 \begin{enumerate}
 \item Wir haben oben bereits gesehen, dass für eine lineare Abbildung
-      $f(\mathbf{0}) = \mathbf{0}$ gilt.  Daraus folgt sofort $\mathbf{0} \in \textsl{Kern}(f)$.
-\item Seien $\mathbf{x}, \mathbf{y} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
+      $f(\vec{0}) = \vec{0}$ gilt.  Daraus folgt sofort $\vec{0} \in \textsl{Kern}(f)$.
+\item Seien $\vec{x}, \vec{y} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{x}) = \mathbf{0}$ \quad und \quad $f(\mathbf{y}) = \mathbf{0}$. 
+      $f(\vec{x}) = \vec{0}$ \quad und \quad $f(\vec{y}) = \vec{0}$. 
       \\[0.2cm]
       Daraus folgt zunächst
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{x}) + f(\mathbf{y}) = \mathbf{0} + \mathbf{0} = \mathbf{0}$
+      $f(\vec{x}) + f(\vec{y}) = \vec{0} + \vec{0} = \vec{0}$
       \\[0.2cm]
       und da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{x} + \mathbf{y}) = \mathbf{0}$
+      $f(\vec{x} + \vec{y}) = \vec{0}$
       \\[0.2cm]
       umformen, was uns zeigt, dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} + \mathbf{y} \in \textsl{Kern}(f)$ 
+      $\vec{x} + \vec{y} \in \textsl{Kern}(f)$ 
       \\[0.2cm]
       ist, so dass die Menge $\textsl{Kern}(f)$ unter der Addition abgeschlossen ist.
-\item Sei $\alpha \in \mathbb{K}$ und $\mathbf{x} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
+\item Sei $\alpha \in \mathbb{K}$ und $\vec{x} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{x}) = \mathbf{0}$. 
+      $f(\vec{x}) = \vec{0}$. 
       \\[0.2cm]
       Daraus folgt zunächst
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot f(\mathbf{x}) = \alpha \cdot \mathbf{0} = \mathbf{0}$
+      $\alpha \cdot f(\vec{x}) = \alpha \cdot \vec{0} = \vec{0}$
       \\[0.2cm]
       und da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\alpha \cdot \mathbf{x}) = \mathbf{0}$
+      $f(\alpha \cdot \vec{x}) = \vec{0}$
       \\[0.2cm]
       umformen, was uns zeigt, dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot \mathbf{x} \in \textsl{Kern}(f)$ 
+      $\alpha \cdot \vec{x} \in \textsl{Kern}(f)$ 
       \\[0.2cm]
       ist, so dass die Menge $\textsl{Kern}(f)$ auch unter der Skalar-Multiplikation abgeschlossen ist. \qeds
 \end{enumerate}
 
 \begin{Satz}
   Es seien $V$ und $W$ Vektor-Räume und $f:V \rightarrow W$ sei eine lineare Abbildung.
-  Dann ist $f$ genau dann injektiv, wenn $\textsl{Kern}(f) = \{ \mathbf{0} \}$ gilt.
+  Dann ist $f$ genau dann injektiv, wenn $\textsl{Kern}(f) = \{ \vec{0} \}$ gilt.
 \end{Satz}
 
 \proof
@@ -223,42 +223,42 @@ Wir zerlegen den Beweis in zwei Teile.
 \item[``$\Rightarrow$'':] Wir nehmen zunächst an, dass $f$ injektiv ist.  Es ist klar, dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{0}) = \mathbf{0}$
+      $f(\vec{0}) = \vec{0}$
       \\[0.2cm]
-      gilt und damit gilt sicher $\mathbf{0} \in \textsl{Kern}(f)$.  Sei nun zusätzlich $\mathbf{y} \in \textsl{Kern}(f)$, es
+      gilt und damit gilt sicher $\vec{0} \in \textsl{Kern}(f)$.  Sei nun zusätzlich $\vec{y} \in \textsl{Kern}(f)$, es
       gelte also 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{y}) = \mathbf{0}$.
+      $f(\vec{y}) = \vec{0}$.
       \\[0.2cm]
-      Da $f$ injektiv ist, folgt aus $f(\mathbf{y}) = \mathbf{0}$ und $f(\mathbf{0}) = \mathbf{0}$
+      Da $f$ injektiv ist, folgt aus $f(\vec{y}) = \vec{0}$ und $f(\vec{0}) = \vec{0}$
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{y} = \mathbf{0}$
+      $\vec{y} = \vec{0}$
       \\[0.2cm]
-      und damit ist $\textsl{Kern}(f) = \{ \mathbf{0} \}$ gezeigt.
-\item[``$\Leftarrow$'':] Wir setzen jetzt $\textsl{Kern}(f) = \{ \mathbf{0} \}$ voraus.  Falls für $\mathbf{x}, \mathbf{y} \in V$
+      und damit ist $\textsl{Kern}(f) = \{ \vec{0} \}$ gezeigt.
+\item[``$\Leftarrow$'':] Wir setzen jetzt $\textsl{Kern}(f) = \{ \vec{0} \}$ voraus.  Falls für $\vec{x}, \vec{y} \in V$
       nun
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{x}) = f(\mathbf{y})$
+      $f(\vec{x}) = f(\vec{y})$
       \\[0.2cm]
       gilt, so können wir diese Gleichung auf Grund der Linearität von $f$ zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\mathbf{x} - \mathbf{y}) = \mathbf{0}$
+      $f(\vec{x} - \vec{y}) = \vec{0}$
       \\[0.2cm]
       umschreiben.  Daraus folgt aber
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} - \mathbf{y} \in \textsl{Kern}(f)$
+      $\vec{x} - \vec{y} \in \textsl{Kern}(f)$
       \\[0.2cm]
-      und da wir $\textsl{Kern}(f) = \{ \mathbf{0} \}$ vorausgesetzt hatten, folgt
+      und da wir $\textsl{Kern}(f) = \{ \vec{0} \}$ vorausgesetzt hatten, folgt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbf{x} - \mathbf{y} = 0$
+      $\vec{x} - \vec{y} = 0$
       \\[0.2cm]
-      woraus wir auf $\mathbf{x} = \mathbf{y}$ schließen können und das war zu zeigen.  \qeds
+      woraus wir auf $\vec{x} = \vec{y}$ schließen können und das war zu zeigen.  \qeds
 \end{enumerate}
 
 \begin{Definition}[Bild]
@@ -266,7 +266,7 @@ Es seien $V$ und $W$ Vektor-Räume und $f:V \rightarrow W$ sei eine lineare Abbil
 definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{Bild}(f) := \{ f(\mathbf{x}) \mid \mathbf{x} \in V \}$
+$\textsl{Bild}(f) := \{ f(\vec{x}) \mid \vec{x} \in V \}$
 \\[0.2cm]
 als die Menge der Abbilder aller Vektoren aus $V$ unter der Abbildung $f$.
 \eoxs
@@ -285,21 +285,21 @@ Zeigen Sie: Ist $f: V \rightarrow W$ eine lineare Abbildung, so ist $\textsl{Bil
 \end{Satz}
 
 \proof
-Es sei $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $\textsl{Kern}(f)$.  Ist $B$ eine Basis von $V_1$, so können wir mit Hilfe des
+Es sei $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$.  Ist $B$ eine Basis von $V_1$, so können wir mit Hilfe des
 Basis-Austausch-Satzes eine Menge $W$ finden, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$B \backslash W \cup \{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$
+$B \backslash W \cup \{ \vec{x}_1, \cdots, \vec{x}_m \}$
 \\[0.2cm]
 wieder eine Basis von $V_1$ ist.  Es gelte
 \\[0.2cm]
 \hspace*{1.3cm}
-$B \backslash W = \{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$.
+$B \backslash W = \{ \vec{y}_1, \cdots, \vec{y}_n \}$.
 \\[0.2cm]
 Dann ist also insgesamt die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\{  \mathbf{x}_1, \cdots, \mathbf{x}_m,  \mathbf{y}_1, \cdots, \mathbf{y}_n \}$
+$\{  \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
 \\[0.2cm]
 eine Basis von $V_1$, so dass $\textsl{dim}(V_1) = m + n$.  Wir müssen daher nur noch zeigen, dass 
 \\[0.2cm]
@@ -309,57 +309,57 @@ $\textsl{dim}\bigl(\textsl{Bild}(f)\bigr) = n$
 gilt.  Dazu zeigen wir, dass die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$
+$\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$
 \\[0.2cm]
 eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
 \begin{enumerate}
 \item Wir zeigen:
-      Die Menge $\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
+      Die Menge $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
 
-      Sei $\mathbf{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\mathbf{y} \in V_1$, so dass $\mathbf{z} = f(\mathbf{y})$ ist.
-      Nun ist die Menge $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m,  \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ eine Basis von $V_1$. 
+      Sei $\vec{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\vec{y} \in V_1$, so dass $\vec{z} = f(\vec{y})$ ist.
+      Nun ist die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis von $V_1$. 
       Folglich muss es Skalare $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ geben, so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_m \cdot \mathbf{x}_m + \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n = \mathbf{y}$
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n = \vec{y}$
       \\[0.2cm]
       ist.  Wenden wir auf diese Gleichung die lineare Abbildung $f$ an und berücksichtigen, dass
-      $f(\mathbf{x}_i) = \mathbf{0}$ ist für alle $i \in \{1,\cdots,m\}$, denn $\mathbf{x}_i \in \textsl{Kern}(f)$, so erhalten wir
+      $f(\vec{x}_i) = \vec{0}$ ist für alle $i \in \{1,\cdots,m\}$, denn $\vec{x}_i \in \textsl{Kern}(f)$, so erhalten wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\beta_1 \cdot f(\mathbf{y}_1) + \cdots + \beta_n \cdot f(\mathbf{y}_n) = \mathbf{z}$.
+      $\beta_1 \cdot f(\vec{y}_1) + \cdots + \beta_n \cdot f(\vec{y}_n) = \vec{z}$.
       \\[0.2cm]
-      Damit haben wir $\mathbf{z}$ aber als Linear-Kombination der Menge  $\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$ 
+      Damit haben wir $\vec{z}$ aber als Linear-Kombination der Menge  $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ 
       dargestellt und das war zu zeigen.
-\item Wir zeigen: Die Menge $\{ f(\mathbf{y}_1), \cdots, f(\mathbf{y}_n) \}$ ist linear unabhängig.
+\item Wir zeigen: Die Menge $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ ist linear unabhängig.
   
       Seien $\beta_1, \cdots, \beta_n \in \mathbb{K}$ und gelte
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\beta_1 \cdot f(\mathbf{y}_1) + \cdots + \beta_n \cdot f(\mathbf{y}_n) = \mathbf{0}$.
+      $\beta_1 \cdot f(\vec{y}_1) + \cdots + \beta_n \cdot f(\vec{y}_n) = \vec{0}$.
       \\[0.2cm]
       Da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $f(\beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n) = \mathbf{0}$
+      $f(\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n) = \vec{0}$
       \\[0.2cm]
       umschreiben.  Daraus folgt aber
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n \in \textsl{Kern}(f)$.
+      $\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n \in \textsl{Kern}(f)$.
       \\[0.2cm]
-      Da $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $\textsl{Kern}(f)$ ist, muss es also
+      Da $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$ ist, muss es also
       Skalare $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ geben, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_n \cdot \mathbf{x}_n = \beta_1 \cdot \mathbf{y}_1 + \cdots + \beta_n \cdot \mathbf{y}_n$
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
       \\[0.2cm]
       gilt.  Diese Gleichung können wir zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha_1 \cdot \mathbf{x}_1 + \cdots + \alpha_n \cdot \mathbf{x}_n + (-\beta_1) \cdot \mathbf{y}_1 + \cdots + (-\beta_n) \cdot \mathbf{y}_n = \mathbf{0}$
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n + (-\beta_1) \cdot \vec{y}_1 + \cdots + (-\beta_n) \cdot \vec{y}_n = \vec{0}$
       \\[0.2cm]
-      umstellen.  Da die Menge $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m,  \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ eine Basis von $V_1$ ist,
+      umstellen.  Da die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis von $V_1$ ist,
       folgt daraus
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -378,35 +378,35 @@ Zeigen Sie, dass $f$ genau dann surjektiv ist, wenn $f$ injektiv ist. \exend
 
 \section{Matrizen}
 Es seien $V$ und $W$ Vektor-Räume und $f$ sei eine lineare Abbildung.  Weiter sei
-$\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $V$ und 
-$\{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ sei eine Basis von $W$.  Für alle $j \in \{1,\cdots,m\}$ ist zunächst
-$f(\mathbf{x}_j)$ ein Vektor aus $W$ und da $\{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ ein Basis von $W$ ist, 
-gibt es dann eindeutig bestimmte Skalare $a_{i,j}$, so dass der Vektor $f(\mathbf{x}_j)$ sich als
+$\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $V$ und 
+$\{ \vec{y}_1, \cdots, \vec{y}_n \}$ sei eine Basis von $W$.  Für alle $j \in \{1,\cdots,m\}$ ist zunächst
+$f(\vec{x}_j)$ ein Vektor aus $W$ und da $\{ \vec{y}_1, \cdots, \vec{y}_n \}$ ein Basis von $W$ ist, 
+gibt es dann eindeutig bestimmte Skalare $a_{i,j}$, so dass der Vektor $f(\vec{x}_j)$ sich als
 Linear-Kombination 
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\mathbf{x}_j) = \sum\limits_{i=1}^n a_{i,j} \cdot \mathbf{y}_i$
+$f(\vec{x}_j) = \sum\limits_{i=1}^n a_{i,j} \cdot \vec{y}_i$
 \\[0.2cm]
-schreiben lässt.  Ist nun allgemein $\mathbf{x}$ ein Vektor aus $V$, so lässt sich $\mathbf{x}$ in der Form 
+schreiben lässt.  Ist nun allgemein $\vec{x}$ ein Vektor aus $V$, so lässt sich $\vec{x}$ in der Form 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \sum\limits_{j=1}^m \beta_j \cdot \mathbf{x}_j$
+$\vec{x} = \sum\limits_{j=1}^m \beta_j \cdot \vec{x}_j$
 \\[0.2cm]
-schreiben, denn $\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ ist ja eine Basis von $V$.  Wenden wir auf diese Gleichung die Funktion $f$ an, 
+schreiben, denn $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ ist ja eine Basis von $V$.  Wenden wir auf diese Gleichung die Funktion $f$ an, 
 so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  f(\mathbf{x}) & = & f\left(\sum\limits_{j=1}^m \beta_j \cdot \mathbf{x}_j\right)                    \\[0.5cm]
-                & = & \sum\limits_{j=1}^m \beta_j \cdot f(\mathbf{x}_j)                               \\[0.5cm]
-                & = & \sum\limits_{j=1}^m \beta_i \cdot \sum\limits_{i=1}^n a_{i,j} \cdot \mathbf{y}_i \\[0.5cm]
-                & = &  \sum\limits_{i=1}^n \left(\sum\limits_{j=1}^m a_{i,j} \cdot \beta_j\right) \cdot \mathbf{y}_i. \\[0.5cm]
+  f(\vec{x}) & = & f\left(\sum\limits_{j=1}^m \beta_j \cdot \vec{x}_j\right)                    \\[0.5cm]
+                & = & \sum\limits_{j=1}^m \beta_j \cdot f(\vec{x}_j)                               \\[0.5cm]
+                & = & \sum\limits_{j=1}^m \beta_i \cdot \sum\limits_{i=1}^n a_{i,j} \cdot \vec{y}_i \\[0.5cm]
+                & = &  \sum\limits_{i=1}^n \left(\sum\limits_{j=1}^m a_{i,j} \cdot \beta_j\right) \cdot \vec{y}_i. \\[0.5cm]
 \end{array}
 $
 \\[0.2cm]
 Damit sehen wir, dass lineare Abbildung $f$ in dem Moment, wo wir die Basen
-$\{ \mathbf{x}_1, \cdots, \mathbf{x}_m \}$ von $V$ und $\{ \mathbf{y}_1, \cdots, \mathbf{y}_n \}$ von $W$
+$\{ \vec{x}_1, \cdots, \vec{x}_m \}$ von $V$ und $\{ \vec{y}_1, \cdots, \vec{y}_n \}$ von $W$
 festgelegt haben, vollständig durch die $n \cdot m$ Zahlen $\bigl(a_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,m}$ festgelegt werden.  Diese Zahlen werden 
 daher zu einer $n \times m$ \emph{Matrix}
 \\[0.2cm]
@@ -425,8 +425,8 @@ für alle $i \in \{1,\cdots,n\}$ und $j \in \{1,\cdots,m\}$ schreiben wir als $\m
   m}$.
 
 \begin{Definition}[$\mathcal{M}(f)$]
-Sind $V$ und $W$ zwei $\mathbb{K}$-Vektor-Räume und bilden die Vektoren $\mathbf{x}_1, \cdots, \mathbf{x}_m$
-und $\mathbf{y}_1, \cdots, \mathbf{y}_n$ eine Basis von $V$ beziehungsweise von $W$ und ist weiter
+Sind $V$ und $W$ zwei $\mathbb{K}$-Vektor-Räume und bilden die Vektoren $\vec{x}_1, \cdots, \vec{x}_m$
+und $\vec{y}_1, \cdots, \vec{y}_n$ eine Basis von $V$ beziehungsweise von $W$ und ist weiter
 $f \in \mathcal{L}(V, W)$, so bezeichnen wir die oben definierte Matrix $A \in \mathbb{K}^{n \times m}$ 
 mit $\mathcal{M}(f)$, wir setzen also
 \\[0.2cm]
@@ -437,20 +437,20 @@ $\mathcal{M}(f) := A$.
 
 \remark
 Eigentlich ist die Schreibweise $\mathcal{M}(f)$ nur dann eindeutig, wenn die Vektoren
-$\mathbf{x}_1, \cdots, \mathbf{x}_m$ und $\mathbf{y}_1, \cdots, \mathbf{y}_n$ festgelegt sind.  Es
+$\vec{x}_1, \cdots, \vec{x}_m$ und $\vec{y}_1, \cdots, \vec{y}_n$ festgelegt sind.  Es
 gibt Autoren, die deswegen die Notation
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathcal{M}(f;\mathbf{x}_1, \cdots, \mathbf{x}_m; \mathbf{y}_1, \cdots, \mathbf{y}_n)$
+$\mathcal{M}(f;\vec{x}_1, \cdots, \vec{x}_m; \vec{y}_1, \cdots, \vec{y}_n)$
 \quad an Stelle von \quad $\mathcal{M}(f)$
 \\[0.2cm]
 schreiben.  Diese Schreibweise ist mir aber zu schwerfällig.  Wir
 setzen im Folgenden voraus, dass immer, wenn die Funktion $\mathcal{M}$ verwendet wird, 
-klar ist, auf Basis welcher Vektoren $\mathbf{x}_1, \cdots, \mathbf{x}_m$ und $\mathbf{y}_1, \cdots, \mathbf{y}_n$  
+klar ist, auf Basis welcher Vektoren $\vec{x}_1, \cdots, \vec{x}_m$ und $\vec{y}_1, \cdots, \vec{y}_n$  
 der Ausdruck $\mathcal{M}(f)$ definiert ist.
 
 Zusätzlich ist noch die folgende Spitzfindigkeit zu beachten:  Wenn wir sagen, dass 
-$B = \{\mathbf{x}_1, \cdots, \mathbf{x}_m \}$ eine Basis von $V$ ist, dann ist die Reihenfolge der
+$B = \{\vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $V$ ist, dann ist die Reihenfolge der
 Vektoren nicht festgelegt, denn eine Basis ist eine Menge und dort gibt es keine
 Reihenfolge.  Daher ist die oben definierte Abbildung $\mathcal{M}: \mathcal{L}(V,W) \rightarrow\mathbb{K}^{n \times m}$ 
 streng genommen nur dann eindeutig definiert, wenn wir die Reihenfolge der Vektoren in den
@@ -464,7 +464,7 @@ $\mathcal{M}(f)$ dann beziehen können.
  Ist $A \in \mathbb{K}^{n \times m}$ eine Matrix und ist 
 \\[0.5cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \left(
+$\vec{x} = \left(
       \begin{array}[c]{c}
       x_{1}  \\
       \vdots \\
@@ -473,10 +473,10 @@ $\mathbf{x} = \left(
     \right) \in \mathbb{K}^m
 $,
 \\[0.5cm]
-so definieren wir das \emph{Produkt} $A \cdot \mathbf{x}$ als den Vektor
+so definieren wir das \emph{Produkt} $A \cdot \vec{x}$ als den Vektor
 \\[0.5cm]
 \hspace*{1.3cm}
-$\mathbf{y} := A \cdot \mathbf{x} = \left(
+$\vec{y} := A \cdot \vec{x} = \left(
       \begin{array}[c]{c}
       \sum\limits_{j=1}^m a_{1,j} \cdot x_{j}  \\
       \vdots \\
@@ -487,17 +487,17 @@ $\mathbf{y} := A \cdot \mathbf{x} = \left(
       \right). 
 $
 \\[0.5cm]
-Zur Berechnung der $i$-ten Komponente des Vektors $A \cdot \mathbf{x}$ wird der Vektor $\mathbf{x}$
+Zur Berechnung der $i$-ten Komponente des Vektors $A \cdot \vec{x}$ wird der Vektor $\vec{x}$
 also komponentenweise mit der $i$-ten Zeile der Matrix $A$ multipliziert und diese Produkte werden
 dann aufaddiert.
 
 \remark
-Wir hatten die Vektoren aus $\mathbb{K}^n$ ursprünglich als Listen der Form $\mathbf{x} = [x_1, \cdots, x_n]$ mit
+Wir hatten die Vektoren aus $\mathbb{K}^n$ ursprünglich als Listen der Form $\vec{x} = [x_1, \cdots, x_n]$ mit
 $x_i \in \mathbb{K}$ für alle $i\in\{1,\cdots,n\}$ definiert.  Diese Schreibweise ist wesentlich
 platzsparender als die Schreibweise
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = \left(
+$\vec{x} = \left(
       \begin{array}[c]{c}
       x_{1}  \\
       \vdots \\
@@ -506,7 +506,7 @@ $\mathbf{x} = \left(
       \right),
 $
 \\[0.2cm]
-bei der wir $\mathbf{x}$ als \emph{Spalten-Vektor} bezeichnen.  Im Zusammenhang mit der
+bei der wir $\vec{x}$ als \emph{Spalten-Vektor} bezeichnen.  Im Zusammenhang mit der
 Multiplikation von Matrizen mit Vektoren ist die Spaltenschreibweise allerdings 
 suggestiver, so dass wir Vektoren in Zusammenhang mit der Matrizen-Multiplikation in der
 Spaltenschreibweise darstellen.
@@ -518,10 +518,10 @@ Es sei $A \in \mathbb{K}^{n \times m}$.  Zeigen Sie, dass die Abbildung
 \hspace*{1.3cm}
 $f: \mathbb{K} ^m \rightarrow \mathbb{K}^n$,
 \\[0.2cm]
-die für alle $\mathbf{x} \in \mathbb{K}^m$ durch
+die für alle $\vec{x} \in \mathbb{K}^m$ durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\mathbf{x}) := A \cdot \mathbf{x}$
+$f(\vec{x}) := A \cdot \vec{x}$
 \\[0.2cm]
 definiert ist, eine lineare Abbildung ist.
 \exend
@@ -532,10 +532,10 @@ Es seien $A,B \in \mathbb{K}^{n \times m}$ und in Komponentenschreibweise gelte 
 $B = (b_{i,j})$, wobei der Index $i$ von $1$ bis $n$ und der Index $j$ von $1$ bis $m$ läuft.  Dann
 definieren wir die Summe $C := A + B$ so, dass $C = (a_{i,j} + b_{i,j})$ gilt, die Komponenten der
 Matrix $C$ werden also durch Addition der Komponenten von $A$ und $B$  definiert.  Mit dieser
-Definition ist leicht zu sehen, dass für beliebige Vektoren $\mathbf{x} \in \mathbb{K}^m$ die Gleichung
+Definition ist leicht zu sehen, dass für beliebige Vektoren $\vec{x} \in \mathbb{K}^m$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$(A + B) \cdot \mathbf{x} = A \cdot \mathbf{x} + B \cdot \mathbf{x}$
+$(A + B) \cdot \vec{x} = A \cdot \vec{x} + B \cdot \vec{x}$
 \\[0.2cm]
 gilt.  Dieses Distributiv-Gesetz ist der Grund dafür, dass die Addition von Matrizen wie oben
 angegeben definiert wird.
@@ -544,10 +544,10 @@ angegeben definiert wird.
 Für Matrizen lässt sich außerdem eine Skalar-Multiplikation definieren:  Ist $\alpha \in \mathbb{K}$
 und ist $A \in \mathbb{K}^{n \times m}$, wobei $A = (a_{i,j})$ gilt, so definieren wir die $n \times m$ Matrix 
 $C := \alpha \cdot A$ so, dass in Komponentenschreibweise $C = (\alpha \cdot a_{i,j})$ gilt.  Mit
-dieser Definition gilt für beliebige Vektoren $\mathbf{x} \in \mathbb{K}^m$ die Gleichung
+dieser Definition gilt für beliebige Vektoren $\vec{x} \in \mathbb{K}^m$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\alpha \cdot (A \cdot \mathbf{x}) = (\alpha \cdot A) \cdot \mathbf{x} = A \cdot (\alpha \cdot \mathbf{x})$.
+$\alpha \cdot (A \cdot \vec{x}) = (\alpha \cdot A) \cdot \vec{x} = A \cdot (\alpha \cdot \vec{x})$.
 \\[0.2cm]
 Diese Gleichungen zeigen, dass die Skalar-Multiplikation für Matrizen mit der Multiplikation einer
 Matrix mit einem Vektor verträglich ist.
@@ -560,7 +560,7 @@ Null-Matrix, deren sämtliche Komponenten den Wert $0$ haben.
 
 \remark
 Sind $V$ und $W$ zwei endlich-dimensionale Vektor-Räume mit Basen
-$\{\mathbf{x}_1, \cdots, \mathbf{x}_m\}$ und $\{\mathbf{y}_1, \cdots, \mathbf{y}_n\}$ und sind $f, g \in \mathcal{L}(V, W)$ und ist $\alpha \in \mathbb{K}$, so gilt
+$\{\vec{x}_1, \cdots, \vec{x}_m\}$ und $\{\vec{y}_1, \cdots, \vec{y}_n\}$ und sind $f, g \in \mathcal{L}(V, W)$ und ist $\alpha \in \mathbb{K}$, so gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathcal{M}(f+g) := \mathcal{M}(f) + \mathcal{M}(g)$ \quad und \quad
@@ -584,15 +584,15 @@ $f : \mathbb{K}^l \rightarrow \mathbb{K}^m$  \quad und \quad $g: \mathbb{K}^m\ri
 durch die Festlegung
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\mathbf{x}) := A \cdot \mathbf{x}$ \quad f.a.~$\mathbf{x} \in \mathbb{K}^l$,
+$f(\vec{x}) := A \cdot \vec{x}$ \quad f.a.~$\vec{x} \in \mathbb{K}^l$,
  \quad und \quad
- $g(\mathbf{y}) := B \cdot \mathbf{y}$ \quad f.a.~$\mathbf{y} \in \mathbb{K}^m$,
+ $g(\vec{y}) := B \cdot \vec{y}$ \quad f.a.~$\vec{y} \in \mathbb{K}^m$,
  \\[0.2cm]
 definieren.  Da der Werte-Bereich der Funktion $f$ eine Teilmenge des Definitions-Bereichs der
 Funktion $g$ ist, können wir die beiden Funktionen zu einer neuen Funktion $h$ verknüpfen, indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$h(\mathbf{x}) := (g \circ f)(\mathbf{x}) = g(f(\mathbf{x}))$
+$h(\vec{x}) := (g \circ f)(\vec{x}) = g(f(\vec{x}))$
 \\[0.2cm]
 definieren.  Sie können leicht nachweisen, dass die Funktion $h$ wieder eine lineare Funktion ist
 und dass 
@@ -606,8 +606,8 @@ lassen, die wir nun berechnen wollen.  Es gilt
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-   h(\mathbf{x}) & = & g(f(\mathbf{x})) \\[0.2cm]
-                 & = & B \cdot (A \cdot \mathbf{x}) \\[0.2cm]
+   h(\vec{x}) & = & g(f(\vec{x})) \\[0.2cm]
+                 & = & B \cdot (A \cdot \vec{x}) \\[0.2cm]
                  & = & B \cdot \left(\begin{array}[c]{c}
                                      \vdots                          \\
                                      \sum\limits_{j=1}^l a_{i,j} \cdot x_{j}  \\
@@ -788,7 +788,7 @@ gelten muss.
 
 \remark
 Ein lineares Gleichungs-System mit $n$ Gleichungen und $n$ Variablen lässt sich in der Form
-$A \cdot \mathbf{x} = \mathbf{x}$ schreiben, wobei $A \in \mathbb{K}^{n \times n}$ ist.
+$A \cdot \vec{x} = \vec{x}$ schreiben, wobei $A \in \mathbb{K}^{n \times n}$ ist.
   Beispielsweise können wir das lineare Gleichungs-System
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -816,7 +816,7 @@ $A := \left(
   \end{array}
   \right)
 $ \quad und \quad
-$\mathbf{b} := \left(
+$\vec{b} := \left(
   \begin{array}[c]{l}
     4 \\
     8 \\
@@ -826,21 +826,21 @@ $\mathbf{b} := \left(
 $
 \\[0.2cm]
 definieren.  Wenn wir nun Glück haben und die Matrix $A$ invertierbar ist, so können wir die
-Gleichung $A \cdot \mathbf{x} = \mathbf{b}$ von links mit $A^{-1}$ multiplizieren.  Dann erhalten wir
+Gleichung $A \cdot \vec{x} = \vec{b}$ von links mit $A^{-1}$ multiplizieren.  Dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$A^{-1} \cdot A \cdot \mathbf{x} = A^{-1} \cdot \mathbf{b}$
+$A^{-1} \cdot A \cdot \vec{x} = A^{-1} \cdot \vec{b}$
 \\[0.2cm]
-was wegen $A^{-1} \cdot A \cdot \mathbf{x} = \mathrm{E}_n \cdot \mathbf{x} = \mathbf{x}$ zu
+was wegen $A^{-1} \cdot A \cdot \vec{x} = \mathrm{E}_n \cdot \vec{x} = \vec{x}$ zu
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbf{x} = A^{-1} \cdot \mathbf{b}$
+$\vec{x} = A^{-1} \cdot \vec{b}$
 \\[0.2cm]
 äquivalent ist.  Falls wir also in der Lage sind, die Matrix $A$ zu invertieren,  dann können wir anschließend
-das Lösen der Gleichung $A \cdot \mathbf{x} = \mathbf{b}$  auf eine Matrix-Multiplikation zurück
-führen.  Da das Inverse $A^{-1}$ nicht von dem Vektor $\mathbf{b}$ abhängt, ist dies dann ein
-sinnvolles Vorgehen, wenn die Gleichung $A \cdot \mathbf{x} = \mathbf{b}$ für mehrere verschiedene Werte von
-$\mathbf{b}$ gelöst werden soll.  \eoxs
+das Lösen der Gleichung $A \cdot \vec{x} = \vec{b}$  auf eine Matrix-Multiplikation zurück
+führen.  Da das Inverse $A^{-1}$ nicht von dem Vektor $\vec{b}$ abhängt, ist dies dann ein
+sinnvolles Vorgehen, wenn die Gleichung $A \cdot \vec{x} = \vec{b}$ für mehrere verschiedene Werte von
+$\vec{b}$ gelöst werden soll.  \eoxs
 
 \begin{Definition}
   Es sei $n\in\mathbb{N}$, $k \in \{1,\cdots,m\}$ und $l \in \{1,\cdots,n\}$.  Dann 
@@ -864,36 +864,36 @@ werden.  Schreiben wir die Matrix $B$ in der Form
 \hspace*{1.3cm}
 $B = \left(
   \begin{array}[c]{c}
-    \mathbf{b}_1 \\
+    \vec{b}_1 \\
     \vdots       \\
-    \mathbf{b}_n 
+    \vec{b}_n 
   \end{array} 
 \right)
 $, 
 \\[0.2cm]
-wobei $\mathbf{b}_i$ die $i$-te Zeile der Matrix $B$ bezeichnet, die wir als Vektor auffassen und
+wobei $\vec{b}_i$ die $i$-te Zeile der Matrix $B$ bezeichnet, die wir als Vektor auffassen und
 ist $l < k$, dann gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathrm{A}_n(k,l) \cdot B = \mathrm{A}_n(k,l) \cdot \left(
   \begin{array}[c]{c}
-    \mathbf{b}_1 \\
+    \vec{b}_1 \\
     \vdots       \\
-    \mathbf{b}_l \\
+    \vec{b}_l \\
     \vdots       \\
-    \mathbf{b}_k \\
+    \vec{b}_k \\
     \vdots       \\
-    \mathbf{b}_n 
+    \vec{b}_n 
   \end{array}
 \right) = \left(
   \begin{array}[c]{c}
-    \mathbf{0} \\
+    \vec{0} \\
     \vdots       \\
-    \mathbf{0}   \\
+    \vec{0}   \\
     \vdots       \\
-    \mathbf{b}_l \\
+    \vec{b}_l \\
     \vdots       \\
-    \mathbf{0} 
+    \vec{0} 
   \end{array}
 \right),
 $
@@ -931,23 +931,23 @@ mit $\alpha$.
         \hspace*{1.3cm}
         $\mathrm{ZA}_n(k,l,\alpha) \cdot B = \mathrm{ZA}_n(k,l,\alpha) \cdot \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_l \\
+            \vec{b}_l \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right) = \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_l   \\
+            \vec{b}_l   \\
             \vdots       \\
-            \mathbf{b}_k + \alpha \cdot \mathbf{b}_l \\
+            \vec{b}_k + \alpha \cdot \vec{b}_l \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right).
         $       
@@ -963,23 +963,23 @@ mit $\alpha$.
       \hspace*{1.3cm}
         $\mathrm{ZP}_n(k,l) \cdot B = \mathrm{ZP}_n(k,l) \cdot \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_l \\
+            \vec{b}_l \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right) = \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_l \\
+            \vec{b}_l \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right).
         $       
@@ -1005,19 +1005,19 @@ mit $\alpha$.
       \hspace*{1.3cm}
         $\mathrm{ZM}_n(k,\alpha) \cdot B = \mathrm{ZM}_n(k,\alpha) \cdot \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \mathbf{b}_k \\
+            \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right) = \left(
           \begin{array}[c]{c}
-            \mathbf{b}_1 \\
+            \vec{b}_1 \\
             \vdots       \\
-            \alpha \cdot \mathbf{b}_k \\
+            \alpha \cdot \vec{b}_k \\
             \vdots       \\
-            \mathbf{b}_n 
+            \vec{b}_n 
           \end{array}
         \right).
         $       
@@ -1111,9 +1111,9 @@ multiplizieren eine Zeile mit einem Skalar.
 
 Die Transformation der Matrix $A \in \mathbb{K}^n$ verläuft in $n$ Schritten, wobei wir im $i$-ten
 Schritt dafür sorgen, dass die $i$-te Spalte der Matrix gleich dem $i$-ten Einheits-Vektor
-$\mathbf{e}_i$ wird.  Dabei hat der $i$-te Einheits-Vektor in der $i$-ten Komponente eine $1$, alle
+$\vec{e}_i$ wird.  Dabei hat der $i$-te Einheits-Vektor in der $i$-ten Komponente eine $1$, alle
 anderen Komponenten sind $0$.  Im $i$-ten Schritt können wir davon ausgehen, dass in den ersten $i-1$
-Spalten bereits die Einheits-Vektoren $\mathbf{e}_1$ bis $\mathbf{e}_{i-1}$ stehen.
+Spalten bereits die Einheits-Vektoren $\vec{e}_1$ bis $\vec{e}_{i-1}$ stehen.
 Um auch die $i$-te Spalte entsprechend zu transformieren, suchen wir zunächst diejenige Zeile 
 $j \in \{i, \cdots, n\}$ für die $|a_{j,i}|$ maximal wird.  Theoretisch würde es an dieser Stelle
 reichen, einfach irgend eine Zeile $j \in \{i, \cdots, n\}$ zu wählen, für die $a_{j,i} \not= 0$ 
@@ -1197,7 +1197,7 @@ diese Implementierung jetzt Zeile für Zeile:
       Funktion \texttt{identity}.  Die Implementierung dieser Funktion wird in Abbildung
       \ref{fig:inverse.stlx-pivot} auf Seite \pageref{fig:inverse.stlx-pivot} gezeigt.
 \item Im $i$-ten Durchlauf der Schleife in Zeile 4 wird erreicht, dass die $i$-te Spalte von
-      $\mathtt{a}$ mit dem $i$-ten Einheits-Vektor $\mathbf{e}_i$ übereinstimmt.
+      $\mathtt{a}$ mit dem $i$-ten Einheits-Vektor $\vec{e}_i$ übereinstimmt.
       \begin{enumerate}
       \item Zunächst suchen wir mit der in Zeile $5$ aufgerufenen Funktion \texttt{pivot}
             nach der Zeile $r$, für die der Betrag $|\mathtt{a}[i][r]|$ unter allen 
@@ -1372,7 +1372,7 @@ $\mathtt{e} = \left(
   \end{array}\right)
 $
 \item In den folgenden Schritten geht es darum, die zweite Spalte der Matrix $\mathtt{a}$ in den
-      Einheits-Vektor $\mathbf{e}_2$ zu überführen.  Zunächst überprüfen wir, für welches $j \geq 2$
+      Einheits-Vektor $\vec{e}_2$ zu überführen.  Zunächst überprüfen wir, für welches $j \geq 2$
       der Betrag $|\mathtt{a}_{2,j}|$ maximal wird.  In diesem Fall ist der Betrag in der zweiten
       Zeile bereits maximal, so dass wir an dieser Stelle keine Zeilen-Vertauschung vornehmen müssen.
       Wir müssen die zweite Zeile aber noch normalisieren und multiplizieren daher die zweite Zeile
@@ -1431,7 +1431,7 @@ $\mathtt{e} = \left(
   \end{array}\right)
 $
 \item In den verbleibenden Schritten geht es darum, die dritte Spalte der Matrix $\mathtt{a}$ in den
-      Einheits-Vektor $\mathbf{e}_3$ zu überführen.  Wir beginnen damit, dass wir die dritte Zeile
+      Einheits-Vektor $\vec{e}_3$ zu überführen.  Wir beginnen damit, dass wir die dritte Zeile
       durch $\frac{18}{7}$ teilen:
 \\[0.2cm]
 \hspace*{1.3cm}
