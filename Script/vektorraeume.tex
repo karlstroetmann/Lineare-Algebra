@@ -65,14 +65,6 @@ Da aber an der Tafel oder auf dem Papier ein Fettdruck kaum möglich ist, habe ic
 Vektoren durch Pfeilen kenntlich zu machen.
 \eox
 
-Falls bei einer Menge $V$ aus dem Zusammenhang klar ist, was das neutrale Element ``$\vec{0}$'' ist und
-wie die Operatoren ``$+$'' und ``$\cdot$'' zu  definieren sind, so dass
- $\bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum wird, dann sprechen wir in Zukunft von
-$V$ als $\mathbb{K}$-Vektor-Raum und meinen damit, dass das Tripel $\bigl\langle \langle V, \vec{0}, +
-\rangle, \mathbb{K}, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum ist.  
-Falls darüber hinaus klar ist, um welchen Körper es sich bei $\mathbb{K}$ handelt, so sprechen wir
-einfach von einem Vektor-Raum anstatt von einem $\mathbb{K}$-Vektor-Raum. 
-\eox
 
 \example
 Wir haben die Menge $\mathbb{K}^n$ als die Menge aller Listen der Länge $n$ definiert, deren Elemente aus der Menge $\mathbb{K}$ stammen.
@@ -222,7 +214,7 @@ so ist $\vec{x}$ eine Linear-Kombination der Vektoren $\vec{y}_1$, $\vec{y}_2$, 
 $\vec{x} = 1 \cdot \vec{y}_1 + 2 \cdot \vec{y}_2 + 3 \cdot \vec{y}_3$.  \eoxs
 
 \begin{Definition}[linear unabhängig]
-Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein Vektor-Raum.  
+Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum.  
 Eine Menge $B \subseteq V$ ist \\ \emph{linear unabhängig} genau dann, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -288,7 +280,7 @@ $\vec{0}$ kombinieren lassen.  Folglich ist die Menge $B$ linear unabhängig.
 \begin{Definition}[Erzeugenden-System]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
   und $B \subseteq V$.  Die Teilmenge $B$ ist ein
-  \emph{Erzeugenden-System} des Vektor-Raums $V$ genau dann, wenn sich jeder Vektor 
+  \emph{Erzeugenden-System} des Vektor-Raums $\mathcal{V}$ genau dann, wenn sich jeder Vektor 
   $\vec{x} \in V$ als Linear-Kombination von Vektoren aus $B$ schreiben lässt. 
   Als Formel schreibt sich dies wie folgt:
   \\[0.2cm]
@@ -523,7 +515,7 @@ eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben lässt.
 
 \begin{Lemma}[Austausch-Lemma]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$
-  ein Vektor-Raum, $B$ eine Basis von $\mathcal{V}$, $U \subseteq B$, $\vec{x} \in V\backslash B$ und die
+  ein $\mathbb{K}$-Vektor-Raum, $B$ eine Basis von $\mathcal{V}$, $U \subseteq B$, $\vec{x} \in V\backslash B$ und die
   Menge $U \cup \{ \vec{x} \}$ sei linear unabhängig.
   Dann gibt es einen Vektor $\vec{y} \in B \backslash U$, so dass die Menge
  $\bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ wieder eine Basis von $\mathcal{V}$ ist.
@@ -537,8 +529,11 @@ und Vektoren $\vec{y}_1, \cdots, \vec{y}_n\in B$, so dass
 \hspace*{1.3cm}
 $\vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i$ 
 \\[0.2cm]
-gilt.  Da die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, ist $\vec{x}$ sicher von $\vec{0}$
-verschieden und damit können nicht alle $\alpha_i$ den Wert $0$ haben.  O.B.d.A.~können wir sogar fordern,
+gilt.  Ohne Beschränkung der Allgemeinheit können wir hier voraussetzen, dass die Vektoren
+$\vec{y_i}$ paarweise verschieden sind.  
+Da die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, ist $\vec{x}$ sicher von $\vec{0}$
+verschieden und damit können in der Gleichung für $\vec{x}$ 
+nicht alle $\alpha_i$ den Wert $0$ haben.  O.B.d.A.~können wir sogar fordern,
 dass alle $\alpha_i \not= 0$ sind, denn falls $\alpha_i = 0$ wäre, würden wir den Term $\alpha_i \cdot \vec{y}_i$
 in der obigen Summe einfach weglassen.
 Aus der Tatsache, dass die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, folgt außerdem, dass in der obigen Darstellung
@@ -576,14 +571,14 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
 \item Als erstes zeigen wir, dass  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
 
       Dazu betrachten wir einen beliebigen Vektor $\vec{z} \in V$.  Da $B$ ein Erzeugenden-System
-      ist, lässt sich $\vec{z}$ als Linear-Kombination von Vektoren aus $B$ darstellen.  Es gibt
+      von $\mathcal{V}$ ist, lässt sich $\vec{z}$ als Linear-Kombination von Vektoren aus $B$ darstellen.  Es gibt
       also ein $m \in \mathbb{N}$, Skalare $\beta_1, \cdots, \beta_m \in \mathbb{K}$ und 
       Vektoren $\vec{u}_1, \cdots, \vec{u}_m \in B$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
       $\vec{z} = \sum\limits_{j=1}^m \beta_j \cdot \vec{u}_j$
       \\[0.2cm]
-      gilt.  Falls nun alle $\vec{u}_j$ von dem Vektor $\vec{y}$ verschieden sind, 
+      gilt.   Falls nun alle $\vec{u}_j$ von dem Vektor $\vec{y}$ verschieden sind, 
       dann haben wir $\vec{z}$ bereits als Linear-Kombination von Vektoren der Menge
       $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$ dargestellt und der Beweis ist
       abgeschlossen.  Andernfalls gilt $\vec{u}_l = \vec{y}$ für ein $l \in \{1,\cdots,m\}$.
@@ -601,10 +596,10 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       \bruch{\beta_l \cdot \alpha_i}{\alpha_k} \cdot \vec{y}_i$.
       \\[0.2cm]
       In dieser Darstellung sind nun alle der beteiligten Vektoren Elemente der Menge
-      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$.  Damit haben wir also gezeigt, dass der
+      $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$.  Damit haben wir also gezeigt, dass der
       Vektor $\vec{z}$ als Linear-Kombination dieser Menge dargestellt werden kann.
       Da $\vec{z}$ ein beliebiger Vektor aus $V$ war, ist damit gezeigt, dass die Menge
-      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
+      $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
 \item Als nächstes ist nachzuweisen, dass die Menge  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
       linear unabhängig ist.  Dazu nehmen wir an, dass wir eine Linear-Kombination von Vektoren aus
       der Menge $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ haben, die den Null-Vektor ergibt.
@@ -648,17 +643,20 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       \end{enumerate}
 \end{enumerate}
 
-Das gerade bewiesene Lemma zeigt uns, dass wir in einer Basis einen beliebigen von dem Nullvektor verschiedenen Vektor $\vec{x}$
-gegen einen Vektor der Basis austauschen können.  Der nächste Satz verallgemeinert diesen Tatbestand und zeigt, dass wir
-in einer Basis $B$ eine linear unabhängige Menge $U$ gegen Elemente aus $B$ austauschen können.
+Das gerade bewiesene Lemma zeigt uns, dass wir in einer Basis einen beliebigen von dem Nullvektor
+verschiedenen Vektor $\vec{x}$ 
+gegen einen Vektor der Basis austauschen können.  Der nächste Satz verallgemeinert diesen Tatbestand
+und zeigt, dass wir 
+in einer Basis $B$ eine linear unabhängige Menge $U$ gegen eine Teilmenge $W$ von $B$ austauschen
+können, welche die selbe Anzahl an Elementen hat wie $U$.
 
 \begin{Satz}[Basis-Austausch-Satz]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
-  und $B$ sei eine Basis von $V$.  Weiter sei $U \subseteq V$ linear unabhängig.
+  und $B$ sei eine Basis von $\mathcal{V}$.  Weiter sei $U \subseteq V$ linear unabhängig.
   Dann gibt es eine Teilmenge $W \subseteq B$, so dass 
   \begin{enumerate}
-  \item $\bigl(B \backslash W\bigr) \cup U$  eine Basis von V ist  und außerdem gilt
-  \item $\textsl{card}(W) = \textsl{card}(U)$.
+  \item $\bigl(B \backslash W\bigr) \cup U$  eine Basis von V ist  und außerdem 
+  \item $\textsl{card}(W) = \textsl{card}(U)$ gilt.
   \end{enumerate}
 \end{Satz}
 
@@ -696,13 +694,13 @@ den exakten Beweis durch Induktion nach $n$.
              \hspace*{1.3cm}
              $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$
              \\[0.2cm]
-             eine Basis von $\mathcal{V}$ ist.  Wir definieren nun
+             eine Basis von $\mathcal{V}$ ist.  Wir definieren 
              \\[0.2cm]
              \hspace*{1.3cm}
              $W := W' \cup \{ \vec{y} \}$ \quad und erinnern daran, dass \quad
              $U = U' \cup \{ \vec{x} \}$ 
              \\[0.2cm]
-             gilt.  Damit haben wir dann
+             gilt.  Damit haben wir 
              \\[0.2cm]
              \hspace*{1.3cm}
              $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \} = (B \backslash W) \cup U$.
@@ -876,7 +874,8 @@ Es sind drei Eigenschaften zu prüfen.
 
 
 \example
-Es sei $\mathbb{R}^{\mathbb{R}}$ die Menge der (bereits früher definierten) reellwertigen Funktionen.
+Es sei $\mathbb{R}^{\mathbb{R}}$ die Menge der (bereits früher definierten) reellwertigen Funktionen
+auf $\mathbb{R}$.
 Weiter sei $c \in \mathbb{R}$ beliebig.  Definieren wir die Menge $N_c$ als
 \\[0.2cm]
 \hspace*{1.3cm}
