@@ -941,6 +941,201 @@ Wir haben drei Eigenschaften nachzuweisen.
 Es sei $V$ ein Vektor-Raum und $U_1$ und $U_2$ seien Untervektor-Räume von $V$.  Beweisen oder widerlegen Sie, dass
 dann auch die Menge $U_1 \cup U_2$ ein Untervektor-Raum von $V$ ist.
 \eox
+\pagebreak
+
+\section{Euklidische Vektor-Räume}
+\begin{Definition}[Skalar-Produkt, Euklidischer Vektor-Raum] \lb
+  Es sei $V$ ein $\mathbb{R}$-Vektor-Raum.  Eine Abbildung 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\langle \cdot \mid \cdot \rangle: V \times V \rightarrow \mathbb{R}$
+  \\[0.2cm]
+  ist ein \emph{Skalar-Produkt} genau dann, wenn die folgenden Bedingungen erfüllt sind:
+  \begin{enumerate}
+  \item Die Abbildung $\langle \cdot\mid \cdot \rangle$ ist \emph{bilinear}, dass heißt es gelten die
+        folgenden Gleichungen:
+        \begin{enumerate}
+        \item $\langle \vec{x} + \vec{y}\mid \vec{z} \rangle = \langle \vec{x}\mid \vec{z} \rangle + \langle \vec{y}\mid \vec{z} \rangle$
+              \quad für alle $\vec{x}, \vec{y}, \vec{z} \in V$.
+        \item $\langle \vec{x}\mid \vec{y} + \vec{z} \rangle = \langle \vec{x}\mid \vec{y} \rangle + \langle \vec{x}\mid \vec{z} \rangle$
+              \quad für alle $\vec{x}, \vec{y}, \vec{z} \in V$.
+        \item $\langle \alpha \cdot \vec{x}\mid \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$
+              \quad für alle $\vec{x}, \vec{y} \in V$ und alle $\alpha \in \mathbb{R}$.
+        \item $\langle \vec{x}\mid \alpha \cdot \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$
+              \quad für alle $\vec{x}, \vec{y} \in V$ und alle $\alpha \in \mathbb{R}$.
+        \end{enumerate}
+  \item Die Abbildung  $\langle \cdot\mid \cdot \rangle$ ist \emph{symmetrisch}, dass heißt es gilt
+        \\[0.2cm]
+        \hspace*{1.3cm}
+        $\langle \vec{x}\mid \vec{y} \rangle = \langle \vec{y}\mid \vec{x} \rangle$ 
+        \quad für alle $\vec{x}, \vec{y} \in V$.
+  \item Die Abbildung   $\langle \cdot\mid \cdot \rangle$ ist \emph{positiv definit}, dass heißt es
+        gilt:
+        \begin{enumerate}
+        \item $\langle \vec{x}\mid \vec{x} \rangle \geq 0$ \quad für alle $\vec{x} \in V$,
+        \item $\langle \vec{x}\mid \vec{x} \rangle = 0 \leftrightarrow \vec{x} = \vec{0}$ \quad für alle $\vec{x} \in V$.
+        \end{enumerate}
+  \end{enumerate} 
+  Falls auf einem Vektor-Raum $V$ ein Skalar-Produkt $\langle \cdot \mid \cdot \rangle$ definiert
+  ist, so nennen wir $V$ einen \emph{euklidischen Vektor-Raum}.  \eoxs
+\end{Definition}
+
+\example
+Definieren wir auf der Menge $\mathbb{R}^n$ 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\bigl\langle [x_1, \cdots, x_n] \mid [y_1, \cdots, y_n] \bigr\rangle := \sum\limits_{i=1}^n x_i \cdot y_i$,
+\\[0.2cm]
+so ist die so definierte Abbildung $\langle \cdot \mid \cdot \rangle$ ein Skalar-Produkt und damit
+ist der $\mathbb{R}^n$ dann ein euklidischer Vektor-Raum.  \eox
+
+\exercise
+Beweisen Sie, dass der $\mathbb{R}^n$ zusammen mit der oben gegebenen Definition des Skalar-Produkts
+ein euklidischer Vektor-Raum ist.  \eox
+
+
+Falls $V$ eine euklidischer Vektor-Raum ist, so lässt sich für die Vektoren $\vec{x} \in V$ eine \emph{Norm}
+einführen, die durch
+\\[0.2cm]
+\hspace*{1.3cm}
+$\|\vec{x}\| := \sqrt{\langle \vec{x} \mid \vec{x} \rangle}$
+\\[0.2cm]
+definiert wird.  Diese Norm kann als die Länge des Vektors $\vec{x}$ interpretiert werden, denn sie
+stimmt im Falle des $\mathbb{R}^2$ und des $\mathbb{R}^3$ mit der Länge des Vektors $\vec{x}$
+überein.  Zwischen der Norm und dem Skalar-Produkt gibt es eine wichtige Beziehung, die als die
+Cauchy-Schwarzsche Ungleichung bezeichnet wird.
+
+\begin{Satz}[Cauchy-Schwarzsche Ungleichung] \lb
+  Es sei $V$ ein euklidischer Vektor-Raum mit dem Skalar-Produkt $\langle \cdot \mid \cdot \rangle$.
+  Dann gilt
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\bigl|\langle \vec{x}, \vec{y} \rangle\bigr| \leq \| \vec{x} \| \cdot \|\vec{y}\|$ 
+  \quad für alle $\vec{x}, \vec{y} \in V$.
+\end{Satz}
+
+\proof
+Für beliebiges $\alpha \in \mathbb{R}$ gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\langle \vec{x} - \alpha \cdot \vec{y} \mid \vec{x} - \alpha \cdot \vec{y} \rangle \geq 0$,
+\\[0.2cm]
+denn die Abbildung $\langle \cdot \mid \cdot \rangle$ ist positiv definit.
+Nutzen wir nun die Bilinearität der Abbildung $\langle \cdot \mid \cdot \rangle$, so können wir
+diese Ungleichung auch als
+\\[0.2cm]
+\hspace*{1.3cm}
+$\langle \vec{x} \mid \vec{x} \rangle - \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle  - 
+\alpha \cdot \langle \vec{y} \mid \vec{x} \rangle + \alpha^2 \cdot \langle \vec{y} \mid \vec{y} \rangle \geq 0$
+\\[0.2cm]
+schreiben.  Nutzen wir nun die Symmetrie der Abbildung $\langle \cdot \mid \cdot \rangle$ aus,
+so vereinfacht sich diese Ungleichung zu der Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\langle \vec{x} \mid \vec{x} \rangle - 2 \cdot \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle  
+ + \alpha^2 \cdot \langle \vec{y} \mid \vec{y} \rangle \geq 0
+$.
+\\[0.2cm]
+Diese Ungleichung gilt für alle $\alpha \in \mathbb{R}$ und damit auch, wenn wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\alpha := \frac{\langle \vec{x} \mid \vec{y} \rangle}{\langle \vec{y} \mid \vec{y} \rangle}$
+\\[0.2cm]
+definieren.  Setzen wir diesen Wert oben ein, so erhalten wir die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\langle \vec{x} \mid \vec{x} \rangle - 
+ 2 \cdot \frac{\langle \vec{x} \mid \vec{y} \rangle}{\langle \vec{y} \mid \vec{y} \rangle} \cdot \langle \vec{x}\mid \vec{y} \rangle  
+ +  \left(\frac{\langle \vec{x} \mid \vec{y} \rangle}{\langle \vec{y} \mid \vec{y} \rangle}\right)^2 \cdot \langle \vec{y} \mid \vec{y} \rangle \geq 0
+$.
+\\[0.2cm]
+Multiplizieren wir diese Ungleichung mit $\langle \vec{y} \mid \vec{y} \rangle$, so erhalten wir die
+Ungleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\langle \vec{x} \mid \vec{x} \rangle \cdot \langle \vec{y} \mid \vec{y} \rangle - 
+ 2 \cdot \langle \vec{x} \mid \vec{y} \rangle \cdot \langle \vec{x} \mid \vec{y} \rangle  
+ +  \bigl(\langle \vec{x} \mid \vec{y} \rangle\bigr)^2  \geq 0
+$,
+\\[0.2cm]
+die wir zu 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\langle \vec{x} \mid \vec{x} \rangle \cdot \langle \vec{y} \mid \vec{y} \rangle \geq \bigl(\langle \vec{x} \mid \vec{y} \rangle\bigr)^2$
+\\[0.2cm]
+vereinfachen können.  Ziehen wir hier auf beiden Seiten die Wurzel und berücksichtigen die
+Definition der Norm $\|\vec{x}\|$, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\|\vec{x}\| \cdot \|\vec{y}\| \geq \bigl|\langle \vec{x} \mid \vec{y} \rangle\bigr|$
+\\[0.2cm]
+und das ist die Cauchy-Schwarzsche Ungleichung.  \qed
+
+\remark
+Die Cauchy-Schwarzsche Ungleichung ermöglicht es, den Winkel $\varphi$ zwischen zwei Vektoren $\vec{x}$ und $\vec{y}$
+eines euklidischen Vektor-Raums zu definieren, denn wir können vereinbaren, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\cos(\varphi) := \frac{\langle \vec{x} \mid \vec{y} \rangle}{\|\vec{x}\| \cdot \|\vec{y}\|}$
+\\[0.2cm]
+gilt.  Aus der Cauchy-Schwarzschen Ungleichung folgt dann, dass für den so definierten Wert
+$\cos(\varphi)$ die Ungleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$-1 \leq \cos(\varphi) \leq 1$
+\\[0.2cm]
+gilt und damit sicher gestellt ist, dass diese Größe tatsächlich als Kosinus eines Winkels interpretiert werden
+kann.  
+\eox
+
+\exercise
+Beweisen Sie, dass im $\mathbb{R}^2$ der Winkel, der zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$
+eingeschlossen wird,  der Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\cos(\varphi) := \frac{\langle \vec{a} \mid \vec{b} \rangle}{\|\vec{a}\| \cdot \|\vec{b}\|}$
+\\[0.2cm]
+genügt.  Zur Vereinfachung können Sie sich auf den Fall beschränken, dass die 
+beiden Vektoren $\vec{a}$ und $\vec{b}$ im ersten Quadranten liegen.
+\eox
+
+\begin{Satz}[Dreiecks-Ungleichung] \lb
+   Es sei $V$ ein euklidischer Vektor-Raum.  Dann gilt
+   \\[0.2cm]
+   \hspace*{1.3cm}
+   $\|\vec{x}+\vec{y}\| \leq \|\vec{x}\| + \|\vec{y}\|$ \quad für alle $\vec{x}, \vec{y} \in V$.  
+   \\[0.2cm]
+   Diese Ungleichung wird als Dreiecks-Ungleichung bezeichnet, denn Sie besagt,
+   dass in einem Dreieck, bei dem zwei der Seiten durch die Vektoren $\vec{x}$ und $\vec{y}$ gegeben
+   sind, die Länge der dritten Seite, die durch den Vektor $\vec{x} + \vec{y}$ dargestellt wird, 
+   kleiner als die Summe der Längen der beiden anderen Seiten ist.
+\end{Satz}
+
+\proof
+Wir haben die die folgende Kette von Gleichungen und Ungleichungen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcll}
+  \|\vec{x} + \vec{y}\|^2 & = & \langle \vec{x} + \vec{y} \mid  \vec{x} + \vec{y} \rangle \\[0.2cm]
+                          & = & \langle \vec{x} \mid \vec{x} \rangle + 
+                                2 \cdot \langle \vec{x} \mid \vec{y} \rangle + 
+                                \langle \vec{y} \mid \vec{y} \rangle \\[0.2cm]
+                          & = & \|\vec{x}\|^2 + 2 \cdot \langle \vec{x} \mid \vec{y} \rangle + \|\vec{y}\|^2 \\[0.2cm]
+                          & \leq & \|\vec{x}\|^2 + 2 \cdot |\langle \vec{x} \mid \vec{y} \rangle| + \|\vec{y}\|^2 \\[0.2cm]
+                          & \leq & \|\vec{x}\|^2 + 2 \cdot \|\vec{x}\| \cdot \|\vec{y}\| + \|\vec{y}\|^2 \\[0.2cm]
+                          & = & \bigl(\|\vec{x}\| + \|\vec{y}\|\bigr)^2 
+\end{array}
+$
+\\[0.2cm]
+Im vorletzten Schritt haben wir die Cauchy-Schwarzsche Ungleichung benutzt.  Insgesamt haben wir
+gezeigt, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\|\vec{x} + \vec{y}\|^2 \leq \bigl(\|\vec{x}\| + \|\vec{y}\|\bigr)^2$
+\\[0.2cm] 
+gilt.  Ziehen wir auf beiden Seiten dieser Ungleichung die Wurzel, so erhalten wir die Behauptung.  
+\qed
 
 %%% Local Variables: 
 %%% mode: latex
