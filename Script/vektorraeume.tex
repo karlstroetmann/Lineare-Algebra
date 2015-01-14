@@ -513,7 +513,7 @@ Zeigen Sie:  $B$ ist genau dann eine Basis von $\mathcal{V}$, wenn sich jeder Ve
 eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben lässt.
 \eox
 
-\begin{Lemma}[Austausch-Lemma]
+\begin{Lemma}[Basis-Austausch-Lemma]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$
   ein $\mathbb{K}$-Vektor-Raum, $B$ eine Basis von $\mathcal{V}$, $U \subseteq B$, $\vec{x} \in V\backslash B$ und die
   Menge $U \cup \{ \vec{x} \}$ sei linear unabhängig.
@@ -662,7 +662,7 @@ können, welche die selbe Anzahl an Elementen hat wie $U$.
 
 \proof
 Die Idee bei diesem Beweis besteht darin, dass wir die Elemente der Menge $U$ mit Hilfe
-des Austausch-Lemmas sukzessive gegen Elemente der Menge $B$ austauschen.  Für jedes
+des Basis-Austausch-Lemmas sukzessive gegen Elemente der Menge $B$ austauschen.  Für jedes
 Element $\vec{x}$ aus der Menge $U$ finden wir dabei ein $\vec{y}$ aus der Menge
 $B$, so dass wir in der Basis $B$ das Element $\vec{y}$ durch $\vec{x}$ ersetzen können.
 Um diese Argumentation formal wasserdicht zu machen, definieren wir $n :=
@@ -687,7 +687,7 @@ den exakten Beweis durch Induktion nach $n$.
              \hspace*{1.3cm}
              $\textsl{card}(W')= \textsl{card}(U') = n$ 
              \\[0.2cm]
-             und andererseits die Menge $\bigl(B \backslash W'\bigr) \cup U'$  eine Basis von $V$ ist.  Wir wenden nun das Austausch-Lemma
+             und andererseits die Menge $\bigl(B \backslash W'\bigr) \cup U'$  eine Basis von $V$ ist.  Wir wenden nun das Basis-Austausch-Lemma
              auf die Basis $\bigl(B \backslash W'\bigr) \cup U'$, den Vektor $\vec{x}$ und die Menge $U'$ an.  Damit finden wir 
              ein $\vec{y} \in B \backslash W'$, so dass
              \\[0.2cm]
