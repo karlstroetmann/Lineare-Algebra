@@ -646,14 +646,7 @@ $c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f.a. $i \in \{1,\cd
 gegeben sind.
 
 \remark
-Sind $V_1$, $V_2$ und $V_3$ Vektor-Räume mit
-\\[0.2cm]
-\hspace*{1.3cm}
-$\mathtt{dim}(V_1) = l$, \quad
-$\mathtt{dim}(V_2) = m$ \quad und \quad
-$\mathtt{dim}(V_3) = n$ 
-\\[0.2cm] 
-und gilt
+Sind $V_1$, $V_2$ und $V_3$ Vektor-Räume und gilt
 \\[0.2cm]
 \hspace*{1.3cm}
  $f \in \mathcal{L}(V_1, V_2)$ und $g \in \mathcal{L}(V_2, V_3)$,
@@ -904,7 +897,7 @@ falls $l < k$ ist.
 Wir definieren nun drei verschiedene Arten von sogenannten \emph{Elementar-Matrizen}.  Die 
 Zeilen-Additions-Matrizen $\mathrm{ZA}_n(k,l, \alpha)$ addieren das $\alpha$-fache der $l$-ten Zeile zur
 $k$-ten Zeile, die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauscht die $k$-te Zeile mit der
-$l$-ten Zeile und die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ multipliziert die $k$-te Zeile
+$l$-ten Zeile und schließlich multipliziert die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$  die $k$-te Zeile
 mit $\alpha$.  
 
 \begin{Definition}[Elementar-Matrizen]
@@ -1027,7 +1020,7 @@ mit $\alpha$.
       \hspace*{1.3cm}
       $\mathrm{ZM}_n(k, \alpha) \cdot B = B + (\alpha - 1) \cdot \mathrm{A}_n(k,k) \cdot B$
       \\[0.2cm]
-      Es wir also zu $B$ das $(1-\alpha)$-fache der $k$-ten Zeile von $B$zur $k$-ten Zeile hinzu
+      Es wir also zu $B$ das $(1-\alpha)$-fache der $k$-ten Zeile von $B$ zur $k$-ten Zeile hinzu
       addiert und damit steht die $k$-te Zeile im Ergebnis insgesamt $1 + (\alpha-1) = \alpha$-mal.  \eoxs
  \end{enumerate}
 \end{Definition}
@@ -1116,7 +1109,7 @@ anderen Komponenten sind $0$.  Im $i$-ten Schritt können wir davon ausgehen, das
 Spalten bereits die Einheits-Vektoren $\vec{e}_1$ bis $\vec{e}_{i-1}$ stehen.
 Um auch die $i$-te Spalte entsprechend zu transformieren, suchen wir zunächst diejenige Zeile 
 $j \in \{i, \cdots, n\}$ für die $|a_{j,i}|$ maximal wird.  Theoretisch würde es an dieser Stelle
-reichen, einfach irgend eine Zeile $j \in \{i, \cdots, n\}$ zu wählen, für die $a_{j,i} \not= 0$ 
+reichen, einfach irgendeine Zeile $j \in \{i, \cdots, n\}$ zu wählen, für die $a_{j,i} \not= 0$ 
 ist.  Das hier vorgestellte Verfahren, bei dem wir immer den Zeilen-Index $j$ bestimmen, für den
 $a_{j,i}$ maximal ist, hat aber den Vorteil, dass es weniger anfällig für Rundungs-Fehler ist als
 das naive Vorgehen, bei dem $j$ einfach so gewählt wird, dass $a_{j,i} \not= 0$ ist.  Falls 
@@ -1260,7 +1253,7 @@ diese Implementierung jetzt Zeile für Zeile:
 
 
 \example
-Wir testen das Programm, indem wir versuchen, das Inverse der Matrix
+Wir testen das oben vorgestellte Verfahren, indem wir versuchen, das Inverse der Matrix
 \\[0.2cm]
 \hspace*{1.3cm}
 $A = \left(
@@ -1271,7 +1264,7 @@ $A = \left(
   \end{array}\right)
 $
 \\[0.2cm]
-zu berechnen.  Dazu wird in dem Programm die Variable $\mathtt{e}$ mit der Einheits-Matrix $E_3$
+zu berechnen.  Dazu wird zunächst die Variable $\mathtt{e}$ mit der Einheits-Matrix $E_3$
 initialisiert.  Danach haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
