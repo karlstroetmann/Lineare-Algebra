@@ -540,7 +540,7 @@ Aus der Tatsache, dass die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, f
 nicht alle Vektoren $\vec{y}_i$ Elemente der Menge $U$ sind, denn wir können die obige Gleichung zu
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{0} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i + (-1) \cdot \vec{x}$ 
+$\ds\vec{0} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i + (-1) \cdot \vec{x}$ 
 \\[0.2cm]
 umstellen und wenn nun alle $\vec{y}_i \in U$ wären, dann würde das der linearen Unabhängigkeit von
 $U \cup \{\vec{x} \}$ widersprechen.  Es gibt also ein $k \in \{1,\cdots,n\}$, so dass $\vec{y}_k \in B \backslash U$ ist.  Wir definieren
@@ -549,11 +549,11 @@ $U \cup \{\vec{x} \}$ widersprechen.  Es gibt also ein $k \in \{1,\cdots,n\}$, s
 $\vec{y} := \vec{y}_k$, \quad woraus bereits $\vec{y} \in B \backslash U$ folgt.
 \\[0.2cm]
 Außerdem bemerken wir, dass $\vec{y}_i \in B \backslash \{\vec{y}\}$ ist für alle
-$i \in \{1,\cdots,n\} \backslash \{k\}$, denn die Vektoren $\vec{y}_i$ sind paarweise verschieden.
+$i \in \{1,\cdots,n\} \backslash \{k\}$, denn die Vektoren $\vec{y}_i$ sind für alle $i\in \{1,\cdots,n\}$ paarweise verschieden.
 Wir stellen die obige Gleichung für $\vec{x}$ wie folgt um:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{x} = \sum\limits_{i=1 \atop i \not= k}^n \alpha_i \cdot \vec{y}_i +  \alpha_k \cdot \vec{y}$.
+$\ds\vec{x} = \sum\limits_{i=1 \atop i \not= k}^n \alpha_i \cdot \vec{y}_i +  \alpha_k \cdot \vec{y}$.
 \\[0.2cm]
 Diese Gleichung lösen wir nach $\vec{y}$ auf und erhalten
 \\[0.2cm]
@@ -576,7 +576,7 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       Vektoren $\vec{u}_1, \cdots, \vec{u}_m \in B$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{z} = \sum\limits_{j=1}^m \beta_j \cdot \vec{u}_j$
+      $\ds\vec{z} = \sum\limits_{j=1}^m \beta_j \cdot \vec{u}_j$
       \\[0.2cm]
       gilt.   Falls nun alle $\vec{u}_j$ von dem Vektor $\vec{y}$ verschieden sind, 
       dann haben wir $\vec{z}$ bereits als Linear-Kombination von Vektoren der Menge
@@ -585,7 +585,7 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       In diesem Fall haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j + \beta_l \cdot \vec{y}$.
+      $\ds\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j + \beta_l \cdot \vec{y}$.
       \\[0.2cm]
       Hier setzen wir für $\vec{y}$ den Wert ein, den wir in der Gleichung $(*)$ oben gefunden
       haben. Das liefert
@@ -607,7 +607,7 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       sowie paarweise verschiedene Vektoren $\vec{v}_1, \cdots, \vec{v}_m \in B \backslash \{ \vec{y} \}$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \delta \cdot \vec{x}$
+      $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \delta \cdot \vec{x}$
       \\[0.2cm]
       gilt.  Wir müssen nun zeigen, dass $\gamma_j = 0$ für alle $j \in \{1,\cdots,n\}$ gilt und dass außerdem 
       $\delta = 0$ ist.  Wir führen diesen Nachweis durch eine Fallunterscheidung.
@@ -615,31 +615,26 @@ eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
       \item $\delta = 0$.  Dann haben wir
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$
+            $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$
             \\[0.2cm]
             und da die Vektoren $\vec{v}_j$ Elemente der linear unabhängigen Menge $B$ sind, folgt 
             $\gamma_j = 0$ für alle $j \in \{1,\cdots,m\}$.   
       \item $\delta \not= 0$.  Jetzt setzen wir für $\vec{x}$ in der Darstellung des Null-Vektors den Wert 
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\vec{x} = \sum\limits_{j=1 \atop j \not= k}^n \alpha_j \cdot \vec{y}_j +  \alpha_k \cdot \vec{y}$
+            $\ds\vec{x} = \sum\limits_{j=1 \atop j \not= k}^n \alpha_j \cdot \vec{y}_j +  \alpha_k \cdot \vec{y}$
             \\[0.2cm]
             ein und erhalten
             \\[0.2cm]
             \hspace*{1.3cm}
-            $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \sum\limits_{i=1 \atop i \not= k}^n \delta\cdot \alpha_i \cdot \vec{y}_i + \delta\cdot \alpha_k \cdot \vec{y}$.
+            $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \sum\limits_{i=1 \atop i \not= k}^n \delta\cdot \alpha_i \cdot \vec{y}_i + \delta\cdot \alpha_k \cdot \vec{y}$.
             \\[0.2cm]
             Die Vektoren $\vec{v}_j$ sowie die Vektoren $\vec{y}_i$ mit $i \not= k$ sind Elemente der Menge
             $B \backslash \{ \vec{y} \}$.  Da $\vec{y} = \vec{y}_k \in B$ ist,  haben wir dann insgesamt eine Linear-Kombination des Null-Vektors aus
             Elementen der Menge $B$.  Da die Menge $B$ linear unabhängig ist, folgt zunächst, dass der Koeffizient
-            $\delta\cdot \alpha_k = 0$  ist.  Wegen $\alpha_k \not= 0$ folgt daraus $\delta = 0$.
-            Damit haben wir jetzt die Gleichung
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$.
-            \\[0.2cm]
-            Aus der linearen Unabhängigkeit von $B$ folgt nun $\gamma_j = 0$ für alle $j \in \{1, \cdots, m\}$ und das
-            war zu zeigen. \qed
+            $\delta\cdot \alpha_k = 0$  ist.  Wegen $\alpha_k \not= 0$ folgt daraus $\delta = 0$.  Das Widerspricht aber der Annahme $\delta = 0$
+            und damit sehen wir, dass dieser Fall gar nicht eintreten kann.
+            \qed
       \end{enumerate}
 \end{enumerate}
 

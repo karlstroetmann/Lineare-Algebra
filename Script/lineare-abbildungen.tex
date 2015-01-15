@@ -678,7 +678,7 @@ Inverses besitzen.  Dabei nennen wir eine Matrix $A \in \mathbb{K}^{m \times n}$
 falls $m = n$ ist.  Um für die Matrizen-Multiplikation ein neutrales Element definieren zu können,
 definieren wir zunächst das nach 
 \href{http://de.wikipedia.org/wiki/Leopold_Kronecker}{Leopold Kronecker} benannte \emph{Kronecker-Delta}.
-\pagebreak
+
 
 \begin{Definition}[Kronecker-Delta]
   Für $i,j \in \mathbb{N}$ definieren wir
@@ -803,7 +803,7 @@ $
 kürzer als
 \\[0.2cm]
 \hspace*{1.3cm}
-$A \cdot \textbf{x} = \textbf{b}$
+$A \cdot \vec{x} = \vec{b}$
 \\[0.2cm]
 schreiben, wenn wir
 \\[0.2cm]
@@ -855,7 +855,7 @@ $\vec{b}$ gelöst werden soll.  \eoxs
 
 \exercise
 Es gelte $B \in \mathbb{K}^{n \times n}$ und $\mathrm{A}_n(k,l) \in \mathbb{K}^{n \times n}$ sei eine Atomar-Matrix.  
-Wir definieren $C := \mathrm{A}_n(k,l) \cdot B$.  Zeigen Sie, dass in $C$ in genau eine Zeile von $0$ verschiedene
+Wir definieren $C := \mathrm{A}_n(k,l) \cdot B$.  Zeigen Sie, dass in $C$ in genau einer Zeile von $0$ verschiedene
 Werte auftreten.  Dies ist die $k$-te Zeile und die Werte, die hier auftreten, sind die Werte, die in
 der $l$-ten Zeile von $B$ stehen.   Der Effekt der Multiplikation von $A(\mathrm{k},l)$ mit $B$ besteht also darin,
 dass die $l$-te Zeile in die $k$-te Zeile verschoben wird und dass alle anderen Zeilen gelöscht
@@ -1257,7 +1257,7 @@ diese Implementierung jetzt Zeile für Zeile:
 \caption{Implementierung der in Abbildung \ref{fig:inverse.stlx} benötigten Hilfsfunktionen.}
 \label{fig:inverse.stlx-pivot}
 \end{figure}
-\pagebreak
+
 
 \example
 Wir testen das Programm, indem wir versuchen, das Inverse der Matrix
