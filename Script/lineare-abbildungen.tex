@@ -43,11 +43,11 @@ indem wir fordern, dass für alle $\vec{x} \in V$
 \hspace*{1.3cm}
 $(f+g)(\vec{x}) := f(\vec{x}) + g(\vec{x})$ 
 \\[0.2cm]
-gilt.  Weiter definieren wir die Null-Abbildung $\vec{0}: V \rightarrow W$, indem wir für alle
+gilt.  Weiter definieren wir die Null-Abbildung $\mathbf{0}: V \rightarrow W$, indem wir für alle
 $\vec{x} \in V$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{0}(\vec{x}) := \vec{0}$
+$\mathbf{0}(\vec{x}) := \vec{0}$
 \\[0.2cm]
 setzen.  Schließlich definieren wir eine Skalar-Multiplikation von Elementen des Körpers
 $\mathbb{K}$ mit linearen Abbildung aus $\mathcal{L}(V,W)$.  Diese Skalar-Multiplikation bezeichnen
@@ -69,7 +69,7 @@ definierte Menge der linearen Abbildungen von $V$ nach $W$.  Beweisen Sie die fo
 \begin{enumerate}
 \item Wenn $f,g \in \mathcal{L}(V,W)$ ist,  dann gilt $f+g \in \mathcal{L}(V, W)$.
 \item Wenn $\alpha \in \mathbb{K}$ und $f \in \mathcal{L}(V,W)$ ist,  dann gilt  $\alpha \cdot f \in \mathcal{L}(V, W)$.
-\item $\bigl\langle \langle \mathcal{L}(V, W), \vec{0}, + \rangle, \cdot \rangle$ ist ein $\mathbb{K}$-Vektor-Raum.
+\item $\bigl\langle \langle \mathcal{L}(V, W), \mathbf{0}, + \rangle, \cdot \rangle$ ist ein $\mathbb{K}$-Vektor-Raum.
       \eoxs
 \end{enumerate}
 
@@ -96,19 +96,34 @@ In der Literatur wird eine lineare Abbildung $f:V \rightarrow W$ von einem Vekto
 Vektor-Raum $W$ auch als ein \emph{Vektor-Raum-Homomorphismus} oder kürzer als ein
 \emph{Homomorphismus} bezeichnet.  Ist die Abbildung $f$ außerdem noch injektiv, so heißt $f$ ein
 \emph{Monomorphismus}.  Ist $f$ surjektiv, so sprechen wir von einem \emph{Epimorphismus} und wenn
-$f$ sowohl injektiv als auch surjektiv ist, dann ist $f$ ein \emph{Isomorphismus}.  Gilt $V = W$,
+$f$ sowohl injektiv als auch surjektiv ist, dann ist $f$ ein \emph{Isomorphismus}.  Gilt $W = V$,
 hat $f$ also die Form $f: V \rightarrow V$, so nennen wir $f$ einen \emph{Endomorphismus} und wenn
-sowohl $V=W$ gilt, als auch die Funktion $f$ bijektiv ist, dann ist $f$ ein \emph{Automorphismus}. 
-Der Übersichtlichkeit halber fassen wir diese Begriffe wie folgt zusammen:
-\begin{enumerate}
-\item  Wenn $f \in \mathcal{L(V,W)}$ ist, dann ist $f$ ein Homomorphismus.
-\item  Wenn $f \in \mathcal{L(V,W)}$ injektiv ist, dann ist $f$ ein Monomorphismus. 
-\item  Wenn $f \in \mathcal{L(V,W)}$ surjektiv ist, dann ist $f$ ein Epimorphismus. 
-\item  Wenn $f \in \mathcal{L(V,W)}$ bijektiv ist, dann ist $f$ ein Isomorphismus. 
-\item  Wenn $f \in \mathcal{L(V,V)}$ ist, dann ist $f$ ein Endomorphismus.  
-\item  Wenn $f \in \mathcal{L(V,V)}$ bijektiv ist, dann ist $f$ ein Automorphismus.  
-\eox
-\end{enumerate}
+sowohl $W=V$ gilt, als auch die Funktion $f$ bijektiv ist, dann ist $f$ ein \emph{Automorphismus}. 
+Tabelle \ref{tab:morphism} zeigt eine Zusammenfassung dieser Definitionen.
+
+
+\begin{table}[h]
+  \centering
+  \begin{tabular}{||l|l|l||}
+    \hline
+    \hline
+   $f \in \mathcal{L(V,W)}$ &           & Homomorphismus \\ 
+    \hline
+   $f \in \mathcal{L(V,W)}$ & injektiv  & Monomorphismus \\ 
+    \hline
+   $f \in \mathcal{L(V,W)}$ & surjektiv & Epimorphismus \\ 
+    \hline
+   $f \in \mathcal{L(V,W)}$ & bijektiv  & Isomorphismus \\ 
+    \hline
+   $f \in \mathcal{L(V,V)}$ &           & Endomorphismus \\ 
+    \hline
+   $f \in \mathcal{L(V,V)}$ & bijektiv  & Automorphismus \\ 
+    \hline
+    \hline
+  \end{tabular}
+  \caption{Morphismen}
+  \label{tab:morphism}
+\end{table}
 
 In der englischen Literatur wird ein  Endomorphismus $f \in \mathcal{L}(V,V)$ auch als ein
 \emph{Operator auf $V$} bezeichnet.  Wir definieren zur Abkürzung
@@ -136,17 +151,17 @@ schreiben.  Dann ist die Abbildung $L$ eine lineare Abbildung auf $\mathbb{K}^\m
 \eoxs
 
 \example
-Es sei $\mathcal{C}(R)$ die Menge der stetigen Funktionen auf $\mathbb{R}$ und $\mathcal{D}(\mathbb{R})$ die Menge aller Funktionen
+Es sei $\mathcal{C}(\mathbb{R})$ die Menge der stetigen Funktionen auf $\mathbb{R}$ und $\mathcal{D}(\mathbb{R})$ die Menge aller Funktionen
 $f:\mathbb{R} \rightarrow \mathbb{R}$, die überall differenzierbar sind und deren Ableitung stetig ist.  Definieren wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
-$\frac{d\;}{dx}: \mathcal{D}(\mathbb{R}) \rightarrow \mathcal{C}(\mathbb{R})$ \quad durch $\frac{d\;}{dx}(f) := f'(x)$,
+$\ds\frac{d\;}{dx}: \mathcal{D}(\mathbb{R}) \rightarrow \mathcal{C}(\mathbb{R})$ \quad durch $\ds\frac{d\;}{dx}(f) := f'(x)$,
 \\[0.2cm]
-wobei $f'(x)$ die Ableitung der Funktion $f$ an der Stelle $x$ ist, so ist die Funktion $\frac{d\;}{dx}$ eine lineare Abbildung,
+wobei $f'(x)$ die Ableitung der Funktion $f$ an der Stelle $x$ ist, so ist die Funktion $\ds\frac{d\;}{dx}$ eine lineare Abbildung,
 denn für die Ableitung gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f + \beta \cdot \frac{d\;}{dx} g$. \eoxs
+$\ds\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f + \beta \cdot \frac{d\;}{dx} g$. \eoxs
 
 
 \subsection{Kern und Bild einer linearen Abbildung}
@@ -154,7 +169,7 @@ $\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f
   Es seien $V$ und $W$ zwei Vektor-Räume und $f:V \rightarrow W$ sei ein lineare Abbildung.  Dann definieren wir 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\textsl{Kern}(f) := \{ \vec{x} \in V \mid f(\vec{x}) = \vec{0} \}$.
+  $\textsl{Kern}(f) := \bigl\{ \vec{x} \in V \mid f(\vec{x}) = \vec{0} \bigr\}$.
   \\[0.2cm] 
   Der Kern einer linearen Abbildung ist also die Menge aller Vektoren aus $V$, die auf den Null-Vektor abgebildet werden.  \eoxs
 \end{Definition}
@@ -167,7 +182,7 @@ $\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f
 Wir haben die drei Eigenschaften von Untervektor-Räumen nachzuweisen. 
 \begin{enumerate}
 \item Wir haben oben bereits gesehen, dass für eine lineare Abbildung
-      $f(\vec{0}) = \vec{0}$ gilt.  Daraus folgt sofort $\vec{0} \in \textsl{Kern}(f)$.
+      $f\bigl(\vec{0}\bigr) = \vec{0}$ gilt.  Daraus folgt sofort $\vec{0} \in \textsl{Kern}(f)$.
 \item Seien $\vec{x}, \vec{y} \in \textsl{Kern}(f)$.  Dann haben wir nach Definition von $\textsl{Kern}(f)$
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -214,7 +229,7 @@ Wir haben die drei Eigenschaften von Untervektor-Räumen nachzuweisen.
 
 \begin{Satz}
   Es seien $V$ und $W$ Vektor-Räume und $f:V \rightarrow W$ sei eine lineare Abbildung.
-  Dann ist $f$ genau dann injektiv, wenn $\textsl{Kern}(f) = \{ \vec{0} \}$ gilt.
+  Dann ist $f$ genau dann injektiv, wenn $\textsl{Kern}(f) = \bigl\{ \vec{0} \bigr\}$ gilt.
 \end{Satz}
 
 \proof
@@ -231,13 +246,13 @@ Wir zerlegen den Beweis in zwei Teile.
       \hspace*{1.3cm}
       $f(\vec{y}) = \vec{0}$.
       \\[0.2cm]
-      Da $f$ injektiv ist, folgt aus $f(\vec{y}) = \vec{0}$ und $f(\vec{0}) = \vec{0}$
+      Da $f$ injektiv ist, folgt aus $f(\vec{y}) = \vec{0}$ und $f\bigl(\vec{0}\bigr) = \vec{0}$
       \\[0.2cm]
       \hspace*{1.3cm}
       $\vec{y} = \vec{0}$
       \\[0.2cm]
-      und damit ist $\textsl{Kern}(f) = \{ \vec{0} \}$ gezeigt.
-\item[``$\Leftarrow$'':] Wir setzen jetzt $\textsl{Kern}(f) = \{ \vec{0} \}$ voraus.  Falls für $\vec{x}, \vec{y} \in V$
+      und damit ist $\textsl{Kern}(f) = \bigl\{ \vec{0} \bigr\}$ gezeigt.
+\item[``$\Leftarrow$'':] Wir setzen jetzt $\textsl{Kern}(f) = \bigl\{ \vec{0} \bigr\}$ voraus.  Falls für $\vec{x}, \vec{y} \in V$
       nun
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -253,7 +268,7 @@ Wir zerlegen den Beweis in zwei Teile.
       \hspace*{1.3cm}
       $\vec{x} - \vec{y} \in \textsl{Kern}(f)$
       \\[0.2cm]
-      und da wir $\textsl{Kern}(f) = \{ \vec{0} \}$ vorausgesetzt hatten, folgt
+      und da wir $\textsl{Kern}(f) = \bigl\{ \vec{0} \bigr\}$ vorausgesetzt hatten, folgt
       \\[0.2cm]
       \hspace*{1.3cm}
       $\vec{x} - \vec{y} = 0$
@@ -266,7 +281,7 @@ Es seien $V$ und $W$ Vektor-Räume und $f:V \rightarrow W$ sei eine lineare Abbil
 definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{Bild}(f) := \{ f(\vec{x}) \mid \vec{x} \in V \}$
+$\textsl{Bild}(f) := \bigl\{ f(\vec{x}) \mid \vec{x} \in V \bigr\}$
 \\[0.2cm]
 als die Menge der Abbilder aller Vektoren aus $V$ unter der Abbildung $f$.
 \eoxs
@@ -314,7 +329,7 @@ $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$
 eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
 \begin{enumerate}
 \item Wir zeigen:
-      Die Menge $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
+      Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigl\}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
 
       Sei $\vec{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\vec{y} \in V_1$, so dass $\vec{z} = f(\vec{y})$ ist.
       Nun ist die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis von $V_1$. 
@@ -331,7 +346,7 @@ eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
       \\[0.2cm]
       Damit haben wir $\vec{z}$ aber als Linear-Kombination der Menge  $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ 
       dargestellt und das war zu zeigen.
-\item Wir zeigen: Die Menge $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ ist linear unabhängig.
+\item Wir zeigen: Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigr\}$ ist linear unabhängig.
   
       Seien $\beta_1, \cdots, \beta_n \in \mathbb{K}$ und gelte
       \\[0.2cm]
@@ -567,7 +582,7 @@ $\mathcal{M}(f+g) := \mathcal{M}(f) + \mathcal{M}(g)$ \quad und \quad
 $\mathcal{M}(\alpha \cdot f) := \alpha \cdot \mathcal{M}(f)$.
 \\[0.2cm]
 Diese beiden Eigenschaften motivieren nachträglich sowohl die Definition der Addition von Matrizen
-als auch die Definition der Skalar-Multiplikation einer Matrizen.  
+als auch die Definition der Multiplikation eines Skalars mit einer Matrizen.  
 Sie zeigen, dass $\mathcal{M}$ eine lineare Abbildung des Vektor-Raums $\mathcal{L}(V,W)$ in den Vektor-Raum $\mathcal{K}^{m \times n}$ ist.  
 Es handelt sich bei dieser Abbildung um einen Isomorphismus.
 \eoxs
@@ -592,7 +607,7 @@ definieren.  Da der Werte-Bereich der Funktion $f$ eine Teilmenge des Definition
 Funktion $g$ ist, können wir die beiden Funktionen zu einer neuen Funktion $h$ verknüpfen, indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$h(\vec{x}) := (g \circ f)(\vec{x}) = g(f(\vec{x}))$
+$h(\vec{x}) := (g \circ f)(\vec{x}) = g(f(\vec{x}))$ \quad f.a.~$\vec{x} \in \mathbb{K}^l$,
 \\[0.2cm]
 definieren.  Sie können leicht nachweisen, dass die Funktion $h$ wieder eine lineare Funktion ist
 und dass 
@@ -651,7 +666,8 @@ Sind $V_1$, $V_2$ und $V_3$ Vektor-Räume und gilt
 \hspace*{1.3cm}
  $f \in \mathcal{L}(V_1, V_2)$ und $g \in \mathcal{L}(V_2, V_3)$,
 \\[0.2cm]
-dann haben wir die Matrizen-Multiplikation gerade so definiert, dass
+dann haben wir die 
+\href{http://de.wikipedia.org/wiki/Matrizenmultiplikation}{Matrizen-Multiplikation} gerade so definiert, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathcal{M}(g \circ f) = \mathcal{M}(g) \cdot \mathcal{M}(f)$
@@ -699,7 +715,7 @@ wobei $\delta_{i,j}$ das eben definierte Kronecker-Delta bezeichnet.
 Im Falle $n = 2$ haben wir beispielsweise
 \\[0.2cm]
 \hspace*{1.3cm}
-$E_2 := \left(
+$\mathrm{E}_2 := \left(
   \begin{array}[c]{ll}
     1 & 0 \\
     0 & 1 \\
@@ -710,7 +726,7 @@ $
 und im Falle $n = 3$ gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$E_3 := \left(
+$\mathrm{E}_3 := \left(
   \begin{array}[c]{lll}
     1 & 0 & 0 \\
     0 & 1 & 0 \\
@@ -733,7 +749,7 @@ $c_{i,j} = \sum\limits_{k=1}^n a_{i,k} \cdot \delta_{k,j} = a_{i,j}$,
 \\[0.2cm]
 wobei wir bei der letzten Gleichung ausgenutzt haben, dass auf Grund der Definition des
 Kronecker-Deltas von der Summe nur der Term mit $k = j$ übrig bleibt.  Genauso lässt sich auch
-zeigen, dass $E_m \cdot A = A$ ist.
+zeigen, dass $\mathrm{E}_m \cdot A = A$ ist.
 
 \begin{Definition}[Invertierbare Matrix]
   Eine quadratische Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{invertierbar} genau dann, wenn
@@ -747,8 +763,8 @@ zeigen, dass $E_m \cdot A = A$ ist.
 \end{Definition}
 
 \remark
-Wenn es eine Matrix $B$ gibt, so dass $A \cdot B = E_n$ gilt, dann kann gezeigt werden, dass daraus
-bereits $B \cdot A = E_n$ folgt. \eox
+Wenn es eine Matrix $B$ gibt, so dass $A \cdot B = \mathrm{E}_n$ gilt, dann kann gezeigt werden, dass daraus
+bereits $B \cdot A = \mathrm{E}_n$ folgt. \eox
 
 \exercise
 Es sei $A \in \mathbb{K}^{2 \times 2}$ gegeben als
@@ -775,7 +791,7 @@ $A^{-1}  = \left(
      \right)
 $
 \\[0.2cm]
-und bestimmen Sie die Zahlen $e$, $f$, $g$ und $h$ aus der Forderung, dass $A^{-1} \cdot A = E_2$
+und bestimmen Sie die Zahlen $e$, $f$, $g$ und $h$ aus der Forderung, dass $A^{-1} \cdot A = \mathrm{E}_2$
 gelten muss.
 \eoxs
 
@@ -871,21 +887,21 @@ ist $l < k$, dann gilt also
 $\mathrm{A}_n(k,l) \cdot B = \mathrm{A}_n(k,l) \cdot \left(
   \begin{array}[c]{c}
     \vec{b}_1 \\
-    \vdots       \\
+    \vdots       \\[0.1cm]
     \vec{b}_l \\
-    \vdots       \\
+    \vdots       \\[0.1cm]
     \vec{b}_k \\
-    \vdots       \\
+    \vdots       \\[0.1cm]
     \vec{b}_n 
   \end{array}
 \right) = \left(
   \begin{array}[c]{c}
     \vec{0} \\
-    \vdots       \\
+    \vdots       \\[0.1cm]
     \vec{0}   \\
-    \vdots       \\
+    \vdots       \\[0.1cm]
     \vec{b}_l \\
-    \vdots       \\
+    \vdots       \\[0.1cm]
     \vec{0} 
   \end{array}
 \right),
@@ -989,7 +1005,7 @@ mit $\alpha$.
 \item Die $n \times n$ Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ wird für $\alpha \not= 0$ durch die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathrm{ZM}_n(k, \alpha) := E_n + (\alpha - 1) \cdot \mathrm{A}_n(k, k) $
+      $\mathrm{ZM}_n(k, \alpha) := \mathrm{E}_n + (\alpha - 1) \cdot \mathrm{A}_n(k, k) $
       \\[0.2cm]
       definiert.  Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
       $\textrm{ZM}_n(k,\alpha)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$
@@ -1264,7 +1280,7 @@ $A = \left(
   \end{array}\right)
 $
 \\[0.2cm]
-zu berechnen.  Dazu wird zunächst die Variable $\mathtt{e}$ mit der Einheits-Matrix $E_3$
+zu berechnen.  Dazu wird zunächst die Variable $\mathtt{e}$ mit der Einheits-Matrix $\mathrm{E}_3$
 initialisiert.  Danach haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
