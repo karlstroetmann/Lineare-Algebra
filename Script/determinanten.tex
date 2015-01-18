@@ -64,7 +64,7 @@ von der wir später zeigen werden, dass die Gleichung
 \end{equation}
 für beliebige Permutationen $R_1,R_2 \in \mathcal{S}_n$ gilt,  die Funktion $\mathtt{sgn}$ ist also
 mit dem Produkt zweier Permutationen verträglich und damit ein Homomorphismus der Gruppe
-$\langle \mathcal{S}_n, E_n, \circ \rangle$ auf die Gruppe $\langle \{-1,+1\}, 1, \cdot \rangle$.  Die Definition der Funktion $\mathtt{sgn}$ selbst
+$\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ auf die Gruppe $\langle \{-1,+1\}, 1, \cdot \rangle$.  Die Definition der Funktion $\mathtt{sgn}$ selbst
 ist nicht besonders aufwendig,  aber der Nachweis, dass es sich bei dieser Funktion um einen
 Gruppen-Homomorphismus handelt, erfordert  mehr Zeit, als in einer einführenden Vorlesung zur
 Verfügung steht.
@@ -131,15 +131,15 @@ kartesische Produkt der beiden Mengen berechnet, auf die dieser Operator angewen
 
 
 \exercise
-Es sei $E_n \in \mathcal{S}_n$ die identische Permutation aus $R_n$.  Stellen wir diese Permutation
+Es sei $\mathtt{id}_n \in \mathcal{S}_n$ die identische Permutation aus $R_n$.  Stellen wir diese Permutation
 durch eine Liste dar, so gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
-$E_n = [1,2,3, \cdots, n]$.
+$\mathtt{id}_n = [1,2,3, \cdots, n]$.
 \\[0.2cm]
 Zeigen Sie, dass für alle natürlichen Zahlen $n$ die Gleichung
 \quad
- $\mathtt{sgn}(E_n) = 1$
+ $\mathtt{sgn}(\mathtt{id}_n) = 1$
 \quad gilt.  \eoxs
 
 
@@ -711,7 +711,7 @@ Die Behauptung kann mit Hilfe des letzten Korollars durch eine Induktion nach $k
 \item[I.A.:] $k=1$. Es gilt
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\mathtt{sgn}(\tau) = \mathtt{sgn}(\tau \circ E_n) = -\mathtt{sgn}(E_n) = -1 = (-1)^1$.
+             $\mathtt{sgn}(\tau) = \mathtt{sgn}(\tau \circ \mathtt{id}_n) = -\mathtt{sgn}(\mathtt{id}_n) = -1 = (-1)^1$.
 \item[I.A.:] $k \mapsto k+1$. Wir haben
              \\[0.2cm]
              \hspace*{1.3cm}
@@ -763,7 +763,7 @@ $\mathtt{sgn}(\varrho_1 \circ \varrho_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \m
 Wir haben nun alles Material zusammen um die Determinante einer $n \times n$ Matrix so zu
 definieren, wie dies 1690 von
 \href{http://de.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz\footnote{
-  Der erfreuliche Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
+  Den erfreuliche Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
   Begriff ist, haben wir   der Firma \href{http://www.bahlsen.com}{Bahlsen} zu verdanken, die ihre
   \href{http://en.wikipedia.org/wiki/Leibniz-Keks}{Butterkekse} tatsächlich nach diesem Mathematiker
   bennant haben.
@@ -794,17 +794,19 @@ Zur Berechnung von $\mathtt{det}(A)$ müssen wir uns überlegen, wie $\mathcal{S}_
 \hspace*{1.3cm}
 $\mathcal{S}_2 := \bigl\{ [1,2], [2,1] \bigr\}$.
 \\[0.2cm]
-Die Permutation $[1,2]$ ist die identische Permutation und damit gilt
+Für die Permutation $[1,2]$ finden wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}([1,2]) = +1$.
+$\mathtt{inv}([1,2]) = \{\}$ \quad und damit gilt \quad 
+$\mathtt{sgn}([1,2]) = (-1)^0 = +1$.
 \\[0.2cm]
-Die Permutation $[2,1]$ ist eine Transposition und hat daher ein negatives Vorzeichen:
+Für die  Permutation $[2,1]$ ergibt sich
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}([2,1]) = -1$.
+$\mathtt{inv}([2,1]) = \{ \pair(1,2) \}$ \quad und damit gilt \quad
+$\mathtt{sgn}([2,1]) = (-1)^1 = -1$.
 \\[0.2cm]
-Damit finden wir
+Insgesamt haben wir
 \\[0.2cm]
 \hspace*{0.5cm}
 $\mathtt{det}(A) = \mathtt{det}\left(\begin{array}{ll}
@@ -881,6 +883,12 @@ Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab.
    };
    signum := procedure(l) {
        return (-1) ** #inv(l);
+   };
+   allPermutations := procedure(n) {
+       if (n == 1) {
+           return { [1] };
+       }
+       return { p[..k-1]+[n]+p[k..]: p in allPermutations(n-1), k in [1..n] };
    };
    determinant := procedure(n) {
         det := "";
@@ -987,10 +995,10 @@ Wir zerlegen den Beweis in zwei Teile:
       Offenbar ist $\mu \in \mathcal{S}_n$ und es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\tau \circ \mu = \tau \circ \tau \circ \sigma = E_n \circ \sigma = \sigma$,
+      $\tau \circ \mu = \tau \circ \tau \circ \sigma = \mathtt{id}_n \circ \sigma = \sigma$,
       \\[0.2cm]
-      denn da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = E_n$, wobei
-      $E_n$ die identische Permutation bezeichnet.  Aus $\sigma = \tau \circ \mu$ und $\mu \in \mathcal{S}_n$ 
+      denn da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = \mathtt{id}_n$, wobei
+      $\mathtt{id}_n$ die identische Permutation bezeichnet.  Aus $\sigma = \tau \circ \mu$ und $\mu \in \mathcal{S}_n$ 
       folgt 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1013,11 +1021,11 @@ angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = 
 gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
-$a_i = [a_{i,1}, \cdots, a_{i,n}]$.
+$\vec{a}_i = [a_{i,1}, \cdots, a_{i,n}]$.
 
 
 \begin{Satz}
-  Die Funktion $\texttt{det}(A)$ ist \emph{alternierend}: Vertauschen wir zwei Zeilen der Matrix
+  Die Funktion $\mathtt{det}(A)$ ist \emph{alternierend}: Vertauschen wir zwei Zeilen der Matrix
   $A$, so dreht sich das Vorzeichen der Determinante um, genauer gilt für $k,l \in \{1,\cdots,n\}$
   mit $k < l$:
   \\[0.2cm]
@@ -1050,7 +1058,7 @@ $\left(
   \right)
 $
 \\[0.2cm]
-aus $A$ entsteht, wenn wir die $k$-te Zeile von $A$ mit der $l$-ten Zeile $A$ vertauschen.
+aus $A$ dadurch entsteht, dass wir die $k$-te Zeile von $A$ mit der $l$-ten Zeile $A$ vertauschen.
 \end{Satz}
 
 \proof
@@ -1093,6 +1101,7 @@ $
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(k))} \cdot \mbox{$\dots$} \cdot
             a_{n,\sigma(\tau(n))}, \\[0.4cm]
+& & \mbox{denn $\tau(k) = l$ und $\tau(l) = k$ und für $i \not\in \{k,l\}$ gilt $\tau(i) = i$.} \\[0.2cm]
 & = &
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\tau\circ\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\tau\circ\sigma(n)} \\[0.4cm]
 & = &
@@ -1112,7 +1121,7 @@ $
 & = &
  - \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\mu) \cdot a_{1,\mu(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\mu(n)} \\[0.4cm]
-&& \mbox{Da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = E_n$ und $E_n \circ \mu = \mu$.} \\[0.2cm]
+&& \mbox{Da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = \mathtt{id}_n$ und $\mathtt{id}_n \circ \mu = \mu$.} \\[0.2cm]
 & = & -\mathtt{det}(A).
  \end{array}
 $
@@ -1125,14 +1134,14 @@ wir die Eigenschaften der Funktion $\mathtt{sgn}$ tatsächlich benötigen.  Der Re
 jetzt wie von selber. 
 \eoxs
 
-\exercise
+\exerciseStar
 Wir definieren zu einer Matrix $A \in \mathbb{K}^{n \times n}$ die \emph{transponierte Matrix} 
-$A^t = (a^t_{i,j})$ indem wir
+$A^T = (a^T_{i,j})$ indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$a^t_{i,j} := a_{j,i}$ \quad für alle $i,j \in \{1,\cdots,n\}$
+$a^T_{i,j} := a_{j,i}$ \quad für alle $i,j \in \{1,\cdots,n\}$
 \\[0.2cm]
-setzen.  Die Zeilen der transponierten Matrix $A^t$ sind also die Spalten der ursprünglichen Matrix $A$. 
+setzen.  Die Zeilen der transponierten Matrix $A^T$ sind also die Spalten der ursprünglichen Matrix $A$. 
 Beispielsweise haben wir für
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1144,7 +1153,7 @@ $A = \left(
   \end{array}\right)
 $
 \quad die transponierte Matrix \quad
-$A^t = \left(
+$A^T = \left(
   \begin{array}[c]{lll}
     1 & 4 & 7     \\
     2 & 5 & 8     \\
@@ -1155,7 +1164,7 @@ $.
 Zeigen Sie, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\texttt{det}(A^t) = \mathtt{det}(A)$
+$\texttt{det}(A^T) = \mathtt{det}(A)$
 \\[0.2cm]
 gilt.  Zum Nachweis dieses Satzes ist es nützlich, die beiden folgenden Lemmata nachzuweisen:
 \begin{enumerate}
@@ -1191,7 +1200,7 @@ hat und sich die $k$-te Zeile als
 \hspace*{1.3cm}
 $\vec{a}_k = \vec{b} + \vec{c}$
 \\[0.2cm]
-schreiben lässt, Folgendes gilt:
+schreiben lässt, das Folgende gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
 $\mathtt{det}\left(
@@ -1233,7 +1242,7 @@ hat und sich die $k$-te Zeile als
 \hspace*{1.3cm}
 $\vec{a}_k = \lambda \cdot \vec{b}$
 \\[0.2cm]
-schreiben lässt, Folgendes gilt:
+schreiben lässt, das Folgende gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
 $\mathtt{det}\left(
@@ -1267,7 +1276,11 @@ die Determinante eine normierte, alternierende Multilinear-Form ist:
       \hspace*{1.3cm}
       $\mathtt{det}(\cdots, \vec{ a}_ k, \cdots, \vec{ a}_l, \cdots) = -\mathtt{det}(\cdots, \vec{ a}_l, \cdots, \vec{ a}_k, \cdots)$
       \\[0.2cm]
-      gilt.  Das Vertauschen zweier Spalten ändert das Vorzeichen der Determinante.
+      gilt.  Das Vertauschen zweier Spalten ändert das Vorzeichen der Determinante.  
+
+      \textbf{Bemerkung:} 
+      Eine analoge Gleichung gilt, wenn wir zwei Zeilen vertauschen.  Dies liegt einfach daran,
+      dass $\mathtt{det}(A^T) = \mathtt{det}(A)$ ist.
 \item Multilinear ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1277,6 +1290,10 @@ die Determinante eine normierte, alternierende Multilinear-Form ist:
       $
       \\[0.2cm]
       gilt.  Die Determinanten-Funktion ist also in jeder Spalte sowohl additiv als auch homogen.
+
+      \textbf{Bemerkung:} 
+      Eine analoge Gleichung gilt, wenn wir statt zweier Spalten zwei Zeilen addieren.
+      Dies liegt wieder daran, dass $\mathtt{det}(A^T) = \mathtt{det}(A)$ ist.
 \end{enumerate}
 \href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass} (1815-1897)
 hat gezeigt, dass die obigen Eigenschaften die Determinante bereits vollständig bestimmen: Jede Funktion
@@ -1402,9 +1419,9 @@ $
 
 \remark
 Ersetzen wir in dem letzten Lemma den Begriff ``\emph{Zeile}'' durch ``\emph{Spalte}'', 
-so bleibt das Lemma gültig, denn die Determinante der transponierten Matrix $A^t$ ist gleich der
-Determinante von $A$ und beim Übergang von $A$ zur transponierten Matrix $A^t$ werden aus den
-Spalten der Matrix $A$ die Zeilen der Matrix $A^t$. 
+so bleibt das Lemma gültig, denn die Determinante der transponierten Matrix $A^T$ ist gleich der
+Determinante von $A$ und beim Übergang von $A$ zur transponierten Matrix $A^T$ werden aus den
+Spalten der Matrix $A$ die Zeilen der Matrix $A^T$. 
 \eox
 
 \begin{Lemma}

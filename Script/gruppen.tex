@@ -696,10 +696,10 @@ Permutationen auf der Menge $\mathbb{Z}_n^+$:
 \hspace*{1.3cm}
 $\mathcal{S}_n := \{ R \subseteq \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid \mbox{$R$ ist Permutation auf $\mathbb{Z}_n^+$} \}$.
 \\[0.2cm]
-Weiter definieren wir die identische Permutation $E_n$ auf $\mathbb{Z}_n^+$ als
+Weiter definieren wir die identische Permutation $\mathtt{id}_n$ auf $\mathbb{Z}_n^+$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$E_n := \{ \pair(x,x) \mid x \in \mathbb{Z}_n^+ \}$.
+$\mathtt{id}_n := \{ \pair(x,x) \mid x \in \mathbb{Z}_n^+ \}$.
 \\[0.2cm]
 Wir erinnern an die Definition des relationalen Produkts, es gilt:
 \\[0.2cm]
@@ -719,10 +719,10 @@ $\forall R_1, R_2 \in \mathcal{S}_n: R_1 \circ R_2 \in \mathcal{S}_n$.
 
 \remark
 Wir hatten früher bereits gezeigt, dass für das relationale Produkt das Assoziativ-Gesetz gilt und wir
-haben ebenfalls gesehen, dass für die identische Permutation $E_n$ die Beziehung
+haben ebenfalls gesehen, dass für die identische Permutation $\mathtt{id}_n$ die Beziehung
 \\[0.2cm]
 \hspace*{1.3cm}
-$E_n \circ R = R$ \quad für alle $R \in \mathcal{S}_n$
+$\mathtt{id}_n \circ R = R$ \quad für alle $R \in \mathcal{S}_n$
 \\[0.2cm]
 gilt.  Weiter sehen wir: Ist $R \in \mathcal{S}_n$, so haben wir
 \\[0.2cm]
@@ -739,13 +739,13 @@ $
    & \\[0.2cm]
  = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \}
     & \mbox{denn $R$ ist rechts-eindeutig}    \\[0.2cm]
- = & E_n.
+ = & \mathtt{id}_n.
 \end{array}
 $
 \\[0.2cm]
 Folglich ist für eine Permutation $R$ der Ausdruck $R^{-1}$ tatsächlich das Inverse bezüglich des
 relationalen Produkts $\circ$.  Damit ist klar, dass die 
-Struktur $\langle \mathcal{S}_n, E_n, \circ \rangle$ eine Gruppe ist.
+Struktur $\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ eine Gruppe ist.
 Diese Gruppe trägt den Namen \emph{Permutations-Gruppe}.
 \eox
 
@@ -845,7 +845,7 @@ $\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$
 \end{enumerate}
 
 \exercise
-Berechnen Sie alle Untergruppen der Gruppe $\langle \mathcal{S}_3, E_3, \circ \rangle$.
+Berechnen Sie alle Untergruppen der Gruppe $\langle \mathcal{S}_3, \mathtt{id}_3, \circ \rangle$.
 \exend
 \vspace*{0.3cm}
 
