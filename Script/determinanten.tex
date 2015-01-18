@@ -51,6 +51,104 @@ $\prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \
 \\[0.2cm]
 Möglichkeiten bei der Wahl der Elemente $x_i$. \qed 
 
+Der folgende Begriff des Vorzeichens oder auch \emph{Signums} einer Permutation ist zentral für die
+Definition der Determinante.  Für Permutationen definieren wir eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{sgn}: \mathcal{S}_n \rightarrow \{-1, +1 \}$,
+\\[0.2cm]
+von der wir später zeigen werden, dass die Gleichung
+\begin{equation}
+  \label{eq:sgn-homomorph}
+  \mathtt{sgn}(R_1 \circ R_2) = \mathtt{sgn}(R_1) \cdot \mathtt{sgn}(R_2) 
+\end{equation}
+für beliebige Permutationen $R_1,R_2 \in \mathcal{S}_n$ gilt,  die Funktion $\mathtt{sgn}$ ist also
+mit dem Produkt zweier Permutationen verträglich und damit ein Homomorphismus der Gruppe
+$\langle \mathcal{S}_n, E_n, \circ \rangle$ auf die Gruppe $\langle \{-1,+1\}, 1, \cdot \rangle$.  Die Definition der Funktion $\mathtt{sgn}$ selbst
+ist nicht besonders aufwendig,  aber der Nachweis, dass es sich bei dieser Funktion um einen
+Gruppen-Homomorphismus handelt, erfordert  mehr Zeit, als in einer einführenden Vorlesung zur
+Verfügung steht.
+
+\begin{Definition}[Signum]
+  Für Permutationen $R \in \mathcal{S}_n$ definieren wir für alle natürlichen Zahlen $n$ eine Funktion
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathtt{inv} : \mathcal{S}_n \mapsto 2^{\mathbb{Z}_n^+ \times \mathbb{Z}_n^+}$,
+  \\[0.2cm]
+  welche jeder Permutation $R \in \mathcal{S}_n$ die Menge von Paaren derjenigen natürlicher Zahlen $k$ und $l$
+  zuordnet, für die
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $k < l$ \quad und \quad $R(k) > R(l)$
+  \\[0.2cm]
+  gilt.  Formal definieren wir
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathtt{inv}(R) := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
+  \\[0.2cm]
+  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \emph{Inversionen} von $R$.
+  Darauf aufbauend definieren wir das \emph{Vorzeichen} (oder auch \emph{Signum}) der Permutation
+  $R$ als 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathtt{sgn}(R) := (-1)^{\mathtt{card}(\mathtt{inv}(R))}$.
+  \\[0.2cm]
+  Das Signum einer Permutation ist folglich $1$, wenn die Anzahl der Inversionen von $R$ eine gerade
+  Zahl ist, ansonsten hat das Signum den Wert $-1$.  \qed
+\end{Definition}
+
+
+Abbildung \ref{fig:signum.stlx} auf Seite \pageref{fig:signum.stlx} zeigt eine Implementierung der
+Funktion \texttt{sgn} in der Sprache \textsc{SetlX}.  Die Permutationen werden in diesem Programm
+als Listen dargestellt.  Beachten Sie, dass der Operator ``\texttt{><}'' in \textsc{SetlX} das
+kartesische Produkt der beiden Mengen berechnet, auf die dieser Operator angewendet wird.
+
+
+\begin{figure}[!ht]
+\centering
+\begin{Verbatim}[ frame         = lines, 
+                  framesep      = 0.3cm, 
+                  firstnumber   = 1,
+                  labelposition = bottomline,
+                  numbers       = left,
+                  numbersep     = -0.2cm,
+                  xleftmargin   = 0.3cm,
+                  xrightmargin  = 0.3cm,
+                ]
+    inv := procedure(r) {
+        n := #r;
+        return { [k,l] : [k, l] in {1..n} >< {1..n} | k < l && r[k] > r[l] };
+    };
+    signum := procedure(r) {
+        return (-1) ** #inv(r);
+    };
+\end{Verbatim}
+\vspace*{-0.3cm}
+\caption{Berechnung des Signums einer Permutation.}
+\label{fig:signum.stlx}
+\end{figure}
+
+
+
+\exercise
+Es sei $E_n \in \mathcal{S}_n$ die identische Permutation aus $R_n$.  Stellen wir diese Permutation
+durch eine Liste dar, so gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$E_n = [1,2,3, \cdots, n]$.
+\\[0.2cm]
+Zeigen Sie, dass für alle natürlichen Zahlen $n$ die Gleichung
+\quad
+ $\mathtt{sgn}(E_n) = 1$
+\quad gilt.  \eoxs
+
+
+\exercise
+Überlegen Sie, für welche Permutation $R \in \mathcal{S}_n$ die Kardinalität der Menge
+$\mathtt{inv}(R)$ maximal wird und berechnen Sie für diese Permutationen den Ausdruck
+$\mathtt{card}(\mathtt{inv}(R))$. \eox
+\pagebreak
+
 Im Allgemeinen können Permutationen beliebig kompliziert sein.  Es lohnt sich, zunächst ganz
 spezielle Permutationen zu betrachten, die nur zwei Elemente vertauschen.  Das führt zu der
 folgenden Definition.
@@ -100,21 +198,40 @@ $R = \pair(2,3)$
 geschrieben werden. \eox
 
 \remark
+Im weiteren Verlauf werden wir zur Bezeichnung von Permutationen die kleinen griechische Buchstaben
+$\mu$, $\varrho$, $\sigma$ und $\tau$ benutzen.
 Schreiben wir eine Transposition $\tau$ in der Form $\tau = \pair(k,l)$, so ist a priori nicht
 klar, für welche natürliche Zahl $n$ nun $\tau \in \mathcal{S}_n$ gilt.  Das ist bei der
 Schreibweise $\tau = \pair(k,l)$ normalerweise kein Problem, denn einerseits geht meist aus dem Zusammenhang
 klar hervor, welches $n \in  \mathbb{N}$ gemeint ist und andererseits ist es oft auch 
-unwichtig, denn jede Permutation $\pi \in \mathcal{S}_n$ kann in trivialer Weise zu einer Permutation
-$\pi'\in \mathcal{S}_m$ erweitert werden, falls $m \geq n$ gilt. \eox
+unwichtig, denn jede Permutation $\sigma \in \mathcal{S}_n$ kann in trivialer Weise zu einer Permutation
+$\sigma'\in \mathcal{S}_m$ erweitert werden, falls $m \geq n$ gilt. \eox
 
-Transpositionen sind einfacher als beliebige Permutationen und wir werden später insbesondere sehen, dass sich
-die noch zu definierende Funktion $\mathtt{sgn}(R)$, die das \emph{Vorzeichen} einer
-Permutation berechnet, für Transpositionen sofort berechnen lässt.  Da der nächste Satz uns zeigt, dass
-sich alle nicht-trivialen Permutationen als Produkt von Transpositionen schreiben lassen, liefert
-uns dieser Satz dann ein einfaches Verfahren, das Vorzeichen beliebiger Permutationen zu berechnen.
+Transpositionen sind einfacher als beliebige Permutationen und wir werden gleich sehen, dass sich
+für eine Transpositionen $\tau$ das Vorzeichen $\mathtt{sgn}(\tau)$ sofort berechnen lässt, denn es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{sgn}\bigl(\pair(k,l)\bigr) = -1$.
+\\[0.2cm]
+Der Nachweis dieser Behauptung ist Gegenstand der folgenden Aufgabe.
+
+\exercise
+Die Transposition $\tau$ habe die Form \quad $\tau = \pair(k,l)$ \quad
+und es gelte $k < l$.  Berechnen Sie $\mathtt{inv}(\tau)$ und $\mathtt{sgn}(\tau)$.
+\eox
+
+
+Der Rest dieses Abschnitts beschäftigt sich mit dem Nachweis, dass die Funktion $\mathtt{sgn}$ ein
+Gruppen-Homomorphismus ist.  Die bei diesem Beweis benötigten Ideen sind zwar alle elementar, aber
+insgesamt sprengt der technische Aufwand den zeitlichen Rahmen einer einführenden Vorlesung.  Daher
+ist dieser Abschnitt als optional markiert. 
+
+\subsection{Die Homomorphie-Eigenschaft der Signum-Funktion$^*$}
+Der nächste Satz zeigt uns, dass
+sich alle nicht-trivialen Permutationen als Produkt von Transpositionen schreiben lassen.  
 
 \begin{Satz} \label{satz:produkt-von-transpositionen}
-  Ist $n \geq 2$ und gilt $R \in \mathcal{S}_n$, so lässt sich $R$ als Produkt von Transpositionen darstellen.
+  Ist $n \geq 2$ und gilt $\tau \in \mathcal{S}_n$, so lässt sich $\tau$ als Produkt von Transpositionen darstellen.
 \end{Satz}
 
 \proof
@@ -136,156 +253,70 @@ Wir beweisen diesen Satz durch vollständige Induktion nach $n$.
              zweier Transpositionen schreiben. 
 \item[I.S.:] $n \mapsto n + 1$.
 
-             Wir definieren $k := R(n+1)$ und unterscheiden zwei Fälle.
+             Wir definieren $k := \tau(n+1)$ und unterscheiden zwei Fälle.
              \renewcommand{\labelenumii}{\arabic{enumii}.}
              \begin{enumerate}
              \item Fall: $k = n+1$.
                
-                   In diesem Fall enthält die Permutation $R$ also das Paar $\pair(n+1,n+1)$.  Dann
+                   In diesem Fall enthält die Permutation $\tau$ also das Paar $\pair(n+1,n+1)$.  Dann
                    definieren wir
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R' := R \backslash \{ \pair(n+1,n+1) \}$.
+                   $\tau' := \tau \backslash \{ \pair(n+1,n+1) \}$.
                    \\[0.2cm]
-                   Damit ist $R' \in \mathcal{S}_n$ und lässt sich folglich nach Induktions-Voraussetzung als
+                   Damit ist $\tau' \in \mathcal{S}_n$ und lässt sich folglich nach Induktions-Voraussetzung als
                    Produkt von Transpositionen schreiben:
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R' = \tau_1 \circ \cdots \circ \tau_m$ \quad mit $\tau_i \in \mathcal{S}_i$.
+                   $\tau' = \tau'_1 \circ \cdots \circ \tau'_m$ \quad mit $\tau'_i \in \mathcal{S}_n$.
                    \\[0.2cm]
-                   Fassen wir die Transpositionen $\tau_i$ nun als Elemente von $S_{n+1}$ auf, so
-                   folgt sofort
+                   Erweitern wir die Transpositionen $\tau'_i \in \mathcal{S}_n$ zu Transpositionen
+                   $\tau_i \in \mathcal{S}_{n+1}$ indem wir
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R = \tau_1 \circ \cdots \circ \tau_m$.
+                   $\tau_i := \tau'_i \cup \{ \pair(n+1, n+1) \}$
+                   \\[0.2cm]
+                   definieren, so erhalten wir
+                   \\[0.2cm]
+                   \hspace*{1.3cm}
+                   $\tau = \tau_1 \circ \cdots \circ \tau_m$.
              \item Fall:  $k \leq n$.                   
                
-                   In diesem Fall definieren wir eine Permutation $R'$ als
+                   In diesem Fall definieren wir eine Permutation $\tau'$ als
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R' := R \circ \pair(k, n+1)$.
+                   $\tau' := \tau \circ \pair(k, n+1)$.
                    \\[0.2cm]
-                   Wir berechnen den Wert von $R'(n+1)$:  Es gilt
+                   Wir berechnen den Wert von $\tau'(n+1)$:  Es gilt
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R'(n+1) = \pair(k, n+1)\bigl(R(n+1)\bigr) = \pair(k, n+1)(k) = n+1$.
+                   $\tau'(n+1) = \pair(k, n+1)\bigl(\tau(n+1)\bigr) = \pair(k, n+1)(k) = n+1$.
                    \\[0.2cm]
-                   Damit bildet $R'$ also die Zahl $n+1$ auf sich selbst ab und folglich erfüllt
-                   $R'$ die Voraussetzung des ersten Falls.  Da wir die Gültigkeit unserer Behauptung für
+                   Damit bildet $\tau'$ also die Zahl $n+1$ auf sich selbst ab und folglich erfüllt
+                   $\tau'$ die Voraussetzung des ersten Falls.  Da wir die Gültigkeit unserer Behauptung für
                    den ersten Fall bereits bewiesen haben, finden wir also Transpositionen 
                    $\tau_1, \cdots, \tau_m$, so dass
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R' = \tau_1 \circ \cdots \circ \tau_m$
+                   $\tau' = \tau_1 \circ \cdots \circ \tau_m$
                    \\[0.2cm]
-                   gilt.  Setzen wir hier die Definition von $R'$ ein, so erhalten wir
+                   gilt.  Setzen wir hier die Definition von $\tau'$ ein, so erhalten wir
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R \circ \pair(k, n+1) =  \tau_1 \circ \cdots \circ \tau_m$
+                   $\tau \circ \pair(k, n+1) =  \tau_1 \circ \cdots \circ \tau_m$
                    \\[0.2cm]
                    Da jede Transposition bezüglich des relationalen Produktes ihr eigenes Inverses
                    ist, können wir diese Gleichung von rechts mit $\pair(k, n+1)$ multiplizieren um
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $R =  \tau_1 \circ \cdots \circ \tau_m \circ \pair(k, n+1)$
+                   $\tau =  \tau_1 \circ \cdots \circ \tau_m \circ \pair(k, n+1)$
                    \\[0.2cm]
-                   zu erhalten.  Damit haben wir $R$ als Produkt von Transpositionen dargestellt.
+                   zu erhalten.  Damit haben wir $\tau$ als Produkt von Transpositionen dargestellt.
                    \qed
              \end{enumerate}
              \renewcommand{\labelenumi}{(\alph{enumii})}
 \end{enumerate}
-
-\begin{Definition}[Signum]
-  Für Permutationen $R \in \mathcal{S}_n$ definieren wir für alle positiven natürlichen Zahlen $n$ eine Funktion
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $\texttt{inv} : \mathcal{S}_n \mapsto 2^{\mathbb{Z}_n^+ \times \mathbb{Z}_n^+}$
-  \\[0.2cm]
-  die jeder Permutation $R \in \mathcal{S}_n$ eine Menge von Paaren natürlicher Zahlen $k$ und $l$
-  zuordnet, für die
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $k < l$ \quad und \quad $R(k) > R(l)$
-  \\[0.2cm]
-  gilt.  Formal definieren wir
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $\mathtt{inv}(R) := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
-  \\[0.2cm]
-  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \emph{Inversionen} von $R$.
-  Darauf aufbauend definieren wir das \emph{Vorzeichen} (oder auch \emph{Signum}) der Permutation
-  $R$ als 
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $\mathtt{sgn}(R) := (-1)^{\mathtt{card}(\mathtt{inv}(R))}$.
-  \\[0.2cm]
-  Das Signum einer Permutation ist folglich $1$, wenn die Anzahl der Inversionen von $R$ eine gerade
-  Zahl ist, ansonsten hat das Signum den Wert $-1$.  \qed
-\end{Definition}
-
-
-Abbildung \ref{fig:signum.stlx} auf Seite \pageref{fig:signum.stlx} zeigt eine Implementierung der
-Funktion \texttt{sgn} in der Sprache \textsc{SetlX}.  Die Permutationen werden in diesem Programm
-als Listen dargestellt.
-
-
-\begin{figure}[!ht]
-\centering
-\begin{Verbatim}[ frame         = lines, 
-                  framesep      = 0.3cm, 
-                  firstnumber   = 1,
-                  labelposition = bottomline,
-                  numbers       = left,
-                  numbersep     = -0.2cm,
-                  xleftmargin   = 0.3cm,
-                  xrightmargin  = 0.3cm,
-                ]
-    inv := procedure(r) {
-        n := #r;
-        return { [k,l] : [k, l] in {1..n}><{1..n} | k < l && r[k] > r[l] };
-    };
-    signum := procedure(r) {
-        return (-1) ** #inv(r);
-    };
-\end{Verbatim}
-\vspace*{-0.3cm}
-\caption{Berechnung des Signums einer Permutation.}
-\label{fig:signum.stlx}
-\end{figure}
-
 \pagebreak
-
-\exercise
-Es sei $\mathtt{id}_n \in \mathcal{S}_n$ die identische Permutation aus $R_n$.  Stellen wir diese Permutation
-durch eine Liste dar, so gilt also
-\\[0.2cm]
-\hspace*{1.3cm}
-$\mathtt{id}_n = [1,2,3, \cdots, n]$.
-\\[0.2cm]
-Zeigen Sie, dass für alle positiven natürlichen Zahlen $n$ die Gleichung
-\\[0.2cm]
-\hspace*{1.3cm}
- $\mathtt{sgn}(\mathtt{id}_n) = 1$
-\\[0.2cm]
-gilt.  \eoxs
-
-\exercise
-Überlegen Sie, für welche Permutation $R \in \mathcal{S}_n$ die Kardinalität der Menge
-$\mathtt{inv}(R)$ maximal wird und berechnen Sie 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\mathtt{card}(\mathtt{inv}(R))$
-\\[0.2cm]
-für dieses $R$. \eoxs
-
-\exercise
-Die Transposition $\tau$ sei als 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\tau = \pair(k,l)$ 
-\\[0.2cm]
-definiert und es gelte $k < l$.  Berechnen Sie $\mathtt{inv}(\tau)$ und $\mathtt{sgn}(\tau)$.
-\eoxs
 
 \begin{Definition}[Elementare Transposition] \hspace*{\fill} \\
   Eine Transposition $\tau$ ist eine \emph{elementare Transposition} genau dann, wenn es ein 
@@ -330,7 +361,7 @@ bei der für $i$ die Fälle
 \end{enumerate}
 unterschieden werden.  Diese Fallunterscheidung tatsächlich auszuführen ist eine gute Übungsaufgabe.
 Mit der obigen Gleichung haben wir $\pair(k,l)$ als Produkt elementarer Transpositionen dargestellt. 
-Es bleibt zu zeigen, dass die Anzahl der Transpositionen insgesamt ungerade ist.  Die Anzahl der
+Es bleibt zu zeigen, dass die Anzahl dieser elementaren Transpositionen insgesamt ungerade ist.  Die Anzahl der
 elementaren Transpositionen in dem Produkt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -349,75 +380,75 @@ Darstellung von $\tau$ benötigt und diese Anzahl ist offenbar ungerade.
 Das nächste Lemma zeigt uns, wie elementare Transpositionen auf Permutationen wirken.
 
 \begin{Lemma}
-  Falls die Permutation $R \in \mathcal{S}_n$ in der Listen-Schreibweise die Form $R = [x_1,\cdots,x_n]$ hat 
+  Falls die Permutation $\sigma \in \mathcal{S}_n$ in der Listen-Schreibweise die Form $\sigma = [x_1,\cdots,x_n]$ hat 
   und $\tau = \pair(k, k+1)$ eine elementare Transposition ist, dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\tau \circ R = \pair(k,k+1) \circ [x_1,\cdots,x_n] = [x_1, \cdots, x_{k-1},x_{k+1}, x_k,x_{k+2},\cdots, x_n]$.
+  $\tau \circ \sigma = \pair(k,k+1) \circ [x_1,\cdots,x_n] = [x_1, \cdots, x_{k-1},x_{k+1}, x_k,x_{k+2},\cdots, x_n]$.
   \\[0.2cm]
-  Die Wirkung der Transposition $\tau$ auf die Permutation $R$ besteht also darin, dass die Elemente
-  $x_k$ und $x_{k+1}$ in der Liste, die $R$ repräsentiert, ihre Positionen tauschen.
+  Die Wirkung der Transposition $\tau$ auf die Permutation $\sigma$ besteht also darin, dass die Elemente
+  $x_k$ und $x_{k+1}$ in der Liste, die $\sigma$ repräsentiert, ihre Positionen tauschen.
 \end{Lemma}
 
 \proof
-Den Beweis der obigen Gleichung für $\tau \circ R$ können
-wir dadurch erbringen, dass wir die Permutation $\tau \circ R$ auf die verschiedenen Elemente der
+Den Beweis der obigen Gleichung für $\tau \circ \sigma$ können
+wir dadurch erbringen, dass wir die Permutation $\tau \circ \sigma$ auf die verschiedenen Elemente der
 Menge $\{1,\cdots,n\}$ wirken lassen.  Wir führen dazu eine Fallunterscheidung durch.
 \begin{enumerate}
 \item Fall: $i \not\in \{k,k+1\}$. Dann haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $(\tau \circ R)(i) = R\bigl(\tau(i)\bigr) = R\bigl(\pair(k,k+1)(i)\bigr) = R(i) = x_i$.
+      $(\tau \circ \sigma)(i) = \sigma\bigl(\tau(i)\bigr) = \sigma\bigl(\pair(k,k+1)(i)\bigr) = \sigma(i) = x_i$.
 \item Fall: $i = k$.  Es gilt
       \\[0.2cm] 
       \hspace*{1.3cm}
-      $(\tau \circ R)(k) = R\bigl(\tau(k)\bigr) = R\bigl(\pair(k,k+1)(k)\bigr) = R(k+1) = x_{k+1}$.
+      $(\tau \circ \sigma)(k) = \sigma\bigl(\tau(k)\bigr) = \sigma\bigl(\pair(k,k+1)(k)\bigr) = \sigma(k+1) = x_{k+1}$.
 \item Fall: $i = k+1$.  Jetzt gilt
       \\[0.2cm] 
       \hspace*{1.3cm}
-      $(\tau \circ R)(k+1) = R\bigl(\tau(k+1)\bigr) = R\bigl(\pair(k,k+1)(k+1)\bigr) = R(k) = x_k$.
+      $(\tau \circ \sigma)(k+1) = \sigma\bigl(\tau(k+1)\bigr) = \sigma\bigl(\pair(k,k+1)(k+1)\bigr) = \sigma(k) = x_k$.
       \qed
 \end{enumerate}
 
 Der Nachweis des folgenden Satzes stellt technisch gesehen die größte Hürde bei der Einführung der
 Determinanten dar.  Ich habe mich für einen elementaren Beweis dieses Satzes entschieden: Dieser
 Beweis ist zwar einerseits länger als die Argumentation, die in der Literatur sonst oft benutzt wird,
-der Beweis ist aber andererseits elementarer und daher für den mathematisch weniger geübten
-Studenten leichter nachvollziehbar als die entsprechenden Beweise, die beispielsweise in
+der Beweis ist aber dadurch, dass keine tiefliegenden Ideen verwendet werden, für den mathematisch
+weniger geübten Studenten leichter nachvollziehbar als die entsprechenden Beweise, die beispielsweise in
 \cite{fischer:2008} oder \cite{kowalsky:2003} zu finden sind.
 
 \begin{Satz}
-  Es sei $R \in \mathcal{S}_n$ und $\tau = \pair(k, k + 1)$ sei eine elementare Transposition.  Dann gilt
+  Es sei $\sigma \in \mathcal{S}_n$ und $\tau = \pair(k, k + 1)$ sei eine elementare Transposition.  Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau \circ R) = - \mathtt{sgn}(R)$.
+  $\mathtt{sgn}(\tau \circ \sigma) = - \mathtt{sgn}(\sigma)$.
 \end{Satz}
 
 \proof
-Das Signum einer Permutation $R$ wird mit Hilfe der Menge der Inversionen $\mathtt{inv}(R)$
-berechnet, wobei die Menge $\mathtt{inv}(R)$ als
+Das Signum einer Permutation $\sigma$ wird mit Hilfe der Menge der Inversionen $\mathtt{inv}(\sigma)$
+berechnet, wobei die Menge $\mathtt{inv}(\sigma)$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(R) := \bigl\{ \pair(i,j) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid i < j \wedge R(i) > R(j) \bigr\}$
+$\mathtt{inv}(\sigma) := \bigl\{ \pair(i,j) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid i < j \wedge \sigma(i) > \sigma(j) \bigr\}$
 \\[0.2cm]
 definiert ist.  Zur Vereinfachung der Notation definieren wir (nur für diesen Beweis) die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
 $P := \bigl\{ \pair(i,j) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid i < j \bigr\}$.
 \\[0.2cm]
-Damit schreibt sich die Menge $\mathtt{inv}(R)$ kürzer als
+Damit schreibt sich die Menge $\mathtt{inv}(\sigma)$ kürzer als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(R) = \bigl\{ \pair(i,j) \in P \mid R(i) > R(j) \bigr\}$.
+$\mathtt{inv}(\sigma) = \bigl\{ \pair(i,j) \in P \mid \sigma(i) > \sigma(j) \bigr\}$.
 \\[0.2cm]
-Wir müssen untersuchen, wie sich die Mengen $\mathtt{inv}(R)$ und $\mathtt{inv}(\tau \circ R)$
+Wir müssen untersuchen, wie sich die Mengen $\mathtt{inv}(\sigma)$ und $\mathtt{inv}(\tau \circ \sigma)$
 unterscheiden.  Dafür zerlegen wir die Menge $P$ in sechs Teile:
 \\[0.2cm]
 \hspace*{1.3cm}
 $P := P_1 \uplus P_2 \uplus P_3 \uplus P_4 \uplus P_5 \uplus P_6$,
 \\[0.2cm]
-wobei das Zeichen $\uplus$ zum Ausdruck bringt, dass die vereinigten Mengen paarweise disjunkt sind.
-Die Mengen $P_1$, $\cdots$, $P_6$ werden dabei wie folgt definiert:
+wobei das Zeichen $\uplus$ zum Ausdruck bringt, dass die Mengen $P_i$ paarweise disjunkt sind.
+Diese Mengen werden wie folgt definiert:
 \begin{enumerate}
 \item $P_1 := \bigl\{ \pair(i,j) \in P \mid i,j \not\in \{k,k+1\} \bigr\}$,
 \item $P_2 := \bigl\{ \pair(k,j) \in P \mid j > k+1 \bigr\}$, 
@@ -426,26 +457,26 @@ Die Mengen $P_1$, $\cdots$, $P_6$ werden dabei wie folgt definiert:
 \item $P_5 := \bigl\{ \pair(i,k+1) \in P \mid i < k \bigr\}$, 
 \item $P_6 := \bigl\{ \pair(k,k+1) \bigr\}$.
 \end{enumerate} 
-Entsprechend der Zerlegung von $P$ können wir nun auch die Menge $\mathtt{inv}(R)$ in sechs
+Entsprechend der Zerlegung von $P$ können wir nun auch die Menge $\mathtt{inv}(\sigma)$ in sechs
 paarweise disjunkte Teile zerlegen.  Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
-$A_s := \bigl\{ \pair(i,j) \in P_s \mid R(i) > R(j) \bigr\}$ \quad für $s \in \{1,\cdots,6\}$.
+$A_s := \bigl\{ \pair(i,j) \in P_s \mid \sigma(i) > \sigma(j) \bigr\}$ \quad für $s \in \{1,\cdots,6\}$.
 \\[0.2cm]
 Damit gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(R) = A_1 \uplus A_2 \uplus A_3 \uplus A_4 \uplus A_5 \uplus A_6$. 
+$\mathtt{inv}(\sigma) = A_1 \uplus A_2 \uplus A_3 \uplus A_4 \uplus A_5 \uplus A_6$. 
 \\[0.2cm]
-Zur Berechnung von $\mathtt{inv}(\tau \circ R)$ definieren wir entsprechend 
+Zur Berechnung von $\mathtt{inv}(\tau \circ \sigma)$ definieren wir entsprechend 
 \\[0.2cm]
 \hspace*{1.3cm}
-$B_s := \bigl\{ \pair(i,j) \in P_s \mid R(\tau(i)) > R(\tau(j)) \bigr\}$ \quad für $s \in \{1,\cdots,6\}$.
+$B_s := \bigl\{ \pair(i,j) \in P_s \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\}$ \quad für $s \in \{1,\cdots,6\}$.
 \\[0.2cm]
 Damit gilt offenbar
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(\tau \circ R) = B_1 \uplus B_2 \uplus B_3 \uplus B_4 \uplus B_5 \uplus B_6$. 
+$\mathtt{inv}(\tau \circ \sigma) = B_1 \uplus B_2 \uplus B_3 \uplus B_4 \uplus B_5 \uplus B_6$. 
 \\[0.2cm]
 Als nächstes vergleichen wir die Mengen $A_s$ und $B_s$ für alle $s \in \{1,\cdots,6\}$.
 Unser Ziel ist es, folgende Gleichungen nachzuweisen:
@@ -460,14 +491,14 @@ Unser Ziel ist es, folgende Gleichungen nachzuweisen:
 Daraus folgt dann, dass auch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl|\mathtt{card}\bigl(\mathtt{inv}(R)\bigr)-\mathtt{card}\bigl(\mathtt{inv}(\tau \circ R)\bigr)\bigr| = 1$
+$\bigl|\mathtt{card}\bigl(\mathtt{inv}(\sigma)\bigr)-\mathtt{card}\bigl(\mathtt{inv}(\tau \circ \sigma)\bigr)\bigr| = 1$
 \\[0.2cm]
 und nach der Definition des Signums als 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}(R) = (-1)^{\mathtt{card}(\mathtt{inv}(R))}$
+$\mathtt{sgn}(\sigma) = (-1)^{\mathtt{card}(\mathtt{inv}(\sigma))}$
 \\[0.2cm]
-folgt daraus, dass $\mathtt{sgn}(R)$ und $\mathtt{sgn}(\tau \circ R)$ verschiedenes Vorzeichen
+folgt daraus, dass $\mathtt{sgn}(\sigma)$ und $\mathtt{sgn}(\tau \circ \sigma)$ verschiedenes Vorzeichen
 haben, also die Behauptung.  Was bleibt ist der Nachweis der oben bezüglich der Kardinalitäten der
 Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch eine Fallunterscheidung.
 \begin{enumerate}
@@ -475,17 +506,17 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       verschieden.  Damit haben wir einerseits
       \\[0.2cm]
       \hspace*{1.3cm}
-      $R\bigl(\tau(i)\bigr) = R\bigl(\pair(k,k+1)(i)\bigr) = R(i)$ 
+      $\sigma\bigl(\tau(i)\bigr) = \sigma\bigl(\pair(k,k+1)(i)\bigr) = \sigma(i)$ 
       \\[0.2cm]
       und andererseits
       \\[0.2cm]
       \hspace*{1.3cm}
-      $R\bigl(\tau(j)\bigr) = R\bigl(\pair(k,k+1)(j)\bigr) = R(j)$.
+      $\sigma\bigl(\tau(j)\bigr) = \sigma\bigl(\pair(k,k+1)(j)\bigr) = \sigma(j)$.
       \\[0.2cm]
       Also gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $(\tau \circ R)(i) > (\tau \circ R)(j) \;\Leftrightarrow\; R(i) > R(j)$.
+      $(\tau \circ \sigma)(i) > (\tau \circ \sigma)(j) \;\Leftrightarrow\; \sigma(i) > \sigma(j)$.
       \\[0.2cm]
       Folglich ist $A_1 = B_1$ und daraus folgt, dass die Mengen $A_1$ und $B_1$ dieselbe
       Kardinalität haben:
@@ -497,8 +528,8 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        A_2 & = &  \bigl\{ \pair(i,j) \in P_2 \mid R(i) > R(j) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k,j) \in P \mid j > k + 1 \wedge R(k) > R(j) \bigr\}.
+        A_2 & = &  \bigl\{ \pair(i,j) \in P_2 \mid \sigma(i) > \sigma(j) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k,j) \in P \mid j > k + 1 \wedge \sigma(k) > \sigma(j) \bigr\}.
       \end{array}
       $
       \\[0.2cm]
@@ -507,9 +538,9 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        B_3 & = &  \bigl\{ \pair(i,j) \in P_3 \mid R(\tau(i)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k+1,j) \in P \mid j > k + 1 \wedge R(\tau(k+1)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k+1,j) \in P \mid j > k + 1 \wedge R(k) > R(j) \bigr\} 
+        B_3 & = &  \bigl\{ \pair(i,j) \in P_3 \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k+1,j) \in P \mid j > k + 1 \wedge \sigma(\tau(k+1)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k+1,j) \in P \mid j > k + 1 \wedge \sigma(k) > \sigma(j) \bigr\} 
       \end{array}
       $
       \\[0.2cm]
@@ -525,8 +556,8 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        A_3 & = &  \bigl\{ \pair(i,j) \in P_3 \mid R(i) > R(j) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k+1,j) \in P \mid j > k + 1 \wedge R(k+1) > R(j) \bigr\}.
+        A_3 & = &  \bigl\{ \pair(i,j) \in P_3 \mid \sigma(i) > \sigma(j) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k+1,j) \in P \mid j > k + 1 \wedge \sigma(k+1) > \sigma(j) \bigr\}.
       \end{array}
       $
       \\[0.2cm]
@@ -535,9 +566,9 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        B_2 & = &  \bigl\{ \pair(i,j) \in P_2 \mid R(\tau(i)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k,j) \in P \mid j > k + 1 \wedge R(\tau(k)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k,j) \in P \mid j > k + 1 \wedge R(k+1) > R(j) \bigr\} 
+        B_2 & = &  \bigl\{ \pair(i,j) \in P_2 \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k,j) \in P \mid j > k + 1 \wedge \sigma(\tau(k)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k,j) \in P \mid j > k + 1 \wedge \sigma(k+1) > \sigma(j) \bigr\} 
       \end{array}
       $
       \\[0.2cm]
@@ -552,8 +583,8 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        A_4 & = &  \bigl\{ \pair(i,j) \in P_4 \mid R(i) > R(j) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(i,k) \in P \mid i < k \wedge R(i) > R(k) \bigr\}.
+        A_4 & = &  \bigl\{ \pair(i,j) \in P_4 \mid \sigma(i) > \sigma(j) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(i,k) \in P \mid i < k \wedge \sigma(i) > \sigma(k) \bigr\}.
       \end{array}
       $
       \\[0.2cm]
@@ -562,9 +593,9 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        B_5 & = &  \bigl\{ \pair(i,j) \in P_5 \mid R(\tau(i)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(i,k+1) \in P \mid i < k \wedge R(\tau(i)) > R(\tau(k+1)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(i,k+1) \in P \mid i < k \wedge R(i) > R(k) \bigr\} 
+        B_5 & = &  \bigl\{ \pair(i,j) \in P_5 \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(i,k+1) \in P \mid i < k \wedge \sigma(\tau(i)) > \sigma(\tau(k+1)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(i,k+1) \in P \mid i < k \wedge \sigma(i) > \sigma(k) \bigr\} 
       \end{array}
       $
       \\[0.2cm]
@@ -577,8 +608,8 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        A_5 & = &  \bigl\{ \pair(i,j) \in P_5 \mid R(i) > R(j) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(i,k+1) \in P \mid i < k \wedge R(i) > R(k+1) \bigr\}.
+        A_5 & = &  \bigl\{ \pair(i,j) \in P_5 \mid \sigma(i) > \sigma(j) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(i,k+1) \in P \mid i < k \wedge \sigma(i) > \sigma(k+1) \bigr\}.
       \end{array}
       $
       \\[0.2cm]
@@ -587,9 +618,9 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        B_4 & = &  \bigl\{ \pair(i,j) \in P_4 \mid R(\tau(i)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(i,k) \in P \mid i < k \wedge R(\tau(i)) > R(\tau(k)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(i,k) \in P \mid i < k \wedge R(i) > R(k+1) \bigr\} 
+        B_4 & = &  \bigl\{ \pair(i,j) \in P_4 \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(i,k) \in P \mid i < k \wedge \sigma(\tau(i)) > \sigma(\tau(k)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(i,k) \in P \mid i < k \wedge \sigma(i) > \sigma(k+1) \bigr\} 
       \end{array}
       $
       \\[0.2cm]
@@ -602,8 +633,8 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        A_6 & = &  \bigl\{ \pair(i,j) \in P_6 \mid R(i) > R(j) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k,k+1) \in P \mid R(k) > R(k+1) \bigr\}.
+        A_6 & = &  \bigl\{ \pair(i,j) \in P_6 \mid \sigma(i) > \sigma(j) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k,k+1) \in P \mid \sigma(k) > \sigma(k+1) \bigr\}.
       \end{array}
       $
       \\[0.2cm]
@@ -612,14 +643,14 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
       \hspace*{1.3cm}
       $
       \begin{array}[t]{lcl}
-        B_6 & = &  \bigl\{ \pair(i,j) \in P_6 \mid R(\tau(i)) > R(\tau(j)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k,k+1) \in P \mid R(\tau(k)) > R(\tau(k+1)) \bigr\} \\[0.2cm]
-            & = &  \bigl\{ \pair(k,k+1) \in P \mid R(k+1) > R(k) \bigr\}.
+        B_6 & = &  \bigl\{ \pair(i,j) \in P_6 \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k,k+1) \in P \mid \sigma(\tau(k)) > \sigma(\tau(k+1)) \bigr\} \\[0.2cm]
+            & = &  \bigl\{ \pair(k,k+1) \in P \mid \sigma(k+1) > \sigma(k) \bigr\}.
       \end{array}
       $
       \\[0.2cm]
-      Da $R$ eine Permutation ist, sind die Werte von $R(k)$ und $R(k+1)$ verschieden.  Folglich 
-      gilt entweder $R(k) > R(k+1)$ oder $R(k+1) > R(k)$.  Damit ist dann  genau ein der beiden Mengen
+      Da $\sigma$ eine Permutation ist, sind die Werte von $\sigma(k)$ und $\sigma(k+1)$ verschieden.  Folglich 
+      gilt entweder $\sigma(k) > \sigma(k+1)$ oder $\sigma(k+1) > \sigma(k)$.  Damit ist dann  genau ein der beiden Mengen
       $A_6$ und $B_6$ leer, während die andere dass Paar $\pair(k,k+1)$ enthält, formal gilt
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -627,11 +658,11 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
 \end{enumerate}
 
 \begin{Lemma}
-  Es seien $\tau_1, \cdots, \tau_k \in \mathcal{S}_n$ elementare Transpositionen und es sei $R \in \mathcal{S}_n$. 
+  Es seien $\tau_1, \cdots, \tau_k \in \mathcal{S}_n$ elementare Transpositionen und es sei $\sigma \in \mathcal{S}_n$. 
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_k \circ R) = (-1)^k \cdot \mathtt{sgn}(R)$.
+  $\mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_k \circ \sigma) = (-1)^k \cdot \mathtt{sgn}(\sigma)$.
 \end{Lemma}
 
 \proof
@@ -647,20 +678,20 @@ Der Beweis erfolgt durch Induktion über $k$.
              \hspace*{1.3cm}
              $
              \begin{array}[b]{lcl}
-                 \mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_{k+1} \circ R)
-                 & = & \mathtt{sgn}\bigl(\tau_1 \circ (\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ R)\bigr) \\[0.2cm]
-                 & = & -\mathtt{sgn}(\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ R) \\[0.2cm]
-                 & \stackrel{IV}{=} & - (-1)^k \cdot \mathtt{sgn}(R) \\[0.2cm]
-                 & = & (-1)^{k+1} \cdot \mathtt{sgn}(R).  
+                 \mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma)
+                 & = & \mathtt{sgn}\bigl(\tau_1 \circ (\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma)\bigr) \\[0.2cm]
+                 & = & -\mathtt{sgn}(\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma) \\[0.2cm]
+                 & \stackrel{IV}{=} & - (-1)^k \cdot \mathtt{sgn}(\sigma) \\[0.2cm]
+                 & = & (-1)^{k+1} \cdot \mathtt{sgn}(\sigma).  
              \end{array}
              $\qed
 \end{enumerate}
 
 \begin{Korollar}
-  Ist $\tau \in \mathcal{S}_n$ eine Transposition und ist $R \in \mathcal{S}_n$, so gilt
+  Ist $\tau \in \mathcal{S}_n$ eine Transposition und ist $\sigma \in \mathcal{S}_n$, so gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau \circ R) = -\mathtt{sgn}(R)$.
+  $\mathtt{sgn}(\tau \circ \sigma) = -\mathtt{sgn}(\sigma)$.
 \end{Korollar}
 
 \proof
@@ -680,7 +711,7 @@ Die Behauptung kann mit Hilfe des letzten Korollars durch eine Induktion nach $k
 \item[I.A.:] $k=1$. Es gilt
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\mathtt{sgn}(\tau) = \mathtt{sgn}(\tau \circ \mathtt{id}_n) = -\mathtt{sgn}(\mathtt{id}_n) = -1 = (-1)^1$.
+             $\mathtt{sgn}(\tau) = \mathtt{sgn}(\tau \circ E_n) = -\mathtt{sgn}(E_n) = -1 = (-1)^1$.
 \item[I.A.:] $k \mapsto k+1$. Wir haben
              \\[0.2cm]
              \hspace*{1.3cm}
@@ -694,49 +725,48 @@ Die Behauptung kann mit Hilfe des letzten Korollars durch eine Induktion nach $k
              $ \qed             
 \end{enumerate}
 
-Da sich jede Permutation $R \in \mathcal{S}_n$ als Produkt von Transpositionen darstellen lässt,
-sehen wir nun, dass das Vorzeichen $\mathtt{sgn}(R)$ genau dann den Wert $+1$ hat, wenn $R$ sich
-als Produkt einer geraden Anzahl von Permutationen darstellen lässt.  Andernfalls hat $\mathtt{sgn}(R)$
+Da sich jede Permutation $\sigma \in \mathcal{S}_n$ als Produkt von Transpositionen darstellen lässt,
+sehen wir nun, dass das Vorzeichen $\mathtt{sgn}(\sigma)$ genau dann den Wert $+1$ hat, wenn $\sigma$ sich
+als Produkt einer geraden Anzahl von Permutationen darstellen lässt.  Andernfalls hat $\mathtt{sgn}(\sigma)$
 den Wert $-1$.  Damit können wir nun den folgenden Satz beweisen.
 
 \begin{Satz} \label{satz:signum}
-Es seien $R_1, R_2 \in \mathcal{S}_n$.  Dann gilt
+Es seien $\varrho_1, \varrho_2 \in \mathcal{S}_n$.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}(R_1 \circ R_2) =\mathtt{sgn}(R_1) \circ \mathtt{sgn}(R_2)$.
+$\mathtt{sgn}(\varrho_1 \circ \varrho_2) =\mathtt{sgn}(\varrho_1) \circ \mathtt{sgn}(\varrho_2)$.
 \end{Satz}
 
 \proof
-Nach Satz \ref{satz:produkt-von-transpositionen} lassen sich sowohl $R_1$ als auch $R_2$ als
+Nach Satz \ref{satz:produkt-von-transpositionen} lassen sich sowohl $\varrho_1$ als auch $\varrho_2$ als
 Produkte von Transpositionen darstellen.  Damit gibt es $k,l \in \mathbb{N}$ sowie
 Transpositionen $\sigma_1, \cdots, \sigma_{k}, \tau_1, \cdots, \tau_l \in \mathcal{S}_n$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$R_1 = \sigma_1 \circ \mbox{\dots} \circ \sigma_{k}$ \quad und \quad
- $R_2 = \tau_1 \circ \mbox{\dots} \circ \tau_l$
+$\varrho_1 = \sigma_1 \circ \mbox{\dots} \circ \sigma_{k}$ \quad und \quad
+ $\varrho_2 = \tau_1 \circ \mbox{\dots} \circ \tau_l$
 \\[0.2cm]
 gilt.   Nach dem letzten Korollar haben wir dann: 
 \begin{enumerate}
-\item $\mathtt{sgn}(R_1) = \mathtt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k}) = (-1)^k$, 
-\item $\mathtt{sgn}(R_2) = \mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^l$,
-\item $\mathtt{sgn}(R_1 \circ R_2) = 
+\item $\mathtt{sgn}(\varrho_1) = \mathtt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k}) = (-1)^k$, 
+\item $\mathtt{sgn}(\varrho_2) = \mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^l$,
+\item $\mathtt{sgn}(\varrho_1 \circ \varrho_2) = 
        \mathtt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k} \circ \tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^{k+l}$.
 \end{enumerate}
 Also haben wir insgesamt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}(R_1 \circ R_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \mathtt{sgn}(R_1) \cdot \mathtt{sgn}(R_2)$.  
+$\mathtt{sgn}(\varrho_1 \circ \varrho_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \mathtt{sgn}(\varrho_1) \cdot \mathtt{sgn}(\varrho_2)$.  
 \qed
 
 \section{Die Definition der Determinante nach Leibniz}
 Wir haben nun alles Material zusammen um die Determinante einer $n \times n$ Matrix so zu
 definieren, wie dies 1690 von
 \href{http://de.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz\footnote{
- In der Vorlesung hatte ich Gottfried Wilhelm Leibniz scherzhaft als den Erfinder des
- \href{http://en.wikipedia.org/wiki/Leibniz-Keks}{Butterkekses} bezeichnet.  Nach ihren eigenen 
- \href{http://www.bahlsen.com/verbraucherservice/faq/marke-leibniz/}{Aussagen} hat
- die Firma \href{http://www.bahlsen.com}{Bahlsen} den Butterkeks tatsächlich nach dem Mathematiker
- Gottfried Wilhelm Leibniz benannt. 
+  Der erfreuliche Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
+  Begriff ist, haben wir   der Firma \href{http://www.bahlsen.com}{Bahlsen} zu verdanken, die ihre
+  \href{http://en.wikipedia.org/wiki/Leibniz-Keks}{Butterkekse} tatsächlich nach diesem Mathematiker
+  bennant haben.
 }} 
 vorgeschlagen wurde.  Ist $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$, wobei entweder 
 $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir die
@@ -744,7 +774,7 @@ $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir d
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\mathtt{det}(A) :=  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)} 
-  := \sum \bigl\{ \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)} \bigm| \sigma \in \mathcal{S}_n \bigr\}
+  := \sum \Bigl\{ \mathtt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \bigm| \sigma \in \mathcal{S}_n \Bigr\}
 $.
 
 \example
@@ -786,10 +816,53 @@ $\mathtt{det}(A) = \mathtt{det}\left(\begin{array}{ll}
   = a_{1,1} \cdot a_{2,2} - a_{1,2} \cdot a_{2,1} 
 $
 \eoxs
+\pagebreak
+
+\example
+Ist $A$ eine $3 \times 3$ Matrix, gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = \left(
+  \begin{array}{lll}
+    a_{1,1} & a_{1,2} & a_{1,3} \\[0.2cm] 
+    a_{2,1} & a_{2,2} & a_{2,3} \\[0.2cm]
+    a_{3,1} & a_{3,2} & a_{3,3} 
+  \end{array}
+  \right),
+$
+\\[0.2cm]
+so finden wir für $\mathtt{det}(A)$ die folgende Formel:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{lcl}
+  \mathtt{det}(A) & = & a_{1,1} \cdot a_{2,2} \cdot a_{3,3}  \\
+                  & + & a_{1,2} \cdot a_{2,3} \cdot a_{3,1}  \\
+                  & + & a_{1,3} \cdot a_{2,1} \cdot a_{3,2}  \\
+                  & - & a_{3,1} \cdot a_{2,2} \cdot a_{1,3}  \\
+                  & - & a_{3,2} \cdot a_{2,3} \cdot a_{1,1}  \\
+                  & - & a_{3,3} \cdot a_{2,1} \cdot a_{1,2}
+\end{array}
+$
+\\[0.2cm]
+Diese Formel wird auch als \emph{Regel von Sarrus} bezeichnet.  Abbildung \ref{fig:sarrus.eps}
+zeigt, wie Sie sich die Formel leicht merken können:  Dazu wiederholen Sie neben der Matrix $A$ die
+ersten beiden Spalten von $A$.  Anschließend bilden Sie alle Produkte von Elementen der Matrix, die
+auf einer fallenden oder steigenden Diagonalen liegen.  Die Produkte auf den fallenden Diagonalen
+werden addiert, während die Produkte auf den steigenden Diagonalen subtrahiert werden.
+\eoxs
+
+\begin{figure}[h]
+  \centering
+  \epsfig{file=Abbildungen/sarrus.eps, scale=0.1}
+  \caption{Die Regel von Sarrus.}
+  \label{fig:sarrus.eps}
+\end{figure}
 
 \exercise
-Geben Sie die Formel zur Berechnung der Determinate einer $3 \times 3$ Matrix an!
+Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab. 
 \eox
+
 
 \begin{figure}[!ht]
 \centering
@@ -802,7 +875,13 @@ Geben Sie die Formel zur Berechnung der Determinate einer $3 \times 3$ Matrix an
                   xleftmargin   = 0.8cm,
                   xrightmargin  = 0.8cm,
                 ]
-   load("signum.stlx");
+   inv := procedure(r) {
+       n := #r;
+       return { [k,l]: [k,l] in {1 .. n} >< {1 .. n} | k<l && r[k]>r[l] };
+   };
+   signum := procedure(l) {
+       return (-1) ** #inv(l);
+   };
    determinant := procedure(n) {
         det := "";
         for (l in allPermutations(n)) {
@@ -1173,7 +1252,7 @@ $\mathtt{det}\left(
   \end{array}  \right)
 $.
 \eoxs
-\pagebreak
+
 
 \remark
 Die letzten Lemmata und die dazugehörigen Aufgaben können wir so zusammenfassen, dass wir sagen, dass
