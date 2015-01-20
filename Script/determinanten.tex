@@ -3,8 +3,11 @@ Der Begriff der \emph{Determinante} ist einer der zentralen Begriff der linearen
 werden Determinanten bei der Berechnung von \emph{Eigenwerten} zur Definition des \emph{charakteristischen Polynoms} benötigt,
 andererseits spielen Determinanten auch außerhalb der linearen Algebra eine Rolle, beispielsweise
 bei der Berechnung mehrdimensionaler Integrale.  
-Um Determinanten einführen zu können, müssen wir zunächst das \emph{Signum} einer Permutation definieren.
-Bedauerlicherweise ist dies mit einigem technischen Aufwand verbunden. 
+Um Determinanten einführen zu können, müssen wir zunächst das \emph{Signum} einer Permutation
+definieren und dann zeigen, dass es sich bei dieser Funktion um einen Gruppen-Homomorphismus handelt.
+Letzteres ist mit einem nicht unerheblichen technischen Aufwand verbunden. 
+\renewcommand{\labelenumi}{(\alph{enumi})}
+\renewcommand{\labelenumii}{\arabic{enumii}.}
 
 
 \section{Permutationen und Transpositionen}
@@ -15,7 +18,7 @@ Ist $R \in \mathcal{S}_n$, so hat $R$ die Form
 $R = \bigl\{ \pair(1,x_1), \cdots, \pair(n,x_n) \bigr\}$ \quad mit $\{ x_1, \cdots, x_n \} =\{1,\cdots,n\}$.
 \\[0.2cm]
 Da $R$ durch die Angabe der Zahlen $x_1,\cdots,x_n$ vollständig bestimmt ist, vereinbaren wir, in
-Zukunft der Kürze halber die Permutation $R$ auch als die Liste 
+Zukunft der Kürze halber die oben angegebene Permutation $R$ auch als die Liste 
 \\[0.2cm]
 \hspace*{1.3cm}
 $R = [x_1,\cdots,x_n]$
@@ -93,8 +96,8 @@ Verfügung steht.
   \hspace*{1.3cm}
   $\mathtt{sgn}(R) := (-1)^{\mathtt{card}(\mathtt{inv}(R))}$.
   \\[0.2cm]
-  Das Signum einer Permutation ist folglich $1$, wenn die Anzahl der Inversionen von $R$ eine gerade
-  Zahl ist, ansonsten hat das Signum den Wert $-1$.  \qed
+  Das Signum einer Permutation ist folglich $+1$, wenn die Anzahl der Inversionen von $R$ eine gerade
+  Zahl ist, ansonsten hat das Signum den Wert $-1$.  \eox
 \end{Definition}
 
 
@@ -138,15 +141,14 @@ durch eine Liste dar, so gilt also
 $\mathtt{id}_n = [1,2,3, \cdots, n]$.
 \\[0.2cm]
 Zeigen Sie, dass für alle natürlichen Zahlen $n$ die Gleichung
-\quad
  $\mathtt{sgn}(\mathtt{id}_n) = 1$
-\quad gilt.  \eoxs
+ gilt.  \eoxs
 
 
 \exercise
 Überlegen Sie, für welche Permutation $R \in \mathcal{S}_n$ die Kardinalität der Menge
 $\mathtt{inv}(R)$ maximal wird und berechnen Sie für diese Permutationen den Ausdruck
-$\mathtt{card}(\mathtt{inv}(R))$. \eox
+$\mathtt{card}(\mathtt{inv}(R))$. \eoxs
 \pagebreak
 
 Im Allgemeinen können Permutationen beliebig kompliziert sein.  Es lohnt sich, zunächst ganz
@@ -207,17 +209,13 @@ klar hervor, welches $n \in  \mathbb{N}$ gemeint ist und andererseits ist es oft
 unwichtig, denn jede Permutation $\sigma \in \mathcal{S}_n$ kann in trivialer Weise zu einer Permutation
 $\sigma'\in \mathcal{S}_m$ erweitert werden, falls $m \geq n$ gilt. \eox
 
-Transpositionen sind einfacher als beliebige Permutationen und wir werden gleich sehen, dass sich
-für eine Transpositionen $\tau$ das Vorzeichen $\mathtt{sgn}(\tau)$ sofort berechnen lässt, denn es gilt
-\\[0.2cm]
-\hspace*{1.3cm}
+Transpositionen sind einfacher als beliebige Permutationen und in der nächsten Aufgabe werden wir
+sehen, dass sich  für eine Transpositionen $\tau$ das Vorzeichen $\mathtt{sgn}(\tau)$ sofort berechnen lässt, denn es gilt
 $\mathtt{sgn}\bigl(\pair(k,l)\bigr) = -1$.
-\\[0.2cm]
-Der Nachweis dieser Behauptung ist Gegenstand der folgenden Aufgabe.
 
 \exercise
-Die Transposition $\tau$ habe die Form \quad $\tau = \pair(k,l)$ \quad
-und es gelte $k < l$.  Berechnen Sie $\mathtt{inv}(\tau)$ und $\mathtt{sgn}(\tau)$.
+Die Transposition $\tau$ habe die Form  $\tau = \pair(k,l)$ 
+und es gelte $k < l$.  Berechnen Sie die Ausdrücke $\mathtt{inv}(\tau)$ und $\mathtt{sgn}(\tau)$.
 \eox
 
 
@@ -1055,7 +1053,7 @@ $\left(
   \begin{array}{ll}
     \vec{a}_1 \\ \vdots \\ \vec{a_l} \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
-  \right)
+  \right) =: \tau(A)
 $
 \\[0.2cm]
 aus $A$ dadurch entsteht, dass wir die $k$-te Zeile von $A$ mit der $l$-ten Zeile $A$ vertauschen.
@@ -1064,18 +1062,7 @@ aus $A$ dadurch entsteht, dass wir die $k$-te Zeile von $A$ mit der $l$-ten Zeil
 \proof
 Es sei $\tau = \pair(k,l)$ die Transposition, die $k$ mit $l$ vertauscht.  Wir definieren $\tau(A)$
 als die Matrix, die aus der Matrix $A$ durch Vertauschen der $k$-ten Zeile mit der $l$-ten Zeile
-hervorgeht, es gilt also
-\\[0.2cm]
-\hspace*{1.3cm}
-$\tau(A) :=
-\left(
-  \begin{array}{ll}
-    \vec{a}_1 \\ \vdots \\ \vec{a_l} \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
-  \end{array} 
-  \right)
-$. 
-\\[0.2cm]
-In Komponentenschreibweise haben wir dann
+hervorgeht.  In Komponentenschreibweise haben wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $\tau(A) = \bigl(a_{\tau(i),j}\bigr)_{{i = 1,\cdots,n} \atop {j = 1,\cdots,n}}$.
@@ -1096,7 +1083,7 @@ $
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}
             \\[0.4cm]
-& & \mbox{Hier wird nur das nach dem Kommutativ-Gesetz benutzt.} \\[0.2cm]
+& & \mbox{Hier wird nur das dem Kommutativ-Gesetz benutzt.} \\[0.2cm]
 & = &
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(k))} \cdot \mbox{$\dots$} \cdot
@@ -1130,11 +1117,11 @@ $
 \remark
 Der gerade bewiesene Satz ist der am schwersten zu beweisende Satz in der Theorie der
 Determinanten.  Das liegt daran, dass dies der einzige Satz in dieser Theorie ist, bei dessen Beweis
-wir die Eigenschaften der Funktion $\mathtt{sgn}$ tatsächlich benötigen.  Der Rest der Theorie läuft
-jetzt wie von selber. 
+wir die Eigenschaften der Funktion $\mathtt{sgn}$ tatsächlich benötigen.  
 \eoxs
+\pagebreak
 
-\exerciseStar
+\exercise
 Wir definieren zu einer Matrix $A \in \mathbb{K}^{n \times n}$ die \emph{transponierte Matrix} 
 $A^T = (a^T_{i,j})$ indem wir
 \\[0.2cm]
@@ -1465,7 +1452,7 @@ Teilen wir die obige Gleichung dann durch dieses $\lambda_k$ und bringen die Aus
 auf die andere Seite der Gleichung, so folgt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{a}_k = - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i$.
+$\ds\vec{a}_k = - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i$.
 \\[0.2cm]
 Durch wiederholtes Anwenden des letzten Satzes können wir zur $k$-ten Spalte der Matrix $A$
 nacheinander das $-\bruch{\lambda_i}{\lambda_k}$-fache der $i$-ten Spalte für alle $i \in \{1,\cdots,n\} \backslash \{k\}$ 
@@ -1733,14 +1720,15 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      \hspace*{1.3cm}
      $A = (\vec{a}_1, \cdots, \vec{a}_n)$,
      \\[0.2cm]
-     wobei $\vec{a}_1,\cdots,\vec{a}_n$ die der Spalten-Vektoren von $A$ sind, so folgt aus
+     wobei $\vec{a}_1,\cdots,\vec{a}_n$ die  Spalten-Vektoren von $A$ sind, so folgt aus
      der Gleichung $A \cdot \vec{x} = \vec{0}$ die Gleichung
      \\[0.2cm]
      \hspace*{1.3cm}
-     $\sum\limits_{i=1}^n x_i \cdot \vec{a}_i = \vec{0}$,
+     $\ds\sum\limits_{i=1}^n x_i \cdot \vec{a}_i = \vec{0}$,
      \\[0.2cm]
      wobei hier die $x_i$ die Komponenten des Vektors $\vec{x}$ bezeichnen.  Damit sind aber die
      Spalten-Vektoren der Matrix $A$ linear abhängig und nach einem früher bewiesenen Lemma folgt
+     die Gleichung
      $\mathtt{det}(A) = 0$. \qed
 \end{enumerate}
 
@@ -1769,7 +1757,8 @@ $\mathtt{det}(A) = \prod\limits_{i=1}^n a_{i,i}$
 berechnet werden kann.  
 \vspace*{0.2cm}
 
-\noindent{Hinweis}:  Der Beweis der Behauptung kann am einfachsten unter Verwendung der Definition
+\noindent
+\textbf{Hinweis}:  Der Beweis der Behauptung kann am einfachsten unter Verwendung der Definition
 der Determinante nach Leibniz erbracht werden. 
 \eoxs
 

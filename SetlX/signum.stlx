@@ -2,7 +2,9 @@
 // r. The permutation r is represented as a list.
 inv := procedure(r) {
     n := #r;
-    return { [k,l] : [k, l] in {1 .. n} >< {1 .. n} | k < l && r[k] > r[l] };
+    return { [k,l] : [k, l] in {1 .. n} >< {1 .. n}
+                   | k < l && r[k] > r[l]
+	   };
 };
 
 // Tis function computes the sign of the permutation l.  

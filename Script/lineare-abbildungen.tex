@@ -107,17 +107,17 @@ Tabelle \ref{tab:morphism} zeigt eine Zusammenfassung dieser Definitionen.
   \begin{tabular}{||l|l|l||}
     \hline
     \hline
-   $f \in \mathcal{L(V,W)}$ &           & Homomorphismus \\ 
+   $f \in \mathcal{L}(V,W)$ &           & Homomorphismus \\ 
     \hline
-   $f \in \mathcal{L(V,W)}$ & injektiv  & Monomorphismus \\ 
+   $f \in \mathcal{L}(V,W)$ & injektiv  & Monomorphismus \\ 
     \hline
-   $f \in \mathcal{L(V,W)}$ & surjektiv & Epimorphismus \\ 
+   $f \in \mathcal{L}(V,W)$ & surjektiv & Epimorphismus \\ 
     \hline
-   $f \in \mathcal{L(V,W)}$ & bijektiv  & Isomorphismus \\ 
+   $f \in \mathcal{L}(V,W)$ & bijektiv  & Isomorphismus \\ 
     \hline
-   $f \in \mathcal{L(V,V)}$ &           & Endomorphismus \\ 
+   $f \in \mathcal{L}(V,V)$ &           & Endomorphismus \\ 
     \hline
-   $f \in \mathcal{L(V,V)}$ & bijektiv  & Automorphismus \\ 
+   $f \in \mathcal{L}(V,V)$ & bijektiv  & Automorphismus \\ 
     \hline
     \hline
   \end{tabular}
@@ -599,15 +599,15 @@ $f : \mathbb{K}^l \rightarrow \mathbb{K}^m$  \quad und \quad $g: \mathbb{K}^m\ri
 durch die Festlegung
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\vec{x}) := A \cdot \vec{x}$ \quad f.a.~$\vec{x} \in \mathbb{K}^l$,
+$f(\vec{x}) := A \cdot \vec{x}$ \quad für alle~$\vec{x} \in \mathbb{K}^l$,
  \quad und \quad
- $g(\vec{y}) := B \cdot \vec{y}$ \quad f.a.~$\vec{y} \in \mathbb{K}^m$,
+ $g(\vec{y}) := B \cdot \vec{y}$ \quad für alle~$\vec{y} \in \mathbb{K}^m$,
  \\[0.2cm]
 definieren.  Da der Werte-Bereich der Funktion $f$ eine Teilmenge des Definitions-Bereichs der
 Funktion $g$ ist, können wir die beiden Funktionen zu einer neuen Funktion $h$ verknüpfen, indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$h(\vec{x}) := (g \circ f)(\vec{x}) = g(f(\vec{x}))$ \quad f.a.~$\vec{x} \in \mathbb{K}^l$,
+$h(\vec{x}) := (g \circ f)(\vec{x}) = g(f(\vec{x}))$ \quad für alle~$\vec{x} \in \mathbb{K}^l$,
 \\[0.2cm]
 definieren.  Sie können leicht nachweisen, dass die Funktion $h$ wieder eine lineare Funktion ist
 und dass 
@@ -647,7 +647,7 @@ $
 Definieren wir also die Komponenten der Matrix $C = (c_{i,j})$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f.a. $i \in \{1,\cdots,n\}, j \in\{1,\cdots,m\}$,
+$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad für alle $i \in \{1,\cdots,n\}$ und $j \in\{1,\cdots,l\}$,
 \\[0.2cm]
 so sehen wir, dass diese Matrix dasselbe bewirkt, wie die sukzessive Anwendung der Matrizen $A$ und
 $B$.  Daher definieren wir für eine 
@@ -656,7 +656,7 @@ $A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})$ die Produkt-Matrix $C= 
  Matrix $C = (c_{i,j})$, deren Komponenten durch die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f.a. $i \in \{1,\cdots,n\}, j \in\{1,\cdots,l\}$,
+$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad für alle $i \in \{1,\cdots,n\}, j \in\{1,\cdots,l\}$,
 \\[0.2cm]
 gegeben sind.
 
@@ -838,9 +838,9 @@ definieren.  Wenn wir nun Glück haben und die Matrix $A$ invertierbar ist, so kö
 Gleichung $A \cdot \vec{x} = \vec{b}$ von links mit $A^{-1}$ multiplizieren.  Dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$A^{-1} \cdot A \cdot \vec{x} = A^{-1} \cdot \vec{b}$
+$A^{-1} \cdot A \cdot \vec{x} = A^{-1} \cdot \vec{b}$,
 \\[0.2cm]
-was wegen $A^{-1} \cdot A \cdot \vec{x} = \mathrm{E}_n \cdot \vec{x} = \vec{x}$ zu
+was wegen $A^{-1} \cdot A \cdot \vec{x} = \mathrm{E}_n \cdot \vec{x} = \vec{x}$ zu der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\vec{x} = A^{-1} \cdot \vec{b}$
@@ -852,7 +852,7 @@ sinnvolles Vorgehen, wenn die Gleichung $A \cdot \vec{x} = \vec{b}$ für mehrere 
 $\vec{b}$ gelöst werden soll.  \eoxs
 
 \begin{Definition}
-  Es sei $n\in\mathbb{N}$, $k \in \{1,\cdots,n\}$ und $l \in \{1,\cdots,n\}$.  Dann 
+  Es sei $n\in\mathbb{N}$ und $k,l \in \{1,\cdots,n\}$.  Dann 
   definieren wir die $n \times n$ \emph{Atomar-Matrix} $\mathrm{A}(k,l)$ so, dass in Komponentenschreibweise
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -861,6 +861,7 @@ $\vec{b}$ gelöst werden soll.  \eoxs
   gilt.  Die Atomar-Matrix $\mathrm{A}(k,l)$ hat damit genau in der $k$-ten Zeile in der $l$-ten Spalte eine
   Eins und alle anderen Einträge der Matrix sind Null.  \eoxs
 \end{Definition}
+\pagebreak
 
 \exercise
 Es gelte $B \in \mathbb{K}^{n \times n}$ und $\mathrm{A}_n(k,l) \in \mathbb{K}^{n \times n}$ sei eine Atomar-Matrix.  
@@ -921,7 +922,7 @@ mit $\alpha$.
   $\alpha \in \mathbb{K}$, wobei zusätzlich $\alpha \not= 0$ zu gelten hat.  Dann definieren wir die
   Elementar-Matrizen wie folgt:
   \begin{enumerate}
-  \item Für $k\not=l$ wird die $n \times n$ Zeilen-Additions-Matrix $\mathrm{ZA}_n(k,l,\alpha)$ durch
+  \item Für $k\not=l$ wird die $n \times n$ \emph{Zeilen-Additions-Matrix} $\mathrm{ZA}_n(k,l,\alpha)$ durch
         \\[0.2cm]
         \hspace*{1.3cm}
         $\mathrm{ZA}_n(k,l,\alpha) := \mathrm{E}_n + \alpha \cdot \mathrm{A}_n(k,l)$
@@ -960,7 +961,7 @@ mit $\alpha$.
           \end{array}
         \right).
         $       
-\item Die $n \times n$ Zeilen-Permutations-Matrix $\mathrm{ZP}_n(k,l)$ wird durch die Gleichung 
+\item Die $n \times n$ \emph{Zeilen-Permutations-Matrix} $\mathrm{ZP}_n(k,l)$ wird durch die Gleichung 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathrm{ZP}_n(k,l) := \mathrm{E}_n + \mathrm{A}_n(k,l) + \mathrm{A}_n(l,k) - \mathrm{A}_n(k,k) - \mathrm{A}_n(l,l)$.
@@ -1002,7 +1003,7 @@ mit $\alpha$.
       der Term $\mathrm{A}_n(l,k) \cdot B$ transportiert die $k$-te Zeile von $B$ in
       die $l$-te Zeile und die beiden Terme $-\mathrm{A}_n(k,k) \cdot B$ und $-\mathrm{A}_n(l,l) \cdot B$ 
       entfernen die $k$-te Zeile beziehungsweise die $l$-te Zeile von $B$.
-\item Die $n \times n$ Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ wird für $\alpha \not= 0$ durch die Gleichung
+\item Die $n \times n$ \emph{Zeilen-Multiplikations-Matrix} $\mathrm{ZM}_n(k, \alpha)$ wird für $\alpha \not= 0$ durch die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathrm{ZM}_n(k, \alpha) := \mathrm{E}_n + (\alpha - 1) \cdot \mathrm{A}_n(k, k) $
@@ -1199,7 +1200,7 @@ diese Implementierung jetzt Zeile für Zeile:
       Liste \texttt{a}.
 \item Das Prinzip der Berechnung der inversen Matrix $\mathtt{a}^{-1}$ ist, dass $\mathtt{a}$
       mittels elementarer Zeilen-Umformungen in die Einheits-Matrix $\mathrm{E}_n$ überführt wird.
-      Gleichzeitig werden diese Zeilen-Umformungen auf die Einheits-Matrix $\mathrm{E}_n$ angewendet
+      Gleichzeitig werden diese Umformungen auf die Einheits-Matrix $\mathrm{E}_n$ angewendet
       und am Ende enthält dann die umgeformte Einheits-Matrix das Inverse der Matrix $\mathtt{a}$.
  
       Zu diesem Zweck berechnen wir in Zeile 3 die Einheits-Matrix $\mathrm{E}_n$ mit Hilfe der
