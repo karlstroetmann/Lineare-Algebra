@@ -1044,14 +1044,14 @@ Hier ist
 \hspace*{1.3cm}
 $A = \left(
   \begin{array}{ll}
-    \vec{a}_1 \\ \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right),
 $
 \quad während die Matrix \quad
 $\left(
   \begin{array}{ll}
-    \vec{a}_1 \\ \vdots \\ \vec{a_l} \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right) =: \tau(A)
 $
@@ -1261,7 +1261,7 @@ die Determinante eine normierte, alternierende Multilinear-Form ist:
 \item Alternierend ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}(\cdots, \vec{ a}_ k, \cdots, \vec{ a}_l, \cdots) = -\mathtt{det}(\cdots, \vec{ a}_l, \cdots, \vec{ a}_k, \cdots)$
+      $\mathtt{det}(\cdots, \vec{a}_ k, \cdots, \vec{a}_l, \cdots) = -\mathtt{det}(\cdots, \vec{a}_l, \cdots, \vec{a}_k, \cdots)$
       \\[0.2cm]
       gilt.  Das Vertauschen zweier Spalten ändert das Vorzeichen der Determinante.  
 
@@ -1338,7 +1338,7 @@ Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, folgt $\mathtt{det
   hat, gilt also \quad
   $B = 
   \left(\begin{array}{c}
-    \vec{a}_1 \\ \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots \\ \vec{a}_n
+    \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
 $.
@@ -1387,16 +1387,16 @@ $
 \begin{array}[b]{lcl}
 \mathtt{det}(B) & = & 
   \mathtt{det}\left(\begin{array}{c}
-    \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots 
+    \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} 
   \right) \\[1.5cm]
  & = &
 \mathtt{det}\left(\begin{array}{c}
-  \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l \\ \vdots 
+  \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l \\ \vdots 
   \end{array} 
   \right) +
   \mathtt{det}\left(\begin{array}{c}
-    \vdots \\ \vec{a_k} \\ \vdots \\ \lambda \cdot \vec{a}_k \\ \vdots 
+    \vdots \\ \vec{a}_k \\ \vdots \\ \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} 
   \right) \\[1.5cm]
  & = & \mathtt{det}(A) + \mathtt{det}(D) \\[0.2cm]
@@ -1463,9 +1463,9 @@ $
 \begin{array}[t]{lcl}
   \mathtt{det}(A) & = & \mathtt{det}(\vec{a}_1, \cdots, \vec{a}_k, \cdots, \vec{a}_n) \\[0.2cm]
                   & = & \mathtt{det}(\vec{a}_1, \cdots, 
-                        \vec{a}_k - \bruch{\lambda_1}{\lambda_k} \cdot \vec{a_1}, \cdots, \vec{a}_n) \\[0.2cm]
+                        \vec{a}_k - \bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1, \cdots, \vec{a}_n) \\[0.2cm]
                   & = & \mathtt{det}(\vec{a}_1, \cdots, 
-                        \vec{a}_k -\bruch{\lambda_1}{\lambda_k} \cdot \vec{a_1} - \bruch{\lambda_2}{\lambda_k} \cdot \vec{a_2},
+                        \vec{a}_k -\bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1 - \bruch{\lambda_2}{\lambda_k} \cdot \vec{a}_2,
                         \cdots, \vec{a}_n) \\[0.2cm] 
                   & = & \vdots \\
                   & = & \mathtt{det}(\vec{a}_1, \cdots, 
