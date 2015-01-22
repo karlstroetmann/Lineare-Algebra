@@ -22,8 +22,9 @@ allPermutations := procedure(n) {
     return { p[..k-1] + [n] + p[k..]: p in allPermutations(n-1), k in [1..n] };
 };
 
-test := procedure(n) {
-    for (n in [1..n]) {
+test := procedure(m) {
+    for (n in [1..m]) {
+      print("");
         sn := allPermutations(n);
         print("For n = $n$ there are $#sn$ permutations.");
         for (p in sn) {
@@ -33,4 +34,4 @@ test := procedure(n) {
     }
 };
 
-//test(4);
+test(4);
