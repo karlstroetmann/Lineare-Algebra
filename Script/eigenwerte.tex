@@ -116,7 +116,7 @@ $\mathrm{D}: \mathcal{C}^\infty(\mathbb{R}) \rightarrow  \mathcal{C}^\infty(\mat
 der auf dem Raum 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathcal{C}^\infty := \bigl\{ f \in \mathbb{R}^\mathbb{R} \mid \mbox{$f$ ist beliebig oft  differenzierbar} \bigr\}$
+$\mathcal{C}^\infty(\mathbb{R}) := \bigl\{ f \in \mathbb{R}^\mathbb{R} \mid \mbox{$f$ ist beliebig oft  differenzierbar} \bigr\}$
 \\[0.2cm]
 durch die Gleichung
 \\[0.2cm]
@@ -124,7 +124,7 @@ durch die Gleichung
 $\mathrm{D}(f) := \displaystyle\frac{\mathrm{d}f}{\mathrm{d}x}$
 \\[0.2cm]
 definiert ist, die Funktion $x \mapsto e^x$ als Eigenvektor zum Eigenwert $1$.  
-Der Vektor-Raum $\mathcal{C}^\infty$ der unendlich oft differenzierbaren Funktionen ist
+Der Vektor-Raum $\mathcal{C}^\infty(\mathbb{R})$ der unendlich oft differenzierbaren Funktionen ist
 unendlich-dimensional und hat daher eine wesentlich komplexere Struktur als die
 endlich-dimensionalen Vektor-Räume, mit denen wir uns im Rest dieser Vorlesung beschäftigen werden.
 Da bei endlich-dimensionalen Vektor-Räumen jede lineare Abbildung durch eine Matrix dargestellt
@@ -133,8 +133,8 @@ von Matrizen beschränken.
 \eox
 
 Der folgende Satz stellt einen Zusammenhang zwischen Eigenwerten und Determinanten her.  Dieser Satz
-ist der Grund, warum wir den Begriff der Determinanten im letzten Kapitel 
-eingeführt haben.
+ist der Grund, warum wir gezwungen waren, den zugegebenermaßen sehr komplexen Begriff der
+Determinanten im letzten Kapitel einzuführen.
 
 \begin{Satz}
   Es sei $A \in \mathbb{K}^{n \times n}$.  Dann ist $\lambda \in \mathbb{K}$ genau dann ein
@@ -565,10 +565,10 @@ $
 \\[0.2cm]
 Die erste Komponente von $\vec{x}_n$ ist gleich $f_n$.  Daher haben wir für die $n$-te
 Fibonacci-Zahl $f_n$ die Gleichung 
-\\[0.2cm]
+\\
 \hspace*{3.3cm}
 \colorbox{orange}{\framebox{\framebox{$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$}}}
-\\[0.2cm]
+\\
 gefunden.
 
 \exercise
@@ -577,7 +577,7 @@ Lösen Sie die Rekurrenz-Gleichung
 \hspace*{1.3cm}
 $a_{n+2} = 3 \cdot a_{n+1} - 2 \cdot a_n$ \quad für die Anfangs-Bedingungen $a_0 = 0$, $a_1 = 1$
 \\[0.2cm]
-mit Hilfe der in diesem Abschnitt vorgestellten Methode.
+mit Hilfe der in diesem Abschnitt vorgestellten Methode. \eox
 
 %%% Local Variables: 
 %%% mode: latex

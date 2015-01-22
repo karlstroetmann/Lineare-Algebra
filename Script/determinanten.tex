@@ -1297,6 +1297,7 @@ Eigenschaften benutzen.
 \begin{Lemma}
   Es sei $A \in \mathbb{K}^{n \times n}$,  $k,l \in \{1,\cdots,n\}$ mit $k\not=l$ und die $k$-te
   Zeile von $A$ sei mit der $l$-ten Zeile von $A$ identisch.  
+  Weiter sei $\mathbb{K} = \mathbb{R}$ oder $\mathbb{K} = \mathbb{C}$.
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -1317,7 +1318,7 @@ Daraus folgt
 $2 \cdot \mathtt{det}(A) = 0$
 \\[0.2cm]
 und da wir annehmen\footnote{
-  In einem endlichen Körper kann es passieren, dass $2 = 0$
+  In einem endlichen Körper kann es passieren, dass $1 + 1 = 0$
   ist.  In einem solchen Fall dürften wir die obige Gleichung nicht durch 2 dividieren.
 }, dass der Körper $\mathbb{K}$ entweder der Körper $\mathbb{R}$ der reellen
 Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, folgt $\mathtt{det}(A) = 0$.
@@ -1547,9 +1548,57 @@ $B \cdot A = \mathrm{E}_n$ \quad und \quad $A \cdot B = \mathrm{E}_n$,
 wobei $\mathrm{E}_n$ die $n \times n$ Einheits-Matrix bezeichnet.  Damit ist $B$ die zu $A$ inverse
 Matrix, es gilt also $B = A^{-1}$. 
 
-\begin{Lemma}
-  Die Matrix $A \in \mathbb{K}^{n \times n}$ sei invertierbar.  Dann gilt $\mathtt{det}(A) \not= 0$.
+\begin{Lemma} \label{lemma:ze}
+Es sei $B \in \mathbb{K}^{n \times n}$ und es $\mathrm{ZE}$ sei eine Elementar-Matrix.
+Weiter sei $\mathtt{det}(B) \not= 0$.  Dann gilt auch 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{det}(\mathrm{ZE} \cdot B) \not= 0$.  
 \end{Lemma}
+
+\proof
+Wir erbringen den der Behauptung durch eine Fallunterscheidung nach der Form der Elementar-Matrix $\mathrm{ZE}_i$.
+\begin{enumerate}
+\item Fall: $\mathrm{ZE} = \mathrm{ZA}_n(k,l,\alpha)$. 
+  
+      Multiplizieren wir die Matrix $B$ mit der Zeilen-Additions-Matrix $\mathrm{ZA}_n(k,l,\alpha)$,
+      so besteht die Wirkung dieser Multiplikation darin, dass die $l$-te Zeile von $B$  mit $\alpha$ multipliziert
+      zur $k$-ten Zeile von $B$ hinzu addiert wird.  Nach Lemma \ref{lemma:det-add-line}
+      ändert sich der Wert der Determinante dabei nicht und folglich gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathtt{det}\bigl(\mathrm{ZA}_n(k,l,\alpha) \cdot B\bigr) = \mathtt{det}(B) \not= 0$,
+      \\[0.2cm]
+      denn wir haben vorausgesetzt, dass $\mathtt{det}(B) \not= 0$ gilt.
+\item Fall: $\mathrm{ZE} = \mathrm{ZP}_n(k,l)$.
+
+      Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
+      $\mathrm{ZP}_n(k,l)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$ mit der
+      $l$-ten Zeile von $B$ vertauscht wird.
+      Da das Vertauschen zweier Zeilen das Vorzeichen der Determinante umdreht, haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathtt{det}\bigl(\mathrm{ZP}_n(k,l) \cdot B\bigr) = -\mathtt{det}(B) \not= 0$,
+      \\[0.2cm]
+      denn wir haben vorausgesetzt, dass $\mathtt{det}(B) \not= 0$ gilt.
+\item Fall: $\mathrm{ZE} = \mathrm{ZM}_n(k, \alpha)$ \quad mit $\alpha \not= 0$.
+
+      Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
+      $\textrm{ZM}_n(k,\alpha)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$
+      mit $\alpha$ multipliziert wird.
+      Auf Grund der Homogenität der Determinanten-Funktion folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathtt{det}\bigl(\mathrm{ZM}_n(k,\alpha) \cdot B) = \alpha \cdot \mathtt{det}(B) \not= 0$,
+      \\[0.2cm]
+      denn einerseits ist $\alpha \not= 0$ und andererseits       
+      haben wir vorausgesetzt, dass $\mathtt{det}(B) \not= 0$ gilt. \qed
+\end{enumerate}
+
+
+\begin{Satz}
+  Die Matrix $A \in \mathbb{K}^{n \times n}$ sei invertierbar.  Dann gilt $\mathtt{det}(A) \not= 0$.
+\end{Satz}
 
 \proof
 Im letzten Kapitel hatten wir gezeigt, wie sich zu einer invertierbaren Matrix $A$ die Inverse
@@ -1566,121 +1615,15 @@ lässt sich die obige Gleichung zu
 \hspace*{1.3cm}
 $A = \mathrm{ZE}_1^{-1} \cdot \mbox{\dots} \cdot \mathrm{ZE}_k^{-1} \cdot \mathrm{E}_n$
 \\[0.2cm]
-umschreiben.  Wir wissen, dass die Determinante der Einheits-Matrix $\mathrm{E}_n$ den Wert $1$ hat.
-Wir untersuchen nun, wie sich dieser Wert durch die Multiplikation mit den Elementar-Matrizen ändert
-und zeigen allgemein, dass für jede Elementar-Matrix $\mathrm{ZE}_i$ und eine beliebige Matrix $B$
-folgendes gilt:
+umschreiben.  Zusätzlich wissen wir, dass das Inverse einer Elementar-Matrix wieder eine Elementar-Matrix ist. 
+Da $\mathrm{det}(E_n) = 1 \not= 0$ ist, können wir dann durch $k$-malige Anwendung von Lemma
+\ref{lemma:ze} folgern, dass auch  
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(B) \not= 0 \rightarrow \mathtt{det}(\mathrm{ZE}_i \cdot B) \not= 0$
+$\mathrm{det}(\mathrm{ZE}_1^{-1} \cdot \mbox{\dots} \cdot \mathrm{ZE}_k^{-1} \cdot \mathrm{E}_n) \not = 0$
 \\[0.2cm]
-Den Nachweis dieser Behauptung führen wir durch eine Fallunterscheidung nach der Art von $\mathrm{ZE}_i$.
-\begin{enumerate}
-\item Fall: $\mathrm{ZE}_i = \mathrm{ZA}_n(k,l,\alpha)$. 
-  
-      Wir haben im letzten Kapitel gezeigt, dass 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\bigl(\mathrm{ZA}_n(k,l,\alpha)\bigr)^{-1} = \mathrm{ZA}_n(k,l,-\alpha)$
-      \\[0.2cm]
-      gilt.  Die Wirkung der Multiplikation der Zeilen-Additions-Matrix $\mathrm{ZA}_n(k,l,-\alpha)$
-      mit einer Matrix $B$ besteht darin, dass die die $l$-te Zeile von $B$  mit $-\alpha$ multipliziert
-      zur $k$-ten Zeile von $B$ hinzu addiert wird.  Nach Lemma \ref{lemma:det-add-line}
-      ändert sich der Wert der Determinante dabei nicht und folglich gilt
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathtt{det}\bigl(\mathrm{ZA}_n(k,l,\alpha) \cdot B\bigr) = \mathtt{det}(B) \not= 0$.     
-\item Fall: $\mathrm{ZE}_i = \mathrm{ZP}_n(k,l)$.
+gilt und damit ist $\mathrm{det}(A) \not= 0$ gezeigt. \qed
 
-      Wir haben im letzten Kapitel gezeigt, dass
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathrm{ZP}_n(k,l)^{-1} = \mathrm{ZP}_n(k,l)$
-      \\[0.2cm]
-      gilt.  Die $n \times n$ Zeilen-Permutations-Matrix $\mathrm{ZP}_n(k,l)$ war als 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathrm{ZP}_n(k,l) := \mathrm{E}_n + \mathrm{A}_n(k,l) + \mathrm{A}_n(l,k) - \mathrm{A}_n(k,k) - \mathrm{A}_n(l,l)$.
-      \\[0.2cm]
-      definiert.  Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
-      $\mathrm{ZP}_n(k,l)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$ mit der
-      $l$-ten Zeile von $B$ vertauscht wird, es gilt also
-      \\[0.2cm]
-      \hspace*{1.3cm}
-        $\mathrm{ZP}_n(k,l) \cdot B = \mathrm{ZP}_n(k,l) \cdot \left(
-          \begin{array}[c]{c}
-            \vec{b}_1 \\
-            \vdots       \\
-            \vec{b}_l \\
-            \vdots       \\
-            \vec{b}_k \\
-            \vdots       \\
-            \vec{b}_n 
-          \end{array}
-        \right) = \left(
-          \begin{array}[c]{c}
-            \vec{b}_1 \\
-            \vdots       \\
-            \vec{b}_k \\
-            \vdots       \\
-            \vec{b}_l \\
-            \vdots       \\
-            \vec{b}_n 
-          \end{array}
-        \right).
-        $       
-      \\[0.2cm]
-      Da das Vertauschen zweier Zeilen das Vorzeichen der Determinante verdreht, haben wir
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathtt{det}\bigl(\mathrm{ZP}_n(k,l) \cdot B\bigr) = -\mathtt{det}(B) \not= 0$.
-\item Fall: $\mathrm{ZE}_i = \mathrm{ZM}_n(k, \alpha)$ \quad mit $\alpha \not= 0$.
-
-      Wir haben im letzten Kapitel gezeigt, dass
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathrm{ZM}_n(k,\alpha)^{-1} = \mathrm{ZM}_n(k,\alpha^{-1})$
-      \\[0.2cm]
-      gilt.  Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
-      $\textrm{ZM}_n(k,\alpha^{-1})$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$
-      mit $\alpha^{-1}$ multipliziert wird, es gilt also
-      \\[0.2cm]
-      \hspace*{1.3cm}
-        $\mathrm{ZM}_n(k,\alpha^{-1}) \cdot B = \mathrm{ZM}_n(k,\alpha^{-1}) \cdot \left(
-          \begin{array}[c]{c}
-            \vec{b}_1 \\
-            \vdots       \\
-            \vec{b}_k \\
-            \vdots       \\
-            \vec{b}_n 
-          \end{array}
-        \right) = \left(
-          \begin{array}[c]{c}
-            \vec{b}_1 \\
-            \vdots       \\
-            \alpha^{-1} \cdot \vec{b}_k \\
-            \vdots       \\
-            \vec{b}_n 
-          \end{array}
-        \right).
-        $       
-      \\[0.2cm]
-      Da der Effekt der Multiplikation von $\mathrm{ZM}_n(k,\alpha^{-1})$ mit $B$ darin
-      besteht, die $k$-te Zeile von $B$ mit $\alpha^{-1}$ zu multiplizieren, haben wir
-      auf Grund der Homogenität der Determinanten-Funktion
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\mathtt{det}\bigl(\mathrm{ZM}_n(k,\alpha^{-1}) \cdot B) = \alpha^{-1} \cdot \mathtt{det}(B) \not= 0$.
-\end{enumerate}
-Da die Determinante der Einheits-Matrix $\mathrm{E}_n$ den Wert $1$ hat und damit von $0$
-verschieden ist, folgt durch Iteration der gerade gezeigten Behauptung, dass die Determinante der
-Matrix
-\\[0.2cm]
-\hspace*{1.3cm}
-$A = \mathrm{ZE}_1^{-1} \cdot \mbox{\dots} \cdot \mathrm{ZE}_k^{-1} \cdot \mathrm{E}_n$
-\\[0.2cm]
-ebenfalls von $0$ verschieden ist.
-\qed
 
 \exercise
 Zeigen Sie, dass für eine invertierbare Matrix $A \in \mathbb{K}^{n \times n}$ und eine beliebige
@@ -1694,7 +1637,8 @@ richtig ist.
 
 \noindent
 \textbf{Hinweis}:  Zeigen Sie die
-Behauptung zunächst für den Fall, dass $A$ eine Elementar-Matrix ist.
+Behauptung zunächst für den Fall, dass $A$ eine Elementar-Matrix ist und nutzen Sie aus, dass eine
+invertierbare Matrix als Produkt von Elementar-Matrizen dargestellt werden kann.
 \eoxs
 
 \begin{Satz}
