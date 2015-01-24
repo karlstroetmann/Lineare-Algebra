@@ -1156,33 +1156,32 @@ Monoide solche Halbgruppen, in denen es ein neutrales Element gibt.  Die formale
 
 
 \begin{Definition}[Monoid]
-  Ein Tripel $\langle G, \circ \rangle$ ist ein \emph{Monoid} genau dann, wenn Folgendes gilt:
+  Ein Tripel $\langle G, e, \circ \rangle$ ist ein \emph{Monoid} genau dann, wenn Folgendes gilt:
   \begin{enumerate}
   \item $G$ ist eine Menge,
+  \item $e \in G$,
   \item $\circ: G \times G \rightarrow G$ und es gelten die folgenden beiden Gesetze:
   \begin{enumerate}
   \item Es gilt das Assoziativ-Gesetz
         \\[0.2cm]
         \hspace*{1.3cm}
         $(a \circ b) \circ c = a \circ (b \circ c)$ \quad für alle $a,b,c \in G$.
-  \item Es existiert ein neutrales Element, es gibt also ein $e \in G$, so dass
+  \item $e$ ist ein neutrales Element, es gilt also
         \\[0.2cm]
         \hspace*{1.3cm}
-        $e \circ a = a \circ e = a$ 
-        \\[0.2cm]
-        für alle $a \in G$ gilt. \eox
+        $e \circ a = a \circ e = a$ \quad     für alle $a \in G$. \eox
   \end{enumerate}
   \end{enumerate}
 \end{Definition}
 
 \examples
 \begin{enumerate}
-\item Die Struktur $\langle \mathbb{Z}, \cdot \rangle$ ist ein Monoid, denn für die Multiplikation
+\item Die Struktur $\langle \mathbb{Z}, 1, \cdot \rangle$ ist ein Monoid, denn für die Multiplikation
       ganzer Zahlen gilt das Assoziativ-Gesetz und die Zahl $1$ ist bezüglich der Multiplikation ein
       neutrales Element.
 \item Es sei $\Sigma$ ein Alphabet, also ein Menge von Buchstaben und $\Sigma^*$ sei die Menge aller
       Wörter, die aus Buchstaben von $\Sigma$ gebildet werden können.  In der Informatik bezeichnen
-      wir diese Wörter als Strings.  Wir definieren für Strings eine Multiplikation
+      wir diese Wörter als \emph{Strings}.  Wir definieren für Strings eine Multiplikation
       \\[0.2cm]
       \hspace*{1.3cm}
       $\cdot: \Sigma^* \times \Sigma^* \rightarrow \Sigma^*$
@@ -1205,14 +1204,18 @@ Monoide solche Halbgruppen, in denen es ein neutrales Element gibt.  Die formale
       $\varepsilon = \texttt{\symbol{34}\symbol{34}}$.
       \\[0.2cm]
       Dann ist $\varepsilon$ ein neutrales Element bezüglich der Konkatenation von Strings.  Da
-      außerdem für die Konkatenation von Strings das Assoziativ-Gesetz gilt, ist $\langle \Sigma^*, \cdot \rangle$ ein
+      außerdem für die Konkatenation von Strings das Assoziativ-Gesetz gilt, ist $\langle \Sigma^*, \varepsilon, \cdot \rangle$ ein
       Monoid. 
       \eox
 \end{enumerate}
 
 \exercise
-Zeigen Sie, dass in einem Monoiden $\langle G, \circ \rangle$ das neutrale Element eindeutig
-bestimmt ist.  
+Es sei $\langle G, e, \circ \rangle$ ein Monoid und es sei $f$ ein weiteres neutrales Element, es gelte also
+\\[0.2cm]
+\hspace*{1.3cm}
+$f \circ a = a \circ f$ \quad für alle $a \in G$.
+\\[0.2cm]
+Zeigen Sie, dass dann $e = f$ gilt.  
 \eox
 
 
