@@ -341,8 +341,8 @@ und durch eine einfache Induktion nach $k$ können wir nach dem selben Prinzip ze
 \hspace*{1.3cm}
 $A^k = X \cdot D^k \cdot X^{-1}$ \quad für alle $k \in \mathbb{N}$
 \\[0.2cm]
-gilt.  Diese Beobachtung ist deswegen nützlich, weil die Potenzen der Diagonal-Matrix $D$ wesentlich
-leichter zu berechnen sind als die Potenzen von $A$, denn es gilt
+gilt.  Diese Beobachtung ist hilft uns bei der Berechnung der Potenzen $A^k$, denn die Potenzen der
+Diagonal-Matrix $D$ sind wesentlich  leichter zu berechnen sind als die Potenzen von $A$, es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $D^k = \left(
@@ -357,7 +357,7 @@ $D^k = \left(
 \right)
 $.
 \\[0.2cm]
-Diese Beobachtung wird uns im nächsten Abschnitt die Berechnung der
+Diese Beobachtung wird uns im nächsten Abschnitt die explizite Berechnung der
 \href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} ermöglichen. 
 
 \section{Die Berechnung der Fibonacci-Zahlen}
@@ -385,21 +385,38 @@ Weiter definieren wir den Vektor $\vec{x}_n$ für alle $n \in \mathbb{N}$ als
 $\ds\vec{x}_n := \left(f_n \atop f_{n+1}\right)$.  Dann haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{x}_{n+1} = A \cdot \vec{x}_n$ \quad für alle $n \in \mathbb{N}$,
+$A \cdot \vec{x}_n = \left(
+  \begin{array}{ll}
+    0 & 1 \\
+    1 & 1 
+  \end{array}
+\right) \cdot \left(
+  \begin{array}{c}
+    f_n \\ f_{n+1}
+  \end{array} 
+\right) = 
+\left(
+  \begin{array}{c}
+     f_{n+1} \\ f_n + f_{n+1}
+  \end{array} 
+\right) = \left(
+  \begin{array}{c}
+     f_{n+1} \\ f_{n+2}
+  \end{array} 
+\right) = \vec{x}_{n+1}.
+$
 \\[0.2cm]
-denn wenn wir die Gleichung $\vec{x}_{n+1} = A \cdot \vec{x}_n$ komponentenweise schreiben,
-dann bekommen wir die beiden Gleichungen
+Wir haben also gezeigt, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$
-\begin{array}{lcl}
-  f_{n+1} & = & 0 \cdot f_n + 1 \cdot f_{n+1}, \\[0.2cm]
-  f_{n+2} & = & 1 \cdot f_n + 1 \cdot f_{n+1}. 
-\end{array}
-$
+$\vec{x}_{n+1} = A \cdot \vec{x}_n$ \quad für alle $n \in \mathbb{N}$
 \\[0.2cm]
-Die erste dieser beiden Gleichungen ist trivial, die zweite Gleichung ist nichts anderes als die
-Rekurrenz-Gleichung für die Fibonacci-Zahlen.  Aus der Gleichung $\vec{x}_{n+1} = A \cdot\vec{x}_n$ 
+gilt, wobei wir für die Fibonacci-Zahlen $f_n$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_{n+2} = f_n + f_{n+1}$
+\\[0.2cm]
+benutzt haben.   Aus der Gleichung $\vec{x}_{n+1} = A \cdot\vec{x}_n$ 
 folgt durch eine triviale Induktion nach $n$, dass
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -565,10 +582,12 @@ $
 \\[0.2cm]
 Die erste Komponente von $\vec{x}_n$ ist gleich $f_n$.  Daher haben wir für die $n$-te
 Fibonacci-Zahl $f_n$ die Gleichung 
-\\
-\hspace*{3.3cm}
-\colorbox{orange}{\framebox{\framebox{$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$}}}
-\\
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{orange}{\framebox{\framebox{$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$ 
+\quad mit \quad $\lambda_1 = \frac{1}{2}\cdot(1 + \sqrt{5})$ 
+\quad und \quad $\lambda_2 = \frac{1}{2}\cdot(1 - \sqrt{5})$}}}
+\\[0.2cm]
 gefunden.
 
 \exercise
