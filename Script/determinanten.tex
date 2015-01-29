@@ -132,7 +132,6 @@ kartesische Produkt der beiden Mengen berechnet, auf die dieser Operator angewen
 \end{figure}
 
 
-
 \exercise
 Es sei $\mathtt{id}_n \in \mathcal{S}_n$ die identische Permutation aus $R_n$.  Stellen wir diese Permutation
 durch eine Liste dar, so gilt also
@@ -1122,13 +1121,13 @@ wir die Eigenschaften der Funktion $\mathtt{sgn}$ tatsächlich benötigen.
 \pagebreak
 
 \exercise
-Wir definieren zu einer Matrix $A \in \mathbb{K}^{n \times n}$ die \emph{transponierte Matrix} 
-$A^T = (a^T_{i,j})$ indem wir
+Wir definieren zu einer Matrix $A \in \mathbb{K}^{n \times n}$ der Form $A = (a_{i,j})$ die \emph{transponierte Matrix} 
+$A^\mathrm{T} = (a^\mathrm{T}_{i,j})$ indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$a^T_{i,j} := a_{j,i}$ \quad für alle $i,j \in \{1,\cdots,n\}$
+$a^\mathrm{T}_{i,j} := a_{j,i}$ \quad für alle $i,j \in \{1,\cdots,n\}$
 \\[0.2cm]
-setzen.  Die Zeilen der transponierten Matrix $A^T$ sind also die Spalten der ursprünglichen Matrix $A$. 
+setzen.  Die Zeilen der transponierten Matrix $A^\mathrm{T}$ sind also die Spalten der ursprünglichen Matrix $A$. 
 Beispielsweise haben wir für
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1140,7 +1139,7 @@ $A = \left(
   \end{array}\right)
 $
 \quad die transponierte Matrix \quad
-$A^T = \left(
+$A^\mathrm{T} = \left(
   \begin{array}[c]{lll}
     1 & 4 & 7     \\
     2 & 5 & 8     \\
@@ -1151,16 +1150,114 @@ $.
 Zeigen Sie, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\texttt{det}(A^T) = \mathtt{det}(A)$
+$\texttt{det}(A^\mathrm{T}) = \mathtt{det}(A)$
 \\[0.2cm]
 gilt.  Zum Nachweis dieses Satzes ist es nützlich, die beiden folgenden Lemmata nachzuweisen:
 \begin{enumerate}
 \item $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$.
-\item $\bigl\{ \langle i, \sigma(i)\rangle \mid i \in \{1,\cdots,n\} \bigr\} =
-       \bigl\{ \langle \sigma^{-1}(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$
+\item $\bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\} = \bigl\{ \langle \sigma(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$
        \quad für alle $\sigma \in \mathcal{S}_n$.
        \eox
 \end{enumerate}
+
+\solution
+Wir zeigen zunächst die beiden als Hinweis gegebenen Lemmata.
+\begin{enumerate}
+\item Wir zeigen  $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$.
+
+      Offenbar gilt $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} \subseteq \mathcal{S}_n$, denn das Inverse einer Permutation ist wieder eine Permutation. 
+      Um zu zeigen, dass auch die Inklusion
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mathcal{S}_n \subseteq \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \}$
+      \\[0.2cm]
+      wahr ist, nehmen wir an, dass $\mu$ eine beliebige Permutation aus $\mathcal{S}_n$ ist.  Wir wollen 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mu \in \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \}$ 
+      \\[0.2cm]
+      nachweisen.  Daher müssen wir
+      eine Permutation $\sigma$ finden, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\mu = \sigma^{-1}$
+      \\[0.2cm]
+      gilt, denn dann ist $\mu$ ein Element der Menge $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \}$.
+      Wir definieren $\sigma := \mu^{-1}$.  Dann gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\sigma^{-1} = \bigl(\mu^{-1}\bigr)^{-1} = \mu$
+      \\[0.2cm]
+      und damit ist  $\mu \in \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \}$ gezeigt.  $\surd$
+\item Wir zeigen, dass für alle $\sigma \in \mathcal{S}_n$ die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\} = \bigl\{ \langle \sigma(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$
+      \\[0.2cm]
+      gilt.  Wir zerlegen den Beweis dieser Mengen-Gleichung in zwei Teile.
+      \begin{description}
+      \item[``$\subseteq$'']:  Sei $j \in \{1, \cdots, n\}$ gegeben.  Um zu zeigen, dass
+                     \\[0.2cm]
+                     \hspace*{1.3cm}
+                     $\langle j, \sigma^{-1}(j)\rangle \in \bigl\{ \langle \sigma(i), i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$
+                     \\[0.2cm]
+                     gilt, müssen wir ein $i \in \{1, \cdots, n\}$ finden, so dass die Gleichung
+                     \\[0.2cm]
+                     \hspace*{1.3cm}
+                     $\langle j, \sigma^{-1}(j)\rangle = \langle \sigma(i), i\rangle$
+                     \\[0.2cm]
+                     erfüllt ist.  Diese Gleichung ist aber zu den beiden Gleichungen
+                     \\[0.2cm]
+                     \hspace*{1.3cm}
+                     $j = \sigma(i)$ \quad und \quad  $\sigma^{-1}(j) = i$ 
+                     \\[0.2cm]
+                     äquivalent und es ist klar, dass beide Gleichungen richtig sind, wenn wir $i := \sigma^{-1}(j)$
+                     definieren. $\surd$
+      \item[``$\supseteq$'']: Sei $i \in \{1, \cdots, n\}$ gegeben.  Um zu zeigen, dass
+                     \\[0.2cm]
+                     \hspace*{1.3cm}
+                     $\langle \sigma(i), i\rangle \in \bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\}$
+                     \\[0.2cm]
+                     gilt, müssen wir ein $j \in \{1, \cdots, n\}$ finden, so dass die Gleichung
+                     \\[0.2cm]
+                     \hspace*{1.3cm}
+                     $\langle \sigma(i), i \rangle =\langle j, \sigma^{-1}(j) \rangle$
+                     \\[0.2cm]
+                     erfüllt ist.  Diese Gleichung ist aber zu den beiden Gleichungen
+                     \\[0.2cm]
+                     \hspace*{1.3cm}
+                     $\sigma(i) = j$ \quad und \quad $i = \sigma^{-1}(j)$
+                     \\[0.2cm]
+                     äquivalent und es ist klar, dass beide Gleichungen gelten, wenn wir $j := \sigma(i)$
+                     definieren. $\surd$
+      \end{description}
+\end{enumerate}
+Nach diesen Vorüberlegungen führen wir jetzt den eigentlichen Beweis der Behauptung
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathtt{det}\bigl(A^\mathrm{T}\bigr) = \mathtt{det}(A)$.
+\\[0.2cm]
+Wir berechnen dazu $\mathtt{det}\bigl(A^\mathrm{T}\bigr)$ nach der Formel von Leibniz:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{lcl}
+      \mathtt{det}\bigl(A^\mathrm{T}\bigr) 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)}^\mathrm{T} \\[0.4cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{\sigma(i),i} \\[0.4cm] 
+&   & \mbox{wegen $a_{i,j}^\mathrm{T} = a_{j,i}$} \\[0.2cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{j=1}^n a_{j,\sigma^{-1}(j)} \\[0.4cm] 
+&   & \mbox{wegen $\bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\} = \bigl\{ \langle \sigma(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$} 
+      \\[0.2cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}\bigl(\sigma^{-1}\bigr) \cdot \prod\limits_{j=1}^n a_{j,\sigma(j)} \\[0.4cm] 
+&   & \mbox{wegen $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$} \\[0.2cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{j=1}^n a_{j,\sigma(j)} \\[0.4cm] 
+&   & \mbox{wegen $\mathtt{sgn}\bigl(\sigma^{-1}\bigr) = \mathtt{sgn}(\sigma)$} \\[0.2cm] 
+& = & \mathtt{det}(A)
+\end{array}
+$
+\\[0.2cm]
+Damit ist der Beweis abgeschlossen.  \qed
 
 \exercise
 Zeigen Sie, dass für die $n \times n$ Einheits-Matrix $\mathrm{E}_n = (\delta_{i,j})_{{i =1,\cdots n} \atop {j=1,\cdots,n}}$
@@ -1267,7 +1364,7 @@ die Determinante eine normierte, alternierende Multilinear-Form ist:
 
       \textbf{Bemerkung:} 
       Eine analoge Gleichung gilt, wenn wir zwei Zeilen vertauschen.  Dies liegt einfach daran,
-      dass $\mathtt{det}(A^T) = \mathtt{det}(A)$ ist.
+      dass $\mathtt{det}(A^\mathrm{T}) = \mathtt{det}(A)$ ist.
 \item Multilinear ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1280,7 +1377,7 @@ die Determinante eine normierte, alternierende Multilinear-Form ist:
 
       \textbf{Bemerkung:} 
       Eine analoge Gleichung gilt, wenn wir statt zweier Spalten zwei Zeilen addieren.
-      Dies liegt wieder daran, dass $\mathtt{det}(A^T) = \mathtt{det}(A)$ ist.
+      Dies liegt wieder daran, dass $\mathtt{det}(A^\mathrm{T}) = \mathtt{det}(A)$ ist.
 \end{enumerate}
 \href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass} (1815-1897)
 hat gezeigt, dass die obigen Eigenschaften die Determinante bereits vollständig bestimmen: Jede Funktion
@@ -1407,9 +1504,9 @@ $
 
 \remark
 Ersetzen wir in dem letzten Lemma den Begriff ``\emph{Zeile}'' durch ``\emph{Spalte}'', 
-so bleibt das Lemma gültig, denn die Determinante der transponierten Matrix $A^T$ ist gleich der
-Determinante von $A$ und beim Übergang von $A$ zur transponierten Matrix $A^T$ werden aus den
-Spalten der Matrix $A$ die Zeilen der Matrix $A^T$. 
+so bleibt das Lemma gültig, denn die Determinante der transponierten Matrix $A^\mathrm{T}$ ist gleich der
+Determinante von $A$ und beim Übergang von $A$ zur transponierten Matrix $A^\mathrm{T}$ werden aus den
+Spalten der Matrix $A$ die Zeilen der Matrix $A^\mathrm{T}$. 
 \eox
 
 \begin{Lemma}
