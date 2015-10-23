@@ -2,21 +2,22 @@
 Das vorliegende Skript ist die Grundlage der Mathematik-Vorlesung des ersten Semesters.
 Einige Kapitel und Abschnitte in diesem Skript sind mit einem ``$^*$'' versehen.  
 Der dort vorgestellte Stoff ist für die Klausur nicht relevant.  Das Skript enthält diese Abschnitte
-um eine der vielen Anwendungen der Mathematik, die Kryptologie, präsentieren zu können.
+um eine der vielen Anwendungen der Mathematik, das
+\href{https://de.wikipedia.org/wiki/RSA-Kryptosystem}{RSA-Kryptosystem}, präsentieren zu können.  
 
 \section{Motivation}
-Bevor wir uns in die Mathematik stürzen, sollten wir uns überlegen, warum wir als
-Informatiker überhaupt Mathematik brauchen.  
+Bevor wir uns mit dem eigentlichen Stoff dieser Vorlesung, der Mathematik, befassen, möchte ich
+Ihnen aufzeigen, warum Sie als zukünftige Informatiker Mathematik benötigen.  
 \begin{enumerate}
-\item Historisch sind Mathematik und Informatik eng
-      miteinander verknüpft, so ist beispielsweise das Wort ``\emph{Informatik}''  ein Kunstwort, das aus
-      den beiden Wörtern ``\emph{Information}'' und ``\emph{Mathematik}'' gebildet worden ist, was 
+\item Historisch ist die Informatik als Teilgebiet der Mathematik entstanden.  Dies wird schon an
+      dem Namen  ``\emph{Informatik}''  deutlich, den dieses Wort ist aus den beiden Wörtern
+      ``\emph{Information}'' und ``\emph{Mathematik}'' gebildet worden ist, was  
       durch die Gleichung 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\texttt{Informatik} = \texttt{Information} + \texttt{Mathematik}$
       \\[0.2cm]
-      symbolisiert wird.  Aufgrund der Tatsache, dass die Informatik aus der Mathematik gewachsen
+      symbolisiert wird.  Aufgrund der Tatsache, dass die Informatik aus der Mathematik entstanden
       ist, bedient sich die Informatik an vielen Stellen
       mathematischer Sprech- und Denkweisen.  Um diese verstehen zu können, ist eine 
       Vertrautheit mit der formalen mathematischen Denkweise unabdingbar.
@@ -27,11 +28,13 @@ Informatiker überhaupt Mathematik brauchen.
       Eine Möglichkeit,  diese Fähigkeit zu erwerben besteht darin, sich mit den abstrakten
       Gedankengebäuden, die in der Mathematik konstruiert werden, auseinander zu setzen.
 \item Es gibt eine Vielzahl von mathematischen Methoden, die unmittelbar in der Informatik
-      angewendet werden.  In dieser Vorlesung behandeln wir unter anderem die folgenden Methoden:
+      angewendet werden.  In dieser Vorlesung zeigen wir exemplarisch eine Reihe von Problemen, die
+      ihren Ursprung in der Informatik haben, deren Lösung aber mathematische Methoden erfordert:
       \begin{enumerate}
-      \item \emph{Rekurrenz-Gleichungen} sind Gleichungen, 
-            durch die Folgen definiert werden.  Beispielsweise können die Fiboncci-Zahlen durch die 
-            Rekurrenz-Gleichung
+      \item \href{https://en.wikipedia.org/wiki/Recurrence_relation}{\emph{Rekurrenz-Gleichungen}}
+            sind Gleichungen, durch die Folgen von Zahlen definiert werden.  Beispielsweise können die
+            \href{https://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} durch die
+            Rekurrenz-Gleichung 
             \\[0.2cm]
             \hspace*{1.3cm}
             $a_{n+2} = a_{n+1} + a_n$  \quad und die Anfangs-Bedingungen $a_0 = 0$ und $a_1 = 1$
@@ -52,10 +55,11 @@ Informatiker überhaupt Mathematik brauchen.
             \right)
             $.
             \\[0.2cm]
-            Wir werden verschiedene Verfahren angeben, mit denen sich für in der Praxis auftretende
-            Rekurrenz-Gleichungen geschlossene Formeln finden lassen.  Solche Verfahren sind wichtig
-            bei der Analyse der Komplexität von Algorithmen, denn die Berechnung der Laufzeit
-            rekursiver Algorithmen führt auf Rekurrenz-Gleichungen.  
+            Sie werden im Laufe der ersten beiden Semester verschiedene Verfahren kennen lernen, mit
+            denen sich für in der Praxis auftretende Rekurrenz-Gleichungen geschlossene Formeln
+            finden lassen.  Solche Verfahren sind wichtig bei der Analyse der Komplexität von
+            Algorithmen, denn die Berechnung der Laufzeit rekursiver Algorithmen führt auf
+            Rekurrenz-Gleichungen.   
       \item Elementare Zahlentheorie bildet die Grundlage moderner kryptografischer Verfahren.
             Konkret beinhaltet dieses Skript eine Beschreibung des RSA-Algorithmus zur asymetrischen
             Verschlüsselung.  Allerdings werden wir das Kapitel zur Zahlen-Theorie, in dem der 
@@ -108,13 +112,15 @@ Informatiker überhaupt Mathematik brauchen.
             verletzt. \\[0.2cm]
             \hspace*{1.3cm} 
             \href{http://www.ima.umn.edu/~arnold/disasters/patriot.html}{\texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/patriot.html}}.
-      \item Im Internet finden Sie unter \\[0.2cm]
-            \hspace*{-1.3cm}
-            \href{http://www.computerworld.com/article/2515483/enterprise-applications/epic-failures--11-infamous-software-bugs.html}{\texttt{http://www.computerworld.com/\\
-            \hspace*{-1.3cm}
-              article/2515483/enterprise-applications/epic-failures--11-infamous-software-bugs.html}}
+      \item Im Internet finden Sie auf der Seite der
+            \href{https://de.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers}{\textsc{Ieee}}\footnote{
+              Die Abkürzung \textsc{Ieee} steht für \emph{Institute of Electrical and Electronics Engineers}.}
+            den Artikel   
             \\[0.2cm]
-            eine Auflistung von schweren Unfällen, die auf Software-Fehler zurückgeführt werden konnten.
+            \hspace*{1.3cm}
+            \href{http://spectrum.ieee.org/static/the-staggering-impact-of-it-systems-gone-wrong}{Staggering Impact of IT Systems Gone Wrong}.
+            \\[0.2cm]
+            In diesem Artikel werden die Kosten, die durch fehlgeschlagene IT-Projekte entstanden sind, für eine Reihe von Projekten aufgelistet.
       \end{enumerate}
       Diese Beispiele zeigen, dass bei der Konstruktion von IT-Systemen mit großer Sorgfalt
       und Präzision gearbeitet werden sollte.  Die Erstellung von IT-Systemen muss auf einer 
@@ -156,9 +162,9 @@ ich im Rahmen der Vorlesung behandeln werde.
       und Verwendung von Junktoren und Quantoren weiter untersuchen.
 \item Mengenlehre
 
-      Die Mengenlehre bildet die Grundlage der modernen Mathematik.  Fast alle Lehrbücher und
-      Veröffentlichungen bedienen sich der Begriffsbildungen der Mengenlehre.  Daher ist eine solide
-      Grundlage an dieser Stelle für das weitere Studium unabdingbar.
+      Die Mengenlehre bildet die Grundlage der modernen Mathematik.  Die meisten Lehrbücher und
+      Veröffentlichungen bedienen sich der Begriffsbildungen und Schreibweisen der Mengenlehre.
+      Daher ist eine solide Grundlage an dieser Stelle für das weitere Studium unabdingbar.
 \item Beweis-Prinzipien
 
       In der Informatik benötigen wir im wesentlichen vier Arten von Beweisen:
@@ -177,21 +183,31 @@ ich im Rahmen der Vorlesung behandeln werde.
             dass die Annahme $A$ nicht wahr sein kann.
 
             Beispielsweise werden wir mit Hilfe eines indirekten Beweises zeigen, dass 
-            $\sqrt{2}$ keine rationale Zahl ist.
+            $\sqrt{2}$ keine rationale Zahl ist.  In der Informatik zeigen wir dann, dass das
+            \emph{Halte-Problem} unlösbar ist:  Es ist nicht möglich, eine Funktion \texttt{stops}
+            zu implementieren, so dass für eine gegebene einstellige Funktion $f$ und eine Eingabe $x$
+            der Aufruf
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{stops}(f,x)$
+            \\[0.2cm]
+            genau dann als Ergebnis \texttt{true} zurück liefert, wenn der Aufruf der Funktion $f$
+            mit der Eingabe $x$ terminiert.
       \item Ein induktiver Beweis hat das Ziel, eine Aussage für alle natürliche Zahlen zu beweisen.
             Beispielsweise werden wir zeigen, dass die Summenformel
             \\[0.2cm]
             \hspace*{1.3cm}
             $\ds\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ 
             \\[0.2cm]
-            für alle natürlichen Zahlen $n \in \mathbb{N}$ gilt.
+            für alle natürlichen Zahlen $n \in \mathbb{N}$ gilt.  Summenformeln dieser Art treten
+            beispielsweise bei der Berechnung der Rechenzeit von Programmen auf.
       \end{enumerate}
 \item Grundlagen der Algebra
 
       Wir besprechen \emph{Gruppen}, \emph{Ringe} und \emph{Körper}.  Diese abstrakten Konzepte
       verallgemeinern  die Rechenregeln, die Sie von den reellen Zahlen kennen.  Sie bilden darüber
       hinaus die Grundlage für die lineare Algebra.
-\item Zahlentheorie
+\item Zahlentheorie$^*$
   
       Dieses Skript enthält ein \underline{o}p\underline{tionales} Kapitel, in dem wir uns mit der 
       elementaren Zahlentheorie auseinandersetzen.  Die Zahlentheorie ist die Grundlage
@@ -214,19 +230,19 @@ ich im Rahmen der Vorlesung behandeln werde.
       können, gilt es die Theorie der linearen Vektor-Räume zu verstehen.
 \item Lineare Gleichungs-Systeme
 
-      Lineare Gleichungs-Systeme treten in der Informatik an vielen Stellen auf. 
-      Wir zeigen, wie sich solche Gleichungs-Systeme lösen lassen.
+      Lineare Gleichungs-Systeme treten sowohl in der Informatik als auch in vielen anderen Gebieten auf. 
+      Wir zeigen, wie sich solche Gleichungs-Systeme algorithmisch lösen lassen.
 \item Eigenwerte und Eigenvektoren
 
-      Ist $A$ eine \emph{Matrix}, ist $\vec{x}$ ein Vektor und gilt
+      Ist $A$ eine \emph{Matrix},  $\vec{x}$ ein Vektor, $\lambda$ eine Zahl und gilt darüber hinaus
       \\[0.2cm]
       \hspace*{1.3cm}
-      $A \vec{x} = \lambda \vec{x}$
+      $A \cdot \vec{x} = \lambda \cdot \vec{x}$
       \\[0.2cm]
-      so ist $\vec{x}$ ein Eigenvektor von der Matrix $A$ zum Eigenwert $\lambda$.
+      so nennen wir $\vec{x}$ ein Eigenvektor von der Matrix $A$ zum Eigenwert $\lambda$.
       
       Sie brauchen an dieser Stelle keine Angst haben: Im Laufe der Vorlesung werden den Begriff der
-      \emph{Matrix} definieren  und die Frage, wie die Multiplikation $A \vec{x}$ der Matrix $A$ mit
+      \emph{Matrix} definieren  und die Frage, wie die Multiplikation $A \cdot \vec{x}$ der Matrix $A$ mit
       dem Vektor $\vec{x}$ definiert ist, wird ebenfalls noch geklärt.  Weiter werden wir sehen,
       wie Eigenvektoren berechnet werden können.
 \item Rekurrenz-Gleichungen
@@ -263,10 +279,10 @@ jetzt wieder orientiert habe.  Zusätzlich habe ich in der Zwischenzeit das Buch
 ``\emph{Linear Algebra Done Right}'' von Sheldon Axler \cite{axler:1997} gelesen, das sehr gut geschrieben ist
 und einen alternativen Zugang zur linearen Algebra bietet, bei dem die Theorie der Determinanten
 allerdings in den Hintergrund gerät.  Der fachkundige Leser wird bei der Lektüre dieses Skripts
-unschwer Parallelen zu den oben zitierten Werken erkennen.   Demjenigen Leser, der mehr wissen
-möchte als das, was im Rahmen dieser Vorlesung gezeigt werden kann, möchte ich auf die oben genannte
-Literatur verweisen, wobei mir persönlich die Darstellung des Buchs von Sheldon Axler am besten
-gefällt. 
+unschwer Parallelen zu den oben zitierten Werken erkennen.   Demjenigen Leser, der sich mehr Wissen
+aneignen möchte als das, was in dem engen zeitlichen Rahmen dieser Vorlesung vermittelt werden kann,
+möchte ich auf die oben genannte Literatur verweisen, wobei mir persönlich die Darstellung des Buchs
+von Sheldon Axler am besten gefällt. 
 
 
 %%% Local Variables: 
