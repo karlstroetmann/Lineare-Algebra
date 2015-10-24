@@ -19,10 +19,10 @@ gebraucht, für das sich eine Infix-Notation eingebürgert hat.
 Um den Begriff der \emph{wohldefinierten Ansammlung von Elementen} mathematisch zu
 präzisieren, führte Cantor das sogenannte \emph{Komprehensions-Axiom} ein.
 Wir können dieses zunächst wie folgt formalisieren: Ist $p(x)$ eine Eigenschaft, die
-ein Objekt $x$ entweder hat oder nicht, so können wir die Menge $M$ aller Objekte, welche die
+ein Objekt $x$ haben kann, so können wir die Menge $M$ aller Objekte, welche die
 Eigenschaft $p(x)$ haben, bilden.  Wie schreiben dann \\[0.2cm]
 \hspace*{1.3cm} $M = \{ x \;|\; p(x) \}$ \\[0.2cm]
-und lesen dies als ``$M$ ist die Menge aller $x$, auf welche die Eigenschaft $p(x)$ zutrifft''.
+und lesen dies als ``$M$ ist die Menge aller $x$, für die $p(x)$ gilt''.
 Eine Eigenschaft $p(x)$ ist dabei nichts anderes als eine Formel, in der die Variable $x$
 vorkommt.
 Wir veranschaulichen das Komprehensions-Axiom durch ein Beispiel:  Es sei $\mathbb{N}$
@@ -40,8 +40,12 @@ geschrieben werden.
 
 Leider führt die uneingeschränkte Anwendung des Komprehensions-Axiom schnell zu
 Problemen.  Betrachten wir dazu die Eigenschaft einer Menge, sich \underline{nicht} selbst zu
-enthalten, wir 
-setzen also $p(x) := \neg(x \in x)$ und definieren die Menge $R$ als \\[0.2cm]
+enthalten, wir setzen also
+\\[0.2cm]
+\hspace*{1.3cm}
+ $p(x) := \neg(x \in x)$ 
+\\[0.2cm]
+und definieren die Menge $R$ als \\[0.2cm]
 \hspace*{1.3cm} $R := \{ x \;|\; \neg (x \in x) \}$.  \\[0.2cm]
 Intuitiv würden wir vielleicht erwarten, dass keine Menge sich selbst enthält.  Wir wollen
 jetzt zunächst für die eben definierte Menge $R$ überprüfen, wie die Dinge liegen.
@@ -110,15 +114,31 @@ $\emptyset := \{\}$.
 Die leere Menge enthält also überhaupt keine Elemente.  Diese Menge spielt in der Mengenlehre eine
 ähnliche Rolle wie die Zahl $0$ in der Zahlentheorie.
 
+Wird eine Menge durch Auflistung ihrer Elemente definiert, so spielt die Reihenfolge, in der die
+Elemente aufgelistet werden, keine Rolle.  Beispielsweise gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{1,2,3\} = \{3,1,2\}$,
+\\[0.2cm]
+denn beide Mengen enthalten offenbar die selben Elemente.
+
 \section{Die Menge der natürlichen Zahlen}
 Alle durch explizite Auflistung definierten Mengen haben offensichtlich nur endlich viele
 Elemente.  Aus der mathematischen Praxis kennen wir aber auch Mengen mit unendlich vielen
 Elementen.  Ein Beispiel ist die 
 \href{http://en.wikipedia.org/wiki/Natural_number}{Menge der natürlichen Zahlen}, die wir mit $\mathbb{N}$
 bezeichnen.  Im Gegensatz zu einigen anderen Autoren werde ich dabei die Zahl $0$ \underline{nicht}
-als natürliche Zahl auffassen. 
-  Mit den bisher behandelten Verfahren lässt sich die Menge $\mathbb{N}$  nicht definieren.
-Wir müssen daher die Existenz dieser Menge als Axiom fordern: \\[0.2cm]
+als natürliche Zahl auffassen.  Mit den bisher behandelten Verfahren lässt sich die Menge $\mathbb{N}$  nicht definieren.
+
+Wir müssen daher die Existenz dieser Menge als Axiom fordern.  Genauer postulieren wir, dass es eine
+Menge $\mathbb{N}$ gibt, welche die folgenden drei Eigenschaften hat:
+\begin{enumerate}
+\item $1 \in \mathbb{N}$.
+\item Falls $n \in \mathbb{N}$ gilt, so gilt auch $n+1 \in \mathbb{N}$.
+\item Außer den Zahlen, die auf Grund der ersten beiden Bedingungen Elemente der Menge $\mathbb{N}$ sind, enthält
+      $\mathbb{N}$ keine weiteren Elemente.
+\end{enumerate}
+Anschaulich schreiben wir \\[0.2cm]
 \hspace*{1.3cm} $\mathbb{N} := \{ 1, 2, 3, \cdots \}$. \\[0.2cm]
 Neben der Menge $\mathbb{N}$ der natürlichen Zahlen verwenden wir noch die folgenden
 Mengen von Zahlen: 
@@ -127,19 +147,20 @@ Mengen von Zahlen:
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathbb{N}_0 := \{ 0 \} \cup \mathbb{N}$.
-\item $\mathbb{Z}$: Menge der ganzen Zahlen.
+\item $\mathbb{Z}$ ist die Menge der ganzen Zahlen, es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathbb{Z} := \{ 0, 1, -1, 2, -2, 3, -3, \cdots \}$ 
 
-\item $\mathbb{Q}$: Menge der rationalen Zahlen.
+\item $\mathbb{Q}$ ist die Menge der rationalen Zahlen, es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $\Bigl\{ \bruch{p}{q} \mid\, p \in \mathbb{Z} \wedge q \in \mathbb{N} \Bigr\}$
-\item $\mathbb{R}$: Menge der reellen Zahlen.
+\item $\mathbb{R}$ ist die Menge der reellen Zahlen.
 
       Eine mathematisch saubere Definition der reellen Zahlen erfordert einiges an Aufwand.  Wir
-      werden die Konstruktion der rellen Zahlen im zweiten Semester kennenlernen.
+      werden die Konstruktion der reellen Zahlen erst in der Analysis-Vorlesung im zweiten Semester
+      besprechen. 
 \end{enumerate}
 
 
@@ -171,7 +192,7 @@ Menge $N$ ist.  In diesem Fall schreiben wir $M \subseteq N$.  Formal können wir
 Begriff der Teilmenge durch die Formel
  \\[0.2cm]
 \hspace*{1.3cm}
-$M \subseteq N \;\stackrel{de\!f}{\Longleftrightarrow}\; \forall x: (x \in M \rightarrow x \in N)$ 
+$M \subseteq N \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \forall x: (x \in M \rightarrow x \in N)$ 
  \\[0.2cm]
 definieren.
 
@@ -259,7 +280,11 @@ Wir berechnen den Schnitt der  Mengen $M = \{ 1, 3, 5 \}$ und $N = \{ 2, 3, 5, 6
 \section{Differenz-Mengen}
  Sind zwei Mengen $M$ und $N$ gegeben, so bezeichen wir die \emph{Differenz} von
  $M$ und $N$ als die Menge aller Elemente, die in $M$ aber nicht $N$
- auftreten.  Wir schreiben hierfür $M \backslash N$.  Das wird als $M$ \emph{ohne} $N$
+ auftreten.  Wir schreiben hierfür $M \backslash N$.  Dieser Ausdruck wird als
+\\[0.2cm]
+\hspace*{1.3cm}
+$M$ \emph{ohne} $N$
+\\[0.2cm]
 gelesen und kann formal als
  \\[0.2cm]
 \hspace*{1.3cm} $M \backslash N := \{ x \mid x \in M \wedge x \not\in N \}$. 
@@ -433,8 +458,6 @@ Zum Abschluss des Kapitels führen wir \emph{transitive Relationen} und
 \emph{Äquivalenz-Relationen} ein.  Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker
 kennen sollte.
 
-
-\section{Binäre Relationen und Funktionen}
 Ist eine Menge $R$ als Teilmenge des kartesischen Produkts zweier Mengen $M$ und $N$ gegeben, gilt
 also \\[0.2cm]
 \hspace*{1.3cm} $R \subseteq M \times N$, \\[0.2cm]
@@ -932,7 +955,7 @@ erbracht. \hspace*{\fill} $\Box$
 
 \exercise
 Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $Q_1,Q_2 \subseteq N \times L$. 
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Beweisen oder widerlegen Sie die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}  $R \circ (Q_1 \cup Q_2) = R \circ Q_1 \cup R \circ Q_2$.
@@ -944,56 +967,56 @@ Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $Q_1,
 
 
 \begin{Definition}[Identische Relation]
-  Ist $M$ eine Menge, so definieren wir die \emph{identische Relation} $\id_M \subseteq M \times M$
+  Ist $M$ eine Menge, so definieren wir die \emph{identische Relation} $\mathrm{id}_M \subseteq M \times M$
   wie folgt: \\[0.2cm]
-  \hspace*{1.3cm} $\id_M := \bigl\{ \pair(x,x) \mid x \in M \bigr\}$.  \eox
+  \hspace*{1.3cm} $\mathrm{id}_M := \bigl\{ \pair(x,x) \mid x \in M \bigr\}$.  \eox
 \end{Definition}
 
 \example
 Es sei $M = \{1,2,3\}$.  Dann gilt \\[0.2cm]
-\hspace*{1.3cm}  $\id_M := \bigl\{ \pair(1,1),  \pair(2,2),  \pair(3,3) \bigr\}$.  \eox
+\hspace*{1.3cm}  $\mathrm{id}_M := \bigl\{ \pair(1,1),  \pair(2,2),  \pair(3,3) \bigr\}$.  \eox
 \vspace*{0.2cm}
 
 \remark
 Aus der Definition folgt sofort \\[0.2cm]
-\hspace*{1.3cm} $\id_M^{-1} = \id_M$. \eox
+\hspace*{1.3cm} $\mathrm{id}_M^{-1} = \mathrm{id}_M$. \eox
 
 \begin{Satz}
   Ist $R \subseteq M \times N$  eine binäre Relation, so gilt 
-  \[ R \circ \id_N = R \quad \mbox{und} \quad \id_M \circ R = R. \] 
+  \[ R \circ \mathtt{id}_N = R \quad \mbox{und} \quad \mathrm{id}_M \circ R = R. \] 
 \end{Satz}
 
 \proof
 Wir weisen nur die zweite Gleichung nach, denn der Nachweis der ersten Gleichung verläuft analog zu
 dem Beweis der zweiten Gleichung.  Nach Definition des relationalen Produkts
 gilt
-\[ \id_M \circ R = \bigl\{ \pair(x,z) \mid \exists y: \pair(x,y) \in \id_M \wedge \pair(y,z) \in R \bigr\}. \]
-Nun ist $\pair(x,y) \in \id_M$ genau dann, wenn $x = y$ ist, also gilt
-\[ \id_M \circ R = \bigl\{ \pair(x,z) \mid \exists y: x = y \wedge \pair(y,z) \in R \bigr\}. \]
+\[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \exists y:\bigl(\pair(x,y) \in \mathrm{id}_M \wedge \pair(y,z) \in R \bigr)\bigr\}. \]
+Nun ist $\pair(x,y) \in \mathrm{id}_M$ genau dann, wenn $x = y$ ist, also gilt
+\[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr) \bigr\}. \]
 Es gilt die folgende Äquivalenz
-\[ \bigl( \exists y: x = y \wedge \pair(y,z) \in R \bigr) \leftrightarrow \pair(x,z) \in R. \]
-Diese Äquivalenz ist leicht einzusehen:  Falls $\exists y: x = y \wedge \pair(y,z) \in R$
+\[ \exists y:\bigl(x = y \wedge \pair(y,z) \in R \bigr) \leftrightarrow \pair(x,z) \in R. \]
+Diese Äquivalenz ist leicht einzusehen:  Falls $\exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr)$
 gilt, so muss das $y$ dessen Existenz gefordert wird, den Wert $x$ haben und dann gilt
 natürlich auch $\pair(x,z) \in R$.  Gilt andererseits $\pair(x,z) \in R$, so definieren
 wir $y := x$.  Für das so definierte $y$ gilt offensichtlich 
 $x = y \wedge \pair(y,z) \in R$.  Unter Verwendung der oberen Äquivalenz haben wir 
-\[ \id_M \circ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
+\[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
 Wegen  $R \subseteq M \times N$ besteht $R$ nur aus geordneten
 Paaren und daher gilt
 \[ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
-Damit ist $\id_M \circ R = R$ gezeigt. \hspace*{\fill} $\Box$
+Damit ist $\mathrm{id}_M \circ R = R$ gezeigt. \qed
 \pagebreak
 
 \exercise
 Es sei $R \subseteq M \times N$.  Welche Eigenschaften muss die Relation $R$ besitzen, damit die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$R \circ R^{-1} = \id_M$ 
+$R \circ R^{-1} = \mathrm{id}_M$ 
 \\[0.2cm]
 richtig ist? Unter welchen Bedingungen gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$R^{-1} \circ R = \id_N$?
+$R^{-1} \circ R = \mathrm{id}_N$?
 \eox
 % Die erste Gleichung gilt genau dann, wenn $R$ links-total und links-eindeutig ist.
 
@@ -1003,14 +1026,15 @@ Wir betrachten im Folgenden den Spezialfall von Relationen $R \subseteq M \times
 den $M = N$ gilt.  Wir definieren:
 Eine Relation $R \subseteq M \times M$ heißt eine Relation \emph{auf} der Menge $M$.
 Im Rest dieses Abschnittes betrachten wir nur noch solche Relationen. 
-Statt $M \times M$ schreiben wir kürzer $M^2$.
+Statt $M \times M$ schreiben wir dann kürzer $M^2$.
 
 Ist $R$ eine Relation auf $M$ und sind $x, y \in M$, so verwenden wir gelegentlich die
 Infix-Schreibweise und schreiben statt
 $\pair(x,y) \in R$ auch $x\, R\, y$.  Beispielsweise lässt sich die Relation $\leq$ 
-auf $\mathbb{N}$ wie folgt definieren: \\[0.2cm]
+auf $\mathbb{N}$ wie folgt definieren: 
+\\[0.2cm]
 \hspace*{1.3cm}
- $\leq\; := \{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists z \in \mathbb{N}_0 \colon x + z = y \}$.
+ $\leq\; := \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists z \in \mathbb{N}_0 \colon x + z = y \bigr\}$.
 \\[0.2cm]
 Statt $\pair(x,y) \in\; \leq$ hat sich in der Mathematik die Schreibweise $x \leq y$ eingebürgert.
   
@@ -1029,13 +1053,13 @@ Es gilt
 \hspace*{1.3cm}
 $
 \begin{array}[b]{cl}
-                & \id_M \subseteq R \\[0.2cm]
+                & \mathrm{id}_M \subseteq R \\[0.2cm]
 \leftrightarrow & \bigl\{ \pair(x,x) \mid x \in M \bigr\} \subseteq R \\[0.2cm] 
 \leftrightarrow & \forall x \in M: \pair(x,x) \in R \\[0.2cm] 
 \leftrightarrow & \mbox{$R$ ist reflexiv auf $M$.}  
 \end{array}
 $
-\hspace*{\fill} $\Box$
+\qed
 
 \begin{Definition}[symmetrisch]
 Eine Relation $R \subseteq M \times M$  ist \emph{symmetrisch} falls gilt: \\[0.2cm]
@@ -1080,7 +1104,7 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
       gilt und zeigen, dass aus dieser Voraussetzung die Inklusions-Beziehung
       \\[0.2cm]
       \hspace*{1.3cm}
-      $R \cap R^{-1} \subseteq \id_{M}$ 
+      $R \cap R^{-1} \subseteq \mathrm{id}_{M}$ 
       \\[0.2cm]
       folgt.  Es gelte also
       \\[0.2cm]
@@ -1105,16 +1129,16 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
       und das impliziert
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\pair(x,y) \in \id_M$.
+      $\pair(x,y) \in \mathrm{id}_M$.
       \\[0.2cm]
       Damit ist die Inklusion
       \\[0.2cm]
       \hspace*{1.3cm}
-      $R \cap R^{-1} \subseteq \id_{M}$ 
+      $R \cap R^{-1} \subseteq \mathrm{id}_{M}$ 
       \\[0.2cm]
       gezeigt.
 \item[``$\Leftarrow$'':]
-      Wir nehmen nun an, dass $R \cap R^{-1} \subseteq \id_{M}$ gilt und zeigen, dass daraus
+      Wir nehmen nun an, dass $R \cap R^{-1} \subseteq \mathrm{id}_{M}$ gilt und zeigen, dass daraus
       die Gültigkeit von 
       \[ \forall x, y \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y\bigr) \]
       folgt.  Seien also $x,y \in M$ und es gelte
@@ -1129,13 +1153,13 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
       \\[0.2cm]
       folgt.  Aus $\pair(y,x) \in R$ folgt 
       $\pair(x,y) \in R^{-1}$.  Also gilt $\pair(x,y) \in R \cap R^{-1}$.
-      Aus der Inklusions-Beziehung $R \cap R^{-1} \subseteq \id_{M}$ folgt dann
-      $\pair(x,y) \in \id_M$ und daraus folgt sofort $x = y$. \hspace*{\fill}
+      Aus der Inklusions-Beziehung $R \cap R^{-1} \subseteq \mathrm{id}_{M}$ folgt dann
+      $\pair(x,y) \in \mathrm{id}_M$ und daraus folgt sofort $x = y$. 
       \qed
 \end{enumerate}
 
 \exercise
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
       sowohl anti-symmetrisch als auch symmetrisch ist.
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
@@ -1257,7 +1281,7 @@ einer Relation auf $M$.
   durch Induktion über $n$ wie folgt:  
   \begin{enumerate}
   \item Induktions-Anfang: $n= 0$.  Wir setzen \\[0.2cm]
-        \hspace*{1.3cm} $R^0 := \id_M$.
+        \hspace*{1.3cm} $R^0 := \mathrm{id}_M$.
   \item Induktions-Schritt: $n \rightarrow n + 1$. Nach Induktions-Voraussetzung ist $R^n$
         bereits definiert. Daher können wir $R^{n+1}$ als \\[0.2cm]
         \hspace*{1.3cm} $R^{n+1} = R \circ R^n$
@@ -1360,7 +1384,7 @@ Wir führen den Nachweis dieser Behauptung durch vollständige Induktion über $n\i
 \item[I.A.:] $n=1$.  
 
                Dann ist $R^1 \subseteq T$ zu zeigen.  Wegen
-               $R^1 = R \circ R^0 = R \circ \id_M = R$
+               $R^1 = R \circ R^0 = R \circ \mathrm{id}_M = R$
                folgt dies aber unmittelbar aus der Voraussetzung $R \subseteq T$. $\surd$
 \item[I.S.:] $n \mapsto n+1$.  
 
@@ -1437,7 +1461,7 @@ Auf der Menge $\mathbb{N}$ der natürlichen Zahlen wird die Relation $R$ wie folg
 $R = \{ \pair(k, k + 1) \mid k \in \mathbb{N} \}$.
 \\[0.2cm]
 Berechnen Sie die folgenden Relationen:
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item $R^2$,
 \item $R^3$,
 \item $R^n$ für beliebige $n \in \mathbb{N}$,
@@ -1466,7 +1490,7 @@ Eine Relation $R \subseteq M \times M$  ist eine
 \end{Definition}
 
 Der Begriff der Äquivalenz-Relationen verallgemeinert den Begriff der Gleichheit, denn
-ein triviales Beispiel für eine Äquivalenz-Relation auf $M$ ist die Relation $\id_M$.
+ein triviales Beispiel für eine Äquivalenz-Relation auf $M$ ist die Relation $\mathrm{id}_M$.
 Das folgende Beispiel zeigt eine nicht-triviale Äquivalenz-Relation, die später noch eine wichtige
 Rolle spielen wird.
 
