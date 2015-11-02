@@ -1,10 +1,10 @@
 \chapter{Komplexe Zahlen}
 
-\section{Einführung und Definition}
-Die Gleichung $x^2 = -1$ hat in den reellen Zahlen keine Lösung.  Wir wollen uns überlegen,
-dass es möglich ist, die Menge der reellen Zahlen so zu erweitern, dass die
-Gleichung $x^2 = -1$ doch eine Lösung hat.  Bezeichnen wir diese Lösung mit $i$, so muss
-für dieses $i$ also
+\section{Einf\"{u}hrung und Definition}
+Die Gleichung $x^2 = -1$ hat in den reellen Zahlen keine L\"{o}sung.  Wir wollen uns \"{u}berlegen,
+dass es m\"{o}glich ist, die Menge der reellen Zahlen so zu erweitern, dass die
+Gleichung $x^2 = -1$ doch eine L\"{o}sung hat.  Bezeichnen wir diese L\"{o}sung mit $i$, so muss
+f\"{u}r dieses $i$ also
 \\[0.2cm]
 \hspace*{1.3cm}
 $i \cdot i = -1$
@@ -15,29 +15,29 @@ von Paaren
 \hspace*{1.3cm}
 $\mathbb{C} := \{ \pair(x,y) \mid x \in \mathbb{R} \wedge y \in \mathbb{R} \}$.
 \\[0.2cm]
-Unser Ziel ist es, auf der Menge $\mathbb{C}$ Operationen $+$ und $\cdot$ so einzuführen, dass
+Unser Ziel ist es, auf der Menge $\mathbb{C}$ Operationen $+$ und $\cdot$ so einzuf\"{u}hren, dass
 die Struktur
 \\[0.2cm]
 \hspace*{1.3cm}
 $\langle \mathbb{C}, \pair(0,0), \pair(1,0), +, \cdot \rangle$
 \\[0.2cm]
-damit ein Körper wird und dass gleichzeitig für $i$ die Gleichung $i \cdot i = -1$ erfüllt
+damit ein K\"{o}rper wird und dass gleichzeitig f\"{u}r $i$ die Gleichung $i \cdot i = -1$ erf\"{u}llt
 ist.  Zur Vereinfachung der Schreibweise werden wir dass Paar 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x,y)$ \quad auch als \quad $x + i \cdot y$
 \\[0.2cm]
-schreiben.  Dass diese Schreibweise tatsächlich sinnvoll ist, sehen wir später.
+schreiben.  Dass diese Schreibweise tats\"{a}chlich sinnvoll ist, sehen wir sp\"{a}ter.
 Weiter definieren wir auf den komplexen Zahlen eine Addition, indem wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x_1,y_1) + \pair(x_2, y_2) := \pair(x_1 + x_2, y_1 + y_2)$
 \\[0.2cm]
-definieren.  Es ist leicht nachzurechnen, dass für die so definierte Addition von Paaren
+definieren.  Es ist leicht nachzurechnen, dass f\"{u}r die so definierte Addition von Paaren
 sowohl das Assoziativ-Gesetz als auch das Kommutativ-Gesetz gilt und dass weiterhin das
 Paar $\pair(0,0)$ ein neutrales Element 
-dieser Addition ist.  Außerdem ist klar, dass mit dieser Definition das Paar
-$\pair(-x,-y)$ bezüglich der Addition ein inverses Element ist.  Wir definieren daher
+dieser Addition ist.  Au\3erdem ist klar, dass mit dieser Definition das Paar
+$\pair(-x,-y)$ bez\"{u}glich der Addition ein inverses Element ist.  Wir definieren daher
 \\[0.2cm]
 \hspace*{1.3cm}
 $-\pair(x,y) := \pair(-x,-y)$
@@ -53,7 +53,7 @@ Damit ist die Struktur
 $\langle \mathbb{C}, \pair(0,0), + \rangle$
 \\[0.2cm]
 schon mal eine kommutative Gruppe.
-Übertragen wir die Definition der Addition in die suggestive Schreibweise, so erhalten wir
+\"{u}bertragen wir die Definition der Addition in die suggestive Schreibweise, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $(x_1 + i \cdot y_1) + (x_2 + i \cdot y_2) = (x_1 + x_2) + i \cdot (y_1 + y_2)$.
@@ -62,9 +62,9 @@ Beachten Sie, dass die Argumente des Operators $+$ auf der linken Seite dieser G
 komplexe Zahlen sind, auf der rechten Seite dieser Gleichung werden aber nur reelle Zahlen
 addiert.  
 
-Als nächstes wollen wir für 
-komplexe Zahlen eine Multiplikation einführen.   Das Ziel ist,
-diese Definition so zu wählen, dass wir mit den komplexen Zahlen suggestiv rechnen können
+Als n\"{a}chstes wollen wir f\"{u}r 
+komplexe Zahlen eine Multiplikation einf\"{u}hren.   Das Ziel ist,
+diese Definition so zu w\"{a}hlen, dass wir mit den komplexen Zahlen suggestiv rechnen k\"{o}nnen
 und dass dabei $i \cdot i = -1$ gilt.  Wir rechnen ganz unbefangen das Produkt 
 $(x_1 + i \cdot y_1) \cdot (x_2 + i \cdot y_2)$ aus und erhalten unter Verwendung des
 Distributiv-Gesetzes 
@@ -81,7 +81,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Wir definieren daher für Paare $\pair(x_1,y_1), \pair(x_2,y_2) \in \mathbb{C}$ die Multiplikation durch
+Wir definieren daher f\"{u}r Paare $\pair(x_1,y_1), \pair(x_2,y_2) \in \mathbb{C}$ die Multiplikation durch
 die Festlegung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -89,10 +89,10 @@ $\pair(x_1,y_1) \cdot \pair(x_2,y_2) :=
  \pair(x_1 \cdot x_2 - y_1 \cdot y_2,\; x_1 \cdot y_2 + y_1 \cdot x_2)
 $.
 \\[0.2cm]
-Es ist nun leicht zu sehen, dass für die so definierte Multiplikation das Kommutativ-Gesetz gilt.
-Auch die Gültigkeit des Assoziativ-Gesetzes lässt sich nachrechnen: Die Rechnung ist zwar etwas länger,
-sie verläuft aber völlig geradlinig.  Außerdem können wir sehen, dass $\pair(1,0)$ ein neutrales Element
-bezüglich der Multiplikation ist, denn wir haben
+Es ist nun leicht zu sehen, dass f\"{u}r die so definierte Multiplikation das Kommutativ-Gesetz gilt.
+Auch die G\"{u}ltigkeit des Assoziativ-Gesetzes l\"{a}sst sich nachrechnen: Die Rechnung ist zwar etwas l\"{a}nger,
+sie verl\"{a}uft aber v\"{o}llig geradlinig.  Au\3erdem k\"{o}nnen wir sehen, dass $\pair(1,0)$ ein neutrales Element
+bez\"{u}glich der Multiplikation ist, denn wir haben
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -107,16 +107,16 @@ zu berechnen, versuchen wir eine komplexe Zahl $\pair(a,b)$ so zu bestimmen, das
 \\[0.2cm]
 \hspace*{1.3cm} $\pair(a,b) \cdot \pair(x,y) = \pair(1,0)$
 \\[0.2cm]
-gilt.  Dazu führen wir das obige Produkt aus und erhalten
+gilt.  Dazu f\"{u}hren wir das obige Produkt aus und erhalten
 \\[0.2cm]
 \hspace*{1.3cm} $\pair(a \cdot x - b \cdot y,\; a \cdot y + b \cdot x) = \pair(1,0)$.
 \\[0.2cm]
-Das führt auf 
+Das f\"{u}hrt auf 
 \begin{equation}
   \label{eq:komplex_mult}  
  a \cdot x - b \cdot y = 1 \quad \mbox{und} \quad a \cdot y + b \cdot x = 0.
 \end{equation}
-Dies sind zwei lineare Gleichungen für die beiden Unbekannten $a$ und $b$.  Zunächst bestimmen wir
+Dies sind zwei lineare Gleichungen f\"{u}r die beiden Unbekannten $a$ und $b$.  Zun\"{a}chst bestimmen wir
 $b$ und multiplizieren dazu die erste dieser beiden Gleichungen mit $-y$ und die zweite Gleichung mit $x$.  Das
 liefert
 \\[0.2cm]
@@ -160,56 +160,56 @@ das multiplikative Inverse von $\pair(x,y)$ ist.  In suggestiver Schreibweise li
 \hspace*{1.3cm}
 $(x + i \cdot y)^{-1} = \bruch{1}{x^2 + y^2} \cdot (x  - i \cdot y)$.
 \\[0.2cm]
-Sie können auch unmittelbar nachrechnen, dass für $\pair(x,y) \not= \pair(0,0)$ die Gleichung
+Sie k\"{o}nnen auch unmittelbar nachrechnen, dass f\"{u}r $\pair(x,y) \not= \pair(0,0)$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bruch{1}{x^2 + y^2} \cdot (x  - i \cdot y) \cdot (x + i \cdot y) = 1 + i \cdot 0 = 1$ 
 \\[0.2cm]
-erfüllt ist.  Damit haben wir nun insgesamt gezeigt, dass die Struktur
+erf\"{u}llt ist.  Damit haben wir nun insgesamt gezeigt, dass die Struktur
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bigl\langle \mathbb{C}, \pair(0,0), \pair(1,0), +, \cdot \bigr\rangle$ 
 \\[0.2cm]
-ein Körper ist.  Die Zahl $i$ wird in diesem Körper durch das Paar $\pair(0,1)$ dargestellt und
-Sie können leicht sehen, dass
+ein K\"{o}rper ist.  Die Zahl $i$ wird in diesem K\"{o}rper durch das Paar $\pair(0,1)$ dargestellt und
+Sie k\"{o}nnen leicht sehen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $i \cdot i = \pair(0,1) \cdot \pair(0,1) = \pair(-1,0) = -1$
 \\[0.2cm]
-gilt.  Damit hat in dem so definierten Körper $\mathbb{C}$ die Gleichung $z^2 = -1$ die Lösung
+gilt.  Damit hat in dem so definierten K\"{o}rper $\mathbb{C}$ die Gleichung $z^2 = -1$ die L\"{o}sung
 $i = \pair(0,1)$.  Wir schreiben daher auch $i = \sqrt{-1}$.
 
 Ist $z = \pair(x,y) = x + i \cdot y$ eine komplexe Zahl, so ist bezeichnen wir $x$ als den \emph{Realteil}
-und $y$ als den Imaginärteil von $z$.
+und $y$ als den Imagin\"{a}rteil von $z$.
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
 \begin{enumerate}
-\item Zeigen Sie, dass für die Multiplikation in $\mathbb{C}$ das Assoziativ-Gesetz gilt.
+\item Zeigen Sie, dass f\"{u}r die Multiplikation in $\mathbb{C}$ das Assoziativ-Gesetz gilt.
 \item Zeigen Sie, dass in $\mathbb{C}$ das Distributiv-Gesetz gilt. \exend
 \end{enumerate}
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 
 
 \section{Quadratwurzeln komplexer Zahlen}
-Wir überlegen uns nun, wie wir aus komplexen Zahlen die Wurzel ziehen können.  Ist eine komplexe Zahl
+Wir \"{u}berlegen uns nun, wie wir aus komplexen Zahlen die Wurzel ziehen k\"{o}nnen.  Ist eine komplexe Zahl
 $x + i \cdot y$ gegeben, so suchen wir also eine komplexe Zahl $a + i \cdot b$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $x + i \cdot y = (a + i \cdot b)^2$
 \\[0.2cm]
-gilt.  Führen wir das Quadrat auf der rechten Seite dieser Gleichung aus, so erhalten wir
+gilt.  F\"{u}hren wir das Quadrat auf der rechten Seite dieser Gleichung aus, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $x + i \cdot y = a^2 - b^2 + i \cdot 2 \cdot a \cdot b$.
 \\[0.2cm]
-Durch Vergleich von Real- und Imaginärteil erhalten wir daraus die beiden Gleichungen
+Durch Vergleich von Real- und Imagin\"{a}rteil erhalten wir daraus die beiden Gleichungen
 \begin{equation}
   \label{eq:komplex_root1}
   x = a^2 - b^2 \quad \mbox{und} \quad y = 2 \cdot a \cdot b.
 \end{equation}
-Wir betrachten zunächst den Fall $a \not= 0$ und
-lösen die zweite Gleichung nach $b$ auf.  Wir erhalten
+Wir betrachten zun\"{a}chst den Fall $a \not= 0$ und
+l\"{o}sen die zweite Gleichung nach $b$ auf.  Wir erhalten
 \begin{equation}
   \label{eq:komplex_root2}
   b = \bruch{y}{2 \cdot a}  
@@ -225,15 +225,15 @@ Wir multiplizieren diese Gleichung mit $a^2$. Das liefert
 \hspace*{1.3cm}
 $x \cdot a^2 = a^4 - \bruch{y^2}{4}$,
 \\[0.2cm] 
-was wir als quadratische Gleichung für die  Unbekannte $a^2$ auffassen können.
- Diese Gleichung stellen wir um und addieren außerdem die quadratische Ergänzung 
+was wir als quadratische Gleichung f\"{u}r die  Unbekannte $a^2$ auffassen k\"{o}nnen.
+ Diese Gleichung stellen wir um und addieren au\3erdem die quadratische Erg\"{a}nzung 
 $\left(\bruch{x}{2}\right)^2 = \bruch{x^2}{4}$ auf 
 beiden Seiten: 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bruch{y^2}{4} + \bruch{x^2}{4} = a^4 - x \cdot a^2 + \left(\bruch{x}{2}\right)^2$.
 \\[0.2cm]
-Diese Gleichung können wir auch anders als
+Diese Gleichung k\"{o}nnen wir auch anders als
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bruch{y^2}{4} + \bruch{x^2}{4} = \left(a^2 - \bruch{x}{2}\right)^2$
@@ -249,17 +249,17 @@ $a^2$ muss positiv sein und der Ausdruck
 \hspace*{1.3cm}
 $\bruch{x}{2} - \bruch{1}{2} \cdot \sqrt{y^2 + x^2}$
 \\[0.2cm]
-ist sicher negativ.  Für $a$ erhalten wir dann
+ist sicher negativ.  F\"{u}r $a$ erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $a = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$.
 \\[0.2cm]
-Setzen wir diesen Wert in Gleichung (\ref{eq:komplex_root2}) ein, so ergibt sich für $b$ der Wert
+Setzen wir diesen Wert in Gleichung (\ref{eq:komplex_root2}) ein, so ergibt sich f\"{u}r $b$ der Wert
 \\[0.2cm]
 \hspace*{1.3cm}
 $b = \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$.
 \\[0.2cm]
-Insgesamt erhalten wir damit für die Quadrat-Wurzel der komplexen Zahl $x + i \cdot y$ das Ergebnis
+Insgesamt erhalten wir damit f\"{u}r die Quadrat-Wurzel der komplexen Zahl $x + i \cdot y$ das Ergebnis
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sqrt{x + i \cdot y\,} = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
@@ -310,12 +310,12 @@ Um dies einzusehen, betrachten wir die folgende Gleichungskette
 \hspace*{1.3cm}
 $1 = \sqrt{1} = \sqrt{(-1) \cdot (-1)} \stackrel{?}{=} \sqrt{-1} \cdot \sqrt{-1} = i \cdot i = -1$.
 \\[0.2cm]
-Hätten wir an der mit $\stackrel{?}{=}$ markierten Stelle dieser Gleichungskette tatsächlich eine
-Gleichheit, so hätten wir bewiesen, dass $1 = -1$ ist, und das ist natürlich Unsinn.
+H\"{a}tten wir an der mit $\stackrel{?}{=}$ markierten Stelle dieser Gleichungskette tats\"{a}chlich eine
+Gleichheit, so h\"{a}tten wir bewiesen, dass $1 = -1$ ist, und das ist nat\"{u}rlich Unsinn.
 
 \section{Geometrische Interpretation}
-Ähnlich wie sich reele Zahlen auf der Zahlengeraden darstellen lassen, können wir auch komplexe Zahlen
-geometrisch interpretieren.  Da komplexe Zahlen aus zwei Komponenten bestehen, benötigen wir nun zwei
+\"{a}hnlich wie sich reele Zahlen auf der Zahlengeraden darstellen lassen, k\"{o}nnen wir auch komplexe Zahlen
+geometrisch interpretieren.  Da komplexe Zahlen aus zwei Komponenten bestehen, ben\"{o}tigen wir nun zwei
 Dimensionen.  Die komplexe Zahl $a + i \cdot b$ wird daher als der Punkt in der Ebene interpretiert,
 dessen $x$ Koordinate den Wert $a$ und dessen $y$ Komponente den Wert $b$ hat.  Wir haben damit die
 Korrespondenz 
@@ -324,9 +324,9 @@ Korrespondenz
 $a + i \cdot b \;\widehat{=}\; \pair(a,b)$.
 \\[0.2cm]
 Stellen wir komplexe Zahlen in dieser Weise geometrisch dar, so nennen wir die resultierende Zahlen-Ebene
-die \emph{Gauß'sche Zahlen-Ebene}.  Abbildung \ref{fig:gauss-ebene.eps} zeigt diese Ebene.
+die \emph{Gau\3'sche Zahlen-Ebene}.  Abbildung \ref{fig:gauss-ebene.eps} zeigt diese Ebene.
 Dort ist die komplexe Zahl $a + i \cdot b$ eingezeichnet.  Der Abstand, den der Punkt mit den Koordinaten
-$x = a$ und $y = b$ von dem Ursprungspunkt mit den Koordinaten $x = 0$ und $y = 0$ hat, beträgt nach dem
+$x = a$ und $y = b$ von dem Ursprungspunkt mit den Koordinaten $x = 0$ und $y = 0$ hat, betr\"{a}gt nach dem
 Satz des Pythagoras $\sqrt{a^2 + b^2\,}$.  Daher ist der Betrag einer komplexen Zahl wie folgt definiert:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -336,7 +336,7 @@ $|a + i \cdot b| := \sqrt{a^2 + b^2\,}$.
 \begin{figure}[!ht]
   \centering
   \epsfig{file=Abbildungen/gauss-ebene.eps, scale=0.7}
-  \caption{Die Gauß'sche Zahlen-Ebene.}
+  \caption{Die Gau\3'sche Zahlen-Ebene.}
   \label{fig:gauss-ebene.eps}
 \end{figure}
 
@@ -353,13 +353,13 @@ Durch Division der zweiten Gleichung durch die erste Gleichung erhalten wir die 
 \\[0.2cm]
 \hspace*{1.3cm} $\tan(\varphi) = \bruch{b}{a}$.
 \\[0.2cm]
-Solange wir uns im ersten Quadranten der Ebene befinden, können wir daraus den Winkel $\varphi$ mit Hilfe
+Solange wir uns im ersten Quadranten der Ebene befinden, k\"{o}nnen wir daraus den Winkel $\varphi$ mit Hilfe
 der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm} $\varphi = \arctan\Bigl(\bruch{b}{a}\Bigr)$
 \\[0.2cm]
 ausrechnen.  Das Paar $\pair(r, \varphi)$ bezeichnen wir als die \emph{Polarform} der
-komplexen Zahl $a + i \cdot b$, während wir das Paar $\pair(a,b)$ die \emph{kartesische Darstellung}
+komplexen Zahl $a + i \cdot b$, w\"{a}hrend wir das Paar $\pair(a,b)$ die \emph{kartesische Darstellung}
 nennen.  Es ist instruktiv zu sehen, was passiert, wenn wir zwei
 komplexe Zahlen in Polarform
 \\[0.2cm]
@@ -367,7 +367,7 @@ komplexe Zahlen in Polarform
 $r_1 \cdot \cos(\varphi_1) + i \cdot r_1 \cdot \sin(\varphi_1)$ \quad und \quad
 $r_2 \cdot \cos(\varphi_2) + i \cdot r_2 \cdot \sin(\varphi_2)$ 
 \\[0.2cm]
-multiplizieren.  Wir haben nämlich
+multiplizieren.  Wir haben n\"{a}mlich
 \\[0.2cm]
 $
 \begin{array}[t]{cl}
@@ -399,56 +399,56 @@ fest:
 = \bigl(\cos(\varphi_1 + \varphi_2) + i \cdot \sin(\varphi_1 + \varphi_2) \bigr).
 \end{equation}
 Wir sehen, dass es einfach ist, komplexe Zahlen in der Polarform zu
-multiplizieren: Die Winkel der Zahlen werden addiert.  Der Übersichtlichkeit halber habe ich
-die Beträge $r_1$ und $r_2$ in der oberen Formel weggelassen.  
+multiplizieren: Die Winkel der Zahlen werden addiert.  Der \"{u}bersichtlichkeit halber habe ich
+die Betr\"{a}ge $r_1$ und $r_2$ in der oberen Formel weggelassen.  
 
 \subsection{Potenzen und allgemeine Wurzeln}
 Ist eine komplexe Zahl in Polarform gegeben, so ist es leicht, die Zahl zu
-potenzieren, denn nach Gleichung \ref{eq:komplex_mult2} gilt für alle natürlichen Zahlen $n \in \mathbb{N}$
+potenzieren, denn nach Gleichung \ref{eq:komplex_mult2} gilt f\"{u}r alle nat\"{u}rlichen Zahlen $n \in \mathbb{N}$
 \begin{equation}
   \label{eq:komplex_potenz}
   \bigl(\cos(\varphi) + i \cdot \sin(\varphi)\bigr)^n = \cos(n \cdot \varphi) + i \cdot \sin(n \cdot \varphi).
 \end{equation}
 Diese Formel wird auch als \href{http://de.wikipedia.org/wiki/Abraham_de_Moivre}{\emph{Satz von de Moivre}} bezeichnet.  Sie kann auch zum Ziehen
 beliebiger Wurzeln aus einer komplexen Zahl verwendet werden.  Um mit Hilfe dieses Satzes Wurzeln ziehen
-zu können, bemerken wir zunächst, dass die Funktionen $\sin(x)$ und $\cos(x)$ periodisch mit der Periode
+zu k\"{o}nnen, bemerken wir zun\"{a}chst, dass die Funktionen $\sin(x)$ und $\cos(x)$ periodisch mit der Periode
 $2 \cdot \pi$ sind, es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sin(x + 2 \cdot \pi) = \sin(x)$ \quad und \quad
 $\cos(x + 2 \cdot \pi) = \cos(x)$.
 \\[0.2cm]
-Diese Gleichungen lassen sich für beliebige $k \in \mathbb{N}$ zu
+Diese Gleichungen lassen sich f\"{u}r beliebige $k \in \mathbb{N}$ zu
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sin(\varphi + 2 \cdot k \cdot \pi) = \sin(\varphi)$ \quad und \quad
 $\cos(\varphi + 2 \cdot k \cdot \pi) = \cos(\varphi)$
 \\[0.2cm]
-verallgemeinern.  Wir überlegen nun, für welche komplexe Zahlen der Form
+verallgemeinern.  Wir \"{u}berlegen nun, f\"{u}r welche komplexe Zahlen der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $z = \cos(\varphi) + i \cdot \sin(\varphi)$ \quad die Gleichung \quad $z^n = 1$
 \\[0.2cm]
-erfüllt ist.  Solche Zahlen bezeichnen wir als $n$-te Einheitswurzeln.  Da 
+erf\"{u}llt ist.  Solche Zahlen bezeichnen wir als $n$-te Einheitswurzeln.  Da 
 \\[0.2cm]
 \hspace*{1.3cm}
 $1 = \cos(2 \cdot k \cdot \pi) + i \cdot \sin(2 \cdot k \cdot \pi)$
 \\[0.2cm]
-gilt, muss nach Gleichung \ref{eq:komplex_potenz} für die Zahl $z = \cos(\varphi) + i \cdot \sin(\varphi)$
+gilt, muss nach Gleichung \ref{eq:komplex_potenz} f\"{u}r die Zahl $z = \cos(\varphi) + i \cdot \sin(\varphi)$
 die Beziehung
 \begin{equation}
   \label{eq:komplex_wurzel0}
 \cos(2 \cdot k \cdot \pi) + i \cdot \sin(2 \cdot k \cdot \pi) =
 \cos(n \cdot \varphi) + i \cdot \sin(n \cdot \varphi)  
 \end{equation}
-erfüllt sein, wenn $z^n = 1$ sein soll.  Die Gleichung \ref{eq:komplex_wurzel0} ist offensichtlich dann
-erfüllt, wenn 
+erf\"{u}llt sein, wenn $z^n = 1$ sein soll.  Die Gleichung \ref{eq:komplex_wurzel0} ist offensichtlich dann
+erf\"{u}llt, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\varphi = \bruch{2 \cdot k \cdot \pi}{n}$
 \\[0.2cm]
-gilt, wobei wir $k$ auf die Elemente der Menge $\{0,1, \cdots, n-1\}$ beschränken können, denn größere
-Werte von $k$ liefern Winkel, die größer als $2 \cdot \pi$ sind.  Wir definieren daher
+gilt, wobei wir $k$ auf die Elemente der Menge $\{0,1, \cdots, n-1\}$ beschr\"{a}nken k\"{o}nnen, denn gr\"{o}\3ere
+Werte von $k$ liefern Winkel, die gr\"{o}\3er als $2 \cdot \pi$ sind.  Wir definieren daher
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\zeta_n := \cos\Bigl(\frac{2 \cdot \pi}{n}\Bigr) + i \cdot \sin\Bigl(\frac{2 \cdot \pi}{n}\Bigr)$
@@ -457,45 +457,45 @@ als die \emph{primitive} $n$-te Einheitswurzel und sehen, dass die Zahlen
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\zeta_n^k := \cos\Bigl(\frac{2 \cdot k \cdot \pi}{n}\Bigr) + i \cdot \sin\Bigl(\frac{2 \cdot k \cdot \pi}{n}\Bigr)$
-\quad für $k \in \{ 0, 1, \cdots, n-1 \}$
+\quad f\"{u}r $k \in \{ 0, 1, \cdots, n-1 \}$
 \\[0.2cm]
 dann alle $n$-ten Einheitswurzeln sind.
 
 \example
-Für die primitive dritte Einheitswurzel $\zeta_3$ gilt
+F\"{u}r die primitive dritte Einheitswurzel $\zeta_3$ gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\zeta_3 = \cos\Bigl(\frac{2 \cdot \pi}{3}\Bigr) + i \cdot \sin\Bigl(\frac{2 \cdot \pi}{3}\Bigr)
  = - \bruch{1}{2} + i \cdot \bruch{\sqrt{3\,}}{2}. 
 $
 \\[0.2cm] 
-Für $\zeta_3^2$ finden wir nach kurzer Rechnung
+F\"{u}r $\zeta_3^2$ finden wir nach kurzer Rechnung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\zeta_3^2 = \cos\Bigl(\frac{4 \cdot \pi}{3}\Bigr) + i \cdot \sin\Bigl(\frac{4 \cdot \pi}{3}\Bigr)
  = - \bruch{1}{2} - i \cdot \bruch{\sqrt{3\,}}{2}. 
 $
 \\[0.2cm]
-Sie können leicht nachrechnen, dass sowohl $\zeta_3^3 = 1$ als auch $(\zeta_3^2)^3 = 1$ gilt.
+Sie k\"{o}nnen leicht nachrechnen, dass sowohl $\zeta_3^3 = 1$ als auch $(\zeta_3^2)^3 = 1$ gilt.
 \vspace*{0.2cm}
 
-Mit Hilfe der $n$-ten Einheitswurzeln können wir jetzt allgemein für eine komplexe Zahl $z$ und eine
-natürliche Zahl $n$ die Lösungen der Gleichung $r^n = z$ angeben.  Dazu ist zunächst $z$ in
+Mit Hilfe der $n$-ten Einheitswurzeln k\"{o}nnen wir jetzt allgemein f\"{u}r eine komplexe Zahl $z$ und eine
+nat\"{u}rliche Zahl $n$ die L\"{o}sungen der Gleichung $r^n = z$ angeben.  Dazu ist zun\"{a}chst $z$ in
 trigonometrischen Koordinaten anzugeben.  Falls
 \\[0.2cm]
 \hspace*{1.3cm}
 $z = r \cdot \bigl(\cos(\varphi) + i \cdot \sin(\varphi)\bigr)$
 \\[0.2cm]
-gilt, so ist offenbar für alle $k \in \{ 0, 1, \cdots, n - 1 \}$ die Zahl
+gilt, so ist offenbar f\"{u}r alle $k \in \{ 0, 1, \cdots, n - 1 \}$ die Zahl
 \\[0.2cm]
 \hspace*{1.3cm}
 $\displaystyle s = \zeta_n^k \cdot \sqrt[n]{r\,} \cdot 
      \biggl(\cos\Bigl(\frac{\varphi}{n}\Bigr) + i \cdot \sin\Bigl(\frac{\varphi}{n}\Bigr) \biggr)
 $
 \\[0.2cm] 
-eine Lösung der Gleichung $s^n = z$.
+eine L\"{o}sung der Gleichung $s^n = z$.
 
-\example Wir berechnen alle Lösungen der Gleichung $r^3 = 1 + i$.  Dazu müssen wir zunächst die Zahl $1 +
+\example Wir berechnen alle L\"{o}sungen der Gleichung $r^3 = 1 + i$.  Dazu m\"{u}ssen wir zun\"{a}chst die Zahl $1 +
 i$ in trigonometrischen Koordinaten darstellen.  Setzen wir
 \\[0.2cm]
 \hspace*{1.3cm} $\varphi = \arctan\Bigl(\bruch{1}{1}\Bigr) = \arctan(1) = \bruch{\pi}{4}$,
@@ -511,28 +511,28 @@ $\ds r := \sqrt[6]{2\,} \cdot
       \left(\cos\Bigl(\frac{\pi}{12}\Bigr) + i \cdot \sin\Bigl(\frac{\pi}{12}\Bigr)\right) 
 $.
 \\[0.2cm]
-Berücksichtigen wir noch, dass die Werte der trigonometrischen Funktionen für das Argument
-$\ds\frac{\pi}{12}$ bekannt sind, es gilt nämlich
+Ber\"{u}cksichtigen wir noch, dass die Werte der trigonometrischen Funktionen f\"{u}r das Argument
+$\ds\frac{\pi}{12}$ bekannt sind, es gilt n\"{a}mlich
 \\[0.2cm]
 \hspace*{1.3cm} 
 $\ds\cos\Bigl(\frac{\pi}{12}\Bigr) = \frac{1}{4} \cdot \bigl(\sqrt{6} + \sqrt{2}\bigr)$ \quad und \quad
 $\ds\sin\Bigl(\frac{\pi}{12}\Bigr) = \frac{1}{4} \cdot \bigl(\sqrt{6} - \sqrt{2}\bigr)$,
 \\[0.2cm]
-so erhalten wir für $r$ den Ausdruck
+so erhalten wir f\"{u}r $r$ den Ausdruck
 \\[0.2cm]
 \hspace*{1.3cm}
 $r = \frac{1}{4} \cdot \sqrt[6]{2\,} \cdot
      \Bigl(\sqrt{6} + \sqrt{2} + i \cdot \bigl(\sqrt{6} - \sqrt{2}\bigr)\Bigr) 
 $.
 \\[0.2cm]
-Ziehen wir hier $\sqrt{2}$ aus der Klammer und berücksichtigen, dass
+Ziehen wir hier $\sqrt{2}$ aus der Klammer und ber\"{u}cksichtigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sqrt[6]{2} \cdot \sqrt{2} = 2^{\frac{1}{6}} \cdot 2^{\frac{1}{2}} =
  2^{\frac{4}{6}} =  2^{\frac{2}{3}} = \sqrt[3]{4}
 $
 \\[0.2cm]
-gilt, so können wir $r$ als
+gilt, so k\"{o}nnen wir $r$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $r = \frac{1}{4} \cdot \sqrt[3]{4\,} \cdot \Bigl(\sqrt{3} + 1 + i \cdot \bigl(\sqrt{3} - 1\bigr)\Bigr)$
@@ -541,8 +541,8 @@ schreiben.  Die anderen beiden dritten Wurzeln erhalten wir daraus durch Multipl
 $\zeta_3$ bzw.~$\zeta_3^2$.
 
 \remark
-Bei der obigen Rechnung hatten wir Glück:  Erstens konnten wir für den Winkel $\varphi$ einen expliziten
-Ausdruck, nämlich $\frac{\pi}{4}$, angeben und zweitens konnten wir auch die Anwendung der trigonometrischen
+Bei der obigen Rechnung hatten wir Gl\"{u}ck:  Erstens konnten wir f\"{u}r den Winkel $\varphi$ einen expliziten
+Ausdruck, n\"{a}mlich $\frac{\pi}{4}$, angeben und zweitens konnten wir auch die Anwendung der trigonometrischen
 Funktionen auf
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -560,7 +560,7 @@ $\ds\sin\Bigl(\frac{\pi}{12}\Bigr) = \frac{1}{4} \cdot \bigl(\sqrt{6} - \sqrt{2}
 \\[0.2cm]
 gilt.  Verwenden Sie dazu den Satz von de Moivre, der im Skript als Gleichung
 (\ref{eq:komplex_potenz}) angegeben ist. 
-Außerdem dürfen Sie in Ihrem Beweis die Gültigkeit der Gleichungen
+Au\3erdem d\"{u}rfen Sie in Ihrem Beweis die G\"{u}ltigkeit der Gleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\cos\Bigl(\frac{\pi}{6}\Bigr) = \frac{1}{2}\cdot\sqrt{3}$ \quad und \quad $\ds\sin\Bigl(\frac{\pi}{6}\Bigr) = \frac{1}{2}$
@@ -569,20 +569,20 @@ voraussetzen.
 \exend
 
 \section{Anwendung der komplexen Zahlen}
-Wir können jetzt zwar mit komplexen Zahlen rechnen, wir haben aber bisher noch nicht gesehen, warum der 
-Gebrauch von komplexen Zahlen überhaupt notwendig ist.  Es gibt in der Mathematik eine Vielzahl von
-Anwendung der komplexen Zahlen.  Stellvertretend möchte ich an dieser Stelle die Fourier-Transformation
-einer Funktion nennen, die in der Signalverarbeitung eine große Rolle spielt.  Darauf näher einzugehen
-ist aus Zeitgründen im Rahmen einer einführenden Mathematik-Vorlesung leider unmöglich.  Auch für die
-Anwendung komplexer Zahlen bei der Lösung von Differenzial-Gleichungen ist es jetzt noch zu früh.  Ich
-möchte statt dessen den historischen Weg gehen und zeigen, wie die komplexen Zahlen tatsächlich entdeckt
-worden sind.  Ausgangspunkt unserer Überlegungen ist dabei die Gleichung
+Wir k\"{o}nnen jetzt zwar mit komplexen Zahlen rechnen, wir haben aber bisher noch nicht gesehen, warum der 
+Gebrauch von komplexen Zahlen \"{u}berhaupt notwendig ist.  Es gibt in der Mathematik eine Vielzahl von
+Anwendung der komplexen Zahlen.  Stellvertretend m\"{o}chte ich an dieser Stelle die Fourier-Transformation
+einer Funktion nennen, die in der Signalverarbeitung eine gro\3e Rolle spielt.  Darauf n\"{a}her einzugehen
+ist aus Zeitgr\"{u}nden im Rahmen einer einf\"{u}hrenden Mathematik-Vorlesung leider unm\"{o}glich.  Auch f\"{u}r die
+Anwendung komplexer Zahlen bei der L\"{o}sung von Differenzial-Gleichungen ist es jetzt noch zu fr\"{u}h.  Ich
+m\"{o}chte statt dessen den historischen Weg gehen und zeigen, wie die komplexen Zahlen tats\"{a}chlich entdeckt
+worden sind.  Ausgangspunkt unserer \"{u}berlegungen ist dabei die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^3 - 15 \cdot x - 4 = 0$.
 \\[0.2cm]
-Wir wollen alle möglichen Lösungen dieser Gleichung bestimmen.  Um uns einen Überblick zu verschaffen,
-skizzieren wir zunächst die Funktion $x \mapsto x^3 - 15 \cdot x - 4$.  Wir erhalten den in Abbildung
+Wir wollen alle m\"{o}glichen L\"{o}sungen dieser Gleichung bestimmen.  Um uns einen \"{u}berblick zu verschaffen,
+skizzieren wir zun\"{a}chst die Funktion $x \mapsto x^3 - 15 \cdot x - 4$.  Wir erhalten den in Abbildung
 \ref{fig:cubic.eps} auf Seite \pageref{fig:cubic.eps} gezeigten Graphen.
 
 \begin{figure}[!ht]
@@ -592,13 +592,13 @@ skizzieren wir zunächst die Funktion $x \mapsto x^3 - 15 \cdot x - 4$.  Wir erh
   \label{fig:cubic.eps}
 \end{figure}
 
-Es sieht so aus, als ob unsere Gleichung drei verschiedene Lösungen hat.  Um diese Lösungen zu bestimmen,
+Es sieht so aus, als ob unsere Gleichung drei verschiedene L\"{o}sungen hat.  Um diese L\"{o}sungen zu bestimmen,
 verallgemeinern wir unser Problem und versuchen, die kubische Gleichung
 \begin{equation}
   \label{eq:cubic}
   x^3 - p \cdot x - q = 0  
 \end{equation}
-zu lösen.  Wir machen dazu den Ansatz $x = u + v$.  Nun gilt
+zu l\"{o}sen.  Wir machen dazu den Ansatz $x = u + v$.  Nun gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -611,12 +611,12 @@ $
 \end{array}
 $
 \\[0.2cm]
-Daher können wir die kubische Gleichung mit dem Ansatz $x = u + v$ in die Gleichung
+Daher k\"{o}nnen wir die kubische Gleichung mit dem Ansatz $x = u + v$ in die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $3 \cdot u \cdot v \cdot (u + v) + u^3 + v^3 - p \cdot (u + v) - q = 0$
 \\[0.2cm]
-überführen, was wir noch zu
+\"{u}berf\"{u}hren, was wir noch zu
 \\[0.2cm]
 \hspace*{1.3cm}
 $(3 \cdot u \cdot v - p) \cdot (u + v) + u^3 + v^3 - q = 0$
@@ -626,12 +626,12 @@ umschreiben.  Falls es uns gelingt, die Zahlen $u$ und $v$ so zu bestimmen, dass
 \hspace*{1.3cm}
 $p = 3 \cdot u \cdot v$ \quad und \quad $q = u^3 + v^3$
 \\[0.2cm]
-gilt, dann ist $x = u + v$ eine Lösung der kubischen Gleichung \ref{eq:cubic}.  Wir definieren
+gilt, dann ist $x = u + v$ eine L\"{o}sung der kubischen Gleichung \ref{eq:cubic}.  Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
 $\alpha := u^3$ \quad und \quad $\beta := v^3$.
 \\[0.2cm]
-Damit lassen sich die Gleichungen für $u$ und $v$ umschreiben in
+Damit lassen sich die Gleichungen f\"{u}r $u$ und $v$ umschreiben in
 \\[0.2cm]
 \hspace*{1.3cm}
 $p^3 = 27 \cdot \alpha \cdot \beta$ \quad und \quad $q = \alpha + \beta$
@@ -646,7 +646,7 @@ Setzen wir diesen Wert in die zweite Gleichung ein, so erhalten wir
 \hspace*{1.3cm}
 $q = \alpha + \bruch{p^3}{27 \cdot \alpha}$.
 \\[0.2cm]
-Multiplikation dieser Gleichung mit $\alpha$ liefert uns eine quadratische Gleichung für $\alpha$:
+Multiplikation dieser Gleichung mit $\alpha$ liefert uns eine quadratische Gleichung f\"{u}r $\alpha$:
 \\[0.2cm]
 \hspace*{1.3cm}
 $q \cdot \alpha = \alpha^2 + \bruch{p^3}{27}$.
@@ -656,28 +656,28 @@ Diese Gleichung stellen wir zu
 \hspace*{1.3cm}
 $- \bruch{p^3}{27} = \alpha^2 - q \cdot \alpha$
 \\[0.2cm]
-um.  Addieren wir auf beiden Seiten die quadratische Ergänzung $\ds\frac{q^2}{4}$, so erhalten wir
+um.  Addieren wir auf beiden Seiten die quadratische Erg\"{a}nzung $\ds\frac{q^2}{4}$, so erhalten wir
 die quadratische Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bruch{q^2}{4} - \bruch{p^3}{27} = \left(\alpha - \bruch{q}{2}\right)^2$.
 \\[0.2cm]
-Diese Gleichung hat offenbar die Lösung
+Diese Gleichung hat offenbar die L\"{o}sung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\alpha = \bruch{q}{2} + \sqrt{\bruch{q^2}{4} - \bruch{p^3}{27}}$.
 \\[0.2cm]
-Wegen $q = \alpha + \beta$ folgt daraus für $\beta$
+Wegen $q = \alpha + \beta$ folgt daraus f\"{u}r $\beta$
 \\[0.2cm]
 \hspace*{1.3cm}
 $\beta = \bruch{q}{2} - \sqrt{\bruch{q^2}{4} - \bruch{p^3}{27}}$.
 \\[0.2cm]
-Wir prüfen, ob für diese Werte von $\alpha$ und $\beta$ auch die zweite Bedingung 
+Wir pr\"{u}fen, ob f\"{u}r diese Werte von $\alpha$ und $\beta$ auch die zweite Bedingung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\alpha \cdot \beta = \Bigl(\bruch{p}{3}\Bigr)^3$
 \\[0.2cm]
-erfüllt ist und finden tatsächlich
+erf\"{u}llt ist und finden tats\"{a}chlich
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -690,9 +690,9 @@ $
 \end{array}
 $
 \\[0.2cm]
-Berücksichtigen wir, dass $\alpha = u^3$, $\beta = v^3$ und $x = u + v$ ist,
-so erhalten wir zur Lösung der kubischen Gleichung \ref{eq:cubic} die 
-erstmals 1545 von \href{http://de.wikipedia.org/wiki/Gerolamo_Cardano}{Geralomo Cardano} veröffentlichte 
+Ber\"{u}cksichtigen wir, dass $\alpha = u^3$, $\beta = v^3$ und $x = u + v$ ist,
+so erhalten wir zur L\"{o}sung der kubischen Gleichung \ref{eq:cubic} die 
+erstmals 1545 von \href{http://de.wikipedia.org/wiki/Gerolamo_Cardano}{Geralomo Cardano} ver\"{o}ffentlichte 
 \emph{Cardanische Formel}
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -701,16 +701,16 @@ $x = \sqrt[3]{\bruch{q}{2} + \sqrt{\left(\bruch{q}{2}\right)^2 - \left(\bruch{p}
      \sqrt[3]{\bruch{q}{2} - \sqrt{\left(\bruch{q}{2}\right)^2 - \left(\bruch{p}{3}\right)^3\,}\;}
 $.}}}
 \\[0.2cm]
-In unserem ursprünglichen Problem gilt $p = 15$ und $q = 4$.  Dann haben wir 
+In unserem urspr\"{u}nglichen Problem gilt $p = 15$ und $q = 4$.  Dann haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\alpha = \bruch{q}{2} + \sqrt{\left(\bruch{q}{2}\right)^2 - \left(\bruch{p}{3}\right)^3\,} =
  2 + \sqrt{4 - 125} = 2 + \sqrt{-121} = 2 + i \cdot 11
 $.
 \\[0.2cm]
-Das ist aber eine komplexe Zahl, aus der wir jetzt noch die dritte Wurzel ziehen müssen.
-An dieser Stelle haben wir Glück, denn für die dritte Wurzel aus $2 + i \cdot 11$ und aus 
-$2 - i \cdot 11$ lässt sich jeweils ein expliziter Wert angeben, es gilt
+Das ist aber eine komplexe Zahl, aus der wir jetzt noch die dritte Wurzel ziehen m\"{u}ssen.
+An dieser Stelle haben wir Gl\"{u}ck, denn f\"{u}r die dritte Wurzel aus $2 + i \cdot 11$ und aus 
+$2 - i \cdot 11$ l\"{a}sst sich jeweils ein expliziter Wert angeben, es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $u = \sqrt[3]{2 + i \cdot 11} = 2 + i$  \quad und \quad 
@@ -727,24 +727,24 @@ $
 \end{array}
 $.
 \\[0.2cm]
-Damit finden wir als eine Lösung der kubischen Gleichung $x^3 - 15 \cdot x - 4 = 0$ den Wert
+Damit finden wir als eine L\"{o}sung der kubischen Gleichung $x^3 - 15 \cdot x - 4 = 0$ den Wert
 \\[0.2cm]
 \hspace*{1.3cm}
 $x_1 = 2 + 11 \cdot i + 2 - 11 \cdot i = 4$.
 \\[0.2cm]
 Sie sehen, dass wir ein Problem, dass mit komplexen Zahlen auf den ersten Blick nichts zu tun hat, durch die
-Verwendung komplexer Zahlen lösen konnten.
-Der Vollständigkeit halber wollen wir noch die anderen beiden Lösungen der kubischen Gleichung $x^3 - 15
+Verwendung komplexer Zahlen l\"{o}sen konnten.
+Der Vollst\"{a}ndigkeit halber wollen wir noch die anderen beiden L\"{o}sungen der kubischen Gleichung $x^3 - 15
 \cdot x - 4 = 0$ bestimmen. 
-Diese erhalten wir, wenn wir in der Cardanischen Formel auch die anderen Möglichkeiten für die dritte
-Wurzel einsetzen.  Dabei müssen wir allerdings berücksichtigen, dass für die Zahlen $u$ und $v$ die
+Diese erhalten wir, wenn wir in der Cardanischen Formel auch die anderen M\"{o}glichkeiten f\"{u}r die dritte
+Wurzel einsetzen.  Dabei m\"{u}ssen wir allerdings ber\"{u}cksichtigen, dass f\"{u}r die Zahlen $u$ und $v$ die
 Nebenbedingung $3 \cdot u \cdot v = p$ gilt.  Multiplizieren wir beispielsweise $u$ mit $\zeta_3$ und 
 $v$ mit $\zeta_3^2$, so haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $3 \cdot \zeta_3 \cdot u \cdot \zeta_3^2 \cdot v = 3 \cdot \zeta_3^3 \cdot u \cdot v = 3 \cdot u \cdot v = p$,
 \\[0.2cm]
-denn aus der Tatsache, dass $\zeta_3$ die dritte Einheitswurzel ist, folgt $\zeta_3^3 = 1$.  Als eine weitere Lösung erhalten wir dann
+denn aus der Tatsache, dass $\zeta_3$ die dritte Einheitswurzel ist, folgt $\zeta_3^3 = 1$.  Als eine weitere L\"{o}sung erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -759,13 +759,13 @@ x_2 & = & \zeta_3 \cdot u + \zeta_3^2 \cdot v                               \\[0
 \end{array}
 $
 \\[0.2cm]
-Auch hier ergibt sich also eine reelle Lösung.  Für $x_3$ finden Sie nach einer ähnlichen Rechnung den Wert
+Auch hier ergibt sich also eine reelle L\"{o}sung.  F\"{u}r $x_3$ finden Sie nach einer \"{a}hnlichen Rechnung den Wert
 \\[0.2cm]
 \hspace*{1.3cm}
 $x_3 = \zeta_3^2 \cdot u + \zeta_3 \cdot v = -2 + \sqrt{3}$.
 \\[0.2cm]
-Insgesamt zeigt dieses Beispiel, dass auch für Probleme, deren Lösungen reelle Zahlen sind, der Umweg
-über die komplexen Zahlen sinnvoll sein kann.  Zum Abschluss möchte ich noch bemerken, dass die
+Insgesamt zeigt dieses Beispiel, dass auch f\"{u}r Probleme, deren L\"{o}sungen reelle Zahlen sind, der Umweg
+\"{u}ber die komplexen Zahlen sinnvoll sein kann.  Zum Abschluss m\"{o}chte ich noch bemerken, dass die
 Verwendung komplexer Zahlen zur Bestimmung der Nullstellen eines Polynoms dritten Grades nicht
 zwingend notwendig ist.  Die Nullstellen lassen sich auch auf trigonometrischem Wege bestimmen.  Dann ergibt
 sich die Formel 
@@ -780,28 +780,28 @@ Die trigonometrische Herleitung ist allerdings deutlich aufwendiger als die Herl
 Kapitel auf algebraischem Wege mit Hilfe der komplexen Zahlen gefunden haben.
 
 \exercise
-Bestimmen Sie mit Hilfe der Cardanischen Formel alle komplexen Lösungen der Gleichung
+Bestimmen Sie mit Hilfe der Cardanischen Formel alle komplexen L\"{o}sungen der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $z^3 + z^2 + z + 1 = 0$.
 \\[0.2cm]
-\textbf{1.~Hinweis}:  Machen Sie den Ansatz $z = x + c$ und wählen Sie $c$ so, dass Sie für $x$ eine
+\textbf{1.~Hinweis}:  Machen Sie den Ansatz $z = x + c$ und w\"{a}hlen Sie $c$ so, dass Sie f\"{u}r $x$ eine
 Gleichung der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^3 - p \cdot x - q = 0$
 \\[0.2cm]
-erhalten.  Diese Gleichung für $x$ können Sie dann mit Hilfe der Cardanischen Formel lösen.
+erhalten.  Diese Gleichung f\"{u}r $x$ k\"{o}nnen Sie dann mit Hilfe der Cardanischen Formel l\"{o}sen.
 
 \noindent
-\textbf{2.~Hinweis}:  Die obige Gleichung ist so einfach, dass Sie eine der Lösungen auch 
-raten könnten.  Anschließend könnten Sie dann mit Hilfe der Polynom-Division die geratene Lösung aus
+\textbf{2.~Hinweis}:  Die obige Gleichung ist so einfach, dass Sie eine der L\"{o}sungen auch 
+raten k\"{o}nnten.  Anschlie\3end k\"{o}nnten Sie dann mit Hilfe der Polynom-Division die geratene L\"{o}sung aus
 dem Polynom $p(z) = z^3 + z^2 + z + 1$ heraus dividieren und die verbleibende quadratische Gleichung
-lösen.  Das ist aber \underline{nicht} der Sinn dieser Aufgabe!
+l\"{o}sen.  Das ist aber \underline{nicht} der Sinn dieser Aufgabe!
 \exend
 
 \exercise
-Für welche $z \in \mathbb{C}$ gilt die Gleichung
+F\"{u}r welche $z \in \mathbb{C}$ gilt die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\left(\bruch{1+z}{1-z}\right)^2 = -1$?
@@ -809,7 +809,7 @@ $\left(\bruch{1+z}{1-z}\right)^2 = -1$?
 \pagebreak
 
 \exercise
-Für welche Zahlen $x, y \in \mathbb{R}$ gilt
+F\"{u}r welche Zahlen $x, y \in \mathbb{R}$ gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $(5 + 6 \cdot i) \cdot (x - 3 \cdot i) = y - 3 \cdot i$?
@@ -825,12 +825,12 @@ schreiben?
 \vspace*{0.2cm}
 
 \noindent
-\textbf{Hinweis}:  Machen Sie für $z$ den Ansatz $z = a + b \cdot i$ mit $a,b \in \mathbb{R}$ und
-setzen Sie diesen Ansatz in der obigen Gleichung für $z$ ein.  
+\textbf{Hinweis}:  Machen Sie f\"{u}r $z$ den Ansatz $z = a + b \cdot i$ mit $a,b \in \mathbb{R}$ und
+setzen Sie diesen Ansatz in der obigen Gleichung f\"{u}r $z$ ein.  
 \exend
 
 \exercise
-Bestimmen Sie mit Hilfe der Cardanischen Formel alle Lösungen der Gleichung 
+Bestimmen Sie mit Hilfe der Cardanischen Formel alle L\"{o}sungen der Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^3 = 3 \cdot x - 2$!
@@ -839,7 +839,7 @@ $x^3 = 3 \cdot x - 2$!
 
 \section{Ausblick}
 In diesem letzten Abschnitt stellen wir wichtige Formeln und Eigenschaften der komplexen Zahlen
-zusammen, die wir allerdings jetzt noch nicht beweisen können.
+zusammen, die wir allerdings jetzt noch nicht beweisen k\"{o}nnen.
 
 \subsection{Die Eulersche Formel}
 Zwischen der Exponential-Funktion $x \mapsto e^x$ und den trigonometrischen Funktionen 
@@ -849,22 +849,22 @@ $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$ gibt es einen wichtigen Zusammenhang
 \hspace*{1.3cm}
 \framebox{\colorbox{amber}{$e^{i \cdot \varphi} = \cos(\varphi) + i \cdot \sin(\varphi)$.}}
 \\[0.2cm]
-Diese Formel können wir verstehen, wenn wir die Reihenentwicklung der beteiligten Funktionen kennen.
-In der Analysis werden wir später sehen, dass $e^x$, $\sin(x)$ und $\cos(x)$ wie folgt als Reihen
-dargestellt werden können:
+Diese Formel k\"{o}nnen wir verstehen, wenn wir die Reihenentwicklung der beteiligten Funktionen kennen.
+In der Analysis werden wir sp\"{a}ter sehen, dass $e^x$, $\sin(x)$ und $\cos(x)$ wie folgt als Reihen
+dargestellt werden k\"{o}nnen:
 \begin{enumerate}
 \item $\displaystyle e^x = 1 + x + \frac{1}{2} \cdot x^2 + \frac{1}{6} \cdot x^3 + \cdots = \sum\limits_{n=0}^\infty \frac{1}{n!} \cdot x^n$,
 \item $\displaystyle \sin(x) = x - \frac{1}{6} \cdot x^3 + \cdots = \sum\limits_{n=0}^\infty \frac{(-1)^{n}}{(2 \cdot n + 1)!} \cdot x^{2 \cdot n + 1}$,
 \item $\displaystyle \cos(x) = 1 -  \frac{1}{2} \cdot x^2 +  \frac{1}{24} \cdot x^4 + \cdots = \sum\limits_{n=0}^\infty  \frac{(-1)^{n}}{(2 \cdot n)!} \cdot x^{2 \cdot n}$.
 \end{enumerate}
 Setzen wir diese Reihen in der Eulerschen Formel ein und vergleichen die Koeffizienten von $x^n$, so
-können wir die Gültigkeit der Eulerschen Formel nachvollziehen.  Setzen wir in der Eulerschen Formel
-für $\varphi$ den Wert $\pi$ ein, so erhalten wir die \emph{Eulersche Identität}
+k\"{o}nnen wir die G\"{u}ltigkeit der Eulerschen Formel nachvollziehen.  Setzen wir in der Eulerschen Formel
+f\"{u}r $\varphi$ den Wert $\pi$ ein, so erhalten wir die \emph{Eulersche Identit\"{a}t}
 \\[0.2cm]
 \hspace*{1.3cm}
 \framebox{\colorbox{amber}{$e^{i \cdot \pi} = -1$.}}
 \\[0.2cm]
-Diese Formel liefert einen Zusammenhang zwischen $\pi$, $e$ und der imaginären Einheit $i$.
+Diese Formel liefert einen Zusammenhang zwischen $\pi$, $e$ und der imagin\"{a}ren Einheit $i$.
 
 \subsection{Der Fundamentalsatz der Algebra}
 In diesem Abschnitt zitieren wir (ohne Beweis) den sogenannten \emph{Fundamentalsatz der Algebra}.  Dieser Satz
@@ -873,30 +873,30 @@ besagt, dass jedes nicht-konstante Polynom
 \hspace*{1.3cm}
 $p(z) = \sum\limits_{i=0}^n a_i \cdot z^i$ \quad mit $n \geq 1$ und $a_n \not=0$
 \\[0.2cm]
-im Körper der komplexen Zahlen eine Nullstelle hat, d.h.~es gibt ein $z_1 \in \mathbb{C}$, so dass
-$p(z_1) = 0$ ist.  Mit Hilfe der Polynom-Division können wir die Nullstelle $z_1$ aus dem Polynom $p(z)$
+im K\"{o}rper der komplexen Zahlen eine Nullstelle hat, d.h.~es gibt ein $z_1 \in \mathbb{C}$, so dass
+$p(z_1) = 0$ ist.  Mit Hilfe der Polynom-Division k\"{o}nnen wir die Nullstelle $z_1$ aus dem Polynom $p(z)$
 heraus dividieren und $p(z)$ in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $p(z) = (z - z_1) \cdot p_1(z)$
 \\[0.2cm]
 schreiben, wobei $p_1(z)$ dann ein Polynom vom Grad $n-1$ ist.  Falls $n-1 \geq 1$ ist, hat auch
-$p_1(z)$ eine Nullstelle $z_2$, die wir aus $p_1(z)$ heraus dividieren können, so dass wir $p_1(z)$
+$p_1(z)$ eine Nullstelle $z_2$, die wir aus $p_1(z)$ heraus dividieren k\"{o}nnen, so dass wir $p_1(z)$
 in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $p_1(z) = (z- z_2) \cdot p_2(z)$
 \\[0.2cm]
-schreiben können, wobei $p_2(z)$ ein Polynom vom Grad $n-2$ ist.  Durch Iteration dieses Verfahrens
+schreiben k\"{o}nnen, wobei $p_2(z)$ ein Polynom vom Grad $n-2$ ist.  Durch Iteration dieses Verfahrens
 finden wir also insgesamt $n$ Zahlen $z_1, z_2, \cdots, z_n$, so dass wir $p(z)$ als das Produkt
 \\[0.2cm]
 \hspace*{1.3cm}
 $p(z) = (z-z_1) \cdot (z-z_2) \cdot \mbox{\dots} \cdot (z-z_{n-1}) \cdot (z - z_n)$
 \\[0.2cm]
-schreiben können.  Dabei brauchen die komplexen Zahlen $z_i$ keineswegs paarweise verschieden zu sein,
-sondern sie können auch durchaus gleich sein.  Wir bemerken noch, dass diese Darstellung bis auf die
+schreiben k\"{o}nnen.  Dabei brauchen die komplexen Zahlen $z_i$ keineswegs paarweise verschieden zu sein,
+sondern sie k\"{o}nnen auch durchaus gleich sein.  Wir bemerken noch, dass diese Darstellung bis auf die
 Reihenfolge der $z_i$ eindeutig sein muss, denn die $z_i$ sind genau die Nullstellen des Polynoms
-$p(z)$ und ein Polynom vom Grade $n$ hat, wie die obigen Überlegungen zeigen, höchstens $n$
+$p(z)$ und ein Polynom vom Grade $n$ hat, wie die obigen \"{u}berlegungen zeigen, h\"{o}chstens $n$
 verschiedene Nullstellen.
 \vspace*{0.2cm} 
 
@@ -906,26 +906,26 @@ aus algebraischer Sicht wesentlich reichhaltiger als die Struktur der reellen Za
 den komplexen Zahlen hat jede Gleichung der Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$z^n + a_{n-1} \cdot z^{n-1} + \cdots + a_1 \cdot z + a_0 = 0$ \quad für $n \geq 1$
+$z^n + a_{n-1} \cdot z^{n-1} + \cdots + a_1 \cdot z + a_0 = 0$ \quad f\"{u}r $n \geq 1$
 \\[0.2cm]
-eine Lösung.  Es ist also nicht nur so, dass wir die Gleichung
+eine L\"{o}sung.  Es ist also nicht nur so, dass wir die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $z^2 + 1 = 0$
 \\[0.2cm]
-in den komplexen Zahlen lösen können, sondern in den komplexen Zahlen können wir tatsächlich
-j\underline{ede} quadratische Gleichung lösen.  Darüber hinaus können wir auch jede kubische
-Gleichung lösen und ganz allgemein hat jede Gleichung $n$-ten Grades eine Lösung, solange $n$ nur
-positiv ist.  Dies ist einer von vielen Gründen, warum die komplexen Zahlen so wichtig sind.
+in den komplexen Zahlen l\"{o}sen k\"{o}nnen, sondern in den komplexen Zahlen k\"{o}nnen wir tats\"{a}chlich
+j\underline{ede} quadratische Gleichung l\"{o}sen.  Dar\"{u}ber hinaus k\"{o}nnen wir auch jede kubische
+Gleichung l\"{o}sen und ganz allgemein hat jede Gleichung $n$-ten Grades eine L\"{o}sung, solange $n$ nur
+positiv ist.  Dies ist einer von vielen Gr\"{u}nden, warum die komplexen Zahlen so wichtig sind.
 \vspace*{0.2cm}
 
 \noindent
-Der Beweis des Fundamentalsatzes der Algebra benötigt Hilfsmittel aus der Analysis, die wir nicht
-zur Verfügung haben.  Der Beweis ist auch nicht ganz einfach: Das können Sie beispielsweise der
+Der Beweis des Fundamentalsatzes der Algebra ben\"{o}tigt Hilfsmittel aus der Analysis, die wir nicht
+zur Verf\"{u}gung haben.  Der Beweis ist auch nicht ganz einfach: Das k\"{o}nnen Sie beispielsweise der
 Tatsache entnehmen, dass der bedeutendste Mathematiker, der je gelebt hat, 
-\href{http://de.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gauß}
-diesen Satz 1799 in seiner Dissertation bewiesen hat.  Der Beweis, den Gauß damals gab, enthielt
-allerdings noch eine Lücke.  Der erste vollständige Beweis des Fundamentalsatzes der Algebra wurde 
+\href{http://de.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gau\3}
+diesen Satz 1799 in seiner Dissertation bewiesen hat.  Der Beweis, den Gau\3 damals gab, enthielt
+allerdings noch eine L\"{u}cke.  Der erste vollst\"{a}ndige Beweis des Fundamentalsatzes der Algebra wurde 
 1806 von \href{http://en.wikipedia.org/wiki/Jean-Robert_Argand}{Jean-Robert Argand} angegeben.
 
 %%% Local Variables:  

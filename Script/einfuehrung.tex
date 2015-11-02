@@ -1,16 +1,16 @@
-\chapter{Einführung}
+\chapter{Einf\"{u}hrung}
 Das vorliegende Skript ist die Grundlage der Mathematik-Vorlesung des ersten Semesters.
 Einige Kapitel und Abschnitte in diesem Skript sind mit einem ``$^*$'' versehen.  
-Der dort vorgestellte Stoff ist für die Klausur nicht relevant.  Das Skript enthält diese Abschnitte
+Der dort vorgestellte Stoff ist f\"{u}r die Klausur nicht relevant.  Das Skript enth\"{a}lt diese Abschnitte
 um eine der vielen Anwendungen der Mathematik, das
-\href{https://de.wikipedia.org/wiki/RSA-Kryptosystem}{RSA-Kryptosystem}, präsentieren zu können.  
+\href{https://de.wikipedia.org/wiki/RSA-Kryptosystem}{RSA-Kryptosystem}, pr\"{a}sentieren zu k\"{o}nnen.  
 
 \section{Motivation}
-Bevor wir uns mit dem eigentlichen Stoff dieser Vorlesung, der Mathematik, befassen, möchte ich
-Ihnen aufzeigen, warum Sie als zukünftige Informatiker Mathematik benötigen.  
+Bevor wir uns mit dem eigentlichen Stoff dieser Vorlesung, der Mathematik, befassen, m\"{o}chte ich
+Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}tigen.  
 \begin{enumerate}
 \item Historisch ist die Informatik als Teilgebiet der Mathematik entstanden.  Dies wird schon an
-      dem Namen  ``\emph{Informatik}''  deutlich, den dieses Wort ist aus den beiden Wörtern
+      dem Namen  ``\emph{Informatik}''  deutlich, den dieses Wort ist aus den beiden W\"{o}rtern
       ``\emph{Information}'' und ``\emph{Mathematik}'' gebildet worden ist, was  
       durch die Gleichung 
       \\[0.2cm]
@@ -19,33 +19,33 @@ Ihnen aufzeigen, warum Sie als zukünftige Informatiker Mathematik benötigen.
       \\[0.2cm]
       symbolisiert wird.  Aufgrund der Tatsache, dass die Informatik aus der Mathematik entstanden
       ist, bedient sich die Informatik an vielen Stellen
-      mathematischer Sprech- und Denkweisen.  Um diese verstehen zu können, ist eine 
+      mathematischer Sprech- und Denkweisen.  Um diese verstehen zu k\"{o}nnen, ist eine 
       Vertrautheit mit der formalen mathematischen Denkweise unabdingbar.
 \item Mathematik schult das abstrakte Denken und genau das wird in der Informatik ebenfalls
-      benötigt.  Ein komplexes Sofware-System, dass von hunderten von Programmierern über Jahre
-      hinweg entwickelt wird, ist nur durch die Einführung geeigneter Abstraktionen beherrschbar.
-      Die Fähigkeit, abstrakt denken zu können, ist genau das, was einen Mathematiker auszeichnet.
-      Eine Möglichkeit,  diese Fähigkeit zu erwerben besteht darin, sich mit den abstrakten
-      Gedankengebäuden, die in der Mathematik konstruiert werden, auseinander zu setzen.
+      ben\"{o}tigt.  Ein komplexes Sofware-System, dass von hunderten von Programmierern \"{u}ber Jahre
+      hinweg entwickelt wird, ist nur durch die Einf\"{u}hrung geeigneter Abstraktionen beherrschbar.
+      Die F\"{a}higkeit, abstrakt denken zu k\"{o}nnen, ist genau das, was einen Mathematiker auszeichnet.
+      Eine M\"{o}glichkeit,  diese F\"{a}higkeit zu erwerben besteht darin, sich mit den abstrakten
+      Gedankengeb\"{a}uden, die in der Mathematik konstruiert werden, auseinander zu setzen.
 \item Es gibt eine Vielzahl von mathematischen Methoden, die unmittelbar in der Informatik
       angewendet werden.  In dieser Vorlesung zeigen wir exemplarisch eine Reihe von Problemen, die
-      ihren Ursprung in der Informatik haben, deren Lösung aber mathematische Methoden erfordert:
+      ihren Ursprung in der Informatik haben, deren L\"{o}sung aber mathematische Methoden erfordert:
       \begin{enumerate}
       \item \href{https://en.wikipedia.org/wiki/Recurrence_relation}{\emph{Rekurrenz-Gleichungen}}
-            sind Gleichungen, durch die Folgen von Zahlen definiert werden.  Beispielsweise können die
+            sind Gleichungen, durch die Folgen von Zahlen definiert werden.  Beispielsweise k\"{o}nnen die
             \href{https://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} durch die
             Rekurrenz-Gleichung 
             \\[0.2cm]
             \hspace*{1.3cm}
             $a_{n+2} = a_{n+1} + a_n$  \quad und die Anfangs-Bedingungen $a_0 = 0$ und $a_1 = 1$
             \\[0.2cm]
-            definiert werden.  Wir können mit der oberen Rekurrenz-Gleichung sukzessive die verschiedenen
+            definiert werden.  Wir k\"{o}nnen mit der oberen Rekurrenz-Gleichung sukzessive die verschiedenen
             Werte der Folge $(a_n)_n$ berechnen und finden 
             \\[0.2cm]
             \hspace*{1.3cm}
             $a_0 = 0$, $a_1 = 1$, $a_2 = 1$, $a_3 = 2$, $a_4 = 3$, $a_5 = 5$, $a_6 = 8$, $a_7 = 13$, $\cdots$.
             \\[0.2cm]
-            Wir werden später sehen, dass es eine geschlossene Formel zur Berechnung der Fiboncci-Zahlen
+            Wir werden sp\"{a}ter sehen, dass es eine geschlossene Formel zur Berechnung der Fiboncci-Zahlen
             gibt, es gilt
             \\[0.2cm]
             \hspace*{1.3cm}
@@ -56,54 +56,54 @@ Ihnen aufzeigen, warum Sie als zukünftige Informatiker Mathematik benötigen.
             $.
             \\[0.2cm]
             Sie werden im Laufe der ersten beiden Semester verschiedene Verfahren kennen lernen, mit
-            denen sich für in der Praxis auftretende Rekurrenz-Gleichungen geschlossene Formeln
-            finden lassen.  Solche Verfahren sind wichtig bei der Analyse der Komplexität von
-            Algorithmen, denn die Berechnung der Laufzeit rekursiver Algorithmen führt auf
+            denen sich f\"{u}r in der Praxis auftretende Rekurrenz-Gleichungen geschlossene Formeln
+            finden lassen.  Solche Verfahren sind wichtig bei der Analyse der Komplexit\"{a}t von
+            Algorithmen, denn die Berechnung der Laufzeit rekursiver Algorithmen f\"{u}hrt auf
             Rekurrenz-Gleichungen.   
       \item Elementare Zahlentheorie bildet die Grundlage moderner kryptografischer Verfahren.
             Konkret beinhaltet dieses Skript eine Beschreibung des RSA-Algorithmus zur asymetrischen
-            Verschlüsselung.  Allerdings werden wir das Kapitel zur Zahlen-Theorie, in dem der 
-            RSA-Algorithmus beschrieben wird, aus Zeitgründen nicht besprechen können, es handelt
+            Verschl\"{u}sselung.  Allerdings werden wir das Kapitel zur Zahlen-Theorie, in dem der 
+            RSA-Algorithmus beschrieben wird, aus Zeitgr\"{u}nden nicht besprechen k\"{o}nnen, es handelt
             sich bei dem Kapitel also nur um Zusatzstoff, welchen Sie sich bei Bedarf selbst aneignen
-            können.  Ich habe das Kapitel hier deswegen eingefügt, damit Sie unmittelbar anhand
-            eines konkreten Beispiels sehen können, welche Bedeutung die Mathematik in der
+            k\"{o}nnen.  Ich habe das Kapitel hier deswegen eingef\"{u}gt, damit Sie unmittelbar anhand
+            eines konkreten Beispiels sehen k\"{o}nnen, welche Bedeutung die Mathematik in der
             Informatik hat.
       \end{enumerate}
-      Die Liste der mathematischen Algorithmen, die in der Praxis eingesetzt werden, könnte leicht
-      über mehrere Seiten fortgesetzt werden.  Natürlich können im Rahmen eines Bachelor-Studiums
+      Die Liste der mathematischen Algorithmen, die in der Praxis eingesetzt werden, k\"{o}nnte leicht
+      \"{u}ber mehrere Seiten fortgesetzt werden.  Nat\"{u}rlich k\"{o}nnen im Rahmen eines Bachelor-Studiums
       nicht alle mathematischen Verfahren, die in der Informatik eine Anwendung finden, auch
-      tatsächlich diskutiert werden.  Das Ziel kann nur sein, Ihnen ausreichend mathematische
-      Fähigkeiten zu vermitteln, so dass Sie später in der Lage sind, sich die
-      mathematischen Verfahren, die sie  im Beruf tatsächlich benötigen, selbstständig anzueignen.
-\item Mathematik schult das \emph{exakte Denken}.  Wie wichtig dieses ist, möchte ich mit den
+      tats\"{a}chlich diskutiert werden.  Das Ziel kann nur sein, Ihnen ausreichend mathematische
+      F\"{a}higkeiten zu vermitteln, so dass Sie sp\"{a}ter in der Lage sind, sich die
+      mathematischen Verfahren, die sie  im Beruf tats\"{a}chlich ben\"{o}tigen, selbstst\"{a}ndig anzueignen.
+\item Mathematik schult das \emph{exakte Denken}.  Wie wichtig dieses ist, m\"{o}chte ich mit den
       folgenden Beispielen verdeutlichen:  
       \begin{enumerate}
-      \item Am 9.~Juni 1996 stürzte die Rakete Ariane 5 auf ihrem Jungfernflug ab.
+      \item Am 9.~Juni 1996 st\"{u}rzte die Rakete Ariane 5 auf ihrem Jungfernflug ab.
             Ursache war ein Kette von Software-Fehlern:  Ein Sensor im Navigations-System
-            der Ariane 5 misst die horizontale Neigung und speichert diese zunächst als Gleitkomma-Zahl
-            mit einer Genauigkeit von 64 Bit ab.  Später wird dieser Wert dann in eine 
+            der Ariane 5 misst die horizontale Neigung und speichert diese zun\"{a}chst als Gleitkomma-Zahl
+            mit einer Genauigkeit von 64 Bit ab.  Sp\"{a}ter wird dieser Wert dann in eine 
             16 Bit Festkomma-Zahl konvertiert.
-            Bei dieser Konvertierung trat ein Überlauf ein, da die zu konvertierende Zahl
-            zu groß war, um als 16 Bit Festkomma-Zahl dargestellt werden zu können.
+            Bei dieser Konvertierung trat ein \"{u}berlauf ein, da die zu konvertierende Zahl
+            zu gro\3 war, um als 16 Bit Festkomma-Zahl dargestellt werden zu k\"{o}nnen.
             In der Folge gab das Navigations-System auf dem Datenbus, der dieses System mit
             der Steuerungs-Einheit verbindet, eine Fehlermeldung aus.
             Die Daten dieser Fehlermeldung wurden von der Steuerungs-Einheit als Flugdaten 
             interpretiert.  Die Steuer-Einheit leitete daraufhin eine Korrektur des
-            Fluges ein, die dazu führte, dass die Rakete auseinander brach und die 
-            automatische Selbstzerstörung eingeleitet werden musste.
+            Fluges ein, die dazu f\"{u}hrte, dass die Rakete auseinander brach und die 
+            automatische Selbstzerst\"{o}rung eingeleitet werden musste.
             Die Rakete war mit 4 Satelliten beladen. Der wirtschaftliche Schaden, der durch den Verlust dieser
             Satelliten entstanden ist, lag bei mehreren 100 Millionen Dollar.
             
-            Ein vollständiger Bericht über die Ursache des Absturzes des Ariane 5 findet sich
+            Ein vollst\"{a}ndiger Bericht \"{u}ber die Ursache des Absturzes des Ariane 5 findet sich
             im Internet unter der Adresse \\[0.2cm]
             \hspace*{1.3cm} 
             \href{http://www.ima.umn.edu/~arnold/disasters/ariane5rep.html}{\texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/ariane5rep.html}}.
-      \item Die Therac 25 ist ein medizinisches Bestrahlungs-Gerät, das durch 
+      \item Die Therac 25 ist ein medizinisches Bestrahlungs-Ger\"{a}t, das durch 
             Software kontrolliert wird.  Durch  Fehler in dieser Software erhielten 1985
-            mindestens 6 Patienten eine Überdosis an Strahlung.  Drei dieser Patienten sind an den
-            Folgen dieser Überdosierung gestorben. 
+            mindestens 6 Patienten eine \"{u}berdosis an Strahlung.  Drei dieser Patienten sind an den
+            Folgen dieser \"{u}berdosierung gestorben. 
 
-            Einen detailierten Bericht über diese Unfälle finden Sie unter \\[0.2cm]
+            Einen detailierten Bericht \"{u}ber diese Unf\"{a}lle finden Sie unter \\[0.2cm]
             \hspace*{1.3cm} 
             \href{http://courses.cs.vt.edu/~cs3604/lib/Therac_25/Therac\_1.html}{\texttt{http://courses.cs.vt.edu/\symbol{126}cs3604/lib/Therac\_25/Therac\_1.html}}.
       \item Im ersten Golfkrieg konnte eine irakische \textsl{Scud} Rakete von dem \textsl{Patriot}
@@ -114,36 +114,36 @@ Ihnen aufzeigen, warum Sie als zukünftige Informatiker Mathematik benötigen.
             \href{http://www.ima.umn.edu/~arnold/disasters/patriot.html}{\texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/patriot.html}}.
       \item Im Internet finden Sie auf der Seite der
             \href{https://de.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers}{\textsc{Ieee}}\footnote{
-              Die Abkürzung \textsc{Ieee} steht für \emph{Institute of Electrical and Electronics Engineers}.}
+              Die Abk\"{u}rzung \textsc{Ieee} steht f\"{u}r \emph{Institute of Electrical and Electronics Engineers}.}
             den Artikel   
             \\[0.2cm]
             \hspace*{1.3cm}
             \href{http://spectrum.ieee.org/static/the-staggering-impact-of-it-systems-gone-wrong}{Staggering Impact of IT Systems Gone Wrong}.
             \\[0.2cm]
-            In diesem Artikel werden die Kosten, die durch fehlgeschlagene IT-Projekte entstanden sind, für eine Reihe von Projekten aufgelistet.
+            In diesem Artikel werden die Kosten, die durch fehlgeschlagene IT-Projekte entstanden sind, f\"{u}r eine Reihe von Projekten aufgelistet.
       \end{enumerate}
-      Diese Beispiele zeigen, dass bei der Konstruktion von IT-Systemen mit großer Sorgfalt
-      und Präzision gearbeitet werden sollte.  Die Erstellung von IT-Systemen muss auf einer 
-      wissenschaftlich fundierten Basis erfolgen, denn nur dann ist es möglich, die Korrekheit
+      Diese Beispiele zeigen, dass bei der Konstruktion von IT-Systemen mit gro\3er Sorgfalt
+      und Pr\"{a}zision gearbeitet werden sollte.  Die Erstellung von IT-Systemen muss auf einer 
+      wissenschaftlich fundierten Basis erfolgen, denn nur dann ist es m\"{o}glich, die Korrekheit
       solcher Systeme zu \emph{verifizieren}, also mathematisch zu beweisen.
-      Diese oben geforderte wissenschaftliche Basis für die Entwicklung von IT-Systemen ist die Informatik, 
+      Diese oben geforderte wissenschaftliche Basis f\"{u}r die Entwicklung von IT-Systemen ist die Informatik, 
       und diese hat ihre Wurzeln sowohl in der Mengenlehre als auch in der mathematischen
       Logik.  Diese beiden Gebiete werden uns daher im ersten Semester
-      des Informatik-Studiums beschäftigen.  Obwohl sowohl die Logik als auch die Mengenlehre zur
-      Mathematik gehören, werden wir uns in dieser Mathematik-Vorlesung nur mit der Mengenlehre und
-      der linearen Algebra beschäftigen.  Die Behandlung der Logik erfolgt dann im Rahmen der
+      des Informatik-Studiums besch\"{a}ftigen.  Obwohl sowohl die Logik als auch die Mengenlehre zur
+      Mathematik geh\"{o}ren, werden wir uns in dieser Mathematik-Vorlesung nur mit der Mengenlehre und
+      der linearen Algebra besch\"{a}ftigen.  Die Behandlung der Logik erfolgt dann im Rahmen der
       Informatik-Vorlesung. 
 \end{enumerate}
 
-% Schließlich gibt es für Sie noch einen sehr gewichtigen Grund, sich intensiv mit Logik und
-% Mengenlehre zu beschäftigen, den ich Ihnen nicht verschweigen möchte:  Es handelt sich
+% Schlie\3lich gibt es f\"{u}r Sie noch einen sehr gewichtigen Grund, sich intensiv mit Logik und
+% Mengenlehre zu besch\"{a}ftigen, den ich Ihnen nicht verschweigen m\"{o}chte:  Es handelt sich
 % dabei um die Klausur am Ende des ersten Semesters!  
 
-\section{Überblick}
-Ich möchte Ihnen zum Abschluss dieser Einführung noch einen Überblick über all die Themen geben, die
+\section{\"{u}berblick}
+Ich m\"{o}chte Ihnen zum Abschluss dieser Einf\"{u}hrung noch einen \"{u}berblick \"{u}ber all die Themen geben, die
 ich im Rahmen der Vorlesung behandeln werde.  
 \begin{enumerate}
-\item Mathematische Formeln dienen der Abkürzung.  Sie werden aus den \emph{Junktoren} 
+\item Mathematische Formeln dienen der Abk\"{u}rzung.  Sie werden aus den \emph{Junktoren} 
       \begin{enumerate}
       \item $\wedge$ (``\emph{und}''),
       \item $\vee$ (``\emph{oder}''),
@@ -153,30 +153,30 @@ ich im Rahmen der Vorlesung behandeln werde.
       \end{enumerate}
       sowie den \emph{Quantoren}
       \begin{enumerate}
-      \item $\forall$ (``\emph{für alle}'') und
+      \item $\forall$ (``\emph{f\"{u}r alle}'') und
       \item $\exists$ (``\emph{es gibt}'') 
       \end{enumerate}
       aufgebaut.
-      Wir werden  Junktoren und Quantoren zunächst
-      als reine Abkürzungen einführen.  Im Rahmen der Logik-Vorlesung werden wir die Bedeutung
+      Wir werden  Junktoren und Quantoren zun\"{a}chst
+      als reine Abk\"{u}rzungen einf\"{u}hren.  Im Rahmen der Logik-Vorlesung werden wir die Bedeutung
       und Verwendung von Junktoren und Quantoren weiter untersuchen.
 \item Mengenlehre
 
-      Die Mengenlehre bildet die Grundlage der modernen Mathematik.  Die meisten Lehrbücher und
-      Veröffentlichungen bedienen sich der Begriffsbildungen und Schreibweisen der Mengenlehre.
-      Daher ist eine solide Grundlage an dieser Stelle für das weitere Studium unabdingbar.
+      Die Mengenlehre bildet die Grundlage der modernen Mathematik.  Die meisten Lehrb\"{u}cher und
+      Ver\"{o}ffentlichungen bedienen sich der Begriffsbildungen und Schreibweisen der Mengenlehre.
+      Daher ist eine solide Grundlage an dieser Stelle f\"{u}r das weitere Studium unabdingbar.
 \item Beweis-Prinzipien
 
-      In der Informatik benötigen wir im wesentlichen vier Arten von Beweisen:
+      In der Informatik ben\"{o}tigen wir im wesentlichen vier Arten von Beweisen:
       \begin{enumerate}
       \item Ein \emph{direkter Beweis} folgert eine zu beweisende Aussage mit Hilfe elementarer 
-            logischer Schlüsse und algebraischer Umformungen.  Diese Art von Beweisen kennen Sie
+            logischer Schl\"{u}sse und algebraischer Umformungen.  Diese Art von Beweisen kennen Sie
             bereits aus der Schule.
       \item Bei einem \emph{Beweis durch Fallunterscheidung} teilen wir den Beweis dadurch auf, dass
-            wir alle in einer bestimmten Situation möglichen Fälle untersuchen und zeigen,
-            dass die zu beweisende Aussage in jedem der Fälle wahr ist.  Beispielsweise können wir
-            mit Hilfe einer Fallunterscheidung zeigen, dass die Zahl $n \cdot (n+1)$ für jede
-            natürliche Zahl $n$ gerade ist.
+            wir alle in einer bestimmten Situation m\"{o}glichen F\"{a}lle untersuchen und zeigen,
+            dass die zu beweisende Aussage in jedem der F\"{a}lle wahr ist.  Beispielsweise k\"{o}nnen wir
+            mit Hilfe einer Fallunterscheidung zeigen, dass die Zahl $n \cdot (n+1)$ f\"{u}r jede
+            nat\"{u}rliche Zahl $n$ gerade ist.
       \item Ein \emph{indirekter Beweis} hat das Ziel zu zeigen, dass eine bestimmte Aussage $A$
             falsch ist.  Bei einem indirekten Beweis nehmen wir an, dass $A$ doch gilt und
             leiten aus dieser Annahme einen Widerspruch her.  Dieser Widerspruch zeigt uns dann,
@@ -184,34 +184,34 @@ ich im Rahmen der Vorlesung behandeln werde.
 
             Beispielsweise werden wir mit Hilfe eines indirekten Beweises zeigen, dass 
             $\sqrt{2}$ keine rationale Zahl ist.  In der Informatik zeigen wir dann, dass das
-            \emph{Halte-Problem} unlösbar ist:  Es ist nicht möglich, eine Funktion \texttt{stops}
-            zu implementieren, so dass für eine gegebene einstellige Funktion $f$ und eine Eingabe $x$
+            \emph{Halte-Problem} unl\"{o}sbar ist:  Es ist nicht m\"{o}glich, eine Funktion \texttt{stops}
+            zu implementieren, so dass f\"{u}r eine gegebene einstellige Funktion $f$ und eine Eingabe $x$
             der Aufruf
             \\[0.2cm]
             \hspace*{1.3cm}
             $\texttt{stops}(f,x)$
             \\[0.2cm]
-            genau dann als Ergebnis \texttt{true} zurück liefert, wenn der Aufruf der Funktion $f$
+            genau dann als Ergebnis \texttt{true} zur\"{u}ck liefert, wenn der Aufruf der Funktion $f$
             mit der Eingabe $x$ terminiert.
-      \item Ein induktiver Beweis hat das Ziel, eine Aussage für alle natürliche Zahlen zu beweisen.
+      \item Ein induktiver Beweis hat das Ziel, eine Aussage f\"{u}r alle nat\"{u}rliche Zahlen zu beweisen.
             Beispielsweise werden wir zeigen, dass die Summenformel
             \\[0.2cm]
             \hspace*{1.3cm}
             $\ds\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ 
             \\[0.2cm]
-            für alle natürlichen Zahlen $n \in \mathbb{N}$ gilt.  Summenformeln dieser Art treten
+            f\"{u}r alle nat\"{u}rlichen Zahlen $n \in \mathbb{N}$ gilt.  Summenformeln dieser Art treten
             beispielsweise bei der Berechnung der Rechenzeit von Programmen auf.
       \end{enumerate}
 \item Grundlagen der Algebra
 
-      Wir besprechen \emph{Gruppen}, \emph{Ringe} und \emph{Körper}.  Diese abstrakten Konzepte
-      verallgemeinern  die Rechenregeln, die Sie von den reellen Zahlen kennen.  Sie bilden darüber
-      hinaus die Grundlage für die lineare Algebra.
+      Wir besprechen \emph{Gruppen}, \emph{Ringe} und \emph{K\"{o}rper}.  Diese abstrakten Konzepte
+      verallgemeinern  die Rechenregeln, die Sie von den reellen Zahlen kennen.  Sie bilden dar\"{u}ber
+      hinaus die Grundlage f\"{u}r die lineare Algebra.
 \item Zahlentheorie$^*$
   
-      Dieses Skript enthält ein \underline{o}p\underline{tionales} Kapitel, in dem wir uns mit der 
+      Dieses Skript enth\"{a}lt ein \underline{o}p\underline{tionales} Kapitel, in dem wir uns mit der 
       elementaren Zahlentheorie auseinandersetzen.  Die Zahlentheorie ist die Grundlage
-      von vielen modernen Verschlüsselungs-Algorithmen.
+      von vielen modernen Verschl\"{u}sselungs-Algorithmen.
 \item Komplexe Zahlen
 
       Aus der Schule wissen Sie, dass die Gleichung
@@ -219,22 +219,22 @@ ich im Rahmen der Vorlesung behandeln werde.
       \hspace*{1.3cm}
       $x^2 = -1$
       \\[0.2cm]
-      für $x \in \mathbb{R}$ keine Lösung hat.  Wir werden die Menge der reellen Zahlen $\mathbb{R}$
+      f\"{u}r $x \in \mathbb{R}$ keine L\"{o}sung hat.  Wir werden die Menge der reellen Zahlen $\mathbb{R}$
       zur Menge der komplexen Zahlen $\mathbb{C}$ erweitern und zeigen, dass jede quadratische
-      Gleichung eine Lösung in der Menge der komplexen Zahlen hat.
-\item Lineare Vektor-Räume
+      Gleichung eine L\"{o}sung in der Menge der komplexen Zahlen hat.
+\item Lineare Vektor-R\"{a}ume
 
-      Die Theorie der \emph{linearen Vektor-Räume} ist unter anderem die Grundlage für das Lösen von linearen
+      Die Theorie der \emph{linearen Vektor-R\"{a}ume} ist unter anderem die Grundlage f\"{u}r das L\"{o}sen von linearen
       Gleichungs-Systemen, linearen Rekurrenz-Gleichungen und linearen Differential-Gleichungen.
-      Bevor wir uns also mit konkreten Algorithmen zur Lösung von Gleichungs-Systemen beschäftigen
-      können, gilt es die Theorie der linearen Vektor-Räume zu verstehen.
+      Bevor wir uns also mit konkreten Algorithmen zur L\"{o}sung von Gleichungs-Systemen besch\"{a}ftigen
+      k\"{o}nnen, gilt es die Theorie der linearen Vektor-R\"{a}ume zu verstehen.
 \item Lineare Gleichungs-Systeme
 
       Lineare Gleichungs-Systeme treten sowohl in der Informatik als auch in vielen anderen Gebieten auf. 
-      Wir zeigen, wie sich solche Gleichungs-Systeme algorithmisch lösen lassen.
+      Wir zeigen, wie sich solche Gleichungs-Systeme algorithmisch l\"{o}sen lassen.
 \item Eigenwerte und Eigenvektoren
 
-      Ist $A$ eine \emph{Matrix},  $\vec{x}$ ein Vektor, $\lambda$ eine Zahl und gilt darüber hinaus
+      Ist $A$ eine \emph{Matrix},  $\vec{x}$ ein Vektor, $\lambda$ eine Zahl und gilt dar\"{u}ber hinaus
       \\[0.2cm]
       \hspace*{1.3cm}
       $A \cdot \vec{x} = \lambda \cdot \vec{x}$
@@ -243,46 +243,46 @@ ich im Rahmen der Vorlesung behandeln werde.
       
       Sie brauchen an dieser Stelle keine Angst haben: Im Laufe der Vorlesung werden den Begriff der
       \emph{Matrix} definieren  und die Frage, wie die Multiplikation $A \cdot \vec{x}$ der Matrix $A$ mit
-      dem Vektor $\vec{x}$ definiert ist, wird ebenfalls noch geklärt.  Weiter werden wir sehen,
-      wie Eigenvektoren berechnet werden können.
+      dem Vektor $\vec{x}$ definiert ist, wird ebenfalls noch gekl\"{a}rt.  Weiter werden wir sehen,
+      wie Eigenvektoren berechnet werden k\"{o}nnen.
 \item Rekurrenz-Gleichungen
 
-      Die Analyse der Komplexität rekursiver Prozeduren führt auf Rekurrenz-Gleichungen.
-      Wir werden Verfahren entwickeln, mit denen sich solche Rekurrenz-Gleichungen lösen lassen.
+      Die Analyse der Komplexit\"{a}t rekursiver Prozeduren f\"{u}hrt auf Rekurrenz-Gleichungen.
+      Wir werden Verfahren entwickeln, mit denen sich solche Rekurrenz-Gleichungen l\"{o}sen lassen.
 \end{enumerate}
 \remark
 Ich gehe davon aus,  dass das  Skript eine Reihe von Tippfehlern und auch anderen Fehlern enthalten
-wird.  Ich möchte Sie darum bitten, mir solche Fehler per Email unter der Adresse
+wird.  Ich m\"{o}chte Sie darum bitten, mir solche Fehler per Email unter der Adresse
 \\[0.2cm]
 \hspace*{1.3cm}
 \texttt{karl.stroetmann\symbol{64}dhbw-mannheim.de}
 \\[0.2cm]
-mitzuteilen.  Alternativ können Sie mir auch über
+mitzuteilen.  Alternativ k\"{o}nnen Sie mir auch \"{u}ber
 \href{https://github.com}{\texttt{https://github.com}} einen \texttt{pull}-Request schicken.
 
 \section{Literaturhinweise}
-Zum Schluss dieser Einführung möchte ich noch einige Hinweise auf die Literatur geben.  Dabei möchte
-ich zwei Bücher besonders hervorheben:
+Zum Schluss dieser Einf\"{u}hrung m\"{o}chte ich noch einige Hinweise auf die Literatur geben.  Dabei m\"{o}chte
+ich zwei B\"{u}cher besonders hervorheben:
 \begin{enumerate}
-\item Das Buch ``\emph{Set Theory and Related Topics}'' von Seymour Lipschutz \cite{lipschutz:1998} enthält den Stoff, der
-      in diesem Skript in dem Kapitel über Mengenlehre abgehandelt wird.
+\item Das Buch ``\emph{Set Theory and Related Topics}'' von Seymour Lipschutz \cite{lipschutz:1998} enth\"{a}lt den Stoff, der
+      in diesem Skript in dem Kapitel \"{u}ber Mengenlehre abgehandelt wird.
 \item Das Buch ``\emph{Linear Algebra}'' von Seymour Lipschutz und Marc Lipson \cite{lipschutz:2012}
-      enthält den Stoff zur eigentlichen linearen Algebra.
+      enth\"{a}lt den Stoff zur eigentlichen linearen Algebra.
 \end{enumerate}
-Beide Bücher enthalten eine große Anzahl von Aufgaben mit Lösungen, was gerade für den Anfänger
-wichtig ist.  Darüber hinaus sind die Bücher
+Beide B\"{u}cher enthalten eine gro\3e Anzahl von Aufgaben mit L\"{o}sungen, was gerade f\"{u}r den Anf\"{a}nger
+wichtig ist.  Dar\"{u}ber hinaus sind die B\"{u}cher
 sehr preiswert.  
 
-Vor etwa 30 Jahren habe ich selbst die lineare Algebra aus den Büchern von Gerd Fischer
+Vor etwa 30 Jahren habe ich selbst die lineare Algebra aus den B\"{u}chern von Gerd Fischer
 \cite{fischer:2008} und Hans-Joachim Kowalsky \cite{kowalsky:2003} gelernt, an denen ich mich auch
-jetzt wieder orientiert habe.  Zusätzlich habe ich in der Zwischenzeit das Buch 
+jetzt wieder orientiert habe.  Zus\"{a}tzlich habe ich in der Zwischenzeit das Buch 
 ``\emph{Linear Algebra Done Right}'' von Sheldon Axler \cite{axler:1997} gelesen, das sehr gut geschrieben ist
 und einen alternativen Zugang zur linearen Algebra bietet, bei dem die Theorie der Determinanten
-allerdings in den Hintergrund gerät.  Der fachkundige Leser wird bei der Lektüre dieses Skripts
+allerdings in den Hintergrund ger\"{a}t.  Der fachkundige Leser wird bei der Lekt\"{u}re dieses Skripts
 unschwer Parallelen zu den oben zitierten Werken erkennen.   Demjenigen Leser, der sich mehr Wissen
-aneignen möchte als das, was in dem engen zeitlichen Rahmen dieser Vorlesung vermittelt werden kann,
-möchte ich auf die oben genannte Literatur verweisen, wobei mir persönlich die Darstellung des Buchs
-von Sheldon Axler am besten gefällt. 
+aneignen m\"{o}chte als das, was in dem engen zeitlichen Rahmen dieser Vorlesung vermittelt werden kann,
+m\"{o}chte ich auf die oben genannte Literatur verweisen, wobei mir pers\"{o}nlich die Darstellung des Buchs
+von Sheldon Axler am besten gef\"{a}llt. 
 
 
 %%% Local Variables: 

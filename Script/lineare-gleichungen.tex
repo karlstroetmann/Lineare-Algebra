@@ -1,13 +1,13 @@
 \chapter{Lineare Gleichungs-Systeme}
-Wir wollen uns in diesem Kapitel mit der Lösung \emph{linearer Gleichungs-Systeme} beschäftigen.
+Wir wollen uns in diesem Kapitel mit der L\"{o}sung \emph{linearer Gleichungs-Systeme} besch\"{a}ftigen.
 Ein \emph{Gleichungs-System} ist dabei einfach eine Menge von Gleichungen, in denen verschiedene
 Variablen auftreten.  Bezeichnen wir die Variablen mit $x_1$, $\cdots$, $x_m$ und liegen die Gleichungen
 in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sum\limits_{i=1}^n a_{i,j} \cdot x_j = b_i$ \quad für alle $i=1,\cdots,m$
+$\sum\limits_{i=1}^n a_{i,j} \cdot x_j = b_i$ \quad f\"{u}r alle $i=1,\cdots,m$
 \\[0.2cm]
-vor, wobei die Zahlen $a_{i,j}$ für $i = 1, \cdots,n$ und $j = 1, \cdots, m$ und $b_i$ für 
+vor, wobei die Zahlen $a_{i,j}$ f\"{u}r $i = 1, \cdots,n$ und $j = 1, \cdots, m$ und $b_i$ f\"{u}r 
 $i = 1, \cdots, n$ entweder reell oder komplex sind, so nennen wir das Gleichungs-System \emph{linear}.
 Anstatt in der obigen kompakten Notation verwenden wir zu Darstellung eines solchen Gleichungs-Systems
 auch die folgende \emph{Matrix-Schreibweise}:
@@ -50,8 +50,8 @@ $A := \left(
 $
 \\[0.2cm]
 zusammengefasst.  Eine Matrix ist dabei nichts anderes als ein rechteckiges Schema, in dem die doppelt 
-indizierte Koeffizienten $a_{i,j}$ übersichtlich dargestellt werden können.  $n$ bezeichnet die Anzahl
-der Zeilen der Matrix, während $m$ die Anzahl der Spalten angibt.  Gleichzeitig haben wir oben  die
+indizierte Koeffizienten $a_{i,j}$ \"{u}bersichtlich dargestellt werden k\"{o}nnen.  $n$ bezeichnet die Anzahl
+der Zeilen der Matrix, w\"{a}hrend $m$ die Anzahl der Spalten angibt.  Gleichzeitig haben wir oben  die
 Variablen $x_1, x_2, \cdots, x_m$ und die Konstanten  
 $b_1, b_2, \cdots, b_n$ als \emph{Vektoren} notiert.  Definieren wir
 \\[0.2cm]
@@ -73,7 +73,7 @@ $\vec{b} = \left(
  \right)
 $
 \\[0.2cm]
-so können wir das oben gegebene System von linearen Gleichungen auch kurz in der Form
+so k\"{o}nnen wir das oben gegebene System von linearen Gleichungen auch kurz in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot \vec{x} = \vec{y}$
@@ -123,8 +123,8 @@ definiert wird.  Betrachten wir zur Verdeutlichung ein Beispiel:  Die drei Gleic
   2 \cdot x + 2 \cdot y + 1 \cdot z = 1, & \quad & \Rm{3}
 \end{array}
 \end{equation}
-die wir zur späteren Referenzierung mit römischen Zahlen nummeriert haben,
-können in Matrix-Schreibweise als
+die wir zur sp\"{a}teren Referenzierung mit r\"{o}mischen Zahlen nummeriert haben,
+k\"{o}nnen in Matrix-Schreibweise als
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -146,23 +146,23 @@ $
 $
 \\[0.2cm]
 geschrieben werden.  
-Zur Lösung eines solchen Gleichungs-Systems
+Zur L\"{o}sung eines solchen Gleichungs-Systems
 werden wir zwei verschiedene Verfahren diskutieren:  In diesem Kapitel betrachten wir das 
-\emph{Gauß'sche Eliminations-Verfahren}\footnote{
-  Das \emph{Gauß'sche Eliminations-Verfahren} wurde zwar nach Carl Friedrich Gauß benannt,
-  es war aber bereits lange vor Gauß bekannt.  Eine schriftliche Beschreibung des Verfahrens  findet
+\emph{Gau\3'sche Eliminations-Verfahren}\footnote{
+  Das \emph{Gau\3'sche Eliminations-Verfahren} wurde zwar nach Carl Friedrich Gau\3 benannt,
+  es war aber bereits lange vor Gau\3 bekannt.  Eine schriftliche Beschreibung des Verfahrens  findet
   sich beispielsweise bereits bei Issac Newton, aber das Verfahren war schon deutlich vor Newton 
   mathematisches Allgemeinwissen.},
-später werden wir sehen, wie sich lineare Gleichungs-Systeme mit Hilfe von
-\emph{Determinanten} lösen lassen.   
+sp\"{a}ter werden wir sehen, wie sich lineare Gleichungs-Systeme mit Hilfe von
+\emph{Determinanten} l\"{o}sen lassen.   
 
-\section{Das Gauß'sche Eliminations-Verfahren}
-Wir demonstrieren das Gauß'sche Eliminations-Verfahren zunächst an dem in (\ref{eq:gauss0}) gezeigten
+\section{Das Gau\3'sche Eliminations-Verfahren}
+Wir demonstrieren das Gau\3'sche Eliminations-Verfahren zun\"{a}chst an dem in (\ref{eq:gauss0}) gezeigten
 Beispiel.  Der Einfachheit halber benutzen wir hier noch keine Matrix-Schreibweise.
-Um die in (\ref{eq:gauss0}) angegebenen Gleichungen zu lösen, versuchen wir im ersten Schritt, die
+Um die in (\ref{eq:gauss0}) angegebenen Gleichungen zu l\"{o}sen, versuchen wir im ersten Schritt, die
 Variable $x$ aus der zweiten und der dritten Gleichung zu eliminieren.  Um $x$ aus der zweiten Gleichung
 loszuwerden, multiplizieren wir die erste Gleichung mit $-\frac{4}{3}$ und addieren die resultierende
-Gleichung zu der zweiten Gleichung.  Wegen $-\frac{4}{3} \cdot 3 \cdot x + 4 \cdot x = 0$ fällt die
+Gleichung zu der zweiten Gleichung.  Wegen $-\frac{4}{3} \cdot 3 \cdot x + 4 \cdot x = 0$ f\"{a}llt die
 Variable $x$ dann aus der zweiten Gleichung heraus und wir erhalten statt der zweiten Gleichung die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -175,7 +175,7 @@ $-\frac{11}{3} \cdot y - 2 \cdot z = -\frac{7}{3}$
 \\[0.2cm]
 vereinfachen.  Um die Variable $x$ aus der dritten Gleichung zu eliminieren, multiplizieren wir die
 erste Gleichung mit $-\frac{2}{3}$ und addieren die so entstandene Gleichung zu der dritten Gleichung.  
-Wieder fällt der Term mit der Variablen $x$ weg und wir erhalten nun an Stelle der dritten Gleichung die
+Wieder f\"{a}llt der Term mit der Variablen $x$ weg und wir erhalten nun an Stelle der dritten Gleichung die
 Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -186,7 +186,7 @@ die wir zu
 \hspace*{1.3cm}
 $-\frac{4}{3} \cdot y + (-1) \cdot z = -\frac{5}{3}$,
 \\[0.2cm]
-vereinfachen.  Insgesamt haben wir damit das ursprüngliche Gleichungs-System zu dem äquivalenten
+vereinfachen.  Insgesamt haben wir damit das urspr\"{u}ngliche Gleichungs-System zu dem \"{a}quivalenten
 Gleichungs-System 
 \begin{equation}
   \label{eq:gauss1} 
@@ -215,7 +215,7 @@ die wir zu
 \hspace*{1.3cm}
 $\left(-\frac{3}{11}\right) \cdot z = -\frac{9}{11}$
 \\[0.2cm]
-vereinfachen.  Insgesamt haben wir unser ursprüngliches Gleichungs-System jetzt zu dem Gleichungs-System
+vereinfachen.  Insgesamt haben wir unser urspr\"{u}ngliches Gleichungs-System jetzt zu dem Gleichungs-System
 \begin{equation}
   \label{eq:gauss2} 
 \begin{array}[c]{rcrcrcr}
@@ -225,12 +225,12 @@ vereinfachen.  Insgesamt haben wir unser ursprüngliches Gleichungs-System jetzt
 \end{array}
 \end{equation}
 umgeformt.  Dieses Gleichungs-System hat, wie man sagt, \emph{obere Dreiecks-Form}, denn
-unterhalb der Diagonalen haben alle Einträge der Matrix den Wert $0$.
-Wir können es jetzt durch
-\emph{Rückwärts-Substitution} lösen, indem wir zunächst die letzte Gleichung nach $z$ auflösen, diesen
-Wert für $z$ dann in die zweite Gleichung einsetzten, die zweite Gleichung nach $y$ auflösen und weiter
-die Werte für $y$ und $z$ in der ersten Gleichung einsetzten, so dass wir schließlich den Wert von $x$
-bestimmen können.  Die Auflösung der letzten Gleichung nach $z$ liefert $z = 3$.  Setzen wir diesen Wert
+unterhalb der Diagonalen haben alle Eintr\"{a}ge der Matrix den Wert $0$.
+Wir k\"{o}nnen es jetzt durch
+\emph{R\"{u}ckw\"{a}rts-Substitution} l\"{o}sen, indem wir zun\"{a}chst die letzte Gleichung nach $z$ aufl\"{o}sen, diesen
+Wert f\"{u}r $z$ dann in die zweite Gleichung einsetzten, die zweite Gleichung nach $y$ aufl\"{o}sen und weiter
+die Werte f\"{u}r $y$ und $z$ in der ersten Gleichung einsetzten, so dass wir schlie\3lich den Wert von $x$
+bestimmen k\"{o}nnen.  Die Aufl\"{o}sung der letzten Gleichung nach $z$ liefert $z = 3$.  Setzen wir diesen Wert
 in der zweiten Gleichung ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm} $-\frac{11}{3} \cdot y - 6 = -\frac{7}{3}$,
@@ -244,14 +244,14 @@ Gleichung ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm} $3 \cdot x - 5 + 9 = 4$,
 \\[0.2cm]
-woraus $x = 0$ folgt. Damit lautet die Lösung des ursprünglichen Gleichungs-Systems
+woraus $x = 0$ folgt. Damit lautet die L\"{o}sung des urspr\"{u}nglichen Gleichungs-Systems
 \\[0.2cm]
 \hspace*{1.3cm} 
 $x = 0$, \quad $y = -1$, \quad $z = 3$.
 \pagebreak
 
 \exercise
-Bestimmen  Sie die Lösung des folgenden Gleichungs-Systems mit Hilfe des Gauß'schen
+Bestimmen  Sie die L\"{o}sung des folgenden Gleichungs-Systems mit Hilfe des Gau\3'schen
 Eliminations-Verfahrens:
 \begin{equation*}
 \begin{array}[c]{l}
@@ -260,7 +260,7 @@ Eliminations-Verfahrens:
   1 \cdot x + 2 \cdot y + 1 \cdot z = 0.
 \end{array}
 \end{equation*}
-\textbf{Hinweis}: Die Lösungen sind keine ganzen Zahlen.
+\textbf{Hinweis}: Die L\"{o}sungen sind keine ganzen Zahlen.
 \vspace*{0.3cm}
 
 Wir beschreiben nun, wie ein lineares Gleichungs-System der Form
@@ -268,7 +268,7 @@ Wir beschreiben nun, wie ein lineares Gleichungs-System der Form
 \hspace*{1.3cm}
 $\sum\limits_{j=1}^m a_{i,j} \cdot x_j = b_i$
 \\[0.2cm]
-für eine  gegebenen Matrix 
+f\"{u}r eine  gegebenen Matrix 
 \\[0.2cm]
 \hspace*{1.3cm}
 $A := \left(
@@ -290,7 +290,7 @@ $\vec{b} = \left(
  \right)
 $
 \\[0.2cm]
-gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen.
+gel\"{o}st werden kann, wobei wir uns auf den Spezialfall $m=n$ beschr\"{a}nken wollen.
 \begin{enumerate}
 \item Im ersten Schritt eliminieren wir die Variable $x_1$ aus der 2-ten, 3-ten, $\cdots$, $n$-ten
       Gleichung.  Um die Variable $x_1$ aus der $i$-ten Gleichung zu eliminieren, multiplizieren 
@@ -304,7 +304,7 @@ gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen
       \hspace*{1.3cm}
       $-\bruch{a_{i,1}}{a_{1,1}} \cdot a_{1,1} \cdot x_1 + a_{i,1} \cdot x_1 = 0$
       \\[0.2cm]
-      enthält die resultierende Gleichung die Variable $x_1$ nicht mehr.  Die neue $i$-te Gleichung
+      enth\"{a}lt die resultierende Gleichung die Variable $x_1$ nicht mehr.  Die neue $i$-te Gleichung
       hat dann die Form
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -320,16 +320,16 @@ gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen
        b_{i} - \bruch{a_{i,1}}{a_{1,1}} \cdot b_{1}
       $
       \\[0.2cm]
-      schreiben lässt.
+      schreiben l\"{a}sst.
 
       \textbf{Bemerkung}: An dieser Stelle fragen Sie sich vermutlich, was passiert, wenn
       $a_{1,1} = 0$ ist, denn dann ist der Ausdruck $\frac{a_{i,1}}{a_{1,1}}$ offenbar undefiniert.
       In so einem Fall vertauschen wir einfach die erste Gleichung mit einer anderen Gleichung,
-      für die der Koeffizient der Variablen $x_1$ von $0$ verschieden ist.  In der Praxis hat es sich
-      bewährt, immer die Gleichung als erste zu nehmen, für die der Koeffizient der Variablen $x_1$ den
-      größten Betrag hat, denn dadurch fallen die bei  einer numerischen Rechnung zwangsläufig
+      f\"{u}r die der Koeffizient der Variablen $x_1$ von $0$ verschieden ist.  In der Praxis hat es sich
+      bew\"{a}hrt, immer die Gleichung als erste zu nehmen, f\"{u}r die der Koeffizient der Variablen $x_1$ den
+      gr\"{o}\3ten Betrag hat, denn dadurch fallen die bei  einer numerischen Rechnung zwangsl\"{a}ufig
       auftretenden  Rundungsfehler weniger schwer ins Gewicht als wenn wir die
-      Reihenfolge der Gleichungen beliebig wählen.   Diese Verfahren wird als
+      Reihenfolge der Gleichungen beliebig w\"{a}hlen.   Diese Verfahren wird als
       \emph{partielle Pivotisierung} bezeichnet.
 \item Im $k$-ten Schritt nehmen wir an, dass wir die Variablen $x_1, \cdots, x_{k-1}$ bereits aus 
       der $k$-ten, $(k+1)$-ten, $\cdots$, $n$-Gleichung entfernt haben und wollen nun die 
@@ -345,7 +345,7 @@ gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen
       \hspace*{1.3cm}
       $-\bruch{a_{i,k}}{a_{k,k}} \cdot a_{k,k} \cdot x_k + a_{i,k} \cdot x_k = 0$
       \\[0.2cm]
-      enthält die resultierende Gleichung die Variable $x_k$ nicht mehr.  Die Variablen
+      enth\"{a}lt die resultierende Gleichung die Variable $x_k$ nicht mehr.  Die Variablen
       $x_1$, $\cdots$, $x_{k-1}$ wurden aus der $i$-ten Gleichung bereits vorher 
       eliminiert, so dass die neue $i$-te Gleichung
       dann die Form
@@ -355,30 +355,30 @@ gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen
        b_{i} - \bruch{a_{i,k}}{a_{k,k}} \cdot b_{k}
       $
       \\[0.2cm]
-      hat.   Aus Gründen der numerischen Stabilität kann wieder eine partielle Pivotisierung durchgeführt
-      werden.  Wir wollen im Folgenden voraussetzen, dass dies immer möglich ist, dass heißt wir setzen
+      hat.   Aus Gr\"{u}nden der numerischen Stabilit\"{a}t kann wieder eine partielle Pivotisierung durchgef\"{u}hrt
+      werden.  Wir wollen im Folgenden voraussetzen, dass dies immer m\"{o}glich ist, dass hei\3t wir setzen
       voraus, dass es immer eine Gleichung unter den Gleichungen mit den Nummern $k,\cdots,n$ gibt,
-      in denen die Variable $x_k$ auch tatsächlich auftritt, so dass also immer für mindestens ein
+      in denen die Variable $x_k$ auch tats\"{a}chlich auftritt, so dass also immer f\"{u}r mindestens ein
       $i \in \{ k, \cdots, n\}$ der Koeffizient $a_{i,k} \not= 0$ ist.  
-      Diese Voraussetzung ist äquivalent zu der Forderung, dass das ursprüngliche Gleichungs-System
-      eindeutig lösbar ist.
-\item Im letzten Schritt können wir voraussetzen, dass das Gleichungs-System eine obere Dreiecks-Form
+      Diese Voraussetzung ist \"{a}quivalent zu der Forderung, dass das urspr\"{u}ngliche Gleichungs-System
+      eindeutig l\"{o}sbar ist.
+\item Im letzten Schritt k\"{o}nnen wir voraussetzen, dass das Gleichungs-System eine obere Dreiecks-Form
       hat.  Es bleiben nun noch $n$ Teilschritte zur Berechnung der Variablen $x_1,\cdots,x_n$.
       \begin{enumerate}
-      \item Im ersten Teilschritt lösen wir die $n$-te Gleichung nach $x_n$ auf.
+      \item Im ersten Teilschritt l\"{o}sen wir die $n$-te Gleichung nach $x_n$ auf.
             Die $n$-te Gleichung hat die Form
             \\[0.2cm]
             \hspace*{1.3cm}
             $c_{n,n} \cdot x_n = d_n$,
             \\[0.2cm] 
             wobei wir die Koeffizienten $c_{n,n}$ und $d_n$ im zweiten Schritt berechnet haben.
-            Die Lösung dieser Gleichung ist dann offenbar
+            Die L\"{o}sung dieser Gleichung ist dann offenbar
             \\[0.2cm]
             \hspace*{1.3cm}
             $x_{n} = \bruch{d_n}{c_{n,n}}$.
             \\[0.2cm]
-            Sollte nun $c_{n,n} = 0$ gelten, so ist das Gleichungs-System nicht eindeutig lösbar.
-      \item Im $i$-ten Teilschritt können wir voraussetzen, dass wir die Variablen
+            Sollte nun $c_{n,n} = 0$ gelten, so ist das Gleichungs-System nicht eindeutig l\"{o}sbar.
+      \item Im $i$-ten Teilschritt k\"{o}nnen wir voraussetzen, dass wir die Variablen
             \\[0.2cm]
             \hspace*{1.3cm}
             $x_n$, $x_{n-1}$, $\cdots$, $x_{n-(i-2)}$ 
@@ -390,13 +390,13 @@ gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen
             \hspace*{1.3cm}
             $\sum\limits_{j=k}^n c_{k,j} \cdot x_j = d_k$.
             \\[0.2cm]
-            Da nun die Variablen $x_{k+1},\cdots,x_n$ bereits bekannt sind, können wir diese Gleichung
-            nach $x_k$ auflösen und erhalten
+            Da nun die Variablen $x_{k+1},\cdots,x_n$ bereits bekannt sind, k\"{o}nnen wir diese Gleichung
+            nach $x_k$ aufl\"{o}sen und erhalten
             \\[0.2cm]
             \hspace*{1.3cm}
             $x_k = \bruch{1}{c_{k,k}} \Bigl(d_k - \sum\limits_{j=k+1}^n c_{k,j} \cdot x_j\Bigr)$.
             \\[0.2cm]
-            Sollte hier $c_{k,k} = 0$ gelten, so ist das Gleichungs-System nicht eindeutig lösbar.
+            Sollte hier $c_{k,k} = 0$ gelten, so ist das Gleichungs-System nicht eindeutig l\"{o}sbar.
       \end{enumerate}
 \end{enumerate}
 
@@ -460,36 +460,36 @@ gelöst werden kann, wobei wir uns auf den Spezialfall $m=n$ beschränken wollen
     };
 \end{Verbatim}
 \vspace*{-0.3cm}
-\caption{Implementierung des Gauß'schen Eliminations-Verfahrens in \textsl{SetlX}.}
+\caption{Implementierung des Gau\3'schen Eliminations-Verfahrens in \textsl{SetlX}.}
 \label{fig:gauss.stlx}
 \end{figure}
 
 \noindent
-Abbildung \ref{fig:gauss.stlx} zeigt eine einfache Implementierung des Gauß'schen Algorithmus, welche die
-oben ausgeführten Überlegungen umsetzt.  Wir diskutieren das Programm nun im Detail.
+Abbildung \ref{fig:gauss.stlx} zeigt eine einfache Implementierung des Gau\3'schen Algorithmus, welche die
+oben ausgef\"{u}hrten \"{u}berlegungen umsetzt.  Wir diskutieren das Programm nun im Detail.
 \begin{enumerate}
-\item Die Funktion $\textsl{solve}(a, b)$ erhält als erstes Argument $a$ die Matrix und
+\item Die Funktion $\textsl{solve}(a, b)$ erh\"{a}lt als erstes Argument $a$ die Matrix und
       als zweites Argument $b$ die rechte Seite des linearen Gleichungs-Systems
       \\[0.2cm]
       \hspace*{1.3cm}
       $a \cdot \vec{x} = b$
       \\[0.2cm]
-      Zunächst bringen wir dieses Gleichungs-System in Zeile 2 mit Hilfe der Funktion \textsl{eliminate} auf
-      eine obere Dreiecks-Form.  Die Funktion \textsl{solveTriangular} löst dieses System dann durch
-      Rückwärts-Substitution.
+      Zun\"{a}chst bringen wir dieses Gleichungs-System in Zeile 2 mit Hilfe der Funktion \textsl{eliminate} auf
+      eine obere Dreiecks-Form.  Die Funktion \textsl{solveTriangular} l\"{o}st dieses System dann durch
+      R\"{u}ckw\"{a}rts-Substitution.
 \item Die Funktion $\textsl{eliminate}(a, b)$ hat die Aufgabe, das Gleichungs-System $a \cdot \vec{x} = b$
-      in eine obere Dreiecks-Form zu überführen.  Wir gehen davon aus, dass die Matrix $a$ quadratisch ist. 
+      in eine obere Dreiecks-Form zu \"{u}berf\"{u}hren.  Wir gehen davon aus, dass die Matrix $a$ quadratisch ist. 
       Dann ist das in Zeile 7 bestimmte $n$ sowohl die Anzahl der Zeilen der Matrix als auch die Anzahl
       der Variablen.
 \item In den Zeilen 8 bis 16 definieren wir die lokale Funktion $\textsl{pivot}(a, n, i)$.  Diese Funktion 
-      hat die Aufgabe, diejenige Zeile $r$ in der Matrix $a$ zu finden, für die der Wert
+      hat die Aufgabe, diejenige Zeile $r$ in der Matrix $a$ zu finden, f\"{u}r die der Wert
       \\[0.2cm]
       \hspace*{1.3cm}
-      $|a_{j,i}|$ \quad für $j \in \{i, \cdots, n \}$
+      $|a_{j,i}|$ \quad f\"{u}r $j \in \{i, \cdots, n \}$
       \\[0.2cm]
       maximal wird.
 \item Die Schleife in Zeile 17 setzt voraus, dass die ersten $i$ Gleichungen bereits in oberer 
-      Dreiecksform vorliegen und das darüber hinaus die Variablen $x_1, \cdots, x_{i-1}$
+      Dreiecksform vorliegen und das dar\"{u}ber hinaus die Variablen $x_1, \cdots, x_{i-1}$
       bereits aus den Gleichungen $i, i+1, \cdots, n$  entfernt worden sind.
       Ziel ist es,  die Variable $x_i$ aus der $(i+1)$-sten bis zur $n$-ten
       Gleichung zu entfernen.  
@@ -504,10 +504,10 @@ oben ausgeführten Überlegungen umsetzt.  Wir diskutieren das Programm nun im D
             \\[0.2cm]
             der $i$-ten Zeile ab.
       \end{enumerate}
-      Insgesamt hängt nun für jedes $i=1,\cdots,n$ die $i$-te Gleichung nur noch von den Variablen
+      Insgesamt h\"{a}ngt nun f\"{u}r jedes $i=1,\cdots,n$ die $i$-te Gleichung nur noch von den Variablen
       $x_{i}, \cdots, x_{n}$ ab.
 \item In der Prozedur \textsl{solveTriangular} wird das Gleichungs-System, das jetzt in oberer Dreiecks-Form 
-      vorliegt, durch Rückwärts-Substitution gelöst.
+      vorliegt, durch R\"{u}ckw\"{a}rts-Substitution gel\"{o}st.
 \end{enumerate}
 
 %%% Local Variables: 

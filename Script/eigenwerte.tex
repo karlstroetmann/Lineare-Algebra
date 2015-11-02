@@ -1,7 +1,7 @@
 \chapter{Eigenwerte und Eigenvektoren}
-Eigenwerte und Eigenvektoren gehören zu den wichtigsten Anwendungen der linearen Algebra:
+Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linearen Algebra:
 \begin{enumerate}
-\item Die \href{http://de.wikipedia.org/wiki/Schrödingergleichung}{Schrödinger-Gleichung}
+\item Die \href{http://de.wikipedia.org/wiki/Schr\"odingergleichung}{Schr\"odinger-Gleichung}
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathrm{H} \Psi = \mathrm{E} \cdot \Psi$
@@ -12,35 +12,35 @@ Eigenwerte und Eigenvektoren gehören zu den wichtigsten Anwendungen der linearen
       Dabei kommt wieder die Wellenfunktion $\Psi$ als Ergebnis heraus, allerdings multipliziert mit
       dem Eigenwert $\mathrm{E}$, der als die Energie der Wellenfunktion $\Psi$ interpretiert werden kann.
 
-      Die Schrödinger-Gleichung ist die Grundlage der \href{http://de.wikipedia.org/wiki/Quantenmechanik}{Quanten-Mechanik}.
-      Natürlich erwarte ich von Ihnen nicht, dass Sie diese Gleichung verstehen.  Ich habe diese
-      Gleichung als erstes aufgelistet, weil dies einerseits früher einer der wichtigsten Anwendung von
+      Die Schr\"odinger-Gleichung ist die Grundlage der \href{http://de.wikipedia.org/wiki/Quantenmechanik}{Quanten-Mechanik}.
+      Nat\"urlich erwarte ich von Ihnen nicht, dass Sie diese Gleichung verstehen.  Ich habe diese
+      Gleichung als erstes aufgelistet, weil dies einerseits fr\"uher einer der wichtigsten Anwendung von
       Eigenvektoren war und weil ich andererseits selber im Rahmen meiner Diplomarbeit im
-      wesentlichen nichts anderes gemacht habe, als auf numerischem Wege Schrödinger-Gleichungen zu
-      lösen.  Um die Schrödinger-Gleichungen numerisch zu lösen, wird der Hamilton-Operator zunächst
-      durch eine Matrix approximiert und anschließend werden die Eigenwerte dieser Matrix berechnet.
+      wesentlichen nichts anderes gemacht habe, als auf numerischem Wege Schr\"odinger-Gleichungen zu
+      l\"osen.  Um die Schr\"odinger-Gleichungen numerisch zu l\"osen, wird der Hamilton-Operator zun\"achst
+      durch eine Matrix approximiert und anschlie\3end werden die Eigenwerte dieser Matrix berechnet.
 \item In der Informatik werden Eigenvektoren unter anderem bei der 
-      \emph{Unabhängigkeits-Analyse} benötigt.  Die Unabhängigkeits-Analyse kann beispielsweise dazu
+      \emph{Unabh\"angigkeits-Analyse} ben\"otigt.  Die Unabh\"angigkeits-Analyse kann beispielsweise dazu
       benutzt werden, das
-      \href{http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi}{Cocktail-Party-Problem} zu lösen.
-      Bei diesem Problem geht es darum, verschiedene Geräuschquellen zu isolieren:  Stellen
+      \href{http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi}{Cocktail-Party-Problem} zu l\"osen.
+      Bei diesem Problem geht es darum, verschiedene Ger\"auschquellen zu isolieren:  Stellen
       Sie sich vor, Sie sind auf einer Cocktail-Party.  Im Hintergrund spielt ein Klavier und Sie
-      unterhalten sich mit einem Gesprächspartner.  Ihre Ohren hören sowohl das Klavier als auch den
-      Gesprächspartner, aber solange Sie noch nicht zu viele Cocktails getrunken haben, ist Ihr
-      Gehirn in der Lage, das, was Ihr Gesprächspartner Ihnen erzählt, aus 
-      dem Gesamtgeräusch heraus zu filtern.  
+      unterhalten sich mit einem Gespr\"achspartner.  Ihre Ohren h\"oren sowohl das Klavier als auch den
+      Gespr\"achspartner, aber solange Sie noch nicht zu viele Cocktails getrunken haben, ist Ihr
+      Gehirn in der Lage, das, was Ihr Gespr\"achspartner Ihnen erz\"ahlt, aus 
+      dem Gesamtger\"ausch heraus zu filtern.  
 
       Neben dem Cocktail-Party-Problem gibt es zahlreiche anderen Anwendungen der
-      Unabhängigkeits-Analyse sowohl in der Informatik im Bereich des 
+      Unabh\"angigkeits-Analyse sowohl in der Informatik im Bereich des 
       \emph{Data-Minings} als auch in vielen anderen Bereichen der Wissenschaft.
-\item Eine andere Anwendung von Eigenvektoren ist die Lösung von
-      solchen Rekurrenz-Gleichungen, die bei Komplexitätsanalyse von Algorithmen auftreten.
-\item Die Liste der Anwendungen von Eigenvektoren ließe sich problemlos fortsetzen.  Allerdings
-      würden Ihnen die meisten Anwendungen zum jetzigen Zeitpunkt Ihres Studiums noch wenig sagen.
+\item Eine andere Anwendung von Eigenvektoren ist die L\"osung von
+      solchen Rekurrenz-Gleichungen, die bei Komplexit\"atsanalyse von Algorithmen auftreten.
+\item Die Liste der Anwendungen von Eigenvektoren lie\3e sich problemlos fortsetzen.  Allerdings
+      w\"urden Ihnen die meisten Anwendungen zum jetzigen Zeitpunkt Ihres Studiums noch wenig sagen.
       Daher spare ich mir hier weitere Beispiele.
 \end{enumerate}
-In diesem Kapitel führen wir zunächst Eigenwerte und Eigenvektoren ein und zeigen dann, wie sich 
-lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren lösen lassen.  
+In diesem Kapitel f\"uhren wir zun\"achst Eigenwerte und Eigenvektoren ein und zeigen dann, wie sich 
+lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren l\"osen lassen.  
 \pagebreak
 
 \section{Definition und Berechnung von Eigenwerten}
@@ -97,11 +97,11 @@ $A \cdot \vec{y} = \left(
   -1    
 \end{array}\right) = 1 \cdot \vec{y}$.
 \\[0.2cm]
-Folglich ist $\vec{x}$ eine Eigenvektor von $A$ zum Eigenwert $3$, während $\vec{y}$ ein
+Folglich ist $\vec{x}$ eine Eigenvektor von $A$ zum Eigenwert $3$, w\"ahrend $\vec{y}$ ein
 Eigenvektor von $A$ zum Eigenwert $1$ ist.  \eox
 
 \remark
-Der Begriff des Eigenwerts und des Eigenvektors lässt sich auf beliebige lineare Operatoren
+Der Begriff des Eigenwerts und des Eigenvektors l\"asst sich auf beliebige lineare Operatoren
 ausdehnen.  Ist $\mathrm{H} \in \mathcal{L}(V)$ ein Operator auf dem Vektor-Raum $V$, so ist
 $\vec{x} \in V$ genau dann ein Eigenvektor zum Eigenwert $\lambda$, wenn 
 \\[0.2cm]
@@ -126,15 +126,15 @@ $\mathrm{D}(f) := \displaystyle\frac{\mathrm{d}f}{\mathrm{d}x}$
 definiert ist, die Funktion $x \mapsto e^x$ als Eigenvektor zum Eigenwert $1$.  
 Der Vektor-Raum $\mathcal{C}^\infty(\mathbb{R})$ der unendlich oft differenzierbaren Funktionen ist
 unendlich-dimensional und hat daher eine wesentlich komplexere Struktur als die
-endlich-dimensionalen Vektor-Räume, mit denen wir uns im Rest dieser Vorlesung beschäftigen werden.
-Da bei endlich-dimensionalen Vektor-Räumen jede lineare Abbildung durch eine Matrix dargestellt
+endlich-dimensionalen Vektor-R\"aume, mit denen wir uns im Rest dieser Vorlesung besch\"aftigen werden.
+Da bei endlich-dimensionalen Vektor-R\"aumen jede lineare Abbildung durch eine Matrix dargestellt
 werden kann, verlieren wir nichts, wenn wir uns auf die Bestimmung von Eigenvektoren und Eigenwerten
-von Matrizen beschränken. 
+von Matrizen beschr\"anken. 
 \eox
 
 Der folgende Satz stellt einen Zusammenhang zwischen Eigenwerten und Determinanten her.  Dieser Satz
-ist der Grund, warum wir gezwungen waren, den zugegebenermaßen sehr komplexen Begriff der
-Determinanten im letzten Kapitel einzuführen.
+ist der Grund, warum wir gezwungen waren, den zugegebenerma\3en sehr komplexen Begriff der
+Determinanten im letzten Kapitel einzuf\"uhren.
 
 \begin{Satz}
   Es sei $A \in \mathbb{K}^{n \times n}$.  Dann ist $\lambda \in \mathbb{K}$ genau dann ein
@@ -149,7 +149,7 @@ Determinanten im letzten Kapitel einzuführen.
 
 \proof
 Falls $\vec{x} \not= \vec{0}$ ein Eigenvektor von $A$ zum Eigenwert $\lambda$ ist, so haben wir die folgende
-Kette von Äquivalenzen:
+Kette von \"Aquivalenzen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -165,13 +165,13 @@ $
 $
 \qed
 
-Nach dem letzten Satz sind die Eigenwerte genau die Werte $\lambda$, für die der Ausdruck 
+Nach dem letzten Satz sind die Eigenwerte genau die Werte $\lambda$, f\"ur die der Ausdruck 
 \\[0.2cm]
 \hspace*{1.3cm}
  $\mathtt{det}(\lambda \cdot \mathrm{E}_n- A)$
 \\[0.2cm]
 den Wert $0$ annimmt.  Berechnen wir diesen Ausdruck mit Hilfe der von Leibniz angegebenen Formel,
-so erhalten wir ein Polynom in der Unbestimmten $\lambda$.  Dieses Polynom heißt das
+so erhalten wir ein Polynom in der Unbestimmten $\lambda$.  Dieses Polynom hei\3t das
 \emph{charakteristische Polynom} der Matrix $A$ und ist formal als
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -215,7 +215,7 @@ $
 $
 \\[0.2cm]
 Offenbar hat dieses Polynom die Nullstellen $\lambda = 3$ und $\lambda = 1$.  Um beispielsweise den
-Eigenvektor zum Eigenwert $\lambda = 3$ zu berechnen, müssen wir die Gleichung
+Eigenvektor zum Eigenwert $\lambda = 3$ zu berechnen, m\"ussen wir die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -227,7 +227,7 @@ $
 \right) \cdot \left(\begin{array}{l} x_1 \\ x_2 \end{array}\right) = 3 \cdot \left(\begin{array}{l} x_1 \\ x_2 \end{array}\right)
 $
 \\[0.2cm]
-lösen.  Das liefert die beiden Gleichungen
+l\"osen.  Das liefert die beiden Gleichungen
 \\[0.2cm]
 \hspace*{1.8cm}
 $2 \cdot x_1 + x_2 = 3 \cdot x_1$ \quad und \quad  $x_1 + 2 \cdot x_2 = 3 \cdot x_2$
@@ -238,16 +238,16 @@ die wir zu
 $-x_1 + x_2 = 0$ \quad und \quad  $x_1 - x_2 = 0$.
 \\[0.2cm]
 vereinfachen.
-Offenbar ist die zweite Gleichung zur ersten Gleichung äquivalent und kann daher weggelassen
-werden.  Da wir dann nur noch eine Gleichung aber zwei Unbekannte haben, können wir eine der
-Unbekannten frei wählen. Wie müssen lediglich darauf achten, dass der Vektor
+Offenbar ist die zweite Gleichung zur ersten Gleichung \"aquivalent und kann daher weggelassen
+werden.  Da wir dann nur noch eine Gleichung aber zwei Unbekannte haben, k\"onnen wir eine der
+Unbekannten frei w\"ahlen. Wie m\"ussen lediglich darauf achten, dass der Vektor
  $\left(x_1 \atop x_2\right)$ vom Nullvektor verschieden ist.  Wir setzen daher $x_1 := 1$ und
  finden dann $x_2 = 1$.  Damit haben wir den Vektor $\vec{x} = \left(1 \atop 1\right)$
 als Eigenvektor der Matrix $A$ zum Eigenwert $3$ gefunden.
 \pagebreak
 
 \exercise
-Überlegen Sie sich, für welche Werte von $a$, $b$ und $c$ die Matrix 
+\"Uberlegen Sie sich, f\"ur welche Werte von $a$, $b$ und $c$ die Matrix 
 \\[0.2cm]
 \hspace*{1.3cm}
 $A = \left(
@@ -261,7 +261,7 @@ $
 zwei verschiedene reelle Eigenwerte besitzt. \eox
 
 \exercise
-Für welche Werte von $\varphi$ hat die Matrix
+F\"ur welche Werte von $\varphi$ hat die Matrix
 \\[0.2cm]
 \hspace*{1.3cm}
 $A = \left(
@@ -276,7 +276,7 @@ keinen reellen Eigenwert? \eoxs
 
 \begin{Definition}[Diagonalisierbarkeit]
 Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{diagonalisierbar} genau dann, wenn die Matrix
- $n$ linear unabhängige Eigenvektoren besitzt.  \eoxs 
+ $n$ linear unabh\"angige Eigenvektoren besitzt.  \eoxs 
 \end{Definition}
 
 \remark
@@ -284,7 +284,7 @@ Ist  $A \in \mathbb{K}^{n \times n}$ diagonalisierbar, so gibt es also $n$ versc
 $\vec{x}_1, \cdots, \vec{x}_n$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$A \cdot \vec{x}_i = \lambda_i \cdot \vec{x}_i$ \quad für alle $i=\{1,\cdots,n\}$
+$A \cdot \vec{x}_i = \lambda_i \cdot \vec{x}_i$ \quad f\"ur alle $i=\{1,\cdots,n\}$
 \\[0.2cm]
 gilt. Fassen wir die $n$ Eigenvektoren $\vec{x}_i$ zu einer $n \times n$ Matrix $X$ zusammen, die
 wir als
@@ -298,7 +298,7 @@ schreiben, wobei die $\textbf{x}_i$ die Spalten der Matrix $X$ sind, so gilt
 $A \cdot X = (\lambda_1 \cdot \vec{x}_1, \cdots, \lambda_n \cdot \vec{x}_n) = X \cdot D$,
 \\[0.2cm]
 wobei wir die Matrix $D$ als Diagonal-Matrix definieren, deren Diagonal-Elemente die Eigenwerte
-$\lambda_i$ sind, während alle anderen Einträge den Wert $0$ haben.  Damit gilt 
+$\lambda_i$ sind, w\"ahrend alle anderen Eintr\"age den Wert $0$ haben.  Damit gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $D = \left(
@@ -313,15 +313,15 @@ $D = \left(
 \right)
 $.
 \\[0.2cm]
-In Komponentenschreibweise können wir die Matrix $D$ als
+In Komponentenschreibweise k\"onnen wir die Matrix $D$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$D = (d_{i,j})$ \quad mit $d_{i,j} := \lambda_i \cdot \delta_{i,j}$ \quad für alle $i,j\in \{1,\cdots,n\}$
+$D = (d_{i,j})$ \quad mit $d_{i,j} := \lambda_i \cdot \delta_{i,j}$ \quad f\"ur alle $i,j\in \{1,\cdots,n\}$
 \\[0.2cm]
-schreiben, wobei $\delta_{i,j}$ das bereits früher definierte
+schreiben, wobei $\delta_{i,j}$ das bereits fr\"uher definierte
 \href{http://de.wikipedia.org/wiki/Kronecker-Delta}{Kronecker-Delta} bezeichnet.  Da die $n$
-Vektoren $\vec{ x}_1, \cdots, \vec{x}_n$ linear unabhängig sind, ist 
-die Matrix $X = (\vec{x}_1, \cdots, \vec{x}_n)$ invertierbar.  Damit können wir die Gleichung
+Vektoren $\vec{ x}_1, \cdots, \vec{x}_n$ linear unabh\"angig sind, ist 
+die Matrix $X = (\vec{x}_1, \cdots, \vec{x}_n)$ invertierbar.  Damit k\"onnen wir die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot X = X \cdot D$
@@ -331,15 +331,15 @@ von rechts mit der Matrix $X^{-1}$ multiplizieren und erhalten
 \hspace*{1.3cm}
 $A = X \cdot D \cdot X^{-1}$.
 \\[0.2cm]
-Dies ist nützlich, wenn wir Potenzen der Matrix $A$ bilden wollen.  Beispielsweise gilt
+Dies ist n\"utzlich, wenn wir Potenzen der Matrix $A$ bilden wollen.  Beispielsweise gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $A^2 = X \cdot D \cdot X^{-1} \cdot X \cdot D \cdot X^{-1} = X \cdot D^2 \cdot X^{-1}$
 \\[0.2cm]
-und durch eine einfache Induktion nach $k$ können wir nach dem selben Prinzip zeigen, dass
+und durch eine einfache Induktion nach $k$ k\"onnen wir nach dem selben Prinzip zeigen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$A^k = X \cdot D^k \cdot X^{-1}$ \quad für alle $k \in \mathbb{N}$
+$A^k = X \cdot D^k \cdot X^{-1}$ \quad f\"ur alle $k \in \mathbb{N}$
 \\[0.2cm]
 gilt.  Diese Beobachtung ist hilft uns bei der Berechnung der Potenzen $A^k$, denn die Potenzen der
 Diagonal-Matrix $D$ sind wesentlich  leichter zu berechnen sind als die Potenzen von $A$, es gilt
@@ -357,8 +357,8 @@ $D^k = \left(
 \right)
 $.
 \\[0.2cm]
-Diese Beobachtung wird uns im nächsten Abschnitt die explizite Berechnung der
-\href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} ermöglichen. 
+Diese Beobachtung wird uns im n\"achsten Abschnitt die explizite Berechnung der
+\href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{\emph{Fibonacci-Zahlen}} erm\"oglichen. 
 
 \section{Die Berechnung der Fibonacci-Zahlen}
 Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibonacci-Folge}{Fibonacci-Zahlen} ist rekursiv durch die Gleichung
@@ -367,10 +367,10 @@ Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibona
 $f_{n+2} = f_{n+1} + f_n$
 \\[0.2cm]
 zusammen mit den Anfangs-Bedingungen $f_0 = 0$ und $f_1 = 1$ definiert.   Eine Gleichung der obigen Form
-wird als \emph{lineare Rekurrenz-Gleichung} bezeichnet.  Solche Gleichungen werden uns später bei
-der Abschätzung der Komplexität von Algorithmen häufig begegnen und wir zeigen nun am Beispiel der
-Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung lösen lässt.  Dazu definieren wir
-zunächst die Matrix $A$ als
+wird als \emph{lineare Rekurrenz-Gleichung} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
+der Absch\"atzung der Komplexit\"at von Algorithmen h\"aufig begegnen und wir zeigen nun am Beispiel der
+Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung l\"osen l\"asst.  Dazu definieren wir
+zun\"achst die Matrix $A$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $A := \left(
@@ -381,7 +381,7 @@ $A := \left(
 \right)
 $.
 \\[0.2cm]
-Weiter definieren wir den Vektor $\vec{x}_n$ für alle $n \in \mathbb{N}$ als 
+Weiter definieren wir den Vektor $\vec{x}_n$ f\"ur alle $n \in \mathbb{N}$ als 
 $\ds\vec{x}_n := \left(f_n \atop f_{n+1}\right)$.  Dann haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -409,9 +409,9 @@ $
 Wir haben also gezeigt, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{x}_{n+1} = A \cdot \vec{x}_n$ \quad für alle $n \in \mathbb{N}$
+$\vec{x}_{n+1} = A \cdot \vec{x}_n$ \quad f\"ur alle $n \in \mathbb{N}$
 \\[0.2cm]
-gilt, wobei wir für die Fibonacci-Zahlen $f_n$ die Gleichung
+gilt, wobei wir f\"ur die Fibonacci-Zahlen $f_n$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $f_{n+2} = f_n + f_{n+1}$
@@ -423,8 +423,8 @@ folgt durch eine triviale Induktion nach $n$, dass
 $\vec{x}_n = A^n \cdot\vec{x}_0$
 \\[0.2cm]
 gilt, wobei $A^0 = \mathrm{E}_2$ ist und $\vec{x}_0 = \left(0 \atop 1\right)$ gilt.  Wollen wir
-Potenzen $A^n$ berechnen, so ist es zweckmäßig, die Matrix $A$ vorher zu diagonalisieren.  Wir
-berechnen zunächst das charakteristische Polynom von $A$:
+Potenzen $A^n$ berechnen, so ist es zweckm\"a\3ig, die Matrix $A$ vorher zu diagonalisieren.  Wir
+berechnen zun\"achst das charakteristische Polynom von $A$:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_2 - A) 
@@ -455,26 +455,26 @@ Wir definieren daher
 \hspace*{1.3cm}
 $\lambda_1 = \frac{1}{2}\cdot(1 + \sqrt{5})$ \quad und \quad $\lambda_2 = \frac{1}{2}\cdot(1 - \sqrt{5})$.
 \\[0.2cm]
-Als nächstes müssen wir die Eigenvektoren bestimmen, die diesen beiden Eigenwerten zugeordnet sind.
+Als n\"achstes m\"ussen wir die Eigenvektoren bestimmen, die diesen beiden Eigenwerten zugeordnet sind.
 Bezeichnen wir den Eigenvektor, der $\lambda_1$ zugeordnet ist, als $\ds\vec{y} := \left(y_1 \atop y_2\right)$, 
 so haben wir also
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot \vec{y} = \lambda_1 \cdot \vec{y}$
 \\[0.2cm]
-und aus dieser Gleichung folgt, dass für die Komponenten $y_1$ und $y_2$
+und aus dieser Gleichung folgt, dass f\"ur die Komponenten $y_1$ und $y_2$
 \\[0.2cm]
 \hspace*{1.3cm}
 $y_2 = \lambda_1 \cdot y_1$  \quad und \quad $y_1 + y_2 = \lambda_1 \cdot y_2$
 \\[0.2cm]
-gelten muss.  Es lässt sich zeigen, dass die zweite Gleichung aus der ersten folgt.
+gelten muss.  Es l\"asst sich zeigen, dass die zweite Gleichung aus der ersten folgt.
 Setzen wir $y_1 := 1$, so erhalten wir aus der ersten Gleichung $y_2 = \lambda_1$.
 Damit hat der Eigenvektor $\vec{y}$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\vec{y} = \left(1 \atop \lambda_1\right)$.
 \\[0.2cm]
-Auf analoge Weise finden wie für den zweiten Eigenvektor $\ds\vec{z} =  \left(z_1 \atop z_2\right)$
+Auf analoge Weise finden wie f\"ur den zweiten Eigenvektor $\ds\vec{z} =  \left(z_1 \atop z_2\right)$
 das Ergebnis
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -492,7 +492,7 @@ $X := \left(
 $.
 \\[0.2cm]
 Diese Matrix hat die Determinante $\mathtt{det}(X) = \lambda_2 - \lambda_1 = -\sqrt{5}$.
-Wir hatten in einer Übungsaufgabe eine Formel zur Berechnung des Inversen einer beliebigen $2 \times 2$ Matrix
+Wir hatten in einer \"Ubungsaufgabe eine Formel zur Berechnung des Inversen einer beliebigen $2 \times 2$ Matrix
 hergeleitet.  Nach dieser Formel ist das Inverse der Matrix $X$ durch
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -580,7 +580,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Die erste Komponente von $\vec{x}_n$ ist gleich $f_n$.  Daher haben wir für die $n$-te
+Die erste Komponente von $\vec{x}_n$ ist gleich $f_n$.  Daher haben wir f\"ur die $n$-te
 Fibonacci-Zahl $f_n$ die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -591,10 +591,10 @@ Fibonacci-Zahl $f_n$ die Gleichung
 gefunden.
 
 \exercise
-Lösen Sie die Rekurrenz-Gleichung
+L\"osen Sie die Rekurrenz-Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$a_{n+2} = 3 \cdot a_{n+1} - 2 \cdot a_n$ \quad für die Anfangs-Bedingungen $a_0 = 0$, $a_1 = 1$
+$a_{n+2} = 3 \cdot a_{n+1} - 2 \cdot a_n$ \quad f\"ur die Anfangs-Bedingungen $a_0 = 0$, $a_1 = 1$
 \\[0.2cm]
 mit Hilfe der in diesem Abschnitt vorgestellten Methode. \eox
 
