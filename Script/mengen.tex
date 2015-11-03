@@ -405,7 +405,7 @@ $\begin{array}{rlcl}
 \\[0.3cm]
 Wir beweisen exemplarisch die Gleichung $K \backslash (M \cup N) = (K \backslash M) \cap (K \backslash N)$.
 Um die Gleichheit zweier Mengen zu zeigen ist nachzweisen, dass beide Mengen dieselben Elemente enthalten.
-Wir haben die folgende Kette von \"{a}quivalenzen: \\[0.3cm]
+Wir haben die folgende Kette von \"{A}quivalenzen: \\[0.3cm]
 \hspace*{1.3cm} $
 \begin{array}{ll}
                 & x \in K \backslash (M \cup N)        \\
@@ -416,14 +416,14 @@ Wir haben die folgende Kette von \"{a}quivalenzen: \\[0.3cm]
 \leftrightarrow & (x \in K \backslash M) \;\wedge\; (x \in K \backslash N) \\
 \leftrightarrow & x \in (K \backslash M) \cap (K \backslash N). \\
 \end{array}$ \\[0.3cm]
-Wir haben beim dritten Schritt dieser \"{a}quivalenz-Kette ausgenutzt, dass eine
+Wir haben beim dritten Schritt dieser \"{A}quivalenz-Kette ausgenutzt, dass eine
 Disjunktion der Form $F \vee G$ genau dann falsch ist, wenn sowohl $F$ als auch $G$ falsch ist,
 formal gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\neg (F \vee G) \leftrightarrow \neg F \wedge \neg G$.
 \\[0.2cm]
-Wir werden diese \"{a}quivalenz im Rahmen der Logik-Vorlesung noch formal beweisen.
+Wir werden diese \"{A}quivalenz im Rahmen der Logik-Vorlesung noch formal beweisen.
 
 Die \"{u}brigen der oben aufgef\"{u}hrten Gleichungen k\"{o}nnen nach dem selben Schema hergeleitet werden.
 
@@ -455,7 +455,7 @@ Funktionen als spezielle bin\"{a}re Relationen auffassen k\"{o}nnen.  Damit stel
 bin\"{a}ren Relationen eine Verallgemeinerung des Funktions-Begriffs dar.
 
 Zum Abschluss des Kapitels f\"{u}hren wir \emph{transitive Relationen} und
-\emph{\"{a}quivalenz-Relationen} ein.  Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker
+\emph{\"{A}quivalenz-Relationen} ein.  Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker
 kennen sollte.
 
 Ist eine Menge $R$ als Teilmenge des kartesischen Produkts zweier Mengen $M$ und $N$ gegeben, gilt
@@ -675,7 +675,7 @@ Diese Funktion ist dann aber genau die Umkehr-Funktion von $f_R$, es gilt \\[0.2
 Dieser Umstand rechtfertigt im Nachhinein die Schreibweise $R^{-1}$.
 
 \subsection{Komposition von Relationen}
-\"{a}hnlich wie wir Funktionen verkn\"{u}pfen k\"{o}nnen, k\"{o}nnen auch Relationen verkn\"{u}pft werden.
+\"{A}hnlich wie wir Funktionen verkn\"{u}pfen k\"{o}nnen, k\"{o}nnen auch Relationen verkn\"{u}pft werden.
 Wir betrachten zun\"{a}chst Mengen $L$, $M$ und $N$.
 Sind dort zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ definiert,
 so ist das \emph{relationale Produkt} $R \circ Q$ wie folgt definiert: \\[0.2cm]
@@ -807,7 +807,7 @@ Wir zeigen, dass
   \label{eq:ass0}
    \pair(x,u) \in (R \circ Q) \circ P \leftrightarrow \pair(x,u) \in R \circ (Q \circ P)   
 \end{equation}
-gilt.  Dazu formen wir zun\"{a}chst die linke Seite $\pair(x,u) \in (R \circ Q) \circ P$ der \"{a}quivalenz
+gilt.  Dazu formen wir zun\"{a}chst die linke Seite $\pair(x,u) \in (R \circ Q) \circ P$ der \"{A}quivalenz
 \ref{eq:ass0} um.  Es gilt
 \[
 \begin{array}{cll}
@@ -819,13 +819,13 @@ gilt.  Dazu formen wir zun\"{a}chst die linke Seite $\pair(x,u) \in (R \circ Q) 
 \end{array}
 \]
 Da die Variable $y$ in der Formel $\pair(z,u) \in P$ nicht auftritt, k\"{o}nnen wir den
-Existenz-Quantor \"{u}ber $y$ auch herausziehen, so dass wir die obige Kette von \"{a}quivalenzen zu
+Existenz-Quantor \"{u}ber $y$ auch herausziehen, so dass wir die obige Kette von \"{A}quivalenzen zu
 \begin{equation}
   \label{eq:ass1}
   \leftrightarrow \quad 
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
-fortsetzen k\"{o}nnen.  Wir formen nun die rechte Seite der \"{a}quivalenz
+fortsetzen k\"{o}nnen.  Wir formen nun die rechte Seite der \"{A}quivalenz
 \ref{eq:ass0} um:
 \[
 \begin{array}{cll}
@@ -838,13 +838,13 @@ fortsetzen k\"{o}nnen.  Wir formen nun die rechte Seite der \"{a}quivalenz
 \end{array}
 \]
 Da die Variable $z$ in der Formel $\pair(x,y) \in R$ nicht vorkommt, k\"{o}nnen wir den
-Existenz-Quantor \"{u}ber $z$ auch vorziehen und k\"{o}nnen daher diese Kette von \"{a}quivalenzen als
+Existenz-Quantor \"{u}ber $z$ auch vorziehen und k\"{o}nnen daher diese Kette von \"{A}quivalenzen als
 \begin{equation}
   \label{eq:ass2}
   \leftrightarrow \quad
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
-fortsetzen. Die Formeln (\ref{eq:ass1}) und (\ref{eq:ass2}) sind identisch.  Damit ist die \"{a}quivalenz
+fortsetzen. Die Formeln (\ref{eq:ass1}) und (\ref{eq:ass2}) sind identisch.  Damit ist die \"{A}quivalenz
 (\ref{eq:ass0}) nachgewiesen und der Beweis der Assoziativit\"{a}t des Kompositions-Operators
 ist erbracht.  \hspace*{\fill} $\Box$
 \vspace{0.2cm}
@@ -856,11 +856,11 @@ ist erbracht.  \hspace*{\fill} $\Box$
 \end{Satz}
 
 \proof
-Es ist zu zeigen, dass f\"{u}r alle Paare $\pair(z,x) \in N \times L$ die  \"{a}quivalenz \\[0.2cm]
+Es ist zu zeigen, dass f\"{u}r alle Paare $\pair(z,x) \in N \times L$ die  \"{A}quivalenz \\[0.2cm]
 \hspace*{1.3cm} 
 $\pair(z,x) \in (Q \circ R)^{-1} \quad \leftrightarrow \quad\pair(z,x) \in R^{-1} \circ Q^{-1}$ 
 \\[0.2cm]
-gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{a}quivalenz-Umformungen: 
+gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{A}quivalenz-Umformungen: 
 \[ 
 \begin{array}{cl}
                 & \pair(z,x) \in (R \circ Q)^{-1}                                             \\[0.2cm]
@@ -907,7 +907,7 @@ zeigen.  Wir formen zun\"{a}chst den Ausdruck $\pair(x,z) \in (R_1 \cup R_2) \ci
 \]
 Diese Formel stellen wir mit Hilfe des Distributiv-Gesetzes der Aussagen-Logik um.
 In der Aussagenlogik werden wir im Rahmen der Informatik-Vorlesung sehen, dass f\"{u}r beliebige Formeln
-$F_1$, $F_2$ und $G$ die \"{a}quivalenz 
+$F_1$, $F_2$ und $G$ die \"{A}quivalenz 
 \[ (F_1 \vee F_2) \wedge G \;\leftrightarrow\; (F_1 \wedge G) \vee (F_2 \wedge G) \]
 gilt.  Die Anwendung dieses Gesetzes liefert:
 \begin{eqnarray}
@@ -993,13 +993,13 @@ gilt
 \[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \exists y:\bigl(\pair(x,y) \in \mathrm{id}_M \wedge \pair(y,z) \in R \bigr)\bigr\}. \]
 Nun ist $\pair(x,y) \in \mathrm{id}_M$ genau dann, wenn $x = y$ ist, also gilt
 \[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr) \bigr\}. \]
-Es gilt die folgende \"{a}quivalenz
+Es gilt die folgende \"{A}quivalenz
 \[ \exists y:\bigl(x = y \wedge \pair(y,z) \in R \bigr) \leftrightarrow \pair(x,z) \in R. \]
-Diese \"{a}quivalenz ist leicht einzusehen:  Falls $\exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr)$
+Diese \"{A}quivalenz ist leicht einzusehen:  Falls $\exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr)$
 gilt, so muss das $y$ dessen Existenz gefordert wird, den Wert $x$ haben und dann gilt
 nat\"{u}rlich auch $\pair(x,z) \in R$.  Gilt andererseits $\pair(x,z) \in R$, so definieren
 wir $y := x$.  F\"{u}r das so definierte $y$ gilt offensichtlich 
-$x = y \wedge \pair(y,z) \in R$.  Unter Verwendung der oberen \"{a}quivalenz haben wir 
+$x = y \wedge \pair(y,z) \in R$.  Unter Verwendung der oberen \"{A}quivalenz haben wir 
 \[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
 Wegen  $R \subseteq M \times N$ besteht $R$ nur aus geordneten
 Paaren und daher gilt
@@ -1072,7 +1072,7 @@ Eine Relation $R \subseteq M \times M$ ist genau dann symmetrisch, wenn $R^{-1} 
 \end{Satz}
 
 \proof
-Die \"{a}quivalenz der beiden Bedingungen wird offensichtlich, wenn wir die Inklusions-Bedingung
+Die \"{A}quivalenz der beiden Bedingungen wird offensichtlich, wenn wir die Inklusions-Bedingung
 $R^{-1} \subseteq R$ expandieren, indem wir die Gleichungen
 \[ R^{-1} = \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \quad \mbox{und} \quad
    R      = \bigl\{ \pair(x,y) \mid \pair(x,y) \in R \bigr\} \]
@@ -1478,10 +1478,10 @@ Berechnen Sie den transitiven Abschluss $R^+$.
 \exend
 
 
-\section{\"{a}quivalenz-Relationen \label{section:aequivalenz_relation}}
-\begin{Definition}[\"{a}quivalenz-Relation]
+\section{\"{A}quivalenz-Relationen \label{section:aequivalenz_relation}}
+\begin{Definition}[\"{A}quivalenz-Relation]
 Eine Relation $R \subseteq M \times M$  ist eine 
-\emph{\"{a}quivalenz-Relation} auf $M$ genau dann, wenn folgende Bedingungen erf\"{u}llt sind:
+\emph{\"{A}quivalenz-Relation} auf $M$ genau dann, wenn folgende Bedingungen erf\"{u}llt sind:
 \begin{enumerate}
 \item $R$ ist reflexiv auf $M$,
 \item $R$ ist symmetrisch und
@@ -1489,9 +1489,9 @@ Eine Relation $R \subseteq M \times M$  ist eine
 \end{enumerate}
 \end{Definition}
 
-Der Begriff der \"{a}quivalenz-Relationen verallgemeinert den Begriff der Gleichheit, denn
-ein triviales Beispiel f\"{u}r eine \"{a}quivalenz-Relation auf $M$ ist die Relation $\mathrm{id}_M$.
-Das folgende Beispiel zeigt eine nicht-triviale \"{a}quivalenz-Relation, die sp\"{a}ter noch eine wichtige
+Der Begriff der \"{A}quivalenz-Relationen verallgemeinert den Begriff der Gleichheit, denn
+ein triviales Beispiel f\"{u}r eine \"{A}quivalenz-Relation auf $M$ ist die Relation $\mathrm{id}_M$.
+Das folgende Beispiel zeigt eine nicht-triviale \"{A}quivalenz-Relation, die sp\"{a}ter noch eine wichtige
 Rolle spielen wird.
 
 \example
@@ -1501,7 +1501,7 @@ als \\[0.2cm]
 \hspace*{1.3cm}
  $\approx_n \;:=\; \{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z} \colon k \cdot n = x - y \}$
 \\[0.2cm]
-definieren.  Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}$ eine \"{a}quivalenz-Relation auf
+definieren.  Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}$ eine \"{A}quivalenz-Relation auf
 $\mathbb{Z}$ definiert. 
 \pagebreak
 \begin{enumerate}
@@ -1512,7 +1512,7 @@ $\mathbb{Z}$ definiert.
       $\pair(x,x) \in\; \approx_n$.        
       \\[0.2cm]
       gilt.  Nach Definition von $\approx_n$
-      ist dies \"{a}quivalent zu \\[0.2cm]
+      ist dies \"{A}quivalent zu \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(x,x) \in \bigl\{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z}: k \cdot n = x - y \bigr\}$.
       \\[0.2cm]
@@ -1581,7 +1581,7 @@ Auf der Menge $\mathbb{N} \times \mathbb{N}$ definieren wir eine Relation $R$ wi
 \hspace*{1.3cm}
 $R := \bigl\{ \bigl\langle \pair(x_1, y_1) ,\pair(x_2, y_2) \bigr\rangle \in  (\mathbb{N} \times \mathbb{N})^2 \mid x_1 + y_2 = x_2 + y_1 \bigr\}$
 \\[0.2cm]
-Zeigen Sie, dass $R$ dann eine \"{a}quivalenz-Relation ist.
+Zeigen Sie, dass $R$ dann eine \"{A}quivalenz-Relation ist.
 \exend
 \pagebreak
 
@@ -1595,7 +1595,7 @@ sei eine Funktion.  Definieren wir die Relation $R_f \subseteq M \times M$ als
 \hspace*{1.3cm}
 $R_f := \bigl\{ \pair(x,y) \in M \times M \mid f(x) = f(y) \bigr\}$,
 \\[0.2cm]
-so ist $R_f$ eine \"{a}quivalenz-Relation.  
+so ist $R_f$ eine \"{A}quivalenz-Relation.  
 \end{Satz}
 
 
@@ -1666,13 +1666,13 @@ Ist $f: M \rightarrow N$ eine Funktion und gilt
 \hspace*{1.3cm}
 $R_f = \bigl\{ \pair(x,y) \in M \times M \mid f(x) = f(y) \bigr\}$ 
 \\[0.2cm]
-so sagen wir, dass $R_f$ die \emph{von $f$ auf M erzeugte} \"{a}quivalenz-Relation ist.  Wir werden
-sp\"{a}ter sehen, dass es zu jeder  \"{a}quivalenz-Relation eine Funktion gibt, die diese
-\"{a}quivalenz-Relation erzeugt. \eox 
+so sagen wir, dass $R_f$ die \emph{von $f$ auf M erzeugte} \"{A}quivalenz-Relation ist.  Wir werden
+sp\"{a}ter sehen, dass es zu jeder  \"{A}quivalenz-Relation eine Funktion gibt, die diese
+\"{A}quivalenz-Relation erzeugt. \eox 
 \pagebreak
 
 \example 
-Die \"{a}quivalenz-Relation $\approx_n$ wird von der Funktion
+Die \"{A}quivalenz-Relation $\approx_n$ wird von der Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \mapsto x \modulo n$
@@ -1694,21 +1694,21 @@ Vereinfachung an, dass jeder Mensch genau eine Staatsb\"{u}rgerschaft hat, so k\
 $\textsl{sb}: M \rightarrow S$
 \\[0.2cm]
 definieren, die jedem Menschen $x$ seine Staatsb\"{u}rgerschaft $\textsl{sb}(x)$ zuordnet.  Bei der durch
-diese Funktion definierten \"{a}quivalenz-Relation sind dann alle die Menschen \"{a}quivalent, welche dieselbe
+diese Funktion definierten \"{A}quivalenz-Relation sind dann alle die Menschen \"{a}quivalent, welche dieselbe
 Staatsb\"{u}rgerschaft haben.  \eox
 
-\begin{Definition}[\"{a}quivalenz-Klasse]
-Ist $R$ eine \"{a}quivalenz-Relation auf $M$, so definieren wir f\"{u}r alle $x \in M$ 
+\begin{Definition}[\"{A}quivalenz-Klasse]
+Ist $R$ eine \"{A}quivalenz-Relation auf $M$, so definieren wir f\"{u}r alle $x \in M$ 
 die Menge $[x]_R$ durch \\[0.2cm]
 \hspace*{1.3cm} $[x]_R \;:=\; \bigl\{ y \in M \mid x \mathop{R} y \bigr\}$. \qquad
 (Wir schreiben hier $x R y$ als Abk\"{u}rzung f\"{u}r $\pair(x, y) \in R$.) 
 \\[0.2cm]
-Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \emph{\"{a}quivalenz-Klasse}.  \eox
+Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \emph{\"{A}quivalenz-Klasse}.  \eox
 \end{Definition}
 
-\begin{Satz}[Charakterisierung der \"{a}quivalenz-Klassen] \label{satz:aequivalenz-klassen}
+\begin{Satz}[Charakterisierung der \"{A}quivalenz-Klassen] \label{satz:aequivalenz-klassen}
 \hspace*{\fill} \\
-Ist $R \subseteq M \times M$ eine \"{a}quivalenz-Relation, so gilt: 
+Ist $R \subseteq M \times M$ eine \"{A}quivalenz-Relation, so gilt: 
 \begin{enumerate}
 \item $\forall x \el M \colon x \el [x]_R$,
 \item $\forall x, y \el M \colon \bigl(x \mathop{R} y \rightarrow [x]_R = [y]_R\bigr)$,
@@ -1719,7 +1719,7 @@ Ist $R \subseteq M \times M$ eine \"{a}quivalenz-Relation, so gilt:
 
 \remark
 Da f\"{u}r $x,y\el M$ entweder $x \mathop{R} y$ oder $\neg (x \mathop{R} y)$ gilt, zeigen die
-letzten beiden Eigenschaften, dass zwei \"{a}quivalenz-Klassen entweder gleich
+letzten beiden Eigenschaften, dass zwei \"{A}quivalenz-Klassen entweder gleich
 oder disjunkt sind:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1731,7 +1731,7 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
 \item Wir haben $x \el [x]_R$ genau dann, wenn 
       $x \in \bigl\{ y \el M \mid x \mathop{R} y \bigr\}$ gilt und letzteres ist
       \"{a}quivalent zu $x \mathop{R} x$.
-      Die Eigenschaft $x \mathop{R} x$ folgt aber unmittelbar aus der Reflexivit\"{a}t der \"{a}quivalenz-Relation. $\surd$
+      Die Eigenschaft $x \mathop{R} x$ folgt aber unmittelbar aus der Reflexivit\"{a}t der \"{A}quivalenz-Relation. $\surd$
 \item Sei  $x \mathop{R} y$.  Um $[x]_R = [y]_R$ nachzuweisen zeigen wir
       $[x]_R \subseteq [y]_R$ und $[y]_R \subseteq [x]_R$.
 
@@ -1773,7 +1773,7 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
       es ein $z \el [x]_R \cap [y]_R$ gibt.  Aus dieser Annahme werden wir einen
       Widerspruch zu der Voraussetzung $\neg (x \mathop{R} y)$ 
         herleiten.  Sei also $z \el[x]_R$ und $z \el [y]_R$.  Nach Definition
-        der \"{a}quivalenz-Klassen $[x]_R$ und $[y]_R$ gilt dann 
+        der \"{A}quivalenz-Klassen $[x]_R$ und $[y]_R$ gilt dann 
       \\[0.2cm]
       \hspace*{1.3cm}      
       $x \mathop{R} z$ \quad und \quad $y \mathop{R} z$.
@@ -1801,7 +1801,7 @@ gilt. \eox
 \end{Korollar}
 
 \remark
-Ist $R \subseteq M \times M$ eine \"{a}quivalenz-Relation auf M, so k\"{o}nnen wir eine Funktion
+Ist $R \subseteq M \times M$ eine \"{A}quivalenz-Relation auf M, so k\"{o}nnen wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $f_R : M \rightarrow 2^M$
@@ -1811,7 +1811,7 @@ durch die Festlegung
 \hspace*{1.3cm}
 $f_R(x) := [x]_R = \bigl\{ y \in M \,|\, x R y \bigr\}$
 \\[0.2cm]
-definieren.   Das Korollar zum letzten Satz zeigt dann, dass die Funktion $f_R$ die \"{a}quivalenz-Relation
+definieren.   Das Korollar zum letzten Satz zeigt dann, dass die Funktion $f_R$ die \"{A}quivalenz-Relation
 $R$ erzeugt, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1828,20 +1828,20 @@ denn  $R \subseteq M \times M$. \eox
 
 
 \begin{Definition}[Quotienten-Raum]
-Ist $M$ eine Menge und $R$ eine \"{a}quivalenz-Relation auf $M$ so definieren wir die Menge $M/R$ (lese:
-$M$ \emph{modulo} $R$) als die Menge der von $R$ auf $M$ erzeugten \"{a}quivalenz-Klassen:
+Ist $M$ eine Menge und $R$ eine \"{A}quivalenz-Relation auf $M$ so definieren wir die Menge $M/R$ (lese:
+$M$ \emph{modulo} $R$) als die Menge der von $R$ auf $M$ erzeugten \"{A}quivalenz-Klassen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $M/R := \bigl\{ [x]_R \mid x \in M \bigr\}$.
 \\[0.2cm]
-Die Menge $M/R$ der von $R$ auf $M$ erzeugten \"{a}quivalenz-Klassen nennen wir den
+Die Menge $M/R$ der von $R$ auf $M$ erzeugten \"{A}quivalenz-Klassen nennen wir den
 \emph{Quotienten-Raum} vom $M$ \"{u}ber $R$.  \eox
 \end{Definition}
 
 \example
 Setzen wir das letzte Beispiel fort, in dem alle die Menschen \"{a}quivalent waren, die dieselbe
-Staatsb\"{u}rgerschaft haben, so finden wir, dass die \"{a}quivalenz-Klassen, die von dieser
-\"{a}quivalenz-Relation erzeugt werden, gerade aus den Menschen besteht, die dieselbe
+Staatsb\"{u}rgerschaft haben, so finden wir, dass die \"{A}quivalenz-Klassen, die von dieser
+\"{A}quivalenz-Relation erzeugt werden, gerade aus den Menschen besteht, die dieselbe
 Staatsb\"{u}rgerschaft besitzen.  \eox
 
 
@@ -1867,14 +1867,14 @@ bezeichnet. \eox
 \end{Definition}
 
 \remark
-Der letzte Satz (Satz \ref{satz:aequivalenz-klassen}) hat gezeigt, dass f\"{u}r jede \"{a}quivalenz-Relation
+Der letzte Satz (Satz \ref{satz:aequivalenz-klassen}) hat gezeigt, dass f\"{u}r jede \"{A}quivalenz-Relation
 $R$ auf einer Menge $M$ der Quotienten-Raum 
 \\[0.2cm]
 \hspace*{1.3cm}
 $M/R = \bigl\{ [x]_R \mid x \in M \bigr\}$
 \\[0.2cm]
 eine Partition der Menge $M$ darstellt.  Der n\"{a}chste Satz zeigt, dass auch die Umkehrung gilt, denn
-aus jeder Partition einer Menge l\"{a}sst sich eine \"{a}quivalenz-Relation erzeugen.
+aus jeder Partition einer Menge l\"{a}sst sich eine \"{A}quivalenz-Relation erzeugen.
 \eox
 
 \begin{Satz} 
@@ -1884,7 +1884,7 @@ Partition von $M$.  Definieren wir die Relation $R$ durch
 \hspace*{1.3cm}
 $R := \bigl\{ \pair(x,y) \in M \times M \mid \exists K \in \mathcal{P}: \bigl(x \in K \wedge y \in K\bigr) \bigr\}$,
 \\[0.2cm]
-so ist $R$ eine \"{a}quivalenz-Relation auf $M$.
+so ist $R$ eine \"{A}quivalenz-Relation auf $M$.
 \end{Satz}
 
 \proof
