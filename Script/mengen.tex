@@ -1073,16 +1073,12 @@ Eine Relation $R \subseteq M \times M$ ist genau dann symmetrisch, wenn $R^{-1} 
 
 \proof
 Die \"{A}quivalenz der beiden Bedingungen wird offensichtlich, wenn wir die Inklusions-Bedingung
-$R^{-1} \subseteq R$ expandieren, indem wir die Gleichungen
-\[ R^{-1} = \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \quad \mbox{und} \quad
-   R      = \bigl\{ \pair(x,y) \mid \pair(x,y) \in R \bigr\} \]
+$R^{-1} \subseteq R$ expandieren, indem wir die Gleichung
+\[ R^{-1} = \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\}  \]
 ber\"{u}cksichtigen, denn dann hat die Inklusions-Bedingung die Form
-\[ \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \subseteq
-   \bigl\{ \pair(x,y) \mid \pair(x,y) \in R \bigr\}. \]
-Nach der Definition der Teilmengen-Beziehung ist diese Bedingung gleichwertig zu der Formel
-\[ \forall x, y \in M \colon \bigl(\pair(y,x) \in R \rightarrow\pair(x,y) \in R\bigr). 
-\]
-Vertauschen wir hier die Rollen der Variablen $x$ und $y$, so ist dies gerade die Bedingung, dass
+\[ \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \subseteq  R. \]
+Falls nun $\pair(x,y) \in R$ ist, gilt $\pair(y,x) \in \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\}$.
+Da diese Menge eine Teilmenge von $R$ ist, folgt $\pair(y,x)  \in R$ und das ist gerade die Bedingung, dass
 die Relation $R$ symmetrisch ist. \qed
 
 \begin{Definition}[anti-symmetrisch]
