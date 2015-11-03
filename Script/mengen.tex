@@ -409,12 +409,12 @@ Wir haben die folgende Kette von \"{A}quivalenzen: \\[0.3cm]
 \hspace*{1.3cm} $
 \begin{array}{ll}
                 & x \in K \backslash (M \cup N)        \\
-\leftrightarrow & x \in K \;\wedge\; \neg\; x \in M \cup N \\
-\leftrightarrow & x \in K \;\wedge\; \neg\; (x \in M \vee x \in N) \\
-\leftrightarrow & x \in K \;\wedge\;  (\neg\; x \in M) \wedge (\neg\; x \in N) \\
-\leftrightarrow & (x \in K \wedge \neg\;x \in M) \;\wedge\; (x \in K \wedge \neg\;x \in N) \\
-\leftrightarrow & (x \in K \backslash M) \;\wedge\; (x \in K \backslash N) \\
-\leftrightarrow & x \in (K \backslash M) \cap (K \backslash N). \\
+\Leftrightarrow & x \in K \;\wedge\; \neg\; x \in M \cup N \\
+\Leftrightarrow & x \in K \;\wedge\; \neg\; (x \in M \vee x \in N) \\
+\Leftrightarrow & x \in K \;\wedge\;  (\neg\; x \in M) \wedge (\neg\; x \in N) \\
+\Leftrightarrow & (x \in K \wedge \neg\;x \in M) \;\wedge\; (x \in K \wedge \neg\;x \in N) \\
+\Leftrightarrow & (x \in K \backslash M) \;\wedge\; (x \in K \backslash N) \\
+\Leftrightarrow & x \in (K \backslash M) \cap (K \backslash N). \\
 \end{array}$ \\[0.3cm]
 Wir haben beim dritten Schritt dieser \"{A}quivalenz-Kette ausgenutzt, dass eine
 Disjunktion der Form $F \vee G$ genau dann falsch ist, wenn sowohl $F$ als auch $G$ falsch ist,
@@ -812,9 +812,9 @@ gilt.  Dazu formen wir zun\"{a}chst die linke Seite $\pair(x,u) \in (R \circ Q) 
 \[
 \begin{array}{cll}
                   & \pair(x,u) \in (R \circ Q) \circ P \\[0.2cm]
-  \leftrightarrow & \exists z: \bigl(\pair(x,z) \in R \circ Q \wedge \pair(z,u) \in P\bigr) &
+  \Leftrightarrow & \exists z: \bigl(\pair(x,z) \in R \circ Q \wedge \pair(z,u) \in P\bigr) &
                     \mbox{nach Def. von}\; (R \circ Q) \circ P \\[0.2cm]
-  \leftrightarrow & \exists z: \bigl(\bigl(\exists y: \pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \wedge \pair(z,u) \in P\bigr) &
+  \Leftrightarrow & \exists z: \bigl(\bigl(\exists y: \pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \wedge \pair(z,u) \in P\bigr) &
                     \mbox{nach Def. von}\; R \circ Q \\
 \end{array}
 \]
@@ -822,7 +822,7 @@ Da die Variable $y$ in der Formel $\pair(z,u) \in P$ nicht auftritt, k\"{o}nnen 
 Existenz-Quantor \"{u}ber $y$ auch herausziehen, so dass wir die obige Kette von \"{A}quivalenzen zu
 \begin{equation}
   \label{eq:ass1}
-  \leftrightarrow \quad 
+  \Leftrightarrow \quad 
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
 fortsetzen k\"{o}nnen.  Wir formen nun die rechte Seite der \"{A}quivalenz
@@ -830,9 +830,9 @@ fortsetzen k\"{o}nnen.  Wir formen nun die rechte Seite der \"{A}quivalenz
 \[
 \begin{array}{cll}
                 & \pair(x,u) \in R \circ (Q \circ P) \\[0.2cm] 
-\leftrightarrow & \exists y: \bigl(\pair(x,y) \in R \wedge \pair (y,u) \in Q \circ P\bigr) &
+\Leftrightarrow & \exists y: \bigl(\pair(x,y) \in R \wedge \pair (y,u) \in Q \circ P\bigr) &
                   \mbox{nach Def. von}\; R \circ (Q \circ P) \\[0.2cm]
-\leftrightarrow & \exists y: \bigl(\pair(x,y) \in R \wedge 
+\Leftrightarrow & \exists y: \bigl(\pair(x,y) \in R \wedge 
                   \exists z: \bigl(\pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)\bigr) &
                   \mbox{nach Def. von}\; Q \circ P \\
 \end{array}
@@ -841,7 +841,7 @@ Da die Variable $z$ in der Formel $\pair(x,y) \in R$ nicht vorkommt, k\"{o}nnen 
 Existenz-Quantor \"{u}ber $z$ auch vorziehen und k\"{o}nnen daher diese Kette von \"{A}quivalenzen als
 \begin{equation}
   \label{eq:ass2}
-  \leftrightarrow \quad
+  \Leftrightarrow \quad
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
 fortsetzen. Die Formeln (\ref{eq:ass1}) und (\ref{eq:ass2}) sind identisch.  Damit ist die \"{A}quivalenz
@@ -858,18 +858,18 @@ ist erbracht.  \hspace*{\fill} $\Box$
 \proof
 Es ist zu zeigen, dass f\"{u}r alle Paare $\pair(z,x) \in N \times L$ die  \"{A}quivalenz \\[0.2cm]
 \hspace*{1.3cm} 
-$\pair(z,x) \in (Q \circ R)^{-1} \quad \leftrightarrow \quad\pair(z,x) \in R^{-1} \circ Q^{-1}$ 
+$\pair(z,x) \in (Q \circ R)^{-1} \quad \Leftrightarrow \quad\pair(z,x) \in R^{-1} \circ Q^{-1}$ 
 \\[0.2cm]
 gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{A}quivalenz-Umformungen: 
 \[ 
 \begin{array}{cl}
                 & \pair(z,x) \in (R \circ Q)^{-1}                                             \\[0.2cm]
-\leftrightarrow & \pair(x,z) \in R \circ Q                                                    \\[0.2cm]
-\leftrightarrow & \exists y \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \\[0.2cm]
-\leftrightarrow & \exists y \in M \colon \bigl(\pair(y,z) \in Q \wedge \pair(x,y) \in R\bigr) \\[0.2cm]
-\leftrightarrow & \exists y \in M \colon \bigl(\pair(z,y) \in Q^{-1} \wedge \pair(y,x) \in R^{-1}\bigr) 
+\Leftrightarrow & \pair(x,z) \in R \circ Q                                                    \\[0.2cm]
+\Leftrightarrow & \exists y \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \\[0.2cm]
+\Leftrightarrow & \exists y \in M \colon \bigl(\pair(y,z) \in Q \wedge \pair(x,y) \in R\bigr) \\[0.2cm]
+\Leftrightarrow & \exists y \in M \colon \bigl(\pair(z,y) \in Q^{-1} \wedge \pair(y,x) \in R^{-1}\bigr) 
                   \\[0.2cm]
-\leftrightarrow & \pair(z,x) \in Q^{-1} \circ R^{-1}   \hspace*{\fill} \Box 
+\Leftrightarrow & \pair(z,x) \in Q^{-1} \circ R^{-1}   \hspace*{\fill} \Box 
 \end{array}
 \]
 \pagebreak
@@ -893,29 +893,29 @@ gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{A}quivalenz-Um
 Wir beweisen  das erste Distributivgesetz, indem wir 
 \begin{equation}
   \label{eq:dis0}
-\pair(x,z) \in (R_1 \cup R_2) \circ Q \;\leftrightarrow\; \pair(x,z) \in R_1 \circ Q \cup R_2 \circ Q   
+\pair(x,z) \in (R_1 \cup R_2) \circ Q \;\Leftrightarrow\; \pair(x,z) \in R_1 \circ Q \cup R_2 \circ Q   
 \end{equation}
 zeigen.  Wir formen zun\"{a}chst den Ausdruck $\pair(x,z) \in (R_1 \cup R_2) \circ Q$ um:
 \[
 \begin{array}{cll}
                   & \pair(x,z) \in (R_1 \cup R_2) \circ Q  \\[0.2cm]
-  \leftrightarrow & \exists y: \bigl(\pair(x,y) \in R_1 \cup R_2 \wedge \pair(y,z) \in Q\bigr) 
+  \Leftrightarrow & \exists y: \bigl(\pair(x,y) \in R_1 \cup R_2 \wedge \pair(y,z) \in Q\bigr) 
                   & \mbox{nach Def. von}\; (R_1 \cup R_2) \circ Q \\[0.2cm]
-  \leftrightarrow & \exists y: \bigl(\bigl(\pair(x,y) \in R_1 \vee \pair(x,y) \in R_2\bigr) \wedge \pair(y,z) \in Q\bigr) 
+  \Leftrightarrow & \exists y: \bigl(\bigl(\pair(x,y) \in R_1 \vee \pair(x,y) \in R_2\bigr) \wedge \pair(y,z) \in Q\bigr) 
                   & \mbox{nach Def. von}\; R_1 \cup R_2 \\[0.2cm]
 \end{array}
 \]
 Diese Formel stellen wir mit Hilfe des Distributiv-Gesetzes der Aussagen-Logik um.
 In der Aussagenlogik werden wir im Rahmen der Informatik-Vorlesung sehen, dass f\"{u}r beliebige Formeln
 $F_1$, $F_2$ und $G$ die \"{A}quivalenz 
-\[ (F_1 \vee F_2) \wedge G \;\leftrightarrow\; (F_1 \wedge G) \vee (F_2 \wedge G) \]
+\[ (F_1 \vee F_2) \wedge G \;\Leftrightarrow\; (F_1 \wedge G) \vee (F_2 \wedge G) \]
 gilt.  Die Anwendung dieses Gesetzes liefert:
 \begin{eqnarray}
   \nonumber
   & & \exists y: \bigl(\bigl(\underbrace{\pair(x,y) \in R_1}_{F_1} \vee \underbrace{\pair(x,y) \in R_2}_{F_2}\bigr) \wedge \underbrace{\pair(y,z) \in Q}_G\bigr) 
 \\[0.2cm] 
   \label{eq:dis1}
-  & \leftrightarrow &
+  & \Leftrightarrow &
     \exists y: \bigl(\bigl(\underbrace{\pair(x,y) \in R_1}_{F_1} \wedge \underbrace{\pair(y,z) \in Q}_G \bigr) \vee 
                \bigl(\underbrace{\pair(x,y) \in R_2}_{F_2} \wedge \underbrace{\pair(y,z) \in Q}_G \bigr) \bigr)   
 \end{eqnarray}
@@ -923,9 +923,9 @@ Wir formen nun den Ausdruck $\pair(x,z) \in R_1 \circ Q \cup R_2 \circ Q$ um:
 \[
 \begin{array}{cll}
                 & \pair(x,z) \in R_1 \circ Q \cup R_2 \circ Q \\[0.2cm]
-\leftrightarrow & \pair(x,z) \in R_1 \circ Q \;\vee\; \pair(x,z) \in R_2 \circ Q &
+\Leftrightarrow & \pair(x,z) \in R_1 \circ Q \;\vee\; \pair(x,z) \in R_2 \circ Q &
                   \mbox{nach Def. von}\;\cup \\[0.2cm]
-\leftrightarrow & \bigl(\exists y: (\pair(x,y) \in R_1 \wedge \pair(y,z) \in Q)\bigr) \;\vee\; 
+\Leftrightarrow & \bigl(\exists y: (\pair(x,y) \in R_1 \wedge \pair(y,z) \in Q)\bigr) \;\vee\; 
                   \bigl(\exists y: (\pair(x,y) \in R_2 \wedge \pair(y,z) \in Q)\bigr) \\[0.2cm]
                 & \mbox{nach Def. von}\; R_1 \circ Q \; \mbox{und}\; R_2 \circ Q \\[0.2cm]
 \end{array}
@@ -933,14 +933,14 @@ Wir formen nun den Ausdruck $\pair(x,z) \in R_1 \circ Q \cup R_2 \circ Q$ um:
 Diese letzte Formel stellen wir mit Hilfe eines Distributiv-Gesetzes f\"{u}r die
 Pr\"{a}dikaten-Logik um.  In der Pr\"{a}dikaten-Logik werden wir sp\"{a}ter sehen, dass f\"{u}r beliebige
 Formeln $F_1$ und $F_2$ die \"{a}quivalenz
-\[ \exists y: \bigl(F_1 \vee F_2\bigr) \;\leftrightarrow\; \bigl(\exists y: F_1\bigr) \vee \bigl(\exists y: F_2\bigr) \]
+\[ \exists y: \bigl(F_1 \vee F_2\bigr) \;\Leftrightarrow\; \bigl(\exists y: F_1\bigr) \vee \bigl(\exists y: F_2\bigr) \]
 g\"{u}ltig ist.  Damit folgt dann
 \begin{eqnarray}
 \nonumber
  & & \exists y: \bigl(\underbrace{\pair(x,y) \in R_1 \wedge \pair(y,z) \in Q}_{F_1}\bigr) \;\vee\; 
      \exists y: \bigl(\underbrace{\pair(x,y) \in R_2 \wedge \pair(y,z) \in Q}_{F_2}\bigr) \\[0.2cm]
   \label{eq:dis2}
- & \leftrightarrow &
+ & \Leftrightarrow &
      \exists y: \Bigl(\bigl(\underbrace{\pair(x,y) \in R_1 \wedge \pair(y,z) \in Q}_{F_1}\bigr) \;\vee\; 
                 \bigl(\underbrace{\pair(x,y) \in R_2 \wedge \pair(y,z) \in Q}_{F_2}\bigr)\Bigr) 
 \end{eqnarray}
@@ -994,7 +994,7 @@ gilt
 Nun ist $\pair(x,y) \in \mathrm{id}_M$ genau dann, wenn $x = y$ ist, also gilt
 \[ \mathrm{id}_M \circ R = \bigl\{ \pair(x,z) \mid \exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr) \bigr\}. \]
 Es gilt die folgende \"{A}quivalenz
-\[ \exists y:\bigl(x = y \wedge \pair(y,z) \in R \bigr) \leftrightarrow \pair(x,z) \in R. \]
+\[ \exists y:\bigl(x = y \wedge \pair(y,z) \in R \bigr) \Leftrightarrow \pair(x,z) \in R. \]
 Diese \"{A}quivalenz ist leicht einzusehen:  Falls $\exists y:\bigl( x = y \wedge \pair(y,z) \in R\bigr)$
 gilt, so muss das $y$ dessen Existenz gefordert wird, den Wert $x$ haben und dann gilt
 nat\"{u}rlich auch $\pair(x,z) \in R$.  Gilt andererseits $\pair(x,z) \in R$, so definieren
@@ -1054,9 +1054,9 @@ Es gilt
 $
 \begin{array}[b]{cl}
                 & \mathrm{id}_M \subseteq R \\[0.2cm]
-\leftrightarrow & \bigl\{ \pair(x,x) \mid x \in M \bigr\} \subseteq R \\[0.2cm] 
-\leftrightarrow & \forall x \in M: \pair(x,x) \in R \\[0.2cm] 
-\leftrightarrow & \mbox{$R$ ist reflexiv auf $M$.}  
+\Leftrightarrow & \bigl\{ \pair(x,x) \mid x \in M \bigr\} \subseteq R \\[0.2cm] 
+\Leftrightarrow & \forall x \in M: \pair(x,x) \in R \\[0.2cm] 
+\Leftrightarrow & \mbox{$R$ ist reflexiv auf $M$.}  
 \end{array}
 $
 \qed
@@ -1569,7 +1569,7 @@ $\mathbb{Z}$ definiert.
 Beweisen Sie, dass f\"{u}r alle ganzen Zahlen $x$ und $y$ die Beziehung
 \\[0.2cm]
 \hspace*{1.3cm}
- $x \approx_n y \;\leftrightarrow\; x \modulo n = y \modulo n$
+ $x \approx_n y \;\Leftrightarrow\; x \modulo n = y \modulo n$
 \\[0.2cm]
 gilt.
 \exend
@@ -1680,7 +1680,7 @@ $x \mapsto x \modulo n$
 erzeugt, denn wir haben in einer Aufgabe gezeigt, dass f\"{u}r alle $x,y \in \mathbb{Z}$ 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x \approx_n y \;\leftrightarrow\; x \modulo n = y \modulo n$
+$x \approx_n y \;\Leftrightarrow\; x \modulo n = y \modulo n$
 \\[0.2cm]
 gilt.
 \eox
@@ -1795,7 +1795,7 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
 Aus dem letzten Satzes folgt sofort, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\pair(x,y) \in R \;\leftrightarrow\; [x]_R = [y]_R$
+$\pair(x,y) \in R \;\Leftrightarrow\; [x]_R = [y]_R$
 \\[0.2cm]
 gilt. \eox
 \end{Korollar}
