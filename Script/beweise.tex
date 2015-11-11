@@ -214,14 +214,17 @@ Ein anderes typisches Beispiel f\"{u}r einen indirekten Beweis ist der Nachweis 
 Nicht-Abz\"{a}hlbarkeit der Potenz-Menge der nat\"{u}rlichen Zahlen.
 
 \begin{Definition}[Abz\"{a}hlbar] \hspace*{\fill} \\
-Eine unendliche Menge $M$ hei\3t \emph{abz\"{a}hlbar}, wenn eine 
+Eine unendliche Menge $M$ hei\3t \colorbox{yellow}{\emph{abz\"{a}hlbar}}, wenn eine 
 \underline{sur}j\underline{ektive} Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $f: \mathbb{N} \rightarrow M$
 \\[0.2cm]
-existiert.  Zur Erinnerung: Eine Funktion $f:A \rightarrow B$ ist \emph{surjektiv} genau
-dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist.
+existiert.  Dabei nennen wir eine Funktion $f:A \rightarrow B$  \emph{surjektiv} genau
+dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall y \in B: \exists x \in A: f(x) = y$.  \eox
 \end{Definition}
 
 Die Idee bei dieser Definition ist, dass die Menge  $M$ in einem gewissen Sinne nicht mehr Elemente hat
@@ -283,8 +286,8 @@ Damit ist die Sujektivit\"{a}t von $f$ gezeigt und somit ist $\mathbb{Z}$ abz\"{
 Den Beweis des letzten Satzes haben wir direkt gef\"{u}hrt, aber zum Nachweis des n\"{a}chsten Satzes werden wir
 einen indirekten Beweis ben\"{o}tigen.  Vorab noch eine Definition.
 
-\begin{Definition}[\"{u}berabz\"{a}hlbar] \lb
-Eine unendliche Menge hei\3t \emph{\"{u}berabz\"{a}hlbar}, wenn sie nicht abz\"{a}hlbar ist.
+\begin{Definition}[\"{U}berabz\"{a}hlbar] \lb
+Eine unendliche Menge hei\3t \colorbox{yellow}{\emph{\"{u}berabz\"{a}hlbar}}, wenn sie \underline{nicht} abz\"{a}hlbar ist.
 \end{Definition}
 
 \begin{Satz}
@@ -311,8 +314,8 @@ dass
 $C = f(n_0)$
 \\[0.2cm]
 gilt.  Wir untersuchen nun, ob $n_0 \in C$ gilt.  Dazu betrachten wir die folgende Kette von
-\"{a}quivalenzen: 
-\\[-0.2cm]
+\"{A}quivalenzen: 
+\\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{cl}
@@ -326,7 +329,7 @@ $
 Wir haben also
 \\[0.2cm]
 \hspace*{1.3cm}
-$n_0 \in C \;\Leftrightarrow\; n_0 \not\in C \qquad \lightning$
+$n_0 \in C \;\Leftrightarrow\; n_0 \not\in C \qquad \color{red}{\lightning}$
 \\[0.2cm]
 gezeigt und das ist ein offensichtlicher Widerspruch. \qed
 
@@ -349,7 +352,7 @@ $ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  f\"{u}r all
 dargestellt sind, es gilt dann also
 \\[0.2cm]
 \hspace*{1.3cm}
-$x = \sum\limits_{i=1}^\infty d_i \cdot \bigl(\frac{1}{10}\bigr)^{i}$.
+$\ds x = \sum\limits_{i=1}^\infty d_i \cdot \Bigl(\frac{1}{10}\Bigr)^{i}$.
 \\[0.2cm]
 Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
 nicht auf ``Periode Neun'' endet, es d\"{u}rfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
@@ -400,7 +403,7 @@ Dort war es oft notwendig, den Beweis in zwei Teile aufzuspalten.
 Um beispielsweise die Gleichheit zweier Mengen $A$ und $B$ zu zeigen, sind wir 
 h\"{a}ufig so vorgegangen, dass wir zun\"{a}chst 
 $A \subseteq B$ und anschlie\3end $B \subseteq A$ gezeigt haben.  So hatten wir beispielsweise  im
-letzten Kapitel nachgewiesen, dass f\"{u}r eine \"{a}quivalenz-Relation $R$ aus der Beziehung $\pair(x,y) \in R$ die
+letzten Kapitel nachgewiesen, dass f\"{u}r eine \"{A}quivalenz-Relation $R$ aus der Beziehung $\pair(x,y) \in R$ die
 Gleichung $[x]_R = [y]_R$ gefolgert werden kann.  Beim Beweis durch \emph{Fallunterscheidung} teilen
 wir den Beweis ebenfalls in mehrere Teile auf.  Wir illustrieren das Konzept an einem Beispiel.
 
@@ -493,7 +496,9 @@ stets durch $3$ teilbar ist.  \exend
 % n^2 + 2 = 9 * k + 6 * k + 4 + 2
 
 \section{Induktions-Beweise}
-Die wichtigste Beweismethode in der Informatik ist der Beweis durch vollst\"{a}ndige Induktion. Es sei
+Die wichtigste Beweismethode in der Informatik ist der Beweis durch vollst\"{a}ndige Induktion. 
+Die Induktion ist in der Informatik deshalb so wichtig, weil Sie zum Beweis der Korrektheit
+rekursiver Funktionen benötigt wird.  Es sei
 $F(n)$ eine Formel, in der die Variable $n$ vorkommt.  Um eine Aussage der Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -518,7 +523,7 @@ Insgesamt k\"{o}nnen wir dann schlie\3en, dass die Formel $F(n)$ f\"{u}r alle na
 zun\"{a}chst wissen wir, dass $F(1)$ gilt, nach dem Induktions-Schritt gilt dann auch $F(2)$, daraus folgt
 dass auch $F(3)$ gilt, woraus wir auf die G\"{u}ltigkeit von $F(4)$ schlie\3en k\"{o}nnen.  Durch Fortf\"{u}hrung
 dieser Argumentation schlie\3en wir insgesamt, dass $F(n)$ f\"{u}r jede beliebige Zahl richtig ist.  Diese
-Argumentation ist zun\"{a}chst informal. Ein exakter Beweis folgt.
+Argumentation ist zun\"{a}chst informal. Ein Beweis folgt.
 
 \begin{Satz}
   Es sei $F(x)$ eine Formel. Dann gilt
@@ -545,7 +550,7 @@ gilt.  Den Nachweis dieser Behauptung f\"{u}hren wir indirekt und nehmen an, das
 \hspace*{1.3cm}
 $\neg\bigl(\forall n \in \mathbb{N}:F(n)\bigr)$
 \\[0.2cm]
-gilt.  Das ist aber \"{a}quivalent zu
+gilt.  Das ist aber \"{a}quivalent zu der Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\exists n \in \mathbb{N}:\neg F(n)$.
@@ -555,8 +560,8 @@ Wir definieren eine Menge $M$ als die Menge aller der Zahlen, f\"{u}r die $F(n)$
 \hspace*{1.3cm}
 $M := \bigl\{ n \in \mathbb{N} \bigm| \neg F(n) \bigr\}$.
 \\[0.2cm]
-Nach unserer Annahme ist $M$ nicht leer.  Dann muss aber $M$ ein kleinstes Element haben.  Wir definieren
-$n_0$ als das Minimum von $M$.
+Nach unserer Annahme ist $M$ nicht leer.  Als Menge von natürlichen Zahlen muss  $M$ dann aber ein
+kleinstes Element haben.  Wir definieren $n_0$ als das Minimum von $M$.
 \\[0.2cm]
 \hspace*{1.3cm}
 $n_0 := \min( M) = \min\bigl(\bigl\{ n \in \mathbb{N} \bigm| \neg F(n) \bigr\}\bigr)$.
@@ -566,7 +571,7 @@ sonst w\"{a}re $n_0$ ja nicht das Minimum der Menge $M$.
 
 Weiter schlie\3en wir dann aus der Tatsache, dass $F(1)$ gilt, dass $n_0 \not= 1$ ist.  
 Aus $n_0 -1 < n_0$ folgt nun, dass $n_0-1 \not\in M$ ist, denn $n_0$ ist ja das Minimum von $M$.
-Aus  $n_0-1 \not\in M$ folgt nach Definition von $M$, dass
+Aus  $n_0-1 \not\in M$ folgt nach Definition von $M$, dass die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $F(n_0 - 1)$
@@ -574,7 +579,7 @@ $F(n_0 - 1)$
 gilt.  Aus der Formel $\forall n \in \mathbb{N}:\bigl( F(n) \rightarrow F(n+1)\bigr)$ k\"{o}nnen wir dann folgern, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$F((n_0-1) +1)$
+$F\bigl((n_0-1) +1\bigr)$
 \\[0.2cm] 
 gilt.  Also gilt $F(n_0)$ und das ist ein Widerspruch zur Definition von $n_0$. \qed
 
@@ -609,14 +614,14 @@ Wir f\"{u}hren den Beweis durch Induktion nach $n$.
       Wir k\"{o}nnen nun voraussetzen, dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$
+      $\ds\sum\limits_{i=1}^n i = \frac{1}{2} \cdot n \cdot (n+1)$
       \\[0.2cm]
       f\"{u}r ein gegebenes festes $n$ gilt.  Diese Voraussetzung wird als \emph{Induktions-Voraussetzung}
       bezeichnet.  Wir m\"{u}ssen dann nachweisen, dass  die Behauptung auch
       f\"{u}r $n+1$ gilt, zu zeigen ist also 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\sum\limits_{i=1}^{n+1} i = \frac{1}{2} \cdot (n+1) \cdot \bigl((n+1)+1\bigr)$.
+      $\ds\sum\limits_{i=1}^{n+1} i = \frac{1}{2} \cdot (n+1) \cdot \bigl((n+1)+1\bigr)$.
       \\[0.2cm]
       Wir formen beide Seiten dieser Gleichung getrennt um und beginnen mit der linken Seite.
       \\[0.2cm]
