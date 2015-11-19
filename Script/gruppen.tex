@@ -67,7 +67,7 @@ derer klar wird, worum es bei Gruppen \"{u}berhaupt geht.
       \item $x + y = y + x$ \quad f\"{u}r alle $x,y \in \mathbb{Z}$.
       \end{enumerate}
       Dieses Beispiel zeigt, dass der Begriff der Gruppe versucht, die Eigenschaften der
-      Addition auf den nat\"{u}rlichen Zahlen zu verallgemeinern.
+      Addition auf den ganzen Zahlen zu verallgemeinern.
 \item Definieren wir $\mathbb{Q}_+$ als die Menge der positiven rationalen Zahlen, also als
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -682,7 +682,7 @@ als bijektive Funktion aufgefasst werden kann und dass ist genau dann der Fall, 
 \item Die Relation $R$ ist rechts-eindeutig:
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x, y_1, y_2 \in \mathbb{Z}_n^+: \pair(x,y_1) \in R \wedge \pair(x,y_2) \in R \rightarrow y_1 = y_2$.
+      $\forall x, y_1, y_2 \in \mathbb{Z}_n^+:\bigl(\pair(x,y_1) \in R \wedge \pair(x,y_2) \in R \rightarrow y_1 = y_2\bigr)$.
 \end{enumerate}
 Aus der ersten und der dritten Forderung folgt, dass die Relation $R$ als Funktion
 \\[0.2cm]
@@ -704,7 +704,7 @@ $\mathtt{id}_n := \{ \pair(x,x) \mid x \in \mathbb{Z}_n^+ \}$.
 Wir erinnern an die Definition des relationalen Produkts, es gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$R_1 \circ R_2 := \{ \pair(x,z) \mid \exists y \in \mathbb{Z}_n^+: \pair(x,y) \in R_1 \wedge \pair(y,z) \in R_2 \}$.
+$R_1 \circ R_2 := \bigl\{ \pair(x,z) \mid \exists y \in \mathbb{Z}_n^+:\bigl( \pair(x,y) \in R_1 \wedge \pair(y,z) \in R_2\bigr) \bigl\}$.
 \\[0.2cm]
 Die entscheidende Beobachtung ist nun, dass $R_1 \circ R_2$ eine Permutation ist, wenn $R_1$ und $R_2$
 bereits Permutationen sind.
@@ -731,10 +731,10 @@ $
 \begin{array}[t]{cll}
    & R^{-1} \circ R \\[0.2cm]
  = & \{ \pair(x,z) \in \mathbb{Z}_n^+\times \mathbb{Z}_n^+ \mid \exists y: 
-        \pair(x,y) \in R^{-1} \wedge \pair(y,z) \in R 
+        (\pair(x,y) \in R^{-1} \wedge \pair(y,z) \in R )
      \} \\[0.2cm]
  = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid 
-        \exists y: \pair(y,x) \in R \wedge \pair(y,z) \in R 
+        \exists y: (\pair(y,x) \in R \wedge \pair(y,z) \in R )
      \} 
    & \\[0.2cm]
  = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \}
@@ -983,7 +983,7 @@ Untergruppe von $G$.   Wir definieren auf der Menge $G$ eine Relation $\approx_U
 \hspace*{1.3cm}
 $x \approx_U y \df x - y \in U$.
 \\[0.2cm]
-Zeigen Sie, dass $\approx_U$ eine \"{a}quivalenz-Relation auf $G$ ist.
+Zeigen Sie, dass $\approx_U$ eine \"{A}quivalenz-Relation auf $G$ ist.
 \exend
 
 \begin{Lemma}
