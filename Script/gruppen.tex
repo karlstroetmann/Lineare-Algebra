@@ -14,7 +14,7 @@ definiert ist.
 
 \section{Die Definition der Gruppe}
 \begin{Definition}[Gruppe]
-Ein Tripel $\langle G, e, \circ \rangle$ hei\3t \emph{Gruppe} falls folgendes gilt:
+Ein Tripel $\langle G, e, \circ \rangle$ hei\3t \colorbox{gold}{\emph{Gruppe}} falls folgendes gilt:
 \begin{enumerate}
 \item $G$ ist eine Menge.
 \item $e$ ist ein Element der Menge $G$.
@@ -30,7 +30,7 @@ Ein Tripel $\langle G, e, \circ \rangle$ hei\3t \emph{Gruppe} falls folgendes gi
       \hspace*{1.3cm}
       $e \circ x = x$ \quad f\"{u}r alle $x \in G$,
       \\[0.2cm]
-      das Element $e$ ist also bez\"{u}glich der Operation $\circ$ ein \emph{links-neutrales}
+      das Element $e$ ist also bez\"{u}glich der Operation $\circ$ ein \colorbox{gold}{\emph{links-neutrales}}
       Element.
 \item F\"{u}r alle $x \in G$ gibt es ein $y \in G$, so dass
       \\[0.2cm]
@@ -38,18 +38,18 @@ Ein Tripel $\langle G, e, \circ \rangle$ hei\3t \emph{Gruppe} falls folgendes gi
       $y \circ x = e$
       \\[0.2cm]
       gilt.  Wir sagen, dass $y$ ein zu $x$ bez\"{u}glich der Operation $\circ$
-      \emph{links-inverses} Element ist.
-\item Es gilt das folgende \emph{Assoziativ-Gesetz}:
+      \colorbox{gold}{\emph{links-inverses}} Element ist.
+\item Es gilt das folgende \colorbox{gold}{\emph{Assoziativ-Gesetz}}:
       \\[0.2cm]
       \hspace*{1.3cm}
       $(x \circ y) \circ z = x \circ (y \circ z)$ \quad f\"{u}r alle $x,y,z \in G$.
 \end{enumerate}
-Falls zus\"{a}tzlich das Kommutativ-Gesetz
+Falls zus\"{a}tzlich das \colorbox{gold}{\emph{Kommutativ-Gesetz}}
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x, y \in G: x \circ y = y \circ x$
 \\[0.2cm]
-gilt, dann sagen wir, dass $\langle G, e, \circ \rangle$ eine \emph{kommutative Gruppe} ist.
+gilt, dann sagen wir, dass $\langle G, e, \circ \rangle$ eine \colorbox{gold}{\emph{kommutative Gruppe}} ist.
 \end{Definition}
 
 \examples
@@ -132,8 +132,7 @@ derer klar wird, worum es bei Gruppen \"{u}berhaupt geht.
       \item $(a \circ a) \circ a = e \circ a = a$ und $a \circ (a \circ a) = a \circ e = a$. $\checkmark$
       \end{enumerate}
       Die Tatsache, dass die Verkn\"{u}fung $\circ$ kommutativ ist, folgt unmittelbar aus der Definition.
-      Wir werden uns im Kapitel zur Zahlentheorie noch n\"{a}her mit endlichen Gruppen auseinander
-      setzen.
+      Wir werden uns im Kapitel zur Zahlentheorie noch n\"{a}her mit endlichen Gruppen beschäftigen.
       \eox
 \end{enumerate}
 
@@ -185,7 +184,8 @@ Insgesamt haben wir also $a \circ b = e$ bewiesen. \qed
 
 \remark
 Da jedes zu einem Element $a$ links-inverse Element $b$ auch rechts-invers ist, sprechen wir im Folgenden
-immer nur noch von einem \emph{inversen Element} und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+immer nur noch von einem \colorbox{gold}{\emph{inversen Element}} und lassen den Zusatz
+``\emph{links}'' bzw.~``\emph{rechts}'' weg.  
 \eox
 
 \begin{Satz}[Links-neutrales Element ist auch rechts-neutrales Element] \lb
@@ -196,12 +196,12 @@ immer nur noch von einem \emph{inversen Element} und lassen den Zusatz ``\emph{l
 \end{Satz}
 
 \proof
-Es sei $a \in G$ beliebig und $b$ das zu $a$ inverse Element.  Dann haben wir die folgende Kette von
+Es sei $a \in G$ beliebig und $b$ ein zu $a$ inverse Element.  Dann haben wir die folgende Kette von
 Gleichungen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
-\begin{array}[t]{lcll}
+\begin{array}[b]{lcll}
   a \circ e & = & a \circ (b \circ a) 
                 & \mbox{denn $b$ ist invers zu $a$,} \\[0.2cm]
             & = & (a \circ b) \circ a
@@ -212,13 +212,14 @@ $
                 & \mbox{denn $e$ ist links-neutral.}
 \end{array}
 $
-\\[0.2cm]
-Wir haben also $a \circ e = a$ gezeigt. \qed
+\qed
+\pagebreak
 
 \remark
 Da das links-neutrale Element $e$ einer Gruppe $\langle G, e, \circ \rangle$ auch rechts-neutral ist,
 sprechen wir im Folgenden
-immer nur noch von einem \emph{neutralen Element} und lassen den Zusatz ``\emph{links}'' bzw.~``\emph{rechts}'' weg.
+immer nur noch von einem \colorbox{gold}{\emph{neutralen Element}} und lassen den Zusatz
+``\emph{links}'' bzw.~``\emph{rechts}'' weg. 
 \eox
 
 \begin{Satz}[Eindeutigkeit des neutralen Elements] \lb
@@ -245,7 +246,7 @@ Also gilt $f = e$ gezeigt. \qed
 
 \remark
 Der letzte Satz zeigt, dass das neutrale Element eindeutig bestimmt ist.  Wir sprechen daher in Zukunft
-immer von \emph{dem} neutralen Element anstatt von \emph{einem} neutralen Element.
+immer von \underline{\color{red}{\emph{dem}}} neutralen Element anstatt von \emph{einem} neutralen Element.
 \eox
 
 \begin{Satz}[Eindeutigkeit des inversen Elements] \lb
@@ -274,8 +275,10 @@ Also ist $c = b$ gezeigt. \qed
 
 
 \remark Der letzte Satz zeigt, dass in einer Gruppe $\langle G, e, \circ \rangle$ f\"{u}r ein
-gegebenes Element $a$ das zugeh\"{o}rige inverse Element eindeutig bestimmt ist.  Damit k\"{o}nnen
-wir eine Funktion
+gegebenes Element $a$ das zugeh\"{o}rige inverse Element eindeutig bestimmt ist. 
+Wir sprechen daher in Zukunft
+immer von \underline{\color{red}{\emph{dem}}} inversen Element anstatt von \emph{einem} inversen Element.
+Weiter k\"{o}nnen wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm} $^{-1}: G \rightarrow G$
 \\[0.2cm]
@@ -296,8 +299,10 @@ eigentlich von der Gruppe $\langle G, e, \circ \rangle$ sprechen m\"{u}ssten.
   \\[0.2cm]
   \hspace*{1.3cm}
   $(a \circ b)^{-1} = b^{-1} \circ a^{-1}$ \quad f\"{u}r alle $a,b \in G$.
+  \\[0.2cm]
+  \textbf{\color{red}{Beachten}} Sie, dass die Reihenfolge der Variablen $a$ und $b$ auf der linken Seite dieser
+  Gleichung gerade anders herum ist als auf der rechten Seite!
 \end{Satz}
-\pagebreak
 
 \proof
 Wir haben
@@ -386,7 +391,8 @@ $a \circ x = b$ \quad und \quad $y \circ a = b$
 \\[0.2cm]
 f\"{u}r alle $a,b \in G$ l\"{o}sen: Durch Einsetzen verifzieren Sie sofort, dass $x := a^{-1} \circ b$
 eine L\"{o}sung der ersten Gleichung ist, w\"{a}hrend $y := b \circ a^{-1}$ die zweite Gleichung l\"{o}st.
-Interessant ist nun, dass sich dies auch umkehren l\"{a}sst, denn es gilt der folgende Satz.
+Interessant ist nun, dass auch die Umkehrung dieser Aussage richtig ist, denn es gilt der folgende
+Satz. 
 
 \begin{Satz} \label{satz:solvable}
 Ist $\langle G, \circ \rangle$ eine Halb-Gruppe, in der f\"{u}r alle Werte $a,b \in G$ die beiden Gleichungen 
@@ -457,7 +463,7 @@ ist $\langle G, e, \circ \rangle$ eine Gruppe.   \qed
 \hspace*{1.3cm} $a \circ c = b \circ c$.
 \\[0.2cm]
 Multiplizieren wir diese Gleichung auf beiden Seiten mit $c^{-1}$, so sehen wir, dass dann $a = b$ gelten
-muss.  \"{a}hnlich folgt aus
+muss.  \"{A}hnlich folgt aus
 \\[0.2cm]
 \hspace*{1.3cm} $c \circ a = c \circ b$
 \\[0.2cm]
@@ -474,7 +480,7 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
 \eox
 
 \begin{Definition}[injektiv]
-  Eine Funktion $f: M \rightarrow N$ ist \emph{injektiv} genau dann, wenn
+  Eine Funktion $f: M \rightarrow N$ ist \colorbox{gold}{\emph{injektiv}} genau dann, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
   $f(x) = f(y) \rightarrow x = y$ \quad f\"{u}r alle $x,y\in M$ 
@@ -489,7 +495,7 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
 \end{Definition}
 
 \begin{Definition}[surjektiv]
-  Eine Funktion $f: M \rightarrow N$ ist \emph{surjektiv} genau dann, wenn
+  Eine Funktion $f: M \rightarrow N$ ist \colorbox{gold}{\emph{surjektiv}} genau dann, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall y \in N: \exists x \in M: f(x) = y$ 
@@ -499,7 +505,7 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
 \end{Definition}
 
 \begin{Definition}[bijektiv] \lb
-  Eine Funktion $f: M \rightarrow N$ ist \emph{bijektiv} genau dann, wenn
+  Eine Funktion $f: M \rightarrow N$ ist \colorbox{gold}{\emph{bijektiv}} genau dann, wenn
  $f$ sowohl injektiv als auch surjektiv ist.  
 \eox
 \end{Definition}
@@ -515,89 +521,34 @@ sei injektiv.  Dann ist $f$ auch surjektiv.
 \end{Satz}
 
 \proof
-Da $M$ endlich ist, k\"{o}nnen wir
+Da $M$ endlich ist, können wir $M$ in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$n := \textsl{card}(M)$
+$M = \{ x_1, \cdots, x_n \}$
 \\[0.2cm]
-definieren und haben dann $n \in \mathbb{N}$.  Wir f\"{u}hren den Beweis der Behauptung nun durch
-Induktion nach $n$.
-\begin{enumerate}
-\item[I.A.:] $n = 1$.
+schreiben.  Wir führen den Beweis nun indirekt und nehmen an, dass $f$ nicht surjektiv ist.  Dann
+existiert also ein $y \in M$, so dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall x \in M: f(x) \not = y$
+\\[0.2cm]
+gilt.  Weiter definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(M) = \{f(x_1), \cdots, f(x_n) \}$.
+\\[0.2cm]
+Die Menge $f(M)$ bezeichnen wir als das \emph{Bild} von $M$ unter $f$.
+Da $f$ injektiv ist, wissen wir, dass aus  $x_i \not= x_j$ folgt, dass $f(x_i) \not= f(x_j)$ gilt.
+Damit sind alle Elemente in $f(M)$ verschieden und wir haben
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(f(M)\bigr) = \textsl{card}\bigl(\{f(x_1), \cdots, f(x_n) \}\bigr) = n$.
+\\[0.2cm]
+Andererseits gilt $f(M) \subseteq M$ und aus $y \not\in f(M)$ folgt dann, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(f(M)\bigr) < n$ gelten muss. $\color{red}{\lightning}$  \qed
 
-             Dann hat $M$ die Form $M = \{ x_1 \}$.  In diesem Fall gibt es nur eine einzige Funktion
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $f: M \rightarrow M$
-             \\[0.2cm]
-             und f\"{u}r diese Funktion muss $f(x_1) = x_1$ gelten.  Offenbar ist diese Funktion 
-             surjektiv. $\surd$
-\item[I.S.:] $n \mapsto n+1$.
-
-             Wir f\"{u}hren den Nachweis in diesem Fall indirekt und nehmen an, dass $f$ nicht
-             surjektiv ist.  Dann gibt es also ein Element $y \in M$, das nicht als Funktionswert
-             von $f$ auftritt.  Damit gilt 
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $\forall x \in M: f(x) \not= y$.
-             \\[0.2cm]
-             Wir definieren  $N := M \backslash \{ y \}$.  Offenbar hat die Menge $N$
-             ein Element weniger als die Menge $M$ und damit gilt
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $\textsl{card}(N) = n$,
-             \\[0.2cm]
-             denn $\textsl{card}(M) = n+1$.  Wir definieren auf der Menge $N$ die Funktion
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $g:N \rightarrow N$
-             \\[0.2cm]
-             durch die Festlegung
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $g(x) := f(x)$ \quad f\"{u}r alle $x \in N$.
-             \\[0.2cm]
-             Da die Funktion $f$ injektiv ist, muss auch die Funktion $g$ injektiv sein, denn aus
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $g(x_1) = g(x_2)$
-             \\[0.2cm]
-             folgt sofort
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $f(x_1) = f(x_2)$
-             \\[0.2cm]
-             und wegen der Injektivit\"{a}t von $f$ impliziert das
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $x_1 = x_2$.
-             \\[0.2cm]
-             Nach Induktions-Voraussetzung ist die Funktion $g:N \rightarrow N$ daher 
-             surjektiv.  Die Ungleichung
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $\forall x \in M: f(x) \not= y$ 
-             \\[0.2cm]
-             gilt auch, wenn wir f\"{u}r $x$ den Wert $y$ einsetzen, denn $y \in M$.  Damit haben wir dann
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $f(y) \not= y$
-             \\[0.2cm]
-             und daraus k\"{o}nnen wir folgern, dass $f(y) \in N$ ist.  Da die Funktion $g$ auf $N$
-             surjektiv ist, gibt es aber ein $z \in N$, so dass
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $g(z) = f(y)$
-             \\[0.2cm]
-             ist.  Da au\3erdem $g(z) = f(z)$ ist, haben wir
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $f(z) = f(y)$.
-             \\[0.2cm]
-             Da die Funktion $f$ injektiv ist, folgt daraus $z = y$.  Das kann aber nicht
-             sein, denn $z \in N$, aber $y \not\in N$.  Dieser Widerspruch zeigt, dass die Funktion
-             $f$ surjektiv sein muss.  \qed
-\end{enumerate}
 
 \begin{Satz}
   Es sei $M$ eine endliche nicht-leere Menge und die Funktion 
@@ -610,14 +561,26 @@ Induktion nach $n$.
 
 \proof
 Es sei $M = \{x_1, \cdots, x_n \}$.  Wir f\"{u}hren den Beweis indirekt und nehmen an, dass $f$ nicht injektiv
-ist.  Dann gibt es $x_i, x_j \in M$ mit $f(x_i) = f(x_j)$.  Damit enth\"{a}lt dann aber die Menge
+ist.  Dann gibt es $x_i, x_j \in M$, so dass einerseits $x_i \not= x_j$, aber andererseits $f(x_i) =
+f(x_j)$ gilt.  
+Damit enth\"{a}lt dann aber die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
 $\{ f(x_1), \cdots, f(x_n) \}$
 \\[0.2cm]
-weniger als $n$ Elemente und dann kann $f$ nicht mehr surjektiv sein.  Dieser Widerspruch zeigt, dass $f$
-injektiv sein muss.
+weniger als $n$ Elemente, denn mindestens die beiden Elemente $f(x_i)$ und $f(x_j)$ sind ja gleich.
+Dann kann $f$ aber nicht mehr surjektiv sein, denn dazu müsste 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{ f(x_1), \cdots, f(x_n) \} = M$
+\\[0.2cm] 
+gelten.  Dieser Widerspruch zeigt, dass $f$ injektiv sein muss.
 \qed
+
+\remark
+Die letzten beiden Sätze können wir zusammenfassen indem wir sagen, dass eine auf einer endlichen
+Menge definierte Funktion $f:M \rightarrow M$ genau dann injektiv ist, wenn $f$ surjektiv ist.
+\eox
 
 \begin{Satz}
   Es sei $\langle G, \circ \rangle$ eine endliche Halb-Gruppe, in der die beiden K\"{u}rzungs-Regeln
@@ -773,8 +736,8 @@ Kommutativ-Gesetz gilt.
         $\forall x \in U: x^{-1} \in U$,
         \\[0.2cm]
         die Menge $U$ ist also unter der Operation $\cdot^{-1}: x \mapsto x^{-1}$ abgeschlossen.
+        \eox
   \end{enumerate}
-\eox
 \end{Definition}
 
 \remark
@@ -859,7 +822,7 @@ neue Gruppen bilden lassen, sogenannte \emph{Faktor-Gruppen}.
   \hspace*{1.3cm}
   $a + U := \{ a + x \mid x \in U \}$.
   \\[0.2cm]
-  Wir bezeichnen die Mengen $a + U$ als \emph{Nebenklassen von $G$ bez\"{u}glich $U$}.
+  Wir bezeichnen die Mengen $a + U$ als \emph{\colorbox{gold}{Nebenklassen} von $G$ bez\"{u}glich $U$}.
   Nun definieren wir die Menge $G/U$ (gelesen: $G$ modulo $U$) als
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -887,8 +850,6 @@ gilt, denn sonst ist die Operation $+$ auf den Nebenklassen von $G$ bez\"{u}glic
 definiert.  Um diesen Nachweis f\"{u}hren zu k\"{o}nnen, zeigen wir zun\"{a}chst einen Hilfssatz, der uns dar\"{u}ber
 Aufschluss gibt, wann zwei Nebenklassen $a + U$ und $b + U$ gleich sind.
 \eox
-\pagebreak
-
 
 \begin{Lemma}
   Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
@@ -1031,6 +992,7 @@ Damit ist gezeigt, dass die Addition auf den Nebenklassen von $U$ wohldefiniert 
  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
  Dann ist $\langle G/U, 0 + U, + \rangle$ mit der oben definierten Addition von Nebenklassen eine kommutative Gruppe.
 \end{Satz}
+\pagebreak
 
 \proof
 Der Beweis zerf\"{a}llt in drei Teile.
@@ -1068,7 +1030,6 @@ Der Beweis zerf\"{a}llt in drei Teile.
       \end{array}
       $
 \end{enumerate}
-\pagebreak
 
 \example
 Wir haben fr\"{u}her bereits gesehen, dass die Mengen 
@@ -1119,6 +1080,7 @@ Zeigen Sie, dass dann $\mathtt{card}(U)$ ein Teiler von $\mathtt{card}(G)$ ist.
 \textbf{Hinweis}: Zeigen Sie, dass alle Nebenklassen von $G$ bez\"{u}glich der Untergruppe $U$ dieselbe
 Kardinalit\"{a}t haben.
 \exend
+\pagebreak
 
 \exercise
 Es seien $\langle G_1, e_1, \circ\rangle$ und $\langle G_2, e_2, *\rangle$ kommutative Gruppen.
@@ -1148,7 +1110,6 @@ gilt.  L\"{o}sen Sie die folgenden Teilaufgaben:
       eine Untergruppe von $G_2$ ist.
       \exend
 \end{enumerate} 
-\pagebreak
 
 \section{Monoide}
 Zum Schluss dieses Kapitels definieren wir den Begriff eines \emph{Monoiden}.  Vereinfacht gesagt sind
