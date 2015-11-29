@@ -622,6 +622,33 @@ $y \circ a = b$
 \\[0.2cm]
 eine L\"{o}sung $y$ hat.  Dann ist $G$ nach Satz \ref{satz:solvable} eine Gruppe. \qed
 
+\exercise
+Für eine Primzahl $p$ definieren wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_p := \{ 0, 1, 2, \cdots, p - 1 \}$
+\\[0.2cm]
+als die Menge aller nicht-negativen ganzen Zahlen, die kleiner als $p$ sind.  Weiter
+definieren wir für alle $k \in \{1,\cdots,p-1\}$ eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_k: \mathbb{Z}_p \rightarrow \mathbb{Z}_p$ \quad durch \quad $f_k(n) = (k \cdot n) \;\texttt{\symbol{37}}\;p$.
+\\[0.2cm]
+Zeigen Sie, dass die Funktionen $f_k$ für alle $k \in \{1, \cdots, p-1\}$ bijektiv sind.
+
+\hint
+Sie dürfen die folgenden beiden Fakten aus der elementaren Zahlentheorie ohne Beweis verwenden:
+\begin{enumerate}
+\item $(a-b) \;\texttt{\symbol{37}}\;p = 0 \;\leftrightarrow\; a\;\texttt{\symbol{37}}\;p = b \;\texttt{\symbol{37}}\;p$
+      \quad für alle $a,b,p \in \mathbb{Z}$.
+\item Für jede Primzahl $p$ und für beliebige Zahlen $a,b \in \mathbb{Z}$ gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(a \cdot b) \;\texttt{\symbol{37}}\;p = 0 \;\rightarrow\; a \;\texttt{\symbol{37}}\;p = 0 \;\vee\; b \;\texttt{\symbol{37}}\;p = 0$.
+      \eox
+\end{enumerate}
+
+
 \section{Die Permutations-Gruppe $\mathcal{S}_n$}
 Bisher waren alle Gruppen, die wir kennengelernt haben, kommutativ.  Das \"{a}ndert sich jetzt, denn wir
 werden gleich eine Gruppe kennen lernen, die nicht kommutativ ist.  Zun\"{a}chst definieren wir f\"{u}r alle
@@ -701,16 +728,24 @@ $
      \} 
    & \\[0.2cm]
  = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \}
-    & \mbox{denn $R$ ist rechts-eindeutig}    \\[0.2cm]
+    & \mbox{Begr\"{u}ndung siehe unten}    \\[0.2cm]
  = & \mathtt{id}_n.
 \end{array}
 $
 \\[0.2cm]
+Hier haben wir in der vorletzten Zeile die \"{A}quivalenz
+\\[0.2cm]
+\hspace*{1.3cm}
+$\exists y: (\pair(y,x) \in R \wedge \pair(y,z) \in R) \leftrightarrow x = z$
+\\[0.2cm]
+benutzt.  Hier folgt die Richtung von links nach rechts aus der Tatsache, dass $R$ rechts-eindeutig
+ist, während die Richtung von rechts nach links daraus folgt, dass $R$ rechts-total ist.
 Folglich ist f\"{u}r eine Permutation $R$ der Ausdruck $R^{-1}$ tats\"{a}chlich das Inverse bez\"{u}glich des
 relationalen Produkts $\circ$.  Damit ist klar, dass die 
 Struktur $\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ eine Gruppe ist.
 Diese Gruppe tr\"{a}gt den Namen \emph{Permutations-Gruppe}.
 \eox
+\vspace*{-0.2cm}
 
 \exercise
 Zeigen Sie, dass $\mathcal{S}_3$ keine kommutative Gruppe ist.  Schreiben Sie dazu eine \textsl{SetlX}-Programm,
@@ -992,7 +1027,6 @@ Damit ist gezeigt, dass die Addition auf den Nebenklassen von $U$ wohldefiniert 
  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
  Dann ist $\langle G/U, 0 + U, + \rangle$ mit der oben definierten Addition von Nebenklassen eine kommutative Gruppe.
 \end{Satz}
-\pagebreak
 
 \proof
 Der Beweis zerf\"{a}llt in drei Teile.
@@ -1080,7 +1114,6 @@ Zeigen Sie, dass dann $\mathtt{card}(U)$ ein Teiler von $\mathtt{card}(G)$ ist.
 \textbf{Hinweis}: Zeigen Sie, dass alle Nebenklassen von $G$ bez\"{u}glich der Untergruppe $U$ dieselbe
 Kardinalit\"{a}t haben.
 \exend
-\pagebreak
 
 \exercise
 Es seien $\langle G_1, e_1, \circ\rangle$ und $\langle G_2, e_2, *\rangle$ kommutative Gruppen.
