@@ -547,7 +547,7 @@ $\textsl{card}\bigl(f(M)\bigr) = \textsl{card}\bigl(\{f(x_1), \cdots, f(x_n) \}\
 Andererseits gilt $f(M) \subseteq M$ und aus $y \not\in f(M)$ folgt dann, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{card}\bigl(f(M)\bigr) < n$ gelten muss. $\color{red}{\lightning}$  \qed
+$\textsl{card}\bigl(f(M)\bigr) < n$ gelten muss. ${\color{red}{\lightning}}$  \qed
 
 
 \begin{Satz}
@@ -852,38 +852,38 @@ neue Gruppen bilden lassen, sogenannte \emph{Faktor-Gruppen}.
 
 \begin{Definition}[Faktor-Gruppe]
   Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
-  Dann definieren wir f\"{u}r jedes $a \in G$ die Menge $a + U$ als
+  Dann definieren wir f\"{u}r jedes $a \in G$ die Menge $a{\color{dg}{+}}U$ als
   \\[0.2cm]
   \hspace*{1.3cm}
-  $a + U := \{ a + x \mid x \in U \}$.
+  $a {\color{dg}{+}} U := \{ a + x \mid x \in U \}$.
   \\[0.2cm]
-  Wir bezeichnen die Mengen $a + U$ als \emph{\colorbox{gold}{Nebenklassen} von $G$ bez\"{u}glich $U$}.
+  Wir bezeichnen die Mengen $a {\color{dg}{+}} U$ als \emph{\colorbox{gold}{Nebenklassen} von $G$ bez\"{u}glich $U$}.
   Nun definieren wir die Menge $G/U$ (gelesen: $G$ modulo $U$) als
   \\[0.2cm]
   \hspace*{1.3cm}
-  $G/U := \bigl\{ a + U \mid a \in G \bigr\}$.
+  $G/U := \bigl\{ a {\color{dg}{+}} U \mid a \in G \bigr\}$.
   \\[0.2cm]
   $G/U$ ist also die Menge der Nebenklassen von $G$ bez\"{u}glich $U$.
-  Weiter definieren wir ein Operation $+: G/U \times G/U \rightarrow G/U$ durch
+  Weiter definieren wir ein Operation ${\color{red}{+}}: G/U \times G/U \rightarrow G/U$ durch
   \\[0.2cm]
   \hspace*{1.3cm}
-  $(a + U) + (b + U) := (a + b) + U$.
+  $(a {\color{dg}{+}} U) {\color{red}{+}} (b {\color{dg}{+}} U) := (a + b) {\color{dg}{+}} U$.
 \end{Definition}
 
 \remark
 Zun\"{a}chst ist gar nicht klar, dass die Definition
 \\[0.2cm]
 \hspace*{1.3cm}
-  $(a + U) + (b + U) := (a + b) + U$
+  $(a {\color{dg}{+}} U) {\color{red}{+}} (b {\color{dg}{+}} U) := (a + b) {\color{dg}{+}} U$
 \\[0.2cm]
 \"{u}berhaupt Sinn macht.  Wir m\"{u}ssen zeigen, dass f\"{u}r alle $a_1,a_2, b_1, b_2 \in G$
 \\[0.2cm]
 \hspace*{1.3cm}
-$a_1 + U = a_2 + U \;\wedge\; b_1 + U = b_2 + U \;\Rightarrow\; (a_1 + b_1) + U = (a_2 + b_2) + U$
+$a_1 {\color{dg}{+}} U = a_2 {\color{dg}{+}} U \;\wedge\; b_1 {\color{dg}{+}} U = b_2 {\color{dg}{+}} U \;\Rightarrow\; (a_1 + b_1) {\color{dg}{+}} U = (a_2 + b_2) {\color{dg}{+}} U$
 \\[0.2cm]
-gilt, denn sonst ist die Operation $+$ auf den Nebenklassen von $G$ bez\"{u}glich $U$ nicht eindeutig
+gilt, denn sonst ist die Operation ${\color{red}{+}}$ auf den Nebenklassen von $G$ bez\"{u}glich $U$ nicht eindeutig
 definiert.  Um diesen Nachweis f\"{u}hren zu k\"{o}nnen, zeigen wir zun\"{a}chst einen Hilfssatz, der uns dar\"{u}ber
-Aufschluss gibt, wann zwei Nebenklassen $a + U$ und $b + U$ gleich sind.
+Aufschluss gibt, wann zwei Nebenklassen $a {\color{dg}{+}} U$ und $b {\color{dg}{+}} U$ gleich sind.
 \eox
 
 \begin{Lemma}
@@ -891,22 +891,22 @@ Aufschluss gibt, wann zwei Nebenklassen $a + U$ und $b + U$ gleich sind.
   Weiter seien $a,b \in G$.  Dann gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $a + U = b + U$ \quad g.d.w. \quad $a - b \in U$.
+  $a {\color{dg}{+}} U = b {\color{dg}{+}} U$ \quad g.d.w. \quad $a - b \in U$.
 \end{Lemma}
 
 \proof
 Wir zerlegen den Beweis in zwei Teile:
 \begin{enumerate}
 \item[``$\Rightarrow$'']:
-  Gelte $a + U = b + U$.  Wegen $0 \in U$ haben wir
+  Gelte $a {\color{dg}{+}} U = b {\color{dg}{+}} U$.  Wegen $0 \in U$ haben wir
   \\[0.2cm]
   \hspace*{1.3cm}
-  $a = a + 0 \in a + U$
+  $a = a + 0 \in a {\color{dg}{+}} U$
   \\[0.2cm]
-  und wegen der Voraussetzung $a + U = b + U$ folgt daraus
+  und wegen der Voraussetzung $a {\color{dg}{+}} U = b {\color{dg}{+}} U$ folgt daraus
   \\[0.2cm]
   \hspace*{1.3cm}
-  $a \in b + U$.
+  $a \in b {\color{dg}{+}} U$.
   \\[0.2cm]
   Also gibt es ein $u \in U$, so dass
   \\[0.2cm]
@@ -922,12 +922,12 @@ Wir zerlegen den Beweis in zwei Teile:
   nun, dass sowohl
   \\[0.2cm]
   \hspace*{1.3cm} 
-  $a + U \subseteq b + U$ \quad als auch \quad
-  $b + U \subseteq a + U$ 
+  $a {\color{dg}{+}} U \subseteq b {\color{dg}{+}} U$ \quad als auch \quad
+  $b {\color{dg}{+}} U \subseteq a {\color{dg}{+}} U$ 
   \\[0.2cm]
   gilt.
   \begin{enumerate}
-  \item Sei $x \in a + U$.  Dann gibt es ein $u \in U$, so dass
+  \item Sei $x \in a {\color{dg}{+}} U$.  Dann gibt es ein $u \in U$, so dass
         \\[0.2cm]
         \hspace*{1.3cm}
         $x = a + u$
@@ -947,8 +947,8 @@ Wir zerlegen den Beweis in zwei Teile:
         \hspace*{1.3cm}
         $x = b + v$ mit $v \in U$
         \\[0.2cm]
-        und nach Definition von $b + U$ folgt dann $x \in b + U$.
-  \item Sei nun $x \in b + U$.  Dann gibt es ein $u \in U$, so dass
+        und nach Definition von $b {\color{dg}{+}} U$ folgt dann $x \in b {\color{dg}{+}} U$.
+  \item Sei nun $x \in b {\color{dg}{+}} U$.  Dann gibt es ein $u \in U$, so dass
         \\[0.2cm]
         \hspace*{1.3cm}
         $x = b + u$
@@ -968,7 +968,7 @@ Wir zerlegen den Beweis in zwei Teile:
         \hspace*{1.3cm}
         $x = a + v$ mit $v \in U$
         \\[0.2cm]
-        und nach Definition von $a + U$ folgt nun $x \in a + U$. \qed
+        und nach Definition von $a {\color{dg}{+}} U$ folgt nun $x \in a {\color{dg}{+}} U$. \qed
   \end{enumerate}
 \end{enumerate}
 
@@ -987,7 +987,7 @@ Zeigen Sie, dass $\approx_U$ eine \"{A}quivalenz-Relation auf $G$ ist.
   Weiter seien $a,b \in G$.  Dann ist 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $(a + U) + (b + U) := (a + b) + U$.
+  $(a {\color{dg}{+}} U) {\color{red}{+}} (b {\color{dg}{+}} U) := (a + b) {\color{dg}{+}} U$.
   \\[0.2cm]
   wohldefiniert.
 \end{Lemma}
@@ -996,16 +996,16 @@ Zeigen Sie, dass $\approx_U$ eine \"{A}quivalenz-Relation auf $G$ ist.
 Wir haben zu zeigen, dass f\"{u}r alle $a_1,a_2,b_1,b_2 \in G$ die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
-$a_1 + U = a_2 + U \;\wedge\; b_1 + U = b_2 + U \;\Rightarrow\; (a_1 + b_1) + U = (a_2 + b_2) + U$
+$a_1 {\color{dg}{+}} U = a_2 {\color{dg}{+}} U \;\wedge\; b_1 {\color{dg}{+}} U = b_2 {\color{dg}{+}} U \;\Rightarrow\; (a_1 + b_1) {\color{dg}{+}} U = (a_2 + b_2) {\color{dg}{+}} U$
 \\[0.2cm]
-gilt.  Sei also $a_1 + U = a_2 + U$ und $b_1 + U = b_2 + U$ vorausgesetzt.  
+gilt.  Sei also $a_1 {\color{dg}{+}} U = a_2 {\color{dg}{+}} U$ und $b_1 {\color{dg}{+}} U = b_2 {\color{dg}{+}} U$ vorausgesetzt.  
 Zu zeigen ist dann
 \\[0.2cm]
 \hspace*{1.3cm}
-$(a_1 + b_1) + U = (a_2 + b_2) + U$.
+$(a_1 + b_1) {\color{dg}{+}} U = (a_2 + b_2) {\color{dg}{+}} U$.
 \\[0.2cm]
-Aus $a_1 + U = a_2 + U$ folgt nach dem letzten Lemma $a_1 - a_2 \in U$  und aus
-$b_1 + U = b_2 + U$ folgt $b_1 - b_2 \in U$.  Da $U$ unter der Operation $+$ abgeschlossen ist, folgt
+Aus $a_1 {\color{dg}{+}} U = a_2 {\color{dg}{+}} U$ folgt nach dem letzten Lemma $a_1 - a_2 \in U$  und aus
+$b_1 {\color{dg}{+}} U = b_2 {\color{dg}{+}} U$ folgt $b_1 - b_2 \in U$.  Da $U$ unter der Operation $+$ abgeschlossen ist, folgt
 \\[0.2cm]
 \hspace*{1.3cm}
 $(a_1 - a_2) + (b_1 - b_2) \in U$
@@ -1018,38 +1018,38 @@ $(a_1 + b_1) - (a_2 + b_2) \in U$.
 Aus der R\"{u}ckrichtung des letzten  Lemmas folgt nun
 \\[0.2cm]
 \hspace*{1.3cm}
-$(a_1 + b_1) + U = (a_2 + b_2) + U$.
+$(a_1 + b_1) {\color{dg}{+}}  U = (a_2 + b_2) {\color{dg}{+}} U$.
 \\[0.2cm]
 Damit ist gezeigt, dass die Addition auf den Nebenklassen von $U$ wohldefiniert ist. 
 \qed
 
 \begin{Satz}
  Es sei $\langle G, 0, + \rangle$ eine kommutative Gruppe und $U \leq G$.
- Dann ist $\langle G/U, 0 + U, + \rangle$ mit der oben definierten Addition von Nebenklassen eine kommutative Gruppe.
+ Dann ist $\langle G/U, 0 {\color{dg}{+}} U, {\color{red}{+}} \rangle$ mit der oben definierten Addition von Nebenklassen eine kommutative Gruppe.
 \end{Satz}
 
 \proof
 Der Beweis zerf\"{a}llt in drei Teile.
 \begin{enumerate}
-\item $0 + U$ ist das links-neutrale Element, denn wir haben
+\item $0 {\color{dg}{+}} U$ ist das links-neutrale Element, denn wir haben
       \\[0.2cm]
       \hspace*{1.3cm}
-      $(0 + U) + (a + U) = (0 + a) + U = a + U$ \quad f\"{u}r alle $a \in G$.
-\item $-a + U$ ist das links-inverse Element zu $a + U$, denn wir haben
+      $(0 {\color{dg}{+}} U) {\color{red}{+}} (a {\color{dg}{+}} U) = (0 + a) {\color{dg}{+}} U = a {\color{dg}{+}} U$ \quad f\"{u}r alle $a \in G$.
+\item $-a {\color{dg}{+}} U$ ist das links-inverse Element zu $a {\color{dg}{+}} U$, denn wir haben
       \\[0.2cm]
       \hspace*{1.3cm}
-      $(-a + U) + (a + U) = (-a + a) + U = 0 + U$ \quad f\"{u}r alle $a \in G$.
+      $(-a {\color{dg}{+}} U) {\color{red}{+}} (a {\color{dg}{+}} U) = (-a + a) {\color{dg}{+}} U = 0 {\color{dg}{+}} U$ \quad f\"{u}r alle $a \in G$.
 \item Es gilt das Assoziativ-Gesetz, denn
       \\[0.2cm]
       \hspace*{1.3cm}
       $
       \begin{array}[t]{cl}
-        & \bigl((a + U) + (b + U)\bigr) + (c + U)   \\
-      = & \bigl((a + b) + U\bigr) + (c + U)         \\
-      = & \bigl((a + b) + c\bigr) + U               \\
-      = & \bigl(a + (b + c)\bigr) + U               \\
-      = & (a + U) + \bigl((b + c) + U\bigr)         \\
-      = & (a + U) + \bigl((b + U) + (c + U)\bigr).  \\
+        & \bigl((a {\color{dg}{+}} U) {\color{red}{+}} (b {\color{dg}{+}} U)\bigr) {\color{red}{+}} (c {\color{dg}{+}} U)   \\
+      = & \bigl((a + b) {\color{dg}{+}} U\bigr) {\color{red}{+}} (c {\color{dg}{+}} U)         \\
+      = & \bigl((a + b) + c\bigr) {\color{dg}{+}} U               \\
+      = & \bigl(a + (b + c)\bigr) {\color{dg}{+}} U               \\
+      = & (a {\color{dg}{+}} U) {\color{red}{+}} \bigl((b + c) {\color{dg}{+}} U\bigr)         \\
+      = & (a {\color{dg}{+}} U) {\color{red}{+}} \bigl((b {\color{dg}{+}} U) {\color{red}{+}} (c {\color{dg}{+}} U)\bigr).  \\
       \end{array}
       $
 \item Es gilt das Kommutativ-Gesetz, denn
@@ -1057,10 +1057,10 @@ Der Beweis zerf\"{a}llt in drei Teile.
       \hspace*{1.3cm}
       $
       \begin{array}[t]{cll}
-        & (a + U) + (b + U) \\
-      = & (a + b) + U       \\
-      = & (b + a) + U & \mbox{denn $G$ ist eine kommutative Gruppe} \\
-      = & (b + U) + (a + U). & \hspace*{\fill} \Box
+        & (a {\color{dg}{+}} U) {\color{red}{+}} (b {\color{dg}{+}} U) \\
+      = & (a + b) {\color{dg}{+}} U       \\
+      = & (b + a) {\color{dg}{+}} U & \mbox{denn $G$ ist eine kommutative Gruppe} \\
+      = & (b {\color{dg}{+}} U) {\color{red}{+}} (a {\color{dg}{+}} U). & \hspace*{\fill} \Box
       \end{array}
       $
 \end{enumerate}
@@ -1074,18 +1074,18 @@ $k\mathbb{Z} := \bigr\{ k \cdot x \mid x \in \mathbb{Z} \bigr\}$
 Untergruppen der Gruppe $\langle \mathbb{Z}, 0, + \rangle$ sind.  Der letzte Satz zeigt nun, dass die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbb{Z}_k := \mathbb{Z}/(k\mathbb{Z}) = \bigl\{ l + k\mathbb{Z} \mid l \in \mathbb{Z} \}$
+$\mathbb{Z}_k := \mathbb{Z}/(k\mathbb{Z}) = \bigl\{ l {\color{dg}{+}} k\mathbb{Z} \mid l \in \mathbb{Z} \}$
 \\[0.2cm]
 zusammen mit der durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$(l_1 + k\mathbb{Z}) + (l_2 + k\mathbb{Z}) = (l_1 + l_2) + k\mathbb{Z}$
+$(l_1 {\color{dg}{+}} k\mathbb{Z}) {\color{red}{+}} (l_2 {\color{dg}{+}} k\mathbb{Z}) = (l_1 + l_2) {\color{dg}{+}} k\mathbb{Z}$
 \\[0.2cm]
-definierten Addition eine Gruppe ist, deren neutrales Element die Menge $0 + k\mathbb{Z} = k\mathbb{Z}$ ist.
+definierten Addition eine Gruppe ist, deren neutrales Element die Menge $0 {\color{dg}{+}} k\mathbb{Z} = k\mathbb{Z}$ ist.
 Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$l_1 + k\mathbb{Z} = l_2 + k\mathbb{Z}$
+$l_1 {\color{dg}{+}} k\mathbb{Z} = l_2 {\color{dg}{+}} k\mathbb{Z}$
 \\[0.2cm]
 genau dann, wenn
 \\[0.2cm]
@@ -1102,7 +1102,7 @@ ist.  Damit sehen wir, dass die Menge $\mathbb{Z}/(k\mathbb{Z})$ aus genau $k$ v
 es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbb{Z}_k = \bigl\{ l + k\mathbb{Z} \mid l \in \{0, \cdots, k - 1\} \bigr\}$.
+$\mathbb{Z}_k = \bigl\{ l {\color{dg}{+}} k\mathbb{Z} \mid l \in \{0, \cdots, k - 1\} \bigr\}$.
 \vspace*{0.2cm}
 
 \exercise
