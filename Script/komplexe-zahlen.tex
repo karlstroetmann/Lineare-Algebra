@@ -13,7 +13,7 @@ gelten.  Wir definieren dazu die Menge $\mathbb{C}$ der \emph{komplexen Zahlen} 
 von Paaren
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathbb{C} := \{ \pair(x,y) \mid x \in \mathbb{R} \wedge y \in \mathbb{R} \}$.
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{$\mathbb{C} := \{ \pair(x,y) \mid x \in \mathbb{R} \wedge y \in \mathbb{R} \}$.}}}}}
 \\[0.2cm]
 Unser Ziel ist es, auf der Menge $\mathbb{C}$ Operationen $+$ und $\cdot$ so einzuf\"{u}hren, dass
 die Struktur
@@ -21,8 +21,15 @@ die Struktur
 \hspace*{1.3cm}
 $\langle \mathbb{C}, \pair(0,0), \pair(1,0), +, \cdot \rangle$
 \\[0.2cm]
-damit ein K\"{o}rper wird und dass gleichzeitig f\"{u}r $i$ die Gleichung $i \cdot i = -1$ erf\"{u}llt
-ist.  Zur Vereinfachung der Schreibweise werden wir dass Paar 
+damit ein K\"{o}rper wird und dass, wenn wir 
+\\[0.2cm]
+\hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{$i := \langle 0, 1 \rangle$}}}}} 
+\quad definieren, die Gleichung \quad
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{$i \cdot i = -1$}}}}}
+\\[0.2cm]
+erf\"{u}llt
+ist.  Zur Vereinfachung der Schreibweise werden wir das Paar 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x,y)$ \quad auch als \quad $x + i \cdot y$
@@ -53,7 +60,7 @@ Damit ist die Struktur
 $\langle \mathbb{C}, \pair(0,0), + \rangle$
 \\[0.2cm]
 schon mal eine kommutative Gruppe.
-\"{u}bertragen wir die Definition der Addition in die suggestive Schreibweise, so erhalten wir
+\"{U}bertragen wir die Definition der Addition in die suggestive Schreibweise, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $(x_1 + i \cdot y_1) + (x_2 + i \cdot y_2) = (x_1 + x_2) + i \cdot (y_1 + y_2)$.
@@ -85,9 +92,10 @@ Wir definieren daher f\"{u}r Paare $\pair(x_1,y_1), \pair(x_2,y_2) \in \mathbb{C
 die Festlegung
 \\[0.2cm]
 \hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
 $\pair(x_1,y_1) \cdot \pair(x_2,y_2) := 
  \pair(x_1 \cdot x_2 - y_1 \cdot y_2,\; x_1 \cdot y_2 + y_1 \cdot x_2)
-$.
+$.}}}}}
 \\[0.2cm]
 Es ist nun leicht zu sehen, dass f\"{u}r die so definierte Multiplikation das Kommutativ-Gesetz gilt.
 Auch die G\"{u}ltigkeit des Assoziativ-Gesetzes l\"{a}sst sich nachrechnen: Die Rechnung ist zwar etwas l\"{a}nger,
@@ -150,12 +158,13 @@ woraus sofort
 \hspace*{1.3cm}
 $a = \bruch{x}{x^2 + y^2}$
 \\[0.2cm]
-folgt.  Damit sehen wir, dass das Paar
+folgt.  Damit sehen wir, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\left\langle \bruch{x}{x^2 + y^2},\; \bruch{-y}{x^2 + y^2}\right\rangle$
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$\bigl(\pair(x,y)\bigr)^{-1} = \left\langle \bruch{x}{x^2 + y^2},\; \bruch{-y}{x^2 + y^2}\right\rangle$}}}}}
 \\[0.2cm]
-das multiplikative Inverse von $\pair(x,y)$ ist.  In suggestiver Schreibweise liest sich das als
+gilt.  In suggestiver Schreibweise liest sich das als
 \\[0.2cm]
 \hspace*{1.3cm}
 $(x + i \cdot y)^{-1} = \bruch{1}{x^2 + y^2} \cdot (x  - i \cdot y)$.
@@ -171,7 +180,7 @@ erf\"{u}llt ist.  Damit haben wir nun insgesamt gezeigt, dass die Struktur
 $\bigl\langle \mathbb{C}, \pair(0,0), \pair(1,0), +, \cdot \bigr\rangle$ 
 \\[0.2cm]
 ein K\"{o}rper ist.  Die Zahl $i$ wird in diesem K\"{o}rper durch das Paar $\pair(0,1)$ dargestellt und
-Sie k\"{o}nnen leicht sehen, dass
+Sie k\"{o}nnen \"{u}berpr\"{u}fen, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $i \cdot i = \pair(0,1) \cdot \pair(0,1) = \pair(-1,0) = -1$
@@ -179,8 +188,8 @@ $i \cdot i = \pair(0,1) \cdot \pair(0,1) = \pair(-1,0) = -1$
 gilt.  Damit hat in dem so definierten K\"{o}rper $\mathbb{C}$ die Gleichung $z^2 = -1$ die L\"{o}sung
 $i = \pair(0,1)$.  Wir schreiben daher auch $i = \sqrt{-1}$.
 
-Ist $z = \pair(x,y) = x + i \cdot y$ eine komplexe Zahl, so ist bezeichnen wir $x$ als den \emph{Realteil}
-und $y$ als den Imagin\"{a}rteil von $z$.
+Ist $z = \pair(x,y) = x + i \cdot y$ eine komplexe Zahl, so bezeichnen wir $x$ als den \colorbox{yellow}{\emph{Realteil}}
+und $y$ als den \colorbox{yellow}{\emph{Imagin\"{a}rteil}} von $z$.
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -191,7 +200,7 @@ und $y$ als den Imagin\"{a}rteil von $z$.
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 
 
-\section{Quadratwurzeln komplexer Zahlen}
+\section{Quadratwurzeln komplexer Zahlen$^*$}
 Wir \"{u}berlegen uns nun, wie wir aus komplexen Zahlen die Wurzel ziehen k\"{o}nnen.  Ist eine komplexe Zahl
 $x + i \cdot y$ gegeben, so suchen wir also eine komplexe Zahl $a + i \cdot b$, so dass
 \\[0.2cm]
@@ -324,10 +333,10 @@ Korrespondenz
 $a + i \cdot b \;\widehat{=}\; \pair(a,b)$.
 \\[0.2cm]
 Stellen wir komplexe Zahlen in dieser Weise geometrisch dar, so nennen wir die resultierende Zahlen-Ebene
-die \emph{Gau\3'sche Zahlen-Ebene}.  Abbildung \ref{fig:gauss-ebene.eps} zeigt diese Ebene.
+die \colorbox{yellow}{\emph{Gau\3'sche Zahlen-Ebene}}.  Abbildung \ref{fig:gauss-ebene.eps} zeigt diese Ebene.
 Dort ist die komplexe Zahl $a + i \cdot b$ eingezeichnet.  Der Abstand, den der Punkt mit den Koordinaten
 $x = a$ und $y = b$ von dem Ursprungspunkt mit den Koordinaten $x = 0$ und $y = 0$ hat, betr\"{a}gt nach dem
-Satz des Pythagoras $\sqrt{a^2 + b^2\,}$.  Daher ist der Betrag einer komplexen Zahl wie folgt definiert:
+Satz des Pythagoras $\sqrt{a^2 + b^2\,}$.  Daher ist der \colorbox{yellow}{\emph{Betrag}} einer komplexen Zahl wie folgt definiert:
 \\[0.2cm]
 \hspace*{1.3cm}
 $|a + i \cdot b| := \sqrt{a^2 + b^2\,}$.
@@ -358,8 +367,8 @@ der Gleichung
 \\[0.2cm]
 \hspace*{1.3cm} $\varphi = \arctan\Bigl(\bruch{b}{a}\Bigr)$
 \\[0.2cm]
-ausrechnen.  Das Paar $\pair(r, \varphi)$ bezeichnen wir als die \emph{Polarform} der
-komplexen Zahl $a + i \cdot b$, w\"{a}hrend wir das Paar $\pair(a,b)$ die \emph{kartesische Darstellung}
+ausrechnen.  Das Paar $\pair(r, \varphi)$ bezeichnen wir als die \colorbox{yellow}{\emph{Polarform}} der
+komplexen Zahl $a + i \cdot b$, w\"{a}hrend wir das Paar $\pair(a,b)$ die \colorbox{yellow}{\emph{kartesische Darstellung}}
 nennen.  Es ist instruktiv zu sehen, was passiert, wenn wir zwei
 komplexe Zahlen in Polarform
 \\[0.2cm]
@@ -399,7 +408,7 @@ fest:
 = \bigl(\cos(\varphi_1 + \varphi_2) + i \cdot \sin(\varphi_1 + \varphi_2) \bigr).
 \end{equation}
 Wir sehen, dass es einfach ist, komplexe Zahlen in der Polarform zu
-multiplizieren: Die Winkel der Zahlen werden addiert.  Der \"{u}bersichtlichkeit halber habe ich
+multiplizieren: Die Winkel der Zahlen werden addiert.  Der \"{U}bersichtlichkeit halber habe ich
 die Betr\"{a}ge $r_1$ und $r_2$ in der oberen Formel weggelassen.  
 
 \subsection{Potenzen und allgemeine Wurzeln}
@@ -409,7 +418,8 @@ potenzieren, denn nach Gleichung \ref{eq:komplex_mult2} gilt f\"{u}r alle nat\"{
   \label{eq:komplex_potenz}
   \bigl(\cos(\varphi) + i \cdot \sin(\varphi)\bigr)^n = \cos(n \cdot \varphi) + i \cdot \sin(n \cdot \varphi).
 \end{equation}
-Diese Formel wird auch als \href{http://de.wikipedia.org/wiki/Abraham_de_Moivre}{\emph{Satz von de Moivre}} bezeichnet.  Sie kann auch zum Ziehen
+Diese Formel wird auch als \href{http://de.wikipedia.org/wiki/Abraham_de_Moivre}{\emph{Satz von de Moivre}} bezeichnet.  
+Sie kann auch zum Ziehen
 beliebiger Wurzeln aus einer komplexen Zahl verwendet werden.  Um mit Hilfe dieses Satzes Wurzeln ziehen
 zu k\"{o}nnen, bemerken wir zun\"{a}chst, dass die Funktionen $\sin(x)$ und $\cos(x)$ periodisch mit der Periode
 $2 \cdot \pi$ sind, es gilt also
@@ -451,7 +461,8 @@ gilt, wobei wir $k$ auf die Elemente der Menge $\{0,1, \cdots, n-1\}$ beschr\"{a
 Werte von $k$ liefern Winkel, die gr\"{o}\3er als $2 \cdot \pi$ sind.  Wir definieren daher
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\zeta_n := \cos\Bigl(\frac{2 \cdot \pi}{n}\Bigr) + i \cdot \sin\Bigl(\frac{2 \cdot \pi}{n}\Bigr)$
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$\ds\zeta_n := \cos\Bigl(\frac{2 \cdot \pi}{n}\Bigr) + i \cdot \sin\Bigl(\frac{2 \cdot \pi}{n}\Bigr)$}}}}}
 \\[0.2cm]
 als die \emph{primitive} $n$-te Einheitswurzel und sehen, dass die Zahlen
 \\[0.2cm]
@@ -568,7 +579,7 @@ $\ds\cos\Bigl(\frac{\pi}{6}\Bigr) = \frac{1}{2}\cdot\sqrt{3}$ \quad und \quad $\
 voraussetzen.
 \exend
 
-\section{Anwendung der komplexen Zahlen}
+\section{Anwendung der komplexen Zahlen$^*$}
 Wir k\"{o}nnen jetzt zwar mit komplexen Zahlen rechnen, wir haben aber bisher noch nicht gesehen, warum der 
 Gebrauch von komplexen Zahlen \"{u}berhaupt notwendig ist.  Es gibt in der Mathematik eine Vielzahl von
 Anwendung der komplexen Zahlen.  Stellvertretend m\"{o}chte ich an dieser Stelle die Fourier-Transformation
@@ -576,7 +587,7 @@ einer Funktion nennen, die in der Signalverarbeitung eine gro\3e Rolle spielt.  
 ist aus Zeitgr\"{u}nden im Rahmen einer einf\"{u}hrenden Mathematik-Vorlesung leider unm\"{o}glich.  Auch f\"{u}r die
 Anwendung komplexer Zahlen bei der L\"{o}sung von Differenzial-Gleichungen ist es jetzt noch zu fr\"{u}h.  Ich
 m\"{o}chte statt dessen den historischen Weg gehen und zeigen, wie die komplexen Zahlen tats\"{a}chlich entdeckt
-worden sind.  Ausgangspunkt unserer \"{u}berlegungen ist dabei die Gleichung
+worden sind.  Ausgangspunkt unserer \"{U}berlegungen ist dabei die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^3 - 15 \cdot x - 4 = 0$.
@@ -779,26 +790,6 @@ sich die Formel
 Die trigonometrische Herleitung ist allerdings deutlich aufwendiger als die Herleitung die wir in diesem
 Kapitel auf algebraischem Wege mit Hilfe der komplexen Zahlen gefunden haben.
 
-\exercise
-Bestimmen Sie mit Hilfe der Cardanischen Formel alle komplexen L\"{o}sungen der Gleichung
-\\[0.2cm]
-\hspace*{1.3cm}
-$z^3 + z^2 + z + 1 = 0$.
-\\[0.2cm]
-\textbf{1.~Hinweis}:  Machen Sie den Ansatz $z = x + c$ und w\"{a}hlen Sie $c$ so, dass Sie f\"{u}r $x$ eine
-Gleichung der Form
-\\[0.2cm]
-\hspace*{1.3cm}
-$x^3 - p \cdot x - q = 0$
-\\[0.2cm]
-erhalten.  Diese Gleichung f\"{u}r $x$ k\"{o}nnen Sie dann mit Hilfe der Cardanischen Formel l\"{o}sen.
-
-\noindent
-\textbf{2.~Hinweis}:  Die obige Gleichung ist so einfach, dass Sie eine der L\"{o}sungen auch 
-raten k\"{o}nnten.  Anschlie\3end k\"{o}nnten Sie dann mit Hilfe der Polynom-Division die geratene L\"{o}sung aus
-dem Polynom $p(z) = z^3 + z^2 + z + 1$ heraus dividieren und die verbleibende quadratische Gleichung
-l\"{o}sen.  Das ist aber \underline{nicht} der Sinn dieser Aufgabe!
-\exend
 
 \exercise
 F\"{u}r welche $z \in \mathbb{C}$ gilt die Gleichung
@@ -806,7 +797,6 @@ F\"{u}r welche $z \in \mathbb{C}$ gilt die Gleichung
 \hspace*{1.3cm}
 $\left(\bruch{1+z}{1-z}\right)^2 = -1$?
 \exend
-\pagebreak
 
 \exercise
 F\"{u}r welche Zahlen $x, y \in \mathbb{R}$ gilt
@@ -844,10 +834,11 @@ zusammen, die wir allerdings jetzt noch nicht beweisen k\"{o}nnen.
 \subsection{Die Eulersche Formel}
 Zwischen der Exponential-Funktion $x \mapsto e^x$ und den trigonometrischen Funktionen 
 $x \mapsto \sin(x)$ und $x \mapsto \cos(x)$ gibt es einen wichtigen Zusammenhang, der als
-\emph{Eulersche Formel} bekannt ist.  Es gilt
+\colorbox{yellow}{\emph{Eulersche Formel}} bekannt ist.  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-\framebox{\colorbox{amber}{$e^{i \cdot \varphi} = \cos(\varphi) + i \cdot \sin(\varphi)$.}}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$e^{i \cdot \varphi} = \cos(\varphi) + i \cdot \sin(\varphi)$.}}}}}
 \\[0.2cm]
 Diese Formel k\"{o}nnen wir verstehen, wenn wir die Reihenentwicklung der beteiligten Funktionen kennen.
 In der Analysis werden wir sp\"{a}ter sehen, dass $e^x$, $\sin(x)$ und $\cos(x)$ wie folgt als Reihen
@@ -862,9 +853,11 @@ k\"{o}nnen wir die G\"{u}ltigkeit der Eulerschen Formel nachvollziehen.  Setzen 
 f\"{u}r $\varphi$ den Wert $\pi$ ein, so erhalten wir die \emph{Eulersche Identit\"{a}t}
 \\[0.2cm]
 \hspace*{1.3cm}
-\framebox{\colorbox{amber}{$e^{i \cdot \pi} = -1$.}}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$e^{i \cdot \pi} = -1$.}}}}}
 \\[0.2cm]
 Diese Formel liefert einen Zusammenhang zwischen $\pi$, $e$ und der imagin\"{a}ren Einheit $i$.
+\pagebreak
 
 \subsection{Der Fundamentalsatz der Algebra}
 In diesem Abschnitt zitieren wir (ohne Beweis) den sogenannten \emph{Fundamentalsatz der Algebra}.  Dieser Satz
@@ -896,7 +889,7 @@ $p(z) = (z-z_1) \cdot (z-z_2) \cdot \mbox{\dots} \cdot (z-z_{n-1}) \cdot (z - z_
 schreiben k\"{o}nnen.  Dabei brauchen die komplexen Zahlen $z_i$ keineswegs paarweise verschieden zu sein,
 sondern sie k\"{o}nnen auch durchaus gleich sein.  Wir bemerken noch, dass diese Darstellung bis auf die
 Reihenfolge der $z_i$ eindeutig sein muss, denn die $z_i$ sind genau die Nullstellen des Polynoms
-$p(z)$ und ein Polynom vom Grade $n$ hat, wie die obigen \"{u}berlegungen zeigen, h\"{o}chstens $n$
+$p(z)$ und ein Polynom vom Grade $n$ hat, wie die obigen \"{U}berlegungen zeigen, h\"{o}chstens $n$
 verschiedene Nullstellen.
 \vspace*{0.2cm} 
 

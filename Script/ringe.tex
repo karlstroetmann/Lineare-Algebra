@@ -2,8 +2,8 @@
 In diesem Abschnitt behandeln wir 
 \href{http://de.wikipedia.org/wiki/Ring_(Algebra)}{\emph{Ringe}} und 
 \href{http://en.wikipedia.org/wiki/Field_(mathematics)}{\emph{K\"{o}rper}}.  Diese Begriffe werde ich gleich erkl\"{a}ren.
-Im Folgenden m\"{o}chte ich einen kurzen \"{u}berblick \"{u}ber den Aufbau dieses Kapitels geben.  Da Sie Ringe und
-K\"{o}rper  noch nicht kennen, wird dieser \"{u}berblick notwendigerweise informal und
+Im Folgenden m\"{o}chte ich einen kurzen \"{U}berblick \"{u}ber den Aufbau dieses Kapitels geben.  Da Sie Ringe und
+K\"{o}rper  noch nicht kennen, wird dieser \"{U}berblick notwendigerweise informal und
 unpr\"{a}zise sein.  Es geht mir hier nur darum, dass Sie eine, zun\"{a}chst sicher noch verschwommene, Vorstellung
 von dem, was Sie in diesem Kapitel erwartet, bekommen.
 
@@ -31,7 +31,7 @@ dass der so erzeugte Faktor-Ring sogar ein K\"{o}rper ist.
 
 \section{Definition und Beispiele}
 \begin{Definition}[Ring]
-Ein $4$-Tupel $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ ist ein \emph{Ring}, falls gilt:
+Ein $4$-Tupel $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ ist ein \emph{\colorbox{yellow}{Ring}}, falls gilt:
 \begin{enumerate}
 \item $\langle R, 0, + \rangle$ ist eine kommutative Gruppe,
 \item $\cdot: R \times R \rightarrow R$ ist eine Funktion f\"{u}r welche die folgenden Gesetze gelten:
@@ -49,19 +49,19 @@ Ein $4$-Tupel $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ ist ein \emph{Ring}
 \end{enumerate}
 Die Operation ``$+$'' nennen wir die Addition auf dem Ring $\mathcal{R}$, die Operation ``$\cdot$'' bezeichnen 
 wir als Multiplikation.
-$\mathcal{R}$ ist ein \emph{kommutativer Ring} falls zus\"{a}tzlich f\"{u}r die Multiplikation
+$\mathcal{R}$ ist ein \colorbox{yellow}{\emph{kommutativer Ring}} falls zus\"{a}tzlich f\"{u}r die Multiplikation
 das Kommutativ-Gesetz
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \cdot y = y \cdot x$ \quad f\"{u}r alle $x,y \in R$
 \\[0.2cm]
-gilt.  Wir sagen, dass $R$ eine \emph{Eins} hat, wenn es f\"{u}r die Multiplikation ein Element $e$ gibt, so dass
+gilt.  Wir sagen, dass $R$ eine \colorbox{yellow}{\emph{Eins}} hat, wenn es f\"{u}r die Multiplikation ein Element $e$ gibt, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $e \cdot x = x \cdot e = x$ \quad f\"{u}r alle $x \in R$
 \\[0.2cm]
 gilt.  Dieses Element $e$ hei\3t dann die \emph{Eins} des Rings.  In diesem Fall schreiben wir
-$\mathcal{R} = \langle R, 0, e, +, \cdot \rangle$, wir geben die Eins also explizit in der Struktur
+$\mathcal{R} = \langle R, 0, e, +, \cdot \rangle$, wir geben die Eins also explizit in der Struktur $\mathcal{R}$ mit an
 an.
 \eox
 \end{Definition}
@@ -126,20 +126,24 @@ Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen de
 \item Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ ist ebenfalls ein kommutativer Ring mit
       Eins.   \eox
 \end{enumerate}
+\vspace*{-0.5cm}
 
-In dieser Vorlesung werden wir nur solche Ringe betrachten, die erstens kommutativ sind und
-zweitens eine Eins haben. 
+\begin{center}
+\hspace*{-0.3cm}
+\framebox{\framebox{\colorbox{red}{In dieser Vorlesung werden wir nur solche Ringe betrachten, die kommutativ sind und eine Eins haben.}}}
+\end{center}
+
 Ein wichtiger Spezialfall ist der Fall eines kommutativen Rings 
 $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ mit Eins, 
 f\"{u}r den die Struktur $\langle R \backslash \{0\}, 1, \cdot \rangle$
 eine Gruppe ist.  Dieser Spezialfall liegt beispielsweise bei dem Ring  
-$\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ vor.  In einem solchen Fall sprechen wir von einem \emph{K\"{o}rper}.  Die formale
+$\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ vor.  In einem solchen Fall sprechen wir von einem \colorbox{yellow}{\emph{K\"{o}rper}}.  Die formale
 Definition folgt.
 \pagebreak
 
 
 \begin{Definition}[K\"{o}rper]
-Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \emph{K\"{o}rper}, falls gilt:
+Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \colorbox{yellow}{\emph{K\"{o}rper}}, falls gilt:
 \begin{enumerate}
 \item $\langle K, 0, + \rangle$ ist eine kommutative Gruppe,
 \item $\langle K \backslash \{ 0 \}, 1, \cdot \rangle$ ist ebenfalls eine kommutative Gruppe,
@@ -184,13 +188,13 @@ hergeleitet.  Dieser Widerspruch zeigt, dass sich der Ring $\mathcal{R}$ sicher 
 einem K\"{o}rper erweitern l\"{a}sst.
 
 \begin{Definition}[Integrit\"{a}ts-Ring]
-  Ein Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ hei\3t \emph{nullteilerfrei}, wenn
+  Ein Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ hei\3t \colorbox{yellow}{\emph{nullteilerfrei}}, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall a, b \in R: \bigl(a \cdot b = 0 \rightarrow a = 0 \vee b = 0\bigr)$
   \\[0.2cm]
   gilt, die Zahl $0$ l\"{a}sst sich in einem nullteilerfreien Ring also nur als triviales Produkt darstellen.
-  Ein nullteilerfreier, kommutativer Ring, der eine Eins hat, wird als \emph{Integrit\"{a}ts-Ring}
+  Ein nullteilerfreier, kommutativer Ring, der eine Eins hat, wird als \colorbox{yellow}{\emph{Integrit\"{a}ts-Ring}}
   bezeichnet.
 \eox
 \end{Definition}
@@ -229,7 +233,7 @@ Weise mit der \"{A}quivalenz-Relationen \emph{vertr\"{a}glich} sind.  In diesem 
 
 \begin{Definition}[Kongruenz-Relation]
 Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und $\sim\; \subseteq R \times R$ sei eine
-\"{A}quivalenz-Relation auf $R$.   Wir nennen $\sim$ eine \emph{Kongruenz-Relation} falls zus\"{a}tzlich
+\"{A}quivalenz-Relation auf $R$.   Wir nennen $\sim$ eine \colorbox{yellow}{\emph{Kongruenz-Relation}} falls zus\"{a}tzlich
 die folgenden beiden Bedingungen erf\"{u}llt sind:
 \begin{enumerate}
 \item $\forall a_1, a_2, b_1, b_2 \in R: 
@@ -291,7 +295,7 @@ $[a_1 + b_1]_\sim = [a_2 + b_2]_\sim$.
 Genauso l\"{a}sst sich zeigen, dass auch die Multiplikation $\cdot$ auf $R/\!\sim$ wohldefiniert ist.
 Mit den obigen  Definitionen von $+$ und $\cdot$ haben wir nun eine Struktur 
 $\mathcal{R}/\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$ geschaffen, die als der
-\emph{Faktor-Ring} $\mathcal{R}$ modulo $\sim$ bezeichnet wird. 
+\colorbox{yellow}{\emph{Faktor-Ring}} $\mathcal{R}$ modulo $\sim$ bezeichnet wird. 
 Der n\"{a}chste Satz zeigt, dass es sich bei dieser Struktur tats\"{a}chlich um einen Ring handelt.
 
 \begin{Satz}[Faktor-Ring] \label{satz:faktor_ring} 
@@ -299,7 +303,7 @@ Der n\"{a}chste Satz zeigt, dass es sich bei dieser Struktur tats\"{a}chlich um 
   $\sim$ eine Kongruenz-Relation auf diesem Ring, so ist die Struktur 
   $\mathcal{R}/\!\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$
   mit den oben f\"{u}r \"{A}quivalenz-Klassen definierten Operationen $+$ und $\cdot$ ein kommutativer 
-  Ring mit Eins. 
+  Ring mit Eins.  
 \end{Satz}
 
 \proof

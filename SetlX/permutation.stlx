@@ -3,15 +3,6 @@
 product := procedure(r1, r2) {
     return { [x,z] : [x,y] in r1, [y,z] in r2 };
 };
-
-// Compute the set of all permutations on the set S_n = { 1, ..., n }
-allPermutations := procedure(n) {
-	return [ toPermutation(l) : l in allLists({1 .. n}) ];
-};
-// transform a list into a relation
-toPermutation := procedure(l) {
-	return { [i, l[i]] : i in [1 .. #l] };
-};
 // For a given set s, this function computes the set of all those lists 
 // that contain each of the elements of s exactly once.  In effect, these 
 // are all permutations of the set s.
@@ -21,7 +12,14 @@ allLists := procedure(s) {
     }
     return { [ x ] + l : x in s, l in allLists(s - { x }) };
 };
-
+// transform a list into a relation
+toPermutation := procedure(l) {
+	return { [i, l[i]] : i in [1 .. #l] };
+};
+// Compute the set of all permutations on the set S_n = { 1, ..., n }
+allPermutations := procedure(n) {
+	return [ toPermutation(l) : l in allLists({1 .. n}) ];
+};
 // Given a list of permutations sn, this function associates names with the 
 // elements of sn.
 makeMap := procedure(sn, nd) {
@@ -34,7 +32,6 @@ makeMap := procedure(sn, nd) {
     }
     return map;
 };
-
 // find non-commuting elements
 findNC := procedure(n, map) {
     sn := allPermutations(n);
@@ -110,5 +107,5 @@ test := procedure(n) {
     findNC(n, map);
 };
 
-// test(3);
-test(4);  // You need a huge screen to see this group!
+test(3);
+// test(4);  // You need a huge screen to see this group!
