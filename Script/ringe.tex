@@ -124,13 +124,12 @@ Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen de
 \item Die Struktur $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$ ist ein kommutativer
       Ring mit  Eins.  
 \item Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ ist ebenfalls ein kommutativer Ring mit
-      Eins.   \eox
+      Eins.   \eoxs
 \end{enumerate}
-\vspace*{-0.5cm}
 
 \begin{center}
-\hspace*{-0.3cm}
-\framebox{\framebox{\colorbox{red}{In dieser Vorlesung werden wir nur solche Ringe betrachten, die kommutativ sind und eine Eins haben.}}}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+Wir werden im Folgenden nur Ringe betrachten, die kommutativ sind und eine Eins haben.}}}}}
 \end{center}
 
 Ein wichtiger Spezialfall ist der Fall eines kommutativen Rings 
@@ -233,8 +232,8 @@ Weise mit der \"{A}quivalenz-Relationen \emph{vertr\"{a}glich} sind.  In diesem 
 
 \begin{Definition}[Kongruenz-Relation]
 Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und $\sim\; \subseteq R \times R$ sei eine
-\"{A}quivalenz-Relation auf $R$.   Wir nennen $\sim$ eine \colorbox{yellow}{\emph{Kongruenz-Relation}} falls zus\"{a}tzlich
-die folgenden beiden Bedingungen erf\"{u}llt sind:
+\"{A}quivalenz-Relation auf $R$.   Wir nennen $\sim$ eine \colorbox{yellow}{\emph{Kongruenz-Relation}} auf $\mathcal{R}$ 
+falls zus\"{a}tzlich die folgenden beiden Bedingungen erf\"{u}llt sind:
 \begin{enumerate}
 \item $\forall a_1, a_2, b_1, b_2 \in R: 
        \bigl(a_1 \sim a_2 \wedge b_1 \sim b_2 \rightarrow a_1 + b_1 \sim a_2 + b_2\bigr)
@@ -337,7 +336,7 @@ Wir weisen die Eigenschaften, die einen Ring auszeichnen, einzeln nach.
       \\[0.2cm]
       \hspace*{1.3cm}
       $[a]_\sim + [-a]_\sim = [a + -a]_\sim = [0]_\sim$.
-\item Die Nachweise, dass auch f\"{u}r den  Operator ``$\cdot$'' dass Assoziativ- und das Kommutativ-Gesetz 
+\item Die Nachweise, dass auch f\"{u}r den  Operator ``$\cdot$'' dass Assoziativ- und das Kommutativ-Gesetz gilt,
       sind v\"{o}llig analog zu den entsprechenden Beweisen f\"{u}r den Operator ``$+$''.
       Ebenso ist der Nachweis, dass die \"{A}quivalenz-Klasse $[1]_\sim$ das neutrale Element bez\"{u}glich des Operators 
       ``$\cdot$'' ist, analog zu dem Nachweis, dass die \"{A}quivalenz-Klasse $[0]_\sim$ das neutrale Element
@@ -384,7 +383,7 @@ von $\mathtt{count}$ erfolgt durch Induktion:
              w\"{a}hrend die $1_K$ auf der rechten Seite dieser Gleichung das neutrale Element der
              Multiplikation in dem K\"{o}rper $\mathcal{K}$ bezeichnet.
 \end{enumerate}
-Falls die Menge $K$ endlich ist, definieren wir die \emph{Charakteristik}
+Falls die Menge $K$ endlich ist, definieren wir die \colorbox{yellow}{\emph{Charakteristik}}
 $\mathtt{char}(\mathcal{K})$ des K\"{o}rpers $\mathcal{K}$ als die kleinste nat\"{u}rliche Zahl $k$, f\"{u}r die
 $\mathtt{count}(k) = 0_K$ gilt:
 \\[0.2cm]
@@ -392,35 +391,40 @@ $\mathtt{count}(k) = 0_K$ gilt:
 $\mathtt{char}(\mathcal{K}) = \min\bigl(\{ k \in \mathbb{N} \mid \mathtt{count}(k) = 0_K \}\bigr)$.
 \\[0.2cm]
 Zeigen Sie, dass f\"{u}r einen endlichen K\"{o}rpers $\mathcal{K}$ das Folgende gilt:
-\begin{enumerate}
-\item[(a)] Die Menge $\bigl\{ k \in \mathbb{N} \mid \mathtt{count}(k) = 0_K \bigr \}$
-           ist nicht leer, die Charakteristik eines endlichen K\"{o}rpers ist also wohldefiniert.
+\begin{enumerate}[(a)]
+\item Die Menge $\bigl\{ k \in \mathbb{N} \mid \mathtt{count}(k) = 0_K \bigr \}$
+      ist nicht leer, die Charakteristik eines endlichen K\"{o}rpers ist also wohldefiniert.
 
-           \noindent
-           \textbf{Hinweis}:
-           Da die Menge $K$ endlich ist, ist auch die Menge
-           \\[0.2cm]
-           \hspace*{1.3cm}
-           $\{ \mathtt{count}(n) \mid n \in \mathbb{N} \}$
-           \\[0.2cm]
-           endlich.  Also muss es $n, m \in \mathbb{N}$ geben, so dass
-           \\[0.2cm]
-           \hspace*{1.3cm}
-           $n \not= m$, \quad aber \quad $\mathtt{count}(n) = \mathtt{count}(m)$
-           \\[0.2cm]
-           gilt.
-\item[(b)] Die Charakteristik $\mathtt{char}(\mathcal{K})$ ist eine Primzahl. \eox
+      \noindent
+      \textbf{Hinweis}:
+      Da die Menge $K$ endlich ist, ist auch die Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\{ \mathtt{count}(n) \mid n \in \mathbb{N} \}$
+      \\[0.2cm]
+      endlich.  Also muss es $n, m \in \mathbb{N}$ geben, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $n \not= m$, \quad aber \quad $\mathtt{count}(n) = \mathtt{count}(m)$
+      \\[0.2cm]
+      gilt.
+\item \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+      Die Charakteristik $\mathtt{char}(\mathcal{K})$ eines endlichen Körpers $\mathcal{K}$ ist eine Primzahl.}}}}} \eoxs
 \end{enumerate}
-
 
 \exercise
-\renewcommand{\labelenumi}{(\alph{enumi})}
-\begin{enumerate}
-\item Zeigen Sie, dass es einen K\"{o}rper $K$ mit drei Elementen gibt.
-\item Zeigen Sie, dass es einen K\"{o}rper $K$ mit vier Elementen gibt. \exend
+\begin{enumerate}[(a)]
+\item Zeigen Sie, dass es einen endlichen K\"{o}rper $\mathcal{K}$ mit genau drei Elementen gibt.
+\item Zeigen Sie, dass es einen endlichen K\"{o}rper $\mathcal{K}$ mit genau vier Elementen gibt. 
 \end{enumerate}
-\renewcommand{\labelenumi}{\arabic{enumi}.}
-
+\textbf{Hinweise}:
+\begin{enumerate}
+\item Bei der Konstruktion eines endlichen Körpers mit genau vier Elementen sollten Sie ausnutzen,
+      dass die Charakteristik eines endlichen Körpers eine Primzahl ist.
+\item Die Frage, ob die von Ihnen konstruierte Struktur tatsächlich ein Körper ist, lässt sich am
+      einfachsten mit einem geeigneten \textsc{SetlX}-Programm beantworten.
+      \eoxs
+\end{enumerate}
 
 
 \section{Konstruktion des Quotienten-K\"{o}rpers$^*$}
@@ -434,15 +438,23 @@ gegeben.  Dann definieren wir zun\"{a}chst die Menge
 \hspace*{1.3cm}
 $Q := \bigl\{ \pair(x,y) \in R \times R \mid y \not= 0 \bigr\}$
 \\[0.2cm]
-der formalen Br\"{u}che.  Weiter definieren wir eine Relation 
+der \colorbox{yellow}{\emph{formalen Br\"{u}che}}.  Die Idee dabei ist, dass wir das Paar
+$\pair(x,y)$ als den Bruch $\ds\frac{x}{y}$ interpretieren.  Weiter definieren wir eine Relation 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sim \;\subseteq Q \times Q$
 \\[0.2cm]
-auf $Q$ indem wir festsetzen, dass f\"{u}r alle $\pair(x_1,y_1), \pair(x_2,y_2) \in Q$ das Folgende gilt:
+auf $Q$ indem wir festsetzen, dass f\"{u}r alle Paare $\pair(x_1,y_1), \pair(x_2,y_2) \in Q$ das Folgende gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\pair(x_1, y_1) \;\sim\; \pair(x_2, y_2) \df x_1 \cdot y_2 = x_2 \cdot y_1$.
+\\[0.2cm]
+Diese Definition ist dadurch motiviert, dass für Brüche 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \frac{x_1}{y_1} = \frac{x_2}{y_2} \;\Longleftrightarrow\; x_1 \cdot y_2 = x_2 \cdot y_1$
+\\[0.2cm]
+gilt.
 
 \begin{Satz}
 Die oben definierte Relation  $\sim$ ist eine \"{A}quivalenz-Relation auf der Menge $Q$.
@@ -572,7 +584,7 @@ $\bruch{a}{b} + \bruch{c}{d} = \bruch{a \cdot d + c \cdot b}{b \cdot d}$.
 Die \"{A}quivalenz-Relation $\sim$ erzeugt auf der Menge $Q$ der formalen Br\"{u}che den Quotienten-Raum
 $Q/\!\sim$.
 Unser Ziel ist es, auf diesem Quotienten-Raum 
-eine Ringstruktur zu definieren.  Damit dies m\"{o}glich ist zeigen wir, dass die oben definierte
+eine Ringstruktur zu definieren.  Damit dies m\"{o}glich ist, zeigen wir, dass die oben definierte
 Funktion $+$ mit der auf $Q$ definierten \"{A}quivalenz-Relationen $\sim$ 
 vertr\"{a}glich ist.  Es gelte also
 \\[0.2cm]
@@ -810,7 +822,7 @@ Zus\"{a}tzlich muss das Distributiv-Gesetz nachgewiesen werden.
       \\[0.2cm]
       Genau wie oben folgt nun, dass das Kommutativ-Gesetz auch in $Q/\!\sim$ gilt.
 \item Den Nachweis der Assoziativit\"{a}t und der Kommutativit\"{a}t des Multiplikations-Operators
-      \"{u}berlasse ich Ihnen zur \"{u}bung.
+      \"{u}berlasse ich Ihnen zur \"{U}bung.
 
       \exercise
       Zeigen Sie, dass in $Q/\!\sim$ f\"{u}r die Multiplikation sowohl das Assoziativ-Gesetz als auch das
@@ -873,7 +885,7 @@ Der im Folgenden definierte Begriff des \emph{Ideals} hat in der Theorie der Rin
 Stellung wie der Begriff der Untergruppe in der Theorie der Gruppen.
 \begin{Definition}[Ideal]
 Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutatives Ring mit Eins.
-Eine Teilmenge $I \subseteq R$ ist ein \emph{Ideal in $\mathcal{R}$} falls folgendes gilt:
+Eine Teilmenge $I \subseteq R$ ist ein \colorbox{yellow}{\emph{Ideal in $\mathcal{R}$}} falls folgendes gilt:
 \begin{enumerate}
 \item $I \leq R$,
 
@@ -901,6 +913,7 @@ $\forall a \in I: \forall b \in R: b \cdot a \in I$,
 \\[0.2cm]
 der zweite All-Quantor nicht nur \"{u}ber die Elemente aus $I$ l\"{a}uft, sondern \"{u}ber alle Elemente
 von $R$.  \eox
+\pagebreak
 
 \examples
 \begin{enumerate}
@@ -920,12 +933,12 @@ von $R$.  \eox
             $a + b = 2 \cdot x + 2 \cdot y = 2 \cdot (x + y)$
             \\[0.2cm]
             und damit ist auch $a+b$ eine gerade Zahl.
-      \item Ist $a \in 2\mathbb{Z}$, so gibt es $x \in \mathbb{Z}$ mit $a = 2 \cdot x$.  Dann gilt
+      \item Ist $a \in 2\mathbb{Z}$, so gibt es ein $x \in \mathbb{Z}$ mit $a = 2 \cdot x$.  Dann gilt
             \\[0.2cm]
             \hspace*{1.3cm}
             $-a = - 2 \cdot x = 2 \cdot (-x)$
             \\[0.2cm]
-            und damit ist auch $-a$ eine gerade Zahl.
+            und da mit $x$ auch $-x$ eine ganze Zahl ist, ist $-a$ eine gerade Zahl.
       \item Ist $a$ eine gerade Zahl und ist $b \in \mathbb{Z}$, so gibt es zun\"{a}chst eine
             Zahl $x \in \mathbb{Z}$ mit $a = 2 \cdot x$.  Daraus folgt
             \\[0.2cm]
@@ -970,12 +983,12 @@ von $R$.  \eox
             \hspace*{1.3cm}
             $a \cdot b = (k \cdot x) \cdot b = k \cdot (x \cdot b) \in \textsl{gen}(k)$.
       \end{enumerate}
-      Die Menge $\textsl{gen}(a)$ wird das von $a$ \emph{erzeugte Ideal} genannt.
-      Ideale dieser Form werden in der Literatur als \emph{Haupt-Ideale} bezeichnet.
+      Die Menge $\textsl{gen}(a)$ wird das von $a$ \colorbox{yellow}{\emph{erzeugte Ideal}} genannt.
+      Ideale dieser Form werden in der Literatur als \colorbox{yellow}{\emph{Haupt-Ideale}} bezeichnet.
 \item Wieder sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.  Dann
       sind die Mengen $\{0\}$ und $R$ offenbar wieder Ideale von $R$.  Wir nennen  die Menge $\{0\}$
-      das Null-Ideal und $R$ das Eins-Ideal.  Diese beiden Ideale werden auch als die \emph{trivialen}
-      Ideale bezeichnet.
+      das \colorbox{yellow}{\emph{Null-Ideal}} und $R$ das \colorbox{yellow}{\emph{Eins-Ideal}}.  Diese
+      beiden Ideale werden auch als die \emph{trivialen} Ideale bezeichnet.
       \eox
 \end{enumerate}
 
@@ -987,7 +1000,7 @@ $R$ durch die Forderung
 \hspace*{1.3cm}
 $a \sim_I b \df a - b \in I$.
 \\[0.2cm]
-Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
+Wir zeigen, dass die so definierte Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
 \begin{enumerate}
 \item $\sim_I$ ist reflexiv auf $R$, denn f\"{u}r alle $x \in R$ gilt
       \\[0.2cm]
@@ -1001,7 +1014,7 @@ Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
       $
       \\[0.2cm]
       Da ein Ideal insbesondere eine Untergruppe ist, gilt $0 \in I$ und damit ist $x \sim_I x$
-      gezeigt. \checkmark
+      gezeigt. {\color{green}{\checkmark}}
 \item Wir zeigen: $\sim_I$ ist symmetrisch.  Sei $x \sim_I y$ gegeben.  Nach Definition der
       Relation $\sim_I$ folgt  
       \\[0.2cm]
@@ -1017,7 +1030,7 @@ Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $y \sim_I x$.  
-      \checkmark
+      {\color{green}{\checkmark}}
 \item Wir zeigen: $\sim_I$ ist transitiv.  Es gelte
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1037,7 +1050,7 @@ Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $x \sim_I z$.  
-      \checkmark
+      {\color{green}{\checkmark}}
 \item Wir zeigen: $\sim_I$ ist mit der Addition auf dem Ring $\mathcal{R}$ vertr\"{a}glich.  Es sei
       also
       \\[0.2cm]
@@ -1069,7 +1082,7 @@ Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
       und nach Definition der Relation $\sim_I$ hei\3t das
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x_1 + y_1 \sim_I x_2 + y_2$. \checkmark
+      $x_1 + y_1 \sim_I x_2 + y_2$. {\color{green}{\checkmark}}
 \item Wir zeigen: $\sim_I$ ist mit der Multiplikation auf dem Ring $\mathcal{R}$ vertr\"{a}glich.
       Es sei also wieder
       \\[0.2cm]
@@ -1118,15 +1131,15 @@ Wir zeigen, dass die Relation $\sim_I$ eine Kongruenz-Relation auf $R$ ist.
       gezeigt. Nach Definition der Relation $\sim_I$ ist das \"{a}quivalent zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x_1 \cdot y_1 \sim_I x_2 \cdot y_2$. 
+      $x_1 \cdot y_1 \sim_I x_2 \cdot y_2$ 
       \\[0.2cm]
-      und das war zu zeigen. \checkmark 
+      und das war zu zeigen. {\color{green}{\checkmark}} \qed
 \end{enumerate}
 
 Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und ist $I$ ein
 Ideal dieses Rings, so haben wir gerade gezeigt, dass die von diesem Ideal erzeugte Relation $\sim_I$
 eine Kongruenz-Relation auf $\mathcal{R}$ ist.  Nach dem Satz \"{u}ber Faktor-Ringe
-(das war Satz \ref{satz:faktor_ring} auf Seite \pageref{satz:faktor_ring}) folgt nun, dass die Struktur
+(Satz \ref{satz:faktor_ring} auf Seite \pageref{satz:faktor_ring}) folgt nun, dass die Struktur
 \\[0.2cm]
 \hspace*{1.3cm}
  $\mathcal{R}/I := \langle R/\!\sim_I, [0]_{\sim_I}, [1]_{\sim_I}, +, \cdot \rangle$
@@ -1136,7 +1149,7 @@ untersuchen.
 
 \begin{Definition}[maximales Ideal]
   Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.  Ein Ideal
-  $I$ von $\mathcal{R}$ mit $I \not= R$ ist ein \emph{maximales Ideal} genau dann, wenn f\"{u}r jedes andere Ideal
+  $I$ von $\mathcal{R}$ mit $I \not= R$ ist ein \colorbox{yellow}{\emph{maximales Ideal}} genau dann, wenn f\"{u}r jedes andere Ideal
   $J$ von $\mathcal{R}$ gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -1152,16 +1165,13 @@ k\"{o}nnen.
 \begin{Satz}[Faktor-Ringe maximaler Ideale sind K\"{o}rper] \lb
   Es $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und
   $I$ sei ein maximales Ideal in $\mathcal{R}$.  Dann ist der Faktor-Ring
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $\mathcal{R}/I := \langle R/\!\sim_I, [0]_{\sim_I}, [1]_{\sim_I}, +, \cdot \rangle$
-  \\[0.2cm]
-  ein K\"{o}rper.
+  $\mathcal{R}/I$ ein K\"{o}rper.
 \end{Satz}
 
 \proof  
-Es ist zu zeigen, dass es f\"{u}r jede \"{A}quivalenz-Klasse $[a]_{\sim_I} \not= [0]_{\sim_I}$ ein
-multiplikatives Inverses, also eine \"{A}quivalenz-Klasse $[b]_{\sim_I}$ existiert, so dass
+Es ist zu zeigen, dass zu jeder \"{A}quivalenz-Klasse $[a]_{\sim_I}$ mit $[a]_{\sim_I} \not= [0]_{\sim_I}$ ein
+multiplikatives Inverses existiert.  Wir müssen also zu einer solchen \"{A}quivalenz-Klasse
+$[a]_\sim$ eine \"{A}quivalenz-Klasse $[b]_{\sim_I}$ finden, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $[a]_{\sim_I} \cdot [b]_{\sim_I} = [1]_{\sim_I}$
@@ -1188,7 +1198,7 @@ Wir m\"{u}ssen also f\"{u}r alle $a \in R$ mit $a \not\in I$ ein $b \in R$ finde
 gilt.
 \\[0.2cm]
 \hspace*{1.3cm}
-zu zeigen: \quad 
+Zu zeigen: \quad 
 $\forall a \in R:\bigl(a \not \in I \rightarrow \exists b \in R: a \cdot b - 1 \in I\bigr)$
 \hspace*{\fill} $(*)$
 \\[0.2cm]
@@ -1206,7 +1216,7 @@ Wir zeigen, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $a \cdot 0 + 0 \in J$, \quad also \quad $0 \in J$.
-      \checkmark
+      {\color{green}{\checkmark}}
 \item Wir zeigen, dass $J$ abgeschlossen ist unter Addition.
 
       Es gelte $a \cdot x_1 + y_1 \in J$ und $a \cdot x_2 + y_2 \in J$ und es seien
@@ -1215,7 +1225,7 @@ Wir zeigen, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $(a \cdot x_1 + y_1) + (a \cdot x_2 + y_2) = a \cdot (x_1 + x_2) + (y_1 + y_2) \in J$.
-      \checkmark
+      {\color{green}{\checkmark}}
 \item Wir zeigen, dass $J$ mit jeder Zahl $z$ auch das zugeh\"{o}rige additive Inverse $-z$ enth\"{a}lt.
 
       Es gelte $a \cdot x + y \in J$, wobei
@@ -1224,7 +1234,7 @@ Wir zeigen, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $-(a \cdot x + y) = a \cdot (-x) + (-y) \in J$.
-      \checkmark
+      {\color{green}{\checkmark}}
 \item Wir zeigen, dass $J$ unter Multiplikation mit beliebigen Elementen des Rings abgeschlossen ist.
 
       Es gelte $a \cdot x + y \in J$ mit $x \in R$ und $y \in J$.  Weiter sei $k \in R$.
@@ -1233,7 +1243,7 @@ Wir zeigen, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $k \cdot (a \cdot x + y) = a \cdot (k \cdot x) + (k \cdot y) \in J$.
-      \checkmark
+      {\color{green}{\checkmark}}
 \end{enumerate}
 Damit ist gezeigt, dass $J$ ein Ideal des Rings $\mathcal{R}$ ist.
 Offenbar ist $J$ eine Obermenge von $I$, denn f\"{u}r alle $y \in I$ gilt
@@ -1246,8 +1256,8 @@ Als n\"{a}chstes bemerken wir, dass das Ideal $J$ von dem Ideal $I$ verschieden 
 \hspace*{1.3cm}
 $a = a \cdot 1 + 0 \in J$, \quad aber \quad $a \not\in I$.
 \\[0.2cm]
-Nun ist die Voraussetzung, dass das Ideal $I$ maximal ist.  Da $J \not= I$ aber $I \subseteq J$ ist,
-kann jetzt nur noch $J = R$ gelten.  Wegen $1 \in R$ folgt also $1 \in J$.  Damit gibt es 
+Nun ist die Voraussetzung, dass das Ideal $I$ maximal ist.  Da $I \subseteq J$ aber $J \not= I$  ist,
+kann jetzt nur noch $J = R$ gelten.  Wegen $1 \in R$ folgt also $1 \in J$.  Nach der Definition von $J$ gibt es dann
 ein $x \in R$ und ein $y \in I$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1259,7 +1269,7 @@ gilt.  Aus  $y \in I$ folgt $-y \in I$ und damit haben wir
 $a \cdot x - 1 = -y \in I$.
 \\[0.2cm]
 Setzen wir $b := x$, so haben wir damit die Formel $(*)$ nachgewiesen. \qed
-\pagebreak
+
 
 \exercise
 Es seien $a,b \in \mathbb{N}$ mit $0 < a < b$ und die Zahlen $a, b$ seien teilerfremd, es gelte also

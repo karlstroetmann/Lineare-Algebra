@@ -8,24 +8,24 @@ analysieren und uns ein wenig mit modularer Arithmetik besch\"{a}ftigen.
 \section{Teilbarkeit und modulare Arithmetik}
 
 \begin{Definition}[Teiler]
-  Es seien $a$ und $b$ nat\"{u}rlichen Zahlen.  Dann ist $a$ ein Teiler von $b$, wenn es eine
-  nat\"{u}rliche Zahl $c$ gibt, so dass $a \cdot c = b$ gilt.  In diesem Fall schreiben wir $a \teilt b$.
+  Es seien $a,b \in \mathbb{N}_0$.  Dann ist $a$ ein Teiler von $b$, wenn es ein
+  $c \in \mathbb{N}_0$ gibt, so dass $a \cdot c = b$ gilt.  In diesem Fall schreiben wir $a \teilt b$.
   Formal k\"{o}nnen wir die Teilbarkeitsrelation also wie folgt definieren:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $a \teilt b \df \exists c \in \mathbb{N}: b = a \cdot c$.
+  $a \teilt b \df \exists c \in \mathbb{N}_0: b = a \cdot c$.
 \end{Definition}
 
 \remark
-Offenbar gilt $1 \teilt n$ f\"{u}r alle nat\"{u}rlichen Zahlen $n$, denn f\"{u}r alle $n \in \mathbb{N}$ gilt 
+Offenbar gilt $1 \teilt n$ f\"{u}r alle $n \in \mathbb{N}_0$, denn f\"{u}r alle $n \in \mathbb{N}_0$ gilt 
 $n = 1 \cdot n$.   Aus der Gleichung $0 = n \cdot 0$ folgt analog, dass $n \teilt 0$ f\"{u}r alle 
-$n \in \mathbb{N}$ gilt.  Schlie\3lich zeigt die Gleichung $n = n \cdot 1$, dass $n \teilt n$
-f\"{u}r alle nat\"{u}rlichen Zahlen $n$ gilt.
+$n \in \mathbb{N}_0$ gilt.  Schlie\3lich zeigt die Gleichung $n = n \cdot 1$, dass $n \teilt n$
+f\"{u}r alle  $n \in \mathbb{N}_0$ gilt.
 \vspace*{0.3cm}
 
-F\"{u}r eine positive nat\"{u}rliche Zahl $a$ bezeichnen wir die Menge aller Teiler von $a$ mit
+F\"{u}r eine nat\"{u}rliche Zahl $a$ bezeichnen wir die Menge aller Teiler von $a$ mit
 $\texttt{teiler}(a)$.  Es gilt also
-\[ \texttt{teiler}(a) = \{ q \in \mathbb{N} \mid \exists k \in \mathbb{N}: k \cdot q = a \}. \]
+\[ \texttt{teiler}(a) = \{ q \in \mathbb{N}_0 \mid \exists k \in \mathbb{N}_0: k \cdot q = a \}. \]
 Die Menge aller gemeinsamen Teiler zweier positiver nat\"{u}rlicher Zahlen
 $a$ und $b$ bezeichnen wir mit $\texttt{gt(a,b)}$.  Es gilt
 \[ \texttt{gt}(a,b) = \texttt{teiler}(a) \cap \texttt{teiler}(b). \]
@@ -35,7 +35,7 @@ es gilt also
 
 \begin{Satz}[Divison mit Rest]
   \label{satz:division_mit_rest}
-  Sind $a$ und $b$ nat\"{u}rliche Zahlen mit $b \not= 0$, so gibt es eindeutig bestimmte nat\"{u}rliche Zahlen 
+  Sind $a$ und $b$ nat\"{u}rliche Zahlen mit $b \not= 0$, so gibt es eindeutig bestimmte ganze Zahlen 
   $q$ und $r$, so dass 
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -52,10 +52,10 @@ es gilt also
 
 \proof
 Zun\"{a}chst zeigen wir die Existenz der Zahlen $q$ und $r$ mit den oben behaupteten Eigenschaften.
-Dazu definieren wir eine Menge $M$ von nat\"{u}rlichen Zahlen wie folgt:
+Dazu definieren wir eine Menge $M$ von ganzen Zahlen wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$M := \{ p \in \mathbb{N} \mid p \cdot b \leq a \}$.
+$M := \{ p \in \mathbb{N}_0 \mid p \cdot b \leq a \}$.
 \\[0.2cm]
 Diese Menge ist nicht leer, es gilt $0 \in M$, da $0 \cdot b \leq a$ ist.
 Au\3erdem k\"{o}nnen wir sehen, dass $(a+1) \not\in M$ ist, denn
@@ -76,7 +76,7 @@ Wegen $q \in M$ wissen wir, dass
 \hspace*{1.3cm}
 $a \geq q \cdot b$
 \\[0.2cm]
-gilt, woraus wir $r \geq 0$ schlie\3en k\"{o}nnen und damit ist $r \in \mathbb{N}$.
+gilt, woraus wir $r \geq 0$ schlie\3en k\"{o}nnen und damit ist $r \in \mathbb{N}_0$.
 
 Da wir $q$ als Maximum der Menge $M$ definiert haben, wissen wir weiter, dass
 die Zahl $q + 1$ kein Element der Menge $M$ sein kann, denn sonst w\"{a}re $q$ nicht das Maximum.
@@ -148,8 +148,7 @@ Wie m\"{u}ssen wir den obigen Satz \"{a}ndern, damit er auch dann noch gilt, wen
 Formulieren Sie die ge\"{a}nderte Version des Satzes und beweisen Sie Ihre Version des Satzes!
 
 \remark
-In den meisten Programmier-Sprachen ist die ganzzahlige Division so implementiert, dass
-die Gleichung 
+In vielen Programmier-Sprachen ist die ganzzahlige Division so implementiert, dass die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 $(a \div q) \cdot q + a \modulo q = a$
@@ -161,7 +160,7 @@ f\"{u}r $a < 0$ im Allgemeinen \underline{nicht} gilt!
 Mit dem letzten Satz k\"{o}nnen wir die Menge der Teiler einer nat\"{u}rlichen Zahl $a$ auch wie folgt definieren:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\texttt{teiler}(a) = \{ q \in \mathbb{N} \mid a \modulo q = 0 \}$.
+$\texttt{teiler}(a) = \{ q \in \mathbb{N}_0 \mid a \modulo q = 0 \}$.
 \vspace*{0.3cm}
 
 

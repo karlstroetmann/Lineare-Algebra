@@ -510,7 +510,7 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
 \eox
 \end{Definition}
 
-\begin{Satz}
+\begin{Satz} \label{satz:injektiv_folgt_surjektiv}
   Es sei $M$ eine endliche nicht-leere Menge und die Funktion 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -647,6 +647,54 @@ Sie dürfen die folgenden beiden Fakten aus der elementaren Zahlentheorie ohne Be
       $(a \cdot b) \;\texttt{\symbol{37}}\;p = 0 \;\rightarrow\; a \;\texttt{\symbol{37}}\;p = 0 \;\vee\; b \;\texttt{\symbol{37}}\;p = 0$.
       \eox
 \end{enumerate}
+
+\solution
+Wir zeigen, dass die Funktionen $f_k$ für alle $k \in \{1, \cdots, p-1\}$ injektiv sind.  Da die
+Menge $\mathbb{Z}_p$ endlich ist, sind die Funktionen $f_k$ dann nach Satz \ref{satz:injektiv_folgt_surjektiv} 
+auch surjektiv und damit bijektiv.  Um die Injektivität der Funktion $f_k$ zu zeigen, nehmen wir
+an, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_k(x) = f_k(y)$ \quad für $x,y \in \mathbb{Z}_p$ gilt.
+\\[0.2cm]
+Wir haben dann zu zeigen, dass daraus \colorbox{green}{$x = y$} folgt.  Nach Definition der Funktion $f_k$ folgt aus
+$f_k(x) = f_k(y)$ die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$(k \cdot x) \;\texttt{\symbol{37}}\;p = (k \cdot y) \;\texttt{\symbol{37}}\;p$.
+\\[0.2cm]
+Nach dem ersten Hinweis ist dies äquivalent zu 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(k \cdot x - k \cdot y) \;\texttt{\symbol{37}}\;p = 0$.
+\\[0.2cm]
+Klammern wir hier noch $k$ aus, so erhalten wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$k \cdot (x - y) \;\texttt{\symbol{37}}\;p = 0$.
+\\[0.2cm]
+Nach dem zweiten Hinweis folgt nun
+\\[0.2cm]
+\hspace*{1.3cm}
+$k \;\texttt{\symbol{37}}\;p = 0 \;\vee\; (x - y) \;\texttt{\symbol{37}}\;p = 0$.
+\\[0.2cm]
+Da $k < p$ und $k \not= 0$ ist, wissen wir, dass $k \;\texttt{\symbol{37}}\;p \not= 0$ ist.  Also haben wir
+\\[0.2cm]
+\hspace*{1.3cm}
+$(x - y) \;\texttt{\symbol{37}}\;p = 0$,
+\\[0.2cm]
+was wieder nach dem 1.~Hinweis zu
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \;\texttt{\symbol{37}}\;p = y \;\texttt{\symbol{37}}\;p$
+\\[0.2cm]
+äquivalent ist.  Da nun $x$ und $y$ beide nicht-negativ und kleiner als $p$ sind, gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \;\texttt{\symbol{37}}\;p = x$ \quad und $y \;\texttt{\symbol{37}}\;p = y$.
+\\[0.2cm]
+Also haben wir die zu zeigende Gleichung \colorbox{green}{$x = y$} 
+hergeleitet und folglich die Injektivität von $f_k$ nachgewiesen.  \qeds
 
 
 \section{Die Permutations-Gruppe $\mathcal{S}_n$}
@@ -1108,12 +1156,98 @@ $\mathbb{Z}_k = \bigl\{ l {\color{blue}{+}} k\mathbb{Z} \mid l \in \{0, \cdots, 
 \exercise
 Es sei $\langle G, e, \circ \rangle$ eine endliche kommutative Gruppe und es gelte $U \leq G$.
 Zeigen Sie, dass dann $\mathtt{card}(U)$ ein Teiler von $\mathtt{card}(G)$ ist. 
-\vspace*{0.2cm}
 
-\noindent
-\textbf{Hinweis}: Zeigen Sie, dass alle Nebenklassen von $G$ bez\"{u}glich der Untergruppe $U$ dieselbe
+\hint
+Zeigen Sie, dass alle Nebenklassen von $G$ bez\"{u}glich der Untergruppe $U$ dieselbe
 Kardinalit\"{a}t haben.
-\exend
+\eoxs
+
+\solution
+Wir zeigen zunächst, dass alle Nebenklassen von $G$ die selbe Anzahl von Elementen haben.  Dazu
+definieren wir für jedes $a \in G$ eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_a:U \rightarrow a + U$
+\\[0.2cm]
+durch die Festlegung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_a(x) := a + x$.
+\\[0.2cm]
+Die Funktion $f_a$ ist für beliebiges $a \in G$ injektiv, denn aus
+\\[0.2cm]
+\hspace*{1.3cm}
+$f_a(x) = f_a(y)$
+\\[0.2cm]
+folgt nach Definition der Funktion $f_a$ sofort
+\\[0.2cm]
+\hspace*{1.3cm}
+$a + x = a + y$.
+\\[0.2cm]
+Subtrahieren wir auf beiden Seiten dieser Gleichung $a$, so erhalten wir die Gleichung
+\\[0.2cm]
+\hspace*{1.3cm}
+$x = y$
+\\[0.2cm]
+und damit ist die Funktion $f_a$ injektiv.  Die Funktion $f_a$ ist auch surjektiv, denn wenn 
+$y \in a + U$ ist, dann gibt es nach Definition von $a + U$ ein $x \in U$ mit $y = a + x$, also
+$y = f_a(x)$.  Damit ist die Funktion $f_a$ bijektiv und folglich haben die Mengen $U$ und $a+U$
+die selbe Anzahl von Elementen:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}(U) = \textsl{card}(a + U)$.
+\\[0.2cm]
+Wir haben schon in einer früheren Aufgabe gezeigt, dass die durch
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \approx_U y \stackrel{\mbox{\scriptsize def}}{\Longleftrightarrow}\; x -y \in U$
+\\[0.2cm]
+definierte Relation eine Äquivalenz-Relation ist und wir wissen aus der Mengenlehre, dass die
+Äquivalenz-Klassen, die von dieser Äquivalenz-Relation erzeugt werden, eine Partition der Menge $G$
+bilden.  Damit gibt es also eine Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{g_1,\cdots, g_k\}$ \quad mit $g_i \in G$ für alle $i=1,\cdots,k$
+\\[0.2cm]
+so dass die Menge $\bigl\{ [g_1]_{\approx_U}, \cdots, [g_k]_{\approx_U}\bigr\}$ eine Partition von
+$G$ ist.  Damit haben wir:
+\begin{enumerate}
+\item $[g_1]_{\approx_U} \cup \cdots \cup [g_k]_{\approx_U} = G$ \quad und
+\item $[g_i]_{\approx_U} \cap [g_j]_{\approx_U} = \emptyset$ \quad falls $i \not= j$.
+\end{enumerate}
+Nun müssen wir nur noch bemerken, dass die Nebenklassen von $G$ bezüglich $U$ mit den
+Äquivalenz-Klassen identisch sind, die von der Äquivalenz-Relation $\approx_U$ erzeugt werden, denn
+es gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$[g]_{\approx_U} = g + U$,
+\\[0.2cm] 
+was wir wir folgt einsehen können:
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{cl}
+                & x \in [g]_{\approx_U}  \\[0.2cm]
+\Leftrightarrow & x \approx_U g        \\[0.2cm]
+\Leftrightarrow & x - g \in U          \\[0.2cm] 
+\Leftrightarrow & x \in g + U.
+\end{array}
+$
+\\[0.2cm]
+Damit ist dann klar, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}{lcl}
+  \textsl{card}(G) & = & \textsl{card}\bigl([g_1]_{\approx_U}\bigr) + \cdots + \textsl{card}\bigl([g_k]_{\approx_U}\bigr) 
+                         \\[0.2cm]
+                   & = & \textsl{card}(g_1 + U) + \cdots + \textsl{card}(g_k + U) \\[0.2cm]
+                   & = & \textsl{card}(U) + \cdots + \textsl{card}(U) \\[0.2cm]
+                   & = & k \cdot \textsl{card}(U)
+\end{array}
+$
+\\[0.2cm]
+gilt und damit ist $\textsl{card}(U)$ ein Teiler von $\textsl{card}(G)$.  \qed
 
 \exercise
 Es seien $\langle G_1, e_1, \circ\rangle$ und $\langle G_2, e_2, *\rangle$ kommutative Gruppen.
@@ -1202,16 +1336,6 @@ Monoide solche Halbgruppen, in denen es ein neutrales Element gibt.  Die formale
       Monoid. 
       \eox
 \end{enumerate}
-
-\exercise
-Es sei $\langle G, e, \circ \rangle$ ein Monoid und es sei $f$ ein weiteres neutrales Element, es gelte also
-\\[0.2cm]
-\hspace*{1.3cm}
-$f \circ a = a \circ f$ \quad f\"{u}r alle $a \in G$.
-\\[0.2cm]
-Zeigen Sie, dass dann $e = f$ gilt.  
-\eox
-
 
 
 %%% Local Variables: 
