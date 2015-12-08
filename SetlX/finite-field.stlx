@@ -1,0 +1,61 @@
+// Check whether fd = [f, zero, one, plus, times] is a field.
+isField := procedure(fd) {
+    [f, zero, one, plus, times] := fd;
+    return    isCommutativeGroup([f, zero, plus])
+           && isCommutativeGroup([f - {zero}, one, times])
+           && forall(x in f, y in f, z in f |
+                  times(x, plus(y, z)) == plus(times(x, y), times(x, z))
+              );
+};
+// Check whether cd = [g, e, circ] is a commutative group.
+isCommutativeGroup := procedure(cg) {
+    [g, e, circ] := cg;
+    return    forall(x in g | circ(e, x) == x)
+           && forall(x in g | exists(y in g | circ(x, y) == e))
+           && forall(x in g, y in g, z in g |
+                  circ(circ(x, y), z) == circ(x, circ(y, z))
+              )
+           && forall(x in g, y in g | circ(x, y) == circ(y, x));
+};
+
+// We construct a field of 3 elements
+plus := procedure(x, y) {
+    table := [ [0, 1, 2],
+               [1, 2, 0],
+               [2, 0, 1]
+             ];
+    return table[x+1][y+1];
+};
+
+times := procedure(x, y) {
+    table := [ [0, 0, 0],
+               [0, 1, 2],
+               [0, 2, 1]
+             ];
+    return table[x+1][y+1];
+};
+f3 := [{0, 1, 2}, 0, 1, plus, times];
+
+print(isField(f3));
+
+// Next, we construct a field of 4 elements
+plus := procedure(x, y) {
+    table := [ [0, 1, 2, 3],
+               [1, 0, 3, 2],
+               [2, 3, 0, 1],
+               [3, 2, 1, 0]
+             ];
+    return table[x+1][y+1];
+};
+
+times := procedure(x, y) {
+    table := [ [0, 0, 0, 0],
+               [0, 1, 2, 3],
+               [0, 2, 3, 1],
+               [0, 3, 1, 2]
+             ];
+    return table[x+1][y+1];
+};
+f4 := [{0, 1, 2, 3}, 0, 1, plus, times];
+
+print(isField(f4));
