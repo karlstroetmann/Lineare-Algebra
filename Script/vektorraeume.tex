@@ -56,52 +56,54 @@ Ein Paar $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\
       \end{enumerate}
 \end{enumerate} 
 Ist $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$  ein $\mathbb{K}$-Vektor-Raum, so bezeichnen wir die Elemente der Menge
-$V$ als \emph{Vektoren}, w\"{a}hrend die Elemente aus dem K\"{o}rper $\mathbb{K}$ 
-\emph{Skalare} genannt werden.  Den K\"{o}rper $\mathbb{K}$ nennen wir den
-\emph{Skalaren-K\"{o}rper} des Vektor-Raums $\mathcal{V}$.  
+$V$ als \colorbox{yellow}{\emph{Vektoren}}, w\"{a}hrend die Elemente aus dem K\"{o}rper $\mathbb{K}$ 
+\colorbox{yellow}{\emph{Skalare}} genannt werden.  Den K\"{o}rper $\mathbb{K}$ nennen wir den
+\colorbox{yellow}{\emph{Skalaren-K\"{o}rper}} des Vektor-Raums $\mathcal{V}$.  
 \eoxs
 \end{Definition}
 
 \remark
 Es ist in der Literatur \"{u}blich, Vektoren von Skalaren durch Fettdruck zu unterscheiden.  
 Da aber an der Tafel ein Fettdruck kaum m\"{o}glich ist, habe ich mich dazu entschlosen, 
-Vektoren durch Pfeilen kenntlich zu machen.
+Vektoren durch Pfeilen zu kennzeichnen.
 \eoxs
 
 
 \example
-Wir haben die Menge $\mathbb{K}^n$ als die Menge aller Listen der L\"{a}nge $n$ definiert, deren Elemente aus der Menge $\mathbb{K}$ stammen.
-Setzen wir zun\"{a}chst
+Für eine Menge $K$ haben wir die Menge $K^n$ als die Menge aller Listen der L\"{a}nge $n$ definiert,
+deren Elemente aus der Menge $K$ stammen.  Ist nun $\mathbb{K} = \langle K, 0, 1, +, \cdot\rangle$
+ein Körper, so definieren wir zun\"{a}chst
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{0} := \underbrace{[0, \cdots, 0]}_n$ 
+$\vec{0} := \underbrace{[0, \cdots, 0]}_n$ .
 \\[0.2cm]
-und definieren dann eine Addition ``$+$'' auf $\mathbb{K}^n$ komponentenweise durch
+Anschließend definieren wir eine Addition ``${\color{blue}{+}}$'' auf $K^n$ komponentenweise durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$[x_1, \cdots, x_n] + [y_1, \cdots, y_n] := [x_1 + y_1, \cdots, x_n + y_n]$,
+$[x_1, \cdots, x_n] {\color{blue}{+}} [y_1, \cdots, y_n] := [x_1 + y_1, \cdots, x_n + y_n]$,
 \\[0.2cm]
-so k\"{o}nnen Sie leicht nachrechnen, dass mit diesen Definitionen das Tripel
+so k\"{o}nnen Sie nachrechnen, dass mit diesen Definitionen das Tripel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\langle \mathbb{K}^n, \vec{0}, +\rangle$
 \\[0.2cm]
-eine kommutative Gruppe ist.  Definieren wir weiter die Skalar-Multiplikation $\cdot$ durch
+eine kommutative Gruppe ist.  Definieren wir weiter die Skalar-Multiplikation
+${\color{blue}\cdot}$ durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\alpha \cdot [x_1, \cdots, x_n] := [\alpha \cdot x_1, \cdots, \alpha \cdot x_n]$,
+$\alpha {\color{blue}{\cdot}} [x_1, \cdots, x_n] := [\alpha \cdot x_1, \cdots, \alpha \cdot x_n]$,
 \\[0.2cm]
 wobei in den Ausdr\"{u}cken $\alpha \cdot x_i$ der Operator ``$\cdot$'' die Multiplikation in dem K\"{o}rper $\mathbb{K}$ bezeichnet,
 dann l\"{a}sst sich mit etwas Rechenaufwand einsehen, dass das Paar
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl\langle \langle \mathbb{K}^n, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
+$\mathbb{K}^n := \bigl\langle \langle K^n, \vec{0}, {\color{blue}{+}} \rangle, {\color{blue}{\cdot}} \bigr\rangle$ 
 \\[0.2cm]
 ein $\mathbb{K}$-Vektor-Raum ist.  Der K\"{u}rze halber werden wir in Zukunft einfach von $\mathbb{K}^n$ als Vektor-Raum reden, wobei wir dann in Wahrheit das obige Paar meinen. 
 \eox
 
 \exercise
-Beweisen Sie, dass die oben definierte Menge $\mathbb{K}^n$ f\"{u}r einen beliebigen K\"{o}rper
+Beweisen Sie, dass die oben definierte Struktur $\mathbb{K}^n$ f\"{u}r einen beliebigen K\"{o}rper
 $\mathbb{K}$ ein $\mathbb{K}$-Vektor-Raum ist. \eox 
 
 
@@ -112,7 +114,7 @@ Struktur wie der Vektor-Raum $\mathbb{K}^n$ aufweisen.
 
 
 \example
-Es sei $\mathbb{R}^{\mathbb{R}}$ die Menge der Funktionen der Form
+Die Menge $\mathbb{R}^{\mathbb{R}}$ ist die Menge der Funktionen der Form
 \\[0.2cm]
 \hspace*{1.3cm}
  $f: \mathbb{R} \rightarrow \mathbb{R}$,
@@ -124,14 +126,15 @@ Funktion $f+g$ indem wir
 \hspace*{1.3cm}
 $(f+g)(x) := f(x) + g(x)$  \quad f.a. $x \in \mathbb{R}$
 \\[0.2cm]
-setzen, so ist die so definierte Funktion $f + g$ offenbar wieder eine Funktion von
-$\mathbb{R}$ nach $\mathbb{R}$ wieder stetig.  F\"{u}r ein $\alpha \in \mathbb{R}$ und
-$f \in\mathbb{R}^{\mathbb{R}}$ definieren wir die Funktion $\alpha \cdot f$ als
+setzen, so ist die so definierte Funktion $f + g$ wieder eine Funktion von
+$\mathbb{R}$ nach $\mathbb{R}$.  F\"{u}r ein $\alpha \in \mathbb{R}$ und $f
+\in\mathbb{R}^{\mathbb{R}}$ definieren wir die Funktion
+$\alpha {\color{blue}{\cdot}} f$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$(\alpha \cdot f)(x) := \alpha \cdot f(x)$ \quad f.a. $x \in \mathbb{R}$.
+$(\alpha {\color{blue}{\cdot}} f)(x) := \alpha \cdot f(x)$ \quad f.a. $x \in \mathbb{R}$.
 \\[0.2cm]
-Dann ist auch  $\alpha \cdot f$ eine Funktion von $\mathbb{R}$ nach $\mathbb{R}$.  
+Dann ist auch  $\alpha {\color{blue}{\cdot}} f$ eine Funktion von $\mathbb{R}$ nach $\mathbb{R}$.  
 Schlie\3lich definieren wir eine Funktion
  $\vec{0}:\mathbb{R} \rightarrow \mathbb{R}$, indem wir
 \\[0.2cm]
@@ -139,7 +142,7 @@ Schlie\3lich definieren wir eine Funktion
 $\vec{0}(x) := 0$ \quad f.a. $x \in \mathbb{R}$ 
 \\[0.2cm]
 setzen.  Offensichtlich  gilt $\vec{0} \in \mathbb{R}^{\mathbb{R}}$.  Nun k\"{o}nnen Sie
-leicht nachpr\"{u}fen, dass die so definierte Struktur
+in einer zwar länglichen, aber geradlinigen Rechnung nachpr\"{u}fen, dass die so definierte Struktur
 \\[0.2cm]
 \hspace*{1.3cm}
 $\bigl\langle \langle \mathbb{R}^{\mathbb{R}}, \vec{0}, + \rangle, \cdot \bigr\rangle$
@@ -149,22 +152,22 @@ gilt.
  \eoxs
 
 \example
-Es sei $\mathbb{K}$ ein K\"{o}rper.  Dann definieren wir $\mathbb{K}^\mathbb{N}$ als den Raum aller
-Folgen mit Elementen aus $\mathbb{K}$.  Definieren wir f\"{u}r zwei
+Es sei $\mathbb{K} = \langle K, 0,1,+,\cdot\rangle$ ein K\"{o}rper.  Dann definieren wir $K^\mathbb{N}$ als den Raum aller
+Folgen mit Elementen aus $K$.  Definieren wir f\"{u}r zwei
 Folgen
 $\bigl(x_n\bigr)_{n\in\mathbb{N}}$ und $\bigl(y_n\bigr)_{n\in\mathbb{N}}$ die Summe durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl(x_n\bigr)_{n\in\mathbb{N}} + \bigl(y_n\bigr)_{n\in\mathbb{N}} := \bigl(x_n + y_n\bigr)_{n\in\mathbb{N}}$ 
+$\bigl(x_n\bigr)_{n\in\mathbb{N}} {\color{blue}{+}} \bigl(y_n\bigr)_{n\in\mathbb{N}} := \bigl(x_n + y_n\bigr)_{n\in\mathbb{N}}$ 
 \\[0.2cm]
 und die Skalar-Multiplikation durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\alpha \cdot \bigl(x_n\bigr)_{n\in\mathbb{N}} := \bigl(\alpha \cdot x_n \bigr)_{n\in\mathbb{N}}$
+$\alpha {\color{blue}{\cdot}} \bigl(x_n\bigr)_{n\in\mathbb{N}} := \bigl(\alpha \cdot x_n \bigr)_{n\in\mathbb{N}}$
 \\[0.2cm]
 und definieren wir $\vec{0}$ als die Folge $(0)_{n\in\mathbb{N}}$, also als die Folge,
 deren s\"{a}mtliche Glieder den Wert $0$ haben, so l\"{a}sst sich zeigen, dass die Struktur
- $\bigl\langle\langle\mathbb{K}^\mathbb{N}, \vec{0}, +\rangle, \cdot\rangle$  ein Vektor-Raum ist.
+ $\bigl\langle\langle K^\mathbb{N}, \vec{0}, {\color{blue}{+}}\rangle, {\color{blue}{\cdot}}\rangle$  ein Vektor-Raum ist.
 \eox
 
 
@@ -183,9 +186,10 @@ Es sei $\bigl\langle \langle V, 0, +\rangle, \cdot\bigr\rangle$ ein $\mathbb{K}$
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 
 \section{Basis und Dimension}
-In diesem Abschnitt f\"{u}hren wir den f\"{u}r die Theorie der Vektor-R\"{a}ume zentralen Begriff der \emph{Dimension} 
-ein.  Dazu definieren wir zun\"{a}chst, was wir unter einem \emph{Erzeugenden-System}
-verstehen und wann eine Menge von Vektoren \emph{linear unabh\"{a}ngig} ist.
+In diesem Abschnitt f\"{u}hren wir den f\"{u}r die Theorie der Vektor-R\"{a}ume zentralen Begriff
+der \colorbox{yellow}{\emph{Dimension}}
+ein.  Dazu definieren wir zun\"{a}chst, was wir unter einem \colorbox{yellow}{\emph{Erzeugenden-System}}
+verstehen und wann eine Menge von Vektoren \colorbox{yellow}{\emph{linear unabh\"{a}ngig}} ist.
 
 \begin{Definition}[Linear-Kombination] \lb
 Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum.  Ein Vektor $\vec{x} \in V$ ist eine
@@ -195,7 +199,8 @@ $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ gibt, so dass die Gleichung
 \hspace*{1.3cm}
 $\vec{x} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n$
 \\[0.2cm]
-gilt.  Zus\"{a}tzlich m\"{u}ssen die Vektoren $\vec{y}_i$ alle paarweise verschieden sein.
+gilt.  
+\colorbox{red}{Zus\"{a}tzlich m\"{u}ssen die Vektoren $\vec{y}_i$ alle paarweise verschieden sein.}
 Die obige Gleichung werden wir in Zukunft der K\"{u}rze halber gelegentlich auch in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -224,7 +229,7 @@ für jede endliche Teilmenge
 \hspace*{1.3cm}
 $\bigl\{ \vec{x}_1, \cdots, \vec{x}_n \bigr\} \subseteq B$,
 \\[0.2cm]
-bei der die Vektoren $\vec{x}_i$ paarweise verschieden sind, die Formel
+\colorbox{red}{bei der die Vektoren $\vec{x}_i$ paarweise verschieden sind,} die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\sum\limits_{i=1}^n \alpha_i \cdot \vec{x}_i = \vec{0} \;\Rightarrow\; \forall i \in \{1,\cdots,n\}: \alpha_i = 0$
@@ -256,7 +261,7 @@ $\alpha_2$ und $\alpha_3$, gibt, so dass
 \hspace*{1.3cm}
 $\vec{0} = \alpha_1 \cdot [1,0,2] + \alpha_2 \cdot [1,2,0] + \alpha_3 \cdot [0,-1,3]$
 \\[0.2cm]
-gilt.  Ersetzen wir $\mathbb{0}$ durch die Liste $[0,0,0]$ und rechnen die rechte Seite
+gilt.  Ersetzen wir $\vec{0}$ durch die Liste $[0,0,0]$ und rechnen die rechte Seite
 dieser Gleichung aus, so erhalten wir die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -308,7 +313,6 @@ womit $\vec{x}$ als Linear-Kombination von Elementen der Menge $V$ dargestellt i
 nat\"{u}rlich ist ein solches Erzeugenden-System nicht sonderlich interessant.  Interessanter sind
 Erzeugenden-Systeme, die m\"{o}glichst wenige Elemente haben, die also bez\"{u}glich der Anzahl
 der Elemente \emph{minimal} sind.  Dies f\"{u}hrt zu der folgenden zentralen Definition.
-\pagebreak
 
 \begin{Definition}[Basis]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
@@ -321,7 +325,7 @@ der Elemente \emph{minimal} sind.  Dies f\"{u}hrt zu der folgenden zentralen Def
 \end{Definition}
 
 \noindent
-Der n\"{a}chste Satz zeigt, dass eine Basis eine \underline{maximale} Menge linear unabh\"{a}ngiger Vektoren ist.
+Der n\"{a}chste Satz zeigt, dass eine Basis eine \colorbox{red}{maximale} Menge linear unabh\"{a}ngiger Vektoren ist.
 
 \begin{Satz}
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
@@ -403,7 +407,7 @@ l\"{a}sst.  Wir unterscheiden zwei F\"{a}lle:
             $\vec{0} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n + \alpha_{n+1} \cdot \vec{x}$
             \\[0.2cm]
             gilt.  Hierbei muss $\alpha_{n+1} \not=0$ gelten, denn sonst w\"{u}rde $\vec{x}$ in der
-            Linear-Kombination gar nicht ben\"{o}tigt und idesen Fall haben wir ja bereits
+            Linear-Kombination gar nicht ben\"{o}tigt und diesen Fall haben wir ja bereits
             ausgeschlossen.  Damit 
             k\"{o}nnen wir die obige Gleichung zu
             \\[0.2cm]
@@ -518,11 +522,22 @@ eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben l\"{a}ss
 \eox
 
 \begin{Lemma}[Basis-Austausch-Lemma]
-  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$
-  ein $\mathbb{K}$-Vektor-Raum, $B$ eine Basis von $\mathcal{V}$, $U \subseteq B$, $\vec{x} \in V\backslash B$ und die
-  Menge $U \cup \{ \vec{x} \}$ sei linear unabh\"{a}ngig.
+  Es gelte:
+  \begin{enumerate}
+  \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum, 
+  \item $B$ eine Basis von $\mathcal{V}$,
+  \item $U \subseteq B$,
+  \item $\vec{x} \in V\backslash B$ und 
+  \item $U \cup \{ \vec{x} \}$ ist linear unabh\"{a}ngig.
+  \end{enumerate}
   Dann gibt es einen Vektor $\vec{y} \in B \backslash U$, so dass die Menge
- $\bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ wieder eine Basis von $\mathcal{V}$ ist.
+  $\bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ wieder eine Basis von $\mathcal{V}$ ist:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\exists \vec{y} \in B \backslash U: \bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ Basis von $\mathcal{V}$.
+  \\[0.2cm]
+  Wir können also den Vektor $\vec{x}$ so gegen einen Vektor $\vec{y}$ aus der Basis $B$
+  austauschen, dass die Vektoren aus der Menge $U$ weiterhin Bestandteil der Basis sind.
 \end{Lemma}
 
 \proof
@@ -533,9 +548,7 @@ und Vektoren $\vec{y}_1, \cdots, \vec{y}_n\in B$, so dass
 \hspace*{1.3cm}
 $\vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i$ 
 \\[0.2cm]
-gilt.  Ohne Beschr\"{a}nkung der Allgemeinheit k\"{o}nnen wir hier voraussetzen, dass die Vektoren
-$\vec{y_i}$ paarweise verschieden sind.  
-Da die Menge $U \cup \{ \vec{x} \}$ linear unabh\"{a}ngig ist, ist $\vec{x}$ sicher von $\vec{0}$
+gilt.  Da die Menge $U \cup \{ \vec{x} \}$ linear unabh\"{a}ngig ist, ist $\vec{x}$ sicher von $\vec{0}$
 verschieden und damit k\"{o}nnen in der Gleichung f\"{u}r $\vec{x}$ 
 nicht alle $\alpha_i$ den Wert $0$ haben.  O.B.d.A.~k\"{o}nnen wir sogar fordern,
 dass alle $\alpha_i \not= 0$ sind, denn falls $\alpha_i = 0$ w\"{a}re, w\"{u}rden wir den Term $\alpha_i \cdot \vec{y}_i$
@@ -650,13 +663,20 @@ in einer Basis $B$ eine linear unabh\"{a}ngige Menge $U$ gegen eine Teilmenge $W
 k\"{o}nnen, welche dieselbe Anzahl an Elementen hat wie $U$.
 
 \begin{Satz}[Basis-Austausch-Satz]
-  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
-  und $B$ sei eine Basis von $\mathcal{V}$.  Weiter sei $U \subseteq V$ linear unabh\"{a}ngig.
-  Dann gibt es eine Teilmenge $W \subseteq B$, so dass 
+  Es gelte:
   \begin{enumerate}
-  \item $\bigl(B \backslash W\bigr) \cup U$  eine Basis von V ist  und au\3erdem 
-  \item $\textsl{card}(W) = \textsl{card}(U)$ gilt.
+  \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum,
+  \item $B$ ist eine Basis von $\mathcal{V}$,
+  \item $U \subseteq V$ ist linear unabh\"{a}ngig.
   \end{enumerate}
+  Dann gibt es eine Teilmenge $W \subseteq B$, so dass gilt:
+  \begin{enumerate}
+  \item $\bigl(B \backslash W\bigr) \cup U$ ist eine Basis von V,
+  \item $\textsl{card}(W) = \textsl{card}(U)$.
+  \end{enumerate}
+  Wir können also eine gegebene linear unabh\"{a}ngige Menge $U$ in eine gegeben Basis einbinden,
+  indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge enthält die selbe
+  Anzahl von Elementen wir die Menge $U$.
 \end{Satz}
 
 \proof
@@ -738,6 +758,7 @@ Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir sie als die \em
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{dim}(\mathcal{V}) := n$.
+\pagebreak
 
 \exercise
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -940,7 +961,7 @@ Wir haben drei Eigenschaften nachzuweisen.
 Es sei $V$ ein Vektor-Raum und $U_1$ und $U_2$ seien Untervektor-R\"{a}ume von $V$.  Beweisen oder widerlegen Sie, dass
 dann auch die Menge $U_1 \cup U_2$ ein Untervektor-Raum von $V$ ist.
 \eox
-\pagebreak
+
 
 \section{Euklidische Vektor-R\"{a}ume}
 \begin{Definition}[Skalar-Produkt, Euklidischer Vektor-Raum] \lb
