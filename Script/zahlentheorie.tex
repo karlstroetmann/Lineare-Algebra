@@ -2,13 +2,13 @@
 In diesem Kapitel besch\"{a}ftigen wir uns mit den ganzen Zahlen.  Am Ende des Kapitels werden
 wir ausreichend Theorie entwickelt haben, um die Funktionsweise des
 RSA-Verschl\"{u}sselungs-Algorithmus verstehen zu k\"{o}nnen.  
-Wir beginnen unsere \"{u}berlegungen damit, dass wir den Begriff der Teilbarkeit von Zahlen
+Wir beginnen unsere \"{U}berlegungen damit, dass wir den Begriff der Teilbarkeit von Zahlen
 analysieren und uns ein wenig mit modularer Arithmetik besch\"{a}ftigen.
 
 \section{Teilbarkeit und modulare Arithmetik}
 
 \begin{Definition}[Teiler]
-  Es seien $a,b \in \mathbb{N}_0$.  Dann ist $a$ ein Teiler von $b$, wenn es ein
+  Es seien $a,b \in \mathbb{N}_0$.  Dann ist $a$ ein \colorbox{yellow}{\emph{Teiler}} von $b$, wenn es ein
   $c \in \mathbb{N}_0$ gibt, so dass $a \cdot c = b$ gilt.  In diesem Fall schreiben wir $a \teilt b$.
   Formal k\"{o}nnen wir die Teilbarkeitsrelation also wie folgt definieren:
   \\[0.2cm]
@@ -26,22 +26,22 @@ f\"{u}r alle  $n \in \mathbb{N}_0$ gilt.
 F\"{u}r eine nat\"{u}rliche Zahl $a$ bezeichnen wir die Menge aller Teiler von $a$ mit
 $\texttt{teiler}(a)$.  Es gilt also
 \[ \texttt{teiler}(a) = \{ q \in \mathbb{N}_0 \mid \exists k \in \mathbb{N}_0: k \cdot q = a \}. \]
-Die Menge aller gemeinsamen Teiler zweier positiver nat\"{u}rlicher Zahlen
+Die Menge aller \colorbox{yellow}{\emph{gemeinsamen Teiler}} zweier nat\"{u}rlicher Zahlen
 $a$ und $b$ bezeichnen wir mit $\texttt{gt(a,b)}$.  Es gilt
 \[ \texttt{gt}(a,b) = \texttt{teiler}(a) \cap \texttt{teiler}(b). \]
-Der gr\"{o}\3te gemeinsame Teiler von $a$ und $b$ ist als das Maximum dieser Menge definiert,
+Der \colorbox{yellow}{\emph{gr\"{o}\3te gemeinsame Teiler}} von $a$ und $b$ ist als das Maximum dieser Menge definiert,
 es gilt also 
 \[ \texttt{ggt}(a,b) = \max\bigl(\texttt{gt}(a,b)\bigr). \]
 
 \begin{Satz}[Divison mit Rest]
   \label{satz:division_mit_rest}
-  Sind $a$ und $b$ nat\"{u}rliche Zahlen mit $b \not= 0$, so gibt es eindeutig bestimmte ganze Zahlen 
+  Sind $a$ und $b$ nat\"{u}rliche Zahlen, so gibt es eindeutig bestimmte ganze Zahlen 
   $q$ und $r$, so dass 
   \\[0.2cm]
   \hspace*{1.3cm}
   $a = q \cdot b + r$ \quad mit $r < b$
   \\[0.2cm]
-  gilt.  Wir nennen dann $q$ den \emph{Ganzzahl-Quotienten} und $r$ den \emph{Rest} der ganzzahligen
+  gilt.  Wir nennen dann $q$ den \colorbox{yellow}{\emph{Ganzzahl-Quotienten}} und $r$ den \colorbox{yellow}{\emph{Rest}} der ganzzahligen
   Divison von $a$ durch $b$.  Als Operator f\"{u}r die Ganzzahl-Divison verwenden wir ``$\div$''
   und f\"{u}r die Bildung des Rests verwenden wir den Operator ``\texttt{\%}''.
   Damit gilt 
@@ -121,15 +121,15 @@ Gleichungen folgt zun\"{a}chst
 \hspace*{1.3cm}
 $q_1 \cdot b + r_1 = q_2 \cdot b + r_2$.
 \\[0.2cm]
-und diese Gleichung k\"{o}nnen wir umstellen zu
+Diese Gleichung k\"{o}nnen wir zu
 \begin{equation}
   \label{eq:division1}
   (q_1 - q_2) \cdot b = r_2 - r_1  
 \end{equation}
-Wir k\"{o}nnen  ohne Beschr\"{a}nkung der Allgemeinheit annehmen, dass $r_2 \geq r_1$ ist, denn andernfalls
-k\"{o}nnen wir die Zahlen $r_1$ und $q_1$ mit den Zahlen $r_2$ und $q_2$ vertauschen.  Dann zeigt
-Gleichung (\ref{eq:division1}), dass $b$ ein Teiler von $r_2 - r_1$ ist.  Wegen $b > r_2 \geq r_1$ 
-wissen wir, dass
+umstellen.  Wir k\"{o}nnen  ohne Beschr\"{a}nkung der Allgemeinheit annehmen, dass $r_2 \geq r_1$
+ist, denn andernfalls k\"{o}nnen wir die Zahlen $r_1$ und $q_1$ mit den Zahlen $r_2$ und $q_2$
+vertauschen.  Dann zeigt Gleichung (\ref{eq:division1}), dass $b$ ein Teiler von $r_2 - r_1$ ist.
+Wegen $b > r_2 \geq r_1$ wissen wir, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $0 \leq r_2 - r_1 < b$
@@ -153,10 +153,10 @@ In vielen Programmier-Sprachen ist die ganzzahlige Division so implementiert, da
 \hspace*{1.3cm}
 $(a \div q) \cdot q + a \modulo q = a$
 \\[0.2cm]
-f\"{u}r $a < 0$ im Allgemeinen \underline{nicht} gilt!
+f\"{u}r $a < 0$ im Allgemeinen \underline{nicht} gilt! \eox
 
-\vspace*{0.3cm}
-\noindent
+
+
 Mit dem letzten Satz k\"{o}nnen wir die Menge der Teiler einer nat\"{u}rlichen Zahl $a$ auch wie folgt definieren:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -165,8 +165,8 @@ $\texttt{teiler}(a) = \{ q \in \mathbb{N}_0 \mid a \modulo q = 0 \}$.
 
 
 \noindent
-Wir erinnern an dieser Stelle an die Definition der \"{a}quivalenz-Relationen $\approx_n$, die wir f\"{u}r 
-$n > 0$ im Abschnitt \ref{section:aequivalenz_relation} durch die Formel
+Wir erinnern an dieser Stelle an die Definition der \"{A}quivalenz-Relationen $\approx_n$, die wir f\"{u}r 
+$n \in \mathbb{N}$ im Abschnitt \ref{section:aequivalenz_relation} durch die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
  $\approx_n \;:=\; \{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z} \colon k \cdot n = x - y \}$
@@ -190,7 +190,7 @@ Wir zerlegen den Beweis in zwei Teile:
       \hspace*{1.3cm}
       $a - b = h \cdot n$.
       \\[0.2cm]
-      Definieren wir $l := b \div n$, so ist $l \in \mathbb{Z}$ und es gilt
+      Definieren wir $l := b \div n$, so ist $l \in \mathbb{N}$ und es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $b = l \cdot n + b \modulo n$.
@@ -219,8 +219,8 @@ Wir zerlegen den Beweis in zwei Teile:
       \hspace*{1.3cm}
       $a \modulo n = b \modulo n$ 
       \\[0.2cm]
-      vorausgesetzt. Nach Definition des Modulo-Operators gibt es ganze Zahlen $k,l \in
-      \mathbb{Z}$, so dass 
+      vorausgesetzt. Nach Definition des Modulo-Operators gibt es nat\"{u}liche Zahlen
+      $k,l \in \mathbb{N}$, so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
       $a \modulo n = a - k \cdot n$ \quad und \quad
@@ -260,8 +260,8 @@ Damit sehen wir, dass die Relation $\approx_n$ mit der von dem Ideal $n\mathbb{Z
 erzeugten Kongruenz-Relation $\sim_{n\mathbb{Z}}$ \"{u}bereinstimmt und folglich
 eine Kongruenz-Relation ist.  \qed
 
-%In dem Abschnitt \"{u}ber \"{a}quivalenz-Relationen (Abschnitt \ref{section:aequivalenz_relation})
-%hatten wir bereits gezeigt, dass die Relation $\approx_n$ eine \"{a}quivalenz-Relation ist.
+%In dem Abschnitt \"{u}ber \"{A}quivalenz-Relationen (Abschnitt \ref{section:aequivalenz_relation})
+%hatten wir bereits gezeigt, dass die Relation $\approx_n$ eine \"{A}quivalenz-Relation ist.
 %Es bleibt daher nur zu zeigen, dass die Relation $\approx_n$ mit der Addition und der
 %Multiplikation vertr\"{a}glich ist.
 %\begin{enumerate}
@@ -406,7 +406,7 @@ Wir betrachten zwei F\"{a}lle:  Entweder ist $I = \{0\}$ oder nicht.
       $y \in k\mathbb{Z}$
       \\[0.2cm]
       folgt.  Da $y$ bei diesen Betrachtungen ein beliebiges Element der Menge $I$ war,
-      zeigt diese \"{u}berlegungen insgesamt, dass $I \subseteq k\mathbb{Z}$ gilt.  Aus der
+      zeigt diese \"{U}berlegung insgesamt, dass $I \subseteq k\mathbb{Z}$ gilt.  Aus der
       Tatsache, dass $k \in I$ ist, folgt andererseits, dass $k\mathbb{Z} \subseteq I$
       gilt, so dass wir insgesamt
       \\[0.2cm]
@@ -426,8 +426,8 @@ $\textsl{gen}(k) = \{ k \cdot x \mid x \in R \}$
 \\[0.2cm]
 als \emph{Haupt-Ideale} bezeichnet haben.  Der letzte Satz zeigt also, dass alle Ideale des Rings
 der ganzen Zahlen Haupt-Ideale sind.  Einen Ring mit der Eigenschaft, dass alle Ideale
-bereits Haupt-Ideale sind, bezeichnen wir als \emph{Haupt-Ideal-Ring}.  Der letzte Satz
-zeigt daher, dass der Ring der ganzen Zahlen ein Haupt-Ideal-Ring ist.
+bereits Haupt-Ideale sind, bezeichnen wir als \colorbox{yellow}{\emph{Haupt-Ideal-Ring}}.  Der letzte Satz
+zeigt daher, dass der Ring der ganzen Zahlen ein Haupt-Ideal-Ring ist. \eoxs
 
 \begin{Lemma}
   F\"{u}r $u,v \in \mathbb{N}$ gilt
@@ -437,7 +437,7 @@ zeigt daher, dass der Ring der ganzen Zahlen ein Haupt-Ideal-Ring ist.
 \end{Lemma}
 
 \proof
-Wir zerlegen den Beweis der \"{a}quivalenz der beiden Aussagen in den Beweis der beiden Implikationen.
+Wir zerlegen den Beweis der \"{A}quivalenz der beiden Aussagen in den Beweis der beiden Implikationen.
 \begin{enumerate}
 \item ``$\Rightarrow$'': Wegen $u = u \cdot 1$ gilt  
       \\[0.2cm]
@@ -533,12 +533,18 @@ $p$ das Ideal $p\mathbb{Z}$ maximal ist.  Diese beiden Tatsachen ergeben zusamme
 
 \remark
 Bisher hatten alle K\"{o}rper, die wir kennengelernt haben, unendlich viele Elemente.
-Der letzte Satz zeigt uns, dass es auch endliche K\"{o}rper gibt.
+Der letzte Satz zeigt uns, dass es auch endliche K\"{o}rper gibt, denn die Menge $\mathbb{Z}_p$ hat
+die Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{Z}_p = \mathbb{Z} / p\mathbb{Z} = \bigl\{0 + \mathbb{Z}, 1 + \mathbb{Z}, \cdots, (p-1) + \mathbb{Z} \bigr\}$
+\\[0.2cm]
+und ist offenbar endlich. \eoxs
 
 
-\begin{Satz}[Lemma von B\'ezout]
+\begin{Satz}[Lemma von B\'{e}zout, (\'{E}tienne B\'{e}zout, 1730--1783)]
 \label{satz:bezout}
-  Es seien $a,b \in \mathbb{N}$.  Dann existieren $x,y \in \mathbb{Z}$, so dass
+  Es seien $a,b \in \mathbb{N}_0$.  Dann existieren $x,y \in \mathbb{Z}$, so dass
   \\[0.2cm]
   \hspace*{1.3cm}
   $\textsl{ggt}(a,b) = x \cdot a + y \cdot b$
@@ -753,8 +759,9 @@ Wir pr\"{a}sentieren nun einen Algorithmus zur Berechnung des gr\"{o}\3ten gemei
 Teilers zweier nat\"{u}rlicher Zahlen $x$ und $y$.
  Abbildung \ref{fig:ggt.stlx} auf Seite \pageref{fig:ggt.stlx} zeigt eine
 \textsl{SetlX}-Funktion, die f\"{u}r gegebene positive nat\"{u}rliche Zahlen $x$ und $y$ den gr\"{o}\3ten gemeinsamen  Teiler 
-$\textsl{ggt}(x,y)$ berechnet.  Diese Funktion implementiert den \emph{Euklid'schen
-Algorithmus} zur Berechnung des gr\"{o}\3ten gemeinsamen Teilers.
+$\textsl{ggt}(x,y)$ berechnet.  Diese Funktion implementiert den 
+\colorbox{yellow}{\href{https://en.wikipedia.org/wiki/Euclidean_algorithm}{\emph{Euklid'schen Algorithmus}}} zur
+Berechnung des gr\"{o}\3ten gemeinsamen Teilers. 
 
 
 \begin{figure}[!ht]
@@ -999,7 +1006,7 @@ gilt.  Diese Gleichung formen wir zu
 \hspace*{1.3cm}
 $x \modulo y = x - k \cdot y$
 \\[0.2cm]
-um.  Dann haben wir f\"{u}r beliebige $n \in \mathbb{N}$ die folgende Kette von \"{a}quivalenzen:
+um.  Dann haben wir f\"{u}r beliebige $n \in \mathbb{N}$ die folgende Kette von \"{A}quivalenzen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -1110,13 +1117,13 @@ $\alpha \cdot x + \beta \cdot y = \textsl{ggt}(x, y)$
 gilt.  Abbildung \ref{fig:eggt.stlx} zeigt eine entsprechende Erweiterung.
 
 \begin{Satz}[Korrektheit des erweiterten Euklidischen Algorithmus] \hspace*{\fill} \\ 
-  Die in Abbildung \ref{fig:eggt.stlx} gezeigte Funktion $\texttt{eggt}()$ erf\"{u}llt
+  Die in Abbildung \ref{fig:eggt.stlx} gezeigte Funktion $\mathtt{eggt}$ erf\"{u}llt
   folgende Spezifikation:
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\forall x, y \in \mathbb{N}: \bigl(
+  $\forall x, y \in \mathbb{N}_0: \bigl(
    \mathtt{eggt}(x, y) = [ \alpha, \beta ] \;\Rightarrow\; 
-   \alpha \cdot x + \beta \cdot y = \textsl{ggt}(x,y)\bigr)
+   \alpha \cdot x + \beta \cdot y = \mathtt{ggt}(x,y)\bigr)
   $.
 \end{Satz}
 
@@ -1760,7 +1767,7 @@ l\"{o}sen kann und l\"{o}sen Sie mit diesem Programm das folgende R\"{a}tsel.
 
 \begin{Satz} \label{satz:china3}
   Es seien $m$ und $n$ positive nat\"{u}rliche Zahlen.
-  Dann gilt f\"{u}r alle positiven nat\"{u}rlichen Zahlen $x$ die \"{a}quivalenz
+  Dann gilt f\"{u}r alle positiven nat\"{u}rlichen Zahlen $x$ die \"{A}quivalenz
   \\[0.2cm]
   \hspace*{1.3cm}
   $\textsl{ggt}(x, m \cdot n) = 1 \quad \Leftrightarrow \quad

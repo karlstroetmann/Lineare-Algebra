@@ -11,7 +11,7 @@ isField := procedure(fd) {
 isCommutativeGroup := procedure(cg) {
     [g, e, circ] := cg;
     return    forall(x in g | circ(e, x) == x)
-           && forall(x in g | exists(y in g | circ(x, y) == e))
+           && forall(x in g | exists(y in g | circ(y, x) == e))
            && forall(x in g, y in g, z in g |
                   circ(circ(x, y), z) == circ(x, circ(y, z))
               )

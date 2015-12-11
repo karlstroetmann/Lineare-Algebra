@@ -1,18 +1,21 @@
 \chapter{Vektor-R\"{a}ume}
-In diesem Kapitel werden wir zun\"{a}chst den f\"{u}r den Rest dieser Vorlesung grundlegenden Begriff des \emph{Vektor-Raums}
-einf\"{u}hren.  Danach besprechen wir den Begriff des Untervektor-Raums. 
-Die Theorie der Vektor-R\"{a}ume bildet die Grundlage f\"{u}r unsere sp\"{a}tere Behandlung linearer Gleichungs-Systeme.
-Au\3erdem ben\"{o}tigen wir Vektor-R\"{a}ume bei der L\"{o}sung von \emph{Rekurrenz-Gleichungen}, die wir im letzten
+In diesem Kapitel werden wir zun\"{a}chst den f\"{u}r den Rest dieser Vorlesung grundlegenden
+Begriff des \href{https://de.wikipedia.org/wiki/Vektorraum}{Vektor-Raums}
+einf\"{u}hren.  Die Theorie der Vektor-R\"{a}ume bildet die Grundlage f\"{u}r unsere sp\"{a}tere
+Behandlung \href{https://de.wikipedia.org/wiki/Lineares_Gleichungssystem}{linearer Gleichungs-Systeme}. 
+Au\3erdem ben\"{o}tigen wir Vektor-R\"{a}ume bei der L\"{o}sung von
+\href{https://en.wikipedia.org/wiki/Recurrence_relation}{Rekurrenz-Gleichungen}, die wir im letzten  
 Kapitel dieses Skriptes diskutieren.  Daneben gibt es zahlreiche weitere Anwendungen von Vektor-R\"{a}umen in der
 Informatik.  Diese alle aufzulisten w\"{u}rde Ihnen jetzt wenig helfen, wir beginnen statt dessen mit
-der Definition eines Vektor-Raums. 
+der Definition. 
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
 \renewcommand{\labelenumii}{(\alph{enumii})}
 
 \section{Definition und Beispiele}
 \begin{Definition}[Vektor-Raum]
-Ein Paar $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein \emph{$\mathbb{K}$-Vektor-Raum} falls gilt:
+Ein Paar $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein
+\colorbox{yellow}{\emph{$\mathbb{K}$-Vektor-Raum}} falls gilt:
 \begin{enumerate}
 \item $\mathbb{K}$ ist ein K\"{o}rper.  
 
@@ -21,31 +24,31 @@ Ein Paar $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\
 \item $\langle V, \vec{0}, + \rangle$ ist eine kommutative Gruppe.
 \item $\cdot: \mathbb{K} \times V \rightarrow V$ ist eine Abbildung, die jeder Zahl $\lambda \in \mathbb{K}$ und jedem 
       $\vec{x} \in V$ ein Element $\lambda \cdot \vec{x} \in V$ zuordnet. 
-      Diese Funktion  wird als \emph{Skalar-Multiplikation} bezeichnet und \"{u}blicherweise in Infix-Notation geschrieben.
+      Diese Funktion  wird als \colorbox{yellow}{\emph{Skalar-Multiplikation}} bezeichnet und
+      \"{u}blicherweise in Infix-Notation geschrieben. 
 
       Die Skalar-Multiplikation muss au\3erdem den folgenden Gesetzen gen\"{u}gen:
       \begin{enumerate}
       \item $(\alpha \cdot \beta)  \cdot \vec{x} =  \alpha \cdot (\beta \cdot \vec{x})$ \quad f.a.  $\alpha,\beta \in \mathbb{K}$,  $\vec{x} \in V$.
 
-            Beachten Sie, dass der Operator ``$\cdot$'', der hier in dem Ausdruck $(\alpha \cdot \beta)$ auftritt, die Multiplikation in dem K\"{o}rper $\mathbb{K}$ bezeichnet, 
-            w\"{a}hrend alle anderen Auftreten des Operators ``$\cdot$'' die Skalar-Multiplikation bezeichnen.
+            Beachten Sie, dass der Operator ``$\cdot$'', der hier in dem Ausdruck $(\alpha \cdot \beta)$ auftritt, 
+            die Multiplikation in dem K\"{o}rper $\mathbb{K}$ bezeichnet, w\"{a}hrend alle anderen Auftreten des Operators ``$\cdot$'' 
+            die Skalar-Multiplikation bezeichnen.  
 
-            Dieses Gesetz wird als das \emph{Assoziativ-Gesetz} bezeichnet.  Es dr\"{u}ckt
+            Dieses Gesetz wird als das \colorbox{yellow}{\emph{Assoziativ-Gesetz}} bezeichnet.  Es dr\"{u}ckt
             aus, dass die Multiplikation in dem K\"{o}rper $\mathbb{K}$ mit der Skalar-Multiplikation
             vertr\"{a}glich ist.
       \item $(\alpha + \beta) \cdot \vec{x} = \alpha \cdot \vec{x} + \beta \cdot \vec{x}$ \quad f.a.  $\alpha,\beta \in \mathbb{K}$,  $\vec{x} \in V$.
 
-            Beachten Sie, dass der Operator ``$+$'', der  hier in dem Ausdruck $(\alpha + \beta)$ auftritt, die Addition in dem K\"{o}rper $\mathbb{K}$ bezeichnet, 
-            w\"{a}hrend der Operator ``$+$'' in dem Ausdruck auf der rechten Seite dieser Gleichung die
-            Addition in der Gruppe $\langle V, \vec{0}, + \rangle$ bezeichnet.  Daher sagt dieses Gesetz,
-            dass die Addition in dem K\"{o}rper $\mathbb{K}$ mit der Addition in dem Vektor-Raum
-            $\mathcal{V}$ vertr\"{a}glich ist.
+            Beachten Sie, dass der Operator ``$+$'', der  hier in dem Ausdruck $(\alpha + \beta)$
+            auftritt, die Addition in dem K\"{o}rper $\mathbb{K}$ bezeichnet, w\"{a}hrend der
+            Operator ``$+$'' in dem Ausdruck auf der rechten Seite dieser Gleichung die 
+            Addition in der Gruppe $\langle V, \vec{0}, + \rangle$ bezeichnet.  
       \item $\alpha \cdot (\vec{x} + \vec{y}) = \alpha \cdot \vec{x} + \alpha \cdot \vec{y}$ \quad f.a. $\alpha \in \mathbb{K}$,  $\vec{x}, \vec{y} \in V$.
 
-            Dieses Gesetz dr\"{u}ckt aus, dass die Skalar-Multiplikation mit der Addition im Vektor-Raum
-            $\mathcal{V}$ vertr\"{a}glich ist.
-
-            Die letzten beiden Gesetze werden als \emph{Distributiv-Gesetze} bezeichnet.
+            Die letzten beiden Gesetze werden als \colorbox{yellow}{\emph{Distributiv-Gesetze}}
+            bezeichnet.  Sie zeigen, inwiefern die Skalar-Multiplikation mit der Addition im Vektor-Raum
+            $\mathcal{V}$ und der Addition im Körper $\mathbb{K}$ vertr\"{a}glich ist.
       \item $1 \cdot \vec{x} = \vec{x}$ \quad f.a. $\vec{x} \in V$.  
 
             Dieses Gesetz dr\"{u}ckt aus, dass das neutrale Element der Multiplikation des K\"{o}rpers
@@ -61,9 +64,9 @@ $V$ als \emph{Vektoren}, w\"{a}hrend die Elemente aus dem K\"{o}rper $\mathbb{K}
 
 \remark
 Es ist in der Literatur \"{u}blich, Vektoren von Skalaren durch Fettdruck zu unterscheiden.  
-Da aber an der Tafel oder auf dem Papier ein Fettdruck kaum m\"{o}glich ist, habe ich mich dazu entschlosen, 
+Da aber an der Tafel ein Fettdruck kaum m\"{o}glich ist, habe ich mich dazu entschlosen, 
 Vektoren durch Pfeilen kenntlich zu machen.
-\eox
+\eoxs
 
 
 \example
@@ -184,9 +187,9 @@ In diesem Abschnitt f\"{u}hren wir den f\"{u}r die Theorie der Vektor-R\"{a}ume 
 ein.  Dazu definieren wir zun\"{a}chst, was wir unter einem \emph{Erzeugenden-System}
 verstehen und wann eine Menge von Vektoren \emph{linear unabh\"{a}ngig} ist.
 
-\begin{Definition}[Linear-Kombination]
+\begin{Definition}[Linear-Kombination] \lb
 Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum.  Ein Vektor $\vec{x} \in V$ ist eine
-\emph{Linear-Kombination} der Vektoren $\vec{y}_1, \cdots, \vec{y}_n \in V$ genau dann, wenn es Skalare
+\colorbox{yellow}{\emph{Linear-Kombination}} der Vektoren $\vec{y}_1, \cdots, \vec{y}_n \in V$ genau dann, wenn es Skalare
 $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ gibt, so dass die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -213,21 +216,22 @@ so ist $\vec{x}$ eine Linear-Kombination der Vektoren $\vec{y}_1$, $\vec{y}_2$, 
 \hspace*{1.3cm}
 $\vec{x} = 1 \cdot \vec{y}_1 + 2 \cdot \vec{y}_2 + 3 \cdot \vec{y}_3$.  \eoxs
 
-\begin{Definition}[linear unabh\"{a}ngig]
+\begin{Definition}[linear unabh\"{a}ngig] \lb
 Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum.  
-Eine Menge $B \subseteq V$ ist \\ \emph{linear unabh\"{a}ngig} genau dann, wenn 
+Eine Menge $B \subseteq V$ ist \colorbox{yellow}{\emph{linear unabh\"{a}ngig}} genau dann, wenn 
+für jede endliche Teilmenge
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall n \in \mathbb{N}:\forall \alpha_1, \cdots, \alpha_n \in \mathbb{K}: \forall \vec{x_1}, \cdots,
-\vec{x_n} \in B:$ \\
-\hspace*{2.3cm} $\left(
- \mbox{$\vec{x}_i$ paarweise verschieden} \wedge \sum\limits_{i=1}^n \alpha_i \cdot \vec{x}_i = \vec{0} \;\Rightarrow\; \forall i \in
- \{1,\cdots,n\}: \alpha_i = 0\right)
-$
+$\bigl\{ \vec{x}_1, \cdots, \vec{x}_n \bigr\} \subseteq B$,
+\\[0.2cm]
+bei der die Vektoren $\vec{x}_i$ paarweise verschieden sind, die Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$\sum\limits_{i=1}^n \alpha_i \cdot \vec{x}_i = \vec{0} \;\Rightarrow\; \forall i \in \{1,\cdots,n\}: \alpha_i = 0$
 \\[0.2cm]
 gilt.  Mit anderen Worten:  Der Nullvektor $\vec{0}$ l\"{a}sst sich nur als die sogenannte
-\emph{triviale Linear-Kombination} aus Vektoren der Menge $B$ darstellen.  Demgegen\"{u}ber hei\3t eine
-Menge $B \subseteq V$ \emph{linear abh\"{a}ngig} genau dann, wenn $B$ nicht linear unabh\"{a}ngig ist.  In
+\colorbox{yellow}{\emph{triviale Linear-Kombination}} aus Vektoren der Menge $B$ darstellen.  Demgegen\"{u}ber hei\3t eine
+Menge $B \subseteq V$ \colorbox{yellow}{\emph{linear abh\"{a}ngig}} genau dann, wenn $B$ nicht linear unabh\"{a}ngig ist.  In
 diesem Fall gibt es dann Vektoren $\vec{x}_1$, $\cdots$, $\vec{x}_n \in B$, die paarweise
 verschieden sind, sowie Skalare $\alpha_1,\cdots,\alpha_n \in \mathbb{K}$, so dass einerseits
 \\[0.2cm]
@@ -280,7 +284,7 @@ $\vec{0}$ kombinieren lassen.  Folglich ist die Menge $B$ linear unabh\"{a}ngig.
 \begin{Definition}[Erzeugenden-System]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
   und $B \subseteq V$.  Die Teilmenge $B$ ist ein
-  \emph{Erzeugenden-System} des Vektor-Raums $\mathcal{V}$ genau dann, wenn sich jeder Vektor 
+  \colorbox{yellow}{\emph{Erzeugenden-System}} des Vektor-Raums $\mathcal{V}$ genau dann, wenn sich jeder Vektor 
   $\vec{x} \in V$ als Linear-Kombination von Vektoren aus $B$ schreiben l\"{a}sst. 
   Als Formel schreibt sich dies wie folgt:
   \\[0.2cm]
@@ -309,7 +313,7 @@ der Elemente \emph{minimal} sind.  Dies f\"{u}hrt zu der folgenden zentralen Def
 \begin{Definition}[Basis]
   Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
   und $B \subseteq V$.  Die Teilmenge $B$ ist eine
-  \emph{Basis} von $V$, wenn das Folgende gilt:
+  \colorbox{yellow}{\emph{Basis}} von $V$, wenn das Folgende gilt:
   \begin{enumerate}
   \item $B$ ist ein Erzeugenden-System von $V$ und
   \item $B$ ist linear unabh\"{a}ngig.  \eoxs
