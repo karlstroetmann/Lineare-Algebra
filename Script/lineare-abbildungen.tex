@@ -1,9 +1,9 @@
 \chapter{Lineare Abbildungen}
-Der Begriff der \emph{linearen Abbildungen} ist neben dem Begriff des Vektor-Raums einer der zentralen Begriffe in der Theorie der
+Der Begriff der \colorbox{yellow}{\emph{linearen Abbildungen}} ist neben dem Begriff des Vektor-Raums einer der zentralen Begriffe in der Theorie der
 linearen Algebra.  In diesem Kapitel f\"{u}hren wir lineare Abbildungen ein und zeigen, wie diese
-durch \emph{Matrizen} dargestellt werden k\"{o}nnen.  Wir definieren Addition und Multiplikation
-von Matrizen und zeigen, dass bestimmte Matrizen bez\"{u}glich der Multiplikation ein \emph{Inverses} besitzen.
-Wir f\"{u}hren sogenannte \emph{Elementar-Matrizen} ein und demonstrieren, wie sich mit Hilfe von
+durch \colorbox{yellow}{\emph{Matrizen}} dargestellt werden k\"{o}nnen.  Wir definieren Addition und Multiplikation
+von Matrizen und zeigen, dass bestimmte Matrizen bez\"{u}glich der Multiplikation ein \colorbox{yellow}{\emph{Inverses}} besitzen.
+Wir f\"{u}hren sogenannte \colorbox{yellow}{\emph{Elementar-Matrizen}} ein und demonstrieren, wie sich mit Hilfe von
 Elementar-Matrizen das Inverse einer Matrix berechnen l\"{a}sst.  
 
 Im Rest dieses Abschnittes bezeichnet
@@ -17,7 +17,7 @@ Es seien $V$ und $W$ zwei $\mathbb{K}$-Vektor-R\"{a}ume.  Eine Funktion
 \hspace*{1.3cm}
 $f:V \rightarrow W$
 \\[0.2cm]
-ist eine \emph{lineare Abbildung} von $V$ nach $W$ genau dann, wenn Folgendes gilt:
+ist eine \colorbox{yellow}{\emph{lineare Abbildung}} von $V$ nach $W$ genau dann, wenn Folgendes gilt:
 \begin{enumerate}
 \item $\forall \vec{x}, \vec{y} \in V: f(\vec{x} + \vec{y}) = f(\vec{x}) + f(\vec{y})$,
 
@@ -93,12 +93,12 @@ $f(\vec{0}) = f(0 \cdot \vec{0}) = 0 \cdot f(\vec{0}) = \vec{0}$.
 
 \remark
 In der Literatur wird eine lineare Abbildung $f:V \rightarrow W$ von einem Vektor-Raum $V$ in einen
-Vektor-Raum $W$ auch als ein \emph{Vektor-Raum-Homomorphismus} oder k\"{u}rzer als ein
-\emph{Homomorphismus} bezeichnet.  Ist die Abbildung $f$ au\3erdem noch injektiv, so hei\3t $f$ ein
-\emph{Monomorphismus}.  Ist $f$ surjektiv, so sprechen wir von einem \emph{Epimorphismus} und wenn
-$f$ sowohl injektiv als auch surjektiv ist, dann ist $f$ ein \emph{Isomorphismus}.  Gilt $W = V$,
-hat $f$ also die Form $f: V \rightarrow V$, so nennen wir $f$ einen \emph{Endomorphismus} und wenn
-sowohl $W=V$ gilt, als auch die Funktion $f$ bijektiv ist, dann ist $f$ ein \emph{Automorphismus}. 
+Vektor-Raum $W$ auch als ein \colorbox{yellow}{\emph{Vektor-Raum-Homomorphismus}} oder k\"{u}rzer als ein
+\colorbox{yellow}{\emph{Homomorphismus}} bezeichnet.  Ist die Abbildung $f$ au\3erdem noch injektiv, so hei\3t $f$ ein
+\colorbox{yellow}{\emph{Monomorphismus}}.  Ist $f$ surjektiv, so sprechen wir von einem \colorbox{yellow}{\emph{Epimorphismus}} und wenn
+$f$ sowohl injektiv als auch surjektiv ist, dann ist $f$ ein \colorbox{yellow}{\emph{Isomorphismus}}.  Gilt $W = V$,
+hat $f$ also die Form $f: V \rightarrow V$, so nennen wir $f$ einen \colorbox{yellow}{\emph{Endomorphismus}} und wenn
+sowohl $W=V$ gilt, als auch die Funktion $f$ bijektiv ist, dann ist $f$ ein \colorbox{yellow}{\emph{Automorphismus}}. 
 Tabelle \ref{tab:morphism} zeigt eine Zusammenfassung dieser Definitionen.
 
 
@@ -126,7 +126,7 @@ Tabelle \ref{tab:morphism} zeigt eine Zusammenfassung dieser Definitionen.
 \end{table}
 
 In der englischen Literatur wird ein  Endomorphismus $f \in \mathcal{L}(V,V)$ auch als ein
-\emph{Operator auf $V$} bezeichnet.  Wir definieren zur Abk\"{u}rzung
+\colorbox{yellow}{\emph{Operator auf $V$}} bezeichnet.  Wir definieren zur Abk\"{u}rzung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathcal{L}(V) := \mathcal{L}(V,V)$.
@@ -155,13 +155,13 @@ Es sei $\mathcal{C}(\mathbb{R})$ die Menge der stetigen Funktionen auf $\mathbb{
 $f:\mathbb{R} \rightarrow \mathbb{R}$, die \"{u}berall differenzierbar sind und deren Ableitung stetig ist.  Definieren wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\frac{d\;}{dx}: \mathcal{D}(\mathbb{R}) \rightarrow \mathcal{C}(\mathbb{R})$ \quad durch $\ds\frac{d\;}{dx}(f) := f'(x)$,
+$\ds\frac{\mathrm{d}\;}{\mathrm{d}x}: \mathcal{D}(\mathbb{R}) \rightarrow \mathcal{C}(\mathbb{R})$ \quad durch $\ds\frac{\mathrm{d}\;}{\mathrm{d}x}(f) := f'(x)$,
 \\[0.2cm]
-wobei $f'(x)$ die Ableitung der Funktion $f$ an der Stelle $x$ ist, so ist die Funktion $\ds\frac{d\;}{dx}$ eine lineare Abbildung,
+wobei $f'(x)$ die Ableitung der Funktion $f$ an der Stelle $x$ ist, so ist die Funktion $\ds\frac{\mathrm{d}\;}{\mathrm{d}x}$ eine lineare Abbildung,
 denn f\"{u}r die Ableitung gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx} f + \beta \cdot \frac{d\;}{dx} g$. \eoxs
+$\ds\frac{\mathrm{d}\;}{\mathrm{d}x} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{\mathrm{d}\;}{\mathrm{d}x} f + \beta \cdot \frac{\mathrm{d}\;}{\mathrm{d}x} g$. \eoxs
 
 
 \subsection{Kern und Bild einer linearen Abbildung}
@@ -169,7 +169,8 @@ $\ds\frac{d\;}{dx} (\alpha \cdot f + \beta \cdot g) = \alpha \cdot \frac{d\;}{dx
   Es seien $V$ und $W$ zwei Vektor-R\"{a}ume und $f:V \rightarrow W$ sei ein lineare Abbildung.  Dann definieren wir 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\textsl{Kern}(f) := \bigl\{ \vec{x} \in V \mid f(\vec{x}) = \vec{0} \bigr\}$.
+  \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+  $\textsl{Kern}(f) := \bigl\{ \vec{x} \in V \mid f(\vec{x}) = \vec{0} \bigr\}$.}}}}}
   \\[0.2cm] 
   Der Kern einer linearen Abbildung ist also die Menge aller Vektoren aus $V$, die auf den Null-Vektor abgebildet werden.  \eoxs
 \end{Definition}
@@ -281,7 +282,8 @@ Es seien $V$ und $W$ Vektor-R\"{a}ume und $f:V \rightarrow W$ sei eine lineare A
 definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\textsl{Bild}(f) := \bigl\{ f(\vec{x}) \mid \vec{x} \in V \bigr\}$
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$\textsl{Bild}(f) := \bigl\{ f(\vec{x}) \mid \vec{x} \in V \bigr\}$}}}}}
 \\[0.2cm]
 als die Menge der Abbilder aller Vektoren aus $V$ unter der Abbildung $f$.
 \eoxs
@@ -374,8 +376,9 @@ eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
       \hspace*{1.3cm}
       $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n + (-\beta_1) \cdot \vec{y}_1 + \cdots + (-\beta_n) \cdot \vec{y}_n = \vec{0}$
       \\[0.2cm]
-      umstellen.  Da die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis von $V_1$ ist,
-      folgt daraus
+      umstellen.  Da die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
+      eine Basis von $V_1$ ist, ist diese Menge insbesondere linear unabh\"{a}ngig.  Also
+      folgt aus der letzten Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $\alpha_1 = 0 \wedge \cdots \wedge \alpha_m = 0 \wedge -\beta_1 = 0 \wedge \cdots \wedge -\beta_n = 0$.
@@ -383,7 +386,7 @@ eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
       Damit haben also die $\beta_i$ alle den Wert $0$ und das war zu zeigen. \qeds
 \end{enumerate}
 \remark
-Der Dimensions-Satz wird in der Literatur auch als \emph{Rang-Satz} bezeichnet.
+Der Dimensions-Satz wird in der Literatur auch als \colorbox{yellow}{\emph{Rang-Satz}} bezeichnet.
 \eoxs
 
 \exercise
@@ -423,9 +426,10 @@ $
 Damit sehen wir, dass lineare Abbildung $f$ in dem Moment, wo wir die Basen
 $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ von $V$ und $\{ \vec{y}_1, \cdots, \vec{y}_n \}$ von $W$
 festgelegt haben, vollst\"{a}ndig durch die $n \cdot m$ Zahlen $\bigl(a_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,m}$ festgelegt werden.  Diese Zahlen werden 
-daher zu einer $n \times m$ \emph{Matrix}
+daher zu einer $n \times m$ \colorbox{yellow}{\emph{Matrix}}
 \\[0.2cm]
 \hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
 $A := \left(
       \begin{array}[c]{lcl}
       a_{1,1} & \cdots & a_{1,m} \\
@@ -433,16 +437,21 @@ $A := \left(
       a_{n,1} & \cdots & a_{n,m} \\
       \end{array}
       \right)
-$
+$}}}}}
 \\[0.2cm]
 zusammengefasst.  Die Menge aller $n \times m$ Matrizen mit Koeffizienten $a_{i,j} \in \mathbb{K}$
 f\"{u}r alle $i \in \{1,\cdots,n\}$ und $j \in \{1,\cdots,m\}$ schreiben wir als $\mathbb{K}^{n \times
   m}$.
 
 \begin{Definition}[$\mathcal{M}(f)$]
-Sind $V$ und $W$ zwei $\mathbb{K}$-Vektor-R\"{a}ume und bilden die Vektoren $\vec{x}_1, \cdots, \vec{x}_m$
-und $\vec{y}_1, \cdots, \vec{y}_n$ eine Basis von $V$ beziehungsweise von $W$ und ist weiter
-$f \in \mathcal{L}(V, W)$, so bezeichnen wir die oben definierte Matrix $A \in \mathbb{K}^{n \times m}$ 
+Es gelte:
+\begin{enumerate}
+\item $V$ und $W$ sind $\mathbb{K}$-Vektor-R\"{a}ume,
+\item die Vektoren $\vec{x}_1, \cdots, \vec{x}_m$ bilden eine Basis von $V$,
+\item die Vektoren $\vec{y}_1, \cdots, \vec{y}_n$ bilden eine Basis  von $W$,
+\item $f \in \mathcal{L}(V, W)$.
+\end{enumerate}
+Dann bezeichnen wir die oben definierte Matrix $A \in \mathbb{K}^{n \times m}$ 
 mit $\mathcal{M}(f)$, wir setzen also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -459,8 +468,8 @@ gibt Autoren, die deswegen die Notation
 $\mathcal{M}(f;\vec{x}_1, \cdots, \vec{x}_m; \vec{y}_1, \cdots, \vec{y}_n)$
 \quad an Stelle von \quad $\mathcal{M}(f)$
 \\[0.2cm]
-schreiben.  Diese Schreibweise ist mir aber zu schwerf\"{a}llig.  Wir
-setzen im Folgenden voraus, dass immer, wenn die Funktion $\mathcal{M}$ verwendet wird, 
+schreiben.  Diese Schreibweise ist aber sehr schwerf\"{a}llig.  Wir
+setzen daher im Folgenden voraus, dass immer, wenn die Funktion $\mathcal{M}$ verwendet wird, 
 klar ist, auf Basis welcher Vektoren $\vec{x}_1, \cdots, \vec{x}_m$ und $\vec{y}_1, \cdots, \vec{y}_n$  
 der Ausdruck $\mathcal{M}(f)$ definiert ist.
 
@@ -488,7 +497,7 @@ $\vec{x} = \left(
     \right) \in \mathbb{K}^m
 $,
 \\[0.5cm]
-so definieren wir das \emph{Produkt} $A \cdot \vec{x}$ als den Vektor
+so definieren wir das \colorbox{yellow}{\emph{Produkt}} $A \cdot \vec{x}$ als den Vektor
 \\[0.5cm]
 \hspace*{1.3cm}
 $\vec{y} := A \cdot \vec{x} = \left(
@@ -521,7 +530,7 @@ $\vec{x} = \left(
       \right),
 $
 \\[0.2cm]
-bei der wir $\vec{x}$ als \emph{Spalten-Vektor} bezeichnen.  Im Zusammenhang mit der
+bei der wir $\vec{x}$ als \colorbox{yellow}{\emph{Spalten-Vektor}} bezeichnen.  Im Zusammenhang mit der
 Multiplikation von Matrizen mit Vektoren ist die Spaltenschreibweise allerdings 
 suggestiver, so dass wir Vektoren in Zusammenhang mit der Matrizen-Multiplikation in der
 Spaltenschreibweise darstellen.
@@ -543,9 +552,18 @@ definiert ist, eine lineare Abbildung ist.
 
 
 \subsection{Addition und Skalar-Multiplikation von Matrizen}
-Es seien $A,B \in \mathbb{K}^{n \times m}$ und in Komponentenschreibweise gelte $A = (a_{i,j})$ und
-$B = (b_{i,j})$, wobei der Index $i$ von $1$ bis $n$ und der Index $j$ von $1$ bis $m$ l\"{a}uft.  Dann
-definieren wir die Summe $C := A + B$ so, dass $C = (a_{i,j} + b_{i,j})$ gilt, die Komponenten der
+Es seien $A,B \in \mathbb{K}^{n \times m}$ und in Komponentenschreibweise gelte 
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = (a_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$ \quad und \quad
+$B = (b_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$.  
+\\[0.2cm]
+Dann definieren wir die Summe $C := A + B$ so, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+ $C = (a_{i,j} + b_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$ 
+\\[0.2cm]
+gilt, die Komponenten der
 Matrix $C$ werden also durch Addition der Komponenten von $A$ und $B$  definiert.  Mit dieser
 Definition ist leicht zu sehen, dass f\"{u}r beliebige Vektoren $\vec{x} \in \mathbb{K}^m$ die Gleichung
 \\[0.2cm]
@@ -557,8 +575,18 @@ angegeben definiert wird.
 
 
 F\"{u}r Matrizen l\"{a}sst sich au\3erdem eine Skalar-Multiplikation definieren:  Ist $\alpha \in \mathbb{K}$
-und ist $A \in \mathbb{K}^{n \times m}$, wobei $A = (a_{i,j})$ gilt, so definieren wir die $n \times m$ Matrix 
-$C := \alpha \cdot A$ so, dass in Komponentenschreibweise $C = (\alpha \cdot a_{i,j})$ gilt.  Mit
+und ist $A \in \mathbb{K}^{n \times m}$, wobei
+\\[0.2cm]
+\hspace*{1.3cm}
+$A = (a_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$
+\\[0.2cm]
+gilt, so definieren wir die $n \times m$ Matrix 
+$C := \alpha \cdot A$ so, dass in Komponentenschreibweise
+\\[0.2cm]
+\hspace*{1.3cm}
+$C = (\alpha \cdot a_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$ 
+\\[0.2cm]
+gilt.  Mit
 dieser Definition gilt f\"{u}r beliebige Vektoren $\vec{x} \in \mathbb{K}^m$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -583,7 +611,7 @@ $\mathcal{M}(\alpha \cdot f) := \alpha \cdot \mathcal{M}(f)$.
 \\[0.2cm]
 Diese beiden Eigenschaften motivieren nachtr\"{a}glich sowohl die Definition der Addition von Matrizen
 als auch die Definition der Multiplikation eines Skalars mit einer Matrizen.  
-Sie zeigen, dass $\mathcal{M}$ eine lineare Abbildung des Vektor-Raums $\mathcal{L}(V,W)$ in den Vektor-Raum $\mathcal{K}^{m \times n}$ ist.  
+Sie zeigen, dass $\mathcal{M}$ eine lineare Abbildung des Vektor-Raums $\mathcal{L}(V,W)$ in den Vektor-Raum $\mathbb{K}^{m \times n}$ ist.  
 Es handelt sich bei dieser Abbildung um einen Isomorphismus.
 \eoxs
 
@@ -644,16 +672,21 @@ $
 \end{array}
 $
 \\[0.2cm]
-Definieren wir also die Komponenten der Matrix $C = (c_{i,j})$ als
+Definieren wir also die Komponenten der Matrix $C = (c_{i,j})_{1\leq i \leq n, 1 \leq j \leq l}$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f\"{u}r alle $i \in \{1,\cdots,n\}$ und $j \in\{1,\cdots,l\}$,
 \\[0.2cm]
 so sehen wir, dass diese Matrix dasselbe bewirkt, wie die sukzessive Anwendung der Matrizen $A$ und
 $B$.  Daher definieren wir f\"{u}r eine 
-$n \times m$ Matrix $B \in \mathbb{K}^{n \times m}$ der Form $B = (b_{i,k})$ und eine $m \times l$ Matrix
-$A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})$ die Produkt-Matrix $C= B \cdot A$ als die
- Matrix $C = (c_{i,j})$, deren Komponenten durch die Gleichung
+$n \times m$ Matrix $B \in \mathbb{K}^{n \times m}$ der Form $B = (b_{i,k})_{1\leq i \leq n, 1 \leq j \leq m}$ und eine $m \times l$ Matrix
+$A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})_{1\leq i \leq m, 1 \leq j \leq l}$ die Produkt-Matrix $C= B \cdot A$ als die
+Matrix
+\\[0.2cm]
+\hspace*{1.3cm}
+$C = (c_{i,j})_{1\leq i \leq n, 1 \leq j \leq l}$, 
+\\[0.2cm]
+deren Komponenten durch die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f\"{u}r alle $i \in \{1,\cdots,n\}, j \in\{1,\cdots,l\}$,
@@ -683,7 +716,7 @@ Beweisen oder widerlegen Sie, dass die Matrizen-Multiplikation kommutativ ist.
 \eox
 
 Unser Ziel im Rest dieses Abschnittes ist es zu zeigen, dass bestimmte \emph{quadratische Matrizen} ein
-Inverses besitzen.  Dabei nennen wir eine Matrix $A \in \mathbb{K}^{m \times n}$ \emph{quadratisch}
+Inverses besitzen.  Dabei nennen wir eine Matrix $A \in \mathbb{K}^{m \times n}$ \colorbox{yellow}{\emph{quadratisch}}
 falls $m = n$ ist.  Um f\"{u}r die Matrizen-Multiplikation ein neutrales Element definieren zu k\"{o}nnen,
 definieren wir zun\"{a}chst das nach 
 \href{http://de.wikipedia.org/wiki/Leopold_Kronecker}{Leopold Kronecker} benannte \emph{Kronecker-Delta}.
@@ -703,7 +736,7 @@ definieren wir zun\"{a}chst das nach
 \eoxs
 \end{Definition}
 
-Damit sind wir in der Lage, f\"{u}r alle $n \in \mathbb{N}$ eine \emph{Einheits-Matrix} $\mathrm{E}_n$ zu
+Damit sind wir in der Lage, f\"{u}r alle $n \in \mathbb{N}$ eine \colorbox{yellow}{\emph{Einheits-Matrix}} $\mathrm{E}_n$ zu
 definieren.  Wir definieren $\mathrm{E}_n \in \mathbb{K}^{n \times n}$ als die Matrix, die nur auf der
 fallenden Diagonale mit Einsen besetzt ist, alle anderen Eintr\"{a}ge sind Null.  Formal
 gilt
@@ -752,13 +785,13 @@ Kronecker-Deltas von der Summe nur der Term mit $k = j$ \"{u}brig bleibt.  Genau
 zeigen, dass $\mathrm{E}_m \cdot A = A$ ist.
 
 \begin{Definition}[Invertierbare Matrix]
-  Eine quadratische Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{invertierbar} genau dann, wenn
+  Eine quadratische Matrix $A \in \mathbb{K}^{n \times n}$ ist \colorbox{yellow}{\emph{invertierbar}} genau dann, wenn
   es eine Matrix $B \in \mathbb{K}^{n \times n}$ gibt, so dass 
   \\[0.2cm]
   \hspace*{1.3cm}
   $A \cdot B = B \cdot A = \mathrm{E}_n$
   \\[0.2cm]
-  gilt.  In diesem Fall definieren wir $A^{-1} := B$ und sagen, dass $B$ das \emph{Inverse} der
+  gilt.  In diesem Fall definieren wir $A^{-1} := B$ und sagen, dass $B$ das \colorbox{yellow}{\emph{Inverse}} der
   Matrix $A$ ist.  \qed
 \end{Definition}
 
@@ -853,7 +886,7 @@ $\vec{b}$ gel\"{o}st werden soll.  \eoxs
 
 \begin{Definition}
   Es sei $n\in\mathbb{N}$ und $k,l \in \{1,\cdots,n\}$.  Dann 
-  definieren wir die $n \times n$ \emph{Atomar-Matrix} $\mathrm{A}(k,l)$ so, dass in Komponentenschreibweise
+  definieren wir die $n \times n$ \colorbox{yellow}{\emph{Atomar-Matrix}} $\mathrm{A}(k,l)$ so, dass in Komponentenschreibweise
   \\[0.2cm]
   \hspace*{1.3cm}
   $\mathrm{A}_n(k,l) = (\delta_{i,k} \cdot \delta_{l,j})_{{i = 1, \cdots, n} \atop {j = 1, \cdots, n}}$
@@ -861,7 +894,6 @@ $\vec{b}$ gel\"{o}st werden soll.  \eoxs
   gilt.  Die Atomar-Matrix $\mathrm{A}(k,l)$ hat damit genau in der $k$-ten Zeile in der $l$-ten Spalte eine
   Eins und alle anderen Eintr\"{a}ge der Matrix sind Null.  \eoxs
 \end{Definition}
-\pagebreak
 
 \exercise
 Es gelte $B \in \mathbb{K}^{n \times n}$ und $\mathrm{A}_n(k,l) \in \mathbb{K}^{n \times n}$ sei eine Atomar-Matrix.  
@@ -911,7 +943,7 @@ $
 falls $l < k$ ist.
 \eox
 
-Wir definieren nun drei verschiedene Arten von sogenannten \emph{Elementar-Matrizen}.  Die 
+Wir definieren nun drei verschiedene Arten von sogenannten \colorbox{yellow}{\emph{Elementar-Matrizen}}.  Die 
 Zeilen-Additions-Matrizen $\mathrm{ZA}_n(k,l, \alpha)$ addieren das $\alpha$-fache der $l$-ten Zeile zur
 $k$-ten Zeile, die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauscht die $k$-te Zeile mit der
 $l$-ten Zeile und schlie\3lich multipliziert die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$  die $k$-te Zeile
@@ -922,7 +954,7 @@ mit $\alpha$.
   $\alpha \in \mathbb{K}$, wobei zus\"{a}tzlich $\alpha \not= 0$ zu gelten hat.  Dann definieren wir die
   Elementar-Matrizen wie folgt:
   \begin{enumerate}
-  \item F\"{u}r $k\not=l$ wird die $n \times n$ \emph{Zeilen-Additions-Matrix} $\mathrm{ZA}_n(k,l,\alpha)$ durch
+  \item F\"{u}r $k\not=l$ wird die $n \times n$ \colorbox{yellow}{\emph{Zeilen-Additions-Matrix}} $\mathrm{ZA}_n(k,l,\alpha)$ durch
         \\[0.2cm]
         \hspace*{1.3cm}
         $\mathrm{ZA}_n(k,l,\alpha) := \mathrm{E}_n + \alpha \cdot \mathrm{A}_n(k,l)$
@@ -961,7 +993,7 @@ mit $\alpha$.
           \end{array}
         \right).
         $       
-\item Die $n \times n$ \emph{Zeilen-Permutations-Matrix} $\mathrm{ZP}_n(k,l)$ wird durch die Gleichung 
+\item Die $n \times n$ \colorbox{yellow}{\emph{Zeilen-Permutations-Matrix}} $\mathrm{ZP}_n(k,l)$ wird durch die Gleichung 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathrm{ZP}_n(k,l) := \mathrm{E}_n + \mathrm{A}_n(k,l) + \mathrm{A}_n(l,k) - \mathrm{A}_n(k,k) - \mathrm{A}_n(l,l)$.
@@ -1003,7 +1035,7 @@ mit $\alpha$.
       der Term $\mathrm{A}_n(l,k) \cdot B$ transportiert die $k$-te Zeile von $B$ in
       die $l$-te Zeile und die beiden Terme $-\mathrm{A}_n(k,k) \cdot B$ und $-\mathrm{A}_n(l,l) \cdot B$ 
       entfernen die $k$-te Zeile beziehungsweise die $l$-te Zeile von $B$.
-\item Die $n \times n$ \emph{Zeilen-Multiplikations-Matrix} $\mathrm{ZM}_n(k, \alpha)$ wird f\"{u}r $\alpha \not= 0$ durch die Gleichung
+\item Die $n \times n$ \colorbox{yellow}{\emph{Zeilen-Multiplikations-Matrix}} $\mathrm{ZM}_n(k, \alpha)$ wird f\"{u}r $\alpha \not= 0$ durch die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathrm{ZM}_n(k, \alpha) := \mathrm{E}_n + (\alpha - 1) \cdot \mathrm{A}_n(k, k) $
