@@ -791,15 +791,14 @@ Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und es gelte $U \subseteq V$.
 Dann ist $U$ ein Untervektor-Raum von $V$ genau dann, 
 wenn Folgendes gilt:
 \begin{enumerate}
-\item $\vec{0} \in U$,
 \item $\forall \vec{x}, \vec{y} \in U: \vec{x} + \vec{y} \in U$ \quad und \quad
 \item $\forall \alpha \in \mathbb{K}: \forall \vec{x} \in U: \alpha \cdot \vec{x} \in U$.  \eoxs
 \end{enumerate}
 \end{Definition}
 
-Eine Teilmenge $U$ von $V$ ist also ein Untervektor-Raum von $V$, falls $U$ den Null-Vektor enth\"{a}lt und zus\"{a}tzlich
-unter Addition und Skalar-Multiplikation abgeschlossen ist.  Es l\"{a}sst sich leicht zeigen, dass ein Untervektor-Raum $U$
-auch selbst ein Vektor-Raum ist:  Die G\"{u}ltigkeit des Assoziativ-Gesetzes und der Distributiv-Gesetze folgt einfach aus
+Eine Teilmenge $U$ von $V$ ist also ein Untervektor-Raum von $V$, falls $U$ unter Addition und
+Skalar-Multiplikation abgeschlossen ist.  Es l\"{a}sst sich leicht zeigen, dass ein Untervektor-Raum
+$U$ auch selbst ein Vektor-Raum ist:  Die G\"{u}ltigkeit des Assoziativ-Gesetzes und der Distributiv-Gesetze folgt einfach aus
 der Tatsache, dass diese Gesetze schon in $V$ gelten und damit erst recht in $U$, denn $U$ ist ja eine Teilmenge von
 $V$. 
 
@@ -812,9 +811,8 @@ $U := \{ \alpha \cdot \vec{z} \mid \alpha \in \mathbb{R} \}$,
 so ist $U$ ein Untervektor-Raum des $\mathbb{R}^3$.
 
 \proof
-Es sind drei Eigenschaften zu pr\"{u}fen:
+Es sind zwei Eigenschaften zu pr\"{u}fen:
 \begin{enumerate}
-\item Offenbar gilt $\vec{0} = 0 \cdot \vec{z} \in U$ und damit ist die erste Eigenschaft bereits gezeigt.
 \item Seien $\vec{x}, \vec{y} \in U$.  Dann gibt es $\alpha, \beta \in \mathbb{R}$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -851,12 +849,8 @@ $.
 Dann ist die so definierte Menge $\textsl{span}_\mathbb{K}(M)$ ein Untervektor-Raum von $V$.
 
 \proof
-Es sind drei Eigenschaften zu pr\"{u}fen.
+Es sind zwei Eigenschaften zu nachzuweisen.
 \begin{enumerate}
-\item Da $M$ nicht leer ist, finden wir ein $\vec{v} \in M$.  Offenbar gilt
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\vec{0} = 0 \cdot \vec{v} \in \textsl{span}_\mathbb{K}(M)$.      
 \item Es seien $\vec{x}, \vec{y} \in \textsl{span}_\mathbb{K}(M)$.  Dann gibt es $m,n \in \mathbb{N}$,
       sowie $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ und
       $\vec{x}_1, \cdots, \vec{x}_m, \vec{y}_1, \cdots, \vec{y}_n \in M$, so dass 
@@ -915,13 +909,8 @@ Beweisen Sie, dass $N_c$ ein Untervektor-Raum von $\mathbb{R}^{\mathbb{R}}$ ist.
 \end{Satz}
 
 \proof
-Wir haben drei Eigenschaften nachzuweisen.
+Wir haben zwei Eigenschaften nachzuweisen.
 \begin{enumerate}
-\item Da $U_1$ und $U_2$ Untervektor-R\"{a}ume sind, gilt
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\vec{0} \in U_1$ \quad und \quad $\vec{0} \in U_2$, \quad woraus sofort \quad
-      $\vec{0} \in U_1 \cap U_2$ \quad folgt.
 \item Seien $\vec{x}, \vec{y} \in U_1 \cap U_2$.  Dann gilt nat\"{u}rlich
       \\[0.2cm]
       \hspace*{1.3cm}
