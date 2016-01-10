@@ -54,7 +54,8 @@ $\prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \
 \\[0.2cm]
 M\"oglichkeiten bei der Wahl der Elemente $x_i$. \qed 
 
-Der folgende Begriff des Vorzeichens oder auch \emph{Signums} einer Permutation ist zentral f\"ur die
+Der folgende Begriff des \colorbox{yellow}{\emph{Vorzeichens}} oder auch
+\colorbox{yellow}{\emph{Signums}} einer Permutation ist zentral f\"ur die  
 Definition der Determinante.  F\"ur Permutationen definieren wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -89,8 +90,9 @@ Verf\"ugung steht.
   \hspace*{1.3cm}
   $\mathtt{inv}(R) := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
   \\[0.2cm]
-  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \emph{Inversionen} von $R$.
-  Darauf aufbauend definieren wir das \emph{Vorzeichen} (oder auch \emph{Signum}) der Permutation
+  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \colorbox{yellow}{\emph{Inversionen}} von $R$.
+  Darauf aufbauend definieren wir das \colorbox{yellow}{\emph{Vorzeichen}} (oder auch
+  \colorbox{yellow}{\emph{Signum}}) der Permutation 
   $R$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -155,7 +157,7 @@ spezielle Permutationen zu betrachten, die nur zwei Elemente vertauschen.  Das f
 folgenden Definition.
 
 \begin{Definition}[Transposition]
-  Eine Permutation $R \in \mathcal{S}_n$ ist eine \emph{Transposition} genau dann, wenn
+  Eine Permutation $R \in \mathcal{S}_n$ ist eine \colorbox{yellow}{\emph{Transposition}} genau dann, wenn
   die folgende Bedingung erf\"ullt ist:
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -170,7 +172,7 @@ folgenden Definition.
   bestimmt wird, schreiben wir
   \\[0.2cm]
   \hspace*{1.3cm}
-  $R = \pair(k, l)$ 
+  $R \;\widehat{=}\; \pair(k, l)$ 
   \\[0.2cm]
   falls $k < l$ ist und $R$ die Transposition ist, welche die Zahlen $k$ und $l$ vertauscht.  In Listen-Schreibweise
   k\"onnen wir diese Transposition auch als
@@ -194,7 +196,7 @@ $R = \bigl\{ \pair(1,1), \pair(2,3), \pair(3,2), \pair(4,4) \bigr\}$
 ist eine Transposition und kann daher k\"urzer als
 \\[0.2cm]
 \hspace*{1.3cm}
-$R = \pair(2,3)$
+$R \;\widehat{=}\; \pair(2,3)$
 \\[0.2cm]
 geschrieben werden. \eox
 
@@ -370,7 +372,12 @@ betr\"agt $(l - 1) - k + 1 = l - k$, w\"ahrend das Produkt
 $\pair(l-2,l-1) \circ \cdots \circ \pair(k+1,k+2)$
 \\[0.2cm]
 aus $(l-2) - (k+1) + 1 = l - k -1$ Faktoren besteht. 
-Insgesamt haben wir damit $(l - k) + (l - k) - 1 = 2 \cdot (l-k) -1$ elementare Transpositionen zur
+Insgesamt haben wir damit
+\\[0.2cm]
+\hspace*{1.3cm}
+ $(l - k) + (l - k) - 1 = 2 \cdot (l-k) -1$ 
+\\[0.2cm]
+elementare Transpositionen zur
 Darstellung von $\tau$ ben\"otigt und diese Anzahl ist offenbar ungerade.
 \qed
 
@@ -767,12 +774,13 @@ definieren, wie dies 1690 von
 }} 
 vorgeschlagen wurde.  Ist $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$, wobei entweder 
 $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir die
-\emph{Determinate} von $A$ (geschrieben $\mathtt{det}(A)$) \"uber die Formel
+\colorbox{yellow}{\emph{Determinate}} von $A$ (geschrieben $\mathtt{det}(A)$) \"uber die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
 $\ds\mathtt{det}(A) :=  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)} 
   := \sum \Bigl\{ \mathtt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \bigm| \sigma \in \mathcal{S}_n \Bigr\}
-$.
+$.}}}}}
 
 \example
 Es sei $A$ eine $2 \times 2$ Matrix, es gilt also
@@ -1082,7 +1090,7 @@ $
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}
             \\[0.4cm]
-& & \mbox{Hier wird nur das dem Kommutativ-Gesetz benutzt.} \\[0.2cm]
+& & \mbox{Hier wird nur das Kommutativ-Gesetz benutzt.} \\[0.2cm]
 & = &
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(k))} \cdot \mbox{$\dots$} \cdot
