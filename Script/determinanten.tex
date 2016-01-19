@@ -1607,51 +1607,113 @@ Im Falle eine quadratischen Matrix gilt $m = n$ und folglich gilt in diesem Fall
 \hspace*{1.3cm}
 $\mathtt{dim}(\mathtt{Kern}(A)) = 0 \;\Leftrightarrow\; n = \mathtt{dim}(\mathtt{Bild}(A))$. 
 \\[0.2cm]
-Wir nehmen im Folgenden an, dass $\mathtt{dim}(\mathtt{Kern}(A)) = 0$ ist und damit auch
-$n = \mathtt{dim}(\mathtt{Bild}(A))$ gilt.  Die Bedingung $\mathtt{dim}(\mathtt{Kern}(A)) = 0$
-impliziert, dass die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$ injektiv ist, w\"ahrend
-die Bedingung $\mathtt{dim}(\mathtt{Bild}(A)) = n$ impliziert, dass die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$
-surjektiv ist.  Folglich ist diese Abbildung insgesamt bijektiv und besitzt damit eine Umkehr-Abbildung.
-Bezeichnen wir die Abbildung $\vec{x} \mapsto A  \cdot x$ mit $f$, setzen wir also
+Aus dieser \"{A}quivalenz ergibt sich der folgende Satz:
+
+\begin{Satz}
+Ist $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix, dann gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\vec{x}) := A \cdot \vec{x}$
+$A$ ist genau dann invertierbar, wenn $\mathtt{Kern}(A) = \bigl\{ \vec{0} \bigr\}$ gilt.
+\end{Satz}
+
+\proof
+Wir definieren eine lineare Abbildung
 \\[0.2cm]
-und bezeichnen wir die Umkehr-Abbildung mit $f^{-1}$, so k\"onnen wir sehen, dass $f^{-1}$ ebenfalls
-eine lineare Abbildung ist, denn es gilt
+\hspace*{1.3cm}
+$f:\mathbb{K}^n \rightarrow \mathbb{K}^n$ \quad durch \quad $f(\vec{x}) := A \cdot \vec{x}$.
+\\[0.2cm]
+Dann haben wir die folgende Kette von Äquivalenzen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
-\begin{array}[t]{ll}
-                & f^{-1}(\vec{x} + \vec{y}) = f^{-1}(\vec{x}) + f^{-1}(\vec{y}) \\[0.2cm]
-\Leftrightarrow & f\bigl(f^{-1}(\vec{x} + \vec{y})\bigr) = f\bigl(f^{-1}(\vec{x}) + f^{-1}(\vec{y})\bigr) \\
-                & \mbox{denn $f$ ist injektiv} \\[0.2cm] 
-\Leftrightarrow & \vec{x} + \vec{y} = f\bigl(f^{-1}(\vec{x})) + f\bigl(f^{-1}(\vec{y})\bigr) \\
-                & \mbox{denn $f$ ist linear} \\[0.2cm] 
-\Leftrightarrow & \vec{x} + \vec{y} = \vec{x} + \vec{y}.
+\begin{array}[t]{cl}
+                & \mbox{$f$ ist injektiv}                       \\[0.2cm]
+\Leftrightarrow & \mathtt{Kern}(f) = \bigl\{ \vec{0} \bigr\}    \\[0.2cm]
+\Leftrightarrow & \mathtt{Kern}(A) = \bigl\{ \vec{0} \bigr\}    \\[0.2cm]
+\Leftrightarrow & \mathtt{dim}\bigl(\mathtt{Kern}(A)\bigr) = 0  \\[0.2cm]
+\Leftrightarrow & \mathtt{dim}\bigl(\mathtt{Bild}(A)\bigr) = n  \\[0.2cm]
+\Leftrightarrow & \mathtt{Bild}(A) = \mathbb{K}^n         \\[0.2cm]
+\Leftrightarrow & \mathtt{Bild}(f) = \mathbb{K}^n          \\[0.2cm]
+\Leftrightarrow & \mbox{$f$ ist surjektiv}        
 \end{array}
 $
 \\[0.2cm]
-Folglich l\"asst sich die Umkehr-Abbildung $f^{-1}$ wieder durch eine Matrix $B$ darstellen, so dass
-sich die beiden Gleichungen
-\\[0.2cm]
-\hspace*{1.3cm}
-$f^{-1}\bigl(f(\vec{x})\bigr) = \vec{x}$ \quad und \quad
-$f\bigl(f^{-1}(\vec{x})\bigr) = \vec{x}$ 
-\\[0.2cm]
-dann in der Form 
-\\[0.2cm]
-\hspace*{1.3cm}
-$B \cdot A \cdot \vec{x} = \vec{x}$ \quad und \quad
-$A \cdot B \cdot \vec{x} = \vec{x}$ 
-\\[0.2cm]
-schreiben lassen.  Weil diese Gleichungen f\"ur alle $\vec{x} \in \mathbb{K}^n$ gelten, folgt
-\\[0.2cm]
-\hspace*{1.3cm}
-$B \cdot A = \mathrm{E}_n$ \quad und \quad $A \cdot B = \mathrm{E}_n$,
-\\[0.2cm]
-wobei $\mathrm{E}_n$ die $n \times n$ Einheits-Matrix bezeichnet.  Damit ist $B$ die zu $A$ inverse
-Matrix, es gilt also $B = A^{-1}$. 
+Folglich ist $f$ genau dann injektiv wenn es auch surjektiv ist.  Wir spalten den Rest des Beweises in zwei Teile auf.
+\begin{enumerate}
+\item Es gelte $\mathtt{Kern}(A) = \bigl\{\vec{0}\bigr\}$.  
+
+      Nach dem oben Gesagten folgt dann, dass die Abbildung $f$ bijektiv ist und damit eine Umkehr-Abbildung besitzt.
+      Bezeichnen wir die Umkehr-Abbildung mit $f^{-1}$, so k\"onnen wir sehen, dass $f^{-1}$ ebenfalls
+      eine lineare Abbildung ist, denn es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+\begin{array}[t]{lll}
+                & f^{-1}(\vec{x} + \vec{y}) = f^{-1}(\vec{x}) + f^{-1}(\vec{y}) \\[0.2cm]
+\Leftrightarrow & f\bigl(f^{-1}(\vec{x} + \vec{y})\bigr) = f\bigl(f^{-1}(\vec{x}) + f^{-1}(\vec{y})\bigr) & \mbox{denn $f$ ist injektiv} \\[0.2cm] 
+\Leftrightarrow & \vec{x} + \vec{y} = f\bigl(f^{-1}(\vec{x})) + f\bigl(f^{-1}(\vec{y})\bigr)  & \mbox{denn $f$ ist linear} \\[0.2cm] 
+\Leftrightarrow & \vec{x} + \vec{y} = \vec{x} + \vec{y}.
+\end{array}
+$
+      \\[0.2cm]
+      Folglich l\"asst sich die Umkehr-Abbildung $f^{-1}$ wieder durch eine Matrix $B$ darstellen, so dass
+      sich die beiden Gleichungen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f^{-1}\bigl(f(\vec{x})\bigr) = \vec{x}$ \quad und \quad
+      $f\bigl(f^{-1}(\vec{x})\bigr) = \vec{x}$ 
+      \\[0.2cm]
+      dann in der Form 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B \cdot A \cdot \vec{x} = \vec{x}$ \quad und \quad
+      $A \cdot B \cdot \vec{x} = \vec{x}$ 
+      \\[0.2cm]
+      schreiben lassen.  Weil diese Gleichungen f\"ur alle $\vec{x} \in \mathbb{K}^n$ gelten, folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B \cdot A = \mathrm{E}_n$ \quad und \quad $A \cdot B = \mathrm{E}_n$,
+      \\[0.2cm]
+      wobei $\mathrm{E}_n$ die $n \times n$ Einheits-Matrix bezeichnet.  Damit ist $B$ die zu $A$ inverse
+      Matrix, es gilt also $B = A^{-1}$.  Folglich ist $A$ invertierbar.
+\item Nun sei $A$ invertierbar.  Dann gibt es eine Matrix $B$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot B = E_n = B \cdot A$ 
+      \\[0.2cm]
+      gilt.  Wir zeigen, dass $\mathtt{Kern}(A) = \bigl\{\vec{0}\bigr\}$ gilt.  Sei also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\vec{x} \in \mathtt{Kern}(A)$
+      \\[0.2cm]
+      Nach Definition von $\mathtt{Kern}(A)$ heißt das
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot \vec{x} = \vec{0}$
+      \\[0.2cm]
+      Andererseits ist klar, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot \vec{0} = \vec{0}$
+      \\[0.2cm]
+      gilt.  Damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot \vec{x} = A \cdot \vec{0}$
+      \\[0.2cm]
+      Multiplizieren wir diese Gleichung von links mit der zu $A$ inversen Matrix $B$, so erhalten wir die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B \cdot A \cdot \vec{x} = B \cdot A \cdot \vec{0}$,
+      \\[0.2cm]
+      die sich wegen $B \cdot A = E_n$ zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $E_n \cdot \vec{x} = E_n \cdot \vec{0}$,
+      \\[0.2cm]
+      vereinfacht, woraus $\vec{x} = \vec{0}$ folgt.
+      \qed
+\end{enumerate}
 
 \begin{Lemma} \label{lemma:ze}
 Es sei $B \in \mathbb{K}^{n \times n}$ und es $\mathrm{ZE}$ sei eine Elementar-Matrix.
