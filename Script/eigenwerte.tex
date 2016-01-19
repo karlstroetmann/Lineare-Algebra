@@ -46,7 +46,7 @@ lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren l\"osen lassen.
 \section{Definition und Berechnung von Eigenwerten}
 \begin{Definition}[Eigenwert]
 Es sei $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix.  Ein Vektor $\vec{x} \in \mathbb{K}^n$ mit $\vec{x} \not=\vec{0}$
-ist ein \emph{Eigenvektor} der Matrix $A$ zum \emph{Eigenwert} $\lambda \in \mathbb{K}$ genau dann, wenn  
+ist ein \colorbox{yellow}{\emph{Eigenvektor}} der Matrix $A$ zum \colorbox{yellow}{\emph{Eigenwert}} $\lambda \in \mathbb{K}$ genau dann, wenn  
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot \vec{x} = \lambda \cdot \vec{x}$
@@ -81,7 +81,7 @@ $\vec{y} = \left(
   -1    
 \end{array}
 \right)
-$
+$.
 \\[0.2cm]
 Dann gilt 
 \\[0.2cm]
@@ -154,9 +154,9 @@ Kette von \"Aquivalenzen:
 \hspace*{1.3cm}
 $
 \begin{array}[b]{lll}
-                  & \exists \vec{x} \in \mathbb{K}^n: \vec{x} \not=\vec{0} \wedge A \cdot \vec{x}  = \lambda \cdot \vec{x} \\
-\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \vec{x} \not=\vec{0} \wedge A \cdot \vec{x} - \lambda \cdot \mathrm{E}_n \cdot \vec{x} = \vec{0} \\
-\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \vec{x} \not=\vec{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \vec{x} = \vec{0} \\
+                  & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x}  = \lambda \cdot \vec{x}\bigr) \\
+\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x} - \lambda \cdot \mathrm{E}_n \cdot \vec{x} = \vec{0}\bigr) \\
+\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \vec{x} = \vec{0}\bigr) \\
 \Leftrightarrow   & \mathtt{Kern}(A - \lambda \cdot \mathrm{E}_n) \not= \{\vec{0}\} \\
 \Leftrightarrow   & \mbox{$A - \lambda \cdot \mathrm{E}_n$ ist nicht invertierbar} \\
 \Leftrightarrow   & \mathtt{det}(A - \lambda \cdot \mathrm{E}_n) = 0  \\
@@ -172,7 +172,7 @@ Nach dem letzten Satz sind die Eigenwerte genau die Werte $\lambda$, f\"ur die d
 \\[0.2cm]
 den Wert $0$ annimmt.  Berechnen wir diesen Ausdruck mit Hilfe der von Leibniz angegebenen Formel,
 so erhalten wir ein Polynom in der Unbestimmten $\lambda$.  Dieses Polynom hei\3t das
-\emph{charakteristische Polynom} der Matrix $A$ und ist formal als
+\colorbox{yellow}{\emph{charakteristische Polynom}} der Matrix $A$ und ist formal als
 \\[0.2cm]
 \hspace*{1.3cm}
 $\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_n - A)$
@@ -275,7 +275,7 @@ $
 keinen reellen Eigenwert? \eoxs
 
 \begin{Definition}[Diagonalisierbarkeit]
-Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{diagonalisierbar} genau dann, wenn die Matrix
+Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \colorbox{yellow}{\emph{diagonalisierbar}} genau dann, wenn die Matrix
  $n$ linear unabh\"angige Eigenvektoren besitzt.  \eoxs 
 \end{Definition}
 
@@ -341,7 +341,7 @@ und durch eine einfache Induktion nach $k$ k\"onnen wir nach dem selben Prinzip 
 \hspace*{1.3cm}
 $A^k = X \cdot D^k \cdot X^{-1}$ \quad f\"ur alle $k \in \mathbb{N}$
 \\[0.2cm]
-gilt.  Diese Beobachtung ist hilft uns bei der Berechnung der Potenzen $A^k$, denn die Potenzen der
+gilt.  Diese Beobachtung hilft uns bei der Berechnung der Potenzen $A^k$, denn die Potenzen der
 Diagonal-Matrix $D$ sind wesentlich  leichter zu berechnen sind als die Potenzen von $A$, es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -367,7 +367,7 @@ Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibona
 $f_{n+2} = f_{n+1} + f_n$
 \\[0.2cm]
 zusammen mit den Anfangs-Bedingungen $f_0 = 0$ und $f_1 = 1$ definiert.   Eine Gleichung der obigen Form
-wird als \emph{lineare Rekurrenz-Gleichung} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
+wird als \colorbox{yellow}\emph{lineare Rekurrenz-Gleichung}} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
 der Absch\"atzung der Komplexit\"at von Algorithmen h\"aufig begegnen und wir zeigen nun am Beispiel der
 Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung l\"osen l\"asst.  Dazu definieren wir
 zun\"achst die Matrix $A$ als
