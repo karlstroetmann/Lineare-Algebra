@@ -709,10 +709,13 @@ wie folgt aus den Funktionen $f_R$ und $f_Q$ berechnet werden kann:
 \\[0.2cm]
 \hspace*{1.3cm}
 $f_{R \circ Q}(x) = f_Q\bigl(f_R(x)\bigr)$. \eox
-
+\vspace{0.2cm}
 
 \noindent
-\textbf{Bemerkung}: In einigen Lehrb\"{u}chern wird das relationale Produkt, 
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+\begin{minipage}[t]{0.92\linewidth}
+\noindent
+\textbf{Achtung}: In einigen Lehrb\"{u}chern wird das relationale Produkt, 
 das wir als $R \circ Q$ definiert haben, mit $Q \circ R$
 bezeichnet. Damit lautet die Definition von $R \circ Q$  dann wie folgt:
 Ist $R \subseteq M \times N$ und $Q \subseteq L \times M$, dann ist 
@@ -726,8 +729,11 @@ dann weiter $f$ und $g$ die diesen Relationen zugeordneten Funktionen sind, wenn
 \hspace*{1.3cm}
 $Q = \textsl{graph}(f)$ \quad und \quad $R = \textsl{graph}(g)$
 \\[0.2cm]
-gilt, dann haben wir f\"{u}r die Komposition der Funktionen $f$ und $g$, die durch $(g \circ
-f)(x) = g\bigl(f(x)\bigr)$ 
+gilt, dann haben wir f\"{u}r die Komposition der Funktionen $f$ und $g$, die durch
+\\[0.2cm]
+\hspace*{1.3cm}
+ $(g \circ f)(x) = g\bigl(f(x)\bigr)$ 
+\\[0.2cm]
 definiert ist, die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -735,8 +741,9 @@ $\textsl{graph}(g \circ f) = R \circ Q = \textsl{graph}(g) \circ \textsl{graph}(
 \\[0.2cm]
 Die von uns verwendete Definition hat den Vorteil, dass die Berechnung des 
 \emph{transitiven Abschlusses}  einer Relation, die wir sp\"{a}ter noch geben werden, intuitiver wird.
-\eox 
-
+\eoxs
+\end{minipage}}}}}}
+\vspace{0.2cm}
 
 \example
 Das n\"{a}chste Beispiel zeigt die Verwendung des relationale Produkts im Kontext einer
@@ -788,7 +795,7 @@ gegeben:
   \end{tabular} 
 \end{center}
 Diese Relation k\"{o}nnte dann zur Rechnungsstellung weiter verwendet werden. \eox
-
+\pagebreak
 
 \subsection{Eigenschaften des relationalen Produkts}
 \begin{Satz}
@@ -799,7 +806,7 @@ Diese Relation k\"{o}nnte dann zur Rechnungsstellung weiter verwendet werden. \e
   bin\"{a}re Relationen, so gilt \\[0.2cm]
   \hspace*{1.3cm} $(R \circ Q) \circ P = R \circ (Q \circ P)$. 
 \end{Satz}
-\pagebreak
+
 
 \proof
 Wir zeigen, dass
@@ -872,7 +879,7 @@ gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{A}quivalenz-Um
 \Leftrightarrow & \pair(z,x) \in Q^{-1} \circ R^{-1}   \hspace*{\fill} \Box 
 \end{array}
 \]
-\pagebreak
+
 
 \begin{Satz}[Distributiv-Gesetze f\"{u}r das relationale Produkt]
   Sind $R_1$ und $R_2$   Relationen auf $L \times M$ und ist $Q$ eine Relation auf $M \times N$, so
@@ -1005,7 +1012,7 @@ Wegen  $R \subseteq M \times N$ besteht $R$ nur aus geordneten
 Paaren und daher gilt
 \[ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
 Damit ist $\mathrm{id}_M \circ R = R$ gezeigt. \qed
-\pagebreak
+
 
 \exercise
 Es sei $R \subseteq M \times N$.  Welche Eigenschaften muss die Relation $R$ besitzen, damit die Gleichung 
@@ -1425,7 +1432,7 @@ $\pair(x,y)$, f\"{u}r die $x$ ein Vorfahre von $y$ ist:
 \hspace*{1.3cm}
 $\textsl{Eltern}^+ = \{ \pair(x,y) \in \textsl{Mensch}^2 \mid \mbox{$x$ ist Vorfahre von $y$} \}$.
 \eox
-\pagebreak
+
 
 \example
 Es sei \textsl{F} die Menge aller Flugh\"{a}fen.  Wir definieren auf der Menge \textsl{F} eine
@@ -1499,7 +1506,7 @@ als \\[0.2cm]
 \\[0.2cm]
 definieren.  Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}$ eine \"{A}quivalenz-Relation auf
 $\mathbb{Z}$ definiert. 
-\pagebreak
+
 \begin{enumerate}
 \item Um zu zeigen, dass $\approx_n$ reflexiv ist, m\"{u}ssen wir nachweisen, dass f\"{u}r alle
       $x \in \mathbb{Z}$ die Beziehung
@@ -1579,7 +1586,7 @@ $R := \bigl\{ \bigl\langle \pair(x_1, y_1) ,\pair(x_2, y_2) \bigr\rangle \in  (\
 \\[0.2cm]
 Zeigen Sie, dass $R$ dann eine \"{A}quivalenz-Relation ist.
 \exend
-\pagebreak
+
 
 \begin{Satz} Es seien $M$ und $N$ Mengen und 
 \\[0.2cm]
@@ -1665,7 +1672,7 @@ $R_f = \bigl\{ \pair(x,y) \in M \times M \mid f(x) = f(y) \bigr\}$
 so sagen wir, dass $R_f$ die \emph{von $f$ auf M erzeugte} \"{A}quivalenz-Relation ist.  Wir werden
 sp\"{a}ter sehen, dass es zu jeder  \"{A}quivalenz-Relation eine Funktion gibt, die diese
 \"{A}quivalenz-Relation erzeugt. \eox 
-\pagebreak
+
 
 \example 
 Die \"{A}quivalenz-Relation $\approx_n$ wird von der Funktion
@@ -1692,6 +1699,7 @@ $\textsl{sb}: M \rightarrow S$
 definieren, die jedem Menschen $x$ seine Staatsb\"{u}rgerschaft $\textsl{sb}(x)$ zuordnet.  Bei der durch
 diese Funktion definierten \"{A}quivalenz-Relation sind dann alle die Menschen \"{a}quivalent, welche dieselbe
 Staatsb\"{u}rgerschaft haben.  \eox
+\pagebreak
 
 \begin{Definition}[\"{A}quivalenz-Klasse]
 Ist $R$ eine \"{A}quivalenz-Relation auf $M$, so definieren wir f\"{u}r alle $x \in M$ 
@@ -2088,7 +2096,7 @@ Reflexivit\"{a}t, Anti-Symmetrie und Transitivit\"{a}t nach.
 \end{enumerate}
 Die Relation $\mathtt{div}$ ist keine totale Ordnung, denn beispielsweise gilt weder
 $2 \mathop{\mathtt{div}} 3$ noch $3 \mathop{\mathtt{div}} 2$.  \exend
-\pagebreak
+
 
 \exercise
 Auf der Menge der nat\"{u}rlichen Zahlen $\mathbb{N}$ definieren wir die Relation $\leq$ 

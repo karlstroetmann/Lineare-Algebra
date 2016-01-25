@@ -17,7 +17,7 @@ determinant := procedure(a) {
         if (a[i][i] == 0) {
             return 0;
         }
-        for (k in [i+1 .. n] | k != i) {
+        for (k in [i+1 .. n]) {
             f := a[k][i]/a[i][i];
             for (j in [i .. n]) {
                 a[k][j] -= f * a[i][j];

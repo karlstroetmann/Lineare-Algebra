@@ -372,15 +372,15 @@ eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
       $\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n \in \textsl{Kern}(f)$.
       \\[0.2cm]
       Da $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$ ist, muss es also
-      Skalare $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ geben, so dass
+      Skalare $\alpha_1, \cdots, \alpha_m \in \mathbb{K}$ geben, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
       \\[0.2cm]
       gilt.  Diese Gleichung k\"{o}nnen wir zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n + (-\beta_1) \cdot \vec{y}_1 + \cdots + (-\beta_n) \cdot \vec{y}_n = \vec{0}$
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + (-\beta_1) \cdot \vec{y}_1 + \cdots + (-\beta_n) \cdot \vec{y}_n = \vec{0}$
       \\[0.2cm]
       umstellen.  Da die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
       eine Basis von $V_1$ ist, ist diese Menge insbesondere linear unabh\"{a}ngig.  Also
@@ -562,13 +562,13 @@ definiert ist, eine lineare Abbildung ist.
 Es seien $A,B \in \mathbb{K}^{n \times m}$ und in Komponentenschreibweise gelte 
 \\[0.2cm]
 \hspace*{1.3cm}
-$A = (a_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$ \quad und \quad
-$B = (b_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$.  
+$A = (a_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq m}$ \quad und \quad
+$B = (b_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq m}$.  
 \\[0.2cm]
 Dann definieren wir die Summe $C := A + B$ so, dass
 \\[0.2cm]
 \hspace*{1.3cm}
- $C = (a_{i,j} + b_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$ 
+ $C = (a_{i,j} + b_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq m}$ 
 \\[0.2cm]
 gilt, die Komponenten der
 Matrix $C$ werden also durch Addition der Komponenten von $A$ und $B$  definiert.  Mit dieser
@@ -585,13 +585,13 @@ F\"{u}r Matrizen l\"{a}sst sich au\3erdem eine Skalar-Multiplikation definieren:
 und ist $A \in \mathbb{K}^{n \times m}$, wobei
 \\[0.2cm]
 \hspace*{1.3cm}
-$A = (a_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$
+$A = (a_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq m}$
 \\[0.2cm]
 gilt, so definieren wir die $n \times m$ Matrix 
 $C := \alpha \cdot A$ so, dass in Komponentenschreibweise
 \\[0.2cm]
 \hspace*{1.3cm}
-$C = (\alpha \cdot a_{i,j})_{1\leq i \leq n, 1 \leq j \leq m}$ 
+$C = (\alpha \cdot a_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq m}$ 
 \\[0.2cm]
 gilt.  Mit
 dieser Definition gilt f\"{u}r beliebige Vektoren $\vec{x} \in \mathbb{K}^m$ die Gleichung
@@ -679,19 +679,19 @@ $
 \end{array}
 $
 \\[0.2cm]
-Definieren wir also die Komponenten der Matrix $C = (c_{i,j})_{1\leq i \leq n, 1 \leq j \leq l}$ als
+Definieren wir also die Komponenten der Matrix $C = (c_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq l}$ als
 \\[0.2cm]
 \hspace*{1.3cm}
 $c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad f\"{u}r alle $i \in \{1,\cdots,n\}$ und $j \in\{1,\cdots,l\}$,
 \\[0.2cm]
 so sehen wir, dass diese Matrix dasselbe bewirkt, wie die sukzessive Anwendung der Matrizen $A$ und
 $B$.  Daher definieren wir f\"{u}r eine 
-$n \times m$ Matrix $B \in \mathbb{K}^{n \times m}$ der Form $B = (b_{i,k})_{1\leq i \leq n, 1 \leq j \leq m}$ und eine $m \times l$ Matrix
-$A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})_{1\leq i \leq m, 1 \leq j \leq l}$ die Produkt-Matrix $C= B \cdot A$ als die
+$n \times m$ Matrix $B \in \mathbb{K}^{n \times m}$ der Form $B = (b_{i,k})_{1\leq i \leq n \atop 1 \leq j \leq m}$ und eine $m \times l$ Matrix
+$A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})_{1\leq i \leq m \atop 1 \leq j \leq l}$ die Produkt-Matrix $C= B \cdot A$ als die
 Matrix
 \\[0.2cm]
 \hspace*{1.3cm}
-$C = (c_{i,j})_{1\leq i \leq n, 1 \leq j \leq l}$, 
+$C = (c_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq l}$, 
 \\[0.2cm]
 deren Komponenten durch die Gleichung
 \\[0.2cm]
@@ -1036,7 +1036,7 @@ mit $\alpha$.
       Dies k\"{o}nnen wir wie folgt einsehen: 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathrm{ZA}_n(k,l) \cdot B = B + \mathrm{A}_n(k,l) \cdot B+ \mathrm{A}_n(l,k) \cdot B - \mathrm{A}_n(k,k) \cdot B - \mathrm{A}_n(l,l) \cdot B$
+      $\mathrm{ZP}_n(k,l) \cdot B = B + \mathrm{A}_n(k,l) \cdot B+ \mathrm{A}_n(l,k) \cdot B - \mathrm{A}_n(k,k) \cdot B - \mathrm{A}_n(l,l) \cdot B$
       \\[0.2cm]
       Der Term $\mathrm{A}_n(k,l) \cdot B$ transportiert die $l$-Zeile von $B$ in die $k$-te Zeile, 
       der Term $\mathrm{A}_n(l,k) \cdot B$ transportiert die $k$-te Zeile von $B$ in
@@ -1422,7 +1422,7 @@ $\mathtt{e} = \left(
 $
 \item In den folgenden Schritten geht es darum, die zweite Spalte der Matrix $\mathtt{a}$ in den
       Einheits-Vektor $\vec{e}_2$ zu \"{u}berf\"{u}hren.  Zun\"{a}chst \"{u}berpr\"{u}fen wir, f\"{u}r welches $j \geq 2$
-      der Betrag $|\mathtt{a}_{2,j}|$ maximal wird.  In diesem Fall ist der Betrag in der zweiten
+      der Betrag $|\mathtt{a}_{j,2}|$ maximal wird.  In diesem Fall ist der Betrag in der zweiten
       Zeile bereits maximal, so dass wir an dieser Stelle keine Zeilen-Vertauschung vornehmen m\"{u}ssen.
       Wir m\"{u}ssen die zweite Zeile aber noch normalisieren und multiplizieren daher die zweite Zeile
       mit $\frac{3}{7}$:

@@ -54,7 +54,8 @@ $\prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \
 \\[0.2cm]
 M\"oglichkeiten bei der Wahl der Elemente $x_i$. \qed 
 
-Der folgende Begriff des Vorzeichens oder auch \emph{Signums} einer Permutation ist zentral f\"ur die
+Der folgende Begriff des \colorbox{yellow}{\emph{Vorzeichens}} oder auch
+\colorbox{yellow}{\emph{Signums}} einer Permutation ist zentral f\"ur die  
 Definition der Determinante.  F\"ur Permutationen definieren wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -89,8 +90,9 @@ Verf\"ugung steht.
   \hspace*{1.3cm}
   $\mathtt{inv}(R) := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
   \\[0.2cm]
-  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \emph{Inversionen} von $R$.
-  Darauf aufbauend definieren wir das \emph{Vorzeichen} (oder auch \emph{Signum}) der Permutation
+  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \colorbox{yellow}{\emph{Inversionen}} von $R$.
+  Darauf aufbauend definieren wir das \colorbox{yellow}{\emph{Vorzeichen}} (oder auch
+  \colorbox{yellow}{\emph{Signum}}) der Permutation 
   $R$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -155,7 +157,7 @@ spezielle Permutationen zu betrachten, die nur zwei Elemente vertauschen.  Das f
 folgenden Definition.
 
 \begin{Definition}[Transposition]
-  Eine Permutation $R \in \mathcal{S}_n$ ist eine \emph{Transposition} genau dann, wenn
+  Eine Permutation $R \in \mathcal{S}_n$ ist eine \colorbox{yellow}{\emph{Transposition}} genau dann, wenn
   die folgende Bedingung erf\"ullt ist:
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -170,7 +172,7 @@ folgenden Definition.
   bestimmt wird, schreiben wir
   \\[0.2cm]
   \hspace*{1.3cm}
-  $R = \pair(k, l)$ 
+  $R \;\widehat{=}\; \pair(k, l)$ 
   \\[0.2cm]
   falls $k < l$ ist und $R$ die Transposition ist, welche die Zahlen $k$ und $l$ vertauscht.  In Listen-Schreibweise
   k\"onnen wir diese Transposition auch als
@@ -194,7 +196,7 @@ $R = \bigl\{ \pair(1,1), \pair(2,3), \pair(3,2), \pair(4,4) \bigr\}$
 ist eine Transposition und kann daher k\"urzer als
 \\[0.2cm]
 \hspace*{1.3cm}
-$R = \pair(2,3)$
+$R \;\widehat{=}\; \pair(2,3)$
 \\[0.2cm]
 geschrieben werden. \eox
 
@@ -370,7 +372,12 @@ betr\"agt $(l - 1) - k + 1 = l - k$, w\"ahrend das Produkt
 $\pair(l-2,l-1) \circ \cdots \circ \pair(k+1,k+2)$
 \\[0.2cm]
 aus $(l-2) - (k+1) + 1 = l - k -1$ Faktoren besteht. 
-Insgesamt haben wir damit $(l - k) + (l - k) - 1 = 2 \cdot (l-k) -1$ elementare Transpositionen zur
+Insgesamt haben wir damit
+\\[0.2cm]
+\hspace*{1.3cm}
+ $(l - k) + (l - k) - 1 = 2 \cdot (l-k) -1$ 
+\\[0.2cm]
+elementare Transpositionen zur
 Darstellung von $\tau$ ben\"otigt und diese Anzahl ist offenbar ungerade.
 \qed
 
@@ -767,12 +774,13 @@ definieren, wie dies 1690 von
 }} 
 vorgeschlagen wurde.  Ist $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$, wobei entweder 
 $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir die
-\emph{Determinate} von $A$ (geschrieben $\mathtt{det}(A)$) \"uber die Formel
+\colorbox{yellow}{\emph{Determinate}} von $A$ (geschrieben $\mathtt{det}(A)$) \"uber die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
 $\ds\mathtt{det}(A) :=  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)} 
   := \sum \Bigl\{ \mathtt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \bigm| \sigma \in \mathcal{S}_n \Bigr\}
-$.
+$.}}}}}
 
 \example
 Es sei $A$ eine $2 \times 2$ Matrix, es gilt also
@@ -1082,10 +1090,10 @@ $
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}
             \\[0.4cm]
-& & \mbox{Hier wird nur das dem Kommutativ-Gesetz benutzt.} \\[0.2cm]
+& & \mbox{Hier wird nur das Kommutativ-Gesetz benutzt.} \\[0.2cm]
 & = &
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
-            \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(k))} \cdot \mbox{$\dots$} \cdot
+            \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(l))} \cdot \mbox{$\dots$} \cdot
             a_{n,\sigma(\tau(n))}, \\[0.4cm]
 & & \mbox{denn $\tau(k) = l$ und $\tau(l) = k$ und f\"ur $i \not\in \{k,l\}$ gilt $\tau(i) = i$.} \\[0.2cm]
 & = &
@@ -1599,51 +1607,113 @@ Im Falle eine quadratischen Matrix gilt $m = n$ und folglich gilt in diesem Fall
 \hspace*{1.3cm}
 $\mathtt{dim}(\mathtt{Kern}(A)) = 0 \;\Leftrightarrow\; n = \mathtt{dim}(\mathtt{Bild}(A))$. 
 \\[0.2cm]
-Wir nehmen im Folgenden an, dass $\mathtt{dim}(\mathtt{Kern}(A)) = 0$ ist und damit auch
-$n = \mathtt{dim}(\mathtt{Bild}(A))$ gilt.  Die Bedingung $\mathtt{dim}(\mathtt{Kern}(A)) = 0$
-impliziert, dass die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$ injektiv ist, w\"ahrend
-die Bedingung $\mathtt{dim}(\mathtt{Bild}(A)) = n$ impliziert, dass die Abbildung $\vec{x} \mapsto A \cdot \vec{x}$
-surjektiv ist.  Folglich ist diese Abbildung insgesamt bijektiv und besitzt damit eine Umkehr-Abbildung.
-Bezeichnen wir die Abbildung $\vec{x} \mapsto A  \cdot x$ mit $f$, setzen wir also
+Aus dieser \"{A}quivalenz ergibt sich der folgende Satz:
+
+\begin{Satz}
+Ist $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix, dann gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$f(\vec{x}) := A \cdot \vec{x}$
+$A$ ist genau dann invertierbar, wenn $\mathtt{Kern}(A) = \bigl\{ \vec{0} \bigr\}$ gilt.
+\end{Satz}
+
+\proof
+Wir definieren eine lineare Abbildung
 \\[0.2cm]
-und bezeichnen wir die Umkehr-Abbildung mit $f^{-1}$, so k\"onnen wir sehen, dass $f^{-1}$ ebenfalls
-eine lineare Abbildung ist, denn es gilt
+\hspace*{1.3cm}
+$f:\mathbb{K}^n \rightarrow \mathbb{K}^n$ \quad durch \quad $f(\vec{x}) := A \cdot \vec{x}$.
+\\[0.2cm]
+Dann haben wir die folgende Kette von Äquivalenzen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
-\begin{array}[t]{ll}
-                & f^{-1}(\vec{x} + \vec{y}) = f^{-1}(\vec{x}) + f^{-1}(\vec{y}) \\[0.2cm]
-\Leftrightarrow & f\bigl(f^{-1}(\vec{x} + \vec{y})\bigr) = f\bigl(f^{-1}(\vec{x}) + f^{-1}(\vec{y})\bigr) \\
-                & \mbox{denn $f$ ist injektiv} \\[0.2cm] 
-\Leftrightarrow & \vec{x} + \vec{y} = f\bigl(f^{-1}(\vec{x})) + f\bigl(f^{-1}(\vec{y})\bigr) \\
-                & \mbox{denn $f$ ist linear} \\[0.2cm] 
-\Leftrightarrow & \vec{x} + \vec{y} = \vec{x} + \vec{y}.
+\begin{array}[t]{cl}
+                & \mbox{$f$ ist injektiv}                       \\[0.2cm]
+\Leftrightarrow & \mathtt{Kern}(f) = \bigl\{ \vec{0} \bigr\}    \\[0.2cm]
+\Leftrightarrow & \mathtt{Kern}(A) = \bigl\{ \vec{0} \bigr\}    \\[0.2cm]
+\Leftrightarrow & \mathtt{dim}\bigl(\mathtt{Kern}(A)\bigr) = 0  \\[0.2cm]
+\Leftrightarrow & \mathtt{dim}\bigl(\mathtt{Bild}(A)\bigr) = n  \\[0.2cm]
+\Leftrightarrow & \mathtt{Bild}(A) = \mathbb{K}^n         \\[0.2cm]
+\Leftrightarrow & \mathtt{Bild}(f) = \mathbb{K}^n          \\[0.2cm]
+\Leftrightarrow & \mbox{$f$ ist surjektiv}        
 \end{array}
 $
 \\[0.2cm]
-Folglich l\"asst sich die Umkehr-Abbildung $f^{-1}$ wieder durch eine Matrix $B$ darstellen, so dass
-sich die beiden Gleichungen
-\\[0.2cm]
-\hspace*{1.3cm}
-$f^{-1}\bigl(f(\vec{x})\bigr) = \vec{x}$ \quad und \quad
-$f\bigl(f^{-1}(\vec{x})\bigr) = \vec{x}$ 
-\\[0.2cm]
-dann in der Form 
-\\[0.2cm]
-\hspace*{1.3cm}
-$B \cdot A \cdot \vec{x} = \vec{x}$ \quad und \quad
-$A \cdot B \cdot \vec{x} = \vec{x}$ 
-\\[0.2cm]
-schreiben lassen.  Weil diese Gleichungen f\"ur alle $\vec{x} \in \mathbb{K}^n$ gelten, folgt
-\\[0.2cm]
-\hspace*{1.3cm}
-$B \cdot A = \mathrm{E}_n$ \quad und \quad $A \cdot B = \mathrm{E}_n$,
-\\[0.2cm]
-wobei $\mathrm{E}_n$ die $n \times n$ Einheits-Matrix bezeichnet.  Damit ist $B$ die zu $A$ inverse
-Matrix, es gilt also $B = A^{-1}$. 
+Folglich ist $f$ genau dann injektiv wenn es auch surjektiv ist.  Wir spalten den Rest des Beweises in zwei Teile auf.
+\begin{enumerate}
+\item Es gelte $\mathtt{Kern}(A) = \bigl\{\vec{0}\bigr\}$.  
+
+      Nach dem oben Gesagten folgt dann, dass die Abbildung $f$ bijektiv ist und damit eine Umkehr-Abbildung besitzt.
+      Bezeichnen wir die Umkehr-Abbildung mit $f^{-1}$, so k\"onnen wir sehen, dass $f^{-1}$ ebenfalls
+      eine lineare Abbildung ist, denn es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+\begin{array}[t]{lll}
+                & f^{-1}(\vec{x} + \vec{y}) = f^{-1}(\vec{x}) + f^{-1}(\vec{y}) \\[0.2cm]
+\Leftrightarrow & f\bigl(f^{-1}(\vec{x} + \vec{y})\bigr) = f\bigl(f^{-1}(\vec{x}) + f^{-1}(\vec{y})\bigr) & \mbox{denn $f$ ist injektiv} \\[0.2cm] 
+\Leftrightarrow & \vec{x} + \vec{y} = f\bigl(f^{-1}(\vec{x})) + f\bigl(f^{-1}(\vec{y})\bigr)  & \mbox{denn $f$ ist linear} \\[0.2cm] 
+\Leftrightarrow & \vec{x} + \vec{y} = \vec{x} + \vec{y}.
+\end{array}
+$
+      \\[0.2cm]
+      Folglich l\"asst sich die Umkehr-Abbildung $f^{-1}$ wieder durch eine Matrix $B$ darstellen, so dass
+      sich die beiden Gleichungen
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f^{-1}\bigl(f(\vec{x})\bigr) = \vec{x}$ \quad und \quad
+      $f\bigl(f^{-1}(\vec{x})\bigr) = \vec{x}$ 
+      \\[0.2cm]
+      dann in der Form 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B \cdot A \cdot \vec{x} = \vec{x}$ \quad und \quad
+      $A \cdot B \cdot \vec{x} = \vec{x}$ 
+      \\[0.2cm]
+      schreiben lassen.  Weil diese Gleichungen f\"ur alle $\vec{x} \in \mathbb{K}^n$ gelten, folgt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B \cdot A = \mathrm{E}_n$ \quad und \quad $A \cdot B = \mathrm{E}_n$,
+      \\[0.2cm]
+      wobei $\mathrm{E}_n$ die $n \times n$ Einheits-Matrix bezeichnet.  Damit ist $B$ die zu $A$ inverse
+      Matrix, es gilt also $B = A^{-1}$.  Folglich ist $A$ invertierbar.
+\item Nun sei $A$ invertierbar.  Dann gibt es eine Matrix $B$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot B = E_n = B \cdot A$ 
+      \\[0.2cm]
+      gilt.  Wir zeigen, dass $\mathtt{Kern}(A) = \bigl\{\vec{0}\bigr\}$ gilt.  Sei also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\vec{x} \in \mathtt{Kern}(A)$
+      \\[0.2cm]
+      Nach Definition von $\mathtt{Kern}(A)$ heißt das
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot \vec{x} = \vec{0}$
+      \\[0.2cm]
+      Andererseits ist klar, dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot \vec{0} = \vec{0}$
+      \\[0.2cm]
+      gilt.  Damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cdot \vec{x} = A \cdot \vec{0}$
+      \\[0.2cm]
+      Multiplizieren wir diese Gleichung von links mit der zu $A$ inversen Matrix $B$, so erhalten wir die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B \cdot A \cdot \vec{x} = B \cdot A \cdot \vec{0}$,
+      \\[0.2cm]
+      die sich wegen $B \cdot A = E_n$ zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $E_n \cdot \vec{x} = E_n \cdot \vec{0}$,
+      \\[0.2cm]
+      vereinfacht, woraus $\vec{x} = \vec{0}$ folgt.
+      \qed
+\end{enumerate}
 
 \begin{Lemma} \label{lemma:ze}
 Es sei $B \in \mathbb{K}^{n \times n}$ und es $\mathrm{ZE}$ sei eine Elementar-Matrix.
@@ -1654,7 +1724,7 @@ $\mathtt{det}(\mathrm{ZE} \cdot B) \not= 0$.
 \end{Lemma}
 
 \proof
-Wir erbringen den der Behauptung durch eine Fallunterscheidung nach der Form der Elementar-Matrix $\mathrm{ZE}_i$.
+Wir erbringen den Beweis der Behauptung durch eine Fallunterscheidung nach der Form der Elementar-Matrix $\mathrm{ZE}$.
 \begin{enumerate}
 \item Fall: $\mathrm{ZE} = \mathrm{ZA}_n(k,l,\alpha)$. 
   
@@ -1751,7 +1821,7 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
 \item[``$\Rightarrow$'']
   
      Es sei als $\mathtt{det}(A) = 0$.  W\"are $A$ invertierbar, so w\"urde nach dem eben bewiesenen
-     Lemma folgen, dass $\mathtt{det}(A) \not= 0$ w\"are.  Folglich kann $A$ nicht invertierbar sein.
+     Satz folgen, dass $\mathtt{det}(A) \not= 0$ w\"are.  Folglich kann $A$ nicht invertierbar sein.
 \item[``$\Leftarrow$'']
 
      Nun sei $A$ nicht invertierbar.  Dann gilt $\mathtt{Kern}(A) \not= \{\vec{0}\}$.  Also gibt
@@ -1772,6 +1842,7 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      die Gleichung
      $\mathtt{det}(A) = 0$. \qed
 \end{enumerate}
+\pagebreak
 
 \exercise  
 Zeigen Sie, dass die Gleichung  

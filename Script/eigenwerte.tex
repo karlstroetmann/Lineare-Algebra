@@ -6,7 +6,7 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
       \hspace*{1.3cm}
       $\mathrm{H} \Psi = \mathrm{E} \cdot \Psi$
       \\[0.2cm]
-      ist eine Eigenwert-Gleichung.  Hier ist $\mathrm{H}$ der sogenannte
+      ist eine \colorbox{yellow}{\emph{Eigenwert-Gleichung}}.  Hier ist $\mathrm{H}$ der sogenannte
       \href{http://de.wikipedia.org/wiki/Hamilton-Operator}{Hamilton-Operator}, der auf die
       \href{http://de.wikipedia.org/wiki/Wellenfunktion}{Wellenfunktion} $\Psi$ angewendet wird.
       Dabei kommt wieder die Wellenfunktion $\Psi$ als Ergebnis heraus, allerdings multipliziert mit
@@ -20,8 +20,8 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
       l\"osen.  Um die Schr\"odinger-Gleichungen numerisch zu l\"osen, wird der Hamilton-Operator zun\"achst
       durch eine Matrix approximiert und anschlie\3end werden die Eigenwerte dieser Matrix berechnet.
 \item In der Informatik werden Eigenvektoren unter anderem bei der 
-      \emph{Unabh\"angigkeits-Analyse} ben\"otigt.  Die Unabh\"angigkeits-Analyse kann beispielsweise dazu
-      benutzt werden, das
+      \colorbox{yellow}{\emph{Unabh\"angigkeits-Analyse}} ben\"otigt.  Die Unabh\"angigkeits-Analyse
+      kann beispielsweise dazu benutzt werden, das
       \href{http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi}{Cocktail-Party-Problem} zu l\"osen.
       Bei diesem Problem geht es darum, verschiedene Ger\"auschquellen zu isolieren:  Stellen
       Sie sich vor, Sie sind auf einer Cocktail-Party.  Im Hintergrund spielt ein Klavier und Sie
@@ -32,9 +32,9 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
 
       Neben dem Cocktail-Party-Problem gibt es zahlreiche anderen Anwendungen der
       Unabh\"angigkeits-Analyse sowohl in der Informatik im Bereich des 
-      \emph{Data-Minings} als auch in vielen anderen Bereichen der Wissenschaft.
+      \colorbox{yellow}{\emph{Data-Minings}} als auch in vielen anderen Bereichen der Wissenschaft.
 \item Eine andere Anwendung von Eigenvektoren ist die L\"osung von
-      solchen Rekurrenz-Gleichungen, die bei Komplexit\"atsanalyse von Algorithmen auftreten.
+      solchen \colorbox{yellow}{\emph{Rekurrenz-Gleichungen}}, die bei Komplexit\"atsanalyse von Algorithmen auftreten.
 \item Die Liste der Anwendungen von Eigenvektoren lie\3e sich problemlos fortsetzen.  Allerdings
       w\"urden Ihnen die meisten Anwendungen zum jetzigen Zeitpunkt Ihres Studiums noch wenig sagen.
       Daher spare ich mir hier weitere Beispiele.
@@ -46,7 +46,7 @@ lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren l\"osen lassen.
 \section{Definition und Berechnung von Eigenwerten}
 \begin{Definition}[Eigenwert]
 Es sei $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix.  Ein Vektor $\vec{x} \in \mathbb{K}^n$ mit $\vec{x} \not=\vec{0}$
-ist ein \emph{Eigenvektor} der Matrix $A$ zum \emph{Eigenwert} $\lambda \in \mathbb{K}$ genau dann, wenn  
+ist ein \colorbox{yellow}{\emph{Eigenvektor}} der Matrix $A$ zum \colorbox{yellow}{\emph{Eigenwert}} $\lambda \in \mathbb{K}$ genau dann, wenn  
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot \vec{x} = \lambda \cdot \vec{x}$
@@ -81,7 +81,7 @@ $\vec{y} = \left(
   -1    
 \end{array}
 \right)
-$
+$.
 \\[0.2cm]
 Dann gilt 
 \\[0.2cm]
@@ -154,9 +154,9 @@ Kette von \"Aquivalenzen:
 \hspace*{1.3cm}
 $
 \begin{array}[b]{lll}
-                  & \exists \vec{x} \in \mathbb{K}^n: \vec{x} \not=\vec{0} \wedge A \cdot \vec{x}  = \lambda \cdot \vec{x} \\
-\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \vec{x} \not=\vec{0} \wedge A \cdot \vec{x} - \lambda \cdot \mathrm{E}_n \cdot \vec{x} = \vec{0} \\
-\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \vec{x} \not=\vec{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \vec{x} = \vec{0} \\
+                  & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x}  = \lambda \cdot \vec{x}\bigr) \\
+\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x} - \lambda \cdot \mathrm{E}_n \cdot \vec{x} = \vec{0}\bigr) \\
+\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \vec{x} = \vec{0}\bigr) \\
 \Leftrightarrow   & \mathtt{Kern}(A - \lambda \cdot \mathrm{E}_n) \not= \{\vec{0}\} \\
 \Leftrightarrow   & \mbox{$A - \lambda \cdot \mathrm{E}_n$ ist nicht invertierbar} \\
 \Leftrightarrow   & \mathtt{det}(A - \lambda \cdot \mathrm{E}_n) = 0  \\
@@ -172,7 +172,7 @@ Nach dem letzten Satz sind die Eigenwerte genau die Werte $\lambda$, f\"ur die d
 \\[0.2cm]
 den Wert $0$ annimmt.  Berechnen wir diesen Ausdruck mit Hilfe der von Leibniz angegebenen Formel,
 so erhalten wir ein Polynom in der Unbestimmten $\lambda$.  Dieses Polynom hei\3t das
-\emph{charakteristische Polynom} der Matrix $A$ und ist formal als
+\colorbox{yellow}{\emph{charakteristische Polynom}} der Matrix $A$ und ist formal als
 \\[0.2cm]
 \hspace*{1.3cm}
 $\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_n - A)$
@@ -275,7 +275,7 @@ $
 keinen reellen Eigenwert? \eoxs
 
 \begin{Definition}[Diagonalisierbarkeit]
-Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \emph{diagonalisierbar} genau dann, wenn die Matrix
+Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \colorbox{yellow}{\emph{diagonalisierbar}} genau dann, wenn die Matrix
  $n$ linear unabh\"angige Eigenvektoren besitzt.  \eoxs 
 \end{Definition}
 
@@ -292,7 +292,7 @@ wir als
 \hspace*{1.3cm}
 $X = (\vec{x}_1, \cdots, \vec{x}_n)$
 \\[0.2cm]
-schreiben, wobei die $\textbf{x}_i$ die Spalten der Matrix $X$ sind, so gilt
+schreiben, wobei die $\vec{x}_i$ die Spalten der Matrix $X$ sind, so gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot X = (\lambda_1 \cdot \vec{x}_1, \cdots, \lambda_n \cdot \vec{x}_n) = X \cdot D$,
@@ -341,7 +341,7 @@ und durch eine einfache Induktion nach $k$ k\"onnen wir nach dem selben Prinzip 
 \hspace*{1.3cm}
 $A^k = X \cdot D^k \cdot X^{-1}$ \quad f\"ur alle $k \in \mathbb{N}$
 \\[0.2cm]
-gilt.  Diese Beobachtung ist hilft uns bei der Berechnung der Potenzen $A^k$, denn die Potenzen der
+gilt.  Diese Beobachtung hilft uns bei der Berechnung der Potenzen $A^k$, denn die Potenzen der
 Diagonal-Matrix $D$ sind wesentlich  leichter zu berechnen sind als die Potenzen von $A$, es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -367,7 +367,7 @@ Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibona
 $f_{n+2} = f_{n+1} + f_n$
 \\[0.2cm]
 zusammen mit den Anfangs-Bedingungen $f_0 = 0$ und $f_1 = 1$ definiert.   Eine Gleichung der obigen Form
-wird als \emph{lineare Rekurrenz-Gleichung} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
+wird als \colorbox{yellow}{\emph{lineare Rekurrenz-Gleichung}} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
 der Absch\"atzung der Komplexit\"at von Algorithmen h\"aufig begegnen und wir zeigen nun am Beispiel der
 Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung l\"osen l\"asst.  Dazu definieren wir
 zun\"achst die Matrix $A$ als
@@ -584,9 +584,10 @@ Die erste Komponente von $\vec{x}_n$ ist gleich $f_n$.  Daher haben wir f\"ur di
 Fibonacci-Zahl $f_n$ die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-\colorbox{orange}{\framebox{\framebox{$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$ 
+\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$ 
 \quad mit \quad $\lambda_1 = \frac{1}{2}\cdot(1 + \sqrt{5})$ 
-\quad und \quad $\lambda_2 = \frac{1}{2}\cdot(1 - \sqrt{5})$}}}
+\quad und \quad $\lambda_2 = \frac{1}{2}\cdot(1 - \sqrt{5})$}}}}}
 \\[0.2cm]
 gefunden.
 
