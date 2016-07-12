@@ -227,6 +227,123 @@ $\textsl{card}\left(2^M\right) = 2^{\textsl{card}(M)}$.
 \\[0.2cm]
 Dies erkl\"{a}rt die Schreibweise $2^M$ f\"{u}r die Potenz-Menge von $M$.  \eox
 
+
+\begin{Satz}[M\"{a}chtigkeit der Potenz-Menge]
+Es sei $M$ eine endliche Menge.  Dann gilt
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(2^M\bigr) = 2^{\textsl{card}(M)}$.
+\end{Satz}
+
+\proof
+Es sei $n := \textsl{card}(M)$.  Dann hat $M$ die Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$M = \{ x_1, x_2, \cdots, x_n \}$.
+\\[0.2cm]
+Wir zeigen durch Induktion nach $n$, dass Folgendes gilt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{card}\bigl(2^M\bigr) = 2^n$.
+\begin{enumerate}
+\item Induktions-Anfang: $n = 0$.
+
+      Dann gilt  $M = \{\}$ und f\"{u}r die Potenz-Menge $2^M$ finden wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^M = 2^{\{\}} = \bigl\{ \{\} \bigr\}$.
+      \\[0.2cm]
+      Die Potenz-Menge der leeren Menge hat also genau ein Element.  Daher gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}\bigl(2^{\{\}}\bigr) = \textsl{card}\bigl(\bigl\{ \{\} \bigr\}\bigr) = 1$.
+      \\[0.2cm]
+      Auf der anderen Seite haben wir 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^{\textsl{card}(\{\})} = 2^0 = 1$.
+\item Induktions-Schritt: $n \mapsto n + 1$.
+
+      Wenn $\textsl{card}(M) = n+1$ ist, dann hat $M$ die Form
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $M = \{ x_1, x_2, \cdots x_n, x_{n+1}\}$.
+      \\[0.2cm]
+      Es gibt zwei verschiedene Arten von Teilmengen von $M$: Solche, die $x_{n+1}$ enthalten und
+      solche, die $x_{n+1}$ nicht enthalten.  Dementsprechend k\"{o}nnen wir die Potenz-Menge $2^M$ wie folgt
+      aufteilen:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^M = \bigl\{ K \in 2^M \bigm| x_{n+1}     \in K \bigr\} \cup
+             \bigl\{ K \in 2^M \bigm| x_{n+1} \not\in K \bigr\} 
+      $
+      \\[0.2cm]
+      Wir bezeichnen die erste dieser Mengen mit $A$, die zweite nennen wir $B$:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A := \bigl\{ K \in 2^M \bigm| x_{n+1}     \in K \bigr\}$, \quad
+      $B := \bigl\{ K \in 2^M \bigm| x_{n+1} \not\in K \bigr\}$.
+      \\[0.2cm]
+      Offenbar sind die Mengen $A$ und $B$ disjunkt: $A \cap B = \emptyset$.  Daher folgt aus der Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $2^M = A \cup B$,
+      \\[0.2cm]
+      dass die Anzahl der Elemente von $2^M$ gleich der Summe der Anzahl der Elemente in $A$ und der
+      Anzahl der Elemente in $B$ ist:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}\bigl(2^M\bigr) = \textsl{card}(A) + \textsl{card}(B)$.
+      \\[0.2cm]
+      Die Menge $B$ enth\"{a}lt genau die Teilmengen von $M$, die $x_{n+1}$ nicht enthalten.  Das sind dann 
+      aber genau die Teilmengen der Menge $\{x_1,\cdots, x_n\}$, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $B = 2^{\{x_1,\cdots, x_n\}}$.
+      \\[0.2cm]
+      Nach Induktions-Voraussetzung wissen wir daher, dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}(B) = \textsl{card}\bigl(2^{\{x_1,\cdots, x_n\}}\bigr) \stackrel{IV}{=}
+       2^{\textsl{card}(\{x_1,\cdots, x_n\})} = \displaystyle 2^n
+      $
+      \\[0.2cm]
+      gilt.  Als n\"{a}chstes zeigen wir, dass die Menge $A$ genau so viele Elemente hat, wie die Menge $B$.
+      Zu diesem Zweck konstruieren wir eine bijektive Funktion $f$, die jedem $K \in B$ eindeutig eine
+      Menge $f(K) \in A$ zuordnet:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f: B \rightarrow A$ \quad ist definiert durch \quad $f(K) := K \cup \{ x_{n+1} \}$.
+      \\[0.2cm]
+      Die Umkehrfunktion $f^{-1}: A \rightarrow B$ kann offenbar durch die Formel
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f^{-1}(K) := K \backslash \{ x_{n+1} \}$
+      \\[0.2cm]
+      definiert werden.  Damit ist aber klar, dass die Mengen $A$ und $B$ gleich viele Elemente haben:
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\textsl{card}(A) = \textsl{card}(B)$.
+      \\[0.2cm]
+      Insgesamt haben wir jetzt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $
+      \begin{array}[t]{lcl}
+        \textsl{card}\bigl(2^M\bigr) & = & \textsl{card}(A) + \textsl{card}(B) \\[0.2cm]
+                                     & = & \textsl{card}(B) + \textsl{card}(B) \\[0.2cm]
+                                     & = & 2 \cdot \textsl{card}(B)            \\[0.2cm]
+                                     & \stackrel{IV}{=} & 2 \cdot 2^n                         \\[0.2cm]
+                                     & = & 2^{n+1}.
+      \end{array}
+      $
+      \\[0.2cm]
+      Wir haben also $\textsl{card}\bigl(2^M\bigr) = 2^{n+1}$ bewiesen.  Damit ist der Induktions-Schritt
+      abgeschlossen und der Beweis der Behauptung ist erbracht. \qed
+\end{enumerate}
+
+
+
 \section{Vereinigungs-Mengen}
 Sind zwei Mengen $M$ und $N$ gegeben, so enth\"{a}lt die Vereinigung von $M$ und $N$ alle Elemente, die 
  in der Menge $M$ oder in der Menge $N$ liegen.  F\"{u}r diese Vereinigung schreiben wir $M \cup N$.
@@ -1973,6 +2090,191 @@ transitiv ist.
       $x \mathop{R} z$. $\surd$
       \qed
 \end{enumerate}
+
+
+\begin{Definition}[Abz\"{a}hlbar] \hspace*{\fill} \\
+Eine unendliche Menge $M$ hei\3t \colorbox{yellow}{\emph{abz\"{a}hlbar}}, wenn eine 
+\underline{sur}j\underline{ektive} Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow M$
+\\[0.2cm]
+existiert.  Dabei nennen wir eine Funktion $f:A \rightarrow B$  \emph{surjektiv} genau
+dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall y \in B: \exists x \in A: f(x) = y$.  \eox
+\end{Definition}
+
+Die Idee bei dieser Definition ist, dass die Menge  $M$ in einem gewissen Sinne nicht mehr Elemente hat
+als die Menge der nat\"{u}rlichen Zahlen, denn die Elemente k\"{o}nnen ja \"{u}ber die Funktion $f$
+aufgez\"{a}hlt werden, wobei wir eventuelle Wiederholungen eines Elements zulassen wollen.
+
+\example
+Die Menge $\mathbb{Z}$ der ganzen Zahlen ist abz\"{a}hlbar, denn die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow \mathbb{Z}$,
+\\[0.2cm]
+die durch die Fallunterscheidung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(n) := \left\{ \begin{array}[c]{ll}
+                 (n - 1) / 2 + 1  & \mbox{falls $n \modulo 2 = 1$}  \\[0.2cm]
+                 - (n - 2) / 2          & \mbox{falls $n \modulo 2 = 0$}
+                 \end{array}
+         \right.
+$ 
+\\[0.2cm]
+definiert ist, ist surjektiv.  Um dies einzusehen, zeigen wir zun\"{a}chst, dass $f$ wohldefiniert ist.
+Dazu ist zu zeigen, dass $f(n)$ tats\"{a}chlich in jedem Fall eine ganze Zahl ist.
+\begin{enumerate}
+\item $n \modulo 2 = 1$:  Dann ist $n$ ungerade, also ist $(n-1)$ gerade und die Division
+      $(n-1)/2$ liefert eine ganze Zahl.
+\item $n \modulo 2 = 0$:  In diesem Fall ist $n$ gerade.  Damit ist auch $(n-2)$ gerade und daher
+      liefert jetzt die Division $n/2$ eine ganze Zahl.
+\end{enumerate}
+Es bleibt zu zeigen, dass $f$ surjektiv ist.  Wir m\"{u}ssen also zeigen, dass es f\"{u}r jedes 
+$z \in \mathbb{Z}$ eine nat\"{u}rliche Zahl $n$ gibt, so dass $f(n) = z$ ist.  Wir f\"{u}hren diesen Nachweis
+mittels einer Fall-Unterscheidung:
+\begin{enumerate}
+\item Fall: $z > 0$.
+  
+      Wir definieren $n := 2 \cdot (z - 1) + 1$.  Wegen $z >0$ gilt $n > 0$ und damit ist $n$
+      tats\"{a}chlich eine nat\"{u}rliche Zahl.  Au\3erdem ist klar, dass $n$ ungerade ist. Daher gilt
+      \\[0.2cm]
+      \hspace*{0.3cm}
+      $f(n) = (n - 1)/2 + 1 = \bigl(\bigl(2 \cdot (z - 1) + 1\bigr) - 1\bigr)/2 + 1 
+            = \bigl(2 \cdot (z - 1)/2\bigr) + 1= z-1 + 1 = z
+      $.
+      \\[0.2cm]
+      Also gilt $f(n) = z$.
+\item Fall: $z \leq 0$.
+
+      Wir definieren $n := - 2 \cdot (z - 1)$.  Wegen $z \leq 0$ ist klar, dass $n$ eine gerade 
+      nat\"{u}rliche Zahl ist.  Damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(n) = -\bigl(-2 \cdot (z - 1) - 2\bigr)/2 = z$.
+      \\[0.2cm]
+      Also gilt ebenfalls $f(n) = z$.
+\end{enumerate}
+Damit ist die Sujektivit\"{a}t von $f$ gezeigt und somit ist $\mathbb{Z}$ abz\"{a}hlbar.
+\qed
+
+Den Beweis des letzten Satzes haben wir direkt gef\"{u}hrt, aber zum Nachweis des n\"{a}chsten Satzes werden wir
+einen indirekten Beweis ben\"{o}tigen.  Vorab noch eine Definition.
+
+\begin{Definition}[\"{U}berabz\"{a}hlbar] \lb
+Eine unendliche Menge hei\3t \colorbox{yellow}{\emph{\"{u}berabz\"{a}hlbar}}, wenn sie \underline{nicht} abz\"{a}hlbar ist.
+\end{Definition}
+
+\begin{Satz}
+  Die Potenzmenge der Menge der nat\"{u}rlichen Zahlen ist \"{u}berabz\"{a}hlbar.
+\end{Satz}
+
+\proof
+Wir f\"{u}hren den Beweis indirekt und nehmen an, dass $2^{\mathbb{N}}$ abz\"{a}hlbar ist.  Dann gibt es also
+eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow 2^{\mathbb{N}}$,
+\\[0.2cm]
+die surjektiv ist.  Wir definieren nun die Menge $C$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$C := \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\}$.
+\\[0.2cm]
+Offenbar ist $C$ eine Teilmenge der Menge der nat\"{u}rlichen Zahlen und damit gilt $C \in 2^{\mathbb{N}}$.
+Da die Funktion $f$ nach unserer Annahme surjektiv ist, gibt es also eine nat\"{u}rliche Zahl $n_0$, so
+dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$C = f(n_0)$
+\\[0.2cm]
+gilt.  Wir untersuchen nun, ob $n_0 \in C$ gilt.  Dazu betrachten wir die folgende Kette von
+\"{A}quivalenzen: 
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+                & n_0 \in C                                                      \\[0.2cm]
+\Leftrightarrow & n_0 \in \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\} \\[0.2cm]
+\Leftrightarrow & n_0 \not\in f(n_0)                                             \\[0.2cm]
+\Leftrightarrow & n_0 \not\in C                                               
+\end{array}
+$
+\\[0.2cm]
+Wir haben also
+\\[0.2cm]
+\hspace*{1.3cm}
+$n_0 \in C \;\Leftrightarrow\; n_0 \not\in C \qquad \color{red}{\lightning}$
+\\[0.2cm]
+gezeigt und das ist ein offensichtlicher Widerspruch. \qed
+
+\remark
+Wir haben soeben gezeigt, dass es in gewisser Weise mehr Mengen von nat\"{u}rlichen Zahlen gibt, als es
+nat\"{u}rliche Zahlen gibt.  In \"{a}hnlicher Weise kann gezeigt werden, dass die Menge $\mathbb{R}$ der reellen
+Zahlen \"{u}berabz\"{a}hlbar ist.  
+
+\exercise
+Zeigen Sie, dass das Intervall
+\\[0.2cm]
+\hspace*{1.3cm}
+$[0,1[ := \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
+\\[0.2cm]
+\"{u}berabz\"{a}hlbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  f\"{u}r alle $i \in \mathbb{N}$
+\\[0.2cm]
+dargestellt sind, es gilt dann also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = \sum\limits_{i=1}^\infty d_i \cdot \Bigl(\frac{1}{10}\Bigr)^{i}$.
+\\[0.2cm]
+Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
+nicht auf ``Periode Neun'' endet, es d\"{u}rfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
+alle Ziffern $d_i$ den Wert $9$ haben:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}: i \geq n \rightarrow c_i = 9$.
+\\[0.2cm]
+F\"{u}hren Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow [0,1[$
+\\[0.2cm]
+gibt, die die Menge $[0,1[$ aufz\"{a}hlt.  Dann gibt es auch eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$g: \mathbb{N} \times \mathbb{N} \rightarrow \{0, \cdots, 9\}$
+\\[0.2cm]
+so dass $g(n,i)$ die $i$-te Nachkommastelle von $f(n)$ berechnet:
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(n) = 0,g(n,1) g(n,2) g(n,3) \cdots$.
+\\[0.2cm]
+Konstruieren Sie nun mit Hilfe dieser Funktion $g$ eine Zahl $c \in [0,1[$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$c = 0,c_1c_2c_3 \cdots$
+\\[0.2cm]
+so, dass sich ein Widerspruch ergibt.  Orientieren Sie sich dabei an der Konstruktion der Menge $C$ im
+Beweis der \"{u}berabz\"{a}hlbarkeit von $2^\mathbb{N}$.  \exend
+
+\exercise
+Zeigen Sie, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{N}^\mathbb{N} := \{ f \mid f: \mathbb{N} \rightarrow \mathbb{N} \}$,
+\\[0.2cm]
+also die Menge aller Funktionen von $\mathbb{N}$ nach $\mathbb{N}$ \"{u}berabz\"{a}hlbar ist.
+\exend
+
+\exercise
+Zeigen Sie, dass die Menge $\mathbb{Q}_+$ der positiven rationalen Zahlen abz\"{a}hlbar ist.
+\exend
 
 
 
