@@ -563,6 +563,197 @@ die Formel $\neg\; x \in M$, formal: \\[0.2cm]
 Eine analoge Notation verwenden wir auch f\"{u}r das Gleichheitszeichen:
 $x \not= y \;\stackrel{de\!f}{\Longleftrightarrow}\; \neg\; (x = y)$.
 
+\section{Die Kardinalit\"at einer Menge}
+In diesem Abschnitt besch\"aftigen wir uns mit der \emph{Gr\"o{\ss}e} von Mengen.  Wir werden sehen,
+dass es unendlichen Mengen unterschiedlicher G\"o{\ss}e gibt, n\"amlich solche Mengen, bei denen wir
+die Elemente aufz\"ahlen k\"onnen und solche Mengen, wo das nicht m\"oglich ist.
+
+\begin{Definition}[Abz\"{a}hlbar] \hspace*{\fill} \\
+Eine unendliche Menge $M$ hei\3t \colorbox{yellow}{\emph{abz\"{a}hlbar}}, wenn eine 
+\underline{sur}j\underline{ektive} Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow M$
+\\[0.2cm]
+existiert.  Dabei nennen wir eine Funktion $f:A \rightarrow B$  \emph{surjektiv} genau
+dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\forall y \in B: \exists x \in A: f(x) = y$.  \eox
+\end{Definition}
+
+Die Idee bei dieser Definition ist, dass die Menge  $M$ in einem gewissen Sinne nicht mehr Elemente hat
+als die Menge der nat\"{u}rlichen Zahlen, denn die Elemente k\"{o}nnen ja \"{u}ber die Funktion $f$
+aufgez\"{a}hlt werden, wobei wir eventuelle Wiederholungen eines Elements zulassen wollen.
+
+\example
+Die Menge $\mathbb{Z}$ der ganzen Zahlen ist abz\"{a}hlbar, denn die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow \mathbb{Z}$,
+\\[0.2cm]
+die durch die Fallunterscheidung
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(n) := \left\{ \begin{array}[c]{ll}
+                 (n - 1) / 2 + 1  & \mbox{falls $n \modulo 2 = 1$}  \\[0.2cm]
+                 - (n - 2) / 2          & \mbox{falls $n \modulo 2 = 0$}
+                 \end{array}
+         \right.
+$ 
+\\[0.2cm]
+definiert ist, ist surjektiv.  Um dies einzusehen, zeigen wir zun\"{a}chst, dass $f$ wohldefiniert ist.
+Dazu ist zu zeigen, dass $f(n)$ tats\"{a}chlich in jedem Fall eine ganze Zahl ist.
+\begin{enumerate}
+\item $n \modulo 2 = 1$:  Dann ist $n$ ungerade, also ist $(n-1)$ gerade und die Division
+      $(n-1)/2$ liefert eine ganze Zahl.
+\item $n \modulo 2 = 0$:  In diesem Fall ist $n$ gerade.  Damit ist auch $(n-2)$ gerade und daher
+      liefert jetzt die Division $n/2$ eine ganze Zahl.
+\end{enumerate}
+Es bleibt zu zeigen, dass $f$ surjektiv ist.  Wir m\"{u}ssen also zeigen, dass es f\"{u}r jedes 
+$z \in \mathbb{Z}$ eine nat\"{u}rliche Zahl $n$ gibt, so dass $f(n) = z$ ist.  Wir f\"{u}hren diesen Nachweis
+mittels einer Fall-Unterscheidung:
+\begin{enumerate}
+\item Fall: $z > 0$.
+  
+      Wir definieren $n := 2 \cdot (z - 1) + 1$.  Wegen $z >0$ gilt $n > 0$ und damit ist $n$
+      tats\"{a}chlich eine nat\"{u}rliche Zahl.  Au\3erdem ist klar, dass $n$ ungerade ist. Daher gilt
+      \\[0.2cm]
+      \hspace*{0.3cm}
+      $f(n) = (n - 1)/2 + 1 = \bigl(\bigl(2 \cdot (z - 1) + 1\bigr) - 1\bigr)/2 + 1 
+            = \bigl(2 \cdot (z - 1)/2\bigr) + 1= z-1 + 1 = z
+      $.
+      \\[0.2cm]
+      Also gilt $f(n) = z$.
+\item Fall: $z \leq 0$.
+
+      Wir definieren $n := - 2 \cdot (z - 1)$.  Wegen $z \leq 0$ ist klar, dass $n$ eine gerade 
+      nat\"{u}rliche Zahl ist.  Damit haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(n) = -\bigl(-2 \cdot (z - 1) - 2\bigr)/2 = z$.
+      \\[0.2cm]
+      Also gilt ebenfalls $f(n) = z$.
+\end{enumerate}
+Damit ist die Sujektivit\"{a}t von $f$ gezeigt und somit ist $\mathbb{Z}$ abz\"{a}hlbar.
+\qed
+
+Den Beweis des letzten Satzes haben wir direkt gef\"{u}hrt, aber zum Nachweis des n\"{a}chsten Satzes werden wir
+einen indirekten Beweis ben\"{o}tigen.  Vorab noch eine Definition.
+
+\begin{Definition}[\"{U}berabz\"{a}hlbar] \lb
+Eine unendliche Menge hei\3t \colorbox{yellow}{\emph{\"{u}berabz\"{a}hlbar}}, wenn sie \underline{nicht} abz\"{a}hlbar ist.
+\end{Definition}
+
+\begin{Satz}
+  Die Potenzmenge der Menge der nat\"{u}rlichen Zahlen ist \"{u}berabz\"{a}hlbar.
+\end{Satz}
+
+\proof
+Wir f\"{u}hren den Beweis indirekt und nehmen an, dass $2^{\mathbb{N}}$ abz\"{a}hlbar ist.  Dann gibt es also
+eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow 2^{\mathbb{N}}$,
+\\[0.2cm]
+die surjektiv ist.  Wir definieren nun die Menge $C$ wie folgt:
+\\[0.2cm]
+\hspace*{1.3cm}
+$C := \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\}$.
+\\[0.2cm]
+Offenbar ist $C$ eine Teilmenge der Menge der nat\"{u}rlichen Zahlen und damit gilt $C \in 2^{\mathbb{N}}$.
+Da die Funktion $f$ nach unserer Annahme surjektiv ist, gibt es also eine nat\"{u}rliche Zahl $n_0$, so
+dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$C = f(n_0)$
+\\[0.2cm]
+gilt.  Wir untersuchen nun, ob $n_0 \in C$ gilt.  Dazu betrachten wir die folgende Kette von
+\"{A}quivalenzen: 
+\\[0.2cm]
+\hspace*{1.3cm}
+$
+\begin{array}[t]{cl}
+                & n_0 \in C                                                      \\[0.2cm]
+\Leftrightarrow & n_0 \in \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\} \\[0.2cm]
+\Leftrightarrow & n_0 \not\in f(n_0)                                             \\[0.2cm]
+\Leftrightarrow & n_0 \not\in C                                               
+\end{array}
+$
+\\[0.2cm]
+Wir haben also
+\\[0.2cm]
+\hspace*{1.3cm}
+$n_0 \in C \;\Leftrightarrow\; n_0 \not\in C \qquad \color{red}{\lightning}$
+\\[0.2cm]
+gezeigt und das ist ein offensichtlicher Widerspruch. \qed
+
+\remark
+Wir haben soeben gezeigt, dass es in gewisser Weise mehr Mengen von nat\"{u}rlichen Zahlen gibt, als es
+nat\"{u}rliche Zahlen gibt.  In \"{a}hnlicher Weise kann gezeigt werden, dass die Menge $\mathbb{R}$ der reellen
+Zahlen \"{u}berabz\"{a}hlbar ist.  
+\pagebreak
+
+\exercise
+Zeigen Sie, dass das Intervall
+\\[0.2cm]
+\hspace*{1.3cm}
+$[0,1[ := \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
+\\[0.2cm]
+\"{u}berabz\"{a}hlbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  f\"{u}r alle $i \in \mathbb{N}$
+\\[0.2cm]
+dargestellt sind, es gilt dann also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = \sum\limits_{i=1}^\infty d_i \cdot \Bigl(\frac{1}{10}\Bigr)^{i}$.
+\\[0.2cm]
+Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
+nicht auf ``Periode Neun'' endet, es d\"{u}rfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
+alle Ziffern $d_i$ den Wert $9$ haben:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}: i \geq n \rightarrow c_i = 9$.
+\\[0.2cm]
+F\"{u}hren Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
+\\[0.2cm]
+\hspace*{1.3cm}
+$f: \mathbb{N} \rightarrow [0,1[$
+\\[0.2cm]
+gibt, die die Menge $[0,1[$ aufz\"{a}hlt.  Dann gibt es auch eine Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+$g: \mathbb{N} \times \mathbb{N} \rightarrow \{0, \cdots, 9\}$
+\\[0.2cm]
+so dass $g(n,i)$ die $i$-te Nachkommastelle von $f(n)$ berechnet:
+\\[0.2cm]
+\hspace*{1.3cm}
+$f(n) = 0,g(n,1) g(n,2) g(n,3) \cdots$.
+\\[0.2cm]
+Konstruieren Sie nun mit Hilfe dieser Funktion $g$ eine Zahl $c \in [0,1[$ in der Form
+\\[0.2cm]
+\hspace*{1.3cm}
+$c = 0,c_1c_2c_3 \cdots$
+\\[0.2cm]
+so, dass sich ein Widerspruch ergibt.  Orientieren Sie sich dabei an der Konstruktion der Menge $C$ im
+Beweis der \"{u}berabz\"{a}hlbarkeit von $2^\mathbb{N}$.  \exend
+
+\exercise
+Zeigen Sie, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{N}^\mathbb{N} := \{ f \mid f: \mathbb{N} \rightarrow \mathbb{N} \}$,
+\\[0.2cm]
+also die Menge aller Funktionen von $\mathbb{N}$ nach $\mathbb{N}$ \"{u}berabz\"{a}hlbar ist.
+\exend
+
+\exercise
+Zeigen Sie, dass die Menge $\mathbb{Q}_+$ der positiven rationalen Zahlen abz\"{a}hlbar ist.
+\exend
+
+
 \section{Bin\"{a}re Relationen}
 Relationen treten in der Informatik an vielen Stellen auf.  Die wichtigste
 Anwendung findet sich in der Theorie der relationalen Datenbanken.
@@ -721,6 +912,7 @@ funktionale Relation, so k\"{o}nnen wir eine Funktion $f_R\colon M \rightarrow N
 definieren: \\[0.2cm]
 \hspace*{1.3cm} $f_R(x) := y \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \pair(x,y) \in R$. 
 \end{Satz}
+\pagebreak
 
 \proof
 Diese Definition funktioniert, denn aus der Links-Totalit\"{a}t von $R$ folgt, dass es f\"{u}r
@@ -816,7 +1008,6 @@ $Q$ und $R$ wie folgt gegeben: \\[0.2cm]
                 $Q = \{ \pair(4,7), \pair(6,8), \pair(6,9) \}$. \\[0.2cm]
 Dann gilt \\[0.2cm]
 \hspace*{1.3cm} $R \circ Q = \{ \pair(1,7), \pair(1,8), \pair(1,9) \}$. \eox
-\pagebreak
 
 \exercise
 Es sei $R \subseteq L \times M$ eine funktionale Relation auf $L$ und 
@@ -826,7 +1017,7 @@ wie folgt aus den Funktionen $f_R$ und $f_Q$ berechnet werden kann:
 \\[0.2cm]
 \hspace*{1.3cm}
 $f_{R \circ Q}(x) = f_Q\bigl(f_R(x)\bigr)$. \eox
-\vspace{0.2cm}
+\pagebreak
 
 \noindent
 \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
@@ -912,7 +1103,7 @@ gegeben:
   \end{tabular} 
 \end{center}
 Diese Relation k\"{o}nnte dann zur Rechnungsstellung weiter verwendet werden. \eox
-\pagebreak
+
 
 \subsection{Eigenschaften des relationalen Produkts}
 \begin{Satz}
@@ -1076,6 +1267,7 @@ Distributiv-Gesetzes
 \\[0.2cm]
 erbracht. \hspace*{\fill} $\Box$
 \vspace{0.2cm}
+\pagebreak
 
 \exercise
 Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $Q_1,Q_2 \subseteq N \times L$. 
@@ -1215,6 +1407,7 @@ $\forall x, y \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,x) \in R \right
 Eine Relation $R \subseteq M \times M$  ist genau dann anti-symmetrisch, wenn
 $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
 \end{Satz}
+\pagebreak
 
 \proof
 \begin{enumerate}
@@ -1285,6 +1478,7 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
       weder anti-symmetrisch noch symmetrisch ist. \eox
 \end{enumerate}
+\pagebreak
 
 \remark
 In der Literatur finden Sie noch den Begriff der \emph{Asymmetrie}.  Dort wird eine Relation 
@@ -2090,192 +2284,6 @@ transitiv ist.
       $x \mathop{R} z$. $\surd$
       \qed
 \end{enumerate}
-
-
-\begin{Definition}[Abz\"{a}hlbar] \hspace*{\fill} \\
-Eine unendliche Menge $M$ hei\3t \colorbox{yellow}{\emph{abz\"{a}hlbar}}, wenn eine 
-\underline{sur}j\underline{ektive} Funktion
-\\[0.2cm]
-\hspace*{1.3cm}
-$f: \mathbb{N} \rightarrow M$
-\\[0.2cm]
-existiert.  Dabei nennen wir eine Funktion $f:A \rightarrow B$  \emph{surjektiv} genau
-dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\forall y \in B: \exists x \in A: f(x) = y$.  \eox
-\end{Definition}
-
-Die Idee bei dieser Definition ist, dass die Menge  $M$ in einem gewissen Sinne nicht mehr Elemente hat
-als die Menge der nat\"{u}rlichen Zahlen, denn die Elemente k\"{o}nnen ja \"{u}ber die Funktion $f$
-aufgez\"{a}hlt werden, wobei wir eventuelle Wiederholungen eines Elements zulassen wollen.
-
-\example
-Die Menge $\mathbb{Z}$ der ganzen Zahlen ist abz\"{a}hlbar, denn die Funktion
-\\[0.2cm]
-\hspace*{1.3cm}
-$f: \mathbb{N} \rightarrow \mathbb{Z}$,
-\\[0.2cm]
-die durch die Fallunterscheidung
-\\[0.2cm]
-\hspace*{1.3cm}
-$f(n) := \left\{ \begin{array}[c]{ll}
-                 (n - 1) / 2 + 1  & \mbox{falls $n \modulo 2 = 1$}  \\[0.2cm]
-                 - (n - 2) / 2          & \mbox{falls $n \modulo 2 = 0$}
-                 \end{array}
-         \right.
-$ 
-\\[0.2cm]
-definiert ist, ist surjektiv.  Um dies einzusehen, zeigen wir zun\"{a}chst, dass $f$ wohldefiniert ist.
-Dazu ist zu zeigen, dass $f(n)$ tats\"{a}chlich in jedem Fall eine ganze Zahl ist.
-\begin{enumerate}
-\item $n \modulo 2 = 1$:  Dann ist $n$ ungerade, also ist $(n-1)$ gerade und die Division
-      $(n-1)/2$ liefert eine ganze Zahl.
-\item $n \modulo 2 = 0$:  In diesem Fall ist $n$ gerade.  Damit ist auch $(n-2)$ gerade und daher
-      liefert jetzt die Division $n/2$ eine ganze Zahl.
-\end{enumerate}
-Es bleibt zu zeigen, dass $f$ surjektiv ist.  Wir m\"{u}ssen also zeigen, dass es f\"{u}r jedes 
-$z \in \mathbb{Z}$ eine nat\"{u}rliche Zahl $n$ gibt, so dass $f(n) = z$ ist.  Wir f\"{u}hren diesen Nachweis
-mittels einer Fall-Unterscheidung:
-\begin{enumerate}
-\item Fall: $z > 0$.
-  
-      Wir definieren $n := 2 \cdot (z - 1) + 1$.  Wegen $z >0$ gilt $n > 0$ und damit ist $n$
-      tats\"{a}chlich eine nat\"{u}rliche Zahl.  Au\3erdem ist klar, dass $n$ ungerade ist. Daher gilt
-      \\[0.2cm]
-      \hspace*{0.3cm}
-      $f(n) = (n - 1)/2 + 1 = \bigl(\bigl(2 \cdot (z - 1) + 1\bigr) - 1\bigr)/2 + 1 
-            = \bigl(2 \cdot (z - 1)/2\bigr) + 1= z-1 + 1 = z
-      $.
-      \\[0.2cm]
-      Also gilt $f(n) = z$.
-\item Fall: $z \leq 0$.
-
-      Wir definieren $n := - 2 \cdot (z - 1)$.  Wegen $z \leq 0$ ist klar, dass $n$ eine gerade 
-      nat\"{u}rliche Zahl ist.  Damit haben wir
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $f(n) = -\bigl(-2 \cdot (z - 1) - 2\bigr)/2 = z$.
-      \\[0.2cm]
-      Also gilt ebenfalls $f(n) = z$.
-\end{enumerate}
-Damit ist die Sujektivit\"{a}t von $f$ gezeigt und somit ist $\mathbb{Z}$ abz\"{a}hlbar.
-\qed
-
-Den Beweis des letzten Satzes haben wir direkt gef\"{u}hrt, aber zum Nachweis des n\"{a}chsten Satzes werden wir
-einen indirekten Beweis ben\"{o}tigen.  Vorab noch eine Definition.
-
-\begin{Definition}[\"{U}berabz\"{a}hlbar] \lb
-Eine unendliche Menge hei\3t \colorbox{yellow}{\emph{\"{u}berabz\"{a}hlbar}}, wenn sie \underline{nicht} abz\"{a}hlbar ist.
-\end{Definition}
-
-\begin{Satz}
-  Die Potenzmenge der Menge der nat\"{u}rlichen Zahlen ist \"{u}berabz\"{a}hlbar.
-\end{Satz}
-
-\proof
-Wir f\"{u}hren den Beweis indirekt und nehmen an, dass $2^{\mathbb{N}}$ abz\"{a}hlbar ist.  Dann gibt es also
-eine Funktion
-\\[0.2cm]
-\hspace*{1.3cm}
-$f: \mathbb{N} \rightarrow 2^{\mathbb{N}}$,
-\\[0.2cm]
-die surjektiv ist.  Wir definieren nun die Menge $C$ wie folgt:
-\\[0.2cm]
-\hspace*{1.3cm}
-$C := \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\}$.
-\\[0.2cm]
-Offenbar ist $C$ eine Teilmenge der Menge der nat\"{u}rlichen Zahlen und damit gilt $C \in 2^{\mathbb{N}}$.
-Da die Funktion $f$ nach unserer Annahme surjektiv ist, gibt es also eine nat\"{u}rliche Zahl $n_0$, so
-dass 
-\\[0.2cm]
-\hspace*{1.3cm}
-$C = f(n_0)$
-\\[0.2cm]
-gilt.  Wir untersuchen nun, ob $n_0 \in C$ gilt.  Dazu betrachten wir die folgende Kette von
-\"{A}quivalenzen: 
-\\[0.2cm]
-\hspace*{1.3cm}
-$
-\begin{array}[t]{cl}
-                & n_0 \in C                                                      \\[0.2cm]
-\Leftrightarrow & n_0 \in \bigl\{ n \in \mathbb{N} \bigm| n \not\in f(n) \bigr\} \\[0.2cm]
-\Leftrightarrow & n_0 \not\in f(n_0)                                             \\[0.2cm]
-\Leftrightarrow & n_0 \not\in C                                               
-\end{array}
-$
-\\[0.2cm]
-Wir haben also
-\\[0.2cm]
-\hspace*{1.3cm}
-$n_0 \in C \;\Leftrightarrow\; n_0 \not\in C \qquad \color{red}{\lightning}$
-\\[0.2cm]
-gezeigt und das ist ein offensichtlicher Widerspruch. \qed
-
-\remark
-Wir haben soeben gezeigt, dass es in gewisser Weise mehr Mengen von nat\"{u}rlichen Zahlen gibt, als es
-nat\"{u}rliche Zahlen gibt.  In \"{a}hnlicher Weise kann gezeigt werden, dass die Menge $\mathbb{R}$ der reellen
-Zahlen \"{u}berabz\"{a}hlbar ist.  
-
-\exercise
-Zeigen Sie, dass das Intervall
-\\[0.2cm]
-\hspace*{1.3cm}
-$[0,1[ := \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
-\\[0.2cm]
-\"{u}berabz\"{a}hlbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
-\\[0.2cm]
-\hspace*{1.3cm}
-$ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  f\"{u}r alle $i \in \mathbb{N}$
-\\[0.2cm]
-dargestellt sind, es gilt dann also
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds x = \sum\limits_{i=1}^\infty d_i \cdot \Bigl(\frac{1}{10}\Bigr)^{i}$.
-\\[0.2cm]
-Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
-nicht auf ``Periode Neun'' endet, es d\"{u}rfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
-alle Ziffern $d_i$ den Wert $9$ haben:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}: i \geq n \rightarrow c_i = 9$.
-\\[0.2cm]
-F\"{u}hren Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
-\\[0.2cm]
-\hspace*{1.3cm}
-$f: \mathbb{N} \rightarrow [0,1[$
-\\[0.2cm]
-gibt, die die Menge $[0,1[$ aufz\"{a}hlt.  Dann gibt es auch eine Funktion
-\\[0.2cm]
-\hspace*{1.3cm}
-$g: \mathbb{N} \times \mathbb{N} \rightarrow \{0, \cdots, 9\}$
-\\[0.2cm]
-so dass $g(n,i)$ die $i$-te Nachkommastelle von $f(n)$ berechnet:
-\\[0.2cm]
-\hspace*{1.3cm}
-$f(n) = 0,g(n,1) g(n,2) g(n,3) \cdots$.
-\\[0.2cm]
-Konstruieren Sie nun mit Hilfe dieser Funktion $g$ eine Zahl $c \in [0,1[$ in der Form
-\\[0.2cm]
-\hspace*{1.3cm}
-$c = 0,c_1c_2c_3 \cdots$
-\\[0.2cm]
-so, dass sich ein Widerspruch ergibt.  Orientieren Sie sich dabei an der Konstruktion der Menge $C$ im
-Beweis der \"{u}berabz\"{a}hlbarkeit von $2^\mathbb{N}$.  \exend
-
-\exercise
-Zeigen Sie, dass die Menge
-\\[0.2cm]
-\hspace*{1.3cm}
-$\mathbb{N}^\mathbb{N} := \{ f \mid f: \mathbb{N} \rightarrow \mathbb{N} \}$,
-\\[0.2cm]
-also die Menge aller Funktionen von $\mathbb{N}$ nach $\mathbb{N}$ \"{u}berabz\"{a}hlbar ist.
-\exend
-
-\exercise
-Zeigen Sie, dass die Menge $\mathbb{Q}_+$ der positiven rationalen Zahlen abz\"{a}hlbar ist.
-\exend
-
 
 
 \section{Partielle und totale Ordnungen}
