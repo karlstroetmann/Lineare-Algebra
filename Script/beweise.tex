@@ -5,8 +5,9 @@ ist daher f\"{u}r die Mathematik zentral.
 In diesem Abschnitt gehen wir auf den mathematischen Beweisbegriff ein.  Wir beleuchten dabei nur die
 praktische Seite und stellen verschiedene Methoden des Beweisens vor.  F\"{u}r eine theoretische Analyse des
 Beweis-Begriffs ist die \emph{mathematische Logik} zust\"{a}ndig, die ein Teil der Informatik-Vorlesung ist.
-Wir wenden uns hier den praktischen Beweis-Verfahren zu.
-Grob k\"{o}nnen wir zwischen vier Arten von Beweisen unterscheiden:
+Wir wenden uns hier den Beweis-Verfahren zu, die wir sp\"ater sowohl im Laufe dieser Vorlesung als
+auch in den Vorlesungen \"uber theoretische Informatik verwenden werden.  Grob k\"{o}nnen wir
+zwischen vier Arten von Beweisen unterscheiden: 
 \begin{enumerate}
 \item direkten Beweisen,
 \item indirekten Beweisen,
@@ -21,8 +22,8 @@ direkten Beweis, ben\"{o}tigen daf\"{u}r aber zun\"{a}chst noch eine Definition.
 
 
 \begin{Definition}[Pythagoreische Tripel] \hspace*{\fill} \\
-Ein Tripel $\langle x, y, z \rangle \in \mathbb{N}\!\times\!\mathbb{N}\!\times\!\mathbb{N}$ hei\3t
-\emph{Pythagoreisches Tripel}, falls
+Die nat\"urlichen Zahlen $x$, $y$ und $z$ bilden ein
+\href{https://de.wikipedia.org/wiki/Pythagoreisches_Tripel}{\emph{Pythagoreisches Tripel}}, falls
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^2 + y^2 = z^2$
@@ -33,17 +34,17 @@ ist.
 \end{Definition}
 
 \example
-Das Tripel $\langle 3, 4, 5 \rangle$ ist ein pythagoreisches Tripel, denn es gilt
+Die nat\"urlichen Zahlen $3$, $4$ und $5$ bilden ein pythagoreisches Tripel, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. \eox
 
 
 \begin{Satz} 
-Es seien $u$ und $v$ nat\"{u}rliche Zahlen mit $u > v$.  Dann ist
+Es seien $u$ und $v$ nat\"{u}rliche Zahlen mit $u > v$.  Dann bilden die Zahlen
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl\langle u^2 - v^2,\; 2 \cdot u \cdot v,\; u^2 + v^2 \bigr\rangle$
+$u^2 - v^2$, \quad $2 \cdot u \cdot v$ \quad und \quad $u^2 + v^2$
 \\[0.2cm]
 ein pythagoreisches Tripel.  
 \end{Satz}
@@ -108,7 +109,9 @@ und haben damit die Behauptung bewiesen.
 
 \remark
 Der letzte Satz zeigt Ihnen, wie Sie den Logarithmus zu einer beliebigen Basis mit einem
-Taschenrechner berechnen k\"{o}nnen, auf dem nur der nat\"{u}rliche Logarithmus fest verdrahtet ist, denn es gilt
+Taschenrechner berechnen k\"{o}nnen, auf dem nur der nat\"{u}rliche Logarithmus fest verdrahtet ist,
+denn wenn wir in der soeben bewiesenen Behauptung $c := \mathrm{e}$ setzen, wobei $\mathrm{e}$ die 
+\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{\emph{Eulersche Zahl}} ist, dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\log_a(b) = \frac{\ln(b)}{\ln(a)}$.
@@ -212,14 +215,8 @@ sind.
 
 
 \section{Beweise durch Fallunterscheidung}
-Wir haben in dem Kapitel \"{u}ber Mengenlehre bereits eine ganze Reihe direkter Beweise gesehen.
-Dort war es oft notwendig, den Beweis in zwei Teile aufzuspalten.
-Um beispielsweise die Gleichheit zweier Mengen $A$ und $B$ zu zeigen, sind wir 
-h\"{a}ufig so vorgegangen, dass wir zun\"{a}chst 
-$A \subseteq B$ und anschlie\3end $B \subseteq A$ gezeigt haben.  So hatten wir beispielsweise  im
-letzten Kapitel nachgewiesen, dass f\"{u}r eine \"{A}quivalenz-Relation $R$ aus der Beziehung $\pair(x,y) \in R$ die
-Gleichung $[x]_R = [y]_R$ gefolgert werden kann.  Beim Beweis durch \emph{Fallunterscheidung} teilen
-wir den Beweis ebenfalls in mehrere Teile auf.  Wir illustrieren das Konzept an einem Beispiel.
+Beim Beweis durch \emph{Fallunterscheidung} teilen wir einen Beweis in mehrere F\"alle auf.  Wir
+illustrieren das Konzept an einem Beispiel. 
 
 \begin{Satz}
   Es gibt irrationale Zahlen $x$ und $y$, so dass $x^y$ rational ist, es gilt also
@@ -505,7 +502,7 @@ gilt.
 Zeigen Sie, dass die Zahl $2^{2 \cdot n} - 1$ f\"{u}r alle nat\"{u}rlichen Zahlen $n$ durch $3$
 teilbar ist,
 \exend 
-
+\pagebreak
 
 \exercise
 Ein \emph{Triomino} ist eine Figur, die aus einem Quadrat der L\"{a}nge 2 dadurch entsteht, dass in
