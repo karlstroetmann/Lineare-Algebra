@@ -306,16 +306,17 @@ bilden lassen:
 \item Die Formel
       \\[0.2cm]
       \hspace*{1.3cm}
-      ``$\mathtt{vater}(x) = \mathtt{vater}(y) \wedge \mathtt{mutter}(x) = \mathtt{mutter}(y)
-         \rightarrow       \mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$''
+      $\mathtt{vater}(x) = \mathtt{vater}(y) \wedge \mathtt{mutter}(x) = \mathtt{mutter}(y)
+         \rightarrow       \mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$
       \\[0.2cm]
       ist eine Formel, die aus den beiden Formeln \\[0.2cm]
-      \hspace*{1.3cm}  ``$\mathtt{vater}(x) = \mathtt{vater}(y) \wedge \mathtt{mutter}(x) =
-      \mathtt{mutter}(y)$'' \quad 
+      \hspace*{1.3cm}  $\mathtt{vater}(x) = \mathtt{vater}(y) \wedge \mathtt{mutter}(x) =
+      \mathtt{mutter}(y)$ \quad 
       \\[0.0cm]
       und 
       \\[0.0cm]
-      \hspace*{1.3cm}  ``$\mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$'' \\[0.2cm]
+      \hspace*{1.3cm}  $\mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)$ 
+      \\[0.2cm]
       durch Verwendung des Operators ``$\rightarrow$'' erzeugt wird.  
 \item ``$\forall x\colon \forall y\colon \bigl(\mathtt{bruder}(x,y) \vee \mathtt{schwester}(x,y)\bigr)$''   ist eine Formel.
 \end{enumerate}
@@ -357,7 +358,9 @@ wahrscheinlicher als alle anderen Aussagen oder ist das nicht der Fall?  Begr\"u
 \exercise
 \begin{enumerate}[(a)]
 \item Das Pr\"adikat $\textsl{isPrime}(n)$ soll f\"ur eine nat\"urliche Zahl $n \in \mathbb{N}$ genau dann
-      wahr sein, wenn $n$ eine Primzahl ist.  Definieren Sie dieses Pr\"adikat mit Hilfe einer
+      wahr sein, wenn $n$ eine \href{https://de.wikipedia.org/wiki/Primzahl}{Primzahl} ist.  
+      Dabei ist eine Primzahl als eine natürliche Zahl definiert, die genau zwei verschiedene Teiler hat.
+      Definieren Sie dieses Pr\"adikat mit Hilfe einer
       geeigneten Formel.  Sie d\"urfen bei der Erstellung der Formel das Funktions-Zeichen 
       ``\texttt{\%}'' 
       benutzen.  F\"ur zwei nat\"urlichen Zahlen $a$ und $b$ berechnet $a \;\texttt{\%}\; b$ den Rest, der bei der
