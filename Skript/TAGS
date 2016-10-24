@@ -1,0 +1,505 @@
+
+_region_.tex,2665
+\definecolor{inecolor32,686
+\definecolor{inecolor33,727
+\renewcommand*{*35,769
+\renewcommand{\headrulewidth}\headrulewidth44,973
+\renewcommand{\chaptermark}\chaptermark47,1011
+\renewcommand{\sectionmark}\sectionmark48,1088
+\definecolor{inecolor52,1204
+\newcommand{\Rm}\Rm59,1324
+\newcommand{\df}\df63,1413
+\newcommand{\dv}\dv64,1490
+\newcommand{\exercise}\exercise66,1521
+\newcommand{\exerciseStar}\exerciseStar72,1631
+\newcommand{\proof}\proof78,1749
+\newcommand{\remark}\remark83,1816
+\newcommand{\hint}\hint88,1887
+\newcommand{\solution}\solution94,1955
+\newcommand{\example}\example99,2029
+\newcommand{\examples}\examples104,2102
+\newcommand{\modulo}\modulo111,2215
+\newcommand{\bruch}\bruch113,2254
+\newcommand{\zn}\zn114,2365
+\newcommand{\zns}\zns115,2402
+\newcommand{\folge}\folge117,2443
+\def\pair(#1,#2){\pair(118,2499
+\def\bpr(#1,#2){\bpr(119,2540
+\newcommand{\qed}\qed121,2598
+\newcommand{\qeds}\qeds126,2659
+\newcommand{\eox}\eox128,2703
+\newcommand{\eoxs}\eoxs133,2768
+\newcommand{\kla}\kla135,2817
+\newcommand{\klz}\klz136,2848
+\newcommand{\teilt}\teilt138,2880
+\newcommand{\exend}\exend139,2907
+\newcommand{\setl}\setl140,2955
+\newcommand{\struct}\struct141,2990
+\newcommand{\FV}\FV142,3024
+\newcommand{\dom}\dom143,3054
+\newcommand{\rng}\rng144,3086
+\newcommand{\BV}\BV145,3118
+\newcommand{\var}\var146,3148
+\newcommand{\el}\el147,3180
+\newcommand{\ds}\ds148,3206
+\newcommand{\notel}\notel149,3238
+\newcommand{\I}\I150,3271
+\newcommand{\verum}\verum151,3300
+\newcommand{\falsum}\falsum152,3326
+\newcommand{\gentzen}\gentzen153,3353
+\newcommand{\komplement}\komplement154,3383
+\newcommand{\mathquote}\mathquote155,3426
+\newcommand{\next}\next156,3484
+\newcommand{\lb}\lb160,3531
+\renewcommand{\encodingdefault}\encodingdefault177,3940
+\renewcommand{\ttdefault}\ttdefault178,3976
+\chapter{Gruppen}Gruppen226,5603
+\section{Die Definition der Gruppe}Die240,6484
+\begin{Satz} \label{satz:solvable}satz:solvable622,21737
+\begin{Satz} \label{satz:injektiv_folgt_surjektiv}satz:injektiv_folgt_surjektiv738,25609
+eine L\"{o}sung $x$ bzw. $z$ haben, denn dann folgt die Behauptung aus Satz \ref{satz:solvable}satz:solvable824,28422
+eine L\"{o}sung $y$ hat.  Dann ist $G$ nach Satz \ref{satz:solvable}satz:solvable848,29439
+Menge $\mathbb{Z}_p$ endlich ist, sind die Funktionen $f_k$ dann nach Satz \ref{satz:injektiv_folgt_surjektiv}satz:injektiv_folgt_surjektiv878,30754
+\section{Die Permutations-Gruppe $\mathcal{S}_n$}Die925,32438
+\section{Untergruppen und Faktor-Gruppen}Untergruppen1029,37013
+\section{Monoide}Monoide1506,55312
+
+beweise.tex,965
+\chapter{Mathematische Beweise}Mathematische1,0
+\section{Direkte Beweise}Direkte17,879
+  \label{eq:pyth}eq:pyth54,2129
+Damit haben wir die linke Seite der Gleichung (\ref{eq:pyth}eq:pyth73,2832
+\section{Indirekte Beweise}Indirekte118,4184
+\begin{Lemma} \label{lemma:b1}lemma:b1134,5317
+  \label{eq:b1}eq:b1174,6974
+haben wir ja gek\"{u}rzt, gilt $\textsl{ggt}(p, q) = 1$.  Quadrieren wir  Gleichung (\ref{eq:b1}eq:b1179,7274
+  \label{eq:b2}eq:b2182,7490
+  \label{eq:b3}eq:b3187,7620
+wir die Gleichung $p = 2 \cdot s$ in Gleichung (\ref{eq:b3}eq:b3194,7983
+  \label{eq:b4}eq:b4196,8083
+  \label{eq:b5}eq:b5201,8223
+Gleichung (\ref{eq:b5}eq:b5204,8291
+\ref{lemma:b1}lemma:b1205,8384
+\section{Beweise durch Fallunterscheidung}Beweise400,16018
+\section{Induktions-Beweise}Induktions-Beweise498,20273
+ausgeschnitten ist.  Abbildung \ref{fig:triomino.eps}fig:triomino.eps813,32073
+  \label{fig:triomino.eps}fig:triomino.eps824,32670
+
+determinanten.tex,2359
+\chapter{Determinanten}Determinanten1,0
+\renewcommand{\labelenumi}\labelenumi9,683
+\renewcommand{\labelenumii}\labelenumii10,726
+\section{Permutationen und Transpositionen}Permutationen13,774
+  \label{eq:sgn-homomorph}eq:sgn-homomorph66,2989
+Abbildung \ref{fig:signum.stlx}fig:signum.stlx106,4885
+\label{fig:signum.stlx}fig:signum.stlx133,5929
+\subsection{Die Homomorphie-Eigenschaft der Signum-Funktion$^*$}Die228,9944
+\begin{Satz} \label{satz:produkt-von-transpositionen}satz:produkt-von-transpositionen232,10137
+             \renewcommand{\labelenumii}\labelenumii256,11135
+             \renewcommand{\labelenumi}\labelenumi316,14307
+\cite{fischer:2008}fischer:2008422,18646
+\begin{Satz} \label{satz:signum}satz:signum737,31667
+Nach Satz \ref{satz:produkt-von-transpositionen}satz:produkt-von-transpositionen745,31905
+\section{Die Definition der Determinante nach Leibniz}Die766,33011
+Diese Formel wird auch als \emph{Regel von Sarrus} bezeichnet.  Abbildung \ref{fig:sarrus.eps}fig:sarrus.eps855,36085
+  \label{fig:sarrus.eps}fig:sarrus.eps866,36692
+\label{fig:determinant-formula.stlx}fig:determinant-formula.stlx922,38204
+Abbildung \ref{fig:determinant-formula.stlx}fig:determinant-formula.stlx925,38255
+wir beispielsweise die in Abbildung \ref{fig:determinant.out}fig:determinant.out927,38474
+\caption{Ausgabe der Funktion \texttt{determinant} aus Abbildung \ref{fig:determinant-formula.stlx}fig:determinant-formula.stlx973,40738
+\label{fig:determinant.out}fig:determinant.out974,40852
+\begin{Lemma} \label{lemma:sigmatau}lemma:sigmatau978,40982
+&& \mbox{was nach dem Lemma \ref{lemma:sigmatau}lemma:sigmatau1105,46100
+&& \mbox{denn nach Satz \ref{satz:signum}satz:signum1109,46382
+\begin{Lemma} \label{lemma:det-add-line}lemma:det-add-line1433,59425
+\begin{Lemma} \label{lemma:ze}lemma:ze1718,70983
+      zur $k$-ten Zeile von $B$ hinzu addiert wird.  Nach Lemma \ref{lemma:det-add-line}lemma:det-add-line1733,71663
+\ref{lemma:ze}lemma:ze1787,74383
+\label{fig:determinant-algorithm.stlx}fig:determinant-algorithm.stlx1921,79187
+      \ref{fig:inverse.stlx}fig:inverse.stlx1929,79630
+      in Abbildung \ref{fig:inverse.stlx-pivot}fig:inverse.stlx-pivot1941,80652
+mit dem Algorithmus, der in dem in Abbildung \ref{fig:determinant-algorithm.stlx}fig:determinant-algorithm.stlx1973,81961
+
+eigenwerte.tex,185
+\chapter{Eigenwerte und Eigenvektoren}Eigenwerte1,0
+\section{Definition und Berechnung von Eigenwerten}Definition46,3325
+\section{Die Berechnung der Fibonacci-Zahlen}Die363,14549
+
+einfuehrung.tex,555
+\chapter{Einf\"{u}hrung}Einf\"1,0
+\section{Motivation}Motivation8,464
+\section{\"{U}berblick}\"142,10315
+\section{Literaturhinweise}Literaturhinweise263,17032
+\item Das Buch ``\emph{Set Theory and Related Topics}'' von Seymour Lipschutz \cite{lipschutz:1998}lipschutz:1998267,17234
+\item Das Buch ``\emph{Linear Algebra}'' von Seymour Lipschutz und Marc Lipson \cite{lipschutz:2012}lipschutz:2012269,17438
+\cite{fischer:2008}fischer:2008277,17895
+``\emph{Linear Algebra Done Right}'' von Sheldon Axler \cite{axler:1997}axler:1997279,18079
+
+formeln.tex,219
+\chapter{Pr\"adikatenlogische Formeln}Pr\"adikatenlogische1,0
+\section{Warum Formeln}Warum6,284
+\section{Formeln als Kurzschreibweise}Formeln49,2741
+\section{Beispiele f\"ur Terme und Formeln}Beispiele263,15642
+
+grundlagen.tex,112
+\chapter{Mathematische Grundlagen} Mathematische1,0
+\section{Motivation und \"{u}berblick}Motivation22,1353
+
+gruppen.tex,757
+\chapter{Gruppen}Gruppen1,0
+\section{Die Definition der Gruppe}Die15,881
+\begin{Satz} \label{satz:solvable}satz:solvable397,16134
+\begin{Satz} \label{satz:injektiv_folgt_surjektiv}satz:injektiv_folgt_surjektiv513,20006
+eine L\"{o}sung $x$ bzw. $z$ haben, denn dann folgt die Behauptung aus Satz \ref{satz:solvable}satz:solvable599,22819
+eine L\"{o}sung $y$ hat.  Dann ist $G$ nach Satz \ref{satz:solvable}satz:solvable623,23839
+Menge $\mathbb{Z}_p$ endlich ist, sind die Funktionen $f_k$ dann nach Satz \ref{satz:injektiv_folgt_surjektiv}satz:injektiv_folgt_surjektiv653,25154
+\section{Die Permutations-Gruppe $\mathcal{S}_n$}Die700,26838
+\section{Untergruppen und Faktor-Gruppen}Untergruppen804,31413
+\section{Monoide}Monoide1281,49712
+
+komplexe-zahlen.tex,1984
+\chapter{Komplexe Zahlen}Komplexe1,0
+\section{Einf\"{u}hrung und Definition}Einf\"3,27
+  \label{eq:komplex_mult}eq:komplex_mult119,4841
+(\ref{eq:komplex_mult}eq:komplex_mult141,5639
+\renewcommand{\labelenumi}\labelenumi180,7172
+\renewcommand{\labelenumi}\labelenumi185,7418
+\section{Quadratwurzeln komplexer Zahlen$^*$}Quadratwurzeln188,7464
+  \label{eq:komplex_root1}eq:komplex_root1202,8074
+  \label{eq:komplex_root2}eq:komplex_root2208,8307
+Setzen wir diesen Ausdruck in der ersten Gleichung von (\ref{eq:komplex_root1}eq:komplex_root1211,8378
+Setzen wir diesen Wert in Gleichung (\ref{eq:komplex_root2}eq:komplex_root2251,9762
+\section{Geometrische Interpretation}Geometrische310,12299
+die \colorbox{yellow}{\emph{Gau\3'sche Zahlen-Ebene}}.  Abbildung \ref{fig:gauss-ebene.eps}fig:gauss-ebene.eps321,13008
+  \label{fig:gauss-ebene.eps}fig:gauss-ebene.eps335,13723
+  \label{eq:komplex_mult2}eq:komplex_mult2392,16171
+\subsection{Potenzen und allgemeine Wurzeln}Potenzen401,16654
+potenzieren, denn aus Gleichung \ref{eq:komplex_mult2}eq:komplex_mult2403,16774
+  \label{eq:komplex_potenz}eq:komplex_potenz406,16965
+gilt, muss nach Gleichung \ref{eq:komplex_potenz}eq:komplex_potenz434,18258
+  \label{eq:komplex_wurzel0}eq:komplex_wurzel0437,18400
+erf\"{u}llt sein, wenn $z^n = 1$ sein soll.  Die Gleichung \ref{eq:komplex_wurzel0}eq:komplex_wurzel0441,18564
+(\ref{eq:komplex_potenz}eq:komplex_potenz561,23399
+\section{Anwendung der komplexen Zahlen$^*$}Anwendung570,23702
+\ref{fig:cubic.eps}fig:cubic.eps585,24880
+  \label{fig:cubic.eps}fig:cubic.eps591,25095
+  \label{eq:cubic}eq:cubic597,25336
+gilt, dann ist $x = u + v$ eine L\"{o}sung der kubischen Gleichung \ref{eq:cubic}eq:cubic628,26531
+so erhalten wir zur L\"{o}sung der kubischen Gleichung \ref{eq:cubic}eq:cubic693,28751
+\section{Ausblick}Ausblick818,34001
+\subsection{Die Eulersche Formel}Die822,34192
+\subsection{Der Fundamentalsatz der Algebra}Der851,36033
+
+lineare-abbildungen.tex,942
+\chapter{Lineare Abbildungen}Lineare1,0
+\section{Definition der linearen Abbildungen}Definition13,941
+Tabelle \ref{tab:morphism}tab:morphism102,5140
+  \label{tab:morphism}tab:morphism125,5778
+\subsection{Kern und Bild einer linearen Abbildung}Kern167,7655
+\section{Matrizen}Matrizen403,17255
+\subsection{Addition und Skalar-Multiplikation von Matrizen}Addition561,23513
+\subsection{Matrizen-Multiplikation}Matrizen-Multiplikation627,26417
+\section{Berechnung des Inversen einer Matrix}Berechnung1127,45914
+\label{fig:inverse.stlx}fig:inverse.stlx1221,50622
+Abbildung \ref{fig:inverse.stlx}fig:inverse.stlx1224,50661
+      \ref{fig:inverse.stlx-pivot}fig:inverse.stlx-pivot1247,52261
+              \ref{fig:inverse.stlx-pivot}fig:inverse.stlx-pivot1257,53070
+\caption{Implementierung der in Abbildung \ref{fig:inverse.stlx}fig:inverse.stlx1306,55453
+\label{fig:inverse.stlx-pivot}fig:inverse.stlx-pivot1307,55551
+
+lineare-algebra.tex,1899
+\definecolor{inecolor32,649
+\definecolor{inecolor33,690
+\renewcommand*{*35,732
+\renewcommand{\headrulewidth}\headrulewidth44,936
+\renewcommand{\chaptermark}\chaptermark47,974
+\renewcommand{\sectionmark}\sectionmark48,1051
+\definecolor{inecolor52,1167
+\newcommand{\Rm}\Rm59,1287
+\newcommand{\df}\df63,1376
+\newcommand{\dv}\dv64,1453
+\newcommand{\exercise}\exercise66,1484
+\newcommand{\exerciseStar}\exerciseStar72,1594
+\newcommand{\proof}\proof78,1712
+\newcommand{\remark}\remark83,1779
+\newcommand{\hint}\hint88,1850
+\newcommand{\solution}\solution94,1918
+\newcommand{\example}\example99,1992
+\newcommand{\examples}\examples104,2065
+\newcommand{\modulo}\modulo111,2178
+\newcommand{\bruch}\bruch113,2217
+\newcommand{\zn}\zn114,2328
+\newcommand{\zns}\zns115,2365
+\newcommand{\folge}\folge117,2406
+\def\pair(#1,#2){\pair(118,2462
+\def\bpr(#1,#2){\bpr(119,2503
+\newcommand{\qed}\qed121,2561
+\newcommand{\qeds}\qeds126,2622
+\newcommand{\eox}\eox128,2666
+\newcommand{\eoxs}\eoxs133,2731
+\newcommand{\kla}\kla135,2780
+\newcommand{\klz}\klz136,2811
+\newcommand{\teilt}\teilt138,2843
+\newcommand{\exend}\exend139,2870
+\newcommand{\setl}\setl140,2918
+\newcommand{\struct}\struct141,2953
+\newcommand{\FV}\FV142,2987
+\newcommand{\dom}\dom143,3017
+\newcommand{\rng}\rng144,3049
+\newcommand{\BV}\BV145,3081
+\newcommand{\var}\var146,3111
+\newcommand{\el}\el147,3143
+\newcommand{\ds}\ds148,3169
+\newcommand{\notel}\notel149,3201
+\newcommand{\I}\I150,3234
+\newcommand{\verum}\verum151,3263
+\newcommand{\falsum}\falsum152,3289
+\newcommand{\gentzen}\gentzen153,3316
+\newcommand{\komplement}\komplement154,3346
+\newcommand{\mathquote}\mathquote155,3389
+\newcommand{\next}\next156,3447
+\newcommand{\lb}\lb160,3494
+\renewcommand{\encodingdefault}\encodingdefault177,3903
+\renewcommand{\ttdefault}\ttdefault178,3939
+
+lineare-gleichungen.tex,492
+\chapter{Lineare Gleichungs-Systeme}Lineare1,0
+  \label{eq:gauss0}eq:gauss0119,3649
+\section{Das Gau\3'sche Eliminations-Verfahren}Das159,5025
+Wir demonstrieren das Gau\3'sche Eliminations-Verfahren zun\"{a}chst an dem in (\ref{eq:gauss0}eq:gauss0160,5073
+Um die in (\ref{eq:gauss0}eq:gauss0162,5264
+  \label{eq:gauss1}eq:gauss1192,6758
+  \label{eq:gauss2}eq:gauss2220,7860
+\label{fig:gauss.stlx}fig:gauss.stlx464,18325
+Abbildung \ref{fig:gauss.stlx}fig:gauss.stlx468,18372
+
+mengen.tex,2018
+\chapter{Mengen und Relationen}Mengen1,0
+Die erste Definition des Begriffs der Menge lautete etwa wie folgt \cite{cantor:1895}cantor:18958,427
+\section{Erzeugung von Mengen durch explizites Auflisten}Erzeugung89,5356
+\section{Die Menge der nat\"{u}rlichen Zahlen}Die125,7207
+\section{Das Auswahl-Prinzip}Das167,9312
+\section{Potenz-Mengen}Potenz-Mengen187,10250
+\section{Vereinigungs-Mengen}Vereinigungs-Mengen230,12036
+\section{Schnitt-Menge}Schnitt-Menge263,13280
+\section{Differenz-Mengen}Differenz-Mengen280,13828
+\section{Bild-Mengen}Bild-Mengen300,14464
+\section{Kartesische Produkte}Kartesische318,15195
+\section{Gleichheit von Mengen}Gleichheit353,17561
+\section{Rechenregeln f\"{u}r das Arbeiten mit Mengen}Rechenregeln382,19260
+\section{Bin\"{a}re Relationen}Bin\"449,22730
+\subsection{Funktionale Relationen}Funktionale537,26689
+\subsection{Inverse Relation}Inverse659,33903
+\subsection{Komposition von Relationen}Komposition677,35178
+\subsection{Eigenschaften des relationalen Produkts}Eigenschaften800,39565
+  \label{eq:ass0}eq:ass0814,39996
+\ref{eq:ass0}eq:ass0818,40229
+  \label{eq:ass1}eq:ass1831,40920
+\ref{eq:ass0}eq:ass0836,41154
+  \label{eq:ass2}eq:ass2850,41849
+fortsetzen. Die Formeln (\ref{eq:ass1}eq:ass1854,42007
+(\ref{eq:ass0}eq:ass0855,42113
+  \label{eq:dis0}eq:dis0902,44293
+  \label{eq:dis1}eq:dis1924,45550
+  \label{eq:dis2}eq:dis2949,47057
+Da die Formeln \ref{eq:dis1}eq:dis1954,47314
+\section{Bin\"{a}re Relationen auf einer Menge}Bin\"1031,50505
+\section{Der transitive Abschluss einer Relation}Der1277,60494
+\section{\"{A}quivalenz-Relationen \label{section:aequivalenz_relation}}\"1484,70123
+\begin{Satz}[Charakterisierung der \"{A}quivalenz-Klassen] \label{satz:aequivalenz-klassen}satz:aequivalenz-klassen1713,78194
+Der letzte Satz (Satz \ref{satz:aequivalenz-klassen}satz:aequivalenz-klassen1874,84633
+\section{Partielle und totale Ordnungen}Partielle1979,88188
+\cite{lipschutz:1998}lipschutz:19982138,94491
+
+rekurrenz-gleichungen.tex,6730
+\chapter{Rekurrenz-Gleichungen}Rekurrenz-Gleichungen1,0
+\section{Die Fibonacci-Zahlen}Die10,382
+\ref{fig:fibonacci}fig:fibonacci59,2729
+  \label{fig:fibonacci}fig:fibonacci84,3487
+  \label{eq:fibonacci1}eq:fibonacci1104,4413
+  \label{eq:fibonacci2}eq:fibonacci2111,4687
+Einsetzen dieses Ansatzes in $(\ref{eq:fibonacci2}eq:fibonacci2116,4861
+eine L\"{o}sung der homogenen Rekurrenz-Gleichung (\ref{eq:fibonacci2}eq:fibonacci2136,5943
+  \label{eq:fibonacci3}eq:fibonacci3140,6149
+  \label{eq:fibonacci4}eq:fibonacci4145,6334
+Zur L\"{o}sung der urspr\"{u}nglichen Rekurrenz-Gleichung (\ref{eq:fibonacci1}eq:fibonacci1148,6451
+Setzen wir diesen Ansatz in der Gleichung (\ref{eq:fibonacci1}eq:fibonacci1150,6617
+Die \emph{allgemeine L\"{o}sung} der Rekurrenz-Gleichung (\ref{eq:fibonacci1}eq:fibonacci1154,6877
+Verwenden  wir hier die Gleichungen (\ref{eq:fibonacci3}eq:fibonacci3195,8849
+\ref{fig:fibonacci}fig:fibonacci215,9889
+Abbildung \ref{fig:fibonacci.eps}fig:fibonacci.eps218,10175
+  \label{fig:fibonacci.eps}fig:fibonacci.eps225,10545
+ Dies f\"{u}hrt zu dem in Abbildung \ref{fig:fibonacci-dynamic}fig:fibonacci-dynamic231,10755
+  \label{fig:fibonacci-dynamic}fig:fibonacci-dynamic265,11859
+\section{Lineare Rekurrenz-Gleichung \label{sec:lineare-RG}}Lineare269,11907
+    \label{eq:lhrg}eq:lhrg281,12613
+alle weiteren Werte k\"{o}nnen dann durch die Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg302,13497
+\item Die Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg305,13643
+      linear in der Gleichung (\ref{eq:lhrg}eq:lhrg306,13752
+\item Die Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg310,14089
+\item Die Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg316,14596
+Einsetzen dieses Ansatzes in (\ref{eq:lhrg}eq:lhrg326,15394
+ hei\3t \emph{charakteristisches Polynom} der Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg337,15844
+Nullstellen hat.  In diesem Fall sagen, dass die Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg339,16020
+f\"{u}r alle $j=1,\cdots,k$ eine L\"{o}sung der Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg349,16466
+Au\3erdem ist auch jede Linear-Kombination dieser L\"{o}sungen eine L\"{o}sung von (\ref{eq:lhrg}eq:lhrg350,16551
+$(a_n)_n$ die Gleichung (\ref{eq:lhrg}eq:lhrg357,16923
+die  \emph{allgemeine L\"{o}sung} der Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg358,17020
+\subsection{Entartete Rekurrenz-Gleichungen}Entartete466,21989
+Rekurrenz-Gleichung (\ref{eq:lhrg}eq:lhrg468,22123
+  \label{eq:erg}eq:erg471,22305
+Rekurrenz-Gleichung (\ref{eq:erg}eq:erg477,22672
+Rekurrenz-Gleichung (\ref{eq:erg}eq:erg509,24089
+L\"{o}sungen der Rekurrenz-Gleichung (\ref{eq:erg}eq:erg527,25124
+\subsection{Inhomogene Rekurrenz-Gleichungen}    Inhomogene542,25803
+  \label{eq:lihrg}eq:lihrg547,26106
+Wie l\"{a}sst sich die inhomogene Rekurrenz-Gleichung (\ref{eq:lihrg}eq:lihrg560,26747
+zun\"{a}chst, wie sich eine \emph{spezielle L\"{o}sung} der Rekurrenz-Gleichung (\ref{eq:lihrg}eq:lihrg561,26840
+      Dann erhalten wir eine spezielle L\"{o}sung von (\ref{eq:lihrg}eq:lihrg575,27465
+      und damit lautet eine spezielle L\"{o}sung von (\ref{eq:lihrg}eq:lihrg586,28144
+      In diesem Fall versuchen wir, eine spezielle L\"{o}sung von (\ref{eq:lihrg}eq:lihrg594,28538
+      der Gleichung (\ref{eq:lihrg}eq:lihrg634,30637
+      Rekurrenz-Gleichung (\ref{eq:lihrg}eq:lihrg641,31089
+      so f\"{u}hrt der Ansatz $a_n = \varepsilon \cdot n^r$ zu einer speziellen L\"{o}sung von (\ref{eq:lihrg}eq:lihrg645,31433
+\subsection{Lineare inhomogene Rekurrenz-Gleichungen mit ver\"{a}nderlichen Inhomogenit\"{a}ten}Lineare699,34538
+  \label{eq:dd}eq:dd705,34979
+      urspr\"{u}nglichen Rekurrenz-Gleichung (\ref{eq:dd}eq:dd712,35305
+        \label{eq:dd2}eq:dd2715,35440
+      Substitutions-Schritt erhaltenen Rekurrenz-Gleichung (\ref{eq:dd2}eq:dd2719,35652
+      gegebene Rekurrenz-Gleichung (\ref{eq:dd}eq:dd720,35748
+        \label{eq:dd3}eq:dd3726,36080
+\item Berechnung zus\"{a}tzlicher Anfangs-Bedingungen: Die Rekurrenz-Gleichung (\ref{eq:dd3}eq:dd3731,36350
+      urspr\"{u}nglichen Rekurrenz-Gleichung (\ref{eq:dd}eq:dd736,36763
+      Das charakteristische Polynom der Rekurrenz-Gleichung (\ref{eq:dd3}eq:dd3739,37003
+      (\ref{eq:dd3}eq:dd3743,37290
+      Damit lautet die allgemeine L\"{o}sung der Rekurrenz-Gleichung (\ref{eq:dd3}eq:dd3752,37705
+      urspr\"{u}nglichen Rekurrenz-Gleichung (\ref{eq:dd}eq:dd766,38437
+  \label{eq:expdd}eq:expdd801,40197
+mit der Anfangs-Bedingungen $a_0 = 0$.   Setzen wir in (\ref{eq:expdd}eq:expdd804,40298
+  \label{eq:expdd2}eq:expdd2807,40433
+W\"{u}rden wir von Gleichung (\ref{eq:expdd2}eq:expdd2810,40543
+von Gleichung (\ref{eq:expdd2}eq:expdd2812,40740
+  \label{eq:expdd3}eq:expdd3818,41037
+Anfangs-Bedingung.  Diese erhalten wir, indem wir in der Gleichung (\ref{eq:expdd}eq:expdd828,41528
+Damit lautet die L\"{o}sung der Rekurrenz-Gleichung (\ref{eq:expdd}eq:expdd839,41927
+\subsection{Die Substitutions-Methode}Die844,42077
+  \label{eq:wrg}eq:wrg851,42557
+urspr\"{u}ngliche Rekurrenz-Gleichung (\ref{eq:wrg}eq:wrg858,42902
+  \label{eq:wrg2}eq:wrg2865,43239
+setzen in (\ref{eq:wrg2}eq:wrg2870,43510
+  \label{eq:wrg3}eq:wrg3873,43598
+Wir multiplizieren nun die Rekurrenz-Gleichung (\ref{eq:wrg2}eq:wrg2876,43707
+von Gleichung  (\ref{eq:wrg3}eq:wrg3877,43800
+  \label{eq:wrg4}eq:wrg4883,44042
+Die Anfangs-Bedingung f\"{u}r $k=1$ berechnen wir aus (\ref{eq:wrg2}eq:wrg2886,44163
+Damit lautet die allgemeine L\"{o}sung der Rekurrenz-Gleichung (\ref{eq:wrg4}eq:wrg4892,44595
+Mit $n = 2^k$ erhalten wir die L\"{o}sung der Rekurrenz-Gleichung (\ref{eq:wrg}eq:wrg907,45447
+\subsection{Das Teleskop-Verfahren}Das926,46103
+\subsection{Berechnung von Summen}Berechnung971,48181
+  \label{eq:sum1}eq:sum1980,48758
+Dies erreichen wir dadurch, dass wir in Gleichung (\ref{eq:sum1}eq:sum1986,49139
+  \label{eq:sum2}eq:sum2989,49293
+\subsection{Weitere Rekurrenz-Gleichungen}Weitere1031,51211
+  \label{eq:cqs2}eq:cqs21040,51899
+  \label{eq:cqs3}eq:cqs31047,52337
+Wir multiplizieren nun Gleichung (\ref{eq:cqs3}eq:cqs31050,52433
+  \label{eq:cqs4}eq:cqs41053,52564
+  \label{eq:cqs5}eq:cqs51055,52676
+Wir bilden die Differenz der Gleichungen (\ref{eq:cqs4}eq:cqs41058,52778
+  \label{eq:cqs6}eq:cqs61062,52987
+  \label{eq:cqs7}eq:cqs71067,53178
+  \label{eq:cqs8}eq:cqs81072,53393
+  \label{eq:cqs9}eq:cqs91080,53807
+Damit k\"{o}nnen wir die Gleichung (\ref{eq:cqs9}eq:cqs91098,54681
+  \label{eq:cqs10}eq:cqs101100,54754
+  \label{eq:cqs11}eq:cqs111105,54951
+  \label{eq:chomogen}eq:chomogen1151,57508
+Gleichung (\ref{eq:chomogen}eq:chomogen1169,58266
+die aus der Rekurrenz-Gleichung (\ref{eq:cqs7}eq:cqs71195,59425
+
+ringe.tex,729
+\chapter{Ringe und K\"{o}rper}Ringe1,0
+\section{Definition und Beispiele}Definition32,2330
+gilt.  An dieser Stelle erinnern wir daran, dass nach Satz \ref{satz:aequivalenz-klassen}satz:aequivalenz-klassen272,12333
+und damit gilt wieder nach Satz \ref{satz:aequivalenz-klassen}satz:aequivalenz-klassen289,12973
+\begin{Satz}[Faktor-Ring] \label{satz:faktor_ring}satz:faktor_ring300,13582
+\section{Konstruktion des Quotienten-K\"{o}rpers$^*$}Konstruktion430,19895
+\section{Ideale und Faktor-Ringe$^*$}Ideale883,38319
+(Satz \ref{satz:faktor_ring}satz:faktor_ring1142,49016
+und nach dem Satz \"{u}ber die Charakterisierung der \"{A}quivalenz-Klassen (\ref{satz:aequivalenz-klassen}satz:aequivalenz-klassen1185,50865
+
+vektorraeume.tex,547
+\chapter{Vektor-R\"{a}ume}Vektor-R\"1,0
+\renewcommand{\labelenumi}\labelenumi12,801
+\renewcommand{\labelenumii}\labelenumii13,845
+\section{Definition und Beispiele}Definition15,891
+\renewcommand{\labelenumi}\labelenumi176,9197
+\renewcommand{\labelenumi}\labelenumi186,9691
+\section{Basis und Dimension}Basis188,9736
+\renewcommand{\labelenumi}\labelenumi765,40473
+\renewcommand{\labelenumi}\labelenumi770,40724
+\section{Untervektor-R\"{a}ume}Untervektor-R\"774,40771
+\section{Euklidische Vektor-R\"{a}ume}Euklidische980,49871
+
+zahlentheorie.tex,4214
+\chapter{Zahlentheorie*}Zahlentheorie*1,0
+\section{Teilbarkeit und modulare Arithmetik}Teilbarkeit8,418
+  \label{satz:division_mit_rest}satz:division_mit_rest37,1925
+  \label{eq:division1}eq:division1126,5176
+vertauschen.  Dann zeigt Gleichung (\ref{eq:division1}eq:division1131,5443
+$n \in \mathbb{N}$ im Abschnitt \ref{section:aequivalenz_relation}section:aequivalenz_relation169,6683
+      (Satz \ref{satz:division_mit_rest}satz:division_mit_rest209,8063
+\label{satz:bezout}satz:bezout546,20166
+\section{Der Euklidische Algorithmus}Der757,28018
+ Abbildung \ref{fig:ggt.stlx}fig:ggt.stlx760,28195
+\label{fig:ggt.stlx}fig:ggt.stlx791,29362
+\begin{Lemma} \label{lemma:modulo1}lemma:modulo1796,29497
+\begin{Korollar} \label{korollar:ggt}korollar:ggt844,31144
+\begin{Satz}[Korrektheit des Euklidischen Algorithmus] \label{satz:euklid_korrekt}satz:euklid_korrekt861,31722
+Der Aufruf $\texttt{ggtS}(x, y)$ des in Abbildung \ref{fig:ggt.stlx}fig:ggt.stlx862,31805
+                                          \mbox{(nach Korollar \ref{korollar:ggt}korollar:ggt913,34112
+Um nachzuweisen, dass das in Abbildung \ref{fig:ggt.stlx}fig:ggt.stlx925,34661
+\label{fig:ggt2.stlx}fig:ggt2.stlx965,36284
+Der in Abbildung \ref{fig:ggt.stlx}fig:ggt.stlx968,36320
+Abbildung \ref{fig:ggt2.stlx}fig:ggt2.stlx969,36404
+\begin{Korollar} \label{korollar:ggt2}korollar:ggt2991,37274
+F\"{u}r die in Abbildung \ref{fig:ggt2.stlx}fig:ggt2.stlx1035,38690
+      wobei wir im letzten Schritt das Korollar \ref{korollar:ggt2}korollar:ggt21059,39542
+\label{fig:eggt.stlx}fig:eggt.stlx1108,41267
+gilt.  Abbildung \ref{fig:eggt.stlx}fig:eggt.stlx1117,41566
+  Die in Abbildung \ref{fig:eggt.stlx}fig:eggt.stlx1120,41729
+        \label{eq:eggt1}eq:eggt11147,42677
+      Setzen wir dies in Gleichung (\ref{eq:eggt1}eq:eggt11152,42930
+        \label{eq:eggt2}eq:eggt21154,43026
+      Korollar \ref{korollar:ggt2}korollar:ggt21158,43272
+      so vereinfacht sich Gleichung (\ref{eq:eggt2}eq:eggt21159,43365
+\section{Der Fundamentalsatz der Arithmetik}Der1178,44164
+  \label{eq:leuklid1}eq:leuklid11192,44660
+gilt.  Nach dem Lemma von Bez\'out (Satz \ref{satz:bezout}satz:bezout1202,44997
+An dieser Stelle nutzen wir aus, dass nach Gleichung (\ref{eq:leuklid1}eq:leuklid11213,45313
+\label{theorem:fundamental-arithmetik}theorem:fundamental-arithmetik1260,47039
+  \label{eq:hauptsatz-arithmetik1}eq:hauptsatz-arithmetik11312,49405
+\section{Die Eulersche $\varphi$-Funktion}Die1351,51380
+  \label{satz:multiplikatives-inverses}satz:multiplikatives-inverses1424,54507
+        \label{eq:ba-minus-kn}eq:ba-minus-kn1449,55384
+      Aus Gleichung (\ref{eq:ba-minus-kn}eq:ba-minus-kn1460,55936
+      Sei also $\textsl{ggt}(a, n) = 1$.  Nach dem Lemma von Bez\'out (Satz \ref{satz:bezout}satz:bezout1468,56345
+\begin{Korollar} \label{korollar:phi}korollar:phi1482,56869
+\label{satz:phi_primzahl}satz:phi_primzahl1495,57301
+Nach Satz \ref{satz:multiplikatives-inverses}satz:multiplikatives-inverses1503,57504
+      $n$ (Satz \ref{satz:multiplikatives-inverses}satz:multiplikatives-inverses1576,60298
+        \label{eq:china1}eq:china11643,62904
+        \label{eq:china2}eq:china21649,63150
+      gilt.  Aus den Gleichungen  (\ref{eq:china1}eq:china11652,63229
+\begin{Korollar}[Chinesischer Restesatz, 2.~Teil] \label{satz:china2}satz:china21677,64129
+\begin{Satz} \label{satz:china3}satz:china31768,67741
+gilt.  Nach dem 2.~Teil des Chinesischen Restesatzes (Korollar \ref{satz:china2}satz:china21800,68810
+            & \mbox{Satz \ref{satz:china3}satz:china31822,69696
+\section{Die S\"{a}tze von Fermat und Euler}Die1867,71849
+Wir wissen nach Satz \ref{satz:phi_primzahl}satz:phi_primzahl1884,72415
+Diese Behauptung h\"{a}tten wir alternativ auch aus dem Satz \ref{satz:multiplikatives-inverses}satz:multiplikatives-inverses1896,72815
+Dies folgt aber sofort aus Satz \ref{satz:china3}satz:china32059,79306
+$\textsl{ggt}(a,n) = 1$ ist und nach Satz \ref{satz:china3}satz:china32061,79449
+\section{Der RSA-Algorithmus}Der2138,82111
+Algorithmus von Rivest, Shamir und Adleman \cite{rivest:78}rivest:782140,82244
+  \label{eq:rsa3}eq:rsa32235,85824
