@@ -1,25 +1,35 @@
 
-\chapter{Bin\"{a}re Relationen}
-Relationen treten in der Informatik an vielen Stellen auf.  Die wichtigste
-Anwendung findet sich in der Theorie der relationalen Datenbanken.
+\chapter{Relationen}
+\href{https://de.wikipedia.org/wiki/Relation_(Mathematik)#Zweistellige_Relation}{Relationen} treten
+in der Informatik an vielen Stellen auf.  Die wichtigste Anwendung findet sich in der Theorie der
+\href{https://de.wikipedia.org/wiki/Relationale_Datenbank}{relationalen Datenbanken}. 
 Wir betrachten im Folgenden den Spezialfall der \emph{bin\"{a}ren Relationen} und beleuchten
 das Verh\"{a}ltnis von bin\"{a}ren Relationen und Funktionen. Wir werden sehen, dass wir
 Funktionen als spezielle bin\"{a}re Relationen auffassen k\"{o}nnen.  Damit stellt der Begriff der
 bin\"{a}ren Relationen eine Verallgemeinerung des Funktions-Begriffs dar.
 
-Zum Abschluss des Kapitels f\"{u}hren wir \emph{transitive Relationen} und
-\emph{\"{A}quivalenz-Relationen} ein.  Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker
-kennen sollte.
+Zum Abschluss des Kapitels f\"{u}hren wir
+\href{https://de.wikipedia.org/wiki/Transitive_Relation}{\emph{transitive Relationen}} und 
+\href{https://en.wikipedia.org/wiki/Equivalence_relation}{\emph{\"{A}quivalenz-Relationen}} ein.
+Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker kennen sollte.
 
 Ist eine Menge $R$ als Teilmenge des kartesischen Produkts zweier Mengen $M$ und $N$ gegeben, gilt
-also \\[0.2cm]
-\hspace*{1.3cm} $R \subseteq M \times N$, \\[0.2cm]
-so bezeichnen wir $R$ auch als \emph{bin\"{a}re Relation}.  In diesem Fall definieren wir den
-\emph{Definitions-Bereich} von $R$ als \\[0.2cm]
-\hspace*{1.3cm} $\dom(R) := \{ x \mid \exists y \in N \colon \langle x, y \rangle \in R \}$.  
+also 
 \\[0.2cm]
-Entsprechend wird der \emph{Werte-Bereich} von $R$ als \\[0.2cm]
-\hspace*{1.3cm} $\rng(R) := \{ y \mid \exists x \in M \colon \langle x, y \rangle \in R\}$ \\[0.2cm]
+\hspace*{1.3cm}
+$R \subseteq M \times N$, 
+\\[0.2cm]
+so bezeichnen wir $R$ auch als 
+\href{https://en.wikipedia.org/wiki/Binary_relation}{\emph{bin\"{a}re Relation}}.  In diesem Fall definieren
+wir den  \emph{Definitions-Bereich} von $R$ als 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\dom(R) := \{ x \mid \exists y \in N \colon \langle x, y \rangle \in R \}$.  
+\\[0.2cm]
+Entsprechend wird der \emph{Werte-Bereich} von $R$ als 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\rng(R) := \{ y \mid \exists x \in M \colon \langle x, y \rangle \in R\}$ \\[0.2cm]
 definiert.  
 
 \example
@@ -87,20 +97,20 @@ angeben,  geh\"{o}rt selbst nicht zu der Relation, sondern wird als \emph{Relati
 bezeichnet und die Relation zusammen mit ihrem Relationen-Schema nennen wir \emph{Tabelle}.  
 
 
-\subsection{Funktionale Relationen}
+\section{Funktionale Relationen}
 Wir hatten schon gesehen, dass Relationen als Verallgemeinerungen von Funktionen aufgefasst werden
 k\"{o}nnen.  Wir wollen als n\"{a}chstes untersuchen, unter welchen Umst\"{a}nden eine Relation als Funktion aufgefasst
 werden kann.  Zu diesem Zweck folgt nun eine Definition.
 
-\begin{Definition}[links-eindeutig, rechts-eindeutig]
+\begin{Definition}[links-eindeutig, rechts-eindeutig] \hspace*{\fill} \\
   Wir nennen eine Relation $R \subseteq M \times N$ 
-  \emph{rechts-eindeutig}, wenn folgendes gilt: \\[0.2cm]
+  \colorbox{yellow}{\emph{rechts-eindeutig},} wenn folgendes gilt: \\[0.2cm]
   \hspace*{1.3cm} 
   $\forall x \el M \colon \forall y_1, y_2 \el N \colon \bigl(\langle x, y_1 \rangle \in R \wedge \langle x, y_2 \rangle \in R \rightarrow y_1 = y_2\bigr)$.
   \\[0.2cm]
   Bei einer rechts-eindeutigen Relation $R \subseteq M \times N$ gibt es also zu jedem $x\in M$ h\"{o}chstens ein $y \in N$, 
   so dass $\langle x, y \rangle \in R$ gilt.  Entsprechend nennen wir eine Relation $R \subseteq M \times N$ 
-  \emph{links-eindeutig}, wenn gilt: \\[0.2cm]
+  \colorbox{yellow}{\emph{links-eindeutig},} wenn gilt: \\[0.2cm]
   \hspace*{1.3cm} 
   $\forall y \el N \colon \forall x_1, x_2 \el M \colon \bigl(\langle x_1, y \rangle \in R \wedge \langle x_2, y \rangle \in R \rightarrow x_1 = x_2\bigr)$.
   \\[0.2cm]
@@ -131,23 +141,34 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 \end{enumerate}
 
 \begin{Definition}[links-total, rechts-total]
-  Eine bin\"{a}re Relation $R \subseteq M \times N$ hei\3t \emph{links-total auf $M$}, wenn \\[0.2cm]
-  \hspace*{1.3cm} $\forall x \in M \colon \exists y \in N \colon \pair(x,y) \in R$ \\[0.2cm]
+  Eine bin\"{a}re Relation $R \subseteq M \times N$ hei\3t \colorbox{yellow}{\emph{links-total auf $M$},} wenn 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\forall x \in M \colon \exists y \in N \colon \pair(x,y) \in R$ 
+  \\[0.2cm]
   gilt. Dann gibt es f\"{u}r alle $x$ aus der Menge $M$ ein $y$ aus der Menge $N$, so dass
   $\pair(x,y)$ in der Menge  $R$ liegt.  Die Relation $R_3$ aus dem letzten Beispiel ist
   links-total, denn jedem Element aus $M$ wird durch $R_3$ ein Element aus $N$ zugeordnet.
 
-  Analog nennen wir eine bin\"{a}re Relation $R \subseteq M \times N$  \emph{rechts-total auf $N$}, wenn \\[0.2cm]
-  \hspace*{1.3cm} $\forall y \in N \colon \exists x \in M \colon \pair(x,y) \in R$ \\[0.2cm]
+  Analog nennen wir eine bin\"{a}re Relation $R \subseteq M \times N$ 
+  \colorbox{yellow}{\emph{rechts-total auf $N$},} wenn 
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\forall y \in N \colon \exists x \in M \colon \pair(x,y) \in R$ 
+  \\[0.2cm]
   gilt. Dann gibt es f\"{u}r alle $y$ aus der Menge $N$ ein $x$ aus der Menge $M$, so dass
   $\pair(x,y)$ in der Menge  $R$ liegt.  Die Relation $R_3$ aus dem letzten Beispiel ist
   nicht rechts-total, denn dem Element $5$ aus $N$ wird durch $R_3$ kein Element aus $M$
-  zugeordnet, denn f\"{u}r alle $\pair(x,y) \in R_3$ gilt $y \not= 5$. \eox
+  zugeordnet, denn f\"{u}r alle $\pair(x,y) \in R_3$ gilt $y \not= 5$. \eoxs
 \end{Definition}
+
+\remark
+In der Literatur werden links-totale Relationen gelegentlich auch als \emph{links-vollst‰ndige} Relationen
+bezeichnet.  Rechts-totale Relationen heiﬂen dann \emph{rechts-vollst‰ndig}. \eoxs
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times N$, die sowohl links-total auf $M$ als auch rechts-eindeutig
-ist, nennen wir eine \emph{funktionale} Relation auf $M$.    \eox
+ist, nennen wir eine \colorbox{yellow}{\emph{funktionale}} Relation auf $M$.    \eoxs
 \end{Definition}
 
 
@@ -185,6 +206,7 @@ Wir werden daher funktionale Relationen und die entsprechenden Funktionen identi
 Damit ist dann f\"{u}r eine funktionale Relation $R \subseteq M \times N$ und ein $x \in M$
 auch die Schreibweise $R(x)$ zul\"{a}ssig: Mit $R(x)$ bezeichnen wir das eindeutig bestimmte $y \in N$,
 f\"{u}r das $\pair(x,y) \in R$ gilt.
+\pagebreak
 
 \examples
 \begin{enumerate}
@@ -210,10 +232,13 @@ f\"{u}r das $\pair(x,y) \in R$ gilt.
   \hspace*{1.3cm} $R(X) := \{ y \mid \exists x \in X \colon \pair(x,y) \in R \}$. \eox
 \end{Definition}
 
-\subsection{Inverse Relation}
-Zu einer  Relation $R \subseteq M \times N$ definieren wir die \emph{inverse} Relation 
-$R^{-1} \subseteq N \times M$ wie folgt: \\[0.2cm]
-\hspace*{1.3cm} $R^{-1} := \bigl\{ \pair(y,x) \mid \pair(x,y) \in R  \bigr\}$. \\[0.2cm]
+\section{Inverse Relation}
+Zu einer  Relation $R \subseteq M \times N$ definieren wir die \colorbox{yellow}{\emph{inverse}} Relation 
+$R^{-1} \subseteq N \times M$ wie folgt: 
+\\[0.2cm]
+\hspace*{1.3cm}
+$R^{-1} := \bigl\{ \pair(y,x) \mid \pair(x,y) \in R  \bigr\}$. 
+\\[0.2cm]
 Aus dieser Definition folgt sofort, dass $R^{-1}$ rechts-eindeutig ist genau dann, wenn
 $R$ links-eindeutig ist.  Au\3erdem ist $R^{-1}$ links-total auf $N$ genau dann, wenn $R$
 rechts-total auf $N$ ist.  Ist eine Relation sowohl links-eindeutig als auch rechts-eindeutig und
@@ -228,7 +253,7 @@ Diese Funktion ist dann aber genau die Umkehr-Funktion von $f_R$, es gilt \\[0.2
  $\forall x \in M \colon f_{R^{-1}}\bigl(f_R(x)\bigr) = x$. \\[0.2cm]
 Dieser Umstand rechtfertigt im Nachhinein die Schreibweise $R^{-1}$.
 
-\subsection{Komposition von Relationen}
+\section{Komposition von Relationen}
 \"{A}hnlich wie wir Funktionen verkn\"{u}pfen k\"{o}nnen, k\"{o}nnen auch Relationen verkn\"{u}pft werden.
 Wir betrachten zun\"{a}chst Mengen $L$, $M$ und $N$.
 Sind dort zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ definiert,
@@ -349,7 +374,7 @@ gegeben:
 Diese Relation k\"{o}nnte dann zur Rechnungsstellung weiter verwendet werden. \eox
 
 
-\subsection{Eigenschaften des relationalen Produkts}
+\section{Eigenschaften des relationalen Produkts}
 \begin{Satz}
   Die Komposition von Relationen ist \emph{assoziativ}:  Sind \\[0.2cm]
   \hspace*{1.3cm} 
