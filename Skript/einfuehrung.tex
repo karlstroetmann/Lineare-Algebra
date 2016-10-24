@@ -1,21 +1,20 @@
 \chapter{Einf\"{u}hrung}
 Das vorliegende Skript ist die Grundlage der Mathematik-Vorlesung des ersten Semesters.
-Einige Kapitel und Abschnitte in diesem Skript sind mit einem ``$^*$'' versehen.  
+Einige Kapitel und Abschnitte in diesem Skript sind mit einem Stern ``$^*$'' markiert.  
 Der dort vorgestellte Stoff ist f\"{u}r die Klausur nicht relevant.  Das Skript enth\"{a}lt diese Abschnitte
-um eine der vielen Anwendungen der Mathematik, das
-\href{https://de.wikipedia.org/wiki/RSA-Kryptosystem}{RSA-Kryptosystem}, pr\"{a}sentieren zu k\"{o}nnen.  
+um eine der vielen Anwendungen der Mathematik, das \href{https://de.wikipedia.org/wiki/RSA-Kryptosystem}{RSA-Kryptosystem}, pr\"{a}sentieren zu k\"{o}nnen.  
 
 \section{Motivation}
 Bevor wir uns mit dem eigentlichen Stoff dieser Vorlesung, der Mathematik, befassen, m\"{o}chte ich
-Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}tigen.  
+begründen, warum Sie als zuk\"{u}nftige Informatiker sich mit der Mathematik befassen müssen.  
 \begin{enumerate}
 \item Historisch ist die Informatik als Teilgebiet der Mathematik entstanden.  Dies wird schon an
-      dem Namen  ``\emph{Informatik}''  deutlich, den dieses Wort ist aus den beiden W\"{o}rtern
+      dem Namen  ``\emph{Informatik}''  deutlich, denn dieses Wort ist aus den beiden W\"{o}rtern
       ``\emph{Information}'' und ``\emph{Mathematik}'' gebildet worden ist, was  
       durch die Gleichung 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\texttt{Informatik} = \texttt{Information} + \texttt{Mathematik}$
+      \href{https://de.wikipedia.org/wiki/Informatik#Etymologie}{$\texttt{Informatik} = \texttt{Information} + \texttt{Mathematik}$}
       \\[0.2cm]
       symbolisiert wird.  Aufgrund der Tatsache, dass die Informatik aus der Mathematik entstanden
       ist, bedient sich die Informatik an vielen Stellen
@@ -39,13 +38,13 @@ Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}ti
             \hspace*{1.3cm}
             $a_{n+2} = a_{n+1} + a_n$  \quad und die Anfangs-Bedingungen $a_0 = 0$ und $a_1 = 1$
             \\[0.2cm]
-            definiert werden.  Wir k\"{o}nnen mit der oberen Rekurrenz-Gleichung sukzessive die verschiedenen
+            definiert werden.  Wir k\"{o}nnen mit der oberen Rekurrenz-Gleichung sukzessiv die verschiedenen
             Werte der Folge $(a_n)_n$ berechnen und finden 
             \\[0.2cm]
             \hspace*{1.3cm}
             $a_0 = 0$, $a_1 = 1$, $a_2 = 1$, $a_3 = 2$, $a_4 = 3$, $a_5 = 5$, $a_6 = 8$, $a_7 = 13$, $\cdots$.
             \\[0.2cm]
-            Wir werden sp\"{a}ter sehen, dass es eine geschlossene Formel zur Berechnung der Fiboncci-Zahlen
+            Wir werden im Kapitel \ref{chapter:eigenwerte} sehen, dass es eine geschlossene Formel zur Berechnung der Fiboncci-Zahlen
             gibt, es gilt
             \\[0.2cm]
             \hspace*{1.3cm}
@@ -68,6 +67,11 @@ Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}ti
             k\"{o}nnen.  Ich habe das Kapitel hier deswegen eingef\"{u}gt, damit Sie unmittelbar anhand
             eines konkreten Beispiels sehen k\"{o}nnen, welche Bedeutung die Mathematik in der
             Informatik hat.
+      \item \href{https://de.wikipedia.org/wiki/Maschinelles_Lernen}{Maschinelles Lernen} ist ein Teilgebiet 
+            der \href{https://de.wikipedia.org/wiki/Künstliche_Intelligenz}{künstlichen Intelligenz} und gehört 
+            zu den Gebieten der Informatik, die zur Zeit am stärksten expandieren.  Viele der im Bereich
+            des maschinellen Lernens angewendeten Methoden stammen aus der numerischen Mathematik
+            und der Statistik.
       \end{enumerate}
       Die Liste der mathematischen Algorithmen, die in der Praxis eingesetzt werden, k\"{o}nnte leicht
       \"{u}ber mehrere Seiten fortgesetzt werden.  Nat\"{u}rlich k\"{o}nnen im Rahmen eines Bachelor-Studiums
@@ -83,7 +87,7 @@ Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}ti
             der Ariane 5 misst die horizontale Neigung und speichert diese zun\"{a}chst als Gleitkomma-Zahl
             mit einer Genauigkeit von 64 Bit ab.  Sp\"{a}ter wird dieser Wert dann in eine 
             16 Bit Festkomma-Zahl konvertiert.
-            Bei dieser Konvertierung trat ein \"{u}berlauf ein, da die zu konvertierende Zahl
+            Bei dieser Konvertierung trat ein Überlauf ein, da die zu konvertierende Zahl
             zu gro\3 war, um als 16 Bit Festkomma-Zahl dargestellt werden zu k\"{o}nnen.
             In der Folge gab das Navigations-System auf dem Datenbus, der dieses System mit
             der Steuerungs-Einheit verbindet, eine Fehlermeldung aus.
@@ -96,28 +100,28 @@ Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}ti
             
             Ein vollst\"{a}ndiger Bericht \"{u}ber die Ursache des Absturzes des Ariane 5 findet sich
             im Internet unter der Adresse \\[0.2cm]
-            \hspace*{1.3cm} 
+            \hspace*{0.5cm} 
             \href{http://www.ima.umn.edu/~arnold/disasters/ariane5rep.html}{\texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/ariane5rep.html}}.
       \item Die Therac 25 ist ein medizinisches Bestrahlungs-Ger\"{a}t, das durch 
             Software kontrolliert wird.  Durch  Fehler in dieser Software erhielten 1985
-            mindestens 6 Patienten eine \"{u}berdosis an Strahlung.  Drei dieser Patienten sind an den
+            mindestens 6 Patienten eine Überdosis an Strahlung.  Drei dieser Patienten sind an den
             Folgen dieser \"{u}berdosierung gestorben. 
 
             Einen detailierten Bericht \"{u}ber diese Unf\"{a}lle finden Sie unter \\[0.2cm]
-            \hspace*{1.3cm} 
+            \hspace*{0.5cm} 
             \href{http://courses.cs.vt.edu/~cs3604/lib/Therac_25/Therac\_1.html}{\texttt{http://courses.cs.vt.edu/\symbol{126}cs3604/lib/Therac\_25/Therac\_1.html}}.
       \item Im ersten Golfkrieg konnte eine irakische \textsl{Scud} Rakete von dem \textsl{Patriot}
             Flugabwehrsystem aufgrund eines Programmier-Fehlers in der Kontrollsoftware des Flugabwehrsystems
             nicht abgefangen werden.  28 Soldaten verloren dadurch ihr Leben, 100 weitere wurden
             verletzt. \\[0.2cm]
-            \hspace*{1.3cm} 
+            \hspace*{0.5cm} 
             \href{http://www.ima.umn.edu/~arnold/disasters/patriot.html}{\texttt{http://www.ima.umn.edu/\symbol{126}arnold/disasters/patriot.html}}.
       \item Im Internet finden Sie auf der Seite der
             \href{https://de.wikipedia.org/wiki/Institute_of_Electrical_and_Electronics_Engineers}{\textsc{Ieee}}\footnote{
               Die Abk\"{u}rzung \textsc{Ieee} steht f\"{u}r \emph{Institute of Electrical and Electronics Engineers}.}
             den Artikel   
             \\[0.2cm]
-            \hspace*{1.3cm}
+            \hspace*{0.5cm}
             \href{http://spectrum.ieee.org/static/the-staggering-impact-of-it-systems-gone-wrong}{Staggering Impact of IT Systems Gone Wrong}.
             \\[0.2cm]
             In diesem Artikel werden die Kosten, die durch fehlgeschlagene IT-Projekte entstanden sind, f\"{u}r eine Reihe von Projekten aufgelistet.
@@ -140,7 +144,7 @@ Ihnen aufzeigen, warum Sie als zuk\"{u}nftige Informatiker Mathematik ben\"{o}ti
 % dabei um die Klausur am Ende des ersten Semesters!  
 
 \section{\"{U}berblick}
-Ich m\"{o}chte Ihnen zum Abschluss dieser Einf\"{u}hrung noch einen \"{u}berblick \"{u}ber all die Themen geben, die
+Ich m\"{o}chte Ihnen zum Abschluss dieser Einf\"{u}hrung noch einen Überblick \"{u}ber all die Themen geben, die
 ich im Rahmen der Vorlesung behandeln werde.  
 \begin{enumerate}
 \item Mathematische Formeln dienen der Abk\"{u}rzung.  Sie werden aus den \emph{Junktoren} 
@@ -178,7 +182,7 @@ ich im Rahmen der Vorlesung behandeln werde.
             dass die Annahme $A$ nicht wahr sein kann.
 
             Beispielsweise werden wir mit Hilfe eines indirekten Beweises zeigen, dass 
-            $\sqrt{2}$ keine rationale Zahl ist.  In der Informatik zeigen wir dann, dass das
+            $\sqrt{2}$ keine rationale Zahl ist.  In der Vorlesung zur Logik zeigen wir dann, dass das
             \emph{Halte-Problem} unl\"{o}sbar ist:  Es ist nicht m\"{o}glich, eine Funktion \texttt{stops}
             zu implementieren, so dass f\"{u}r eine gegebene einstellige Funktion $f$ und eine Eingabe $x$
             der Aufruf
@@ -227,7 +231,7 @@ ich im Rahmen der Vorlesung behandeln werde.
       Die Theorie der \emph{linearen Vektor-R\"{a}ume} ist unter anderem die Grundlage f\"{u}r das L\"{o}sen von linearen
       Gleichungs-Systemen, linearen Rekurrenz-Gleichungen und linearen Differential-Gleichungen.
       Bevor wir uns also mit konkreten Algorithmen zur L\"{o}sung von Gleichungs-Systemen besch\"{a}ftigen
-      k\"{o}nnen, gilt es die Theorie der linearen Vektor-R\"{a}ume zu verstehen.
+      k\"{o}nnen, gilt es also die Theorie der linearen Vektor-R\"{a}ume zu verstehen.
 \item Lineare Gleichungs-Systeme
 
       Lineare Gleichungs-Systeme treten sowohl in der Informatik als auch in vielen anderen Gebieten auf. 
@@ -251,14 +255,14 @@ ich im Rahmen der Vorlesung behandeln werde.
       Wir werden Verfahren entwickeln, mit denen sich solche Rekurrenz-Gleichungen l\"{o}sen lassen.
 \end{enumerate}
 \remark
-Ich gehe davon aus,  dass das  Skript eine Reihe von Tippfehlern und auch anderen Fehlern enthalten
-wird.  Ich m\"{o}chte Sie darum bitten, mir solche Fehler per Email unter der Adresse
+Ich gehe davon aus,  dass das  Skript eine Reihe von Tippfehlern und möglicherweise auch anderen
+Fehlern enthält.  Ich m\"{o}chte Sie darum bitten, mir solche Fehler per Email unter der Adresse 
 \\[0.2cm]
 \hspace*{1.3cm}
 \texttt{karl.stroetmann\symbol{64}dhbw-mannheim.de}
 \\[0.2cm]
-mitzuteilen.  Alternativ k\"{o}nnen Sie mir auch \"{u}ber
-\href{https://github.com}{\texttt{https://github.com}} einen \texttt{pull}-Request schicken.
+mitzuteilen.  Falls Sie sich mit \texttt{git} und \href{https://github.com}{\texttt{https://github.com}}
+auskennen, dürfen Sie mir auch gerne einen \texttt{pull}-Request schicken. 
 
 \section{Literaturhinweise}
 Zum Schluss dieser Einf\"{u}hrung m\"{o}chte ich noch einige Hinweise auf die Literatur geben.  Dabei m\"{o}chte
@@ -284,6 +288,9 @@ aneignen m\"{o}chte als das, was in dem engen zeitlichen Rahmen dieser Vorlesung
 m\"{o}chte ich auf die oben genannte Literatur verweisen, wobei mir pers\"{o}nlich die Darstellung des Buchs
 von Sheldon Axler am besten gef\"{a}llt. 
 
+In den vergangenen Jahren habe ich festgestellt, dass viele Studenten zum Teil erhebliche Lücken im Bereich der
+Schulmathematik haben.  Diesen Studenten möchte ich empfehlen, diese Lücken mit Hilfe der 
+\href{https://www.khanacademy.org}{Khan Academy} zu schließen.  
 
 %%% Local Variables: 
 %%% mode: latex
