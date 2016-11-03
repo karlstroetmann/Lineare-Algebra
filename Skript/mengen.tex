@@ -158,7 +158,7 @@ als nat\"{u}rliche Zahl auffassen, denn dies ist im
 \href{https://en.wikipedia.org/wiki/ISO_31-11}{\textsc{Iso}-Standard 31-11} so festgelegt.\footnote{
   Die \textsc{Iso}-Norm 31-11 ist mittlerweile durch den
   \href{https://en.wikipedia.org/wiki/ISO_80000-2}{\textsc{Iso}-Standard 80000-2} abgelöst worden,
-  aber die Bezeichnungen für die Menge $\mathbb{N}$ hat sich dabei nicht geändert.
+  aber die Definition der Menge $\mathbb{N}$ hat sich dabei nicht geändert.
 }
 Mit den bisher behandelten Verfahren l\"{a}sst sich die Menge $\mathbb{N}$  nicht definieren.
 Wir m\"{u}ssen daher die Existenz dieser Menge als Axiom fordern.  Genauer postulieren wir, dass es eine
@@ -190,8 +190,9 @@ Mengen von Zahlen:
 \item $\mathbb{R}$ ist die Menge der reellen Zahlen.
 
       Eine mathematisch saubere Definition der reellen Zahlen erfordert einiges an Aufwand.  Wir
-      werden die Konstruktion der reellen Zahlen erst in der Analysis-Vorlesung im zweiten Semester
-      besprechen. 
+      werden die Konstruktion der reellen Zahlen erst in der
+      \href{https://github.com/karlstroetmann/Analysis/blob/master/Script/analysis.pdf}{Analysis-Vorlesung}
+      im zweiten Semester besprechen. 
 \end{enumerate}
 
 
@@ -216,6 +217,97 @@ Die Menge der geraden Zahlen kann mit dem Auswahl-Prinzip als die Menge
  $\{ x \in \mathbb{N} \;|\; \exists y\in \mathbb{N}: x = 2 \cdot y \}$. 
 \\[0.2cm]
 geschrieben werden.
+
+\section{Vereinigungs-Mengen}
+Sind zwei Mengen $M$ und $N$ gegeben, so enth\"{a}lt die 
+\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Vereinigung_.28Vereinigungsmenge.29}{\emph{Vereinigung}}
+von $M$ und $N$ alle Elemente, die  
+ in der Menge $M$ oder in der Menge $N$ liegen.  F\"{u}r diese Vereinigung schreiben wir $M \cup N$.
+Formal kann die Vereinigung als 
+\\[0.2cm]
+\hspace*{1.3cm} $M \cup N := \{ x \;|\; x \in M \vee x \in N \}$. 
+\\[0.2cm] 
+definiert werden.
+
+\example 
+Ist  $M = \{1,2,3\}$ und $N = \{2,5\}$, so gilt: \\[0.2cm]
+\hspace*{1.3cm} $\{1,2,3\} \cup \{2,5\} = \{1,2,3,5\}$.  \eox
+
+
+Der Begriff der Vereinigung von Mengen l\"{a}sst sich verallgemeinern.  Betrachten
+wir dazu eine Menge $X$, deren Elemente selbst wieder Mengen sind. Beispielsweise ist die
+Potenz-Menge, die als die Menge aller Teilmengen definiert ist,   
+eine Menge von dieser Art.  Wir k\"{o}nnen dann die Vereinigung aller Mengen, die Elemente
+von der Menge $X$ sind, bilden.  Diese Vereinigung schreiben wir als $\bigcup X$.  Formal
+kann diese Vereinigung als
+\\[0.2cm]
+\hspace*{1.3cm} $\bigcup X = \{ y \;|\; \exists x \in X: y \in x \}$.
+\\[0.2cm]
+ definiert werden.
+
+\example
+Die Menge $X$ sei wie folgt gegeben: \\[0.2cm]
+\hspace*{1.3cm}
+ $X = \big\{ \{\},\, \{1,2\}, \, \{1,3,5\}, \, \{7,4\}\,\big\}$. \\[0.2cm]
+Dann gilt \\[0.2cm]
+\hspace*{1.3cm}
+ $\bigcup X = \{ 1, 2, 3, 4, 5, 7 \}$. \eoxs
+
+\section{Schnitt-Menge}
+Sind zwei Mengen $M$ und $N$ gegeben, so definieren wir den 
+\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Schnittmenge_.28Schnitt.2C_auch_.E2.80.9EDurchschnitt.E2.80.9C.29}{\emph{Schnitt}}
+von $M$ und $N$ als die Menge aller Elemente, die \underline{sowohl} in $M$ \underline{als auch} in $N$
+auftreten.  Wir bezeichen den Schnitt von $M$ und $N$ mit $M \cap N$.
+Formal k\"{o}nnen wir $M \cap N$ als 
+\\[0.2cm]
+\hspace*{1.3cm} $M \cap N := \{ x \mid x \in M \wedge x \in N \}$.
+\\[0.2cm]
+definieren.
+
+\example
+Wir berechnen den Schnitt der  Mengen $M = \{ 1, 3, 5 \}$ und $N = \{ 2, 3, 5, 6 \}$.  Es gilt
+\\[0.2cm]
+\hspace*{1.3cm} $M \cap N = \{ 3, 5 \}$
+\eoxs
+
+\section{Differenz-Mengen}
+ Sind zwei Mengen $M$ und $N$ gegeben, so bezeichen wir die 
+\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Differenz_und_Komplement}{\emph{Differenz}}
+von $M$ und $N$ als die Menge aller Elemente, die in $M$ aber nicht $N$
+ auftreten.  Wir schreiben hierf\"{u}r $M \backslash N$.  Dieser Ausdruck wird als
+\\[0.2cm]
+\hspace*{1.3cm}
+$M$ \emph{ohne} $N$
+\\[0.2cm]
+gelesen und kann formal als
+ \\[0.2cm]
+\hspace*{1.3cm} $M \backslash N := \{ x \mid x \in M \wedge x \not\in N \}$. 
+ \\[0.2cm] 
+definiert werden.
+
+
+\example
+Wir berechnen die Differenz der Mengen $M = \{ 1, 3, 5, 7 \}$ und $N = \{ 2, 3, 5, 6 \}$.  Es gilt
+\\[0.2cm]
+\hspace*{1.3cm} $M \backslash N = \{ 1, 7 \}$. \eoxs
+
+\section{Bild-Mengen}
+Es sei $M$ eine Menge und $f$ sei eine Funktion, die f\"{u}r alle $x$ aus $M$ definiert ist.
+Dann hei\3t die Menge aller Abbilder $f(x)$ von Elementen $x$ aus der Menge $M$ das
+\href{https://de.wikipedia.org/wiki/Bild_(Mathematik)}{\emph{Bild}} von $M$ unter $f$.  Wir
+schreiben $f(M)$ f\"{u}r dieses Bild. 
+Formal kann $f(M)$ als
+ \[ f(M) := \{ y \;|\; \exists x \in M: y = f(x) \} \]
+definiert werden. In der Literatur findet sich f\"{u}r die obige Menge auch die Schreibweise
+\[ f(M) = \bigl\{ f(x) \;|\; x \in M \}. \]
+
+\example
+Die Menge $Q$ aller Quadrat-Zahlen kann als 
+\[ Q := \{ y \mid \exists x \in \mathbb{N}: y = x^2\} \]
+definiert werden.  Alternativ k\"{o}nnen wir auch 
+\[ Q = \bigl\{ x^2 \mid x \in \mathbb{N} \bigr\} \]
+schreiben.
+\eox
 
 \section{Potenz-Mengen}
 Um den Begriff der \href{https://de.wikipedia.org/wiki/Potenzmenge}{\emph{Potenz-Menge}}
@@ -378,101 +470,6 @@ $\textsl{card}\bigl(2^M\bigr) = 2^n$.
       abgeschlossen und der Beweis der Behauptung ist erbracht. \qed
 \end{enumerate}
 
-
-
-\section{Vereinigungs-Mengen}
-Sind zwei Mengen $M$ und $N$ gegeben, so enth\"{a}lt die 
-\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Vereinigung_.28Vereinigungsmenge.29}{\emph{Vereinigung}}
-von $M$ und $N$ alle Elemente, die  
- in der Menge $M$ oder in der Menge $N$ liegen.  F\"{u}r diese Vereinigung schreiben wir $M \cup N$.
-Formal kann die Vereinigung als 
-\\[0.2cm]
-\hspace*{1.3cm} $M \cup N := \{ x \;|\; x \in M \vee x \in N \}$. 
-\\[0.2cm] 
-definiert werden.
-
-
-\example 
-Ist  $M = \{1,2,3\}$ und $N = \{2,5\}$, so gilt: \\[0.2cm]
-\hspace*{1.3cm} $\{1,2,3\} \cup \{2,5\} = \{1,2,3,5\}$.  \eox
-
-
-Der Begriff der Vereinigung von Mengen l\"{a}sst sich verallgemeinern.  Betrachten
-wir dazu eine Menge $X$, deren Elemente selbst wieder Mengen sind. Beispielsweise ist die Potenz-Menge 
-einer Menge von dieser Art.  Wir k\"{o}nnen dann die Vereinigung aller Mengen, die Elemente
-von der Menge $X$ sind, bilden.  Diese Vereinigung schreiben wir als $\bigcup X$.  Formal
-kann diese Vereinigung als
-\\[0.2cm]
-\hspace*{1.3cm} $\bigcup X = \{ y \;|\; \exists x \in X: y \in x \}$.
-\\[0.2cm]
- definiert werden:
-
-\example
-Die Menge $X$ sei wie folgt gegeben: \\[0.2cm]
-\hspace*{1.3cm}
- $X = \big\{ \{\},\, \{1,2\}, \, \{1,3,5\}, \, \{7,4\}\,\big\}$. \\[0.2cm]
-Dann gilt \\[0.2cm]
-\hspace*{1.3cm}
- $\bigcup X = \{ 1, 2, 3, 4, 5, 7 \}$. \eox
-
-\section{Schnitt-Menge}
-Sind zwei Mengen $M$ und $N$ gegeben, so definieren wir den 
-\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Schnittmenge_.28Schnitt.2C_auch_.E2.80.9EDurchschnitt.E2.80.9C.29}{\emph{Schnitt}}
-von $M$ und $N$ als die Menge aller Elemente, die \underline{sowohl} in $M$ \underline{als auch} in $N$
-auftreten.  Wir bezeichen den Schnitt von $M$ und $N$ mit $M \cap N$.
-Formal k\"{o}nnen wir $M \cap N$ als 
-\\[0.2cm]
-\hspace*{1.3cm} $M \cap N := \{ x \mid x \in M \wedge x \in N \}$.
-\\[0.2cm]
-definieren.
-
-
-\example
-Wir berechnen den Schnitt der  Mengen $M = \{ 1, 3, 5 \}$ und $N = \{ 2, 3, 5, 6 \}$.  Es gilt
-\\[0.2cm]
-\hspace*{1.3cm} $M \cap N = \{ 3, 5 \}$
-\eox
-
-\section{Differenz-Mengen}
- Sind zwei Mengen $M$ und $N$ gegeben, so bezeichen wir die 
-\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Differenz_und_Komplement}{\emph{Differenz}}
-von $M$ und $N$ als die Menge aller Elemente, die in $M$ aber nicht $N$
- auftreten.  Wir schreiben hierf\"{u}r $M \backslash N$.  Dieser Ausdruck wird als
-\\[0.2cm]
-\hspace*{1.3cm}
-$M$ \emph{ohne} $N$
-\\[0.2cm]
-gelesen und kann formal als
- \\[0.2cm]
-\hspace*{1.3cm} $M \backslash N := \{ x \mid x \in M \wedge x \not\in N \}$. 
- \\[0.2cm] 
-definiert werden.
-
-
-\example
-Wir berechnen die Differenz der Mengen $M = \{ 1, 3, 5, 7 \}$ und $N = \{ 2, 3, 5, 6 \}$.  Es gilt
-\\[0.2cm]
-\hspace*{1.3cm} $M \backslash N = \{ 1, 7 \}$. \eox
-
-\section{Bild-Mengen}
-Es sei $M$ eine Menge und $f$ sei eine Funktion, die f\"{u}r alle $x$ aus $M$ definiert ist.
-Dann hei\3t die Menge aller Abbilder $f(x)$ von Elementen $x$ aus der Menge $M$ das
-\href{https://de.wikipedia.org/wiki/Bild_(Mathematik)}{\emph{Bild}} von $M$ unter $f$.  Wir
-schreiben $f(M)$ f\"{u}r dieses Bild. 
-Formal kann $f(M)$ als
- \[ f(M) := \{ y \;|\; \exists x \in M: y = f(x) \} \]
-definiert werden. In der Literatur findet sich f\"{u}r die obige Menge auch die Schreibweise
-\[ f(M) = \bigl\{ f(x) \;|\; x \in M \}. \]
-
-\example
-Die Menge $Q$ aller Quadrat-Zahlen kann als 
-\[ Q := \{ y \mid \exists x \in \mathbb{N}: y = x^2\} \]
-definiert werden.  Alternativ k\"{o}nnen wir auch 
-\[ Q = \bigl\{ x^2 \mid x \in \mathbb{N} \bigr\} \]
-schreiben.
-\eox
-
-
 \section{Kartesische Produkte}
 Um den Begriff des 
 \href{https://de.wikipedia.org/wiki/Kartesisches_Produkt}{\emph{kartesischen Produktes}}
@@ -541,7 +538,7 @@ der Gleichheit zweier Mengen trivial.  Ist eine der Mengen mit Hilfe des Auswahl
 kann es beliebig schwierig sein zu entscheiden, ob zwei Mengen gleich sind.  Hierzu ein
 Beispiel:  Es l\"{a}sst sich zeigen, dass \\[0.2cm]
 \hspace*{1.3cm} 
-$\{ n \in \mathbb{N} \mid \exists x, y, z\in\mathbb{N}: x^n + y^n = z^n \} = \{1,2\}$ \\[0.2cm]
+$\{ n \in \mathbb{N}^* \mid \exists x, y, z\in\mathbb{N}: x^n + y^n = z^n \} = \{1,2\}$ \\[0.2cm]
 gilt.  Allerdings ist der Nachweis dieser Gleichheit sehr schwer, denn er ist \"{a}quivalent
 zum Beweis der 
 \href{https://de.wikipedia.org/wiki/Großer_Fermatscher_Satz}{\emph{Fermat'schen Vermutung}}. Diese
@@ -755,7 +752,7 @@ Zahlen \"{u}berabz\"{a}hlbar ist.
 Zeigen Sie, dass das Intervall
 \\[0.2cm]
 \hspace*{1.3cm}
-$[0,1[ := \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
+$[0,1[ \;:= \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
 \\[0.2cm]
 \"{u}berabz\"{a}hlbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
 \\[0.2cm]
