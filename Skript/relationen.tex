@@ -7,8 +7,7 @@ Wir betrachten im Folgenden den Spezialfall der \emph{bin\"{a}ren Relationen} un
 das Verh\"{a}ltnis von bin\"{a}ren Relationen und Funktionen. Wir werden sehen, dass wir
 Funktionen als spezielle bin\"{a}re Relationen auffassen k\"{o}nnen.  Damit stellt der Begriff der
 bin\"{a}ren Relationen eine Verallgemeinerung des Funktions-Begriffs dar.
-
-Zum Abschluss des Kapitels f\"{u}hren wir
+Zum Abschluss des Kapitels f\"{u}hren wir dann 
 \href{https://de.wikipedia.org/wiki/Transitive_Relation}{\emph{transitive Relationen}} und 
 \href{https://en.wikipedia.org/wiki/Equivalence_relation}{\emph{\"{A}quivalenz-Relationen}} ein.
 Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker kennen sollte.
@@ -92,7 +91,7 @@ dargestellt. Die oben angegebene Relation h\"{a}tte dann die folgende Form:
 \hline
   \end{tabular}
 \end{center}
-Die oberste Zeile, in der wir die Spalten-\"{u}berschriften ``\textsl{Kunde}'' und ``\textsl{Auto}''
+Die oberste Zeile, in der wir die Spalten\"uberschriften ``\textsl{Kunde}'' und ``\textsl{Auto}''
 angeben,  geh\"{o}rt selbst nicht zu der Relation, sondern wird als \emph{Relationen-Schema}
 bezeichnet und die Relation zusammen mit ihrem Relationen-Schema nennen wir \emph{Tabelle}.  
 
@@ -163,8 +162,9 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 \end{Definition}
 
 \remark
-In der Literatur werden links-totale Relationen gelegentlich auch als \emph{links-vollst‰ndige} Relationen
-bezeichnet.  Rechts-totale Relationen heiﬂen dann \emph{rechts-vollst‰ndig}. \eoxs
+In der Literatur werden links-totale Relationen gelegentlich auch als
+\colorbox{yellow}{\emph{links-vollst‰ndige}} Relationen  
+bezeichnet.  Rechts-totale Relationen heiﬂen dann \colorbox{yellow}{\emph{rechts-vollst‰ndig}}. \eoxs
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times N$, die sowohl links-total auf $M$ als auch rechts-eindeutig
@@ -183,7 +183,7 @@ definieren: \\[0.2cm]
 \proof
 Diese Definition funktioniert, denn aus der Links-Totalit\"{a}t von $R$ folgt, dass es f\"{u}r
 jedes $x\in M$ auch ein $y \in N$ gibt, so dass $\pair(x,y) \in R$ ist.  Aus der
-Rechts-Eindeutigkeit von $R$ folgt dann, dass dieses $y$ eindeutig bestimmt ist. \qed
+Rechts-Eindeutigkeit von $R$ folgt dann, dass dieses $y$ eindeutig bestimmt ist. \qeds
 
 \remark
 Ist umgekehrt eine Funktion \mbox{$f:M \rightarrow N$} gegeben, so k\"{o}nnen wir dieser Funktion
@@ -242,7 +242,8 @@ $R^{-1} := \bigl\{ \pair(y,x) \mid \pair(x,y) \in R  \bigr\}$.
 Aus dieser Definition folgt sofort, dass $R^{-1}$ rechts-eindeutig ist genau dann, wenn
 $R$ links-eindeutig ist.  Au\3erdem ist $R^{-1}$ links-total auf $N$ genau dann, wenn $R$
 rechts-total auf $N$ ist.  Ist eine Relation sowohl links-eindeutig als auch rechts-eindeutig und
-au\3erdem sowohl links-total auf $M$ als auch rechts-total auf $N$, so nennen wir sie auch \emph{bijektiv}.
+au\3erdem sowohl links-total auf $M$ als auch rechts-total auf $N$, so nennen wir sie auch 
+\colorbox{yellow}{\emph{bijektiv}}.
 In diesem Fall l\"{a}sst sich neben der Funktion
 $f_R$ auch eine Funktion $f_{R^{-1}}$ definieren.  Die Definition der letzten Funktion
 lautet ausgeschrieben: \\[0.2cm]
@@ -257,12 +258,12 @@ Dieser Umstand rechtfertigt im Nachhinein die Schreibweise $R^{-1}$.
 \"{A}hnlich wie wir Funktionen verkn\"{u}pfen k\"{o}nnen, k\"{o}nnen auch Relationen verkn\"{u}pft werden.
 Wir betrachten zun\"{a}chst Mengen $L$, $M$ und $N$.
 Sind dort zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ definiert,
-so ist das \emph{relationale Produkt} $R \circ Q$ wie folgt definiert: \\[0.2cm]
+so ist das \colorbox{yellow}{\emph{relationale Produkt}} $R \circ Q$ wie folgt definiert: \\[0.2cm]
 \hspace*{1.3cm}
 $R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon(\pair(x,y) \in R \wedge \pair(y,z) \in Q) \bigr\}$ 
 \\[0.2cm]
 Offenbar gilt $R \circ Q \subseteq L \times N$.
-Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \emph{Komposition} von
+Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \colorbox{yellow}{\emph{Komposition}} von
 $Q$ und $R$ bezeichnet.  In der Theorie der Datenbanken werden Sie dem relationalen Produkt
 wiederbegegnen, denn der 
 \href{http://en.wikipedia.org/wiki/Join_(SQL)}{\emph{Join}-Operator}, der in
@@ -429,14 +430,14 @@ Existenz-Quantor \"{u}ber $z$ auch vorziehen und k\"{o}nnen daher diese Kette vo
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
 fortsetzen. Die Formeln (\ref{eq:ass1}) und (\ref{eq:ass2}) sind identisch.  Damit ist die \"{A}quivalenz
-(\ref{eq:ass0}) nachgewiesen und der Beweis der Assoziativit\"{a}t des Kompositions-Operators
+(\ref{eq:ass0}) nachgewiesen und der Nachweis der Assoziativit\"{a}t des Kompositions-Operators
 ist erbracht.  \hspace*{\fill} $\Box$
 \vspace{0.2cm}
 
 \begin{Satz}
   Sind zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ gegeben, so gilt \\[0.2cm]
   \hspace*{1.3cm} $(R \circ Q)^{-1} = Q^{-1} \circ R^{-1}$. \\[0.2cm]
-  Beachten Sie, dass sich die Reihenfolge von $Q$ und $R$ hier vertauscht!  
+  \textbf{Beachten} Sie, dass sich die Reihenfolge von $Q$ und $R$ hier vertauscht!  
 \end{Satz}
 
 \proof
@@ -458,7 +459,7 @@ gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{A}quivalenz-Um
 \]
 
 
-\begin{Satz}[Distributiv-Gesetze f\"{u}r das relationale Produkt]
+\begin{Satz}[Distributiv-Gesetze f\"{u}r das relationale Produkt] \lb
   Sind $R_1$ und $R_2$   Relationen auf $L \times M$ und ist $Q$ eine Relation auf $M \times N$, so
   gilt \\[0.2cm] 
   \hspace*{1.3cm}
@@ -469,8 +470,8 @@ gilt.  Den Nachweis erbringen wir durch die folgende Kette von \"{A}quivalenz-Um
   $R \circ (Q_1 \cup Q_2) = (R \circ Q_1) \cup (R \circ Q_2)$, 
   \\[0.2cm]
   falls $R$ eine Relation auf $L \times M$ und $Q_1$ und $Q_2$ Relationen auf $M \times N$
-  sind.  Um Gleichungen der obigen Art ohne Klammern schreiben zu k\"{o}nnen vereinbaren wir, dass der 
-  Kompositions-Operator $\circ$ st\"{a}rker bindet als $\cup$ und $\cap$.  
+  sind.  Um Gleichungen der obigen Art ohne Klammern auf der rechten Seite schreiben zu k\"{o}nnen
+  vereinbaren wir, dass der Kompositions-Operator $\circ$ st\"{a}rker bindet als $\cup$ und $\cap$.  
 \end{Satz}
 
 \proof
@@ -516,7 +517,7 @@ Wir formen nun den Ausdruck $\pair(x,z) \in R_1 \circ Q \cup R_2 \circ Q$ um:
 \]
 Diese letzte Formel stellen wir mit Hilfe eines Distributiv-Gesetzes f\"{u}r die
 Pr\"{a}dikaten-Logik um.  In der Pr\"{a}dikaten-Logik werden wir sp\"{a}ter sehen, dass f\"{u}r beliebige
-Formeln $F_1$ und $F_2$ die \"{a}quivalenz
+Formeln $F_1$ und $F_2$ die \"{A}quivalenz
 \[ \exists y: \bigl(F_1 \vee F_2\bigr) \;\Leftrightarrow\; \bigl(\exists y: F_1\bigr) \vee \bigl(\exists y: F_2\bigr) \]
 g\"{u}ltig ist.  Damit folgt dann
 \begin{eqnarray}
@@ -551,7 +552,7 @@ Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $Q_1,
 
 
 \begin{Definition}[Identische Relation]
-  Ist $M$ eine Menge, so definieren wir die \emph{identische Relation} $\mathrm{id}_M \subseteq M \times M$
+  Ist $M$ eine Menge, so definieren wir die \colorbox{yellow}{\emph{identische Relation}} $\mathrm{id}_M \subseteq M \times M$
   wie folgt: \\[0.2cm]
   \hspace*{1.3cm} $\mathrm{id}_M := \bigl\{ \pair(x,x) \mid x \in M \bigr\}$.  \eox
 \end{Definition}
@@ -588,7 +589,7 @@ $x = y \wedge \pair(y,z) \in R$.  Unter Verwendung der oberen \"{A}quivalenz hab
 Wegen  $R \subseteq M \times N$ besteht $R$ nur aus geordneten
 Paaren und daher gilt
 \[ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
-Damit ist $\mathrm{id}_M \circ R = R$ gezeigt. \qed
+Damit ist $\mathrm{id}_M \circ R = R$ gezeigt. \qeds
 
 
 \exercise
@@ -618,12 +619,12 @@ $\pair(x,y) \in R$ auch $x\, R\, y$.  Beispielsweise l\"{a}sst sich die Relation
 auf $\mathbb{N}$ wie folgt definieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
- $\leq\; := \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists z \in \mathbb{N}_0 \colon x + z = y \bigr\}$.
+ $\leq\; := \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists z \in \mathbb{N} \colon x + z = y \bigr\}$.
 \\[0.2cm]
 Statt $\pair(x,y) \in\; \leq$ hat sich in der Mathematik die Schreibweise $x \leq y$ eingeb\"{u}rgert.
   
 \begin{Definition}[reflexiv] 
-Eine Relation $R \subseteq M \times M$  ist \emph{reflexiv} auf der Menge $M$ falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{reflexiv}} auf der Menge $M$ falls gilt: \\[0.2cm]
 \hspace*{1.3cm} $\forall x\in M \colon \pair(x,x) \in R$. \eox
 \end{Definition}
 
@@ -643,10 +644,10 @@ $
 \Leftrightarrow & \mbox{$R$ ist reflexiv auf $M$.}  
 \end{array}
 $
-\qed
+\qeds
 
 \begin{Definition}[symmetrisch]
-Eine Relation $R \subseteq M \times M$  ist \emph{symmetrisch} falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{symmetrisch}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x,y\el M \colon \bigl(\pair(x,y) \in R \rightarrow\pair(y,x)\in R\bigr)$. \eox
 \end{Definition}
@@ -663,10 +664,10 @@ ber\"{u}cksichtigen, denn dann hat die Inklusions-Bedingung die Form
 \[ \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \subseteq  R. \]
 Falls nun $\pair(x,y) \in R$ ist, gilt $\pair(y,x) \in \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\}$.
 Da diese Menge eine Teilmenge von $R$ ist, folgt $\pair(y,x)  \in R$ und das ist gerade die Bedingung, dass
-die Relation $R$ symmetrisch ist. \qed
+die Relation $R$ symmetrisch ist. \qeds
 
 \begin{Definition}[anti-symmetrisch]
-Eine Relation $R \subseteq M \times M$  ist \emph{anti-symmetrisch} falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{anti-symmetrisch}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x, y \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y\bigr)$. \eox
 \end{Definition}
@@ -732,10 +733,14 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
       $x=y$ 
       \\[0.2cm]
       folgt.  Aus $\pair(y,x) \in R$ folgt 
-      $\pair(x,y) \in R^{-1}$.  Also gilt $\pair(x,y) \in R \cap R^{-1}$.
+      $\pair(x,y) \in R^{-1}$.  Also gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x,y) \in R \cap R^{-1}$.
+      \\[0.2cm]
       Aus der Inklusions-Beziehung $R \cap R^{-1} \subseteq \mathrm{id}_{M}$ folgt dann
       $\pair(x,y) \in \mathrm{id}_M$ und daraus folgt sofort $x = y$. 
-      \qed
+      \qeds
 \end{enumerate}
 
 \exercise
@@ -748,7 +753,7 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
 
 \remark
 In der Literatur finden Sie noch den Begriff der \emph{Asymmetrie}.  Dort wird eine Relation 
-$R \subseteq M^2$ als \emph{asymmetrisch} definiert, wenn 
+$R \subseteq M^2$ als \colorbox{yellow}{\emph{asymmetrisch}} definiert, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x, y \in M: \bigl(\pair(x,y) \in R \rightarrow \pair(y,x) \not\in R \bigr)$
@@ -761,7 +766,7 @@ der \emph{Asymmetrie} keine Rolle.  F\"{u}r Sie reicht es zu wissen, dass \emph{
 \eox
 
 \begin{Definition}[transitiv]
-Eine Relation $R \subseteq M \times M$  ist \emph{transitiv} falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{transitiv}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x, y, z \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R\bigr)$. 
 \eox
@@ -813,7 +818,7 @@ $R \circ R \subseteq R$ ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(x,z) \in R$. 
-      \qed
+      \qeds
 \end{enumerate} 
 
 \examples 
@@ -842,7 +847,7 @@ In den ersten beiden Beispielen sei $M = \{1,2,3\}$.
       nat\"{u}rlich $k \leq n$.
 \item $R_4 := \{ \pair(m,n) \in \mathbb{N}^2 \mid \exists k\in \mathbb{N}: m\cdot k = n \}$
 
-      F\"{u}r zwei positive Zahlen $m$ und $n$ gilt $\pair(m,n) \in R_4$ genau dann, wenn $m$ ein
+      F\"{u}r zwei nat\"urliche Zahlen $m$ und $n$ gilt $\pair(m,n) \in R_4$ genau dann, wenn $m$ ein
       Teiler von $n$ ist.  Damit ist klar, dass $R_4$ reflexiv auf $\mathbb{N}$ ist, denn jede Zahl 
       teilt sich selbst.  Nat\"{u}rlich ist $R_4$ nicht symmetrisch, denn $1$ ist ein Teiler
       von $2$ aber nicht umgekehrt.  Daf\"{u}r ist $R_4$ aber anti-symmetrisch, denn wenn 
@@ -857,7 +862,7 @@ transitiven Relation erweitern.  Zu diesem Zweck  definieren wir zun\"{a}chst de
 einer Relation auf $M$.
 
 \begin{Definition}[Potenz einer Relation, $R^n$]
-  F\"{u}r eine Relation $R \subseteq M^2$ definieren wir f\"{u}r alle $n \in \mathbb{N}_0$ die \emph{Potenz} $R^n$
+  F\"{u}r eine Relation $R \subseteq M^2$ definieren wir f\"{u}r alle $n \in \mathbb{N}$ die \emph{Potenz} $R^n$
   durch Induktion \"{u}ber $n$ wie folgt:  
   \begin{enumerate}
   \item Induktions-Anfang: $n= 0$.  Wir setzen \\[0.2cm]
@@ -875,7 +880,7 @@ Zusammenhang besteht, wie f\"{u}r die Potenzen einer Zahl und das gew\"{o}hnlich
 folgende Gesetz.
 
 \begin{Satz}[Potenz-Gesetz des relationalen Produkts] \hspace*{\fill} \\
-  Es sei $R \subseteq M \times M$.  F\"{u}r beliebige ganze Zahlen $k,l \in \mathbb{N}_0$ gilt:
+  Es sei $R \subseteq M \times M$.  F\"{u}r beliebige ganze Zahlen $k,l \in \mathbb{N}$ gilt:
   \[ R^k \circ R^l = R^{k+l}. \]
 \end{Satz}
 
@@ -884,7 +889,7 @@ folgende Gesetz.
 \item[I.A.:] $k = 0$.  Es gilt
              \\[0.2cm]
              \hspace*{1.3cm}
-             $R^0 \circ R^l = \textsl{id}_M \circ R^l = R^l = R^{0+l}$. $\surd$
+             $R^0 \circ R^l = \textsl{id}_M \circ R^l = R^l = R^{0+l}$. {\color{green}{$\surd$}}
 \item[I.S.:] $k \mapsto k+1$.  Es gilt
              \[
              \begin{array}{lcll}
@@ -896,7 +901,7 @@ folgende Gesetz.
                                        \mbox{nach Induktions-Voraussetzung} \\
                                  & = & R^{(k+l)+1} &
                                        \mbox{nach Def. von}\; R^{n+1} \\
-                                 & = & R^{(k+1)+l}.\; \surd & \hspace*{\fill} \Box
+                                 & = & R^{(k+1)+l}.\; \mbox{\color{green}{$\surd$}} & \hspace*{\fill} \Box
              \end{array}
              \]
 \end{enumerate}
@@ -906,17 +911,19 @@ transitiven Relation erweitern k\"{o}nnen.
 
 \begin{Definition}[transitiver Abschluss einer Relation, $R^+$]\hspace*{\fill} \\
   Es sei $R \subseteq M^2$.
-  Wir definieren den \emph{transitiven Abschluss} der Relation $R$ als die Menge \\[0.2cm]
-  \hspace*{1.3cm} $R^+ := \bigcup\limits_{n\in\mathbb{N}} R^n$. \\
-  Dabei ist f\"{u}r eine Folge $(A_n)_n$ von Mengen der Ausdruck $\bigcup\limits_{n\in\mathbb{N}} A_n$ 
+  Wir definieren den 
+  \href{https://en.wikipedia.org/wiki/Transitive_closure}{\emph{transitiven Abschluss}} der Relation
+  $R$ als die Menge \\[0.2cm]  
+  \hspace*{1.3cm} $R^+ := \bigcup\limits_{n\in\mathbb{N}^*} R^n$. \\[0.2cm]
+  Dabei ist f\"{u}r eine Folge $(A_n)_n$ von Mengen der Ausdruck $\bigcup\limits_{n\in\mathbb{N}^*} A_n$ 
   als \\[0.2cm]
   \hspace*{1.3cm}
-  $\bigcup\limits_{n\in\mathbb{N}} A_n := \bigl\{ x \,\big|\, \exists n \in \mathbb{N}: x \in A_n \bigr\}$.
+  $\bigcup\limits_{n\in\mathbb{N}} A_n := \bigl\{ x \,\big|\, \exists n \in \mathbb{N}^*: x \in A_n \bigr\}$.
   \\[0.2cm]
   definiert.  Etwas weniger formal (aber daf\"{u}r anschaulicher) k\"{o}nnen wie auch schreiben
   \\[0.2cm]
   \hspace*{1.3cm}
- $\bigcup\limits_{n\in\mathbb{N}} A_n := \bigcup\limits_{i=1}^{\infty} A_n := A_1 \cup A_2 \cup A_3 \cup \cdots $. \eox
+ $\bigcup\limits_{n\in\mathbb{N}^*} A_n := \bigcup\limits_{i=1}^{\infty} A_n := A_1 \cup A_2 \cup A_3 \cup \cdots $. \eox
 \end{Definition}
 
 \begin{Satz}
@@ -926,7 +933,7 @@ Dann hat die oben definierte Relation $R^+$ die folgenden Eigenschaften:
 \item $R^+$ ist transitiv.
 \item $R^+$   ist die bez\"{u}glich der Inklusions-Ordnung $\subseteq$ kleinste Relation
       $T$ auf $M$, die einerseits transitiv ist und andererseits die Relation $R$ enth\"{a}lt.
-      Anders ausgedr\"{u}ckt: Ist $T$ eine transitive Relation auf $M$ mit $R \subseteq T$, so
+      Anders ausgedr\"{u}ckt: Ist $T$ eine transitive Relation mit $R \subseteq T$, so
       muss $R^+ \subseteq T$ gelten.
 \end{enumerate}
 \end{Satz}
@@ -939,33 +946,36 @@ Dann hat die oben definierte Relation $R^+$ die folgenden Eigenschaften:
 nachweisen.  Wir nehmen also an, dass $\pair(x,y) \in R^+$ und $\pair(y,z) \in R^+$
 gilt und zeigen, dass aus dieser Voraussetzung auf $\pair(x,z) \in R^+$ geschlossen
 werden kann.  Nach Definition von $R^+$ haben wir 
-\[ \pair(x,y) \in \bigcup\limits_{n\in\mathbb{N}} R^n \quad \mbox{und} \quad
-   \pair(y,z) \in \bigcup\limits_{n\in\mathbb{N}} R^n.
+\[ \pair(x,y) \in \bigcup\limits_{n\in\mathbb{N}^*} R^n \quad \mbox{und} \quad
+   \pair(y,z) \in \bigcup\limits_{n\in\mathbb{N}^*} R^n.
 \]
-Nach der Definition der Menge $\bigcup\limits_{n\in\mathbb{N}} R^n$ gibt es dann nat\"{u}rliche Zahlen $k,l\in\mathbb{N}$, so dass
+Nach der Definition der Menge $\bigcup\limits_{n\in\mathbb{N}^*} R^n$ gibt es dann positive nat\"{u}rliche Zahlen $k,l\in\mathbb{N}^*$, so dass
 \[ \pair(x,y) \in R^k \quad \mbox{und} \quad \pair(y,z) \in R^l \]
 gilt.  Aus der Definition des relationalen Produktes folgt nun
 \[  \pair(x,z) \in R^k \circ R^l. \]
 Aufgrund des Potenz-Gesetzes f\"{u}r das relationale Produkt gilt 
 \[ R^k \circ R^l = R^{k+l}. \]
 Also haben wir $\pair(x,z) \in R^{k+l}$ und daraus folgt sofort
-\[  \pair(x,z) \in \bigcup\limits_{n\in\mathbb{N}} R^n. \]
-Damit gilt $\pair(x,z) \in R^+$ und das war zu zeigen. $\surd$
+\[  \pair(x,z) \in \bigcup\limits_{n\in\mathbb{N}^*} R^n. \]
+Damit gilt $\pair(x,z) \in R^+$ und das war zu zeigen. {\color{green}{$\surd$}}
 
 \item 
 Um zu zeigen, dass $R^+$ die kleinste Relation ist, die einerseits transitiv ist
 und andererseits $R$ enth\"{a}lt, nehmen wir an, dass $T$ eine transitive Relation ist,
 f\"{u}r die $R \subseteq T$ gilt.  Wir m\"{u}ssen dann zeigen, dass $R^+ \subseteq T$ gilt.  Um diesen
-Nachweis zu f\"{u}hren, zeigen wir zun\"{a}chst, dass f\"{u}r alle 
-nat\"{u}rlichen Zahlen $n\in\mathbb{N}$ die folgende Inklusion gilt:
+Nachweis zu f\"{u}hren, zeigen wir zun\"{a}chst, dass f\"{u}r alle positiven
+nat\"{u}rlichen Zahlen $n\in\mathbb{N}^*$ die folgende Inklusion gilt:
 \[ R^n \subseteq T. \]
-Wir f\"{u}hren den Nachweis dieser Behauptung durch vollst\"{a}ndige Induktion \"{u}ber $n\in\mathbb{N}$.
+Wir f\"{u}hren den Nachweis dieser Behauptung durch vollst\"{a}ndige Induktion \"{u}ber $n\in\mathbb{N}^*$.
 \begin{enumerate}
 \item[I.A.:] $n=1$.  
 
                Dann ist $R^1 \subseteq T$ zu zeigen.  Wegen
+               \\[0.2cm]
+               \hspace*{1.3cm}
                $R^1 = R \circ R^0 = R \circ \mathrm{id}_M = R$
-               folgt dies aber unmittelbar aus der Voraussetzung $R \subseteq T$. $\surd$
+               \\[0.2cm]
+               folgt dies aber unmittelbar aus der Voraussetzung $R \subseteq T$. {\color{green}{$\surd$}}
 \item[I.S.:] $n \mapsto n+1$.  
 
              Nach Induktions-Voraussetzung wissen wir, dass
@@ -982,7 +992,7 @@ Wir f\"{u}hren den Nachweis dieser Behauptung durch vollst\"{a}ndige Induktion \
              Insgesamt haben wir also die folgende Kette von Inklusionen
              \[ R^{n+1} \subseteq R \circ T \subseteq T \circ T \subseteq T. \]
              Damit folgt $R^{n+1} \subseteq T$ und der Induktions-Beweis ist
-             abgeschlossen. $\surd$
+             abgeschlossen. {\color{green}{$\surd$}}
 \end{enumerate}
 Wir schlie\3en den Beweis ab, indem wir
 \\[0.2cm]
@@ -990,9 +1000,9 @@ Wir schlie\3en den Beweis ab, indem wir
  $R^+ \subseteq T$ 
 \\[0.2cm]
 zeigen.  Sei $\pair(x,y) \in R^+$.
-Nach Definition von $R^+$ muss es dann eine  nat\"{u}rliche Zahl $n$ geben, so
+Nach Definition von $R^+$ muss es dann eine positive nat\"{u}rliche Zahl $n$ geben, so
 dass $\pair(x,y) \in R^n$ ist.  Wegen $R^n \subseteq T$ folgt daraus aber
-$\pair(x,y) \in T$ und damit ist auch der zweite Teil des Beweises abgeschlossen. \qed
+$\pair(x,y) \in T$ und damit ist auch der zweite Teil des Beweises abgeschlossen. \qeds
 \end{enumerate}
 
 \example
@@ -1017,7 +1027,7 @@ Relation \textsl{D} durch
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{D} := \{ \pair(x,y) \in \textsl{F} \times \textsl{F} \mid
-                  \mbox{Es gibt einen Direktflug von $x$ nach $y$} \}$.
+                  \mbox{es gibt einen Direktflug von $x$ nach $y$} \}$.
 \\[0.2cm]
 $D$ bezeichnet also die direkten Verbindungen.  Die Relation $D^2$ ist dann definiert als
 \\[0.2cm]
@@ -1061,7 +1071,8 @@ Berechnen Sie den transitiven Abschluss $R^+$.
 \section{\"{A}quivalenz-Relationen \label{section:aequivalenz_relation}}
 \begin{Definition}[\"{A}quivalenz-Relation]
 Eine Relation $R \subseteq M \times M$  ist eine 
-\emph{\"{A}quivalenz-Relation} auf $M$ genau dann, wenn folgende Bedingungen erf\"{u}llt sind:
+\href{https://en.wikipedia.org/wiki/Equivalence_relation}{\emph{\"{A}quivalenz-Relation}} auf $M$
+genau dann, wenn folgende Bedingungen erf\"{u}llt sind: 
 \begin{enumerate}
 \item $R$ ist reflexiv auf $M$,
 \item $R$ ist symmetrisch und
@@ -1076,12 +1087,12 @@ Rolle spielen wird.
 
 \example
 Wir betrachten die Menge $\mathbb{Z}$ der ganzen Zahlen
-zusammen mit der Relation $\approx_n$, die wir f\"{u}r nat\"{u}rliche Zahlen $n\in\mathbb{N}$ 
+zusammen mit der Relation $\approx_n$, die wir f\"{u}r nat\"{u}rliche Zahlen $n\in\mathbb{N}^*$ 
 als \\[0.2cm]
 \hspace*{1.3cm}
  $\approx_n \;:=\; \{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z} \colon k \cdot n = x - y \}$
 \\[0.2cm]
-definieren.  Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}$ eine \"{A}quivalenz-Relation auf
+definieren.  Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}^*$ eine \"{A}quivalenz-Relation auf
 $\mathbb{Z}$ definiert. 
 
 \begin{enumerate}
@@ -1092,7 +1103,7 @@ $\mathbb{Z}$ definiert.
       $\pair(x,x) \in\; \approx_n$.        
       \\[0.2cm]
       gilt.  Nach Definition von $\approx_n$
-      ist dies \"{A}quivalent zu \\[0.2cm]
+      ist dies \"{a}quivalent zu \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(x,x) \in \bigl\{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z}: k \cdot n = x - y \bigr\}$.
       \\[0.2cm]
@@ -1104,7 +1115,7 @@ $\mathbb{Z}$ definiert.
       \hspace*{1.3cm}
       $0\cdot n = 0 = x - x$. 
       \\[0.2cm]
-      Damit ist die Reflexivit\"{a}t nachgewiesen. $\surd$
+      Damit ist die Reflexivit\"{a}t nachgewiesen. {\color{green}{$\surd$}}
 \item Um die Symmetrie von $\approx_n$ nachzuweisen nehmen wir an, dass 
       $\pair(x,y) \in\; \approx_n$ ist.  Dann gibt es also ein $k \in \mathbb{Z}$, so dass
       \\[0.2cm]
@@ -1117,9 +1128,13 @@ $\mathbb{Z}$ definiert.
       $(-k)\cdot n = y - x$.
       \\[0.2cm]
       Dies zeigt aber, dass $\pair(y,x) \in\; \approx_n$ ist und damit ist die Symmetrie
-      nachgewiesen. $\surd$
+      nachgewiesen. {\color{green}{$\surd$}}
 \item Zum Nachweis der Transitivit\"{a}t von $\approx$ nehmen wir an, dass
-      sowohl $\pair(x,y) \in\; \approx_n$ als auch $\pair(y,z) \in\; \approx_n$
+      sowohl
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\pair(x,y) \in\; \approx_n$ \quad als auch \quad $\pair(y,z) \in\; \approx_n$
+      \\[0.2cm]
       gelten.  Dann gibt es also $k_1,k_2 \in \mathbb{Z}$ so dass 
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -1141,8 +1156,8 @@ $\mathbb{Z}$ definiert.
       \hspace*{1.3cm}
       $\pair(x,z) \in\; \approx_n$ 
       \\[0.2cm]
-      nachgewiesen und folglich die Transitivit\"{a}t von $\approx_n$ gezeigt. $\surd$ 
-      \qed
+      nachgewiesen und folglich die Transitivit\"{a}t von $\approx_n$ gezeigt. {\color{green}{$\surd$}} 
+      \qeds
 \end{enumerate}
 
 \exercise
@@ -1190,7 +1205,7 @@ so ist $R_f$ eine \"{A}quivalenz-Relation.
       Daraus folgt sofort 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x \in M: \pair(x,x) \in R_f$. $\surd$
+      $\forall x \in M: \pair(x,x) \in R_f$. {\color{green}{$\surd$}}
 \item Um die Symmetrie von $R_f$ nachzuweisen, m\"{u}ssen wir
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1209,7 +1224,7 @@ so ist $R_f$ eine \"{A}quivalenz-Relation.
       und nach Definition von $R_f$ ist das \"{a}quivalent zu 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\pair(y,x) \in R_f$. $\surd$
+      $\pair(y,x) \in R_f$. {\color{green}{$\surd$}}
 \item Um die Transitivit\"{a}t von $R_f$ nachzuweisen, m\"{u}ssen wir 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1235,8 +1250,8 @@ so ist $R_f$ eine \"{A}quivalenz-Relation.
       Nach Definition der Relation $R_f$ haben wir also 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\pair(x,z) \in R_f$. $\surd$
-      \qed
+      $\pair(x,z) \in R_f$. {\color{green}{$\surd$}}
+      \qeds
 \end{enumerate}
 
 
@@ -1246,9 +1261,9 @@ Ist $f: M \rightarrow N$ eine Funktion und gilt
 \hspace*{1.3cm}
 $R_f = \bigl\{ \pair(x,y) \in M \times M \mid f(x) = f(y) \bigr\}$ 
 \\[0.2cm]
-so sagen wir, dass $R_f$ die \emph{von $f$ auf M erzeugte} \"{A}quivalenz-Relation ist.  Wir werden
+so sagen wir, dass $R_f$ die \colorbox{yellow}{\emph{von $f$ auf M erzeugte}} \"{A}quivalenz-Relation ist.  Wir werden
 sp\"{a}ter sehen, dass es zu jeder  \"{A}quivalenz-Relation eine Funktion gibt, die diese
-\"{A}quivalenz-Relation erzeugt. \eox 
+\"{A}quivalenz-Relation erzeugt. \eoxs 
 
 
 \example 
@@ -1261,10 +1276,9 @@ erzeugt, denn wir haben in einer Aufgabe gezeigt, dass f\"{u}r alle $x,y \in \ma
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \approx_n y \;\Leftrightarrow\; x \modulo n = y \modulo n$
-\\[0.2cm]
-gilt.
-\eox
-
+\\
+gilt. \eoxs
+\pagebreak
 
 \example
 Es sei $M$ die Menge aller Menschen und $S$ sei die Menge aller Staaten.  Nehmen wir zur
@@ -1275,7 +1289,7 @@ $\textsl{sb}: M \rightarrow S$
 \\[0.2cm]
 definieren, die jedem Menschen $x$ seine Staatsb\"{u}rgerschaft $\textsl{sb}(x)$ zuordnet.  Bei der durch
 diese Funktion definierten \"{A}quivalenz-Relation sind dann alle die Menschen \"{a}quivalent, welche dieselbe
-Staatsb\"{u}rgerschaft haben.  \eox
+Staatsb\"{u}rgerschaft haben.  \eoxs
 
 \begin{Definition}[\"{A}quivalenz-Klasse]
 Ist $R$ eine \"{A}quivalenz-Relation auf $M$, so definieren wir f\"{u}r alle $x \in M$ 
@@ -1283,7 +1297,7 @@ die Menge $[x]_R$ durch \\[0.2cm]
 \hspace*{1.3cm} $[x]_R \;:=\; \bigl\{ y \in M \mid x \mathop{R} y \bigr\}$. \qquad
 (Wir schreiben hier $x R y$ als Abk\"{u}rzung f\"{u}r $\pair(x, y) \in R$.) 
 \\[0.2cm]
-Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \emph{\"{A}quivalenz-Klasse}.  \eox
+Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \colorbox{yellow}{\emph{\"{A}quivalenz-Klasse}}.  \eoxs
 \end{Definition}
 
 \begin{Satz}[Charakterisierung der \"{A}quivalenz-Klassen] \label{satz:aequivalenz-klassen}
@@ -1311,7 +1325,7 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
 \item Wir haben $x \el [x]_R$ genau dann, wenn 
       $x \in \bigl\{ y \el M \mid x \mathop{R} y \bigr\}$ gilt und letzteres ist
       \"{a}quivalent zu $x \mathop{R} x$.
-      Die Eigenschaft $x \mathop{R} x$ folgt aber unmittelbar aus der Reflexivit\"{a}t der \"{A}quivalenz-Relation. $\surd$
+      Die Eigenschaft $x \mathop{R} x$ folgt aber unmittelbar aus der Reflexivit\"{a}t von $R$. {\color{green}{$\surd$}}
 \item Sei  $x \mathop{R} y$.  Um $[x]_R = [y]_R$ nachzuweisen zeigen wir
       $[x]_R \subseteq [y]_R$ und $[y]_R \subseteq [x]_R$.
 
@@ -1347,7 +1361,7 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
             $x \mathop{R} u$.  Dann gilt aber $u \el [x]_R$ und damit ist auch die Inklusion
             $[y]_R \subseteq [x]_R$ nachgewiesen. 
       \end{enumerate}
-      Damit haben wir insgesamt die Gleichung $[x]_R = [y]_R$ gezeigt. $\surd$
+      Damit haben wir insgesamt die Gleichung $[x]_R = [y]_R$ gezeigt. {\color{green}{$\surd$}}
 \item Sei nun $\neg (x \mathop{R} y)$ vorausgesetzt.  Um nachzuweisen,
       dass  $[x]_R \cap [y]_R = \emptyset$ ist nehmen wir an, dass
       es ein $z \el [x]_R \cap [y]_R$ gibt.  Aus dieser Annahme werden wir einen
@@ -1363,12 +1377,12 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
       \hspace*{1.3cm}      
       $x \mathop{R} z$ \quad und \quad $z \mathop{R} y$.
       \\[0.2cm]
-      Aus der Transitivit\"{a}t der \"{a}quivalenz-Relation $R$ folgt jetzt
+      Aus der Transitivit\"{a}t der \"{A}quivalenz-Relation $R$ folgt jetzt
       $x \mathop{R} y$.
       Dies steht aber im Widerspruch zu der Voraussetzung $\neg (x \mathop{R} y)$.
       Damit ist die Annahme, dass es ein $z \el [x]_R \cap [y]_R$ gibt, widerlegt.
-      Folglich ist die Menge $[x]_R \cap [y]_R$ leer. $\surd$
-      \qed
+      Folglich ist die Menge $[x]_R \cap [y]_R$ leer. {\color{green}{$\surd$}}
+      \qeds
 \end{enumerate}
 
 \begin{Korollar}
@@ -1377,7 +1391,7 @@ Aus dem letzten Satzes folgt sofort, dass
 \hspace*{1.3cm}
 $\pair(x,y) \in R \;\Leftrightarrow\; [x]_R = [y]_R$
 \\[0.2cm]
-gilt. \eox
+gilt. \eoxs
 \end{Korollar}
 
 \remark
@@ -1404,7 +1418,7 @@ R_{f_R} & = & \bigl\{ \pair(x, y) \in M \times M \mid f_R(x) = f_R(y)  \bigr\}  
 \end{array}
 $
 \\[0.2cm]
-denn  $R \subseteq M \times M$. \eox
+denn  $R \subseteq M \times M$. \eoxs
 
 
 \begin{Definition}[Quotienten-Raum]
@@ -1415,35 +1429,36 @@ $M$ \emph{modulo} $R$) als die Menge der von $R$ auf $M$ erzeugten \"{A}quivalen
 $M/R := \bigl\{ [x]_R \mid x \in M \bigr\}$.
 \\[0.2cm]
 Die Menge $M/R$ der von $R$ auf $M$ erzeugten \"{A}quivalenz-Klassen nennen wir den
-\emph{Quotienten-Raum} vom $M$ \"{u}ber $R$.  \eox
+\colorbox{yellow}{\emph{Quotienten-Raum}} vom $M$ \"{u}ber $R$.  \eoxs
 \end{Definition}
 
 \example
 Setzen wir das letzte Beispiel fort, in dem alle die Menschen \"{a}quivalent waren, die dieselbe
 Staatsb\"{u}rgerschaft haben, so finden wir, dass die \"{A}quivalenz-Klassen, die von dieser
 \"{A}quivalenz-Relation erzeugt werden, gerade aus den Menschen besteht, die dieselbe
-Staatsb\"{u}rgerschaft besitzen.  \eox
+Staatsb\"{u}rgerschaft besitzen.  \eoxs
 
 
 \begin{Definition}[Partition] 
 Ist ${\cal P} \subseteq 2^M$ eine Menge von Teilmengen von $M$, so sagen wir, dass ${\cal P}$ eine 
-\emph{Partition} von $M$ ist, falls $\mathcal{P}$ die folgenden Eigenschaften hat:
+\href{https://de.wikipedia.org/wiki/Partition_(Mengenlehre)}{\emph{Partition}} von $M$ ist, falls
+$\mathcal{P}$ die folgenden Eigenschaften hat: 
 \begin{enumerate}
-\item \emph{Vollst\"{a}ndigkeits-Eigenschaft} 
+\item \colorbox{yellow}{\emph{Vollst\"{a}ndigkeits-Eigenschaft}} 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \el M : \exists K \el {\cal P} : x \el K$,
 
       jedes Element aus $M$ findet sich  in einer Menge aus ${\cal P}$ wieder.
-\item \emph{Separations-Eigenschaft} 
+\item \colorbox{yellow}{\emph{Separations-Eigenschaft}}
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall K, L \el {\cal P} : \bigl(K \cap L =\emptyset \vee K = L\bigr)$,
       \\[0.2cm]
       zwei Mengen aus ${\cal P}$ sind also entweder disjunkt oder schon identisch.
 \end{enumerate}
-Gelegentlich wird eine Partition einer Menge $M$ auch als \emph{Zerlegung} von $M$
-bezeichnet. \eox
+Gelegentlich wird eine Partition einer Menge $M$ auch als \colorbox{yellow}{\emph{Zerlegung}} von $M$
+bezeichnet. \eoxs
 \end{Definition}
 
 \remark
@@ -1455,7 +1470,7 @@ $M/R = \bigl\{ [x]_R \mid x \in M \bigr\}$
 \\[0.2cm]
 eine Partition der Menge $M$ darstellt.  Der n\"{a}chste Satz zeigt, dass auch die Umkehrung gilt, denn
 aus jeder Partition einer Menge l\"{a}sst sich eine \"{A}quivalenz-Relation erzeugen.
-\eox
+\eoxs
 
 \begin{Satz} 
 Es sei $M$ eine Menge und $\mathcal{P} \subseteq 2^M$ eine
@@ -1487,7 +1502,7 @@ transitiv ist.
       $\forall x \in M: \exists K \in \mathcal{P}: x \in K$
       \\[0.2cm]
       vereinfachen.  Diese Formel ist nichts anderes als die Vollst\"{a}ndigkeit
-      der Partition $\mathcal{P}$. $\surd$
+      der Partition $\mathcal{P}$. {\color{green}{$\surd$}}
 \item Symmetrie: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1512,7 +1527,7 @@ transitiv ist.
       und nach Definition der Relation $R$ folgt nun 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $y \mathop{R} x$. $\surd$
+      $y \mathop{R} x$. {\color{green}{$\surd$}}
 \item Transitivit\"{a}t: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1546,32 +1561,33 @@ transitiv ist.
       $\exists K \in \mathcal{P}: \bigl(x \in K \wedge z \in K\bigr)$
       \\[0.2cm]
       gezeigt und nach Definition der Relation $R$ hei\3t das 
-      $x \mathop{R} z$. $\surd$
-      \qed
+      $x \mathop{R} z$. {\color{green}{$\surd$}}
+      \qeds
 \end{enumerate}
 
 
 \section{Partielle und totale Ordnungen}
-In dem letzten Abschnitt dieses Kapitels definieren wir Ordnungs-Relationen.  Darunter verstehen wir
+In dem letzten Abschnitt dieses Kapitels definieren wir
+\href{https://de.wikipedia.org/wiki/Ordnungsrelation}{Ordnungs-Relationen}.  Darunter verstehen wir 
 Relationen, die sich \"{a}hnlich verhalten wie die Relation $\leq$ auf den Zahlen.
 
-\begin{Definition}[partielle Ordnung]
+\begin{Definition}[partielle Ordnung] \lb
   Eine Relation $R \subseteq M \times M$  ist eine 
-  \emph{partielle Ordnung (im Sinne von $\leq$) auf $M$} genau dann, wenn die Relation $R$
+  \colorbox{yellow}{\emph{partielle Ordnung (im Sinne von $\leq$) auf $M$}} genau dann, wenn die Relation $R$
   \begin{enumerate}
   \item reflexiv auf $M$,
   \item anti-symmetrisch und
   \item transitiv ist.
   \end{enumerate}
-  Die Relation ist dar\"{u}ber hinaus eine \emph{totale Ordnung auf $M$}, wenn zus\"{a}tzlich
+  Die Relation ist dar\"{u}ber hinaus eine \colorbox{yellow}{\emph{totale Ordnung auf $M$}}, wenn zus\"{a}tzlich
   \\[0.2cm]
   \hspace*{1.3cm} $\forall x \el M : \forall y \el M :\bigl( x\mathop{R}y \vee y \mathop{R} x\bigr)$
   \\[0.2cm]
-  gilt. \eox
+  gilt. \eoxs
 \end{Definition}
 
 \remark
-Eine totale Ordnung wird gelegentlich auch als \emph{lineare Ordnung} bezeichnet. \eox
+Eine totale Ordnung wird gelegentlich auch als \colorbox{yellow}{\emph{lineare Ordnung}} bezeichnet. \eoxs
 
 \example 
 Die Teilbarkeitsrelation $\mathop{\mathtt{div}}$ kann auf den nat\"{u}rlichen Zahlen
@@ -1596,7 +1612,7 @@ Reflexivit\"{a}t, Anti-Symmetrie und Transitivit\"{a}t nach.
       \\[0.2cm]
       Wir m\"{u}ssen also ein $k$ finden, so dass die Gleichung $k \cdot x = x$ gilt.
       Setzen wir $k=1$, so ist diese Gleichung sicher erf\"{u}llt und damit ist die Reflexivit\"{a}t
-      gezeigt. $\surd$
+      gezeigt. {\color{green}{$\surd$}}
 \item Anti-Symmetrie: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1633,7 +1649,7 @@ Reflexivit\"{a}t, Anti-Symmetrie und Transitivit\"{a}t nach.
       gelten.  Da aus $k_1 \cdot k_2 = 1$ sofort $k_1 = 1$ und $k_2 = 1$ folgt, denn auch $k_1$ und
       $k_2$ sind ja nat\"{u}rliche Zahlen, 
       k\"{o}nnen wir wegen der urspr\"{u}nglichen Gleichungen $k_1 \cdot x = y$ und $k_2 \cdot y = x$
-      sofort auf $x = y$ schlie\3en.  Damit ist die Anti-Symmetrie gezeigt. $\surd$
+      sofort auf $x = y$ schlie\3en.  Damit ist die Anti-Symmetrie gezeigt. {\color{green}{$\surd$}}
 \item Transitivit\"{a}t: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1667,7 +1683,7 @@ Reflexivit\"{a}t, Anti-Symmetrie und Transitivit\"{a}t nach.
       \hspace*{1.3cm}
       $x \mathop{\mathtt{div}} z$.
       \\[0.2cm]
-      Damit haben wir die Transitivit\"{a}t nachgewiesen.  $\surd$
+      Damit haben wir die Transitivit\"{a}t nachgewiesen.  {\color{green}{$\surd$}}
 \end{enumerate}
 Die Relation $\mathtt{div}$ ist keine totale Ordnung, denn beispielsweise gilt weder
 $2 \mathop{\mathtt{div}} 3$ noch $3 \mathop{\mathtt{div}} 2$.  \exend
@@ -1678,7 +1694,7 @@ Auf der Menge der nat\"{u}rlichen Zahlen $\mathbb{N}$ definieren wir die Relatio
 wie folgt: 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\leq := \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists k \in \mathbb{N}_0: x + k = y \bigr\}$.
+$\leq := \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists k \in \mathbb{N}: x + k = y \bigr\}$.
 \\[0.2cm]
 Zeigen Sie, dass die Relation $\leq$ eine totale Ordnung auf $\mathbb{N}$ ist.
 \exend
