@@ -1,4 +1,3 @@
-
 \chapter{Relationen}
 \href{https://de.wikipedia.org/wiki/Relation_(Mathematik)#Zweistellige_Relation}{Relationen} treten
 in der Informatik an vielen Stellen auf.  Die wichtigste Anwendung findet sich in der Theorie der
@@ -260,7 +259,7 @@ Wir betrachten zun\"{a}chst Mengen $L$, $M$ und $N$.
 Sind dort zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ definiert,
 so ist das \colorbox{yellow}{\emph{relationale Produkt}} $R \circ Q$ wie folgt definiert: \\[0.2cm]
 \hspace*{1.3cm}
-$R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon(\pair(x,y) \in R \wedge \pair(y,z) \in Q) \bigr\}$ 
+$R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon\bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \bigr\}$ 
 \\[0.2cm]
 Offenbar gilt $R \circ Q \subseteq L \times N$.
 Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \colorbox{yellow}{\emph{Komposition}} von
@@ -299,7 +298,7 @@ bezeichnet. Damit lautet die Definition von $R \circ Q$  dann wie folgt:
 Ist $R \subseteq M \times N$ und $Q \subseteq L \times M$, dann ist 
 \\[0.2cm]
 \hspace*{1.3cm}
-$R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon(\pair(x,y) \in Q \wedge \pair(y,z) \in R) \bigr\}$.
+$R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon\bigl(\pair(x,y) \in Q \wedge \pair(y,z) \in R\bigr) \bigr\}$.
 \\[0.2cm]
 Diese Definition hat den folgenden Vorteil: Falls $R$ und $Q$ funktionale Relationen sind und wenn
 dann weiter $f$ und $g$ die diesen Relationen zugeordneten Funktionen sind, wenn also 
@@ -1092,7 +1091,18 @@ als \\[0.2cm]
 \hspace*{1.3cm}
  $\approx_n \;:=\; \{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z} \colon k \cdot n = x - y \}$
 \\[0.2cm]
-definieren.  Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}^*$ eine \"{A}quivalenz-Relation auf
+definieren.  Falls $x \approx_n y$ gilt, so sagen wir, dass \colorbox{yellow}{$x$ und $y$ kongruent modulo $n$} sind.
+Anstelle der Notation
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \approx_n y$ 
+\\[0.2cm]
+finden Sie in der Literatur auch die Schreibweise
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \equiv y \;\; (\mathrm{mod}\; n)$.
+\\[0.2cm]
+Wir zeigen, dass die Relation $\approx_n$ f\"{u}r $n \in \mathbb{N}^*$ eine \"{A}quivalenz-Relation auf
 $\mathbb{Z}$ definiert. 
 
 \begin{enumerate}
@@ -1140,7 +1150,7 @@ $\mathbb{Z}$ definiert.
       \hspace*{1.3cm}      
       $k_1 \cdot n = x - y$ \quad und \quad $k_2 \cdot n = y - z$ 
       \\[0.2cm]
-      gelten.  Wir m\"{u}ssen zeigen, dass $\pair(x,z) \in \approx_n$ gilt.  Dazu m\"{u}ssen wir zeigen,
+      gelten.  Wir m\"{u}ssen zeigen, dass $\pair(x,z) \in \;\approx_n$ gilt.  Dazu m\"{u}ssen wir zeigen,
       dass es ein $k_3 \in \mathbb{Z}$ gibt, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1159,6 +1169,7 @@ $\mathbb{Z}$ definiert.
       nachgewiesen und folglich die Transitivit\"{a}t von $\approx_n$ gezeigt. {\color{green}{$\surd$}} 
       \qeds
 \end{enumerate}
+\pagebreak 
 
 \exercise
 Beweisen Sie, dass f\"{u}r alle ganzen Zahlen $x$ und $y$ die Beziehung
@@ -1278,7 +1289,6 @@ erzeugt, denn wir haben in einer Aufgabe gezeigt, dass f\"{u}r alle $x,y \in \ma
 $x \approx_n y \;\Leftrightarrow\; x \modulo n = y \modulo n$
 \\
 gilt. \eoxs
-\pagebreak
 
 \example
 Es sei $M$ die Menge aller Menschen und $S$ sei die Menge aller Staaten.  Nehmen wir zur
@@ -1294,8 +1304,7 @@ Staatsb\"{u}rgerschaft haben.  \eoxs
 \begin{Definition}[\"{A}quivalenz-Klasse]
 Ist $R$ eine \"{A}quivalenz-Relation auf $M$, so definieren wir f\"{u}r alle $x \in M$ 
 die Menge $[x]_R$ durch \\[0.2cm]
-\hspace*{1.3cm} $[x]_R \;:=\; \bigl\{ y \in M \mid x \mathop{R} y \bigr\}$. \qquad
-(Wir schreiben hier $x R y$ als Abk\"{u}rzung f\"{u}r $\pair(x, y) \in R$.) 
+\hspace*{1.3cm} $[x]_R \;:=\; \bigl\{ y \in M \mid \pair(x, y) \in R \bigr\}$. 
 \\[0.2cm]
 Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \colorbox{yellow}{\emph{\"{A}quivalenz-Klasse}}.  \eoxs
 \end{Definition}
@@ -1305,14 +1314,14 @@ Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \colorbox{yellow}{\emp
 Ist $R \subseteq M \times M$ eine \"{A}quivalenz-Relation, so gilt: 
 \begin{enumerate}
 \item $\forall x \el M \colon x \el [x]_R$,
-\item $\forall x, y \el M \colon \bigl(x \mathop{R} y \rightarrow [x]_R = [y]_R\bigr)$,
-\item $\forall x, y \el M \colon \bigl(\neg x \mathop{R} y \rightarrow [x]_R \cap [y]_R = \emptyset\bigr)$.
+\item $\forall x, y \el M \colon \bigl( \pair(x, y) \in R \rightarrow [x]_R = [y]_R\bigr)$,
+\item $\forall x, y \el M \colon \bigl(\pair(x,y) \not\in R \rightarrow [x]_R \cap [y]_R = \emptyset\bigr)$.
 \end{enumerate}
 \end{Satz}
 
 
 \remark
-Da f\"{u}r $x,y\el M$ entweder $x \mathop{R} y$ oder $\neg (x \mathop{R} y)$ gilt, zeigen die
+Da f\"{u}r $x,y\el M$ entweder $\pair(x,y) \in R$ oder $\pair(x,y) \not\in{R}$ gilt, zeigen die
 letzten beiden Eigenschaften, dass zwei \"{A}quivalenz-Klassen entweder gleich
 oder disjunkt sind:
 \\[0.2cm]
@@ -1323,10 +1332,10 @@ $\forall x, y \el M: \bigl([x]_R = [y]_R \vee [x]_R \cap [y]_R = \emptyset\bigr)
 Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
 \begin{enumerate}
 \item Wir haben $x \el [x]_R$ genau dann, wenn 
-      $x \in \bigl\{ y \el M \mid x \mathop{R} y \bigr\}$ gilt und letzteres ist
-      \"{a}quivalent zu $x \mathop{R} x$.
-      Die Eigenschaft $x \mathop{R} x$ folgt aber unmittelbar aus der Reflexivit\"{a}t von $R$. {\color{green}{$\surd$}}
-\item Sei  $x \mathop{R} y$.  Um $[x]_R = [y]_R$ nachzuweisen zeigen wir
+      $x \in \bigl\{ y \el M \mid \pair(x,y) \in R \bigr\}$ gilt und letzteres ist
+      \"{a}quivalent zu $\pair(x,x) \in R$.
+      Die Eigenschaft $\pair(x,x) \in R$ folgt aber unmittelbar aus der Reflexivit\"{a}t von $R$. {\color{green}{$\surd$}}
+\item Sei  $\pair(x,y) \in R$.  Um $[x]_R = [y]_R$ nachzuweisen zeigen wir
       $[x]_R \subseteq [y]_R$ und $[y]_R \subseteq [x]_R$.
 
       \begin{enumerate}
@@ -1335,20 +1344,20 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
             Sei $u \el [x]_R$.  Dann gilt
             \\[0.2cm]
             \hspace*{1.3cm}
-            $x \mathop{R} u$.  
+            $\pair(x,u) \in R$.  
             \\[0.2cm]
             Aus der Voraussetzung
-            $x \mathop{R} y$ folgt wegen der Symmetrie der Relation $R$, dass auch
+            $\pair(x,y) \in R$ folgt wegen der Symmetrie der Relation $R$, dass auch
             \\[0.2cm]
             \hspace*{1.3cm}
-            $y \mathop{R} x$ 
+            $\pair(y,x) \in R$ 
             \\[0.2cm]
             gilt.  Aus 
-            $y \mathop{R} x$ und $x \mathop{R} u$ folgt wegen der Transitivit\"{a}t der Relation
+            $\pair(y,x) \in R$ und $\pair(x,u) \in R$ folgt wegen der Transitivit\"{a}t der Relation
             $R$, dass
             \\[0.2cm]
             \hspace*{1.3cm}
-            $y \mathop{R} u$ 
+            $\pair(y,u) \in R$ 
             \\[0.2cm]
             gilt.  Nach der Definition der
             Menge $[y]_R$ folgt damit $u \el [y]_R$. 
@@ -1356,30 +1365,30 @@ Wir beweisen die Behauptungen in derselben Reihenefolge wie oben angegeben.
       \item Zeige $[y]_R \subseteq [x]_R$:
 
             Um $[y]_R \subseteq [x]_R$ zu zeigen nehmen wir $u \el [y]_R$ an.
-            Dann gilt $y \mathop{R} u$.  Aus der Voraussetzung $x \mathop{R} y$ und
-            $y \mathop{R} u$ folgt wegen der Transitivit\"{a}t der Relation $R$ sofort
-            $x \mathop{R} u$.  Dann gilt aber $u \el [x]_R$ und damit ist auch die Inklusion
+            Dann gilt $\pair(y,u) \in R$.  Aus der Voraussetzung $\pair(x,y) \in R$ und
+            $\pair(y,u) \in R$ folgt wegen der Transitivit\"{a}t der Relation $R$ sofort
+            $\pair(x,u) \in R$.  Dann gilt aber $u \el [x]_R$ und damit ist auch die Inklusion
             $[y]_R \subseteq [x]_R$ nachgewiesen. 
       \end{enumerate}
       Damit haben wir insgesamt die Gleichung $[x]_R = [y]_R$ gezeigt. {\color{green}{$\surd$}}
-\item Sei nun $\neg (x \mathop{R} y)$ vorausgesetzt.  Um nachzuweisen,
+\item Sei nun $\pair(x,y) \not\in R$ vorausgesetzt.  Um nachzuweisen,
       dass  $[x]_R \cap [y]_R = \emptyset$ ist nehmen wir an, dass
       es ein $z \el [x]_R \cap [y]_R$ gibt.  Aus dieser Annahme werden wir einen
-      Widerspruch zu der Voraussetzung $\neg (x \mathop{R} y)$ 
+      Widerspruch zu der Voraussetzung $\pair(x,y) \not\in R$ 
         herleiten.  Sei also $z \el[x]_R$ und $z \el [y]_R$.  Nach Definition
         der \"{A}quivalenz-Klassen $[x]_R$ und $[y]_R$ gilt dann 
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $x \mathop{R} z$ \quad und \quad $y \mathop{R} z$.
+      $\pair(x,z) \in R$ \quad und \quad $\pair(y,z) \in R$.
       \\[0.2cm]
-      Aufgrund der Symmetrie von $R$ k\"{o}nnen wir $y \mathop{R} z$ umdrehen und haben dann
+      Aufgrund der Symmetrie von $R$ k\"{o}nnen wir $\pair(y,z) \in R$ umdrehen und haben dann
       \\[0.2cm]
       \hspace*{1.3cm}      
-      $x \mathop{R} z$ \quad und \quad $z \mathop{R} y$.
+      $\pair(x,z) \in R$ \quad und \quad $\pair(z,y) \in R$.
       \\[0.2cm]
       Aus der Transitivit\"{a}t der \"{A}quivalenz-Relation $R$ folgt jetzt
-      $x \mathop{R} y$.
-      Dies steht aber im Widerspruch zu der Voraussetzung $\neg (x \mathop{R} y)$.
+      $\pair(x,y) \in R$.
+      Dies steht aber im Widerspruch zu der Voraussetzung $\pair(x,y) \not\in R$.
       Damit ist die Annahme, dass es ein $z \el [x]_R \cap [y]_R$ gibt, widerlegt.
       Folglich ist die Menge $[x]_R \cap [y]_R$ leer. {\color{green}{$\surd$}}
       \qeds
@@ -1403,7 +1412,7 @@ $f_R : M \rightarrow 2^M$
 durch die Festlegung
 \\[0.2cm]
 \hspace*{1.3cm}
-$f_R(x) := [x]_R = \bigl\{ y \in M \,|\, x R y \bigr\}$
+$f_R(x) := [x]_R = \bigl\{ y \in M \,|\, \pair(x,y) \in R \bigr\}$
 \\[0.2cm]
 definieren.   Das Korollar zum letzten Satz zeigt dann, dass die Funktion $f_R$ die \"{A}quivalenz-Relation
 $R$ erzeugt, denn es gilt
@@ -1489,7 +1498,7 @@ transitiv ist.
 \item Reflexivit\"{a}t: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x \in M: x \mathop{R} x$.
+      $\forall x \in M: \pair(x,x) \in R$.
       \\[0.2cm]
       Das ist nach Definition der Relation $R$ \"{a}quivalent zu der Formel 
       \\[0.2cm]
@@ -1506,12 +1515,12 @@ transitiv ist.
 \item Symmetrie: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x, y \in M:\bigl( x \mathop{R} y \rightarrow y \mathop{R} x\bigr)$.
+      $\forall x, y \in M:\bigl( \pair(x,y) \in R \rightarrow \pair(y,x) \in R\bigr)$.
       \\[0.2cm]
       Wir nehmen also an, dass 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x \mathop{R} y$ 
+      $\pair(x,y) \in R$ 
       \\[0.2cm]
       gilt.  Nach Definition
       der Relation $R$ ist das \"{a}quivalent zu 
@@ -1527,16 +1536,16 @@ transitiv ist.
       und nach Definition der Relation $R$ folgt nun 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $y \mathop{R} x$. {\color{green}{$\surd$}}
+      $\pair(y,x) \in R$. {\color{green}{$\surd$}}
 \item Transitivit\"{a}t: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x,y,z \in M:\bigl( x \mathop{R} y \wedge y \mathop{R} z \rightarrow x \mathop{R} z\bigr)$.
+      $\forall x,y,z \in M:\bigl( \pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R\bigr)$.
       \\[0.2cm]
       Wir nehmen also an, dass 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $x \mathop{R} y \wedge y \mathop{R} z$
+      $\pair(x,y) \in R \wedge \pair(y,z) \in R$
       \\[0.2cm]
       gilt.  Das ist nach Definition der Relation $R$ \"{a}quivalent zu
       \\[0.2cm]
@@ -1561,7 +1570,7 @@ transitiv ist.
       $\exists K \in \mathcal{P}: \bigl(x \in K \wedge z \in K\bigr)$
       \\[0.2cm]
       gezeigt und nach Definition der Relation $R$ hei\3t das 
-      $x \mathop{R} z$. {\color{green}{$\surd$}}
+      $\pair(x,z) \in R$. {\color{green}{$\surd$}}
       \qeds
 \end{enumerate}
 
@@ -1581,7 +1590,7 @@ Relationen, die sich \"{a}hnlich verhalten wie die Relation $\leq$ auf den Zahle
   \end{enumerate}
   Die Relation ist dar\"{u}ber hinaus eine \colorbox{yellow}{\emph{totale Ordnung auf $M$}}, wenn zus\"{a}tzlich
   \\[0.2cm]
-  \hspace*{1.3cm} $\forall x \el M : \forall y \el M :\bigl( x\mathop{R}y \vee y \mathop{R} x\bigr)$
+  \hspace*{1.3cm} $\forall x \el M : \forall y \el M :\bigl( \pair(x,y) \in \mathop{R} \vee \pair(y,x) \in R\bigr)$
   \\[0.2cm]
   gilt. \eoxs
 \end{Definition}
@@ -1687,17 +1696,7 @@ Reflexivit\"{a}t, Anti-Symmetrie und Transitivit\"{a}t nach.
 \end{enumerate}
 Die Relation $\mathtt{div}$ ist keine totale Ordnung, denn beispielsweise gilt weder
 $2 \mathop{\mathtt{div}} 3$ noch $3 \mathop{\mathtt{div}} 2$.  \exend
-
-
-\exercise
-Auf der Menge der nat\"{u}rlichen Zahlen $\mathbb{N}$ definieren wir die Relation $\leq$ 
-wie folgt: 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\leq := \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists k \in \mathbb{N}: x + k = y \bigr\}$.
-\\[0.2cm]
-Zeigen Sie, dass die Relation $\leq$ eine totale Ordnung auf $\mathbb{N}$ ist.
-\exend
+\pagebreak
 
 \exercise
 Auf der Potenz-Menge der nat\"{u}rlichen Zahlen definieren wir die Relation
@@ -1724,7 +1723,7 @@ Zeigen Sie, dass $\sqsubseteq$ eine totale Ordnung auf $\mathbb{N} \times \mathb
 \vspace*{0.3cm}
 
 \noindent
-Wir schlie\3en damit den theoretischen Teil unseres Ausflugs in die Mengenlehre und verweisen f\"{u}r weitere
+Wir schlie\3en damit  unseren Ausflugs in die Mengenlehre ab und verweisen f\"{u}r weitere
 Details auf die Literatur, wobei ich Ihnen hier besonders das Buch von Seymour Lipschutz
 \cite{lipschutz:1998} empfehlen m\"{o}chte.  
 

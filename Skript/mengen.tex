@@ -487,7 +487,7 @@ sind genau dann gleich, wenn sie komponentenweise gleich sind, d.h.~es gilt \\[0
 Das kartesische Produkt zweier Mengen $M$ und $N$ ist nun die Menge aller geordneten
 Paare, deren erste Komponente in $M$ liegt und deren zweite Komponente in $N$ liegt.
 Das kartesische Produkt von $M$ und $N$ wird als $M \times N$ geschrieben, formal gilt: 
-\[ M \times N := \big\{ z \mid \exists x\colon \exists y\colon z = \langle x,y\rangle \wedge x\in M \wedge y \in N \}. \]
+\[ M \times N := \big\{ z \mid \exists x\colon \exists y\colon\bigl(z = \langle x,y\rangle \wedge x\in M \wedge y \in N\bigr) \bigr\}. \]
 Alternativ k\"{o}nnen wir auch schreiben
 \[ M \times N := \big\{ \langle x,y\rangle \mid  x\in M \wedge y \in N \}. \]
 \noindent
@@ -501,9 +501,13 @@ Ein $n$-Tupel hat die Form \\[0.2cm]
 \hspace*{1.3cm} $\langle x_1, x_2, \cdots, x_n \rangle$. \\[0.2cm]
 Analog kann auch der Begriff des kartesischen Produktes auf $n$ Mengen $M_1$, $\cdots$, $M_n$
 verallgemeinert werden. Das sieht dann so aus: \\[0.2cm]
-\hspace*{1.3cm} $M_1 \times \cdots \times M_n =\big\{ z \mid \exists x_1\colon
-\cdots \exists x_n \colon \; z = \langle x_1,x_2,\cdots,x_n \rangle \wedge x_1
-\in M_1 \wedge \cdots \wedge x_n \in M_n \big\}$. \\[0.2cm]
+\hspace*{1.3cm}
+$M_1 \times \cdots \times M_n =
+  \big\{ z \mid \exists x_1\colon \cdots \exists x_n \colon 
+    \bigl( z = \langle x_1,x_2,\cdots,x_n \rangle \wedge x_1\in M_1 \wedge \cdots \wedge x_n \in M_n\bigr) 
+  \big\}
+$. 
+\\[0.2cm]
 Ist $f$ eine Funktion, die auf $M_1 \times \cdots \times M_n$ definiert ist,
 so vereinbaren wir folgende Vereinfachung der Schreibweise: \\[0.2cm]
 \hspace*{1.3cm} $f(x_1, \cdots, x_n)$ steht f\"{u}r $f(\langle x_1, \cdots,
@@ -599,7 +603,7 @@ Die \"{u}brigen der oben aufgef\"{u}hrten Gleichungen k\"{o}nnen nach dem selben
 
 \exercise
 Beweisen Sie die folgenden Gleichungen:
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item $K \backslash (M \cap N) = (K \backslash M) \cup (K \backslash N)$,
 \item $M \cup (M \cap N) = M$,
 \item $K \backslash (M \backslash N) = (K \backslash M) \cup (K \cap N)$,
@@ -769,7 +773,7 @@ nicht auf ``Periode Neun'' endet, es d\"{u}rfen also ab einem bestimmten Index $
 alle Ziffern $d_i$ den Wert $9$ haben:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}: i \geq n \rightarrow c_i = 9$.
+$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}:\bigl( i \geq n \rightarrow c_i = 9\bigr)$.
 \\[0.2cm]
 F\"{u}hren Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
 \\[0.2cm]
