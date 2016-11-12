@@ -1,0 +1,41 @@
+// The function count implements a function from the set of natural numbers
+// onto the set of positive rational numbers.
+count := procedure(n) {
+    if (n == 0) {
+        return 1;
+    }
+    L := [];
+    s := 2;  // s is the sum of numerator and denominator
+    while (#L <= n) {
+        L += [ k / (s - k) : k in [1 .. s-1] ];
+        s += 1;
+    }
+    return L[n];
+};
+
+for (n in [1 .. 30]) {
+    print("count($n$) = $count(n)$");
+}
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
+
+print("\n\n\n");
+// The following function is used to illustrate the function count.
+count2 := procedure(n) {
+    L := [];
+    s := 2;  // s is the sum of numerator and denominator
+    while (#L <= n) {
+        L += [ [k, s - k] : k in [1 .. s-1] ];
+        s += 1;
+    }
+    return L;
+};
+
+L := count2(30);
+for (n in [1 .. 30]) {
+    [p, q] := L[n];
+    print("count($n$) = $p$/$q$");
+}
