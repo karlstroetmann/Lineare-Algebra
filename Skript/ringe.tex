@@ -7,71 +7,83 @@ K\"{o}rper  noch nicht kennen, wird dieser \"{U}berblick notwendigerweise inform
 unpr\"{a}zise sein.  Es geht mir hier nur darum, dass Sie eine, zun\"{a}chst sicher noch verschwommene, Vorstellung
 von dem, was Sie in diesem Kapitel erwartet, bekommen.
 
-Ringe sind Strukturen, in denen
+\emph{\color{blue}Ringe} sind Strukturen, in denen
 sowohl eine Addition, eine Subtraktion und als auch eine Multiplikation vorhanden ist und au\3erdem f\"{u}r diese
 Operationen ein Distributiv-Gesetz gilt.  Bez\"{u}glich der Addition muss die Struktur dabei eine kommutative
 Gruppe sein. Ein typisches Beispiel f\"{u}r einen Ring ist die Struktur der ganzen
-Zahlen. Ein Ring ist ein K\"{o}rper, wenn zus\"{a}tzlich auch noch eine Division m\"{o}glich ist.
+Zahlen. Ein Ring ist ein \emph{\color{blue}K\"{o}rper}, wenn zus\"{a}tzlich auch noch eine Division m\"{o}glich ist.
 Ein typisches Beispiel ist die Struktur der rationalen Zahlen.
 
 Es gibt zwei wichtige Methoden um mit Hilfe eines Rings einen K\"{o}rper zu konstruieren.
-Die erste Methode funktioniert in sogenanten Integrit\"{a}ts-Ringen, dass sind solche Ringe, in denen sich 
-das neutrale Element der Addition, also die $0$, nicht als Produkt zweier von $0$ verschiedenener Elemente 
-darstellen l\"{a}sst.  Dann l\"{a}sst sich n\"{a}mlich aus einem Integrit\"{a}ts-Ring, der bez\"{u}glich der
-Multiplikation ein 
+Die erste Methode funktioniert in sogenannten \emph{\color{blue}Integrit\"{a}ts-Ringen}, dass sind
+solche Ringe, in denen sich das neutrale Element der Addition, also die $0$, nicht als Produkt
+zweier von $0$ verschiedenener Elemente darstellen l\"{a}sst.  Dann l\"{a}sst sich n\"{a}mlich aus
+einem Integrit\"{a}ts-Ring, der bez\"{u}glich der Multiplikation ein 
 neutrales Element enth\"{a}lt, ein sogenannter \emph{\color{blue}Quotienten-K\"{o}rper} erzeugen.
 Die Konstruktion dieses K\"{o}rpers 
 verl\"{a}uft analog zu der Konstruktion der rationalen Zahlen aus den ganzen Zahlen.
 
-Die zweite Methode funktioniert mit Hilfe sogenannter \emph{\color{blue}maximaler Ideale}.  Wir
+Die zweite Methode arbeitet mit Hilfe sogenannter \emph{\color{blue}maximaler Ideale}.  Wir
 werden in Ringen zun\"{a}chst  
 \emph{\color{blue}Ideale} definieren.  Dabei sind Ideale das Analogon zu Untergruppen in der Gruppen-Theorie.
-Anschlie\3end zeigen wir, wie sich mit Hilfe eines Ideals $I$ auf einem Ring $R$ eine \emph{\color{blue}Kongruenz-Relation}
+Anschlie\3end zeigen wir, wie sich mit Hilfe eines Ideals $I$ auf einem Ring $\mathcal{R}$ eine
+\emph{\color{blue}Kongruenz-Relation} 
 erzeugen l\"{a}sst.  Die Konstruktion ist dabei analog zur Konstruktion der
 Faktor-Gruppe aus dem letzten Abschnitt.  F\"{u}r \emph{\color{blue}maximale Ideale} werden wir schlie\3lich zeigen,
 dass der so erzeugte Faktor-Ring sogar ein K\"{o}rper ist.
 
 \section{Definition und Beispiele}
 \begin{Definition}[Ring]
-Ein $4$-Tupel $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ ist ein \emph{\color{blue}Ring}, falls gilt:
+Ein $5$-Tupel $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ist ein \emph{\color{blue}Ring}, falls gilt:
 \begin{enumerate}
-\item $\langle R, 0, + \rangle$ ist eine kommutative Gruppe,
-\item $\cdot: R \times R \rightarrow R$ ist eine Funktion f\"{u}r welche die folgenden Gesetze gelten:
+\item $\langle R, 0, + \rangle$ ist eine kommutative Gruppe.
+ 
+      Wir bezeichnen die Operation $+$ als die \emph{\color{blue}Addition} in $\mathcal{R}$.
+      Weiter bezeichnen wir das zu einem Element $x \in R$ bez\"uglich der Addition 
+      inverse Element mit $-x$ und schreiben
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $x - y$ \quad an Stelle von $x + (-y)$.
+\item $\cdot: R \times R \rightarrow R$ ist eine Funktion, die wir als die \emph{\color{blue}Multiplikation} in $\mathcal{R}$ bezeichnen.
+      F\"{u}r die Multiplikation m\"ussen die folgenden Gesetze gelten:
       \begin{enumerate}
+      \item F\"ur alle $x \in R$ gilt
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $1 \cdot x = x = x \cdot 1$.
+            \\[0.2cm]
+            Damit ist $1$ das \emph{\color{blue}neutrale Element} der Multiplikation.
       \item Assoziativ-Gesetz:  F\"{u}r alle $x, y,z \in R$ gilt
             \\[0.2cm]
             \hspace*{1.3cm}
             $(x \cdot y) \cdot z = x \cdot (y \cdot z)$.
-      \item Distributiv-Gesetze: F\"{u}r alle $x, y,z \in R$ gilt
-            \\[0.2cm]
-            \hspace*{1.3cm} 
-            $x \cdot (y + z) = x \cdot y + x \cdot z$ \quad und \quad
-            $(x + y) \cdot z = x \cdot z + y \cdot z$.
       \end{enumerate}
+\item Die Multiplikation und die Addition des Rings sind \"uber die folgenden
+      \emph{\color{blue}Distributiv-Gesetze} mit einander verkn\"upft:  Es gilt 
+      \\[0.2cm]
+      \hspace*{1.3cm} 
+      $x \cdot (y + z) = x \cdot y + x \cdot z$ \quad und \quad
+      $(x + y) \cdot z = x \cdot z + y \cdot z$ \quad f\"{u}r alle $x, y,z \in R$.
 \end{enumerate}
-Die Operation ``$+$'' nennen wir die Addition auf dem Ring $\mathcal{R}$, die Operation ``$\cdot$'' bezeichnen 
-wir als Multiplikation.
-$\mathcal{R}$ ist ein {\color{blue}\emph{kommutativer Ring}} falls zus\"{a}tzlich f\"{u}r die Multiplikation
+Die Struktur $\mathcal{R}$ ist ein {\color{blue}\emph{kommutativer Ring}} falls zus\"{a}tzlich f\"{u}r die Multiplikation
 das Kommutativ-Gesetz
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \cdot y = y \cdot x$ \quad f\"{u}r alle $x,y \in R$
 \\[0.2cm]
-gilt.  Wir sagen, dass $R$ eine {\color{blue}\emph{Eins}} hat, wenn es f\"{u}r die Multiplikation ein Element $e$ gibt, so dass
-\\[0.2cm]
-\hspace*{1.3cm}
-$e \cdot x = x \cdot e = x$ \quad f\"{u}r alle $x \in R$
-\\[0.2cm]
-gilt.  Dieses Element $e$ hei\3t dann die \emph{Eins} des Rings.  In diesem Fall schreiben wir
-$\mathcal{R} = \langle R, 0, e, +, \cdot \rangle$, wir geben die Eins also explizit in der Struktur $\mathcal{R}$ mit an
-an.
-\eox
+gilt.  
+\eoxs
 \end{Definition}
+
+\remark
+In der Literatur werden Ringe oft als Strukturen der Form $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ 
+definiert, d.h.~es wird nicht vorausgesetzt, dass es bez\"uglich der Multiplikation ein neutrales
+Element gibt.  Das f\"uhrt zu einer etwas umst\"andlicheren Theorie.  \eoxs
 
 \remark
 Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen der obigen Definition.
 \begin{enumerate}
-\item In jedem Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ gilt
+\item In jedem Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $0 \cdot x = 0$,
@@ -95,8 +107,7 @@ Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen de
       $0 = 0 \cdot x$.
       \\[0.2cm]
       Genauso gilt nat\"{u}rlich auch $x \cdot 0 = 0$. 
-\item Bezeichnen wir das bez\"{u}glich der Addition $+$ zu einem Element $x$ inverse Element mit $-x$,
-      so gilt 
+\item Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein Ring, so gilt f\"ur beliebige $x,y \in R$
       \\[0.2cm]
       \hspace*{1.3cm}
       $-(x \cdot y) = (-x) \cdot y = x \cdot (-y)$.
@@ -123,24 +134,20 @@ Bevor wir Beispiele betrachten, bemerken wir einige unmittelbare Konsequenzen de
 
 \examples
 \begin{enumerate}
-\item Die Struktur $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$ ist ein kommutativer
-      Ring mit  Eins.  
-\item Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ ist ebenfalls ein kommutativer Ring mit
-      Eins.   \eoxs
+\item Die Struktur $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$ ist ein kommutativer Ring.  
+\item Die Struktur $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ ist ebenfalls ein kommutativer Ring.   \eoxs
 \end{enumerate}
 
 \begin{center}
 \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
-Wir werden im Folgenden nur Ringe betrachten, die kommutativ sind und eine Eins haben.}}}}}
+Wir werden im Folgenden nur Ringe betrachten, die kommutativ sind.}}}}}
 \end{center}
 
 Ein wichtiger Spezialfall ist der Fall eines kommutativen Rings 
-$\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ mit Eins, 
-f\"{u}r den die Struktur $\langle R \backslash \{0\}, 1, \cdot \rangle$
+$\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$, f\"{u}r den die Struktur $\langle R \backslash \{0\}, 1, \cdot \rangle$
 eine Gruppe ist.  Dieser Spezialfall liegt beispielsweise bei dem Ring  
 $\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ vor.  In einem solchen Fall sprechen wir von einem {\color{blue}\emph{K\"{o}rper}}.  Die formale
 Definition folgt.
-\pagebreak
 
 
 \begin{Definition}[K\"{o}rper]
@@ -154,7 +161,7 @@ Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein {\color{
       $x \cdot (y + z) = x \cdot y + x \cdot z$.
 \end{enumerate}
 Wieder nennen wir die  Operation ``$+$'' die \emph{Addition}, w\"{a}hrend wir die Operation ``$\cdot$'' 
-als die \emph{Multiplikation} bezeichnen. \eox
+als die \emph{Multiplikation} bezeichnen. \eoxs
 \end{Definition}
 
 Unser Ziel ist es sp\"{a}ter, Ringe zu K\"{o}rpern zu erweitern.  Es gibt bestimmte Ringe, in
@@ -189,24 +196,24 @@ hergeleitet.  Dieser Widerspruch zeigt, dass sich der Ring $\mathcal{R}$ sicher 
 einem K\"{o}rper erweitern l\"{a}sst.
 
 \begin{Definition}[Integrit\"{a}ts-Ring]
-  Ein Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ hei\3t {\color{blue}\emph{nullteilerfrei}}, wenn
+  Ein Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ hei\3t {\color{blue}\emph{nullteilerfrei}}, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall a, b \in R: \bigl(a \cdot b = 0 \rightarrow a = 0 \vee b = 0\bigr)$
   \\[0.2cm]
   gilt, die Zahl $0$ l\"{a}sst sich in einem nullteilerfreien Ring also nur als triviales Produkt darstellen.
-  Ein nullteilerfreier, kommutativer Ring, der eine Eins hat, wird als {\color{blue}\emph{Integrit\"{a}ts-Ring}}
+  Ein nullteilerfreier, kommutativer Ring wird als {\color{blue}\emph{Integrit\"{a}ts-Ring}}
   bezeichnet.
-\eox
+\eoxs
 \end{Definition}
 
 \remark
-In einem nullteilerfreien Ring $\mathcal{R} = \langle R, 0, +, \cdot \rangle$ 
-gilt die folgende \emph{Streichungs-Regel}:
+In einem nullteilerfreien Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ 
+gilt die folgende \emph{\color{blue}K\"urzungs-Regel}:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall a,b,c \in R: \bigl(a \cdot c = b \cdot c \wedge c \not= 0 \rightarrow a = b)$.
-\eox
+\eoxs
 
 \proof
 Wir nehmen an, dass $c \not = 0$ ist und dass $a \cdot c = b \cdot c$ gilt.  Es ist dann $a = b$ zu zeigen. 
@@ -233,7 +240,7 @@ Weise mit der \"{A}quivalenz-Relationen \emph{vertr\"{a}glich} sind.  In diesem 
 \emph{Kongruenz-Relation} auf $R$.  Die formale Definition folgt.
 
 \begin{Definition}[Kongruenz-Relation]
-Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und $\sim\; \subseteq R \times R$ sei eine
+Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring und $\sim\; \subseteq R \times R$ sei eine
 \"{A}quivalenz-Relation auf $R$.   Wir nennen $\sim$ eine {\color{blue}\emph{Kongruenz-Relation}} auf $\mathcal{R}$ 
 falls zus\"{a}tzlich die folgenden beiden Bedingungen erf\"{u}llt sind:
 \begin{enumerate}
@@ -247,7 +254,7 @@ falls zus\"{a}tzlich die folgenden beiden Bedingungen erf\"{u}llt sind:
       $,
 
       die Relation $\sim$ ist also auch mit der Multiplikation auf $R$ \emph{vertr\"{a}glich}.
-      \eox
+      \eoxs
 \end{enumerate}
 \end{Definition}
   
@@ -300,11 +307,11 @@ $\mathcal{R}/\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$ 
 Der n\"{a}chste Satz zeigt, dass es sich bei dieser Struktur tats\"{a}chlich um einen Ring handelt.
 
 \begin{Satz}[Faktor-Ring] \label{satz:faktor_ring} 
-  Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und ist
+  Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring und ist
   $\sim$ eine Kongruenz-Relation auf diesem Ring, so ist die Struktur 
   $\mathcal{R}/\!\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$
   mit den oben f\"{u}r \"{A}quivalenz-Klassen definierten Operationen $+$ und $\cdot$ ein kommutativer 
-  Ring mit Eins.  
+  Ring.  
 \end{Satz}
 
 \proof
@@ -358,7 +365,7 @@ Wir weisen die Eigenschaften, die einen Ring auszeichnen, einzeln nach.
       \end{array}
       $
 \end{enumerate}
-Damit ist gezeigt, dass $\mathcal{R}/\!\sim$ ein kommutativer Ring mit Eins ist. \qed
+Damit ist gezeigt, dass $\mathcal{R}/\!\sim$ ein kommutativer Ring ist. \qed
 
 \exerciseStar
 Es sei $\mathcal{K} = \langle K, 0_K, 1_K, +, \cdot \rangle$ ein K\"{o}rper und die Menge $K$ sei endlich.
@@ -475,7 +482,8 @@ Wir m\"{u}ssen zeigen, dass die Relation reflexiv, symmetrisch und transitiv ist
       \end{array}
       $
       \\[0.2cm]
-      Da die letzte Gleichung offensichtlich wahr ist, ist die Reflexivit\"{a}t nachgewiesen. \checkmark
+      Da die letzte Gleichung offensichtlich wahr ist, ist die Reflexivit\"{a}t
+      nachgewiesen. {\color{green}\checkmark}
 \item Symmetrie: Wir m\"{u}ssen zeigen, dass
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -507,7 +515,7 @@ Wir m\"{u}ssen zeigen, dass die Relation reflexiv, symmetrisch und transitiv ist
       \hspace*{1.3cm}
       $\pair(x_2, y_2) \sim \pair(x_1, y_1)$
       \\[0.2cm]
-      und das war zu zeigen. $\checkmark$
+      und das war zu zeigen. {\color{green}\checkmark}
 \item Transitivit\"{a}t: Wir m\"{u}ssen zeigen, dass
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -560,7 +568,7 @@ Wir m\"{u}ssen zeigen, dass die Relation reflexiv, symmetrisch und transitiv ist
       \hspace*{1.3cm}
       $\pair(x_1, y_1) \sim \pair(x_3, y_3)$
       \\[0.2cm]
-      und das war zu zeigen. \checkmark       \qed
+      und das war zu zeigen. {\color{green}\checkmark}       \qed
 
       \textbf{Bemerkung}: W\"{u}rden wir in der Definition 
       $Q := \bigl\{ \pair(x, y) \in R \times R \mid y \not= 0 \bigr\}$
@@ -879,14 +887,14 @@ Damit haben wir nun gezeigt, dass die Struktur
 \hspace*{1.3cm}
 $\textsl{Quot}(\mathcal{R}) := \langle Q/\!\sim, \bpr(0,1), \bpr(1,1), +, \cdot \rangle$ 
 \\[0.2cm]
-ein K\"{o}rper ist.  Dieser K\"{o}rper wird als der von $\mathcal{R}$ erzeugte \emph{Quotienten-K\"{o}rper} bezeichnet.
+ein K\"{o}rper ist.  Dieser K\"{o}rper wird als der von $\mathcal{R}$ erzeugte \emph{\color{blue}Quotienten-K\"{o}rper} bezeichnet.
 
 
 \section{Ideale und Faktor-Ringe$^*$}
 Der im Folgenden definierte Begriff des \emph{Ideals} hat in der Theorie der Ringe eine \"{a}hnliche
 Stellung wie der Begriff der Untergruppe in der Theorie der Gruppen.
 \begin{Definition}[Ideal]
-Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.
+Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring.
 Eine Teilmenge $I \subseteq R$ ist ein {\color{blue}\emph{Ideal in $\mathcal{R}$}} falls folgendes gilt:
 \begin{enumerate}
 \item $I \leq R$,
@@ -895,7 +903,7 @@ Eine Teilmenge $I \subseteq R$ ist ein {\color{blue}\emph{Ideal in $\mathcal{R}$
 \item $\forall a \in I: \forall b \in R: b \cdot a \in I$,
 
       f\"{u}r alle Elemente $a$ aus dem Ideal $I$ ist das Produkt mit einem beliebigen Element
-      $b$ aus dem Ring $R$ wieder ein Element aus dem Ideal. \eox
+      $b$ aus dem Ring $R$ wieder ein Element aus dem Ideal. \eoxs
 \end{enumerate}
 \end{Definition}
 
@@ -911,11 +919,10 @@ dann, wenn folgende Bedingungen erf\"{u}llt sind:
 Beachten Sie au\3erdem, dass in der Formel 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall a \in I: \forall b \in R: b \cdot a \in I$,
+$\forall a \in I: \forall b \in R: b \cdot a \in I$
 \\[0.2cm]
-der zweite All-Quantor nicht nur \"{u}ber die Elemente aus $I$ l\"{a}uft, sondern \"{u}ber alle Elemente
-von $R$.  \eox
-\pagebreak
+der zweite All-Quantor nicht nur \"{u}ber die Elemente aus $I$ l\"{a}uft, sondern \"{u}ber
+\underline{\color{red}alle} Elemente aus $R$.  \eoxs
 
 \examples
 \begin{enumerate}
@@ -957,9 +964,9 @@ von $R$.  \eox
       der Vielfachen von $k$  ein Ideal in dem Ring $\langle \mathbb{Z}, 0, 1, +, \cdot \rangle$.
       Der Nachweis ist anlog zu dem oben gef\"{u}hrten Nachweis, dass $2\mathbb{Z}$ ein Ideal
       in dem Ring der ganzen Zahlen ist.
-\item Wir verallgemeinern das letzte Beispiel f\"{u}r beliebige kommutative Ringe mit Eins.
+\item Wir verallgemeinern das letzte Beispiel f\"{u}r beliebige kommutative Ringe.
       Es sei also $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring
-      mit Eins und es sei $a \in R$.  Dann definieren wir die Menge
+      und es sei $a \in R$.  Dann definieren wir die Menge
       \\
       \hspace*{1.3cm}
       $\textsl{gen}(k) := \{ k \cdot x \mid x \in R \}$
@@ -987,16 +994,16 @@ von $R$.  \eox
       \end{enumerate}
       Die Menge $\textsl{gen}(a)$ wird das von $a$ {\color{blue}\emph{erzeugte Ideal}} genannt.
       Ideale dieser Form werden in der Literatur als {\color{blue}\emph{Haupt-Ideale}} bezeichnet.
-\item Wieder sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.  Dann
+\item Wieder sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring.  Dann
       sind die Mengen $\{0\}$ und $R$ offenbar wieder Ideale von $R$.  Wir nennen  die Menge $\{0\}$
       das {\color{blue}\emph{Null-Ideal}} und $R$ das {\color{blue}\emph{Eins-Ideal}}.  Diese
-      beiden Ideale werden auch als die \emph{trivialen} Ideale bezeichnet.
-      \eox
+      beiden Ideale werden auch als die \emph{\color{blue}trivialen} Ideale bezeichnet.
+      \eoxs
 \end{enumerate}
 
 
 Mit Hilfe von Idealen l\"{a}sst sich auf einem Ring eine Kongruenz-Relation erzeugen.  Ist $I$ ein Ideal auf
-dem kommutativen Ring mit Eins $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$, so definieren wir eine Relation $\sim_I$ auf
+dem kommutativen Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$, so definieren wir eine Relation $\sim_I$ auf
 $R$ durch die Forderung
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1138,7 +1145,7 @@ Wir zeigen, dass die so definierte Relation $\sim_I$ eine Kongruenz-Relation auf
       und das war zu zeigen. {\color{green}{\checkmark}} \qed
 \end{enumerate}
 
-Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und ist $I$ ein
+Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring und ist $I$ ein
 Ideal dieses Rings, so haben wir gerade gezeigt, dass die von diesem Ideal erzeugte Relation $\sim_I$
 eine Kongruenz-Relation auf $\mathcal{R}$ ist.  Nach dem Satz \"{u}ber Faktor-Ringe
 (Satz \ref{satz:faktor_ring} auf Seite \pageref{satz:faktor_ring}) folgt nun, dass die Struktur
@@ -1150,7 +1157,7 @@ ein Ring ist.  In bestimmten F\"{a}llen ist diese Struktur sogar ein K\"{o}rper.
 untersuchen.
 
 \begin{Definition}[maximales Ideal]
-  Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins.  Ein Ideal
+  Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring.  Ein Ideal
   $I$ von $\mathcal{R}$ mit $I \not= R$ ist ein {\color{blue}\emph{maximales Ideal}} genau dann, wenn f\"{u}r jedes andere Ideal
   $J$ von $\mathcal{R}$ gilt:
   \\[0.2cm]
@@ -1159,13 +1166,13 @@ untersuchen.
   \\[0.2cm]
   Das Ideal ist also maximal, wenn es zwischen dem Ideal $I$ und dem Eins-Ideal $R$ keine 
   weiteren Ideale gibt.
-  \eox
+  \eoxs
 \end{Definition}
 
 Der n\"{a}chste Satz zeigt uns, in welchen F\"{a}llen wir mit Hilfe eines Ideals einen K\"{o}rper konstruieren
 k\"{o}nnen. 
-\begin{Satz}[Faktor-Ringe maximaler Ideale sind K\"{o}rper] \lb
-  Es $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring mit Eins und
+\begin{Satz}[Faktor-Ringe maximaler Ideale sind K\"{o}rper] 
+  Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring und
   $I$ sei ein maximales Ideal in $\mathcal{R}$.  Dann ist der Faktor-Ring
   $\mathcal{R}/I$ ein K\"{o}rper.
 \end{Satz}
@@ -1258,7 +1265,7 @@ Als n\"{a}chstes bemerken wir, dass das Ideal $J$ von dem Ideal $I$ verschieden 
 \hspace*{1.3cm}
 $a = a \cdot 1 + 0 \in J$, \quad aber \quad $a \not\in I$.
 \\[0.2cm]
-Nun ist die Voraussetzung, dass das Ideal $I$ maximal ist.  Da $I \subseteq J$ aber $J \not= I$  ist,
+Nun ist die Voraussetzung, dass das Ideal $I$ maximal ist.  Da einerseits $I \subseteq J$ aber andererseits $J \not= I$  ist,
 kann jetzt nur noch $J = R$ gelten.  Wegen $1 \in R$ folgt also $1 \in J$.  Nach der Definition von $J$ gibt es dann
 ein $x \in R$ und ein $y \in I$, so dass
 \\[0.2cm]
@@ -1292,7 +1299,7 @@ dass die Behauptung sowohl f\"{u}r $b-a$ als auch f\"{u}r $a$ gilt. \exend
 Beim Beweis einer Behauptung, die f\"{u}r nat\"{u}rliche Zahlen gezeigt werden soll, hilft es manchmal, die
 Behauptung zun\"{a}chst f\"{u}r kleine Zahlen zu \"{u}berpr\"{u}fen, denn das liefert oft eine Idee f\"{u}r den allgemeinen
 Fall. 
-\eox
+\eoxs
 
 \exercise
 Wir betrachten den Ring der ganzen Zahlen $\mathbb{Z}$.  Es sei $p \in \mathbb{Z}$ und wir
@@ -1321,7 +1328,7 @@ den in der vorhergehenden Aufgabe gezeigten Satz an. \exend
 \exercise
 Zeigen Sie, dass der Faktor-Ring $\mathbb{Z}_p := \mathbb{Z}/p\mathbb{Z}$ genau dann ein K\"{o}rper ist,
 wenn $p$ eine Primzahl ist.
-\eox
+\eoxs
 
 %%% Local Variables: 
 %%% mode: latex
