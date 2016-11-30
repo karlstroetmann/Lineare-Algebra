@@ -574,7 +574,7 @@ muss.  \"{A}hnlich folgt aus
 \\[0.2cm]
 \hspace*{1.3cm} $c \circ a = c \circ b$
 \\[0.2cm]
-die Gleichung $a = b$.  In einer Gruppe gelten also die beiden folgenden K\"{u}rzungs-Regeln:
+die Gleichung $a = b$.  In einer Gruppe gelten also die beiden folgenden \emph{\color{blue}K\"{u}rzungs-Regeln}:
 \\[0.2cm]
 \hspace*{1.3cm} 
 $a \circ c = b \circ c \rightarrow a = b$ \quad und \quad
@@ -587,8 +587,8 @@ Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
 \eoxs
 
 
-\begin{Satz}
-  Es sei $\langle G, \circ \rangle$ eine endliche Halb-Gruppe, in der die beiden K\"{u}rzungs-Regeln
+\begin{Satz} \label{satz:kuerzungsregel_gruppe}
+  Es sei $\langle G, \circ \rangle$ eine {\color{red}endliche} Halb-Gruppe, in der die beiden K\"{u}rzungs-Regeln
   \\[0.2cm]
   \hspace*{1.3cm}
   $a \circ c = b \circ c \rightarrow a = b$ \quad und \quad
@@ -614,8 +614,9 @@ folgt nach Definition der Funktion $f_a$ zun\"{a}chst
 \\[0.2cm]
 \hspace*{1.3cm} $a \circ x = a \circ y$
 \\[0.2cm]
-und aus der G\"{u}ltigkeit der ersten K\"{u}rzungs-Regel folgt nun $x = y$.  Nach dem vorletzten Satz ist $f_a$ dann
-auch surjektiv.  Es gibt also zu jedem $b \in G$ ein $x \in G$ mit
+und aus der G\"{u}ltigkeit der ersten K\"{u}rzungs-Regel folgt nun $x = y$.  Nach dem Satz
+\ref{satz:injektiv_folgt_surjektiv} ist $f_a$ dann auch surjektiv.  Es gibt also zu jedem $b \in G$
+ein $x \in G$ mit 
 \\[0.2cm]
 \hspace*{1.3cm} $f_a(x) = b$ \quad beziehungsweise \quad $a \circ x = b$.
 \\[0.2cm]
@@ -666,10 +667,8 @@ Dabei verwenden wir  die beiden folgenden Fakten aus der elementaren Zahlentheor
       $(a \cdot b) \;\texttt{\symbol{37}}\;p = 0 \;\rightarrow\; a \;\texttt{\symbol{37}}\;p = 0 \;\vee\; b \;\texttt{\symbol{37}}\;p = 0$.
       \eoxs
 \end{enumerate}
-Wir zeigen zunächst, dass die Funktionen $f_k$ f\"{u}r alle $k \in \{1, \cdots, p-1\}$ injektiv sind.  Da die
-Menge $\mathbb{Z}_p$ endlich ist, sind die Funktionen $f_k$ dann nach Satz \ref{satz:injektiv_folgt_surjektiv} 
-auch surjektiv und damit bijektiv.  Um die Injektivit\"{a}t der Funktion $f_k$ zu zeigen, nehmen wir
-an, dass
+Wir zeigen zunächst, dass die Funktionen $f_k$ f\"{u}r alle $k \in \{1, \cdots, p-1\}$ injektiv sind.   
+Um die Injektivit\"{a}t der Funktion $f_k$ zu zeigen, nehmen wir an, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $f_k(x) = f_k(y)$ \quad f\"{u}r $x,y \in \mathbb{Z}_p$ gilt.
@@ -711,7 +710,20 @@ $x \;\texttt{\symbol{37}}\;p = y \;\texttt{\symbol{37}}\;p$
 $x \;\texttt{\symbol{37}}\;p = x$ \quad und $y \;\texttt{\symbol{37}}\;p = y$.
 \\[0.2cm]
 Also haben wir die zu zeigende Gleichung \colorbox{gold}{$x = y$} 
-hergeleitet und folglich die Injektivit\"{a}t von $f_k$ nachgewiesen.  \qeds
+hergeleitet und folglich die Injektivit\"{a}t von $f_k$ nachgewiesen.  
+Damit folgt aber, dass f\"ur die Operation $\cdot_p$ in der Menge $\mathbb{Z}_p$ die K\"urzungsregel
+\\[0.2cm]
+\hspace*{1.3cm}
+$k \cdot_p x = k \cdot_p y \rightarrow x = y$
+\\[0.2cm]
+gilt.  Da die Operation $\cdot_p$ kommutativ ist, gilt dann auch die K\"urzungsregel 
+\\[0.2cm]
+\hspace*{1.3cm}
+$x \cdot_p k = y \cdot_p k \rightarrow x = y$
+\\[0.2cm]
+und damit ist die Struktur $\langle \mathbb{Z}_p, 1, \cdot_p \rangle$ nach Satz \ref{satz:kuerzungsregel_gruppe}
+eine Gruppe.
+\qeds
 
 
 \section{Die Permutations-Gruppe $\mathcal{S}_n$}
@@ -1166,13 +1178,18 @@ genau dann, wenn
 $l_1 - l_2 \in k\mathbb{Z}$
 \\[0.2cm]
 ist, und dass ist genau dann der Fall, wenn $l_1 - l_2$ ein Vielfaches von $k$ ist, wenn also
-$l_1 \approx_k l_2$ gilt.  Wie wir bereits fr\"{u}her gezeigt haben, ist dies genau dann der Fall, wenn
+$l_1 \approx_k l_2$ gilt.  Wie wir bereits fr\"{u}her in einer Aufgabe gezeigt haben, ist dies genau dann der Fall, wenn
 \\[0.2cm]
 \hspace*{1.3cm}
 $l_1 \modulo k = l_2 \modulo k$
 \\[0.2cm]
-ist.  Damit sehen wir, dass die Menge $\mathbb{Z}/(k\mathbb{Z})$ aus genau $k$ verschiedenen Nebenklassen besteht, denn
-es gilt
+ist.  Da f\"ur beliebige $l \in \mathbb{Z}$ gilt, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$l \modulo k \in \{0, 1, \cdots, k-1\}$ 
+\\[0.2cm]
+ist, sehen wir, dass die Menge $\mathbb{Z}/(k\mathbb{Z})$ aus genau $k$ verschiedenen Nebenklassen
+besteht, wir haben
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathbb{Z}_k = \bigl\{ l {\color{blue}{+}} k\mathbb{Z} \mid l \in \{0, \cdots, k - 1\} \bigr\}$.
