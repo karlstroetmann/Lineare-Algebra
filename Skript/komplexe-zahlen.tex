@@ -186,6 +186,7 @@ ein K\"{o}rper ist.  Die Zahl $i$ wird in diesem K\"{o}rper durch das Paar $\pai
 In dem so definierten K\"{o}rper $\mathbb{C}$ hat die Gleichung $z^2 = -1$ die L\"{o}sung
 $i = \pair(0,1)$.  Wir schreiben daher auch $i = \sqrt{-1}$.
 
+\remark
 Ist $z = \pair(x,y) = x + i \cdot y$ eine komplexe Zahl, so bezeichnen wir $x$ als den \emph{\color{blue}Realteil}
 und $y$ als den \emph{\color{blue}Imagin\"{a}rteil} von $z$.
 
@@ -215,6 +216,7 @@ Durch Vergleich von Real- und Imagin\"{a}rteil erhalten wir daraus die beiden Gl
   \label{eq:komplex_root1}
   x = a^2 - b^2 \quad \mbox{und} \quad y = 2 \cdot a \cdot b.
 \end{equation}
+Das sind zwei Gleichungen f\"ur die beiden Unbekannten $a$ und $b$.
 Wir betrachten zun\"{a}chst den Fall $a \not= 0$ und
 l\"{o}sen die zweite Gleichung nach $b$ auf.  Wir erhalten
 \begin{equation}
@@ -310,7 +312,7 @@ Wir testen die obige Formel  an zwei Beispielen:
 Bei dem Rechnen mit Wurzeln aus komplexen Zahlen ist Vorsicht geboten, denn die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sqrt{z_1 \cdot z_2\,} = \sqrt{z_1\,} \cdot \sqrt{z_2\,}$  \quad ist \underline{falsch}!
+$\sqrt{z_1 \cdot z_2\,} = \sqrt{z_1\,} \cdot \sqrt{z_2\,}$  \quad ist im Allgemeinen \underline{\color{red}falsch}!
 \\[0.2cm]
 Um dies einzusehen, betrachten wir die folgende Gleichungskette
 \\[0.2cm]
@@ -323,15 +325,12 @@ Gleichheit, so h\"{a}tten wir bewiesen, dass $1 = -1$ ist, und das ist nat\"{u}r
 \section{Geometrische Interpretation}
 \"{A}hnlich wie sich reele Zahlen auf der Zahlengeraden darstellen lassen, k\"{o}nnen wir auch komplexe Zahlen
 geometrisch interpretieren.  Da komplexe Zahlen aus zwei Komponenten bestehen, n\"{a}mlich dem Realteil und dem Imagin\"{a}rteil, 
-ben\"{o}tigen wir nun zwei Dimensionen.  Die komplexe Zahl $a + i \cdot b$ wird daher als der Punkt in der Ebene interpretiert,
-dessen $x$ Koordinate den Wert $a$ und dessen $y$ Komponente den Wert $b$ hat.  Wir haben damit die
-Korrespondenz 
-\\[0.2cm]
-\hspace*{1.3cm}
-$a + i \cdot b \;\widehat{=}\; \pair(a,b)$.
-\\[0.2cm]
+ben\"{o}tigen wir nun zwei Dimensionen.  Die komplexe Zahl $a + i \cdot b$ wird daher als der Punkt 
+$\pair(a, b) \in \mathbb{R}^2$ interpretiert, wobei wir die Paare $\pair(a, b)$ als Koordinaten im
+\href{https://de.wikipedia.org/wiki/Kartesisches_Koordinatensystem}{kartesischen Koordinaten-System} auffassen.
 Stellen wir komplexe Zahlen in dieser Weise geometrisch dar, so nennen wir die resultierende Zahlen-Ebene
-die \emph{\color{blue}Gau\3'sche Zahlen-Ebene}.  Abbildung \ref{fig:gauss-ebene.eps} zeigt diese Ebene.
+die \href{https://de.wikipedia.org/wiki/Gauﬂsche_Zahlenebene}{Gau\3sche Zahlen-Ebene}.  Abbildung
+\ref{fig:gauss-ebene.eps} zeigt diese Ebene.  
 Dort ist die komplexe Zahl $a + i \cdot b$ eingezeichnet.  Der Abstand, den der Punkt mit den Koordinaten
 $x = a$ und $y = b$ von dem Ursprungspunkt mit den Koordinaten $x = 0$ und $y = 0$ hat, betr\"{a}gt nach dem
 \href{https://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} $\sqrt{a^2 + b^2\,}$.  
@@ -409,7 +408,7 @@ fest:
 \end{equation}
 Wir sehen, dass es einfach ist, komplexe Zahlen in der Polarform zu
 multiplizieren: Die Winkel der Zahlen werden addiert.  Der \"{U}bersichtlichkeit halber habe ich
-die Betr\"{a}ge $r_1$ und $r_2$ in der oberen Formel weggelassen.  
+in der oberen Formel als $r_1 := 1$ und $r_2 := 1$ definiert, so dass ich $r_1$ und $r_2$ weglassen konnte.
 
 \subsection{Potenzen und allgemeine Wurzeln}
 Ist eine komplexe Zahl in Polarform gegeben, so ist es leicht, die Zahl zu
@@ -439,7 +438,7 @@ verallgemeinern.  Wir \"{u}berlegen nun, f\"{u}r welche komplexe Zahlen der Form
 \hspace*{1.3cm}
 $z = \cos(\varphi) + i \cdot \sin(\varphi)$ \quad die Gleichung \quad $z^n = 1$
 \\[0.2cm]
-erf\"{u}llt ist.  Solche Zahlen bezeichnen wir als $n$-te Einheitswurzeln.  Da 
+erf\"{u}llt ist.  Solche Zahlen bezeichnen wir als \emph{\color{blue}$n$-te Einheitswurzeln}.  Da 
 \\[0.2cm]
 \hspace*{1.3cm}
 $1 = \cos(2 \cdot k \cdot \pi) + i \cdot \sin(2 \cdot k \cdot \pi)$
@@ -554,8 +553,8 @@ $\zeta_3$ bzw.~$\zeta_3^2$.
 
 \remark
 Bei der obigen Rechnung hatten wir Gl\"{u}ck:  Erstens konnten wir f\"{u}r den Winkel $\varphi$ einen expliziten
-Ausdruck, n\"{a}mlich $\frac{\pi}{4}$, angeben und zweitens konnten wir auch die Anwendung der trigonometrischen
-Funktionen auf
+Ausdruck, n\"{a}mlich $\frac{\pi}{4}$, angeben und zweitens konnten wir auch f\"ur die Anwendung der trigonometrischen
+Funktionen $\sin$ und $\cos$ auf
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\frac{\varphi}{3} = \frac{\pi}{12}$ 
@@ -580,7 +579,7 @@ $\ds\cos\Bigl(\frac{\pi}{6}\Bigr) = \frac{1}{2}\cdot\sqrt{3}$ \quad und \quad $\
 voraussetzen.
 \exend
 
-\section{Anwendung der komplexen Zahlen$^*$}
+\section{Anwendung der komplexen Zahlen}
 Wir k\"{o}nnen jetzt zwar mit komplexen Zahlen rechnen, wir haben aber bisher noch nicht gesehen, warum der 
 Gebrauch von komplexen Zahlen \"{u}berhaupt notwendig ist.  Es gibt in der Mathematik eine Vielzahl von
 Anwendung der komplexen Zahlen.  Stellvertretend m\"{o}chte ich an dieser Stelle die Fourier-Transformation
@@ -593,7 +592,7 @@ worden sind.  Ausgangspunkt unserer \"{U}berlegungen ist dabei die Gleichung
 \hspace*{1.3cm}
 $x^3 - 15 \cdot x - 4 = 0$.
 \\[0.2cm]
-Wir wollen alle m\"{o}glichen L\"{o}sungen dieser Gleichung bestimmen.  Um uns einen \"{u}berblick zu verschaffen,
+Wir wollen alle m\"{o}glichen L\"{o}sungen dieser Gleichung bestimmen.  Um uns einen \"{U}berblick zu verschaffen,
 skizzieren wir zun\"{a}chst die Funktion $x \mapsto x^3 - 15 \cdot x - 4$.  Wir erhalten den in Abbildung
 \ref{fig:cubic.eps} auf Seite \pageref{fig:cubic.eps} gezeigten Graphen.
 
@@ -702,7 +701,12 @@ $
 \end{array}
 $
 \\[0.2cm]
-Ber\"{u}cksichtigen wir, dass $\alpha = u^3$, $\beta = v^3$ und $x = u + v$ ist,
+Ber\"{u}cksichtigen wir, dass $\alpha = u^3$, $\beta = v^3$ und $x = u + v$ ist, so muss
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds x = \sqrt[3]{\alpha} + \sqrt[3]{\beta}$
+\\[0.2cm]
+gelten.  Setzen wir hier die Werte f\"ur $\alpha$ und $\beta$ ein, die wir oben gefunden haben,
 so erhalten wir zur L\"{o}sung der kubischen Gleichung \ref{eq:cubic} die 
 erstmals 1545 von \href{http://de.wikipedia.org/wiki/Gerolamo_Cardano}{Geralomo Cardano} ver\"{o}ffentlichte 
 \emph{\color{blue}Cardanische Formel}
@@ -750,7 +754,12 @@ Der Vollst\"{a}ndigkeit halber wollen wir noch die anderen beiden L\"{o}sungen d
 \cdot x - 4 = 0$ bestimmen. 
 Diese erhalten wir, wenn wir in der Cardanischen Formel auch die anderen M\"{o}glichkeiten f\"{u}r die dritte
 Wurzel einsetzen.  Dabei m\"{u}ssen wir allerdings ber\"{u}cksichtigen, dass f\"{u}r die Zahlen $u$ und $v$ die
-Nebenbedingung $3 \cdot u \cdot v = p$ gilt.  Multiplizieren wir beispielsweise $u$ mit $\zeta_3$ und 
+Nebenbedingung
+\\[0.2cm]
+\hspace*{1.3cm}
+ $3 \cdot u \cdot v = p$ 
+\\[0.2cm]
+gilt.  Multiplizieren wir beispielsweise $u$ mit $\zeta_3$ und 
 $v$ mit $\zeta_3^2$, so haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -790,7 +799,7 @@ $\ds x_{k} = 2 \cdot \sqrt{\frac{p}{3}\;} \cdot
 \\[0.2cm]
 Die trigonometrische Herleitung ist allerdings deutlich aufwendiger als die Herleitung die wir in diesem
 Kapitel auf algebraischem Wege mit Hilfe der komplexen Zahlen gefunden haben.
-
+\pagebreak
 
 \exercise
 F\"{u}r welche $z \in \mathbb{C}$ gilt die Gleichung
@@ -798,7 +807,6 @@ F\"{u}r welche $z \in \mathbb{C}$ gilt die Gleichung
 \hspace*{1.3cm}
 $\left(\bruch{1+z}{1-z}\right)^2 = -1$?
 \exend
-
 
 \exercise
 F\"{u}r welche Zahlen $x, y \in \mathbb{R}$ gilt
@@ -844,7 +852,8 @@ $e^{i \cdot \varphi} = \cos(\varphi) + i \cdot \sin(\varphi)$.}}}}}
 \\[0.2cm]
 Diese Formel k\"{o}nnen wir verstehen, wenn wir die
 \href{https://de.wikipedia.org/wiki/Taylorreihe}{Reihenentwicklung} der beteiligten Funktionen
-kennen.  In der Analysis werden wir sp\"{a}ter sehen, dass $e^x$, $\sin(x)$ und $\cos(x)$ wie folgt als Reihen
+kennen.  In der Analysis werden wir sp\"{a}ter sehen, dass $e^x$, $\sin(x)$ und $\cos(x)$ wie folgt
+als \emph{\color{blue}unendliche Reihen}
 dargestellt werden k\"{o}nnen:
 \begin{enumerate}
 \item $\displaystyle e^x = 1 + x + \frac{1}{2} \cdot x^2 + \frac{1}{6} \cdot x^3 + \cdots = \sum\limits_{n=0}^\infty \frac{1}{n!} \cdot x^n$,
@@ -871,7 +880,7 @@ besagt, dass jedes nicht-konstante Polynom
 \hspace*{1.3cm}
 $p(z) = \sum\limits_{i=0}^n a_i \cdot z^i$ \quad mit $n \geq 1$ und $a_n \not=0$
 \\[0.2cm]
-im K\"{o}rper der komplexen Zahlen eine Nullstelle hat, d.h.~es gibt ein $z_1 \in \mathbb{C}$, so dass
+{\color{red}im K\"{o}rper der komplexen Zahlen} eine Nullstelle hat, d.h.~es gibt ein $z_1 \in \mathbb{C}$, so dass
 $p(z_1) = 0$ ist.  Mit Hilfe der Polynom-Division k\"{o}nnen wir die Nullstelle $z_1$ aus dem Polynom $p(z)$
 heraus dividieren und $p(z)$ in der Form
 \\[0.2cm]
@@ -912,7 +921,7 @@ eine L\"{o}sung.  Es ist also nicht nur so, dass wir die Gleichung
 $z^2 + 1 = 0$
 \\[0.2cm]
 in den komplexen Zahlen l\"{o}sen k\"{o}nnen, sondern in den komplexen Zahlen k\"{o}nnen wir tats\"{a}chlich
-j\underline{ede} quadratische Gleichung l\"{o}sen.  Dar\"{u}ber hinaus k\"{o}nnen wir auch jede kubische
+{\color{red}j\underline{ede}} quadratische Gleichung l\"{o}sen.  Dar\"{u}ber hinaus k\"{o}nnen wir auch jede kubische
 Gleichung l\"{o}sen und ganz allgemein hat jede Gleichung $n$-ten Grades eine L\"{o}sung, solange $n$ nur
 positiv ist.  Dies ist einer von vielen Gr\"{u}nden, warum die komplexen Zahlen so wichtig sind.
 \vspace*{0.2cm}
@@ -924,7 +933,7 @@ Tatsache entnehmen, dass der bedeutendste Mathematiker, der je gelebt hat,
 \href{http://de.wikipedia.org/wiki/Carl_Friedrich_Gauss}{Carl Friedrich Gau\3}
 diesen Satz 1799 in seiner Dissertation bewiesen hat.  Der Beweis, den Gau\3 damals gab, enthielt
 allerdings noch eine L\"{u}cke.  Der erste vollst\"{a}ndige Beweis des Fundamentalsatzes der Algebra wurde 
-1806 von \href{http://en.wikipedia.org/wiki/Jean-Robert_Argand}{Jean-Robert Argand} angegeben.
+erst 1806 von \href{http://en.wikipedia.org/wiki/Jean-Robert_Argand}{Jean-Robert Argand} angegeben.
 
 %%% Local Variables:  
 %%% mode: latex
