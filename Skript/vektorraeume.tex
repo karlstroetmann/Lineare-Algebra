@@ -522,7 +522,7 @@ Zeigen Sie:  $B$ ist genau dann eine Basis von $\mathcal{V}$, wenn sich jeder Ve
 eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben l\"{a}sst.
 \eox
 
-\begin{Lemma}[Basis-Austausch-Lemma]
+\begin{LemmaStar}[Basis-Austausch-Lemma]
   Es gelte:
   \begin{enumerate}
   \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum, 
@@ -539,7 +539,7 @@ eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben l\"{a}ss
   \\[0.2cm]
   Wir k\"{o}nnen also den Vektor $\vec{x}$ so gegen einen Vektor $\vec{y}$ aus der Basis $B$
   austauschen, dass die Vektoren aus der Menge $U$ weiterhin Bestandteil der Basis sind.
-\end{Lemma}
+\end{LemmaStar}
 
 \proof
 Da $B$ eine Basis ist, l\"{a}sst sich $\vec{x}$ als Linear-Kombination von Vektoren aus $B$
@@ -663,7 +663,7 @@ und zeigt, dass wir
 in einer Basis $B$ eine linear unabh\"{a}ngige Menge $U$ gegen eine Teilmenge $W$ von $B$ austauschen
 k\"{o}nnen, welche dieselbe Anzahl an Elementen hat wie $U$.
 
-\begin{Satz}[Basis-Austausch-Satz]
+\begin{SatzStar}[Basis-Austausch-Satz]
   Es gelte:
   \begin{enumerate}
   \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum,
@@ -679,7 +679,7 @@ k\"{o}nnen, welche dieselbe Anzahl an Elementen hat wie $U$.
   Wir k\"{o}nnen also eine gegebene linear unabh\"{a}ngige Menge $U$ in eine gegeben Basis einbinden,
   indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge enth\"{a}lt die selbe
   Anzahl von Elementen wie die Menge $U$.
-\end{Satz}
+\end{SatzStar}
 
 \proof
 Die Idee bei diesem Beweis besteht darin, dass wir die Elemente der Menge $U$ mit Hilfe
@@ -756,20 +756,17 @@ wegen $\textsl{card}(W) = \textsl{card}(U)$ folgt die Behauptung. \qed
 Haben wir zwei verschiedene Basen $B_1$ und $B_2$ eines Vektor-Raums $B$, so k\"{o}nnen wir mit dem letzten Korollar sowohl
 $\textsl{card}(B_2) \leq \textsl{card}(B_1)$ als auch $\textsl{card}(B_1) \leq \textsl{card}(B_2)$ folgern.   Das zeigt,
 dass zwei verschiedene Basen eines Vektor-Raums dieselbe Anzahl von Elementen haben. 
-Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir sie als die \emph{\color{blue}Dimension} des Vektor-Raums $\mathcal{V}$ und definieren
+Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir diese Anzahl als die
+\emph{\color{blue}Dimension} des Vektor-Raums $\mathcal{V}$ und definieren 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{dim}(\mathcal{V}) := n$.
 
-
 \exercise
-\renewcommand{\labelenumi}{(\alph{enumi})}
-\begin{enumerate}
+\begin{enumerate}[(a)]
 \item Zeigen Sie, dass der Vektor-Raum $\mathbb{K}^n$ die Dimension $n$ hat. 
 \item Zeigen Sie, dass der Vektor-Raum $\mathbb{K}^\mathbb{N}$ keine endliche Basis hat.  \eoxs
 \end{enumerate}
-\renewcommand{\labelenumi}{\arabic{enumi}.}
-
 
 
 \section{Untervektor-R\"{a}ume}
@@ -798,7 +795,7 @@ wenn Folgendes gilt:
 \end{enumerate}
 \end{Definition}
 
-Eine Teilmenge $U$ von $V$ ist also ein Untervektor-Raum von $V$, falls $U$ den Null-Vektor enth\"{a}lt und zus\"{a}tzlich
+Eine Teilmenge $U$ von $V$ ist also ein Untervektor-Raum von $V$, falls $U$ nicht leer ist und zus\"{a}tzlich
 unter Addition und Skalar-Multiplikation abgeschlossen ist.  Es l\"{a}sst sich leicht zeigen, dass ein Untervektor-Raum $U$
 auch selbst ein Vektor-Raum ist:  Die G\"{u}ltigkeit des Assoziativ-Gesetzes und der Distributiv-Gesetze folgt einfach aus
 der Tatsache, dass diese Gesetze schon in $V$ gelten und damit erst recht in $U$, denn $U$ ist ja eine Teilmenge von
@@ -1008,7 +1005,7 @@ dann auch die Menge $U_1 \cup U_2$ ein Untervektor-Raum von $V$ ist.
         gilt:
         \begin{enumerate}
         \item $\langle \vec{x}\mid \vec{x} \rangle \geq 0$ \quad f\"{u}r alle $\vec{x} \in V$,
-        \item $\langle \vec{x}\mid \vec{x} \rangle = 0 \leftrightarrow \vec{x} = \vec{0}$ \quad f\"{u}r alle $\vec{x} \in V$.
+        \item $\langle \vec{x}\mid \vec{x} \rangle = 0 \;\Leftrightarrow\; \vec{x} = \vec{0}$ \quad f\"{u}r alle $\vec{x} \in V$.
         \end{enumerate}
   \end{enumerate} 
   Falls auf einem Vektor-Raum $V$ ein Skalar-Produkt $\langle \cdot \mid \cdot \rangle$ definiert
