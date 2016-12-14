@@ -1,13 +1,14 @@
 \chapter{Lineare Abbildungen}
 Der Begriff der \href{https://de.wikipedia.org/wiki/Lineare_Abbildung}{linearen Abbildungen} ist neben dem
 Begriff des Vektor-Raums einer der zentralen Begriffe in der Theorie der linearen Algebra.  In diesem Kapitel
-f\"{u}hren wir lineare Abbildungen ein und zeigen, wie diese durch {\emph{\color{blue}Matrizen}} dargestellt
+f\"{u}hren wir lineare Abbildungen ein und zeigen, wie diese durch
+\href{https://de.wikipedia.org/wiki/Matrix_(Mathematik)}{Matrizen} dargestellt 
 werden k\"{o}nnen.  Wir definieren Addition und Multiplikation von Matrizen und zeigen, dass bestimmte Matrizen
 bez\"{u}glich der Multiplikation ein {\emph{\color{blue}Inverses}} besitzen.  Wir f\"{u}hren sogenannte
-{\emph{\color{blue}Elementar-Matrizen}} ein und demonstrieren, wie sich mit Hilfe von Elementar-Matrizen das
-Inverse einer Matrix berechnen l\"{a}sst.   
+\href{https://de.wikipedia.org/wiki/Elementarmatrix}{Elementar-Matrizen} ein und demonstrieren, wie
+sich mit Hilfe von Elementar-Matrizen das Inverse einer Matrix berechnen l\"{a}sst.   
 
-Im Rest dieses Abschnittes bezeichnet $\mathbb{K}$ einen K\"{o}rper.  In den Anwendungen wird es sich dabei
+Im Rest dieses Abschnittes bezeichnet $\mathbb{K}$ einen beliebigen K\"{o}rper.  In den Anwendungen wird es sich dabei
 meistens um den K\"{o}rper $\mathbb{R}$ der reellen Zahlen oder den K\"{o}rper $\mathbb{C}$ der komplexen Zahlen handeln.  
 
 \section{Definition der linearen Abbildungen}
@@ -26,8 +27,7 @@ ist eine {\emph{\color{blue}lineare Abbildung}} von $V$ nach $W$ genau dann, wen
 
       eine lineare Abbildung ist auch mit der Skalar-Multiplikation vertr\"{a}glich.
 \end{enumerate}
-Die Menge aller linearen Abbildungen von $V$ nach $W$ wird mit $\mathcal{L}(V, W)$ bezeichnet, es
-gilt also
+Wir bezeichnen die Menge aller linearen Abbildungen von $V$ nach $W$ mit $\mathcal{L}(V, W)$ bezeichnet, es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathcal{L}(V, W) := \{ f \in W^V \mid \mbox{$f$ ist lineare Abbildung} \}$.
@@ -37,7 +37,7 @@ Auf der Menge $\mathcal{L}(V, W)$ definieren wir eine Addition
 \hspace*{1.3cm}
 $+: \mathcal{L}(V, W) \times \mathcal{L}(V, W) \rightarrow \mathcal{L}(V, W)$
 \\[0.2cm]
-punktweise, das hei\3t f\"{u}r $f,g \in \mathcal{L}(V, W)$ definieren wir die lineare Abbildung $f+g$,
+\emph{\color{blue}punktweise}, das hei\3t f\"{u}r $f,g \in \mathcal{L}(V, W)$ definieren wir die lineare Abbildung $f+g$,
 indem wir fordern, dass f\"{u}r alle $\vec{x} \in V$
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -59,7 +59,7 @@ $\cdot: \mathbb{K} \times \mathcal{L}(V, W) \rightarrow \mathcal{L}(V, W)$
 und wir definieren f\"{u}r alle $\alpha \in \mathbb{K}$, $f \in \mathcal{L}(V, W)$ und alle $\vec{x} \in V$
 \\[0.2cm]
 \hspace*{1.3cm}
-$(\alpha \cdot f)(\vec{x}) := \alpha \cdot f(x)$.
+$(\alpha \cdot f)(\vec{x}) := \alpha \cdot f(\vec{x})$.
  \eoxs
 \end{Definition}
 
@@ -172,7 +172,7 @@ $\ds\frac{\mathrm{d}\;}{\mathrm{d}x} (\alpha \cdot f + \beta \cdot g) = \alpha \
   \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
   $\textsl{Kern}(f) := \bigl\{ \vec{x} \in V \mid f(\vec{x}) = \vec{0} \bigr\}$.}}}}}
   \\[0.2cm] 
-  Der Kern einer linearen Abbildung ist also die Menge aller Vektoren aus $V$, die auf den Null-Vektor abgebildet werden.  \eoxs
+  Der \emph{\color{blue}Kern} einer linearen Abbildung ist also die Menge aller Vektoren aus $V$, die auf den Null-Vektor abgebildet werden.  \eoxs
 \end{Definition}
 
 \begin{Satz}
@@ -277,7 +277,7 @@ Wir zerlegen den Beweis in zwei Teile.
       und da wir $\textsl{Kern}(f) = \bigl\{ \vec{0} \bigr\}$ vorausgesetzt hatten, folgt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{x} - \vec{y} = 0$
+      $\vec{x} - \vec{y} = 0$,
       \\[0.2cm]
       woraus wir auf $\vec{x} = \vec{y}$ schlie\3en k\"{o}nnen und das war zu zeigen.  \qeds
 \end{enumerate}
@@ -296,7 +296,10 @@ als die Menge der Abbilder aller Vektoren aus $V$ unter der Abbildung $f$.
 
 \exercise
 Zeigen Sie: Ist $f: V \rightarrow W$ eine lineare Abbildung, so ist $\textsl{Bild}(f)$ ein Untervektor-Raum von $W$.
-\eoxs
+\eox
+
+Das Bild und der Kern einer linearen Abbildung sind \"uber den
+\href{https://de.wikipedia.org/wiki/Rangsatz}{Dimensions-Satz} verkn\"upft.
 
 \begin{Satz}[Dimensions-Satz]
   Es seien $V_1$ und $V_2$ endlich-dimensionale Vektor-R\"{a}ume und die Funktion $f: V_1 \rightarrow V_2$ sei eine lineare Abbildung.
@@ -307,7 +310,7 @@ Zeigen Sie: Ist $f: V \rightarrow W$ eine lineare Abbildung, so ist $\textsl{Bil
   $\textsl{dim}(V_1) = \textsl{dim}\bigl(\textsl{Kern}(f)\bigr) + \textsl{dim}\bigl(\textsl{Bild}(f)\bigr)$.}}}}}
 \end{Satz}
 
-\proof
+\proofStar
 Es sei $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$.  Ist $B$ eine Basis von $V_1$, so k\"{o}nnen wir mit Hilfe des
 Basis-Austausch-Satzes eine Menge $W$ finden, so dass 
 \\[0.2cm]
@@ -340,7 +343,12 @@ eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
       Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigl\}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
 
       Sei $\vec{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\vec{y} \in V_1$, so dass $\vec{z} = f(\vec{y})$ ist.
-      Nun ist die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis von $V_1$. 
+      Nun ist die Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ 
+      \\[0.2cm]
+      eine Basis von $V_1$. 
       Folglich muss es Skalare $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ geben, so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
