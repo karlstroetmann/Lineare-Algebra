@@ -261,66 +261,95 @@ $\bruch{x}{2} - \bruch{1}{2} \cdot \sqrt{y^2 + x^2}$
 ist sicher negativ.  F\"{u}r $a$ erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
-$a = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$.
+$a = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$ \quad oder \quad 
+$a = -\sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$.
 \\[0.2cm]
 Setzen wir diesen Wert in Gleichung (\ref{eq:komplex_root2}) ein, so ergibt sich f\"{u}r $b$ der Wert
 \\[0.2cm]
 \hspace*{1.3cm}
-$b = \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$.
+$b = \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$ \quad oder \quad 
+$b = -\bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$.
 \\[0.2cm]
-Insgesamt erhalten wir damit f\"{u}r die Quadrat-Wurzel der komplexen Zahl $x + i \cdot y$ das Ergebnis
-\\[0.2cm]
-\hspace*{1.3cm}
-$\sqrt{x + i \cdot y\,} = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
- + i \cdot \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}
-$,
-\\[0.2cm]
-was allerdings im Falle $y = 0$ nur richtig ist, solange $x > 0$ ist.  Falls $y = 0$ und $x < 0$ gilt,
-dann gilt offenbar
+Insgesamt erhalten wir damit f\"{u}r das Ergebnis 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sqrt{x + i \cdot y\,} = i \cdot \sqrt{-x}$.
+$a + i \cdot b = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
+                 + i \cdot \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}
+$ 
+\quad oder \quad
+\\[0.2cm]
+\hspace*{1.3cm}
+$a + i \cdot b = -\sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
+                 - i \cdot \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}},
+$ 
+\\[0.2cm]
+was allerdings im Falle $y = 0$ nur richtig ist, solange $x > 0$ ist.  Wenn $y = 0$ und $x < 0$ gilt statt dessen
+\\[0.2cm]
+\hspace*{1.3cm}
+$a + i \cdot b = i \cdot \sqrt{-x}$ \quad oder \quad $a + i \cdot b = -i \cdot \sqrt{-x}$.
 
 
 \examples
 Wir testen die obige Formel  an zwei Beispielen:
 \begin{enumerate}
-\item $
+\item Wir suchen eine komplexe Zahl $a + i \cdot b$, so dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $(a + i \cdot b)^2 = i$
+      \\[0.2cm]
+      gilt.  Damit liefert die oben hergeleitete Formel die beiden L\"osungen
+
+     $
        \begin{array}[t]{lcl}
-       \sqrt{i\,} & = & \sqrt{0 + i \cdot 1\,} \\[0.2cm]
-                  & = & \sqrt{\bruch{1}{2} \cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;} + 
-                         i \cdot \bruch{1}{\sqrt{2\cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;}}    \\[0.2cm]
-                  & = & \sqrt{\bruch{1}{2} \cdot 1\;} + i \cdot \bruch{1}{\sqrt{2\cdot 1\;}} \\[0.4cm]
-                  & = & \bruch{1}{\sqrt{2}} \cdot \bigl(1 + i\bigr).
+       a + i \cdot b & = & \sqrt{0 + i \cdot 1\,} \\[0.2cm]
+                     & = & \pm\sqrt{\bruch{1}{2} \cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;} \pm
+                           i \cdot \bruch{1}{\sqrt{2\cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;}}    \\[0.2cm]
+                     & = & \pm\sqrt{\bruch{1}{2} \cdot 1\;} \pm i \cdot \bruch{1}{\sqrt{2\cdot 1\;}} \\[0.4cm]
+                     & = & \pm\bruch{1}{\sqrt{2}} \cdot \bigl(1 + i\bigr).
        \end{array}
        $
-\item $
+\item Wir suchen eine komplexe Zahl $a + i \cdot b$, so dass
+       \\[0.2cm]
+       \hspace*{1.3cm}
+       $(a + i \cdot b)^2 = \sqrt{3 + i \cdot 4\,}$
+       \\[0.2cm]
+       gilt. Wir finden die beiden L\"osungen
+       \\[0.2cm]
+       \hspace*{1.3cm}
+       $
        \begin{array}[t]{lcl}
-             \sqrt{3 + i \cdot 4\,}
-       & = & \sqrt{\bruch{1}{2} \cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;} + 
+             a + i \cdot b 
+       & = & \pm \sqrt{\bruch{1}{2} \cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;} \pm
              i \cdot \bruch{4}{\sqrt{2\cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;}}    \\[0.2cm]
-       & = & \sqrt{\bruch{1}{2} \cdot (3 + 5)\;} + i \cdot \bruch{4}{\sqrt{2\cdot (3 + 5)\;}}     \\[0.2cm]
-       & = & \sqrt{\bruch{1}{2} \cdot (8)\;} + i \cdot \bruch{4}{\sqrt{2\cdot 8\;}}     \\[0.2cm]
-       & = & \sqrt{4\,} + i \cdot \bruch{4}{\sqrt{16\,}}     \\[0.2cm]
-       & = & 2 + i \cdot \bruch{4}{4}     \\[0.2cm]
-       & = & 2 + i \cdot 1
+       & = & \pm\sqrt{\bruch{1}{2} \cdot (3 + 5)\;} \pm i \cdot \bruch{4}{\sqrt{2\cdot (3 + 5)\;}}     \\[0.2cm]
+       & = & \pm\sqrt{\bruch{1}{2} \cdot (8)\;} \pm i \cdot \bruch{4}{\sqrt{2\cdot 8\;}}     \\[0.2cm]
+       & = & \pm\sqrt{4\,} \pm i \cdot \bruch{4}{\sqrt{16\,}}     \\[0.2cm]
+       & = & \pm \left(2 + i \cdot \bruch{4}{4}\right)     \\[0.2cm]
+       & = & \pm(2 + i)
        \end{array}
        $
 \end{enumerate}
 
 \remark
-Bei dem Rechnen mit Wurzeln aus komplexen Zahlen ist Vorsicht geboten, denn die Gleichung 
+Ich habe bei der Berechnung der reellen Zahlen $a, b \in \mathbb{R}$ f\"ur die $(a + i \cdot b)^2 = x + i \cdot y$ gilt,
+bewu{\ss}t die Schreibweise 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sqrt{z_1 \cdot z_2\,} = \sqrt{z_1\,} \cdot \sqrt{z_2\,}$  \quad ist im Allgemeinen \underline{\color{red}falsch}!
+$a + i \cdot b = \sqrt{x + i \cdot y}$
 \\[0.2cm]
-Um dies einzusehen, betrachten wir die folgende Gleichungskette
+{\color{red}vermieden}, denn das Problem ist, dass es, falls nur $x + i \cdot y \not= 0$ ist, genau
+zwei komplexe Zahlen $a + i \cdot b$  gibt, f\"ur welche die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$1 = \sqrt{1} = \sqrt{(-1) \cdot (-1)} \stackrel{?}{=} \sqrt{-1} \cdot \sqrt{-1} = i \cdot i = -1$.
+ $(a + i \cdot b)^2 = x + i \cdot y$ 
 \\[0.2cm]
-H\"{a}tten wir an der mit $\stackrel{?}{=}$ markierten Stelle dieser Gleichungskette tats\"{a}chlich eine
-Gleichheit, so h\"{a}tten wir bewiesen, dass $1 = -1$ ist, und das ist nat\"{u}rlich Unsinn.
+erf\"ullt ist.   Es ist nicht klar, welche dieser beiden Zahlen dann mit dem Ausdruck
+$\sqrt{x + i \cdot y}$ gemeint ist.  Wir k\"onnten zwar willk\"urlich festlegen, dass immer die
+Zahl $a + i \cdot b$ gemeint ist, f\"ur die der Realteil nicht-negativ ist, aber genauso gut k\"onnten
+wir auch festlegen, dass wir die Zahl  $a + i \cdot b$ meinen, f\"ur die der Imagin\"{a}rteil
+nicht-negativ ist.  Jede dieser beiden Festlegung w\"are willk\"urlich.  Daher vereinbaren wir, dass
+f\"ur $z \in \mathbb{C}\backslash\mathbb{R}$ der Ausdruck $\sqrt{z}$ undefiniert ist. 
+
 
 \section{Geometrische Interpretation}
 \"{A}hnlich wie sich reele Zahlen auf der Zahlengeraden darstellen lassen, k\"{o}nnen wir auch komplexe Zahlen
