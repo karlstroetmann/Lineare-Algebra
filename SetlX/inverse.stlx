@@ -5,41 +5,41 @@
 ////////////////////////////////////////////////////////////////////////
 // This procedure computes the inverse of the matrix a. The matrix a 
 // is represented as a list of its rows.
-inverse := procedure(a) {
+inverse := procedure(A) {
     print("Computing the inverse of:\n");
-    print(toString(a));
-    n := #a;              
-    e := identity(n);
+    print(toString(A));
+    n := #A;              
+    E := identity(n);
     for (i in [1 .. n]) {
         print("Working on column $i$ of the following matrices:");
-        print(toString2(a, e));
-        r := pivot(a, n, i);
+        print(toString2(A, E));
+        r := pivot(A, n, i);
         if (i != r) {
             print("exchanging row $i$ with row $r$:");
-            [ a[i], a[r] ] := [ a[r], a[i] ];   
-            [ e[i], e[r] ] := [ e[r], e[i] ];
-            print(toString2(a, e));
+            [ A[i], A[r] ] := [ A[r], A[i] ];   
+            [ E[i], E[r] ] := [ E[r], E[i] ];
+            print(toString2(A, E));
         }
-        if (a[i][i] == 0) {
-            print("WARNING: a[$i$,$i$] = 0");
-            print("The matrix a is not invertible!");
+        if (A[i][i] == 0) {
+            print("WARNING: A[$i$,$i$] = 0");
+            print("The matrix A is not invertible!");
             return;
         }
-        f := 1 / a[i][i]; 
+        f := 1 / A[i][i]; 
         print("normalizing row $i$:");
         for (j in [1 .. n]) {
-            a[i][j] *= f;
-            e[i][j] *= f;
+            A[i][j] *= f;
+            E[i][j] *= f;
         }
-        print(toString2(a, e));
+        print(toString2(A, E));
         for (k in [1 .. n] | k != i) {
-            f := a[k][i];
+            f := A[k][i];
             print("subtracting $f$ times row $i$ from row $k$:");
             for (j in [1 .. n]) {
-                a[k][j] -= f * a[i][j];
-                e[k][j] -= f * e[i][j];
+                A[k][j] -= f * A[i][j];
+                E[k][j] -= f * E[i][j];
             }
-            print(toString2(a, e));
+            print(toString2(A, E));
         }    
     }
     return e;
@@ -54,10 +54,10 @@ identity := procedure(n) {
 };
 // Compute the row index j such that the absolute value of
 // a[j][i] is maximal among all j in in {i .. n}.
-pivot := procedure(a, n, i) {
+pivot := procedure(A, n, i) {
     r := i;  // index of row containing maximal element
     for (j in [i+1 .. n]) {
-        if (abs(a[j][i]) > abs(a[r][i])) {
+        if (abs(A[j][i]) > abs(A[r][i])) {
             r := j;
         }
     }
@@ -71,21 +71,21 @@ pivot := procedure(a, n, i) {
 ////////////////////////////////////////////////////////////////////////
 
 // compute the matrix product of two square matrices
-product := procedure(a, b) {
-    n := #a;
+product := procedure(A, B) {
+    n := #A;
     r := [1 .. n];
-    return [ [ +/ [ a[i][j] * b[j][k] : j in r ] : k in r ] : i in r ];
+    return [ [ +/ [ A[i][j] * B[j][k] : j in r ] : k in r ] : i in r ];
 };
 
 // turns a quadratic matrix into a string
-toString := procedure(a) {
-    n := #a;
+toString := procedure(A) {
+    n := #A;
     r := [1 .. n];
-    w := max({ #(a[i][j] + "") : i in r, j in r });
+    w := max({ #(A[i][j] + "") : i in r, j in r });
     s := "";
     for (i in r) {
         for (j in r) {
-            s += pad(a[i][j], w) + " ";
+            s += pad(A[i][j], w) + " ";
         }    
         s += "\n";
     }
@@ -93,20 +93,20 @@ toString := procedure(a) {
 };
 
 // turns a pair of quadratic matrices into a string
-toString2 := procedure(a, b) {
-    n := #a;
-    r := [1 .. n];
-    w1 := max({ #(a[i][j] + "") : i in r, j in r });
-    w2 := max({ #(b[i][j] + "") : i in r, j in r });
-    s := "a =   " + " " * (n * (w1 + 1)) + " e = \n";
-    for (i in r) {
+toString2 := procedure(A, B) {
+    n := #A;
+    R := [1 .. n];
+    w1 := max({ #(A[i][j] + "") : i in R, j in R });
+    w2 := max({ #(B[i][j] + "") : i in R, j in R });
+    s := "A =   " + " " * (n * (w1 + 1)) + " E = \n";
+    for (i in R) {
         s += "    ";
-        for (j in r) {
-            s += pad(a[i][j], w1) + " ";
+        for (j in R) {
+            s += pad(A[i][j], w1) + " ";
         }    
         s += "       ";
-        for (j in r) {
-            s += pad(b[i][j], w2) + " ";
+        for (j in R) {
+            s += pad(B[i][j], w2) + " ";
         }    
         s += "\n";
     }
@@ -119,23 +119,23 @@ pad := procedure(n, w) {
     return " " * (w - #s) + s;
 };
 
-test := procedure(a) {
-    b := inverse(a);
-    if (b == om) { return; }
-    print("The inverse of:\n\n$toString(a)$\nis\n\n$toString(b)$");
-    print("test: a * inverse(a) = \n");
-    print( toString(product(a, b)) );
-    print("test: inverse(a) * a = \n");
-    print( toString(product(b, a)) );
+test := procedure(A) {
+    B := inverse(A);
+    if (B == om) { return; }
+    print("The inverse of:\n\n$toString(A)$\nis\n\n$toString(B)$");
+    print("test: A * inverse(A) = \n");
+    print( toString(product(A, B)) );
+    print("test: inverse(A) * A = \n");
+    print( toString(product(B, A)) );
 };
 
-a := [ [ 1, 2, 3 ],
+A := [ [ 1, 2, 3 ],
        [ 2, 3, 1 ],
        [ 3, 1, 2 ]
      ];
-test(a);
+test(A);
 
-a := [ [-11/4,  7/4,  1/4],
+A := [ [-11/4,  7/4,  1/4],
        [  7/4, -3/4, -1/4],
        [  1/4, -1/4,  1/4]
      ];
