@@ -229,13 +229,12 @@ Die Transposition $\tau$ habe die Form  $\tau = \pair(k,l)$
 und es gelte $k < l$.  Berechnen Sie die Ausdr\"ucke $\mathtt{inv}(\tau)$ und $\mathtt{sgn}(\tau)$.
 \eox
 
-
+\subsection{Die Homomorphie-Eigenschaft der Signum-Funktion$^*$}
 Der Rest dieses Abschnitts besch\"aftigt sich mit dem Nachweis, dass die Funktion $\mathtt{sgn}$ ein
 Gruppen-Homomorphismus ist.  Die bei diesem Beweis ben\"otigten Ideen sind zwar alle elementar, aber
 insgesamt sprengt der technische Aufwand den zeitlichen Rahmen einer einf\"uhrenden Vorlesung.  Daher
 ist dieser Abschnitt als optional markiert. 
 
-\subsection{Die Homomorphie-Eigenschaft der Signum-Funktion$^*$}
 Der n\"achste Satz zeigt uns, dass
 sich alle nicht-trivialen Permutationen als Produkt von Transpositionen schreiben lassen.  
 
@@ -773,8 +772,8 @@ $\mathtt{sgn}(\varrho_1 \circ \varrho_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \m
 \qed
 
 \section{Die Definition der Determinante nach Leibniz}
-Wir haben nun alles Material zusammen um die Determinante einer $n \times n$ Matrix so zu
-definieren, wie dies 1690 von
+Wir haben nun alles Material zusammen um die \href{https://de.wikipedia.org/wiki/Determinante}{Determinante}
+einer $n \times n$ Matrix so zu definieren, wie dies 1690 von
 \href{http://de.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz\footnote{
   Den erfreuliche Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
   Begriff ist, haben wir   der Firma \href{http://www.bahlsen.com}{Bahlsen} zu verdanken, die ihre
@@ -887,8 +886,8 @@ Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab.
                   labelposition = bottomline,
                   numbers       = left,
                   numbersep     = -0.2cm,
-                  xleftmargin   = 0.8cm,
-                  xrightmargin  = 0.8cm,
+                  xleftmargin   = 0.0cm,
+                  xrightmargin  = 0.0cm,
                 ]
    inv := procedure(r) {
        n := #r;
@@ -936,7 +935,13 @@ wir beispielsweise die in Abbildung \ref{fig:determinant.out} auf Seite
 \pageref{fig:determinant.out} gezeigte Ausgabe.  Es ist offensichtlich, dass die Leibniz-Formel f\"ur
 gro\3e Werte von $n$ in der Praxis unbrauchbar ist, denn die
 Menge $\mathcal{S}_n$ aller Permutationen der Zahlen $\{1,\cdots,n\}$ enth\"alt $n!$ verschiedene
-Elemente und die Fakult\"atsfunktion w\"achst schneller als jede Potenz.  Wir werden daher
+Elemente und die Fakult\"atsfunktion w\"achst schneller als jede Potenz.  Genauer gilt die 
+\href{https://de.wikipedia.org/wiki/Stirlingformel}{Stirling-Formel}
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds n! \approx \sqrt{2 \cdot \pi \cdot n\;} \cdot \left(\frac{n}{e}\right)^n$.
+\\[0.2cm]
+Wir werden daher
 ein anderes Verfahren zur Berechnung der Determinate entwickeln, bei dem nur etwa $n^3$
 Rechenoperationen notwendig sind.  Zu diesem Zweck beweisen wir zun\"achst einige Eigenschaften der
 Determinate.  
@@ -987,7 +992,7 @@ Beim Beweis des n\"achsten Satzes wird sich das folgende Lemma als n\"utzlich er
 Es sei $\tau$ eine Transposition.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \} = \mathcal{S}_n$.
+$\tau \circ \mathcal{S}_n := \{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \} = \mathcal{S}_n$.
 \end{Lemma}
 
 \proof
@@ -1087,40 +1092,40 @@ Nach Definition der Determinante gilt
 \hspace*{0.8cm}
 $
 \begin{array}[b]{lcl}
-\mathtt{det}\bigl(\tau(A)\bigr) & = &
+\mathtt{det}\bigl(\tau(A)\bigr) & = & \ds
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{\tau(1),\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{\tau(k),\sigma(k)} \cdot 
-            \cdot  \mbox{$\dots$} \cdot a_{\tau(l),\sigma(l)} \cdot  \mbox{$\dots$} \cdot a_{\tau(n),\sigma(n)} \\[0.4cm]
-& = &
+            \cdot  \mbox{$\dots$} \cdot a_{\tau(l),\sigma(l)} \cdot  \mbox{$\dots$} \cdot a_{\tau(n),\sigma(n)} \\[0.5cm]
+& = & \ds
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} 
             \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}, \\[0.4cm]
 & & \mbox{denn $\tau(i) = i$ f\"ur alle $i \not\in \{k,l\}$ und $\tau(k) = l$ und $\tau(l) = k$.} \\[0.2cm]
-& = &
+& = & \ds
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}
             \\[0.4cm]
 & & \mbox{Hier wird nur das Kommutativ-Gesetz benutzt.} \\[0.2cm]
-& = &
+& = & \ds
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(l))} \cdot \mbox{$\dots$} \cdot
             a_{n,\sigma(\tau(n))}, \\[0.4cm]
 & & \mbox{denn $\tau(k) = l$ und $\tau(l) = k$ und f\"ur $i \not\in \{k,l\}$ gilt $\tau(i) = i$.} \\[0.2cm]
-& = &
+& = & \ds
  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\tau\circ\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\tau\circ\sigma(n)} \\[0.4cm]
-& = &
+& = & \ds
  \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\tau\circ\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\tau\circ(\tau\circ\mu)(n)} \\[0.4cm]
 && \mbox{In diesem Schritt haben wir alle $\sigma$ durch $\tau\circ\mu$ ersetzt,} \\
 && \mbox{was nach dem Lemma \ref{lemma:sigmatau} erlaubt ist.} \\[0.2cm]
-& = &
+& = & \ds
  \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\tau) \cdot \mathtt{sgn}(\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\tau\circ(\tau\circ\mu)(n)}, \\[0.4cm]
 && \mbox{denn nach Satz \ref{satz:signum} gilt $\mathtt{sgn}(\tau \circ \mu) = \mathtt{sgn}(\tau) \cdot \mathtt{sgn}(\mu)$} \\[0.2cm]
-& = &
+& = & \ds
  - \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\mu) \cdot a_{1,(\tau\circ\tau)\circ\mu(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,(\tau\circ\tau)\circ\mu(n)}, \\[0.4cm]
 && \mbox{denn da $\tau$ eine Transposition ist, gilt $\mathtt{sgn}(\tau) = -1$.} \\
 && \mbox{Au\3erdem haben wir benutzt, dass $\tau \circ(\tau\circ\mu) = (\tau \circ\tau)\circ\mu$ ist.} \\[0.2cm]
-& = &
+& = & \ds
  - \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\mu) \cdot a_{1,\mu(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\mu(n)} \\[0.4cm]
 && \mbox{Da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = \mathtt{id}_n$ und $\mathtt{id}_n \circ \mu = \mu$.} \\[0.2cm]
@@ -1128,6 +1133,7 @@ $
  \end{array}
 $
 \qed
+\pagebreak
 
 \remark
 Der gerade bewiesene Satz ist der am schwersten zu beweisende Satz in der Theorie der
@@ -1169,7 +1175,7 @@ $\texttt{det}(A^\mathrm{T}) = \mathtt{det}(A)$
 \\[0.2cm]
 gilt.  Zum Nachweis dieses Satzes ist es n\"utzlich, die beiden folgenden Lemmata nachzuweisen:
 \begin{enumerate}
-\item $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$.
+\item $\mathcal{S}^{-1} := \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$.
 \item $\bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\} = \bigl\{ \langle \sigma(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$
        \quad f\"ur alle $\sigma \in \mathcal{S}_n$.
        \eox
@@ -1364,7 +1370,7 @@ $.
 
 \remark
 Die letzten Lemmata und die dazugeh\"origen Aufgaben k\"onnen wir so zusammenfassen, dass wir sagen, dass
-die Determinante eine normierte, alternierende Multilinear-Form ist:
+die Determinante eine \emph{\color{blue}normierte}, \emph{\color{blue}alternierende} \emph{Multilinear-Form} ist:
 \begin{enumerate}
 \item Normiertheit bedeutet
       \\[0.2cm]
@@ -1407,10 +1413,8 @@ Eigenschaften benutzen.
 \eoxs
 
 \begin{Lemma}
-  Es sei $A \in \mathbb{K}^{n \times n}$,  $k,l \in \{1,\cdots,n\}$ mit $k\not=l$ und die $k$-te
-  Zeile von $A$ sei mit der $l$-ten Zeile von $A$ identisch.  
-  Weiter sei $\mathbb{K} = \mathbb{R}$ oder $\mathbb{K} = \mathbb{C}$.
-  Dann gilt
+  Es sei $A \in \mathbb{K}^{n \times n}$, es gelte $\mathbb{K} = \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$,  weiter sei  $k,l \in \{1,\cdots,n\}$ mit $k\not=l$ und die $k$-te
+  Zeile von $A$ sei mit der $l$-ten Zeile von $A$ identisch.  Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
   $\mathtt{det}(A) = 0$.
@@ -1598,7 +1602,7 @@ nach der am Beginn dieses Beweises gemachten Bemerkung ist die Determinante dies
 
 Genau wie wir f\"ur eine lineare Abbildung $f\in \mathcal{L}(V,W)$ im letzten Kapitel die Mengen
 $\mathtt{Kern}(f)$ und $\mathtt{Bild}(f)$ definiert haben, k\"onnen wir auch f\"ur eine Matrix $A \in \mathbb{K}^{n \times m}$, die
-Mengen $\mathtt{Kern}(A)$ und $\mathtt{Bild}(A)$ definieren:
+Mengen $\mathtt{\color{blue}Kern}(A)$ und $\mathtt{\color{blue}Bild}(A)$ definieren:
 \begin{enumerate}
 \item $\mathtt{Kern}(A) := \bigl\{ \vec{x} \in \mathbb{K}^m \bigm| A \cdot \vec{x} = \vec{0} \bigr\}$, 
 \item $\mathtt{Bild}(A) := \bigl\{ A \cdot \vec{x} \bigm| \vec{x} \in  \mathbb{K}^m \bigr\}$.
