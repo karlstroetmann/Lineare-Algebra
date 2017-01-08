@@ -1,10 +1,13 @@
 \chapter{Determinanten}
-Der Begriff der \emph{Determinante} ist einer der zentralen Begriff der linearen Algebra: Einerseits
-werden Determinanten bei der Berechnung von \emph{Eigenwerten} zur Definition des \emph{charakteristischen Polynoms} ben\"otigt,
+Der Begriff der \href{https://de.wikipedia.org/wiki/Determinante}{Determinante} ist einer der
+zentralen Begriff der linearen Algebra: Einerseits werden Determinanten bei der Berechnung von
+\href{https://de.wikipedia.org/wiki/Eigenwertproblem}{Eigenwerten} zur Definition des
+\href{https://de.wikipedia.org/wiki/Charakteristisches_Polynom}{charakteristischen Polynoms} ben\"otigt,   
 andererseits spielen Determinanten auch au\3erhalb der linearen Algebra eine Rolle, beispielsweise
-bei der Berechnung mehrdimensionaler Integrale.  
-Um Determinanten einf\"uhren zu k\"onnen, m\"ussen wir zun\"achst das \emph{Signum} einer Permutation
-definieren und dann zeigen, dass es sich bei dieser Funktion um einen Gruppen-Homomorphismus handelt.
+bei der Berechnung mehrdimensionaler Integrale.  Um Determinanten einf\"uhren zu k\"onnen, m\"ussen
+wir zun\"achst das \emph{\color{blue}Signum} einer Permutation 
+definieren und dann zeigen, dass es sich bei dieser Funktion um einen 
+\href{https://de.wikipedia.org/wiki/Gruppenhomomorphismus}{Gruppen-Homomorphismus} handelt.
 Letzteres ist mit einem nicht unerheblichen technischen Aufwand verbunden. 
 \renewcommand{\labelenumi}{(\alph{enumi})}
 \renewcommand{\labelenumii}{\arabic{enumii}.}
@@ -29,7 +32,7 @@ zu schreiben.  Weiterhin werden wir $R$ oft als Funktion auffassen und dann beis
 $R(k) = x_k$ \quad schreiben, falls \quad $\pair(k,x_k) \in R$ gilt.
 
 \remark
-Es gilt $\mathtt{card}(\mathcal{S}_n) = n!$, wobei der Ausdruck $n!$ (gelesen: \emph{$n$ Fakult\"at})
+Es gilt $\mathtt{card}(\mathcal{S}_n) = n!$, wobei der Ausdruck $n!$ (gelesen: \emph{\color{blue}$n$ Fakult\"at})
 durch die Formel 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -54,8 +57,8 @@ $\prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \
 \\[0.2cm]
 M\"oglichkeiten bei der Wahl der Elemente $x_i$. \qed 
 
-Der folgende Begriff des \colorbox{yellow}{\emph{Vorzeichens}} oder auch
-\colorbox{yellow}{\emph{Signums}} einer Permutation ist zentral f\"ur die  
+Der folgende Begriff des {\emph{\color{blue}Vorzeichens}} oder auch
+{\emph{\color{blue}Signums}} einer Permutation ist zentral f\"ur die  
 Definition der Determinante.  F\"ur Permutationen definieren wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -64,7 +67,8 @@ $\mathtt{sgn}: \mathcal{S}_n \rightarrow \{-1, +1 \}$,
 von der wir sp\"ater zeigen werden, dass die Gleichung
 \begin{equation}
   \label{eq:sgn-homomorph}
-  \mathtt{sgn}(R_1 \circ R_2) = \mathtt{sgn}(R_1) \cdot \mathtt{sgn}(R_2) 
+  \mbox{\colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+$\mathtt{sgn}(R_1 \circ R_2) = \mathtt{sgn}(R_1) \cdot \mathtt{sgn}(R_2)$}}}}}} 
 \end{equation}
 f\"ur beliebige Permutationen $R_1,R_2 \in \mathcal{S}_n$ gilt,  die Funktion $\mathtt{sgn}$ ist also
 mit dem Produkt zweier Permutationen vertr\"aglich und damit ein Homomorphismus der Gruppe
@@ -77,7 +81,7 @@ Verf\"ugung steht.
   F\"ur Permutationen $R \in \mathcal{S}_n$ definieren wir f\"ur alle nat\"urlichen Zahlen $n$ eine Funktion
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{inv} : \mathcal{S}_n \mapsto 2^{\mathbb{Z}_n^+ \times \mathbb{Z}_n^+}$,
+  $\mathtt{\color{blue}inv} : \mathcal{S}_n \mapsto 2^{\mathbb{Z}_n^+ \times \mathbb{Z}_n^+}$,
   \\[0.2cm]
   welche jeder Permutation $R \in \mathcal{S}_n$ die Menge von Paaren derjenigen nat\"urlicher Zahlen $k$ und $l$
   zuordnet, f\"ur die
@@ -88,15 +92,21 @@ Verf\"ugung steht.
   gilt.  Formal definieren wir
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{inv}(R) := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
+  ${\color{blue}\mathtt{inv}(R)} := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
   \\[0.2cm]
-  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der \colorbox{yellow}{\emph{Inversionen}} von $R$.
-  Darauf aufbauend definieren wir das \colorbox{yellow}{\emph{Vorzeichen}} (oder auch
-  \colorbox{yellow}{\emph{Signum}}) der Permutation 
+  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der {\emph{\color{blue}Inversionen}} von $R$.
+  Darauf aufbauend definieren wir das {\emph{\color{blue}Vorzeichen}} (oder auch
+  {\emph{\color{blue}Signum}}) der Permutation 
   $R$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(R) := (-1)^{\mathtt{card}(\mathtt{inv}(R))}$.
+  ${\color{blue}\mathtt{sgn}(R)} := (-1)^{\mathtt{card}(\mathtt{inv}(R))} = \left\{
+   \begin{array}{ll}
+     +1 & \mbox{falls $\mathtt{card}(\mathtt{inv}(R)) \,\texttt{\%}\, 2 = 0$;} \\[0.2cm]     
+     -1 & \mbox{falls $\mathtt{card}(\mathtt{inv}(R)) \,\texttt{\%}\, 2 = 1$.} 
+   \end{array}
+   \right.
+  $ %$
   \\[0.2cm]
   Das Signum einer Permutation ist folglich $+1$, wenn die Anzahl der Inversionen von $R$ eine gerade
   Zahl ist, ansonsten hat das Signum den Wert $-1$.  \eox
@@ -105,8 +115,9 @@ Verf\"ugung steht.
 
 Abbildung \ref{fig:signum.stlx} auf Seite \pageref{fig:signum.stlx} zeigt eine Implementierung der
 Funktion \texttt{sgn} in der Sprache \textsc{SetlX}.  Die Permutationen werden in diesem Programm
-als Listen dargestellt.  Beachten Sie, dass der Operator ``\texttt{><}'' in \textsc{SetlX} das
-kartesische Produkt der beiden Mengen berechnet, auf die dieser Operator angewendet wird.
+als Listen dargestellt.  Beachten Sie, dass der Ausdruck $M \,\texttt{**}\, 2$ f\"ur eine Menge $M$
+ in \textsc{SetlX} das kartesische Produkt $M \times M$ berechnet.
+
 
 
 \begin{figure}[!ht]
@@ -117,15 +128,15 @@ kartesische Produkt der beiden Mengen berechnet, auf die dieser Operator angewen
                   labelposition = bottomline,
                   numbers       = left,
                   numbersep     = -0.2cm,
-                  xleftmargin   = 0.3cm,
-                  xrightmargin  = 0.3cm,
+                  xleftmargin   = 0.0cm,
+                  xrightmargin  = 0.0cm,
                 ]
-    inv := procedure(r) {
-        n := #r;
-        return { [k,l] : [k, l] in {1..n} >< {1..n} | k < l && r[k] > r[l] };
+    inv := procedure(L) {
+        n := #L;
+        return { [k,l] : [k, l] in {1..n} ** 2 | k < l && L[k] > L[l] };
     };
-    signum := procedure(r) {
-        return (-1) ** #inv(r);
+    signum := procedure(L) {
+        return (-1) ** #inv(L);
     };
 \end{Verbatim}
 \vspace*{-0.3cm}
@@ -149,15 +160,14 @@ Zeigen Sie, dass f\"ur alle nat\"urlichen Zahlen $n$ die Gleichung
 \exercise
 \"Uberlegen Sie, f\"ur welche Permutation $R \in \mathcal{S}_n$ die Kardinalit\"at der Menge
 $\mathtt{inv}(R)$ maximal wird und berechnen Sie f\"ur diese Permutationen den Ausdruck
-$\mathtt{card}(\mathtt{inv}(R))$. \eoxs
-\pagebreak
+$\mathtt{card}(\mathtt{inv}(R))$. \eox
 
 Im Allgemeinen k\"onnen Permutationen beliebig kompliziert sein.  Es lohnt sich, zun\"achst ganz
 spezielle Permutationen zu betrachten, die nur zwei Elemente vertauschen.  Das f\"uhrt zu der
 folgenden Definition.
 
 \begin{Definition}[Transposition]
-  Eine Permutation $R \in \mathcal{S}_n$ ist eine \colorbox{yellow}{\emph{Transposition}} genau dann, wenn
+  Eine Permutation $R \in \mathcal{S}_n$ ist eine {\emph{\color{blue}Transposition}} genau dann, wenn
   die folgende Bedingung erf\"ullt ist:
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -315,10 +325,9 @@ Wir beweisen diesen Satz durch vollst\"andige Induktion nach $n$.
              \end{enumerate}
              \renewcommand{\labelenumi}{(\alph{enumii})}
 \end{enumerate}
-\pagebreak
 
 \begin{Definition}[Elementare Transposition] \hspace*{\fill} \\
-  Eine Transposition $\tau$ ist eine \emph{elementare Transposition} genau dann, wenn es ein 
+  Eine Transposition $\tau$ ist eine \emph{\color{blue}elementare Transposition} genau dann, wenn es ein 
   $k \in\mathbb{N}$ gibt, so dass 
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -774,7 +783,7 @@ definieren, wie dies 1690 von
 }} 
 vorgeschlagen wurde.  Ist $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$, wobei entweder 
 $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir die
-\colorbox{yellow}{\emph{Determinate}} von $A$ (geschrieben $\mathtt{det}(A)$) \"uber die Formel
+{\emph{\color{blue}Determinate}} von $A$ (geschrieben $\mathtt{det}(A)$) \"uber die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
@@ -823,7 +832,6 @@ $\mathtt{det}(A) = \mathtt{det}\left(\begin{array}{ll}
   = a_{1,1} \cdot a_{2,2} - a_{1,2} \cdot a_{2,1} 
 $
 \eoxs
-\pagebreak
 
 \example
 Ist $A$ eine $3 \times 3$ Matrix, gilt also
@@ -852,7 +860,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Diese Formel wird auch als \emph{Regel von Sarrus} bezeichnet.  Abbildung \ref{fig:sarrus.eps}
+Diese Formel wird auch als \emph{\color{blue}Regel von Sarrus} bezeichnet.  Abbildung \ref{fig:sarrus.eps}
 zeigt, wie Sie sich die Formel leicht merken k\"onnen:  Dazu wiederholen Sie neben der Matrix $A$ die
 ersten beiden Spalten von $A$.  Anschlie\3end bilden Sie alle Produkte von Elementen der Matrix, die
 auf einer fallenden oder steigenden Diagonalen liegen.  Die Produkte auf den fallenden Diagonalen
@@ -1030,7 +1038,7 @@ $\vec{a}_i = [a_{i,1}, \cdots, a_{i,n}]$.
 
 
 \begin{Satz}
-  Die Funktion $\mathtt{det}(A)$ ist \emph{alternierend}: Vertauschen wir zwei Zeilen der Matrix
+  Die Funktion $\mathtt{det}(A)$ ist \emph{\color{blue}alternierend}: Vertauschen wir zwei Zeilen der Matrix
   $A$, so dreht sich das Vorzeichen der Determinante um, genauer gilt f\"ur $k,l \in \{1,\cdots,n\}$
   mit $k < l$:
   \\[0.2cm]
@@ -1126,10 +1134,9 @@ Der gerade bewiesene Satz ist der am schwersten zu beweisende Satz in der Theori
 Determinanten.  Das liegt daran, dass dies der einzige Satz in dieser Theorie ist, bei dessen Beweis
 wir die Eigenschaften der Funktion $\mathtt{sgn}$ tats\"achlich ben\"otigen.  
 \eoxs
-\pagebreak
 
 \exercise
-Wir definieren zu einer Matrix $A \in \mathbb{K}^{n \times n}$ der Form $A = (a_{i,j})$ die \emph{transponierte Matrix} 
+Wir definieren zu einer Matrix $A \in \mathbb{K}^{n \times n}$ der Form $A = (a_{i,j})$ die \emph{\color{blue}transponierte Matrix} 
 $A^\mathrm{T} = (a^\mathrm{T}_{i,j})$ indem wir
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1277,7 +1284,7 @@ gilt.
 \eoxs
 
 \exercise 
-Zeigen Sie, dass die Funktion $\mathtt{det}$ bez\"uglich jeder Zeile der Matrix \emph{additiv} ist: Zeigen Sie
+Zeigen Sie, dass die Funktion $\mathtt{det}$ bez\"uglich jeder Zeile der Matrix \emph{\color{blue}additiv} ist: Zeigen Sie
 also, dass in dem Fall, dass die Matrix $A$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1319,7 +1326,7 @@ $.
 \eoxs
 
 \exercise 
-Zeigen Sie, dass die Funktion $\mathtt{det}$ bez\"uglich jeder Zeile der Matrix \emph{homogen} ist: Zeigen Sie
+Zeigen Sie, dass die Funktion $\mathtt{det}$ bez\"uglich jeder Zeile der Matrix \emph{\color{blue}homogen} ist: Zeigen Sie
 also, dass in dem Fall, dass die Matrix $A$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1511,7 +1518,7 @@ $
 \end{array}$ \qed
 
 \remark
-Ersetzen wir in dem letzten Lemma den Begriff ``\emph{Zeile}'' durch ``\emph{Spalte}'', 
+Ersetzen wir in dem letzten Lemma den Begriff ``\emph{\color{blue}Zeile}'' durch ``\emph{\color{blue}Spalte}'', 
 so bleibt das Lemma g\"ultig, denn die Determinante der transponierten Matrix $A^\mathrm{T}$ ist gleich der
 Determinante von $A$ und beim \"Ubergang von $A$ zur transponierten Matrix $A^\mathrm{T}$ werden aus den
 Spalten der Matrix $A$ die Zeilen der Matrix $A^\mathrm{T}$. 
@@ -1842,7 +1849,6 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      die Gleichung
      $\mathtt{det}(A) = 0$. \qed
 \end{enumerate}
-\pagebreak
 
 \exercise  
 Zeigen Sie, dass die Gleichung  
@@ -1854,7 +1860,7 @@ f\"ur beliebige Matrizen  $A, B \in \mathbb{K}^{n \times n}$ gilt.
 \eoxs  
  
 \exercise
-Eine Matrix $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$ ist eine \emph{obere Dreiecks-Matrix} genau dann, wenn alle Eintr\"age der
+Eine Matrix $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$ ist eine \emph{\color{blue}obere Dreiecks-Matrix} genau dann, wenn alle Eintr\"age der
 Matrix unterhalb der Diagonalen den Wert $0$ haben, formal gilt
 \\[0.2cm]
 \hspace*{1.3cm}

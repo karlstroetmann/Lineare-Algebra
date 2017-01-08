@@ -1,12 +1,12 @@
-// For a given permutation r, this function computes the set of all
-// inversions of r. The permutation r is represented as a list.
-inv := procedure(r) {
-    n := #r;
-    return { [k,l] : [k, l] in {1 .. n} >< {1 .. n} | k < l && r[k] > r[l] };
+// For a given permutation R, this function computes the set of all
+// inversions of R. The permutation R is represented as a list L.
+inv := procedure(L) {
+    n := #L;
+    return { [k,l] : [k, l] in {1 .. n} >< {1 .. n} | k < l && L[k] > L[l] };
 };
-// Tis function computes the sign of the permutation l.  
-signum := procedure(l) {
-    return (-1) ** #inv(l);
+// Tis function computes the sign of the permutation L.  
+signum := procedure(L) {
+    return (-1) ** #inv(L);
 };
 
 // For a given positive natural number n, this function computes the set 
@@ -16,17 +16,17 @@ allPermutations := procedure(n) {
     if (n == 1) {
         return { [1] };
     }
-    return { p[..k-1] + [n] + p[k..]: p in allPermutations(n-1), k in [1..n] };
+    return { L[..k-1] + [n] + L[k..]: L in allPermutations(n-1), k in [1..n] };
 };
 
 test := procedure(m) {
     for (n in [1..m]) {
       print("");
-        sn := allPermutations(n);
-        print("For n = $n$ there are $#sn$ permutations.");
-        for (p in sn) {
-            print("inv($p$) = $inv(p)$");    
-            print("signum($p$) = $signum(p)$");    
+        Sn := allPermutations(n);
+        print("For n = $n$ there are $#Sn$ permutations.");
+        for (L in Sn) {
+            print("inv($L$) = $inv(L)$");    
+            print("signum($L$) = $signum(L)$");    
         }
     }
 };
