@@ -6,7 +6,7 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
       \hspace*{1.3cm}
       $\mathrm{H} \Psi = \mathrm{E} \cdot \Psi$
       \\[0.2cm]
-      ist eine \colorbox{yellow}{\emph{Eigenwert-Gleichung}}.  Hier ist $\mathrm{H}$ der sogenannte
+      ist eine {\emph{\color{blue}Eigenwert-Gleichung}}.  Hier ist $\mathrm{H}$ der sogenannte
       \href{http://de.wikipedia.org/wiki/Hamilton-Operator}{Hamilton-Operator}, der auf die
       \href{http://de.wikipedia.org/wiki/Wellenfunktion}{Wellenfunktion} $\Psi$ angewendet wird.
       Dabei kommt wieder die Wellenfunktion $\Psi$ als Ergebnis heraus, allerdings multipliziert mit
@@ -20,7 +20,7 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
       l\"osen.  Um die Schr\"odinger-Gleichungen numerisch zu l\"osen, wird der Hamilton-Operator zun\"achst
       durch eine Matrix approximiert und anschlie\3end werden die Eigenwerte dieser Matrix berechnet.
 \item In der Informatik werden Eigenvektoren unter anderem bei der 
-      \colorbox{yellow}{\emph{Unabh\"angigkeits-Analyse}} ben\"otigt.  Die Unabh\"angigkeits-Analyse
+      {\emph{\color{blue}Unabh\"angigkeits-Analyse}} ben\"otigt.  Die Unabh\"angigkeits-Analyse
       kann beispielsweise dazu benutzt werden, das
       \href{http://research.ics.aalto.fi/ica/cocktail/cocktail_en.cgi}{Cocktail-Party-Problem} zu l\"osen.
       Bei diesem Problem geht es darum, verschiedene Ger\"auschquellen zu isolieren:  Stellen
@@ -32,9 +32,9 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
 
       Neben dem Cocktail-Party-Problem gibt es zahlreiche anderen Anwendungen der
       Unabh\"angigkeits-Analyse sowohl in der Informatik im Bereich des 
-      \colorbox{yellow}{\emph{Data-Minings}} als auch in vielen anderen Bereichen der Wissenschaft.
+      {\emph{\color{blue}Data-Minings}} als auch in vielen anderen Bereichen der Wissenschaft.
 \item Eine andere Anwendung von Eigenvektoren ist die L\"osung von
-      solchen \colorbox{yellow}{\emph{Rekurrenz-Gleichungen}}, die bei Komplexit\"atsanalyse von Algorithmen auftreten.
+      solchen {\emph{\color{blue}Rekurrenz-Gleichungen}}, die bei Komplexit\"atsanalyse von Algorithmen auftreten.
 \item Die Liste der Anwendungen von Eigenvektoren lie\3e sich problemlos fortsetzen.  Allerdings
       w\"urden Ihnen die meisten Anwendungen zum jetzigen Zeitpunkt Ihres Studiums noch wenig sagen.
       Daher spare ich mir hier weitere Beispiele.
@@ -46,7 +46,7 @@ lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren l\"osen lassen.
 \section{Definition und Berechnung von Eigenwerten}
 \begin{Definition}[Eigenwert]
 Es sei $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix.  Ein Vektor $\vec{x} \in \mathbb{K}^n$ mit $\vec{x} \not=\vec{0}$
-ist ein \colorbox{yellow}{\emph{Eigenvektor}} der Matrix $A$ zum \colorbox{yellow}{\emph{Eigenwert}} $\lambda \in \mathbb{K}$ genau dann, wenn  
+ist ein {\emph{\color{blue}Eigenvektor}} der Matrix $A$ zum {\emph{\color{blue}Eigenwert}} $\lambda \in \mathbb{K}$ genau dann, wenn  
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot \vec{x} = \lambda \cdot \vec{x}$
@@ -172,7 +172,7 @@ Nach dem letzten Satz sind die Eigenwerte genau die Werte $\lambda$, f\"ur die d
 \\[0.2cm]
 den Wert $0$ annimmt.  Berechnen wir diesen Ausdruck mit Hilfe der von Leibniz angegebenen Formel,
 so erhalten wir ein Polynom in der Unbestimmten $\lambda$.  Dieses Polynom hei\3t das
-\colorbox{yellow}{\emph{charakteristische Polynom}} der Matrix $A$ und ist formal als
+{\emph{\color{blue}charakteristische Polynom}} der Matrix $A$ und ist formal als
 \\[0.2cm]
 \hspace*{1.3cm}
 $\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_n - A)$
@@ -275,7 +275,7 @@ $
 keinen reellen Eigenwert? \eoxs
 
 \begin{Definition}[Diagonalisierbarkeit]
-Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist \colorbox{yellow}{\emph{diagonalisierbar}} genau dann, wenn die Matrix
+Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist {\emph{\color{blue}diagonalisierbar}} genau dann, wenn die Matrix
  $n$ linear unabh\"angige Eigenvektoren besitzt.  \eoxs 
 \end{Definition}
 
@@ -367,7 +367,7 @@ Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibona
 $f_{n+2} = f_{n+1} + f_n$
 \\[0.2cm]
 zusammen mit den Anfangs-Bedingungen $f_0 = 0$ und $f_1 = 1$ definiert.   Eine Gleichung der obigen Form
-wird als \colorbox{yellow}{\emph{lineare Rekurrenz-Gleichung}} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
+wird als {\emph{\color{blue}lineare Rekurrenz-Gleichung}} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
 der Absch\"atzung der Komplexit\"at von Algorithmen h\"aufig begegnen und wir zeigen nun am Beispiel der
 Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung l\"osen l\"asst.  Dazu definieren wir
 zun\"achst die Matrix $A$ als
