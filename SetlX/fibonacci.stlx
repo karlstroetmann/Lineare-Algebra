@@ -4,8 +4,27 @@ fibonacci := procedure(n) {
     }
     return fibonacci(n-1) + fibonacci(n-2);
 };
-
-for (n in [0 .. 100]) {
-    print("fibonacci($n$) = $fibonacci(n)$");
+// Left pad object o to size n.
+padLeft := procedure(o, n) {
+    s := o + "";
+    return " " * (n - #s) + s;
+};
+// trim object to the right
+trimRight := procedure(o, n) {
+    s := o + " " * n;
+    return s[..n];
+};
+    
+oldTime := 1;
+for (n in [10 .. 1000]) {
+    start  := now();
+    fn     := fibonacci(n);
+    stop   := now();
+    time   := (stop - start) / 1000.0;
+    result := "fibonacci(" + padLeft(n, 3) + ") = " + padLeft(fn, 12) + ",  " +
+              "time: " + padLeft(time, 10) + " seconds" +
+              ",  f = " + trimRight(time / oldTime, 5);
+    print(result);
+    oldTime := time;
 }
 
