@@ -1,5 +1,6 @@
 \chapter{Eigenwerte und Eigenvektoren \label{chapter:eigenwerte}}
-Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linearen Algebra:
+\href{https://de.wikipedia.org/wiki/Eigenwertproblem}{Eigenwerte und Eigenvektoren} geh\"oren zu den
+wichtigsten Anwendungen der linearen Algebra: 
 \begin{enumerate}
 \item Die \href{http://de.wikipedia.org/wiki/Schr\"odingergleichung}{Schr\"odinger-Gleichung}
       \\[0.2cm]
@@ -14,11 +15,10 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
 
       Die Schr\"odinger-Gleichung ist die Grundlage der \href{http://de.wikipedia.org/wiki/Quantenmechanik}{Quanten-Mechanik}.
       Nat\"urlich erwarte ich von Ihnen nicht, dass Sie diese Gleichung verstehen.  Ich habe diese
-      Gleichung als erstes aufgelistet, weil dies einerseits fr\"uher einer der wichtigsten Anwendung von
-      Eigenvektoren war und weil ich andererseits selber im Rahmen meiner Diplomarbeit im
+      Gleichung als erstes aufgelistet,  weil ich im Rahmen meiner Diplomarbeit im
       wesentlichen nichts anderes gemacht habe, als auf numerischem Wege Schr\"odinger-Gleichungen zu
-      l\"osen.  Um die Schr\"odinger-Gleichungen numerisch zu l\"osen, wird der Hamilton-Operator zun\"achst
-      durch eine Matrix approximiert und anschlie\3end werden die Eigenwerte dieser Matrix berechnet.
+      l\"osen.  Dazu habe ich den Hamilton-Operator $\mathrm{H}$ zun\"achst durch eine Matrix
+      approximiert.  Anschlie\3end konnte ich die Eigenwerte dieser Matrix berechnen.  
 \item In der Informatik werden Eigenvektoren unter anderem bei der 
       {\emph{\color{blue}Unabh\"angigkeits-Analyse}} ben\"otigt.  Die Unabh\"angigkeits-Analyse
       kann beispielsweise dazu benutzt werden, das
@@ -34,14 +34,17 @@ Eigenwerte und Eigenvektoren geh\"oren zu den wichtigsten Anwendungen der linear
       Unabh\"angigkeits-Analyse sowohl in der Informatik im Bereich des 
       {\emph{\color{blue}Data-Minings}} als auch in vielen anderen Bereichen der Wissenschaft.
 \item Eine andere Anwendung von Eigenvektoren ist die L\"osung von
-      solchen {\emph{\color{blue}Rekurrenz-Gleichungen}}, die bei Komplexit\"atsanalyse von Algorithmen auftreten.
-\item Die Liste der Anwendungen von Eigenvektoren lie\3e sich problemlos fortsetzen.  Allerdings
-      w\"urden Ihnen die meisten Anwendungen zum jetzigen Zeitpunkt Ihres Studiums noch wenig sagen.
-      Daher spare ich mir hier weitere Beispiele.
+      {\emph{\color{blue}Rekurrenz-Gleichungen}}, die bei Komplexit\"atsanalyse von Algorithmen
+      auftreten.  Daf\"ur werden wir am Ende des Kapitels ein Beispiel geben.
+\item Weitere Anwendungen von Eigenvektoren und den Ihnen zugeordneten Eigenwerten
+      finden Sie beispielsweise unter 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      \href{https://de.wikipedia.org/wiki/Eigenwertproblem#Praktische_Beispiele}{https://de.wikipedia.org/wiki/Eigenwertproblem\#Praktische\_Beispiele}.
 \end{enumerate}
 In diesem Kapitel f\"uhren wir zun\"achst Eigenwerte und Eigenvektoren ein und zeigen dann, wie sich 
 lineare Rekurrenz-Gleichungen mit Hilfe von Eigenvektoren l\"osen lassen.  
-\pagebreak
+
 
 \section{Definition und Berechnung von Eigenwerten}
 \begin{Definition}[Eigenwert]
@@ -58,7 +61,7 @@ gilt.  \eoxs
 Die Matrix $A \in \mathbb{R}^{2 \times 2}$ sei als
 \\[0.2cm]
 \hspace*{1.3cm}
-$A = \left(
+$A := \left(
   \begin{array}{ll}
     2 & 1 \\
     1 & 2
@@ -66,24 +69,24 @@ $A = \left(
   \right)
 $
 \\[0.2cm]
-gegeben.  Die Vektoren $\vec{x}$ und $\vec{y}$ seien definiert als
+gegeben.  Die Vektoren $\vec{x}$ und $\vec{y}$ seien durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\vec{x} = \left(
+$\vec{x} := \left(
 \begin{array}{r}
   1 \\
   1    
 \end{array}\right)
 $ \quad und \quad 
-$\vec{y} = \left(
+$\vec{y} := \left(
 \begin{array}{r}
   1 \\
   -1    
 \end{array}
 \right)
-$.
+$
 \\[0.2cm]
-Dann gilt 
+definiert.  Dann gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
 $A \cdot \vec{x} = \left(
@@ -97,7 +100,7 @@ $A \cdot \vec{y} = \left(
   -1    
 \end{array}\right) = 1 \cdot \vec{y}$.
 \\[0.2cm]
-Folglich ist $\vec{x}$ eine Eigenvektor von $A$ zum Eigenwert $3$, w\"ahrend $\vec{y}$ ein
+Folglich ist $\vec{x}$ ein Eigenvektor von $A$ zum Eigenwert $3$, w\"ahrend $\vec{y}$ ein
 Eigenvektor von $A$ zum Eigenwert $1$ ist.  \eox
 
 \remark
@@ -123,7 +126,12 @@ durch die Gleichung
 \hspace*{1.3cm}
 $\mathrm{D}(f) := \displaystyle\frac{\mathrm{d}f}{\mathrm{d}x}$
 \\[0.2cm]
-definiert ist, die Funktion $x \mapsto e^x$ als Eigenvektor zum Eigenwert $1$.  
+definiert ist, f\"ur jedes $\lambda \in \mathbb{R}$ die Funktion
+\\[0.2cm]
+\hspace*{1.3cm}
+ $x \mapsto e^x$ 
+\\[0.2cm]
+als Eigenvektor zum Eigenwert $\lambda$.  
 Der Vektor-Raum $\mathcal{C}^\infty(\mathbb{R})$ der unendlich oft differenzierbaren Funktionen ist
 unendlich-dimensional und hat daher eine wesentlich komplexere Struktur als die
 endlich-dimensionalen Vektor-R\"aume, mit denen wir uns im Rest dieser Vorlesung besch\"aftigen werden.
@@ -145,7 +153,6 @@ Determinanten im letzten Kapitel einzuf\"uhren.
   \\[0.2cm]
   gilt. 
 \end{Satz}
-\pagebreak
 
 \proof
 Falls $\vec{x} \not= \vec{0}$ ein Eigenvektor von $A$ zum Eigenwert $\lambda$ ist, so haben wir die folgende
@@ -154,12 +161,12 @@ Kette von \"Aquivalenzen:
 \hspace*{1.3cm}
 $
 \begin{array}[b]{lll}
-                  & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x}  = \lambda \cdot \vec{x}\bigr) \\
-\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x} - \lambda \cdot \mathrm{E}_n \cdot \vec{x} = \vec{0}\bigr) \\
-\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \vec{x} = \vec{0}\bigr) \\
-\Leftrightarrow   & \mathtt{Kern}(A - \lambda \cdot \mathrm{E}_n) \not= \{\vec{0}\} \\
-\Leftrightarrow   & \mbox{$A - \lambda \cdot \mathrm{E}_n$ ist nicht invertierbar} \\
-\Leftrightarrow   & \mathtt{det}(A - \lambda \cdot \mathrm{E}_n) = 0  \\
+                  & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x}  = \lambda \cdot \vec{x}\bigr) \\[0.2cm]
+\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge A \cdot \vec{x} - \lambda \cdot \mathrm{E}_n \cdot \vec{x} = \vec{0}\bigr) \\[0.2cm]
+\Leftrightarrow   & \exists \vec{x} \in \mathbb{K}^n: \bigl(\vec{x} \not=\vec{0} \wedge (A - \lambda \cdot \mathrm{E}_n) \cdot \vec{x} = \vec{0}\bigr) \\[0.2cm]
+\Leftrightarrow   & \mathtt{Kern}(A - \lambda \cdot \mathrm{E}_n) \not= \{\vec{0}\} \\[0.2cm]
+\Leftrightarrow   & \mbox{$A - \lambda \cdot \mathrm{E}_n$ ist nicht invertierbar} \\[0.2cm]
+\Leftrightarrow   & \mathtt{det}(A - \lambda \cdot \mathrm{E}_n) = 0  \\[0.2cm]
 \Leftrightarrow   & \mathtt{det}(\lambda \cdot \mathrm{E}_n - A) = 0  
 \end{array}
 $
@@ -180,8 +187,9 @@ $\chi_A(\lambda) = \mathtt{det}(\lambda \cdot \mathrm{E}_n - A)$
 definiert.  Die Nullstellen von $\chi_A$ sind also gerade die Eigenwerte von $A$, formal gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lambda$ ist Eigenwert von $A$ \quad g.d.w. \quad $\chi_A(\lambda) = 0$.
-
+$\lambda$ ist Eigenwert von $A$ \quad g.d.w. \quad $\chi_A(\lambda) = 0$.  
+\\[0.2cm]
+Falls $A \in \mathbb{K}^{n \times n}$ ist, so ist $\chi_A(\lambda)$ ein Polynom vom Grad $n$ in der Unbestimmten $\lambda$.
 
 
 \example
@@ -241,10 +249,9 @@ vereinfachen.
 Offenbar ist die zweite Gleichung zur ersten Gleichung \"aquivalent und kann daher weggelassen
 werden.  Da wir dann nur noch eine Gleichung aber zwei Unbekannte haben, k\"onnen wir eine der
 Unbekannten frei w\"ahlen. Wie m\"ussen lediglich darauf achten, dass der Vektor
- $\left(x_1 \atop x_2\right)$ vom Nullvektor verschieden ist.  Wir setzen daher $x_1 := 1$ und
- finden dann $x_2 = 1$.  Damit haben wir den Vektor $\vec{x} = \left(1 \atop 1\right)$
+ $\ds\left(x_1 \atop x_2\right)$ vom Nullvektor verschieden ist.  Wir setzen daher $x_1 := 1$ und
+ finden dann $x_2 = 1$.  Damit haben wir den Vektor $\ds\vec{x} = \left(1 \atop 1\right)$
 als Eigenvektor der Matrix $A$ zum Eigenwert $3$ gefunden.
-\pagebreak
 
 \exercise
 \"Uberlegen Sie sich, f\"ur welche Werte von $a$, $b$ und $c$ die Matrix 
@@ -274,7 +281,7 @@ $
 \\[0.2cm]
 keinen reellen Eigenwert? \eoxs
 
-\begin{Definition}[Diagonalisierbarkeit]
+\begin{Definition}[Diagonalisierbarkeit] \hspace*{\fill} \\
 Eine Matrix $A \in \mathbb{K}^{n \times n}$ ist {\emph{\color{blue}diagonalisierbar}} genau dann, wenn die Matrix
  $n$ linear unabh\"angige Eigenvektoren besitzt.  \eoxs 
 \end{Definition}
@@ -316,7 +323,7 @@ $.
 In Komponentenschreibweise k\"onnen wir die Matrix $D$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$D = (d_{i,j})$ \quad mit $d_{i,j} := \lambda_i \cdot \delta_{i,j}$ \quad f\"ur alle $i,j\in \{1,\cdots,n\}$
+$D = \bigl(\lambda_i \cdot \delta_{i,j}\bigr)$ \quad f\"ur alle $i,j\in \{1,\cdots,n\}$
 \\[0.2cm]
 schreiben, wobei $\delta_{i,j}$ das bereits fr\"uher definierte
 \href{http://de.wikipedia.org/wiki/Kronecker-Delta}{Kronecker-Delta} bezeichnet.  Da die $n$
@@ -367,8 +374,8 @@ Die Folge $(f_n)_{n\in\mathbb{N}}$ der \href{http://de.wikipedia.org/wiki/Fibona
 $f_{n+2} = f_{n+1} + f_n$
 \\[0.2cm]
 zusammen mit den Anfangs-Bedingungen $f_0 = 0$ und $f_1 = 1$ definiert.   Eine Gleichung der obigen Form
-wird als {\emph{\color{blue}lineare Rekurrenz-Gleichung}} bezeichnet.  Solche Gleichungen werden uns sp\"ater bei
-der Absch\"atzung der Komplexit\"at von Algorithmen h\"aufig begegnen und wir zeigen nun am Beispiel der
+wird als {\emph{\color{blue}lineare Rekurrenz-Gleichung}} bezeichnet.  Solche Gleichungen werden uns im zweiten
+Semester bei der Absch\"atzung der Komplexit\"at von Algorithmen mehrfach begegnen und wir zeigen nun am Beispiel der
 Fibonacci-Zahlen, wie sich eine solche Rekurrenz-Gleichung l\"osen l\"asst.  Dazu definieren wir
 zun\"achst die Matrix $A$ als
 \\[0.2cm]
@@ -380,7 +387,7 @@ $A := \left(
   \end{array}
 \right)
 $.
-\\[0.2cm]
+\\
 Weiter definieren wir den Vektor $\vec{x}_n$ f\"ur alle $n \in \mathbb{N}$ als 
 $\ds\vec{x}_n := \left(f_n \atop f_{n+1}\right)$.  Dann haben wir
 \\[0.2cm]
@@ -411,19 +418,13 @@ Wir haben also gezeigt, dass
 \hspace*{1.3cm}
 $\vec{x}_{n+1} = A \cdot \vec{x}_n$ \quad f\"ur alle $n \in \mathbb{N}$
 \\[0.2cm]
-gilt, wobei wir f\"ur die Fibonacci-Zahlen $f_n$ die Gleichung
-\\[0.2cm]
-\hspace*{1.3cm}
-$f_{n+2} = f_n + f_{n+1}$
-\\[0.2cm]
-benutzt haben.   Aus der Gleichung $\vec{x}_{n+1} = A \cdot\vec{x}_n$ 
-folgt durch eine triviale Induktion nach $n$, dass
+gilt.  Aus dieser Gleichung $\vec{x}_{n+1} = A \cdot\vec{x}_n$ folgt durch eine einfache Induktion nach $n$, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\vec{x}_n = A^n \cdot\vec{x}_0$
 \\[0.2cm]
-gilt, wobei $A^0 = \mathrm{E}_2$ ist und $\vec{x}_0 = \left(0 \atop 1\right)$ gilt.  Wollen wir
-Potenzen $A^n$ berechnen, so ist es zweckm\"a\3ig, die Matrix $A$ vorher zu diagonalisieren.  Wir
+gilt, wobei $A^0$ die Einheits-Matrix $\mathrm{E}_2$ ist und $\ds\vec{x}_0 = \left(0 \atop 1\right)$ gilt.
+Wollen wir die Potenzen $A^n$ berechnen, so ist es zweckm\"a\3ig, die Matrix $A$ vorher zu diagonalisieren.  Wir
 berechnen zun\"achst das charakteristische Polynom von $A$:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -440,11 +441,12 @@ Nun bestimmen wir die Nullstellen von $\chi_A(\lambda)$, denn das sind die Eigen
 \\[0.2cm]
 \hspace*{1.3cm}
 $
-\begin{array}[t]{ll}
+\begin{array}[t]{lll}
                 & \chi_A(\lambda) = 0 \\[0.2cm]
 \Leftrightarrow & \lambda^2 - \lambda - 1 = 0 \\[0.2cm] 
 \Leftrightarrow & \lambda^2 - \lambda     = 1 \\[0.2cm]
-\Leftrightarrow & \lambda^2 - \lambda + \left(\frac{1}{2}\right)^2 = 1 + \frac{1}{4} \\[0.4cm]
+\Leftrightarrow & \lambda^2 - \lambda + \left(\frac{1}{2}\right)^2 = 1 + \frac{1}{4} 
+                & \mbox{quadratische Erg\"anzung}  \\[0.4cm]
 \Leftrightarrow & \ds\left(\lambda - \frac{1}{2}\right)^2 = \frac{5}{4} \\[0.4cm]
 \Leftrightarrow & \ds\lambda = \frac{1}{2} + \frac{\sqrt{5}}{2} \;\vee\; \lambda = \frac{1}{2} - \frac{\sqrt{5}}{2} 
 \end{array}
@@ -462,19 +464,19 @@ so haben wir also
 \hspace*{1.3cm}
 $A \cdot \vec{y} = \lambda_1 \cdot \vec{y}$
 \\[0.2cm]
-und aus dieser Gleichung folgt, dass f\"ur die Komponenten $y_1$ und $y_2$
+und aus dieser Gleichung folgt, dass f\"ur die Komponenten $y_1$ und $y_2$ die Gleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $y_2 = \lambda_1 \cdot y_1$  \quad und \quad $y_1 + y_2 = \lambda_1 \cdot y_2$
 \\[0.2cm]
-gelten muss.  Es l\"asst sich zeigen, dass die zweite Gleichung aus der ersten folgt.
+gelten m\"ussen.  Es l\"asst sich zeigen, dass die zweite Gleichung aus der ersten folgt.
 Setzen wir $y_1 := 1$, so erhalten wir aus der ersten Gleichung $y_2 = \lambda_1$.
 Damit hat der Eigenvektor $\vec{y}$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\vec{y} = \left(1 \atop \lambda_1\right)$.
 \\[0.2cm]
-Auf analoge Weise finden wie f\"ur den zweiten Eigenvektor $\ds\vec{z} =  \left(z_1 \atop z_2\right)$
+Auf analoge Weise finden wie f\"ur den zweiten Eigenvektor $\ds\vec{z} := \left(z_1 \atop z_2\right)$
 das Ergebnis
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -496,7 +498,7 @@ Wir hatten in einer \"Ubungsaufgabe eine Formel zur Berechnung des Inversen eine
 hergeleitet.  Nach dieser Formel ist das Inverse der Matrix $X$ durch
 \\[0.2cm]
 \hspace*{1.3cm}
-$X^{-1} = -\bruch{1}{\sqrt{5}} \cdot \left( 
+$X^{-1} = \bruch{1}{\mathtt{det}(A)} \cdot \left( 
   \begin{array}{rr}
     \lambda_2 & -1 \\
     -\lambda_1 & 1
@@ -580,14 +582,24 @@ $
 \end{array}
 $
 \\[0.2cm]
-Die erste Komponente von $\vec{x}_n$ ist gleich $f_n$.  Daher haben wir f\"ur die $n$-te
+Zwischen dem Vektor  $\vec{x}_n$ und den Fibonacci-Zahlen $f_n$ besteht nach Definition von $\vec{x}_n$ der Zusammenhang
+\\[-0.2cm]
+\hspace*{1.3cm}
+$\ds \vec{x}_n = \left(
+  \begin{array}{cc}
+    f_n \\ f_{n+1}
+  \end{array}
+  \right)
+$.
+\\[0.2cm]
+Daher haben wir f\"ur die $n$-te
 Fibonacci-Zahl $f_n$ die Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
-$\displaystyle f_n = \bruch{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$ 
-\quad mit \quad $\lambda_1 = \frac{1}{2}\cdot(1 + \sqrt{5})$ 
-\quad und \quad $\lambda_2 = \frac{1}{2}\cdot(1 - \sqrt{5})$}}}}}
+$\ds f_n = \frac{1}{\sqrt{5}} \cdot (\lambda_1^n -\lambda_2^n)$ 
+\quad mit \quad $\ds\lambda_1 = \frac{1}{2}\cdot \bigl(1 + \sqrt{5}\bigr)$ 
+\quad und \quad $\ds\lambda_2 = \frac{1}{2}\cdot \bigl(1 - \sqrt{5}\bigr)$}}}}}
 \\[0.2cm]
 gefunden.
 
