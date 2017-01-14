@@ -1,14 +1,14 @@
-// For a given permutation r, this function computes the set of all inversions of
-// r. The permutation r is represented as a list.
-inv := procedure(r) {
-    n := #r;
-    return { [k,l] : [k, l] in {1 .. n} >< {1 .. n}
-                   | k < l && r[k] > r[l]
-	   };
+// For a given permutation represented as list L, this function computes the set
+// of all inversions.
+inv := procedure(L) {
+    n := #L;
+    return { [k,l] : k in {1 .. n}, l in {1 .. n}
+                   | k < l && L[k] > L[l]
+	       };
 };
-// Tis function computes the sign of the permutation l.  
-signum := procedure(l) {
-    return (-1) ** #inv(l);
+// This function computes the sign of the permutation L.  
+sgn := procedure(L) {
+    return (-1) ** #inv(L);
 };
 // For a given positive natural number n, this function computes the set 
 // Sn, which is the set of all permutations of n elements.  These permutations
@@ -17,33 +17,28 @@ allPermutations := procedure(n) {
     if (n == 1) {
         return { [1] };
     }
-    return { p[..k-1] + [n] + p[k..] : p in allPermutations(n-1), k in [1..n] };
+    return { L[..k-1] + [n] + L[k..] : L in allPermutations(n-1), k in [1..n] };
 };
 // This procedure computes the formula for det(A) where A is an n >< n matrix.
 determinant := procedure(n) {
     det := "";
-    for (l in allPermutations(n)) {
-        if (signum(l) == 1) {
-            det += " " * 6 + " +" + product(n, l);
+    Sn  := allPermutations(n);
+    assert(#Sn == n!, "Wrong number of permutations!");
+    for (L in Sn) {
+        if (sgn(L) == 1) {
+            det += " " * 6 + " + " + product(n, L);
         } else {
-            det += " " * 6 + " -" + product(n, l);
+            det += " " * 6 + " - " + product(n, L);
         }
     }
-    return det[10..];
+    return det;
 };
-product := procedure(n, l) {
-    p := " ";
-    for (i in [1 .. n]) {
-        if (i > 1) {
-            p += " * ";
-        }
-        p += "a[$i$][$l[i]$]";
-    }
-    return p + "\n";
+product := procedure(n, L) {
+    return join([ "A[$i$][$L[i]$]" : i in [1 .. n] ], " * ") + "\n";
 };
 
 test := procedure(n) {
-    print("n = $n$:\ndet(A) = $determinant(n)$");
+    print("n = $n$:\ndet(A) = \n$determinant(n)$");
 };
 
 test(2);
