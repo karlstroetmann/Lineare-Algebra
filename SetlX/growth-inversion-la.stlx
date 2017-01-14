@@ -1,0 +1,14 @@
+s := {1 .. 10};
+n := 10;
+
+growthRate := 1.0;
+time    := 1.0;
+for (n in [10 .. 100]) {
+    start := now();
+    A := la_matrix([[rnd(s)/rnd(s) : c in [1 .. n]] : r in [1 .. n]]);
+    B := A ** -1;
+    stop := now();
+    oldTime := time;
+    time    := 1.0 * (stop - start); 
+    print("n = $n$: $time$, $time / oldTime$");
+}

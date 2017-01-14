@@ -1,0 +1,19 @@
+load("inverse-pure.stlx");
+s := {1 .. 10};
+n := 10;
+
+growthRate := 1.0;
+time    := 1.0;
+for (n in [10 .. 100]) {
+    start := now();
+    A := [[rnd(s)/rnd(s) : c in [1 .. n]] : r in [1 .. n]];
+    B := inverse(A);
+    if (B == om) {
+        print("not invertible");
+    }
+    stop := now();
+    oldTime := time;
+    time    := 1.0 * (stop - start); 
+    print("n = $n$: $time$, $time / oldTime$");
+}
+
