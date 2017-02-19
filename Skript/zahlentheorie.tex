@@ -33,7 +33,7 @@ Der {\emph{\color{blue}gr\"{o}\3te gemeinsame Teiler}} von $a$ und $b$ ist als d
 es gilt also 
 \[ \texttt{ggt}(a,b) = \max\bigl(\texttt{gt}(a,b)\bigr). \]
 
-\begin{Satz}[Divison mit Rest]
+\begin{Satz}[Division mit Rest]
   \label{satz:division_mit_rest}
   Sind $a$ und $b$ nat\"{u}rliche Zahlen, so gibt es eindeutig bestimmte ganze Zahlen 
   $q$ und $r$, so dass 
@@ -42,7 +42,7 @@ es gilt also
   $a = q \cdot b + r$ \quad mit $r < b$
   \\[0.2cm]
   gilt.  Wir nennen dann $q$ den {\emph{\color{blue}Ganzzahl-Quotienten}} und $r$ den {\emph{\color{blue}Rest}} der ganzzahligen
-  Divison von $a$ durch $b$.  Als Operator f\"{u}r die Ganzzahl-Divison verwenden wir ``$\div$''
+  Division von $a$ durch $b$.  Als Operator f\"{u}r die Ganzzahl-Division verwenden wir ``$\div$''
   und f\"{u}r die Bildung des Rests verwenden wir den Operator ``\texttt{\%}''.
   Damit gilt 
   \\[0.2cm]
@@ -65,7 +65,7 @@ $(a+1) \cdot b = a \cdot b + b > a \cdot b \geq a$, \quad denn $b \geq 1$.
 \\[0.2cm]
 Damit ist auch klar, dass alle Zahlen, die gr\"{o}\3er als $a$ sind, keine Elemente
 von $M$ sein k\"{o}nnen.  Insgesamt wissen wir jetzt, dass die Menge nicht leer ist und dass alle
-Elemente von $M$ kleiner-gleich $a$ sind.  Folglich muss die Menge $M$ eine Maximum haben.
+Elemente von $M$ kleiner-gleich $a$ sind.  Folglich muss die Menge $M$ ein Maximum haben.
 Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -205,7 +205,7 @@ Wir zerlegen den Beweis in zwei Teile:
       \hspace*{1.3cm}
       $a = (h + l) \cdot l + b \modulo n$,
       \\[0.2cm]
-      umstellen k\"{o}nnen.  Aus dieser Gleichung folgt wegen der im Satz von der Divison mit Rest 
+      umstellen k\"{o}nnen.  Aus dieser Gleichung folgt wegen der im Satz von der Division mit Rest 
       (Satz \ref{satz:division_mit_rest})
       gemachten Eindeutigkeits-Aussage, dass
       \\[0.2cm]
@@ -219,7 +219,7 @@ Wir zerlegen den Beweis in zwei Teile:
       \hspace*{1.3cm}
       $a \modulo n = b \modulo n$ 
       \\[0.2cm]
-      vorausgesetzt. Nach Definition des Modulo-Operators gibt es nat\"{u}liche Zahlen
+      vorausgesetzt. Nach Definition des Modulo-Operators gibt es nat\"{u}rliche Zahlen
       $k,l \in \mathbb{N}$, so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -236,7 +236,7 @@ Wir zerlegen den Beweis in zwei Teile:
       \hspace*{1.3cm}
       $a - b = (k - l) \cdot n$,
       \\[0.2cm]
-      so dass $n$ ein Teiler von $(a- b)$ ist und dass hei\3t $a \approx_n b$. \checkmark \qed
+      so dass $n$ ein Teiler von $(a- b)$ ist und das hei\3t $a \approx_n b$. \checkmark \qed
 \end{enumerate}
 
 \begin{Satz}
@@ -926,11 +926,11 @@ Um nachzuweisen, dass das in Abbildung \ref{fig:ggt.stlx} gezeigte Programm tats
 funktioniert, m\"{u}ssen wir noch zeigen, dass es in jedem Fall terminiert.  Dies folgt aber sofort
 daraus, dass die Summe der Argumente $x + y$ bei jedem rekursiven Aufruf kleiner wird: 
 \begin{enumerate}
-\item Falls $x < y$ ist, haben wir f\"{u}r die Summe der Argument des  rekursiven Aufrufs
+\item Falls $x < y$ ist, haben wir f\"{u}r die Summe der Argumente des  rekursiven Aufrufs
       \\[0.2cm]
       \hspace*{1.3cm}
       $x + (y - x) = y < x + y$ \quad falls $x > 0$ ist.
-\item Falls $y < x$ ist, haben wir f\"{u}r die Summe der Argument des  rekursiven Aufrufs
+\item Falls $y < x$ ist, haben wir f\"{u}r die Summe der Argumente des  rekursiven Aufrufs
       \\[0.2cm]
       \hspace*{1.3cm}
       $(x - y) + y = x < x + y$ \quad falls $y > 0$ ist.
@@ -996,7 +996,7 @@ $\textsl{ggt}(x,y) = \textsl{ggt}(y, x \modulo y)$.
 \end{Korollar}
 
 \proof
-Nach dem Satz \"{u}ber die Divison mit Rest gibt es eine Zahl $k \in \mathbb{Z}$, so dass
+Nach dem Satz \"{u}ber die Division mit Rest gibt es eine Zahl $k \in \mathbb{Z}$, so dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $x = k \cdot y + x \modulo y$
@@ -1192,7 +1192,7 @@ Wenn $p$ das Produkt $a \cdot b$ teilt, dann gibt es eine nat\"{u}rliche Zahl $c
   \label{eq:leuklid1}
   c \cdot p = a \cdot b
 \end{equation}
-ist.  Wir nehmen an, dass $p$ kein Teiler von $a$ ist.  Dann m\"{u}ssen wir zeigen, dass $p$ eine
+ist.  Wir nehmen an, dass $p$ kein Teiler von $a$ ist.  Dann m\"{u}ssen wir zeigen, dass $p$ ein
 Teiler von $b$ ist.  Wenn $p$ kein Teiler von $a$ ist, dann folgt aus der Tatsache, dass
 $p$ eine Primzahl ist, dass
 \\[0.2cm]
@@ -1251,14 +1251,14 @@ und sind $e_1$, $\cdots$, $e_k$ positive nat\"{u}rliche Zahl, so nennen wir eine
 \hspace*{1.3cm}
 $\prod\limits_{i=1}^k  p_i^{e_i} = p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k}$
 \\[0.2cm]
-eine \emph{kanonische Primfaktor-Zerlegung}.  Die Tasache, dass es f\"{u}r jede nat\"{u}rliche Zahl, die
+eine \emph{kanonische Primfaktor-Zerlegung}.  Die Tatsache, dass es f\"{u}r jede nat\"{u}rliche Zahl, die
 gr\"{o}\3er als $1$ ist, eine kanonische Primfaktor-Zerlegung gibt, die dar\"{u}ber hinaus noch eindeutig
 ist,  ist ein wesentliches Ergebnis der elementaren Zahlentheorie.
 
 
 \begin{Theorem}[Fundamentalsatz der Arithmetik]
 \label{theorem:fundamental-arithmetik} \lb
-  Es sei $n$ eine nat\"{u}rliche Zahlen gr\"{o}\3er als $1$.  Dann l\"{a}sst sich $n$ auf genau eine Weise in der Form
+  Es sei $n$ eine nat\"{u}rliche Zahl gr\"{o}\3er als $1$.  Dann l\"{a}sst sich $n$ auf genau eine Weise in der Form
   \\[0.2cm]
   \hspace*{1.3cm}
   $n = p_1^{e_1} \cdot \;\dots\; \cdot p_k^{e_k}$ \quad mit Primzahlen $p_1 < p_2 < \cdots < p_k$
@@ -1403,7 +1403,7 @@ wobei die Funktion $\cdot_n : \zns{n} \times \zns{n} \rightarrow \zns{n}$ durch
 $x \cdot_n y := (x \cdot y) \modulo n$
 \\[0.2cm]
 definiert ist.  Dass die Menge $\zns{n}$ mit der so definierten Multiplikation tats\"{a}chlich
-zu einer Gruppe wird, folgt letzlich aus der Vertr\"{a}glichkeit der Relation $\approx_n$ mit der
+zu einer Gruppe wird, folgt letztlich aus der Vertr\"{a}glichkeit der Relation $\approx_n$ mit der
 gew\"{o}hnlichen Multiplikation.  Die Details \"{u}berlasse ich Ihnen in der folgenden Aufgabe.
 
 \exercise
@@ -1664,7 +1664,7 @@ dass dieses $x$ eindeutig bestimmt ist.
       \hspace*{1.3cm}
       $x_2 - x_1 < m \cdot n$
       \\[0.2cm]
-      sein.  Da $i$ eine nat\"{u}rlich Zahl ist, geht das nur, wenn $i = 0$ ist.  Wir haben also
+      sein.  Da $i$ eine nat\"{u}rliche Zahl ist, geht das nur, wenn $i = 0$ ist.  Wir haben also
       \\[0.2cm]
       \hspace*{1.3cm}
       $x_2 - x_1 = 0 \cdot m \cdot n = 0$
@@ -2010,7 +2010,7 @@ Das war gerade die Behauptung. \qed
 
 \proof
 Falls $k \in \zns{p}$ ist, folgt die Behauptung, indem wir die Gleichung $k^{p-1} \approx_p 1$
-mit $k$ multiplizieren.  Anderfalls gilt $k= 0$ und offenbar gilt $0^p = 0$. \qed
+mit $k$ multiplizieren.  Andernfalls gilt $k= 0$ und offenbar gilt $0^p = 0$. \qed
 \vspace*{0.3cm}
 
 Der kleine Satz von Fermat $a^{p-1} \approx_p 1$ l\"{a}sst sich auf den Fall, dass $p$ keine Primzahl ist,

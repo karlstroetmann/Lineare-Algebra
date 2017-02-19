@@ -6,7 +6,7 @@ Behandlung \href{https://de.wikipedia.org/wiki/Lineares_Gleichungssystem}{linear
 Au\3erdem ben\"{o}tigen wir Vektor-R\"{a}ume bei der L\"{o}sung von
 \href{https://en.wikipedia.org/wiki/Recurrence_relation}{Rekurrenz-Gleichungen}, die wir im letzten  
 Kapitel dieses Skriptes diskutieren.  Daneben gibt es zahlreiche weitere Anwendungen von Vektor-R\"{a}umen in der
-Informatik.  Diese alle aufzulisten w\"{u}rde Ihnen jetzt wenig helfen, wir beginnen statt dessen mit
+Informatik.  Diese alle aufzulisten w\"{u}rde Ihnen jetzt wenig helfen, wir beginnen stattdessen mit
 der Definition. 
 
 \renewcommand{\labelenumi}{\arabic{enumi}.}
@@ -64,7 +64,7 @@ $V$ als {\emph{\color{blue}Vektoren}}, w\"{a}hrend die Elemente aus dem K\"{o}rp
 
 \remark
 Es ist in der Literatur \"{u}blich, Vektoren von Skalaren durch Fettdruck zu unterscheiden.  
-Da aber an der Tafel ein Fettdruck kaum m\"{o}glich ist, habe ich mich dazu entschlosen, 
+Da aber an der Tafel ein Fettdruck kaum m\"{o}glich ist, habe ich mich dazu entschlossen, 
 Vektoren durch Pfeilen zu kennzeichnen.
 \eoxs
 
@@ -147,7 +147,7 @@ in einer zwar l\"{a}nglichen, aber geradlinigen Rechnung nachpr\"{u}fen, dass di
 \hspace*{1.3cm}
 $\bigl\langle \langle \mathbb{R}^{\mathbb{R}}, \vec{0}, + \rangle, \cdot \bigr\rangle$
 \\[0.2cm]
-ein Vektor-Raum ist.  Das folgt letzlich daraus, dass das Assoziativ-Gesetz und das Distributiv-Gesetz f\"{u}r reelle Zahlen
+ein Vektor-Raum ist.  Das folgt letztlich daraus, dass das Assoziativ-Gesetz und das Distributiv-Gesetz f\"{u}r reelle Zahlen
 gilt.
  \eoxs
 
@@ -424,7 +424,7 @@ von Vektoren aus $B$ schreiben l\"{a}sst und damit ist $B$ ein Erzeugenden-Syste
 
 Die letzten beiden S\"{a}tze lassen sich dahingehen zusammenfassen, dass eine Menge
 $B \subseteq V$ genau dann eine Basis von $V$ ist, wenn $B$ eine maximale linear unabh\"{a}ngige
-Teilmenge von $V$ ist.  Die n\"{a}chsten beide S\"{a}tze zeigen, dass sich eine Basis auch als minimales
+Teilmenge von $V$ ist.  Die n\"{a}chsten beiden S\"{a}tze zeigen, dass sich eine Basis auch als minimales
 Erzeugenden-System charakterisieren l\"{a}sst.
 
 \begin{Satz}
@@ -676,8 +676,8 @@ k\"{o}nnen, welche dieselbe Anzahl an Elementen hat wie $U$.
   \item $\bigl(B \backslash W\bigr) \cup U$ ist eine Basis von V,
   \item $\textsl{card}(W) = \textsl{card}(U)$.
   \end{enumerate}
-  Wir k\"{o}nnen also eine gegebene linear unabh\"{a}ngige Menge $U$ in eine gegeben Basis einbinden,
-  indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge enth\"{a}lt die selbe
+  Wir k\"{o}nnen also eine gegebene linear unabh\"{a}ngige Menge $U$ in eine gegebene Basis einbinden,
+  indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge enth\"{a}lt dieselbe
   Anzahl von Elementen wie die Menge $U$.
 \end{SatzStar}
 
@@ -774,7 +774,7 @@ $\textsl{dim}(\mathcal{V}) := n$.
 Um in den folgenden Abschnitten die Notation nicht zu schwerf\"{a}llig werden zu lassen, werden wir im Falle eines
 $\mathbb{K}$-Vektor-Raums $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ 
 nicht mehr zwischen der Struktur $\bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$
-und der Menge $V$ unterscheiden und statt dessen die Menge $V$ als $\mathbb{K}$-Vektor-Raum bezeichnen.  Sie
+und der Menge $V$ unterscheiden und stattdessen die Menge $V$ als $\mathbb{K}$-Vektor-Raum bezeichnen.  Sie
 sollten sich dar\"{u}ber im Klaren sein, dass wir dann eigentlich nicht die Menge $V$ meinen, sondern
 die Struktur $\bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$.  Falls der K\"{o}rper
 $\mathbb{K}$ f\"{u}r die Diskussion unwichtig  ist, sprechen wir auch k\"{u}rzer einfach von einem Vektor-Raum.
@@ -990,7 +990,7 @@ f\"uhren diesen Begriff jetzt ein.
   \\[0.2cm]
   ist ein \emph{\color{blue}Skalar-Produkt} genau dann, wenn die folgenden Bedingungen erf\"{u}llt sind:
   \begin{enumerate}
-  \item Die Abbildung $\langle \cdot\mid \cdot \rangle$ ist \emph{\color{blue}bilinear}, dass hei\3t es gelten die
+  \item Die Abbildung $\langle \cdot\mid \cdot \rangle$ ist \emph{\color{blue}bilinear}, das hei\3t es gelten die
         folgenden Gleichungen:
         \begin{enumerate}
         \item $\langle \vec{x} + \vec{y}\mid \vec{z} \rangle = \langle \vec{x}\mid \vec{z} \rangle + \langle \vec{y}\mid \vec{z} \rangle$
@@ -1002,12 +1002,12 @@ f\"uhren diesen Begriff jetzt ein.
         \item $\langle \vec{x}\mid \alpha \cdot \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$
               \quad f\"{u}r alle $\vec{x}, \vec{y} \in V$ und alle $\alpha \in \mathbb{R}$.
         \end{enumerate}
-  \item Die Abbildung  $\langle \cdot\mid \cdot \rangle$ ist \emph{\color{blue}symmetrisch}, dass hei\3t es gilt
+  \item Die Abbildung  $\langle \cdot\mid \cdot \rangle$ ist \emph{\color{blue}symmetrisch}, das hei\3t es gilt
         \\[0.2cm]
         \hspace*{1.3cm}
         $\langle \vec{x}\mid \vec{y} \rangle = \langle \vec{y}\mid \vec{x} \rangle$ 
         \quad f\"{u}r alle $\vec{x}, \vec{y} \in V$.
-  \item Die Abbildung   $\langle \cdot\mid \cdot \rangle$ ist \emph{\color{blue}positiv definit}, dass hei\3t es
+  \item Die Abbildung   $\langle \cdot\mid \cdot \rangle$ ist \emph{\color{blue}positiv definit}, das hei\3t es
         gilt:
         \begin{enumerate}
         \item $\langle \vec{x}\mid \vec{x} \rangle \geq 0$ \quad f\"{u}r alle $\vec{x} \in V$,
