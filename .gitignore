@@ -8,6 +8,8 @@
 *.class
 *.el
 *.synctex.gz
+*.bbl
+*.blg
 _region_.tex
 auto/
 .DS_Store
