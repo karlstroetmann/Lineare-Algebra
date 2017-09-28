@@ -366,10 +366,13 @@ wahrscheinlicher als alle anderen Aussagen oder ist das nicht der Fall?  Begründ
 
 \exercise
 \begin{enumerate}[(a)]
-\item Das Prädikat $\textsl{isPrime}(n)$ soll für eine natürliche Zahl $n \in \mathbb{N}$ genau dann
+\item Die Formel $\texttt{isPrime}(n)$ soll für eine natürliche Zahl $n \in \mathbb{N}$ genau dann
       wahr sein, wenn $n$ eine \href{https://de.wikipedia.org/wiki/Primzahl}{Primzahl} ist.  
       Dabei ist eine Primzahl als eine nat\"{u}rliche Zahl definiert, die genau zwei verschiedene Teiler hat.
-      Definieren Sie dieses Prädikat mit Hilfe einer
+      Beispielsweise ist die Zahl $3$ eine Primzahl, denn $3$ ist nur durch die Zahlen $1$ und $3$ teilbar.
+      Die Zahl $6$ ist hingegen keine Primzahl, denn $6$ hat die Teiler $1$, $2$ und $6$.
+
+      Definieren Sie das Prädikat \texttt{isPrime} mit Hilfe einer
       geeigneten Formel.  Sie dürfen bei der Erstellung der Formel das Funktions-Zeichen 
       ``\texttt{\%}'' 
       benutzen.  Für zwei natürlichen Zahlen $a$ und $b$ berechnet $a \;\texttt{\%}\; b$ den Rest, der bei der
@@ -382,12 +385,12 @@ wahrscheinlicher als alle anderen Aussagen oder ist das nicht der Fall?  Begründ
       ``Es gibt keine größte Primzahl.'' 
       \\[0.2cm]
       als prädikatenlogische Formel.  Benutzen Sie dabei das in Teil (a) dieser Aufgabe definierte
-      Prädikatszeichen \textsl{isPrime}.  \eox
+      Prädikatszeichen \texttt{isPrime}.  \eox
       % $\forall n \in \mathbb{N}: \exists p \in \mathbb{N}:\bigl(\textsl{isPrime}(p) \wedge n < p\bigr)$.
 \end{enumerate}
 
 \exercise
-Der Hilbert'sche Existenz-Quantor ``$\exists!x$'' wird als ``es gibt genau ein $x$'' gelesen.
+Der \blue{Hilbert'sche Existenz-Quantor} ``$\exists!x$'' wird als ``\blue{es gibt genau ein $x$}'' gelesen.
 Falls $\phi(x)$ eine Formel ist, in der die Variable $x$ vorkommt, dann wird also der Ausdruck
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -396,7 +399,7 @@ $\exists! x\!:\!\phi(x)$ \quad als \quad ``Es gibt genau ein $x$, so dass $\phi(
 gelesen.
 Geben Sie eine Formel an, die zu der Formel $\exists! x\!:\!\phi(x)$ äquivalent ist, in der aber nur die
 gewöhnlichen Quantoren $\forall$ und $\exists$ verwendet werden.  Zeigen Sie also, wie sich der
-Hilbert'sche Existenz-Quantor definieren lässt.
+Hilbert'sche Existenz-Quantor mit Hilfe der Quantoren $\forall$ und $\exists$ definieren lässt.
 \eox
 %$\exists!x: \phi(x) \Leftrightarrow \exists x:\Bigl(\phi(x) \wedge \forall y:\bigl(\phi(y)\rightarrow x = y\bigr)\Bigr)$
 
