@@ -59,6 +59,8 @@
 \newcommand{\Rm}[1]{\mbox{(\expandafter\@slowromancap\romannumeral #1@})}
 \makeatother
 
+\newcommand{\blue}[1]{{\color{blue}#1}}
+\newcommand{\red}[1]{{\color{red}#1}}
 
 \newcommand{\df}{\;\stackrel{\mbox{\scriptsize def}}{\Longleftrightarrow}\;}
 \newcommand{\dv}{\mathtt{//}}
@@ -164,9 +166,6 @@
 
 \newcommand{\lb}{\hspace*{\fill} \linebreak}
 
-
-
-
 {\theorembodyfont{\itshape}
 \newtheorem{Definition}{Definition}[chapter]
 \newtheorem{Theorem}[Definition]{Theorem}
@@ -184,25 +183,23 @@
 \renewcommand{\encodingdefault}{T1}
 \renewcommand{\ttdefault}{inconsolatag}
 
-\title{\epsfig{file=dhbw-logo.eps, scale=1.5}\\[0.3cm] 
-       Eine Einf\"{u}hrung in die Mathematik \\
-       f\"{u}r Informatiker \\[0.3cm]
-       --- WS 2016/2017 --- \\[0.3cm]
+\title{\hspace*{\fill}\epsfig{file=dhbw-logo.eps, scale=1.0}\\[0.3cm] 
+       Eine Einf\"{u}hrung in die Mathematik f\"{u}r Informatiker \\[0.3cm]
+       --- WS 2017/2018 --- \\[0.3cm]
        DHBW Mannheim}
 \author{Prof.~Dr.~Karl Stroetmann}
-
 
 \date{\today \\[1.5cm]
 \begin{minipage}[t]{1.0\linewidth}
 \noindent
-Dieses Skript ist einschlie\3lich der \LaTeX-Quellen sowie der in diesem Skript diskutierten
+Dieses Skript ist einschließlich der \LaTeX-Quellen sowie der in diesem Skript diskutierten
 Programme unter
 \\[0.2cm]
 \hspace*{\fill}
 \href{https://github.com/karlstroetmann/Lineare-Algebra}{\texttt{https://github.com/karlstroetmann/Lineare-Algebra}}
 \hspace*{\fill} 
 \\[0.2cm]
-im Netz verf\"{u}gbar.  Das Skript selbst finden Sie in dem Unterverzeichnis
+im Netz verfügbar.  Das Skript selbst finden Sie in dem Unterverzeichnis
 \href{https://github.com/karlstroetmann/Lineare-Algebra/tree/master/Skript}{Skript}.
 Dort ist das Skript in der Datei
 \href{https://github.com/karlstroetmann/Lineare-Algebra/blob/master/Skript/lineare-algebra.pdf}{\texttt{lineare-algebra.pdf}}
@@ -213,12 +210,18 @@ installieren und mein Repository mit Hilfe des Befehls
 \hspace*{-0.5cm}
 \mbox{\texttt{git clone https://github.com/karlstroetmann/Lineare-Algebra.git}}
 \\[0.2cm]
-klonen, dann k\"{o}nnen Sie durch den Befehl
+klonen, dann können Sie durch den Befehl
 \\[0.2cm]
 \hspace*{1.3cm}
 \texttt{git pull}
 \\[0.2cm]
-die aktuelle Version meines Skriptes aus dem Netz laden.
+die aktuelle Version meines Skriptes aus dem Netz laden.  Falls Sie Fehler in dem Skript finden,
+so bin ich für Hinweise an die Email-Adresse
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{karl.stroetmann@dhbw-mannheim.de} 
+\\[0.2cm]
+dankbar.
 \end{minipage}
 }
 
