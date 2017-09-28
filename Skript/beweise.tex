@@ -1,38 +1,38 @@
 \chapter{Mathematische Beweise}
 Mathematik ist eine \href{https://de.wikipedia.org/wiki/Exakte_Wissenschaft}{exakte Wissenschaft}.  
-Diese Exaktheit verdankt die Mathematik der Tatsache, dass Behauptungen \emph{bewiesen} werden
-k\"{o}nnen.  Der Begriff des
-\href{https://en.wikipedia.org/wiki/Mathematical_proof}{\emph{Beweises}} ist daher f\"{u}r die Mathematik zentral.   
+Diese Exaktheit verdankt die Mathematik der Tatsache, dass Behauptungen \blue{bewiesen} werden
+können.  Der Begriff des
+\href{https://en.wikipedia.org/wiki/Mathematical_proof}{\blue{Beweises}} ist daher für die Mathematik zentral.   
 In diesem Abschnitt gehen wir auf den mathematischen Beweisbegriff ein.  Wir beleuchten dabei nur die
-praktische Seite und stellen verschiedene Methoden des Beweisens vor.  F\"{u}r eine theoretische Analyse des
-Beweis-Begriffs ist die \emph{mathematische Logik} zust\"{a}ndig, die ein Teil der Vorlesung zur
+praktische Seite und stellen verschiedene Methoden des Beweisens vor.  Für eine theoretische Analyse des
+Beweis-Begriffs ist die \blue{mathematische Logik} zuständig, die ein Teil der Vorlesung zur
 theoretischen Informatik ist.
 Wir wenden uns hier den Beweis-Verfahren zu, die wir sp\"ater sowohl im Laufe dieser Vorlesung als
-auch in den Vorlesungen \"uber theoretische Informatik verwenden werden.  Grob k\"{o}nnen wir
+auch in den Vorlesungen \"uber theoretische Informatik verwenden werden.  Grob können wir
 zwischen vier Arten von Beweisen unterscheiden: 
 \begin{enumerate}
 \item direkten Beweisen,
 \item indirekten Beweisen,
 \item Beweise durch Fallunterscheidung, 
-\item Beweise durch vollst\"{a}ndige Induktion.
+\item Beweise durch vollständige Induktion.
 \end{enumerate}
 
 \section{Direkte Beweise}
 Direkte Beweise sind die Beweise, die Sie bereits aus der Schule kennen.  Das wesentliche Hilfsmittel eines direkten Beweises
-sind algebraische Umformungen.  Wir geben ein einfaches Beispiel f\"{u}r einen
-direkten Beweis, ben\"{o}tigen daf\"{u}r aber zun\"{a}chst noch eine Definition.
+sind algebraische Umformungen.  Wir geben ein einfaches Beispiel für einen
+direkten Beweis, benötigen dafür aber zunächst noch eine Definition.
 
 
 \begin{Definition}[Pythagoreische Tripel] \hspace*{\fill} \\
 Die nat\"urlichen Zahlen $x$, $y$ und $z$ bilden ein
-\href{https://de.wikipedia.org/wiki/Pythagoreisches_Tripel}{\emph{Pythagoreisches Tripel}}, falls
+\href{https://de.wikipedia.org/wiki/Pythagoreisches_Tripel}{\blue{Pythagoreisches Tripel}}, falls
 \\[0.2cm]
 \hspace*{1.3cm}
 $x^2 + y^2 = z^2$
 \\[0.2cm]
 gilt.  In diesem Fall sind die Zahlen $x$, $y$ und $z$ nach dem
-\href{https://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die L\"{a}ngen eines 
-rechtwinkligen Dreiecks:  $x$ und $y$ sind die L\"{a}ngen der Katheten, w\"{a}hrend $z$ die L\"{a}nge der Hypotenuse
+\href{https://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die Längen eines 
+rechtwinkligen Dreiecks:  $x$ und $y$ sind die Längen der Katheten, während $z$ die Länge der Hypotenuse
 ist.
 \end{Definition}
 
@@ -44,7 +44,7 @@ $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. \eox
 
 
 \begin{Satz} 
-Es seien $u$ und $v$ nat\"{u}rliche Zahlen mit $u > v$.  Dann bilden die Zahlen
+Es seien $u$ und $v$ natürliche Zahlen mit $u > v$.  Dann bilden die Zahlen
 \\[0.2cm]
 \hspace*{1.3cm}
 $u^2 - v^2$, \quad $2 \cdot u \cdot v$ \quad und \quad $u^2 + v^2$
@@ -53,7 +53,7 @@ ein pythagoreisches Tripel.
 \end{Satz}
 
 \proof
-Wir m\"{u}ssen zeigen, dass
+Wir müssen zeigen, dass
 \begin{equation}
   \label{eq:pyth}
 \bigl( u^2 - v^2 \bigr)^2 + \bigl(2 \cdot u \cdot v \bigr)^2 = \bigl(u^2 + v^2\bigr)^2  
@@ -65,7 +65,7 @@ Wir benutzen dabei lediglich die beiden \href{https://de.wikipedia.org/wiki/Bino
 $(a + b)^2 = a^2 + 2 \cdot a \cdot b + b^2$ \quad und \quad
 $(a - b)^2 = a^2 - 2 \cdot a \cdot b + b^2$.
 \\[0.2cm]
-Die Rechnung verl\"{a}uft wie folgt:
+Die Rechnung verläuft wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -79,7 +79,7 @@ $
 \\[0.2cm]
 Damit haben wir die linke Seite der Gleichung (\ref{eq:pyth}) in die rechte Seite umgeformt. \qed
 
-Als ein weiteres Beispiel f\"{u}r einen direkten Beweis betrachten wir das folgende 
+Als ein weiteres Beispiel für einen direkten Beweis betrachten wir das folgende 
 \href{https://de.wikipedia.org/wiki/Logarithmus#Logarithmengesetze}{Logarithmen-Gesetz}.
 
 \begin{Satz}
@@ -106,7 +106,7 @@ der  Gleichung
 \hspace*{1.3cm}
 $\log_c(b) = \log_a(b) \cdot \log_c(a)$
 \\[0.2cm]
-\"{a}quivalent.  Teilen wir beide Seiten dieser Gleichung durch $\log_c(a)$, so erhalten wir die Gleichung
+äquivalent.  Teilen wir beide Seiten dieser Gleichung durch $\log_c(a)$, so erhalten wir die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\frac{\log_c(b)}{\log_c(a)} = \log_a(b)$
@@ -116,9 +116,9 @@ und haben damit die Behauptung bewiesen.
 
 \remark
 Der letzte Satz zeigt Ihnen, wie Sie den Logarithmus zu einer beliebigen Basis mit einem
-Taschenrechner berechnen k\"{o}nnen, auf dem nur der nat\"{u}rliche Logarithmus fest verdrahtet ist,
+Taschenrechner berechnen können, auf dem nur der natürliche Logarithmus fest verdrahtet ist,
 denn wenn wir in der soeben bewiesenen Behauptung $c := \mathrm{e}$ setzen, wobei $\mathrm{e}$ die 
-\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{\emph{Eulersche Zahl}} ist, dann erhalten wir
+\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{\blue{Eulersche Zahl}} ist, dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\log_a(b) = \frac{\ln(b)}{\ln(a)}$.
@@ -129,15 +129,15 @@ $\ds\log_a(b) = \frac{\ln(b)}{\ln(a)}$.
 Wollen wir eine Aussage $A$ auf indirektem Wege nachweisen, so nehmen wir an, dass $A$
 nicht gilt, wir nehmen also an, dass die Aussage $\neg A$ richtig ist.  Wir versuchen dann
 weiter, aus dieser Annahme eine offensichtlich falsche Aussage herzuleiten, beispielsweise
-die Aussage, dass $1 = 2$ gilt.  Wenn dies gelingt, dann k\"{o}nnen wir r\"{u}ckw\"{a}rts schlie\3en,
+die Aussage, dass $1 = 2$ gilt.  Wenn dies gelingt, dann können wir rückwärts schließen,
 dass die Annahme $\neg A$ falsch sein muss und dass folglich die Aussage $A$ wahr ist.
 
-Bevor wir das erste Beispiel pr\"{a}sentieren k\"{o}nnen, wiederholen wir die Begriffe der \emph{geraden} und
-\emph{ungeraden} Zahlen.  Eine nat\"{u}rliche Zahl $n$ ist \emph{gerade}, wenn Sie durch $2$
+Bevor wir das erste Beispiel präsentieren können, wiederholen wir die Begriffe der \blue{geraden} und
+\blue{ungeraden} Zahlen.  Eine natürliche Zahl $n$ ist \blue{gerade}, wenn Sie durch $2$
 \href{https://de.wikipedia.org/wiki/Teilbarkeit}{teilbar} ist.  Eine 
-solche Zahl l\"{a}sst sich also immer in der Form $n = 2 \cdot k$ mit $k \in \mathbb{N}$ schreiben.
-Eine nat\"{u}rliche Zahl $n$  ist \emph{ungerade}, wenn sie nicht durch $2$ teilbar ist.  Eine ungerade Zahl
-hat bei Division durch $2$ also den Rest $1$ und l\"{a}sst sich damit immer in der Form $2 \cdot k + 1$
+solche Zahl lässt sich also immer in der Form $n = 2 \cdot k$ mit $k \in \mathbb{N}$ schreiben.
+Eine natürliche Zahl $n$  ist \blue{ungerade}, wenn sie nicht durch $2$ teilbar ist.  Eine ungerade Zahl
+hat bei Division durch $2$ also den Rest $1$ und lässt sich damit immer in der Form $2 \cdot k + 1$
 darstellen, wobei $k \in \mathbb{N}$ ist.
 
 \begin{Lemma} \label{lemma:b1}
@@ -146,7 +146,7 @@ darstellen, wobei $k \in \mathbb{N}$ ist.
 \end{Lemma}
 
 \proof
-Wir f\"{u}hren den Beweis indirekt und nehmen an, dass $p$ ungerade ist.  Damit l\"{a}sst sich $p$  in der Form
+Wir führen den Beweis indirekt und nehmen an, dass $p$ ungerade ist.  Damit lässt sich $p$  in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $p = 2 \cdot q + 1$ \quad mit \quad $q \in \mathbb{N}$
@@ -171,14 +171,14 @@ sein muss.  Folglich ist $p$ gerade.
 
 \begin{Definition}[Rationale Zahl]
   Eine reelle Zahl $x \in \mathbb{R}$ ist eine
-  \href{https://de.wikipedia.org/wiki/Rationale_Zahl}{\emph{rationale Zahl}}, wenn es eine ganze
+  \href{https://de.wikipedia.org/wiki/Rationale_Zahl}{\blue{rationale Zahl}}, wenn es eine ganze
   Zahl $p \in \mathbb{Z}$ und eine positive natürliche Zahl $q \in \mathbb{N}$ gibt, so dass
   \\[0.2cm]
   \hspace*{1.3cm}
   $\ds x = \frac{p}{q}$
   \\[0.2cm]
   gilt.  Die Menge der rationalen Zahlen bezeichnen wir mit $\mathbb{Q}$.  
-  Eine Zahl $x \in \mathbb{R}$ ist \emph{irrational}, wenn $x$ keine rationale Zahl ist.
+  Eine Zahl $x \in \mathbb{R}$ ist \blue{irrational}, wenn $x$ keine rationale Zahl ist.
  \eox
 \end{Definition}
 
@@ -187,11 +187,11 @@ sein muss.  Folglich ist $p$ gerade.
 \end{Satz}
 
 \proof
-Wir f\"{u}hren den Beweis indirekt und machen die Annahme, dass $\sqrt{2} \in \mathbb{Q}$ ist.  Jede positive
-rationale Zahl l\"{a}sst sich in der Form $\bruch{p}{q}$ mit $p,q \in \mathbb{N}$ schreiben, wobei
-zusätzlich $q > 0$ ist.  Dabei k\"{o}nnen
-wir zus\"{a}tzlich annehmen, dass  $p$ und $q$ keinen von 1 verschiedenen gemeinsamen Teiler haben, denn
-wenn $p$ und $q$ einen gemeinsamen Teiler $r > 1$ h\"{a}tten, k\"{o}nnten wir durch $r$ k\"{u}rzen.  Nach unserer 
+Wir führen den Beweis indirekt und machen die Annahme, dass $\sqrt{2} \in \mathbb{Q}$ ist.  Jede positive
+rationale Zahl lässt sich in der Form $\bruch{p}{q}$ mit $p,q \in \mathbb{N}$ schreiben, wobei
+zusätzlich $q > 0$ ist.  Dabei können
+wir zusätzlich annehmen, dass  $p$ und $q$ keinen von 1 verschiedenen gemeinsamen Teiler haben, denn
+wenn $p$ und $q$ einen gemeinsamen Teiler $r > 1$ hätten, könnten wir durch $r$ kürzen.  Nach unserer 
 Annahme gilt also
 \begin{equation}
   \label{eq:b1}
@@ -200,7 +200,7 @@ Annahme gilt also
 Die Funktion $\textsl{ggt}(p,q)$ berechnet hier den
 \href{https://de.wikipedia.org/wiki/Größter_gemeinsamer_Teiler}{größten gemeinsamen Teiler} von
 $p$ und $q$.  Da $p$ und $q$ keinen echten gemeinsamen Teiler mehr haben, einen eventuellen gemeinsamen Teiler
-haben wir ja gek\"{u}rzt, gilt $\textsl{ggt}(p, q) = 1$.  Quadrieren wir  Gleichung (\ref{eq:b1}), so
+haben wir ja gekürzt, gilt $\textsl{ggt}(p, q) = 1$.  Quadrieren wir  Gleichung (\ref{eq:b1}), so
 verschwindet die Quadratwurzel auf der linken Seite der Gleichung und wir erhalten die Gleichung
 \begin{equation}
   \label{eq:b2}
@@ -226,10 +226,10 @@ Diese Gleichung teilen wir durch $2$ und haben
   q^2 = (2 \cdot s)^2 = 2 \cdot s^2.
 \end{equation}
 Gleichung (\ref{eq:b5}) zeigt nun, dass $q^2$ eine gerade Zahl ist und wieder nach dem Lemma
-\ref{lemma:b1} k\"{o}nnen wir folgern, dass auch  $q$ gerade ist.  Folglich ist $q$ durch $2$ teilbar.
+\ref{lemma:b1} können wir folgern, dass auch  $q$ gerade ist.  Folglich ist $q$ durch $2$ teilbar.
 Damit sind dann aber $p$ und $q$ nicht teilerfremd und wir haben einen Widerspruch zu der
-Annahme, dass $\sqrt{2}$ sich als Bruch $\bruch{p}{q}$ zweier nat\"{u}rlicher Zahlen $p$ und $q$
-darstellen l\"{a}sst, denn einen solchen Bruch k\"{o}nnen wir immer so k\"{u}rzen, dass $p$ und $q$ teilerfremd
+Annahme, dass $\sqrt{2}$ sich als Bruch $\bruch{p}{q}$ zweier natürlicher Zahlen $p$ und $q$
+darstellen lässt, denn einen solchen Bruch können wir immer so kürzen, dass $p$ und $q$ teilerfremd
 sind. 
 \qed
 
@@ -239,7 +239,7 @@ Sie, dass dann auch $p$ nicht durch $3$ teilbar ist.
 \eox
 
 \section{Beweise durch Fallunterscheidung}
-Beim Beweis durch \emph{Fallunterscheidung} teilen wir einen Beweis in mehrere F\"alle auf.  Wir
+Beim Beweis durch \blue{Fallunterscheidung} teilen wir einen Beweis in mehrere F\"alle auf.  Wir
 illustrieren das Konzept an einem Beispiel. 
 
 \begin{Satz}
@@ -256,8 +256,8 @@ betrachten nun die Zahl
 \hspace*{1.3cm}
 $\sqrt{2}^{\sqrt{2}}$.
 \\[0.2cm]
-Es gibt nur zwei M\"{o}glichkeiten: Entweder ist die Zahl $\sqrt{2}^{\sqrt{2}}$ rational oder nicht.  Wir
-untersuchen diese beiden F\"{a}lle getrennt.
+Es gibt nur zwei Möglichkeiten: Entweder ist die Zahl $\sqrt{2}^{\sqrt{2}}$ rational oder nicht.  Wir
+untersuchen diese beiden Fälle getrennt.
 \begin{enumerate}
 \item Fall: $\sqrt{2}^{\sqrt{2}} \in \mathbb{Q}$.
 
@@ -278,7 +278,7 @@ untersuchen diese beiden F\"{a}lle getrennt.
       $x := \sqrt{2}^{\sqrt{2}}$ \quad und \quad $y := \sqrt{2}$.
       \\[0.2cm]
       Jetzt ist $x$ nach der Voraussetzung der Fallunterscheidung irrational und dass $y$ irrational
-      ist, haben wir bereits fr\"{u}her bewiesen.  Au\3erdem gilt
+      ist, haben wir bereits früher bewiesen.  Außerdem gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds x^y = \bigl(\sqrt{2}^{\sqrt{2}}\bigr)^{\sqrt{2}} = \sqrt{2}^{(\sqrt{2} \cdot \sqrt{2})} = \sqrt{2}^{2} = 2 \in \mathbb{Q}$,
@@ -287,7 +287,7 @@ untersuchen diese beiden F\"{a}lle getrennt.
 \end{enumerate}
 
 \remark
-Beachten Sie, dass es uns bei dem letzten Beweis nicht m\"{o}glich war, die Zahlen $x$ und $y$ konkret
+Beachten Sie, dass es uns bei dem letzten Beweis nicht möglich war, die Zahlen $x$ und $y$ konkret
 anzugeben.  Wir wissen nur, dass entweder die beiden Zahlen
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -298,25 +298,25 @@ die behauptete Eigenschaft
 \hspace*{1.3cm}
 $x \not\in \mathbb{Q} \wedge y \not\in \mathbb{Q} \wedge x^y \in \mathbb{Q}$
 \\[0.2cm]
-haben, aber der obige Beweis sagt nichts dar\"{u}ber, welches der beiden Paare $\pair(x_1,y_1)$ und
-$\pair(x_2,y_2)$ tats\"{a}chlich die obige Eigenschaft hat.  Das war f\"{u}r den gerade angegebenen Beweis
+haben, aber der obige Beweis sagt nichts darüber, welches der beiden Paare $\pair(x_1,y_1)$ und
+$\pair(x_2,y_2)$ tatsächlich die obige Eigenschaft hat.  Das war für den gerade angegebenen Beweis
 auch nicht erforderlich: Wir haben nur gezeigt, dass es ein Paar $\pair(x,y)$ mit der Eigenschaft
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \not\in \mathbb{Q} \wedge y \not\in \mathbb{Q} \wedge x^y \in \mathbb{Q}$
 \\[0.2cm]
 geben muss, aber wir waren nicht in der Lage, $x$ und $y$ konkret auszurechnen.  Daher ist der obige
-Beweis kein \href{https://en.wikipedia.org/wiki/Constructive_proof}{\emph{konstruktiver Beweis}}:
-Zwar zeigt der Beweis die Existenz eines Paares $\pair(x,y)$ mit den gew\"{u}nschten Eigenschaften,
+Beweis kein \href{https://en.wikipedia.org/wiki/Constructive_proof}{\blue{konstruktiver Beweis}}:
+Zwar zeigt der Beweis die Existenz eines Paares $\pair(x,y)$ mit den gewünschten Eigenschaften,
 aber das Paar $\pair(x,y)$ kann nicht konkret angegeben werden. \eoxs
 
 \remark
 Aus dem \href{http://en.wikipedia.org/wiki/Gelfond%27s_theorem}{Gelfond-Schneider-Theorem}
 kann gefolgert werden, dass $\sqrt{2}^{\sqrt{2}} \not\in \mathbb{Q}$ gilt.  Der Nachweis dieses
-Theorem liegt aufgrund seiner Tiefe deutlich au\3erhalb des Rahmens einer einf\"{u}hrenden Mathematik-Vorlesung.
+Theorem liegt aufgrund seiner Tiefe deutlich außerhalb des Rahmens einer einführenden Mathematik-Vorlesung.
 
 \exercise
-Zeigen Sie, dass f\"{u}r alle $n \in \mathbb{N}$ die Zahl
+Zeigen Sie, dass für alle $n \in \mathbb{N}$ die Zahl
 \\[0.2cm]
 \hspace*{1.3cm}
 $5 \cdot n^3 + 10 \cdot n$
@@ -333,20 +333,20 @@ stets durch $3$ teilbar ist.  \exend
 
 \section{Induktions-Beweise}
 Die wichtigste Beweismethode in der Informatik ist der Beweis durch 
-\href{https://de.wikipedia.org/wiki/Vollständige_Induktion}{vollst\"{a}ndige Induktion}. 
+\href{https://de.wikipedia.org/wiki/Vollständige_Induktion}{vollständige Induktion}. 
 Die Induktion ist in der Informatik deshalb so wichtig, weil Sie zum Beweis der Korrektheit
-rekursiver Funktionen ben\"{o}tigt wird.  Es sei
+rekursiver Funktionen benötigt wird.  Es sei
 $F(n)$ eine Formel, in der die Variable $n$ vorkommt.  Um eine Aussage der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}: F(n)$
 \\[0.2cm]
-zu beweisen, k\"{o}nnen wir wie folgt vorgehen.
+zu beweisen, können wir wie folgt vorgehen.
 \begin{enumerate}
-\item Zun\"{a}chst zeigen wir, dass die Aussage f\"{u}r $n = 0$ richtig ist, wir weisen also die G\"{u}ltigkeit der
+\item Zunächst zeigen wir, dass die Aussage für $n = 0$ richtig ist, wir weisen also die Gültigkeit der
       Formel $F(0)$ nach.
 
-      Dieser Schritt wird als \emph{Induktions-Anfang} bezeichnet.
+      Dieser Schritt wird als \blue{Induktions-Anfang} bezeichnet.
 \item Dann zeigen wir, dass die Formel
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -354,13 +354,13 @@ zu beweisen, k\"{o}nnen wir wie folgt vorgehen.
       \\[0.2cm]
       gilt, wir zeigen also, dass jedes Mal, wenn $F(n)$ gilt, auch $F(n+1)$ richtig sein muss.
 
-      Dieser Schritt wird als \emph{Induktions-Schritt} bezeichnet.
+      Dieser Schritt wird als \blue{Induktions-Schritt} bezeichnet.
 \end{enumerate}
-Insgesamt k\"{o}nnen wir dann schlie\3en, dass die Formel $F(n)$ f\"{u}r alle nat\"{u}rlichen Zahlen gilt, denn
-zun\"{a}chst wissen wir, dass $F(1)$ gilt, nach dem Induktions-Schritt gilt dann auch $F(2)$, daraus folgt
-dass auch $F(3)$ gilt, woraus wir auf die G\"{u}ltigkeit von $F(4)$ schlie\3en k\"{o}nnen.  Durch Fortf\"{u}hrung
-dieser Argumentation schlie\3en wir insgesamt, dass $F(n)$ f\"{u}r jede beliebige natürliche Zahl richtig ist.  Diese
-Argumentation ist zun\"{a}chst informal. Ein formaler Beweis folgt.
+Insgesamt können wir dann schließen, dass die Formel $F(n)$ für alle natürlichen Zahlen gilt, denn
+zunächst wissen wir, dass $F(1)$ gilt, nach dem Induktions-Schritt gilt dann auch $F(2)$, daraus folgt
+dass auch $F(3)$ gilt, woraus wir auf die Gültigkeit von $F(4)$ schließen können.  Durch Fortführung
+dieser Argumentation schließen wir insgesamt, dass $F(n)$ für jede beliebige natürliche Zahl richtig ist.  Diese
+Argumentation ist zunächst informal. Ein formaler Beweis folgt.
 
 \begin{Satz}
   Es sei $F(x)$ eine Formel. Dann gilt
@@ -382,35 +382,35 @@ richtig ist und zeigen, dass dann
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}:F(n)$
 \\[0.2cm]
-gilt.  Den Nachweis dieser Behauptung f\"{u}hren wir indirekt und nehmen an, dass
+gilt.  Den Nachweis dieser Behauptung führen wir indirekt und nehmen an, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\neg\bigl(\forall n \in \mathbb{N}:F(n)\bigr)$
 \\[0.2cm]
-gilt.  Das ist aber \"{a}quivalent zu der Formel
+gilt.  Das ist aber äquivalent zu der Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\exists n \in \mathbb{N}:\neg F(n)$.
 \\[0.2cm]
-Wir definieren eine \emph{Menge} $M$ als die Menge\footnote{
-  Wir werden den Begriff der \emph{Menge} im nächsten Kapitel formal definieren.  
+Wir definieren eine \blue{Menge} $M$ als die Menge\footnote{
+  Wir werden den Begriff der \blue{Menge} im nächsten Kapitel formal definieren.  
 } 
-aller der Zahlen, f\"{u}r die $F(n)$ falsch ist:
+aller der Zahlen, für die $F(n)$ falsch ist:
 \\[0.2cm]
 \hspace*{1.3cm}
 $M := \bigl\{ n \in \mathbb{N} \bigm| \neg F(n) \bigr\}$.
 \\[0.2cm]
-Nach unserer Annahme ist $M$ nicht leer.  Als Menge von nat\"{u}rlichen Zahlen muss  $M$ dann aber ein
+Nach unserer Annahme ist $M$ nicht leer.  Als Menge von natürlichen Zahlen muss  $M$ dann aber ein
 kleinstes Element haben.  Wir definieren $n_0$ als das Minimum von $M$.
 \\[0.2cm]
 \hspace*{1.3cm}
 $n_0 := \min( M) = \min\bigl(\bigl\{ n \in \mathbb{N} \bigm| \neg F(n) \bigr\}\bigr)$.
 \\[0.2cm]
 Die Zahl $n_0$ ist also die kleinste natürliche Zahl, für welche die Formel $F(n)$ falsch ist.
-Also haben wir $\neg F(n_0)$ und wissen au\3erdem, dass f\"{u}r alle $n < n_0$ die Formel $F(n)$ gilt, denn
-sonst w\"{a}re $n_0$ ja nicht das Minimum der Menge $M$.
+Also haben wir $\neg F(n_0)$ und wissen außerdem, dass für alle $n < n_0$ die Formel $F(n)$ gilt, denn
+sonst wäre $n_0$ ja nicht das Minimum der Menge $M$.
 
-Weiter schlie\3en wir dann aus der Tatsache, dass $F(0)$ gilt, dass $n_0 \not= 0$ ist.  
+Weiter schließen wir dann aus der Tatsache, dass $F(0)$ gilt, dass $n_0 \not= 0$ ist.  
 Aus $n_0 -1 < n_0$ folgt nun, dass $n_0-1 \not\in M$ ist, denn $n_0$ ist ja das Minimum von $M$.
 Aus  $n_0-1 \not\in M$ folgt nach Definition der Menge $M$, dass die Formel
 \\[0.2cm]
@@ -418,25 +418,25 @@ Aus  $n_0-1 \not\in M$ folgt nach Definition der Menge $M$, dass die Formel
 $F(n_0 - 1)$
 \\[0.2cm]
 richtig ist.  Wenn wir in der Formel $\forall n \in \mathbb{N}:\bigl( F(n) \rightarrow F(n+1)\bigr)$
-für $n$ die Zahl $n_0$ einsetzen, dann k\"{o}nnen wir dann folgern, dass
+für $n$ die Zahl $n_0$ einsetzen, dann können wir dann folgern, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $F\bigl((n_0-1) +1\bigr)$
 \\[0.2cm] 
 gilt.  Also gilt $F(n_0)$ und das ist ein Widerspruch zur Definition von $n_0$. \qed
 
-Wir geben nun einige typische Beispiele f\"{u}r Induktions-Beweise.  Die in diesen S\"{a}tzen bewiesenen
-Summenformeln sollten Sie sich gut merken, denn diese Formeln werden sp\"{a}ter bei der Analyse der Komplexit\"{a}t
-von Algorithmen h\"{a}ufig verwendet.
+Wir geben nun einige typische Beispiele für Induktions-Beweise.  Die in diesen Sätzen bewiesenen
+Summenformeln sollten Sie sich gut merken, denn diese Formeln werden später bei der Analyse der Komplexität
+von Algorithmen häufig verwendet.
 
 \begin{Satz} Es gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\ds\sum\limits_{i=0}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ \quad f\"{u}r alle $n \in \mathbb{N}$.
+$\ds\sum\limits_{i=0}^n i = \frac{1}{2} \cdot n \cdot (n+1)$ \quad für alle $n \in \mathbb{N}$.
 \end{Satz}
 
 \proof
-Wir f\"{u}hren den Beweis durch Induktion nach $n$.
+Wir führen den Beweis durch Induktion nach $n$.
 \begin{enumerate}
 \item Induktions-Anfang: $n = 0$.
 
@@ -450,17 +450,17 @@ Wir f\"{u}hren den Beweis durch Induktion nach $n$.
       \hspace*{1.3cm}
       $\ds\frac{1}{2} \cdot 0 \cdot (0+1) = 0$.
       \\[0.2cm]
-      Damit ist die Behauptung f\"{u}r $n = 0$ richtig.
+      Damit ist die Behauptung für $n = 0$ richtig.
 \item Induktions-Schritt: $n \mapsto n+1$.
 
-      Wir k\"{o}nnen nun voraussetzen, dass
+      Wir können nun voraussetzen, dass
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sum\limits_{i = 0}^n i = \frac{1}{2} \cdot n \cdot (n+1)$
       \\[0.2cm]
-      f\"{u}r ein gegebenes festes $n$ gilt.  Diese Voraussetzung wird als \emph{Induktions-Voraussetzung}
-      bezeichnet.  Wir m\"{u}ssen dann nachweisen, dass  die Behauptung auch
-      f\"{u}r $n+1$ gilt, zu zeigen ist also 
+      für ein gegebenes festes $n$ gilt.  Diese Voraussetzung wird als \blue{Induktions-Voraussetzung}
+      bezeichnet.  Wir müssen dann nachweisen, dass  die Behauptung auch
+      für $n+1$ gilt, zu zeigen ist also 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\sum\limits_{i=0}^{n+1} i = \frac{1}{2} \cdot (n+1) \cdot \bigl((n+1)+1\bigr)$.
@@ -499,7 +499,7 @@ Zeigen Sie, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\sum\limits_{i=0}^{n} i^2 = \frac{1}{6} \cdot n \cdot (n+1) \cdot (2 \cdot n + 1)$ \quad
-f\"{u}r alle $n \in \mathbb{N}$ 
+für alle $n \in \mathbb{N}$ 
 \\[0.2cm]
 gilt.  \exend
 
@@ -508,19 +508,19 @@ Zeigen Sie, dass im Falle $q \not= 1$ die Formel
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\sum\limits_{i=0}^{n} q^i = \bruch{q^{n+1} - 1}{q - 1}$ \quad
-f\"{u}r alle $n \in \mathbb{N}$ 
+für alle $n \in \mathbb{N}$ 
 \\[0.2cm]
 gilt.  Wie lautet die Formel im Falle $q=1$? \exend
 
 
 \exercise  
-Zeigen Sie, dass jede nat\"{u}rliche Zahl $n \geq 2$ entweder eine Primzahl ist oder aber sich als  
-Produkt von zwei oder mehr Primzahlen darstellen l\"{a}sst.  
+Zeigen Sie, dass jede natürliche Zahl $n \geq 2$ entweder eine Primzahl ist oder aber sich als  
+Produkt von zwei oder mehr Primzahlen darstellen lässt.  
 \exend  
 \pagebreak
  
 \exercise
-Es sei $x \in \mathbb{R}$ und es gelte $x \geq 0$.  Zeigen Sie, dass f\"{u}r alle nat\"{u}rlichen Zahlen die Ungleichung
+Es sei $x \in \mathbb{R}$ und es gelte $x \geq 0$.  Zeigen Sie, dass für alle natürlichen Zahlen die Ungleichung
 \\[0.2cm]
 \hspace*{1.3cm}
 $(1+x)^{n} \geq 1 + n \cdot x$
@@ -531,17 +531,17 @@ gilt.
 
 \exercise
 \begin{enumerate}[(a)]
-\item Zeigen Sie, dass die Zahl $2^{2 \cdot n} - 1$ f\"{u}r alle nat\"{u}rlichen Zahlen $n$ durch $3$
+\item Zeigen Sie, dass die Zahl $2^{2 \cdot n} - 1$ für alle natürlichen Zahlen $n$ durch $3$
       teilbar ist,
       \exend 
-\item Ein \emph{Triomino} ist eine Figur, die aus einem Quadrat der L\"{a}nge 2 dadurch entsteht, dass in
-      einer  der Ecken des urspr\"{u}nglich gegebenen Quadrates der L\"{a}nge 2 ein Quadrat der L\"{a}nge 1
+\item Ein \blue{Triomino} ist eine Figur, die aus einem Quadrat der Länge 2 dadurch entsteht, dass in
+      einer  der Ecken des ursprünglich gegebenen Quadrates der Länge 2 ein Quadrat der Länge 1
       ausgeschnitten ist.  Abbildung \ref{fig:triomino.eps} zeigt 
       ein Triomino, bei dem die rechte obere Ecke ausgeschnitten ist.  Beweisen Sie, dass Sie ein 
       \href{http://de.wikipedia.org/wiki/Schachbrett}{Schachbrett}, bei dem eines der Eckfelder
-      ausgeschnitten ist, vollst\"{a}ndig so durch Triominos so \"{u}berdecken k\"{o}nnen, dass die einzelnen
-      Triominos sich nicht \"{u}berlappen.  Dabei ist vorausgesetzt, dass die einzelnen Felder des
-      Schachbretts Quadrate der L\"{a}nge 1 sind.
+      ausgeschnitten ist, vollständig so durch Triominos so überdecken können, dass die einzelnen
+      Triominos sich nicht überlappen.  Dabei ist vorausgesetzt, dass die einzelnen Felder des
+      Schachbretts Quadrate der Länge 1 sind.
 
 \begin{figure}[!ht]
   \centering
@@ -551,17 +551,17 @@ gilt.
 \end{figure}
 
       \noindent  
-      \textbf{Hinweis 1:}  Beim Beweis einer mathematischen Behauptung ist es manchmal einfacher, zun\"{a}chst  
+      \textbf{Hinweis 1:}  Beim Beweis einer mathematischen Behauptung ist es manchmal einfacher, zunächst  
       ein  Ergebnis zu beweisen, was allgemeiner ist als die eigentlich zu beweisende Behauptung.  Das mag  
-      zwar kontraintuitiv erscheinen, weil Sie dann ja offensichtlich mehr beweisen m\"{u}ssen, aber dieses  
-      Beispiel soll Ihnen zeigen, dass es tats\"{a}chlich F\"{a}lle gibt, wo Sie das Problem am einfachsten durch  
-      Verallgemeinerung l\"{o}sen k\"{o}nnen.  
+      zwar kontraintuitiv erscheinen, weil Sie dann ja offensichtlich mehr beweisen müssen, aber dieses  
+      Beispiel soll Ihnen zeigen, dass es tatsächlich Fälle gibt, wo Sie das Problem am einfachsten durch  
+      Verallgemeinerung lösen können.  
       \vspace*{0.2cm}
 
       \noindent
-      \textbf{Hinweis 2:}  Um diese Aufgabe l\"{o}sen zu k\"{o}nnen, m\"{u}ssen Sie kein Schachspieler sein.
-      F\"{u}r den Zweck der Aufgabe reicht es zu wissen, dass ein Schachbrett ein Quadrat der L\"{a}nge 8 ist (was immer
-      dabei die L\"{a}ngeneinheit ist), das in $8 \times 8$ Quadrate der L\"{a}nge 1 unterteilt ist.
+      \textbf{Hinweis 2:}  Um diese Aufgabe lösen zu können, müssen Sie kein Schachspieler sein.
+      Für den Zweck der Aufgabe reicht es zu wissen, dass ein Schachbrett ein Quadrat der Länge 8 ist (was immer
+      dabei die Längeneinheit ist), das in $8 \times 8$ Quadrate der Länge 1 unterteilt ist.
       \exend  
 \end{enumerate}
 
