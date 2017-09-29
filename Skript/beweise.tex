@@ -3,28 +3,32 @@ Mathematik ist eine \href{https://de.wikipedia.org/wiki/Exakte_Wissenschaft}{exa
 Diese Exaktheit verdankt die Mathematik der Tatsache, dass Behauptungen \blue{bewiesen} werden
 können.  Der Begriff des
 \href{https://en.wikipedia.org/wiki/Mathematical_proof}{\blue{Beweises}} ist daher für die Mathematik zentral.   
-In diesem Abschnitt gehen wir auf den mathematischen Beweisbegriff ein.  Wir beleuchten dabei nur die
-praktische Seite und stellen verschiedene Methoden des Beweisens vor.  Für eine theoretische Analyse des
+In diesem Abschnitt gehen wir auf den mathematischen Beweisbegriff ein.  Wir beleuchten dabei zunächst die
+\emph{praktische} Seite und stellen verschiedene Methoden vor, die in der Mathematik verwendet werden, um Beweise zu
+führen.  Für eine \emph{theoretische} Analyse des 
 Beweis-Begriffs ist die \blue{mathematische Logik} zuständig, die ein Teil der Vorlesung zur
 theoretischen Informatik ist.
-Wir wenden uns hier den Beweis-Verfahren zu, die wir sp\"ater sowohl im Laufe dieser Vorlesung als
-auch in den Vorlesungen \"uber theoretische Informatik verwenden werden.  Grob können wir
-zwischen vier Arten von Beweisen unterscheiden: 
+Wir beschränken uns auf die Beweis-Verfahren, die wir sp\"ater sowohl im Laufe dieser Vorlesung als
+auch in den Vorlesungen \"uber theoretische Informatik verwenden werden.  Grob können wir hier
+zwischen vier verschiedenen Beweis-Methoden unterscheiden: 
 \begin{enumerate}
-\item direkten Beweisen,
-\item indirekten Beweisen,
-\item Beweise durch Fallunterscheidung, 
-\item Beweise durch vollständige Induktion.
+\item \blue{direkten} algebraischen Beweisen,
+\item \blue{indirekten} Beweisen,
+\item Beweise durch \blue{Fallunterscheidung}, 
+\item Beweise durch \blue{vollständige Induktion}.
 \end{enumerate}
+Ein komplexer mathematischer Beweis wird oft mehrere der oben genannten Methoden verwenden.  So werden
+beispielsweise in einem Induktions-Beweis im Induktions-Schritt in der Regle auch algebraische Umformungen
+durchgeführt. 
 
-\section{Direkte Beweise}
-Direkte Beweise sind die Beweise, die Sie bereits aus der Schule kennen.  Das wesentliche Hilfsmittel eines direkten Beweises
-sind algebraische Umformungen.  Wir geben ein einfaches Beispiel für einen
-direkten Beweis, benötigen dafür aber zunächst noch eine Definition.
-
+\section{Direkte algebraische Beweise}
+\blue{Direkte} algebraische Beweise sind die Beweise, die Sie bereits aus der Schule kennen.  Das wesentliche
+Hilfsmittel eines direkten Beweises 
+sind \blue{algebraische} Umformungen.  Wir geben ein einfaches Beispiel für einen
+direkten algebraischen Beweis, benötigen dafür aber zunächst noch eine Definition.
 
 \begin{Definition}[Pythagoreische Tripel] \hspace*{\fill} \\
-Die nat\"urlichen Zahlen $x$, $y$ und $z$ bilden ein
+Die positiven nat\"urlichen Zahlen $x$, $y$ und $z$ bilden ein
 \href{https://de.wikipedia.org/wiki/Pythagoreisches_Tripel}{\blue{Pythagoreisches Tripel}}, falls
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -33,7 +37,7 @@ $x^2 + y^2 = z^2$
 gilt.  In diesem Fall sind die Zahlen $x$, $y$ und $z$ nach dem
 \href{https://de.wikipedia.org/wiki/Satz_des_Pythagoras}{Satz des Pythagoras} die Längen eines 
 rechtwinkligen Dreiecks:  $x$ und $y$ sind die Längen der Katheten, während $z$ die Länge der Hypotenuse
-ist.
+ist. \eox
 \end{Definition}
 
 \example
@@ -44,8 +48,8 @@ $3^2 + 4^2 = 9 + 16 = 25 = 5^2$. \eox
 
 
 \begin{Satz} 
-Es seien $u$ und $v$ natürliche Zahlen mit $u > v$.  Dann bilden die Zahlen
-\\[0.2cm]
+Es seien $u$ und $v$ positive natürliche Zahlen mit $u > v$.  Dann bilden die Zahlen
+\\
 \hspace*{1.3cm}
 $u^2 - v^2$, \quad $2 \cdot u \cdot v$ \quad und \quad $u^2 + v^2$
 \\[0.2cm]
@@ -53,7 +57,13 @@ ein pythagoreisches Tripel.
 \end{Satz}
 
 \proof
-Wir müssen zeigen, dass
+Zunächst folgt aus der Tatsache, dass einerseits $u$, $v$ und $w$ positive natürliche Zahlen sind und
+andererseits $u > v$ ist, dass die Ausdrücke
+\\[0.2cm]
+\hspace*{1.3cm}
+$u^2 - v^2$, \quad $2 \cdot u \cdot v$ \quad und \quad $u^2 + v^2$
+\\[0.2cm]
+positive natürliche Zahlen ergeben.  Der wesentliche Teil des Beweises besteht darin zu zeigen, dass 
 \begin{equation}
   \label{eq:pyth}
 \bigl( u^2 - v^2 \bigr)^2 + \bigl(2 \cdot u \cdot v \bigr)^2 = \bigl(u^2 + v^2\bigr)^2  
@@ -90,18 +100,17 @@ Als ein weiteres Beispiel für einen direkten Beweis betrachten wir das folgende
 \end{Satz}
 
 \proof
-Nach Definition des Logarithmus gilt
+Nach Definition des \href{https://de.wikipedia.org/wiki/Logarithmus}{Logarithmus} gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $b = a^{\log_a(b)}$.
 \\[0.2cm]
-Nehmen  wir auf beiden Seiten dieser Gleichung den Logarithmus zur Basis $c$, erhalten wir die Gleichung
+Nehmen  wir auf beiden Seiten dieser Gleichung den Logarithmus zur Basis $c$, erhalten wir 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\log_c(b) = \log_c\bigl(a^{\log_a(b)}\bigr)$.
 \\[0.2cm]
-Auf Grund des Logarithmen-Gesetzes $\log_c(a^x) = x \cdot \log_c(a)$ ist diese Gleichung zu
-der  Gleichung
+Auf Grund des Logarithmen-Gesetzes $\log_c(a^x) = x \cdot \log_c(a)$ ist dies zu
 \\[0.2cm]
 \hspace*{1.3cm}
 $\log_c(b) = \log_a(b) \cdot \log_c(a)$
@@ -118,7 +127,7 @@ und haben damit die Behauptung bewiesen.
 Der letzte Satz zeigt Ihnen, wie Sie den Logarithmus zu einer beliebigen Basis mit einem
 Taschenrechner berechnen können, auf dem nur der natürliche Logarithmus fest verdrahtet ist,
 denn wenn wir in der soeben bewiesenen Behauptung $c := \mathrm{e}$ setzen, wobei $\mathrm{e}$ die 
-\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{\blue{Eulersche Zahl}} ist, dann erhalten wir
+\href{https://de.wikipedia.org/wiki/Eulersche_Zahl}{Eulersche Zahl} ist, dann erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\log_a(b) = \frac{\ln(b)}{\ln(a)}$.
@@ -126,16 +135,23 @@ $\ds\log_a(b) = \frac{\ln(b)}{\ln(a)}$.
 
 
 \section{Indirekte Beweise}
-Wollen wir eine Aussage $A$ auf indirektem Wege nachweisen, so nehmen wir an, dass $A$
-nicht gilt, wir nehmen also an, dass die Aussage $\neg A$ richtig ist.  Wir versuchen dann
-weiter, aus dieser Annahme eine offensichtlich falsche Aussage herzuleiten, beispielsweise
-die Aussage, dass $1 = 2$ gilt.  Wenn dies gelingt, dann können wir rückwärts schließen,
-dass die Annahme $\neg A$ falsch sein muss und dass folglich die Aussage $A$ wahr ist.
+Wollen wir eine Aussage $A$ auf \blue{indirektem} Wege nachweisen, so \blue{nehmen wir an}, dass $A$
+\blue{nicht gilt}, wir nehmen also an, dass die Aussage $\neg A$ richtig ist.  Wir versuchen dann
+weiter, aus dieser Annahme einen \blue{Widerspruch}, also eine offensichtlich \blue{falsche} Aussage
+herzuleiten, beispielsweise die Aussage, dass $1 = 2$ gilt.  Wenn dies gelingt, dann können wir rückwärts
+schließen, dass die Annahme $\neg A$ falsch sein muss und dass folglich die Aussage $A$ wahr ist.
 
 Bevor wir das erste Beispiel präsentieren können, wiederholen wir die Begriffe der \blue{geraden} und
 \blue{ungeraden} Zahlen.  Eine natürliche Zahl $n$ ist \blue{gerade}, wenn Sie durch $2$
 \href{https://de.wikipedia.org/wiki/Teilbarkeit}{teilbar} ist.  Eine 
 solche Zahl lässt sich also immer in der Form $n = 2 \cdot k$ mit $k \in \mathbb{N}$ schreiben.
+Hierbei bezeichnet $\mathbb{N}$ die Menge der \href{https://de.wikipedia.org/wiki/Natürliche_Zahl}{natürlichen Zahlen}.  
+Wir vereinbaren, dass die natürlichen Zahlen mit der Zahl $0$ beginnen, es gilt also
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathbb{N} = \{ 0, 1, 2, 3, \cdots \}$.
+\\[0.2cm]
+Die Menge der \blue{ganzen Zahlen} bezeichnen wir mit $\mathbb{Z}$.
 Eine natürliche Zahl $n$  ist \blue{ungerade}, wenn sie nicht durch $2$ teilbar ist.  Eine ungerade Zahl
 hat bei Division durch $2$ also den Rest $1$ und lässt sich damit immer in der Form $2 \cdot k + 1$
 darstellen, wobei $k \in \mathbb{N}$ ist.
@@ -147,7 +163,7 @@ darstellen, wobei $k \in \mathbb{N}$ ist.
 
 \proof
 Wir führen den Beweis indirekt und nehmen an, dass $p$ ungerade ist.  Damit lässt sich $p$  in der Form
-\\[0.2cm]
+\\
 \hspace*{1.3cm}
 $p = 2 \cdot q + 1$ \quad mit \quad $q \in \mathbb{N}$
 \\[0.2cm]
@@ -227,7 +243,8 @@ Diese Gleichung teilen wir durch $2$ und haben
 \end{equation}
 Gleichung (\ref{eq:b5}) zeigt nun, dass $q^2$ eine gerade Zahl ist und wieder nach dem Lemma
 \ref{lemma:b1} können wir folgern, dass auch  $q$ gerade ist.  Folglich ist $q$ durch $2$ teilbar.
-Damit sind dann aber $p$ und $q$ nicht teilerfremd und wir haben einen Widerspruch zu der
+Damit sind dann aber $p$ und $q$ nicht teilerfremd, denn beide sind durch $2$ teilbar. 
+Damit haben wir einen Widerspruch zu der
 Annahme, dass $\sqrt{2}$ sich als Bruch $\bruch{p}{q}$ zweier natürlicher Zahlen $p$ und $q$
 darstellen lässt, denn einen solchen Bruch können wir immer so kürzen, dass $p$ und $q$ teilerfremd
 sind. 
@@ -238,12 +255,20 @@ Es sei $p \in \mathbb{N}$ eine natürliche Zahl und die Zahl $p^2$ sei nicht durc
 Sie, dass dann auch $p$ nicht durch $3$ teilbar ist. 
 \eox
 
+\exercise
+Zeigen Sie, dass $\sqrt{3}$ keine rationale Zahl ist.
+\eox
+
+\exercise
+Zeigen Sie, dass $\sqrt{2} + \sqrt{3}$ keine rationale Zahl ist.
+\eox
+
 \section{Beweise durch Fallunterscheidung}
 Beim Beweis durch \blue{Fallunterscheidung} teilen wir einen Beweis in mehrere F\"alle auf.  Wir
 illustrieren das Konzept an einem Beispiel. 
 
 \begin{Satz}
-  Es gibt irrationale Zahlen $x$ und $y$, so dass $x^y$ rational ist, es gilt also
+  Es gibt irrationale Zahlen $x$ und $y$, so dass auch die Zahl $x^y$ rational ist, es gilt also
   \\[0.2cm]
   \hspace*{1.3cm}
   $\exists x, y \in \mathbb{R}:\bigl(x \not\in \mathbb{Q} \wedge y \not\in \mathbb{Q} \wedge x^y \in \mathbb{Q}\bigr)$.
@@ -254,9 +279,9 @@ Im letzten Abschnitt haben wir bereits gezeigt, dass die Zahl $\sqrt{2}$ irratio
 betrachten nun die Zahl 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\sqrt{2}^{\sqrt{2}}$.
+$\alpha := \sqrt{2}^{\sqrt{2}}$.
 \\[0.2cm]
-Es gibt nur zwei Möglichkeiten: Entweder ist die Zahl $\sqrt{2}^{\sqrt{2}}$ rational oder nicht.  Wir
+Es gibt nur zwei Möglichkeiten: Entweder ist die Zahl $\alpha$ rational oder sie ist es nicht.  Wir
 untersuchen diese beiden Fälle getrennt.
 \begin{enumerate}
 \item Fall: $\sqrt{2}^{\sqrt{2}} \in \mathbb{Q}$.
@@ -268,7 +293,7 @@ untersuchen diese beiden Fälle getrennt.
       \\[0.2cm]
       Da wir bereits wissen,
       dass $\sqrt{2} \not\in \mathbb{Q}$ ist, und da nach der Voraussetzung der
-      Fallunterscheidung $x^y \in \mathbb{Q}$ gilt, haben wir in diesem Fall bereits Zahlen $x$ und
+      Fallunterscheidung $x^y = \sqrt{2}^{\sqrt{2}} \in \mathbb{Q}$ gilt, haben wir in diesem Fall bereits Zahlen $x$ und
       $y$ mit der behaupteten Eigenschaft gefunden.
 \item Fall:  $\sqrt{2}^{\sqrt{2}} \not\in \mathbb{Q}$.
 
@@ -314,6 +339,7 @@ aber das Paar $\pair(x,y)$ kann nicht konkret angegeben werden. \eoxs
 Aus dem \href{http://en.wikipedia.org/wiki/Gelfond%27s_theorem}{Gelfond-Schneider-Theorem}
 kann gefolgert werden, dass $\sqrt{2}^{\sqrt{2}} \not\in \mathbb{Q}$ gilt.  Der Nachweis dieses
 Theorem liegt aufgrund seiner Tiefe deutlich außerhalb des Rahmens einer einführenden Mathematik-Vorlesung.
+\eox
 
 \exercise
 Zeigen Sie, dass für alle $n \in \mathbb{N}$ die Zahl
@@ -331,11 +357,32 @@ stets durch $3$ teilbar ist.  \exend
 % n = 3 * k + 2
 % n^2 + 2 = 9 * k + 6 * k + 4 + 2
 
+\exercise
+Es seien $a$, $b$, $c$, $d$ und $e$ natürliche Zahlen.  Dann gibt es unter diesen Zahlen drei Zahlen
+$x$, $y$ und $z$, so dass die Summe
+\\[0.2cm]
+\hspace*{1.3cm}
+$x + y + z$
+\\[0.2cm]
+durch $3$ teilbar ist.
+
+\hint
+Bei der Division durch $3$ kann der Rest nur die Werte $0$, $1$ oder $2$ annehmen.
+Unterscheiden Sie folgende beiden Fälle:
+\begin{enumerate}[(a)]
+\item Unter den Zahlen $a$,  $b$, $c$, $d$ und $e$ gibt es mindestens drei Zahlen,
+      die bei der Division durch 3 den gleichen Rest haben.
+\item Es gibt unter den Zahlen $a$, $b$, $c$, $d$ und $e$ höchstens zwei Zahlen, die den selben Rest haben. 
+      Dann müssen sich unter diesen Zahlen aber jeweils eine Zahl mit dem Rest $0$, eine Zahl mit dem Rest $1$
+      und eine Zahl mit dem Rest $2$ finden. \eox
+\end{enumerate}
+\pagebreak
+
 \section{Induktions-Beweise}
 Die wichtigste Beweismethode in der Informatik ist der Beweis durch 
 \href{https://de.wikipedia.org/wiki/Vollständige_Induktion}{vollständige Induktion}. 
 Die Induktion ist in der Informatik deshalb so wichtig, weil Sie zum Beweis der Korrektheit
-rekursiver Funktionen benötigt wird.  Es sei
+\blue{rekursiver} Funktionen benötigt wird.  Es sei
 $F(n)$ eine Formel, in der die Variable $n$ vorkommt.  Um eine Aussage der Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -372,17 +419,17 @@ Argumentation ist zunächst informal. Ein formaler Beweis folgt.
 \end{Satz}
 
 \proof
-Wir nehmen an, dass
+Wir nehmen an, dass sowohl
 \\[0.2cm]
 \hspace*{1.3cm}
-$F(0) \wedge \forall n \in \mathbb{N}:\bigl(F(n) \rightarrow F(n+1)\bigr)$
+$F(0)$ \quad als auch \quad $\forall n \in \mathbb{N}:\bigl(F(n) \rightarrow F(n+1)\bigr)$
 \\[0.2cm]
 richtig ist und zeigen, dass dann
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}:F(n)$
 \\[0.2cm]
-gilt.  Den Nachweis dieser Behauptung führen wir indirekt und nehmen an, dass
+gilt.  Den Nachweis dieser Behauptung führen wir \blue{indirekt} und nehmen an, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $\neg\bigl(\forall n \in \mathbb{N}:F(n)\bigr)$
@@ -392,7 +439,7 @@ gilt.  Das ist aber äquivalent zu der Formel
 \hspace*{1.3cm}
 $\exists n \in \mathbb{N}:\neg F(n)$.
 \\[0.2cm]
-Wir definieren eine \blue{Menge} $M$ als die Menge\footnote{
+Wir definieren eine Menge $M$ als die Menge\footnote{
   Wir werden den Begriff der \blue{Menge} im nächsten Kapitel formal definieren.  
 } 
 aller der Zahlen, für die $F(n)$ falsch ist:
@@ -418,7 +465,7 @@ Aus  $n_0-1 \not\in M$ folgt nach Definition der Menge $M$, dass die Formel
 $F(n_0 - 1)$
 \\[0.2cm]
 richtig ist.  Wenn wir in der Formel $\forall n \in \mathbb{N}:\bigl( F(n) \rightarrow F(n+1)\bigr)$
-für $n$ die Zahl $n_0$ einsetzen, dann können wir dann folgern, dass
+für $n$ die Zahl $n_0$ einsetzen, dann können wir also folgern, dass
 \\[0.2cm]
 \hspace*{1.3cm}
 $F\bigl((n_0-1) +1\bigr)$
@@ -426,8 +473,9 @@ $F\bigl((n_0-1) +1\bigr)$
 gilt.  Also gilt $F(n_0)$ und das ist ein Widerspruch zur Definition von $n_0$. \qed
 
 Wir geben nun einige typische Beispiele für Induktions-Beweise.  Die in diesen Sätzen bewiesenen
-Summenformeln sollten Sie sich gut merken, denn diese Formeln werden später bei der Analyse der Komplexität
+\blue{Summen-Formeln} sollten Sie sich gut merken, denn diese Formeln werden später bei der Analyse der Komplexität
 von Algorithmen häufig verwendet.
+
 
 \begin{Satz} Es gilt 
 \\[0.2cm]
@@ -517,7 +565,6 @@ gilt.  Wie lautet die Formel im Falle $q=1$? \exend
 Zeigen Sie, dass jede natürliche Zahl $n \geq 2$ entweder eine Primzahl ist oder aber sich als  
 Produkt von zwei oder mehr Primzahlen darstellen lässt.  
 \exend  
-\pagebreak
  
 \exercise
 Es sei $x \in \mathbb{R}$ und es gelte $x \geq 0$.  Zeigen Sie, dass für alle natürlichen Zahlen die Ungleichung
@@ -527,7 +574,7 @@ $(1+x)^{n} \geq 1 + n \cdot x$
 \\[0.2cm]
 gilt.  
 \exend
-
+\pagebreak
 
 \exercise
 \begin{enumerate}[(a)]
@@ -539,7 +586,7 @@ gilt.
       ausgeschnitten ist.  Abbildung \ref{fig:triomino.eps} zeigt 
       ein Triomino, bei dem die rechte obere Ecke ausgeschnitten ist.  Beweisen Sie, dass Sie ein 
       \href{http://de.wikipedia.org/wiki/Schachbrett}{Schachbrett}, bei dem eines der Eckfelder
-      ausgeschnitten ist, vollständig so durch Triominos so überdecken können, dass die einzelnen
+      ausgeschnitten ist, vollständig durch Triominos so überdecken können, dass die einzelnen
       Triominos sich nicht überlappen.  Dabei ist vorausgesetzt, dass die einzelnen Felder des
       Schachbretts Quadrate der Länge 1 sind.
 
@@ -563,6 +610,21 @@ gilt.
       Für den Zweck der Aufgabe reicht es zu wissen, dass ein Schachbrett ein Quadrat der Länge 8 ist (was immer
       dabei die Längeneinheit ist), das in $8 \times 8$ Quadrate der Länge 1 unterteilt ist.
       \exend  
+\end{enumerate}
+
+
+\noindent
+\textbf{Reflektion}
+\begin{enumerate}[(a)]
+\item Welche verschiedenen Arten von Beweisen haben Sie in diesem Kapitel kennengelernt?
+\item Neben den in diesem Kapitel dargestellten Beweis-Prinzipien gibt es noch eine Art des Beweises,
+      die Sie schon auf der Schule kennen gelernt haben, die aber in diesem Kapitel nicht behandelt 
+      worden ist.  Um welche Art von Beweisen handelt es sich dabei?
+\item Wie lautet das Induktions-Prinzip? 
+      Geben Sie ein Beispiel für einen Beweis durch vollständige Induktion an.
+\item Was ist die Grund-Idee bei einem indirekten Beweis?  Geben Sie ein Beispiel für einen indirekten Beweis
+      an. 
+\item Was ist ein Beweis durch Fallunterscheidung.
 \end{enumerate}
 
 %%% local Variables: 
