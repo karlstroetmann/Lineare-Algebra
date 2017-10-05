@@ -6,21 +6,19 @@ Unendlichkeit den Mathematikern zunehmend Kopfzerbrechen bereitete.
 
 Begründet wurde die Mengenlehre in wesentlichen Teilen von
 \href{https://de.wikipedia.org/wiki/Georg_Cantor}{Georg Cantor} (1845 -- 1918). 
-Die erste Definition des Begriffs der Menge lautete etwa wie folgt \cite{cantor:1895}:
+Die erste Definition des Begriffs der \blue{Menge} lautete etwa wie folgt \cite{cantor:1895}:
 \vspace*{0.2cm}
 
 \colorbox{red}{\framebox{\colorbox{yellow}{
 \begin{minipage}{0.9\linewidth}
-  \textsl{Unter einer ``Menge'' verstehen wir jede Zusammenfassung $M$ von bestimmten wohlunterschiedenen
-  Objekten $x$ unserer Anschauung oder unseres Denkens zu
-  einem Ganzen.}
+  \textsl{Unter einer ``Menge'' verstehen wir jede \blue{wohldefinierte} Zusammenfassung $M$ von bestimmten
+          Objekten $x$ unserer Anschauung oder unseres Denkens zu einem Ganzen.}
 \end{minipage}}}}
 \vspace*{0.2cm}
 
-Das Attribut ``\emph{wohldefiniert}'' drückt dabei aus, dass wir für 
-eine vorgegebene Menge $M$ und ein Objekt $x$ stets klar sein muss, ob das Objekt $x$
-zu der Menge $M$ gehört oder nicht.  In diesem Fall sagen wir, dass $x$ ein \emph{Element} der
-Menge $M$ ist und schreiben
+Das Attribut ``\blue{wohldefiniert}'' drückt dabei aus, dass für eine vorgegebene Menge $M$ und ein Objekt $x$
+stets klar sein muss, ob das Objekt $x$ zu der Menge $M$ gehört oder nicht.  In diesem Fall sagen wir, dass $x$
+ein \blue{Element} der Menge $M$ ist und schreiben
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \in M$. 
@@ -30,10 +28,10 @@ gebraucht, für das sich eine Infix-Notation eingebürgert hat.
 Etwas verkürzt können wir den Mengen-Begriff wie folgt definieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
-\textsl{Eine Menge ist eine \emph{wohldefinierte} Ansammlung von Elementen}.
+\textsl{Eine Menge ist eine \blue{wohldefinierte} Ansammlung von Elementen}.
 \\[0.2cm]
-Um den Begriff der \emph{wohldefinierten Ansammlung von Elementen} mathematisch zu
-präzisieren, führte Cantor das sogenannte \colorbox{yellow}{\emph{Komprehensions-Axiom}} ein.
+Um den Begriff der \blue{wohldefinierten Ansammlung von Elementen} mathematisch zu
+präzisieren, führte Cantor das sogenannte \colorbox{yellow}{\blue{Komprehensions-Axiom}} ein.
 Wir können dieses zunächst wie folgt formalisieren: Ist $p(x)$ eine Eigenschaft, die
 ein Objekt $x$ haben kann, so können wir die Menge $M$ aller Objekte, welche die
 Eigenschaft $p(x)$ haben, bilden.  Wie schreiben dann \\[0.2cm]
@@ -43,9 +41,9 @@ Eine Eigenschaft $p(x)$ ist dabei nichts anderes als eine Formel, in der die Var
 vorkommt.
 Wir veranschaulichen das Komprehensions-Axiom durch ein Beispiel:  Es sei $\mathbb{N}$
 die Menge der natürlichen Zahlen. Ausgehend von der Menge $\mathbb{N}$  wollen wir die
-Menge der \emph{geraden Zahlen} definieren. Zunächst müssen wir dazu die Eigenschaft einer
+Menge der \blue{geraden Zahlen} definieren. Zunächst müssen wir dazu die Eigenschaft einer
 Zahl $x$,
-\emph{gerade} zu sein, durch eine Formel $p(x)$ mathematisch erfassen.  Eine natürliche Zahl $x$ ist
+\blue{gerade} zu sein, durch eine Formel $p(x)$ mathematisch erfassen.  Eine natürliche Zahl $x$ ist
 genau dann gerade, wenn es eine natürliche Zahl $y$ gibt, so dass $x$ das Doppelte von $y$
 ist.  Damit können wir die Eigenschaft $p(x)$ folgendermaßen
 definieren: \\[0.2cm]
@@ -55,7 +53,7 @@ Also kann die Menge der geraden Zahlen als \\[0.2cm]
 geschrieben werden.
 
 Leider führt die uneingeschränkte Anwendung des Komprehensions-Axiom schnell zu
-Problemen.  Betrachten wir dazu die Eigenschaft einer Menge, sich \underline{nicht} selbst zu
+Problemen.  Betrachten wir dazu die Eigenschaft einer Menge, sich \underline{\blue{nicht}} selbst zu
 enthalten, wir setzen also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -84,7 +82,7 @@ $R \in R \;\Leftrightarrow\; \neg(R \in R)$
 gezeigt.  Das ist aber logisch nicht möglich, eine Formel kann nicht genau dann wahr sein,
 wenn Sie falsch ist.  Als Ausweg können wir nur feststellen, dass das vermittels \\[0.2cm]
 \hspace*{1.3cm} $\{ x \mid \neg (x \in x) \}$ \\[0.2cm]
-definierte Objekt keine Menge ist.
+definierte Objekt \underline{\blue{keine}} Menge ist.
 Das heißt dann aber, dass das Komprehensions-Axiom
 zu allgemein ist.  Wir folgern, dass nicht jede  in der Form \\[0.2cm]
 \hspace*{1.3cm} $M = \{ x \mid p(x) \}$ \\[0.2cm]
@@ -95,15 +93,15 @@ $\bigl\{x \mid \neg(x \in x)\bigr\}$
 \\[0.2cm]
 stammt von dem britischen Logiker und Philosophen 
 \href{http://de.wikipedia.org/wiki/Bertrand_Russell}{Bertrand Russell} (1872 -- 1970).  Sie wird
-deswegen auch als \href{http://de.wikipedia.org/wiki/Russellsche_Antinomie}{\emph{Russell'sche Antinomie}}
+deswegen auch als \href{http://de.wikipedia.org/wiki/Russellsche_Antinomie}{Russell'sche Antinomie}
 bezeichnet. 
 
 Um  Paradoxien wie die Russell'sche Antinomie  zu vermeiden, ist es erforderlich, bei der
 Konstruktion von Mengen vorsichtiger vorzugehen.
 Wir werden im Folgenden Konstruktions-Prinzipien für Mengen vorstellen,
 die schwächer sind als das Komprehensions-Axiom, die aber für die Praxis 
-ausreichend sind.  Wir wollen dabei die dem Komprehensions-Axiom zugrunde liegende Notation 
-beibehalten und Mengendefinitionen in der Form 
+ausreichen.  Wir wollen dabei die dem Komprehensions-Axiom zugrunde liegende Notation 
+beibehalten und Mengen\-definitionen in der Form 
 \\[0.2cm]
 \hspace*{1.3cm}
 $M = \{ x \mid p(x) \}$  
@@ -114,7 +112,7 @@ Mengen zu konstruieren, stellen wir jetzt vor.
 
 \section{Erzeugung von Mengen durch explizites Auflisten}
 Die einfachste Möglichkeit, eine Menge festzulegen, besteht in der expliziten
-\emph{Auflistung} aller ihrer Elemente. Diese Elemente werden in den geschweiften
+\blue{Auflistung} aller ihrer Elemente. Diese Elemente werden in den geschweiften
 Klammern ``\texttt{\{}'' und ``\texttt{\}}'' eingefasst und durch Kommas getrennt.
 Definieren wir beispielsweise \\[0.2cm]
 \hspace*{1.3cm} $M := \{ 1, 2, 3 \}$, \\[0.2cm]
@@ -131,7 +129,7 @@ $\{\mathtt{a}, \mathtt{b}, \mathtt{c}, \mathtt{d}, \mathtt{e},
  \mathtt{m}, \mathtt{n}, \mathtt{o}, \mathtt{p}, \mathtt{q}, \mathtt{r}, \mathtt{s},
  \mathtt{t}, \mathtt{u}, \mathtt{v}, \mathtt{w}, \mathtt{x}, \mathtt{y}, \mathtt{z\}}$.
  \\[0.2cm]
-Als letztes Beispiel betrachten wir die leere Menge $\emptyset$, die durch
+Als letztes Beispiel betrachten wir die \blue{leere Menge} $\emptyset$, die durch
 Aufzählung aller ihrer Elemente definiert werden kann:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -150,7 +148,7 @@ denn beide Mengen enthalten offenbar dieselben Elemente.
 
 \section{Vorgegebene unendliche Mengen von Zahlen}
 Alle durch explizite Auflistung definierten Mengen haben offensichtlich nur endlich viele
-Elemente.  Aus der mathematischen Praxis kennen wir aber auch Mengen mit unendlich vielen
+Elemente.  Aus der mathematischen Praxis kennen wir aber auch Mengen mit \blue{unendlich} vielen
 Elementen.  Ein Beispiel ist die 
 \href{http://en.wikipedia.org/wiki/Natural_number}{Menge der natürlichen Zahlen}, die wir mit $\mathbb{N}$
 bezeichnen.  Im Gegensatz zu einigen anderen Autoren werde ich dabei die Zahl $0$ 
@@ -161,7 +159,7 @@ als natürliche Zahl auffassen, denn dies ist im
   aber die Definition der Menge $\mathbb{N}$ hat sich dabei nicht geändert.
 }
 Mit den bisher behandelten Verfahren lässt sich die Menge $\mathbb{N}$  nicht definieren.
-Wir müssen daher die Existenz dieser Menge als Axiom fordern.  Genauer postulieren wir, dass es eine
+Wir müssen daher die Existenz dieser Menge als \blue{Axiom} fordern.  Genauer postulieren wir, dass es eine
 Menge $\mathbb{N}$ gibt, welche die folgenden drei Eigenschaften hat:
 \begin{enumerate}
 \item $0 \in \mathbb{N}$.
@@ -174,34 +172,34 @@ Anschaulich schreiben wir \\[0.2cm]
 Neben der Menge $\mathbb{N}$ der natürlichen Zahlen verwenden wir noch die folgenden
 Mengen von Zahlen: 
 \begin{enumerate}
-\item $\mathbb{N}^*$ ist die Menge der positiven natürlichen Zahlen, es gilt also
+\item $\mathbb{N}^*$ ist die Menge der \blue{positiven natürlichen Zahlen}, es gilt also
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathbb{N}^* := \{ n \mid n \in \mathbb{N} \wedge n > 0 \}$.
-\item $\mathbb{Z}$ ist die Menge der ganzen Zahlen, es gilt
+\item $\mathbb{Z}$ ist die Menge der \blue{ganzen Zahlen}, es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mathbb{Z} := \{ 0, 1, -1, 2, -2, 3, -3, \cdots \}$ 
 
-\item $\mathbb{Q}$ ist die Menge der rationalen Zahlen, es gilt
+\item $\mathbb{Q}$ ist die Menge der \blue{rationalen Zahlen}, es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $\Bigl\{ \bruch{p}{q} \mid\, p \in \mathbb{Z} \wedge q \in \mathbb{N}^* \Bigr\}$
-\item $\mathbb{R}$ ist die Menge der reellen Zahlen.
+\item $\mathbb{R}$ ist die Menge der \blue{reellen Zahlen}.
 
-      Eine mathematisch saubere Definition der reellen Zahlen erfordert einiges an Aufwand.  Wir
-      werden die Konstruktion der reellen Zahlen erst in der
+      Eine mathematisch saubere Definition der \href{https://de.wikipedia.org/wiki/Reelle_Zahl}{reellen Zahlen}
+      erfordert einen hohen Aufwand.  Wir werden die Konstruktion der reellen Zahlen erst in der
       \href{https://github.com/karlstroetmann/Analysis/blob/master/Script/analysis.pdf}{Analysis-Vorlesung}
       im zweiten Semester besprechen. 
 \end{enumerate}
 
 
 \section{Das Auswahl-Prinzip}
-Das \emph{Auswahl-Prinzip}, auch bekannt als 
-\href{https://de.wikipedia.org/wiki/Aussonderungsaxiom}{\emph{Aussonderungs-Axiom}}
- ist eine Abschwächung des Komprehensions-Axiom.  Die Idee
-ist, mit Hilfe einer Eigenschaft $p$ aus einer schon vorhandenen Menge $M$ die Menge $N$ der 
-Elemente $x$ \emph{auszuwählen}, die eine bestimmte Eigenschaft $p(x)$ besitzen: \\[0.2cm]
+Das \blue{Auswahl-Prinzip}, das auch als 
+\href{https://de.wikipedia.org/wiki/Aussonderungsaxiom}{Aussonderungs-Axiom} bekannt ist,
+ist eine Abschwächung des Komprehensions-Axiom.  Die Idee beim Auswahl-Prinzip
+ist es, mit Hilfe einer Eigenschaft $p$ aus einer schon vorhandenen Menge $M$ die Menge $N$ der 
+Elemente $x$ \blue{auszuwählen}, die eine bestimmte Eigenschaft $p(x)$ besitzen: \\[0.2cm]
 \hspace*{1.3cm} $N = \{ x\in M \;|\; p(x) \}$ \\[0.2cm]
 In der Notation des Komprehensions-Axioms schreibt sich diese Menge als \\[0.2cm]
 \hspace*{1.3cm} $N = \{ x \mid x \in M \wedge p(x) \}$. \\[0.2cm]
@@ -220,9 +218,9 @@ geschrieben werden.
 
 \section{Vereinigungs-Mengen}
 Sind zwei Mengen $M$ und $N$ gegeben, so enthält die 
-\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Vereinigung_.28Vereinigungsmenge.29}{\emph{Vereinigung}}
-von $M$ und $N$ alle Elemente, die  
- in der Menge $M$ oder in der Menge $N$ liegen.  Für diese Vereinigung schreiben wir $M \cup N$.
+\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Vereinigung_.28Vereinigungsmenge.29}{Vereinigung}
+von $M$ und $N$ alle Elemente, die entweder in der Menge $M$ oder in der Menge $N$ oder sowohl in $M$ als auch
+in $N$ liegen.  Für diese Vereinigung schreiben wir $M \cup N$.
 Formal kann die Vereinigung als 
 \\[0.2cm]
 \hspace*{1.3cm} $M \cup N := \{ x \;|\; x \in M \vee x \in N \}$. 
@@ -236,14 +234,14 @@ Ist  $M = \{1,2,3\}$ und $N = \{2,5\}$, so gilt: \\[0.2cm]
 
 Der Begriff der Vereinigung von Mengen lässt sich verallgemeinern.  Betrachten
 wir dazu eine Menge $X$, deren Elemente selbst wieder Mengen sind. Beispielsweise ist die
-Potenz-Menge, die als die Menge aller Teilmengen definiert ist,   
-eine Menge von dieser Art.  Wir können dann die Vereinigung aller Mengen, die Elemente
-von der Menge $X$ sind, bilden.  Diese Vereinigung schreiben wir als $\bigcup X$.  Formal
+\blue{Potenz-Menge} einer Menge $M$, die wir später als die Menge aller Teilmengen von $M$ 
+definieren, eine Menge, deren Elemente selbst wieder Mengen sind.  Wir können dann die Vereinigung aller
+Mengen, die Elemente von der Menge $X$ sind, bilden.  Diese Vereinigung schreiben wir als $\bigcup X$.  Formal
 kann diese Vereinigung als
 \\[0.2cm]
 \hspace*{1.3cm} $\bigcup X = \{ y \;|\; \exists x \in X: y \in x \}$.
 \\[0.2cm]
- definiert werden.
+definiert werden.
 
 \example
 Die Menge $X$ sei wie folgt gegeben: \\[0.2cm]
@@ -255,33 +253,33 @@ Dann gilt \\[0.2cm]
 
 \section{Schnitt-Menge}
 Sind zwei Mengen $M$ und $N$ gegeben, so definieren wir den 
-\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Schnittmenge_.28Schnitt.2C_auch_.E2.80.9EDurchschnitt.E2.80.9C.29}{\emph{Schnitt}}
+\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Schnittmenge_.28Schnitt.2C_auch_.E2.80.9EDurchschnitt.E2.80.9C.29}{Schnitt}
 von $M$ und $N$ als die Menge aller Elemente, die \underline{sowohl} in $M$ \underline{als auch} in $N$
 auftreten.  Wir bezeichnen den Schnitt von $M$ und $N$ mit $M \cap N$.
 Formal können wir $M \cap N$ als 
 \\[0.2cm]
-\hspace*{1.3cm} $M \cap N := \{ x \mid x \in M \wedge x \in N \}$.
+\hspace*{1.3cm} $M \cap N := \{ x \mid x \in M \wedge x \in N \}$
 \\[0.2cm]
 definieren.
 
 \example
 Wir berechnen den Schnitt der  Mengen $M = \{ 1, 3, 5 \}$ und $N = \{ 2, 3, 5, 6 \}$.  Es gilt
 \\[0.2cm]
-\hspace*{1.3cm} $M \cap N = \{ 3, 5 \}$
+\hspace*{1.3cm} $M \cap N = \{ 3, 5 \}$.
 \eoxs
 
 \section{Differenz-Mengen}
  Sind zwei Mengen $M$ und $N$ gegeben, so bezeichnen wir die 
-\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Differenz_und_Komplement}{\emph{Differenz}}
+\href{https://de.wikipedia.org/wiki/Menge_(Mathematik)#Differenz_und_Komplement}{Differenz}
 von $M$ und $N$ als die Menge aller Elemente, die in $M$ aber nicht $N$
  auftreten.  Wir schreiben hierfür $M \backslash N$.  Dieser Ausdruck wird als
 \\[0.2cm]
 \hspace*{1.3cm}
-$M$ \emph{ohne} $N$
+$M$ \blue{ohne} $N$
 \\[0.2cm]
 gelesen und kann formal als
  \\[0.2cm]
-\hspace*{1.3cm} $M \backslash N := \{ x \mid x \in M \wedge x \not\in N \}$. 
+\hspace*{1.3cm} $M \backslash N := \{ x \mid x \in M \wedge x \not\in N \}$
  \\[0.2cm] 
 definiert werden.
 
@@ -294,7 +292,7 @@ Wir berechnen die Differenz der Mengen $M = \{ 1, 3, 5, 7 \}$ und $N = \{ 2, 3, 
 \section{Bild-Mengen}
 Es sei $M$ eine Menge und $f$ sei eine Funktion, die für alle $x$ aus $M$ definiert ist.
 Dann heißt die Menge aller Abbilder $f(x)$ von Elementen $x$ aus der Menge $M$ das
-\href{https://de.wikipedia.org/wiki/Bild_(Mathematik)}{\emph{Bild}} von $M$ unter $f$.  Wir
+\href{https://de.wikipedia.org/wiki/Bild_(Mathematik)}{Bild} von $M$ unter $f$.  Wir
 schreiben $f(M)$ für dieses Bild. 
 Formal kann $f(M)$ als
  \[ f(M) := \{ y \;|\; \exists x \in M: y = f(x) \} \]
@@ -309,10 +307,11 @@ definiert werden.  Alternativ können wir auch
 schreiben.
 \eox
 
+
 \section{Potenz-Mengen}
-Um den Begriff der \href{https://de.wikipedia.org/wiki/Potenzmenge}{\emph{Potenz-Menge}}
-einführen zu können, müssen wir zunächst \emph{Teilmengen} definieren.  Sind $M$ und
-$N$ zwei Mengen, so heißt $M$ eine \emph{Teilmenge} von $N$ genau dann, wenn jedes Element der
+Um den Begriff der \href{https://de.wikipedia.org/wiki/Potenzmenge}{Potenz-Menge}
+einführen zu können, müssen wir zunächst \blue{Teilmengen} definieren.  Sind $M$ und
+$N$ zwei Mengen, so heißt $M$ eine \blue{Teilmenge} von $N$ genau dann, wenn jedes Element der
 Menge $M$ auch ein Element der Menge $N$ ist.  In diesem Fall schreiben wir $M \subseteq N$.  Formal
 können wir den Begriff der Teilmenge durch die Formel
  \\[0.2cm]
@@ -320,6 +319,7 @@ können wir den Begriff der Teilmenge durch die Formel
 $M \subseteq N \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \forall x: (x \in M \rightarrow x \in N)$ 
  \\[0.2cm]
 definieren.
+\pagebreak
 
 \example
 Es gilt 
@@ -333,7 +333,7 @@ Weiter gilt für jede beliebige Menge $M$
 $\emptyset \subseteq M$. \eox
 
 
-Unter der \emph{Potenz-Menge} einer Menge $M$ wollen wir nun die Menge aller Teilmengen
+Unter der \blue{Potenz-Menge} einer Menge $M$ wollen wir nun die Menge aller Teilmengen
 von $M$ verstehen.  Wir schreiben $2^M$ für die Potenz-Menge von $M$.  Dann gilt \\[0.2cm]
 \hspace*{1.3cm} $2^M = \{ x \;|\; x \subseteq M \}$.
 \vspace{0.2cm}
@@ -341,7 +341,7 @@ von $M$ verstehen.  Wir schreiben $2^M$ für die Potenz-Menge von $M$.  Dann gilt
 \example
 Wir bilden  die Potenz-Menge der Menge $\{1,2,3\}$.  Es gilt: \\[0.2cm]
 \hspace*{1.3cm} $2^{\{1,2,3\}} = \big\{ \{\},\, \{1\}, \, \{2\},\, \{3\},\, \{1,2\}, \, \{1,3\}, \, \{2,3\},\, \{1,2,3\}\big\}$. \\[0.2cm]
-Diese Menge hat $8 = 2^3$ Elemente.  Allgemein kann durch \emph{Induktion} über die Anzahl der
+Diese Menge hat $8 = 2^3$ Elemente.  Allgemein kann durch \blue{Induktion} über die Anzahl der
 Elemente der Menge $M$ gezeigt werden, dass die 
 Potenz-Menge einer Menge $M$, die aus $m$ verschiedenen Elementen besteht, insgesamt $2^m$ 
 Elemente enthält.  Bezeichnen wir die Anzahl der Elemente einer endlichen Menge mit
@@ -409,8 +409,13 @@ $\textsl{card}\bigl(2^M\bigr) = 2^n$.
       $A := \bigl\{ K \in 2^M \bigm| x_{n+1}     \in K \bigr\}$, \quad
       $B := \bigl\{ K \in 2^M \bigm| x_{n+1} \not\in K \bigr\}$.
       \\[0.2cm]
-      Offenbar sind die Mengen $A$ und $B$ \emph{disjunkt}, das heißt diese Mengen enthalten keine
-      gemeinsamen Elemente.  Daher folgt aus der Gleichung
+      Offenbar sind die Mengen $A$ und $B$ \blue{disjunkt}, das heißt diese Mengen enthalten keine
+      gemeinsamen Elemente, es gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $A \cap B = \{\}$.
+      \\[0.2cm]
+      Daher folgt aus der Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $2^M = A \cup B$,
@@ -472,16 +477,16 @@ $\textsl{card}\bigl(2^M\bigr) = 2^n$.
 
 \section{Kartesische Produkte}
 Um den Begriff des 
-\href{https://de.wikipedia.org/wiki/Kartesisches_Produkt}{\emph{kartesischen Produktes}}
+\href{https://de.wikipedia.org/wiki/Kartesisches_Produkt}{kartesischen Produktes}
 einführen zu können, benötigen wir zunächst den Begriff des 
-\href{https://de.wikipedia.org/wiki/Geordnetes_Paar}{\emph{geordneten Paares}} zweier Objekte $x$
+\href{https://de.wikipedia.org/wiki/Geordnetes_Paar}{geordneten Paares} zweier Objekte $x$
 und $y$.  Dieses wird  als 
 \\[0.2cm] 
 \hspace*{1.3cm}
 $\langle x, y \rangle$ 
 \\[0.2cm]
-geschrieben.  Wir sagen, dass $x$ die \emph{erste Komponente} des Paares $\langle x, y \rangle$ ist, 
-und $y$ ist die \emph{zweite Komponente}.  Zwei geordnete Paare $\langle x_1, y_1 \rangle$ und $\langle x_2, y_2 \rangle$
+geschrieben.  Wir sagen, dass $x$ die \blue{erste Komponente} des Paares $\langle x, y \rangle$ ist, 
+und $y$ ist die \blue{zweite Komponente}.  Zwei geordnete Paare $\langle x_1, y_1 \rangle$ und $\langle x_2, y_2 \rangle$
 sind genau dann gleich, wenn sie komponentenweise gleich sind, d.h.~es gilt \\[0.2cm]
 \hspace*{1.3cm} $\langle x_1, y_1 \rangle \,=\,\langle x_2, y_2 \rangle  \;\Leftrightarrow\; x_1 = x_2 \wedge y_1 = y_2$. \\[0.2cm]
 Das kartesische Produkt zweier Mengen $M$ und $N$ ist nun die Menge aller geordneten
@@ -512,13 +517,13 @@ Ist $f$ eine Funktion, die auf $M_1 \times \cdots \times M_n$ definiert ist,
 so vereinbaren wir folgende Vereinfachung der Schreibweise: \\[0.2cm]
 \hspace*{1.3cm} $f(x_1, \cdots, x_n)$ steht für $f(\langle x_1, \cdots,
 x_n\rangle)$. \\[0.2cm]
-Gelegentlich werden $n$-Tupel auch als \emph{endliche Folgen} oder als
-\emph{Listen} bezeichnet.  
+Gelegentlich werden $n$-Tupel auch als \blue{endliche Folgen} oder als
+\blue{Listen} bezeichnet.  
 
 \section{Gleichheit von Mengen}
 Wir haben nun alle Verfahren, die wir zur Konstruktion von Mengen benötigen, vorgestellt.
 Wir klären jetzt die Frage, wann zwei Mengen gleich sind.  Dazu postulieren wir das folgende 
-\href{https://en.wikipedia.org/wiki/Axiom_of_extensionality}{\emph{Extensionalitäts-Axiom}}
+\href{https://en.wikipedia.org/wiki/Axiom_of_extensionality}{Extensionalitäts-Axiom}
 für Mengen: 
 \vspace*{0.2cm}
 
@@ -545,7 +550,7 @@ Beispiel:  Es lässt sich zeigen, dass \\[0.2cm]
 $\{ n \in \mathbb{N}^* \mid \exists x, y, z\in\mathbb{N}^*: x^n + y^n = z^n \} = \{1,2\}$ \\[0.2cm]
 gilt.  Allerdings ist der Nachweis dieser Gleichheit sehr schwer, denn er ist äquivalent
 zum Beweis der 
-\href{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}{\emph{Fermat'schen Vermutung}}. Diese
+\href{https://en.wikipedia.org/wiki/Fermat%27s_Last_Theorem}{Fermat'schen Vermutung}. Diese
 Vermutung wurde 1637 von \href{https://de.wikipedia.org/wiki/Pierre_de_Fermat}{Pierre de Fermat}
 aufgestellt und konnte erst 1994 von \href{https://de.wikipedia.org/wiki/Andrew_Wiles}{Andrew Wiles}
 und \href{https://de.wikipedia.org/wiki/Richard_Taylor_(Mathematiker)}{Richard Taylor} bewiesen werden. 
@@ -619,21 +624,22 @@ die Formel $\neg\; x \in M$, formal: \\[0.2cm]
 \\[0.2cm]
 Eine analoge Notation verwenden wir auch für das Gleichheitszeichen:
 $x \not= y \;\stackrel{de\!f}{\Longleftrightarrow}\; \neg\; (x = y)$.
+\pagebreak
 
 \section{Die Kardinalit\"at einer Menge}
-In diesem Abschnitt besch\"aftigen wir uns mit der \emph{Gr\"o{\ss}e} von Mengen.  Wir werden sehen,
+In diesem Abschnitt besch\"aftigen wir uns mit der \blue{Gr\"o{\ss}e} von Mengen.  Wir werden sehen,
 dass es unendlichen Mengen unterschiedlicher Gr\"o{\ss}e gibt, n\"amlich solche Mengen, bei denen wir
 die Elemente aufz\"ahlen k\"onnen und solche Mengen, wo das nicht m\"oglich ist.
 
 \begin{Definition}[Abzählbar] \hspace*{\fill} \\
 Eine unendliche Menge $M$ heißt 
-\href{https://en.wikipedia.org/wiki/Countable_set}{\emph{abzählbar}}, wenn eine 
+\href{https://en.wikipedia.org/wiki/Countable_set}{abzählbar}, wenn eine 
 \href{https://en.wikipedia.org/wiki/Surjective_function}{surjektive} Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $f: \mathbb{N} \rightarrow M$
 \\[0.2cm]
-existiert.  Dabei nennen wir eine Funktion $f:A \rightarrow B$  \emph{surjektiv} genau
+existiert.  Dabei nennen wir eine Funktion $f:A \rightarrow B$  \blue{surjektiv} genau
 dann, wenn es zu jedem $y \in B$ ein $x \in A$ gibt, so dass $f(x) = y$ ist:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -663,9 +669,9 @@ $
 definiert ist, ist surjektiv.  Um dies einzusehen, zeigen wir zunächst, dass $f$ wohldefiniert ist.
 Dazu ist zu zeigen, dass $f(n)$ tatsächlich in jedem Fall eine ganze Zahl ist.
 \begin{enumerate}
-\item $n \modulo 2 = 1$:  Dann ist $n$ ungerade, also ist $(n-1)$ gerade und die Division
+\item Fall: $n \modulo 2 = 1$:  Dann ist $n$ ungerade, also ist $(n-1)$ gerade und die Division
       $(n-1)/2$ liefert eine ganze Zahl.
-\item $n \modulo 2 = 0$:  In diesem Fall ist $n$ gerade.  Damit ist $n/2$ eine ganze Zahl.
+\item Fall $n \modulo 2 = 0$:  In diesem Fall ist $n$ gerade.  Damit ist $n/2$ eine ganze Zahl.
 \end{enumerate}
 Es bleibt zu zeigen, dass $f$ surjektiv ist.  Wir müssen also zeigen, dass es für jedes 
 $z \in \mathbb{Z}$ eine natürliche Zahl $n$ gibt, so dass $f(n) = z$ ist.  Wir führen diesen Nachweis
@@ -700,7 +706,7 @@ einen indirekten Beweis benötigen.  Vorab noch eine Definition.
 
 \begin{Definition}[Überabzählbar] \lb
 Eine unendliche Menge heißt
-\href{https://en.wikipedia.org/wiki/Uncountable_set}{\emph{überabzählbar}}, wenn sie
+\href{https://en.wikipedia.org/wiki/Uncountable_set}{überabzählbar}, wenn sie
 \underline{nicht} abzählbar ist. 
 \end{Definition}
 
@@ -752,53 +758,53 @@ Wir haben soeben gezeigt, dass es in gewisser Weise mehr Mengen von natürlichen 
 natürliche Zahlen gibt.  In ähnlicher Weise kann gezeigt werden, dass die Menge $\mathbb{R}$ der reellen
 Zahlen überabzählbar ist.  
 
-\exercise
-Zeigen Sie, dass das Intervall
-\\[0.2cm]
-\hspace*{1.3cm}
-$[0,1[ \;:= \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
-\\[0.2cm]
-überabzählbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
-\\[0.2cm]
-\hspace*{1.3cm}
-$ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  für alle $i \in \mathbb{N}$
-\\[0.2cm]
-dargestellt sind, es gilt dann also
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds x = \sum\limits_{i=1}^\infty d_i \cdot \Bigl(\frac{1}{10}\Bigr)^{i}$.
-\\[0.2cm]
-Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
-nicht auf ``Periode Neun'' endet, es dürfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
-alle Ziffern $d_i$ den Wert $9$ haben:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}:\bigl( i \geq n \rightarrow c_i = 9\bigr)$.
-\\[0.2cm]
-Führen Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
-\\[0.2cm]
-\hspace*{1.3cm}
-$f: \mathbb{N} \rightarrow [0,1[$
-\\[0.2cm]
-gibt, die die Menge $[0,1[$ aufzählt.  Dann gibt es auch eine Funktion
-\\[0.2cm]
-\hspace*{1.3cm}
-$g: \mathbb{N} \times \mathbb{N} \rightarrow \{0, \cdots, 9\}$
-\\[0.2cm]
-so dass $g(n,i)$ die $i$-te Nachkommastelle von $f(n)$ berechnet:
-\\[0.2cm]
-\hspace*{1.3cm}
-$f(n) = 0,g(n,1) g(n,2) g(n,3) \cdots$.
-\\[0.2cm]
-Konstruieren Sie nun mit Hilfe dieser Funktion $g$ eine Zahl $c \in [0,1[$ in der Form
-\\[0.2cm]
-\hspace*{1.3cm}
-$c = 0,c_1c_2c_3 \cdots$
-\\[0.2cm]
-so, dass sich ein Widerspruch ergibt.  Orientieren Sie sich dabei an der Konstruktion der Menge $C$ im
-Beweis der Überabzählbarkeit von $2^\mathbb{N}$.  \exend
+% \exercise
+% Zeigen Sie, dass das Intervall
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $[0,1[ \;:= \{ x \in \mathbb{R} \mid 0 \leq x \wedge x < 1 \}$ 
+% \\[0.2cm]
+% überabzählbar ist.  Nehmen Sie dazu an, dass die Zahlen $x \in [0,1[$ in der Form
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $ x = 0, d_1 d_2 d_3 \cdots$ \quad mit $d_i \in \{ 0, \cdots, 9 \}$  für alle $i \in \mathbb{N}$
+% \\[0.2cm]
+% dargestellt sind, es gilt dann also
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $\ds x = \sum\limits_{i=1}^\infty d_i \cdot \Bigl(\frac{1}{10}\Bigr)^{i}$.
+% \\[0.2cm]
+% Um sicher zu stellen, dass diese Darstellung eindeutig ist, fordern wir, dass diese Darstellung
+% nicht auf ``Periode Neun'' endet, es dürfen also ab einem bestimmten Index $n \in \mathbb{N}$ nicht
+% alle Ziffern $d_i$ den Wert $9$ haben:
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $\neg \exists n \in \mathbb{N}: \forall i \in \mathbb{N}:\bigl( i \geq n \rightarrow c_i = 9\bigr)$.
+% \\[0.2cm]
+% Führen Sie den Beweis indirekt und nehmen Sie an, dass es eine surjektive Funktion 
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $f: \mathbb{N} \rightarrow [0,1[$
+% \\[0.2cm]
+% gibt, die die Menge $[0,1[$ aufzählt.  Dann gibt es auch eine Funktion
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $g: \mathbb{N} \times \mathbb{N} \rightarrow \{0, \cdots, 9\}$
+% \\[0.2cm]
+% so dass $g(n,i)$ die $i$-te Nachkommastelle von $f(n)$ berechnet:
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $f(n) = 0,g(n,1) g(n,2) g(n,3) \cdots$.
+% \\[0.2cm]
+% Konstruieren Sie nun mit Hilfe dieser Funktion $g$ eine Zahl $c \in [0,1[$ in der Form
+% \\[0.2cm]
+% \hspace*{1.3cm}
+% $c = 0,c_1c_2c_3 \cdots$
+% \\[0.2cm]
+% so, dass sich ein Widerspruch ergibt.  Orientieren Sie sich dabei an der Konstruktion der Menge $C$ im
+% Beweis der Überabzählbarkeit von $2^\mathbb{N}$.  \exend
 
-\pagebreak
+
 \exercise
 Zeigen Sie, dass die Menge
 \\[0.2cm]
