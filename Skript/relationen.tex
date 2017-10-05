@@ -2,7 +2,7 @@
 \href{https://de.wikipedia.org/wiki/Relation_(Mathematik)#Zweistellige_Relation}{Relationen} treten
 in der Informatik an vielen Stellen auf.  Die wichtigste Anwendung findet sich in der Theorie der
 \href{https://de.wikipedia.org/wiki/Relationale_Datenbank}{relationalen Datenbanken}. 
-Wir betrachten im Folgenden den Spezialfall der \emph{binären Relationen} und beleuchten
+Wir betrachten im Folgenden den Spezialfall der \blue{binären Relationen} und beleuchten
 das Verhältnis von binären Relationen und Funktionen. Wir werden sehen, dass wir
 Funktionen als spezielle binäre Relationen auffassen können.  Damit stellt der Begriff der
 binären Relationen eine Verallgemeinerung des Funktions-Begriffs dar.
@@ -19,12 +19,12 @@ $R \subseteq M \times N$,
 \\[0.2cm]
 so bezeichnen wir $R$ auch als 
 \href{https://en.wikipedia.org/wiki/Binary_relation}{\emph{binäre Relation}}.  In diesem Fall definieren
-wir den  \emph{Definitions-Bereich} von $R$ als 
+wir den  \blue{Definitions-Bereich} von $R$ als 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\dom(R) := \{ x \mid \exists y \in N \colon \langle x, y \rangle \in R \}$.  
 \\[0.2cm]
-Entsprechend wird der \emph{Werte-Bereich} von $R$ als 
+Entsprechend wird der \blue{Werte-Bereich} von $R$ als 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\rng(R) := \{ y \mid \exists x \in M \colon \langle x, y \rangle \in R\}$ \\[0.2cm]
@@ -41,7 +41,7 @@ Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm} $\dom(R) = \{1,3\}$ \quad und \quad $\rng(R) = \{1,2,5\}$. 
 \\[0.2cm]
-Dieses Beispiel zeigt, dass der Begriff der \emph{Relation} eine Verallgemeinerung des Begriffs
+Dieses Beispiel zeigt, dass der Begriff der \blue{Relation} eine Verallgemeinerung des Begriffs
 der Funktion ist.  Das liegt daran, dass eine Funktion jedem Argument genau ein Wert zugeordnet
 wird.  Bei einer Relation können hingegen einem Argument auch mehrere Werte zugeordnet werden.
 Ebenso ist es bei einer Relation möglich, dass einem Argument kein Wert zugeordnet wird.
@@ -51,7 +51,7 @@ Zahl $2$ zu, während der Zahl $2$ kein Wert zugeordnet wird.
 
 \noindent
 Das nächste, stark vereinfachte Beispiel gibt einen Vorgeschmack von der Bedeutung binärer
-Relationen in der Theorie der \emph{relationalen Datenbanken}.
+Relationen in der Theorie der \blue{relationalen Datenbanken}.
 
 \example
 Ein Autoverkäufer speichert in seiner Datenbank, welcher Kunde welches Auto gekauft hat.
@@ -91,8 +91,8 @@ dargestellt. Die oben angegebene Relation hätte dann die folgende Form:
   \end{tabular}
 \end{center}
 Die oberste Zeile, in der wir die Spalten\"uberschriften ``\textsl{Kunde}'' und ``\textsl{Auto}''
-angeben,  gehört selbst nicht zu der Relation, sondern wird als \emph{Relationen-Schema}
-bezeichnet und die Relation zusammen mit ihrem Relationen-Schema nennen wir \emph{Tabelle}.  
+angeben,  gehört selbst nicht zu der Relation, sondern wird als \blue{Relationen-Schema}
+bezeichnet und die Relation zusammen mit ihrem Relationen-Schema nennen wir \blue{Tabelle}.  
 
 
 \section{Funktionale Relationen}
@@ -102,13 +102,13 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 
 \begin{Definition}[links-eindeutig, rechts-eindeutig] \hspace*{\fill} \\
   Wir nennen eine Relation $R \subseteq M \times N$ 
-  \colorbox{yellow}{\emph{rechts-eindeutig},} wenn folgendes gilt: \\[0.2cm]
+  \colorbox{yellow}{\blue{rechts-eindeutig},} wenn folgendes gilt: \\[0.2cm]
   \hspace*{1.3cm} 
   $\forall x \el M \colon \forall y_1, y_2 \el N \colon \bigl(\langle x, y_1 \rangle \in R \wedge \langle x, y_2 \rangle \in R \rightarrow y_1 = y_2\bigr)$.
   \\[0.2cm]
   Bei einer rechts-eindeutigen Relation $R \subseteq M \times N$ gibt es also zu jedem $x\in M$ höchstens ein $y \in N$, 
   so dass $\langle x, y \rangle \in R$ gilt.  Entsprechend nennen wir eine Relation $R \subseteq M \times N$ 
-  \colorbox{yellow}{\emph{links-eindeutig},} wenn gilt: \\[0.2cm]
+  \colorbox{yellow}{\blue{links-eindeutig},} wenn gilt: \\[0.2cm]
   \hspace*{1.3cm} 
   $\forall y \el N \colon \forall x_1, x_2 \el M \colon \bigl(\langle x_1, y \rangle \in R \wedge \langle x_2, y \rangle \in R \rightarrow x_1 = x_2\bigr)$.
   \\[0.2cm]
@@ -139,7 +139,7 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 \end{enumerate}
 
 \begin{Definition}[links-total, rechts-total]
-  Eine binäre Relation $R \subseteq M \times N$ heißt \colorbox{yellow}{\emph{links-total auf $M$},} wenn 
+  Eine binäre Relation $R \subseteq M \times N$ heißt \colorbox{yellow}{\blue{links-total auf $M$},} wenn 
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall x \in M \colon \exists y \in N \colon \pair(x,y) \in R$ 
@@ -149,7 +149,7 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
   links-total, denn jedem Element aus $M$ wird durch $R_3$ ein Element aus $N$ zugeordnet.
 
   Analog nennen wir eine binäre Relation $R \subseteq M \times N$ 
-  \colorbox{yellow}{\emph{rechts-total auf $N$},} wenn 
+  \colorbox{yellow}{\blue{rechts-total auf $N$},} wenn 
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall y \in N \colon \exists x \in M \colon \pair(x,y) \in R$ 
@@ -162,12 +162,12 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 
 \remark
 In der Literatur werden links-totale Relationen gelegentlich auch als
-\colorbox{yellow}{\emph{links-vollständige}} Relationen  
-bezeichnet.  Rechts-totale Relationen heißen dann \colorbox{yellow}{\emph{rechts-vollständig}}. \eoxs
+\colorbox{yellow}{\blue{links-vollständige}} Relationen  
+bezeichnet.  Rechts-totale Relationen heißen dann \colorbox{yellow}{\blue{rechts-vollständig}}. \eoxs
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times N$, die sowohl links-total auf $M$ als auch rechts-eindeutig
-ist, nennen wir eine \colorbox{yellow}{\emph{funktionale}} Relation auf $M$.    \eoxs
+ist, nennen wir eine \colorbox{yellow}{\blue{funktionale}} Relation auf $M$.    \eoxs
 \end{Definition}
 
 
@@ -227,12 +227,12 @@ für das $\pair(x,y) \in R$ gilt.
 
 \begin{Definition}[Bild]
   Ist $R \subseteq M \times N$ eine binäre Relation und ist weiter $X \subseteq M$, so
-  definieren wir das \emph{Bild von $X$ unter $R$} als \\[0.2cm]
+  definieren wir das \blue{Bild von $X$ unter $R$} als \\[0.2cm]
   \hspace*{1.3cm} $R(X) := \{ y \mid \exists x \in X \colon \pair(x,y) \in R \}$. \eox
 \end{Definition}
 
 \section{Inverse Relation}
-Zu einer  Relation $R \subseteq M \times N$ definieren wir die \colorbox{yellow}{\emph{inverse}} Relation 
+Zu einer  Relation $R \subseteq M \times N$ definieren wir die \colorbox{yellow}{\blue{inverse}} Relation 
 $R^{-1} \subseteq N \times M$ wie folgt: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -242,7 +242,7 @@ Aus dieser Definition folgt sofort, dass $R^{-1}$ rechts-eindeutig ist genau dan
 $R$ links-eindeutig ist.  Außerdem ist $R^{-1}$ links-total auf $N$ genau dann, wenn $R$
 rechts-total auf $N$ ist.  Ist eine Relation sowohl links-eindeutig als auch rechts-eindeutig und
 außerdem sowohl links-total auf $M$ als auch rechts-total auf $N$, so nennen wir sie auch 
-\colorbox{yellow}{\emph{bijektiv}}.
+\colorbox{yellow}{\blue{bijektiv}}.
 In diesem Fall lässt sich neben der Funktion
 $f_R$ auch eine Funktion $f_{R^{-1}}$ definieren.  Die Definition der letzten Funktion
 lautet ausgeschrieben: \\[0.2cm]
@@ -257,12 +257,12 @@ Dieser Umstand rechtfertigt im Nachhinein die Schreibweise $R^{-1}$.
 Ähnlich wie wir Funktionen verknüpfen können, können auch Relationen verknüpft werden.
 Wir betrachten zunächst Mengen $L$, $M$ und $N$.
 Sind dort zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ definiert,
-so ist das \colorbox{yellow}{\emph{relationale Produkt}} $R \circ Q$ wie folgt definiert: \\[0.2cm]
+so ist das \colorbox{yellow}{\blue{relationale Produkt}} $R \circ Q$ wie folgt definiert: \\[0.2cm]
 \hspace*{1.3cm}
 $R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon\bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \bigr\}$ 
 \\[0.2cm]
 Offenbar gilt $R \circ Q \subseteq L \times N$.
-Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \colorbox{yellow}{\emph{Komposition}} von
+Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \colorbox{yellow}{\blue{Komposition}} von
 $Q$ und $R$ bezeichnet.  In der Theorie der Datenbanken werden Sie dem relationalen Produkt
 wiederbegegnen, denn der 
 \href{http://en.wikipedia.org/wiki/Join_(SQL)}{\emph{Join}-Operator}, der in
@@ -317,7 +317,7 @@ definiert ist, die Gleichung
 $\textsl{graph}(g \circ f) = R \circ Q = \textsl{graph}(g) \circ \textsl{graph}(f)$.
 \\[0.2cm]
 Die von uns verwendete Definition hat den Vorteil, dass die Berechnung des 
-\emph{transitiven Abschlusses}  einer Relation, die wir später noch geben werden, intuitiver wird.
+\blue{transitiven Abschlusses}  einer Relation, die wir später noch geben werden, intuitiver wird.
 \eoxs
 \end{minipage}}}}}}
 \vspace{0.2cm}
@@ -376,7 +376,7 @@ Diese Relation könnte dann zur Rechnungsstellung weiterverwendet werden. \eox
 
 \section{Eigenschaften des relationalen Produkts}
 \begin{Satz}
-  Die Komposition von Relationen ist \emph{assoziativ}:  Sind \\[0.2cm]
+  Die Komposition von Relationen ist \blue{assoziativ}:  Sind \\[0.2cm]
   \hspace*{1.3cm} 
   $R \subseteq K \times L$, \quad $Q \subseteq L \times M$ \quad und \quad 
   $P \subseteq M \times N$ \\[0.2cm]
@@ -551,7 +551,7 @@ Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $Q_1,
 
 
 \begin{Definition}[Identische Relation]
-  Ist $M$ eine Menge, so definieren wir die \colorbox{yellow}{\emph{identische Relation}} $\mathrm{id}_M \subseteq M \times M$
+  Ist $M$ eine Menge, so definieren wir die \colorbox{yellow}{\blue{identische Relation}} $\mathrm{id}_M \subseteq M \times M$
   wie folgt: \\[0.2cm]
   \hspace*{1.3cm} $\mathrm{id}_M := \bigl\{ \pair(x,x) \mid x \in M \bigr\}$.  \eox
 \end{Definition}
@@ -608,7 +608,7 @@ $R^{-1} \circ R = \mathrm{id}_N$?
 \section{Binäre Relationen auf einer Menge}
 Wir betrachten im Folgenden den Spezialfall von Relationen $R \subseteq M \times N$, für
 den $M = N$ gilt.  Wir definieren:
-Eine Relation $R \subseteq M \times M$ heißt eine Relation \emph{auf} der Menge $M$.
+Eine Relation $R \subseteq M \times M$ heißt eine Relation \blue{auf} der Menge $M$.
 Im Rest dieses Abschnittes betrachten wir nur noch solche Relationen. 
 Statt $M \times M$ schreiben wir dann kürzer $M^2$.
 
@@ -623,7 +623,7 @@ auf $\mathbb{N}$ wie folgt definieren:
 Statt $\pair(x,y) \in\; \leq$ hat sich in der Mathematik die Schreibweise $x \leq y$ eingebürgert.
   
 \begin{Definition}[reflexiv] 
-Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{reflexiv}} auf der Menge $M$ falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{reflexiv}} auf der Menge $M$ falls gilt: \\[0.2cm]
 \hspace*{1.3cm} $\forall x\in M \colon \pair(x,x) \in R$. \eox
 \end{Definition}
 
@@ -646,7 +646,7 @@ $
 \qeds
 
 \begin{Definition}[symmetrisch]
-Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{symmetrisch}} falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{symmetrisch}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x,y\el M \colon \bigl(\pair(x,y) \in R \rightarrow\pair(y,x)\in R\bigr)$. \eox
 \end{Definition}
@@ -666,7 +666,7 @@ Da diese Menge eine Teilmenge von $R$ ist, folgt $\pair(y,x)  \in R$ und das ist
 die Relation $R$ symmetrisch ist. \qeds
 
 \begin{Definition}[anti-symmetrisch]
-Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{anti-symmetrisch}} falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{anti-symmetrisch}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x, y \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,x) \in R \rightarrow x = y\bigr)$. \eox
 \end{Definition}
@@ -751,21 +751,21 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
 \end{enumerate}
 
 \remark
-In der Literatur finden Sie noch den Begriff der \emph{Asymmetrie}.  Dort wird eine Relation 
-$R \subseteq M^2$ als \colorbox{yellow}{\emph{asymmetrisch}} definiert, wenn 
+In der Literatur finden Sie noch den Begriff der \blue{Asymmetrie}.  Dort wird eine Relation 
+$R \subseteq M^2$ als \colorbox{yellow}{\blue{asymmetrisch}} definiert, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall x, y \in M: \bigl(\pair(x,y) \in R \rightarrow \pair(y,x) \not\in R \bigr)$
 \\[0.2cm]
-gilt.  Beachten Sie, dass der Begriff der \emph{Asymmetrie} \underline{nicht} die Negation des Begriffs der
-\emph{Symmetrie} ist:  Zwar kann eine symmetrische Relation nicht asymmetrisch sein, aber es gibt
+gilt.  Beachten Sie, dass der Begriff der \blue{Asymmetrie} \underline{nicht} die Negation des Begriffs der
+\blue{Symmetrie} ist:  Zwar kann eine symmetrische Relation nicht asymmetrisch sein, aber es gibt
 Relationen, die weder asymmetrisch noch symmetrisch sind.  In dieser Vorlesung spielt der Begriff
-der \emph{Asymmetrie} keine Rolle.  Für Sie reicht es zu wissen, dass \emph{Anti-Symmetrie} und
-\emph{Asymmetrie} zwei verschiedene Begriffe sind.
+der \blue{Asymmetrie} keine Rolle.  Für Sie reicht es zu wissen, dass \blue{Anti-Symmetrie} und
+\blue{Asymmetrie} zwei verschiedene Begriffe sind.
 \eox
 
 \begin{Definition}[transitiv]
-Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\emph{transitiv}} falls gilt: \\[0.2cm]
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{transitiv}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x, y, z \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R\bigr)$. 
 \eox
@@ -857,11 +857,11 @@ In den ersten beiden Beispielen sei $M = \{1,2,3\}$.
 
 \section{Der transitive Abschluss einer Relation}
 Ist $R$ eine Relation auf einer Menge $M$, die nicht transitiv ist, so können wir $R$ zu einer
-transitiven Relation erweitern.  Zu diesem Zweck  definieren wir zunächst den Begriff der \emph{Potenz}
+transitiven Relation erweitern.  Zu diesem Zweck  definieren wir zunächst den Begriff der \blue{Potenz}
 einer Relation auf $M$.
 
 \begin{Definition}[Potenz einer Relation, $R^n$]
-  Für eine Relation $R \subseteq M^2$ definieren wir für alle $n \in \mathbb{N}$ die \emph{Potenz} $R^n$
+  Für eine Relation $R \subseteq M^2$ definieren wir für alle $n \in \mathbb{N}$ die \blue{Potenz} $R^n$
   durch Induktion über $n$ wie folgt:  
   \begin{enumerate}
   \item Induktions-Anfang: $n= 0$.  Wir setzen \\[0.2cm]
@@ -1272,7 +1272,7 @@ Ist $f: M \rightarrow N$ eine Funktion und gilt
 \hspace*{1.3cm}
 $R_f = \bigl\{ \pair(x,y) \in M \times M \mid f(x) = f(y) \bigr\}$ 
 \\[0.2cm]
-so sagen wir, dass $R_f$ die \colorbox{yellow}{\emph{von $f$ auf M erzeugte}} Äquivalenz-Relation ist.  Wir werden
+so sagen wir, dass $R_f$ die \colorbox{yellow}{\blue{von $f$ auf M erzeugte}} Äquivalenz-Relation ist.  Wir werden
 später sehen, dass es zu jeder  Äquivalenz-Relation eine Funktion gibt, die diese
 Äquivalenz-Relation erzeugt. \eoxs 
 
@@ -1306,7 +1306,7 @@ Ist $R$ eine Äquivalenz-Relation auf $M$, so definieren wir für alle $x \in M$
 die Menge $[x]_R$ durch \\[0.2cm]
 \hspace*{1.3cm} $[x]_R \;:=\; \bigl\{ y \in M \mid \pair(x, y) \in R \bigr\}$. 
 \\[0.2cm]
-Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \colorbox{yellow}{\emph{Äquivalenz-Klasse}}.  \eoxs
+Die Menge $[x]_R$ bezeichnen wir als die von $x$ erzeugte \colorbox{yellow}{\blue{Äquivalenz-Klasse}}.  \eoxs
 \end{Definition}
 
 \begin{Satz}[Charakterisierung der Äquivalenz-Klassen] \label{satz:aequivalenz-klassen}
@@ -1432,13 +1432,13 @@ denn  $R \subseteq M \times M$. \eoxs
 
 \begin{Definition}[Quotienten-Raum]
 Ist $M$ eine Menge und $R$ eine Äquivalenz-Relation auf $M$ so definieren wir die Menge $M/R$ (lese:
-$M$ \emph{modulo} $R$) als die Menge der von $R$ auf $M$ erzeugten Äquivalenz-Klassen:
+$M$ \blue{modulo} $R$) als die Menge der von $R$ auf $M$ erzeugten Äquivalenz-Klassen:
 \\[0.2cm]
 \hspace*{1.3cm}
 $M/R := \bigl\{ [x]_R \mid x \in M \bigr\}$.
 \\[0.2cm]
 Die Menge $M/R$ der von $R$ auf $M$ erzeugten Äquivalenz-Klassen nennen wir den
-\colorbox{yellow}{\emph{Quotienten-Raum}} vom $M$ über $R$.  \eoxs
+\colorbox{yellow}{\blue{Quotienten-Raum}} vom $M$ über $R$.  \eoxs
 \end{Definition}
 
 \example
@@ -1470,20 +1470,20 @@ Ist ${\cal P} \subseteq 2^M$ eine Menge von Teilmengen von $M$, so sagen wir, da
 \href{https://de.wikipedia.org/wiki/Partition_(Mengenlehre)}{\emph{Partition}} von $M$ ist, falls
 $\mathcal{P}$ die folgenden Eigenschaften hat: 
 \begin{enumerate}
-\item \colorbox{yellow}{\emph{Vollständigkeits-Eigenschaft}} 
+\item \colorbox{yellow}{\blue{Vollständigkeits-Eigenschaft}} 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \el M : \exists K \el {\cal P} : x \el K$,
 
       jedes Element aus $M$ findet sich  in einer Menge aus ${\cal P}$ wieder.
-\item \colorbox{yellow}{\emph{Separations-Eigenschaft}}
+\item \colorbox{yellow}{\blue{Separations-Eigenschaft}}
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall K, L \el {\cal P} : \bigl(K \cap L =\emptyset \vee K = L\bigr)$,
       \\[0.2cm]
       zwei Mengen aus ${\cal P}$ sind also entweder disjunkt oder schon identisch.
 \end{enumerate}
-Gelegentlich wird eine Partition einer Menge $M$ auch als \colorbox{yellow}{\emph{Zerlegung}} von $M$
+Gelegentlich wird eine Partition einer Menge $M$ auch als \colorbox{yellow}{\blue{Zerlegung}} von $M$
 bezeichnet. \eoxs
 \end{Definition}
 
@@ -1613,13 +1613,13 @@ Relationen, die sich ähnlich verhalten wie die Relation $\leq$ auf den Zahlen.
 
 \begin{Definition}[partielle Ordnung] \lb
   Eine Relation $R \subseteq M \times M$  ist eine 
-  \colorbox{yellow}{\emph{partielle Ordnung (im Sinne von $\leq$) auf $M$}} genau dann, wenn die Relation $R$
+  \colorbox{yellow}{\blue{partielle Ordnung (im Sinne von $\leq$) auf $M$}} genau dann, wenn die Relation $R$
   \begin{enumerate}
   \item reflexiv auf $M$,
   \item anti-symmetrisch und
   \item transitiv ist.
   \end{enumerate}
-  Die Relation ist darüber hinaus eine \colorbox{yellow}{\emph{totale Ordnung auf $M$}}, wenn zusätzlich
+  Die Relation ist darüber hinaus eine \colorbox{yellow}{\blue{totale Ordnung auf $M$}}, wenn zusätzlich
   \\[0.2cm]
   \hspace*{1.3cm} $\forall x \el M : \forall y \el M :\bigl( \pair(x,y) \in \mathop{R} \vee \pair(y,x) \in R\bigr)$
   \\[0.2cm]
@@ -1627,7 +1627,7 @@ Relationen, die sich ähnlich verhalten wie die Relation $\leq$ auf den Zahlen.
 \end{Definition}
 
 \remark
-Eine totale Ordnung wird gelegentlich auch als \colorbox{yellow}{\emph{lineare Ordnung}} bezeichnet. \eoxs
+Eine totale Ordnung wird gelegentlich auch als \colorbox{yellow}{\blue{lineare Ordnung}} bezeichnet. \eoxs
 
 \example 
 Die Teilbarkeitsrelation $\mathop{\mathtt{div}}$ kann auf den natürlichen Zahlen
