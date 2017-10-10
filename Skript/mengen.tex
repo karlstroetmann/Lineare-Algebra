@@ -603,7 +603,6 @@ formal gilt
 $\neg (F \vee G) \leftrightarrow \neg F \wedge \neg G$.
 \\[0.2cm]
 Wir werden diese Äquivalenz im Rahmen der Logik-Vorlesung noch formal beweisen.
-
 Die übrigen der oben aufgeführten Gleichungen können nach demselben Schema hergeleitet werden.
 
 \exercise
@@ -679,7 +678,7 @@ mittels einer Fall-Unterscheidung:
 \begin{enumerate}
 \item Fall: $z > 0$.
   
-      Wir definieren $n := 2 \cdot (z - 1) + 1$.  Wegen $z >0$ gilt $n > 0$ und damit ist $n$
+      Wir definieren $n := 2 \cdot (z - 1) + 1$.  Wegen $z >0$ gilt $z - 1 \geq 0$ und damit gilt $n \geq 1$.  Also ist $n$
       tatsächlich eine natürliche Zahl.  Außerdem ist klar, dass $n$ ungerade ist. Daher gilt
       \\[0.2cm]
       \hspace*{0.3cm}
@@ -690,7 +689,7 @@ mittels einer Fall-Unterscheidung:
       Also gilt $f(n) = z$.
 \item Fall: $z \leq 0$.
 
-      Wir definieren $n := - 2 \cdot z$.  Wegen $z \leq 0$ ist klar, dass $n$ eine gerade 
+      Wir definieren $n := - 2 \cdot z$.  Wegen $z \leq 0$ ist klar, dass dann $n$ eine gerade 
       natürliche Zahl ist.  Damit haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -707,7 +706,7 @@ einen indirekten Beweis benötigen.  Vorab noch eine Definition.
 \begin{Definition}[Überabzählbar] \lb
 Eine unendliche Menge heißt
 \href{https://en.wikipedia.org/wiki/Uncountable_set}{überabzählbar}, wenn sie
-\underline{nicht} abzählbar ist. 
+\textbf{nicht} abzählbar ist. 
 \end{Definition}
 
 \begin{Satz}
@@ -811,17 +810,33 @@ Zeigen Sie, dass die Menge
 \hspace*{1.3cm}
 $\mathbb{N}^\mathbb{N} := \{ f \mid f: \mathbb{N} \rightarrow \mathbb{N} \}$,
 \\[0.2cm]
-also die Menge aller Funktionen von $\mathbb{N}$ nach $\mathbb{N}$ überabzählbar ist.
+also die Menge aller Funktionen von $\mathbb{N}$ nach $\mathbb{N}$ überabzählbar ist!
 \exend
 
 \exercise
-Zeigen Sie, dass die Menge $\mathbb{Q}_+$ der positiven rationalen Zahlen abzählbar ist.
+Zeigen Sie, dass die Menge $\mathbb{Q}^+$ der positiven rationalen Zahlen abzählbar ist!  Implementieren Sie
+dazu eine Funktion \texttt{nthRational} in der Sprache \texttt{SetlX}, so dass die Funktion
+\texttt{nthRational} die positiven rationalen Zahlen aufzählt, es soll also gelten:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\bigl\{ \mathtt{nthRational}(n) \mid n \in \mathbb{N} \bigr\} = \mathbb{Q}^+$
 
 \hint
-Ordnen Sie die positiven rationalen Zahlen im kartesischen Koordinaten-System an und versuchen Sie
-nun, diese Zahlen systematisch abzuzählen.
+Auf der Seite 
+``\href{https://de.wikipedia.org/wiki/Cantors_erstes_Diagonalargument}{Cantors erstes Diagonalargument}''
+finden Sie die Methode, mit der Georg Cantor die rationalen Zahlen aufgezählt hat.  Versuchen Sie, das dort
+gezeigte Verfahren zu implementieren.
 \exend
 
+\noindent
+\textbf{Reflektion}
+\begin{enumerate}[(a)]
+\item Was ist das Komprehensions-Axiom?
+\item Warum ist das Komprehensions-Axiom zu allgemein?
+\item Welche Methoden kennen Sie, um Mengen zu bilden?
+\item Wie gehen Sie vor, wenn Sie die Gleichheit zweier Mengen zeigen wollen?
+\item Welche Beweismethode verwenden Sie, wenn Sie die Überabzählbarkeit einer Menge zeigen wollen?
+\end{enumerate}
 
 %%% Local Variables: 
 %%% mode: latex

@@ -74,7 +74,7 @@ $\{ \pair(\mathrm{Bauer}, \mathrm{Golf}), \pair(\mathrm{Bauer}, \mathrm{Fox}), \
 \\[0.2cm]
 Diese Relation würde ausdrücken, dass der Kunde Bauer einen Golf und einen Fox erworben
 hat, der Kunde Schmidt hat einen Polo gekauft und Herr Maier hat bisher noch kein Auto erworben.
-In der Theorie der Datenbanken werden Relationen üblicherweise in Form von Tabellen
+In der Theorie der \blue{relationalen} Datenbanken werden Relationen üblicherweise in Form von Tabellen
 dargestellt. Die oben angegebene Relation hätte dann die folgende Form:
 \begin{center}
   \begin{tabular}[c]{|l|l|}
@@ -123,7 +123,7 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 \begin{enumerate}
 \item Die Relation $R_1$ sei definiert durch \\[0.2cm]
       \hspace*{1.3cm} $R_1 = \{ \pair(1,4), \pair(1,6) \}$. \\[0.2cm]
-      Diese Relation ist \underline{nicht} rechts-eindeutig, denn  $4 \not= 6$.
+      Diese Relation ist \textbf{nicht} rechts-eindeutig, denn  $4 \not= 6$.
       Die Relation ist links-eindeutig, denn die rechten Seiten aller in $R_1$
       auftretenden Tupel sind verschieden.
 \item Die Relation $R_2$ sei definiert durch \\[0.2cm]
@@ -134,7 +134,7 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 \item Die Relation $R_3$ sei definiert durch \\[0.2cm]
       \hspace*{1.3cm} $R_3 = \{ \pair(1,4), \pair(2,6), \pair(3,6) \}$. \\[0.2cm]
       Diese Relation ist rechts-eindeutig, denn die linken Seiten aller in $R_2$       auftretenden
-      Tupel sind verschieden.  Sie ist nicht links-eindeutig, denn es gilt
+      Tupel sind verschieden.  Sie ist \textbf{nicht} links-eindeutig, denn es gilt
       $\pair(2,6) \el R$ und $\pair(3,6) \el R$, aber $2 \not= 3$.
 \end{enumerate}
 
@@ -162,8 +162,8 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
 
 \remark
 In der Literatur werden links-totale Relationen gelegentlich auch als
-\colorbox{yellow}{\blue{links-vollständige}} Relationen  
-bezeichnet.  Rechts-totale Relationen heißen dann \colorbox{yellow}{\blue{rechts-vollständig}}. \eoxs
+\blue{links-vollständige} Relationen  
+bezeichnet.  Rechts-totale Relationen heißen dann \blue{rechts-vollständig}. \eoxs
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times N$, die sowohl links-total auf $M$ als auch rechts-eindeutig
@@ -196,7 +196,7 @@ Aufgrund der gerade diskutierten Korrespondenz zwischen Funktionen und Relatione
 werden wir daher im Folgenden alle Funktionen als spezielle binäre Relationen auffassen.
 Für die Menge aller Funktionen von $M$ nach $N$ schreiben wir auch $N^M$, genauer
 definieren wir
-\[ N^M := \{ R \subseteq M \times N \mid \mbox{$R$ funktional}\, \}. \]
+\[ N^M := \{ R \subseteq M \times N \mid \mbox{$R$ ist funktionale Relation}\, \}. \]
 Diese Schreibweise erklärt sich wie folgt: Sind $M$ und $N$ endliche Mengen mit $m$
 bzw.~$n$ Elementen, so gibt es genau $n^m$ verschiedene Funktionen von $M$ nach $N$, es
 gilt also
@@ -263,7 +263,7 @@ $R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon\bigl(\pair(x,y) \in
 \\[0.2cm]
 Offenbar gilt $R \circ Q \subseteq L \times N$.
 Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \colorbox{yellow}{\blue{Komposition}} von
-$Q$ und $R$ bezeichnet.  In der Theorie der Datenbanken werden Sie dem relationalen Produkt
+$Q$ und $R$ bezeichnet.  In der Theorie der relationalen Datenbanken werden Sie dem relationalen Produkt
 wiederbegegnen, denn der 
 \href{http://en.wikipedia.org/wiki/Join_(SQL)}{\emph{Join}-Operator}, der in
 Datenbankabfrage-Sprachen wie 
