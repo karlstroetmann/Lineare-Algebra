@@ -7,8 +7,8 @@ das Verhältnis von binären Relationen und Funktionen. Wir werden sehen, dass wir
 Funktionen als spezielle binäre Relationen auffassen können.  Damit stellt der Begriff der
 binären Relationen eine Verallgemeinerung des Funktions-Begriffs dar.
 Zum Abschluss des Kapitels führen wir dann 
-\href{https://de.wikipedia.org/wiki/Transitive_Relation}{\emph{transitive Relationen}} und 
-\href{https://en.wikipedia.org/wiki/Equivalence_relation}{\emph{Äquivalenz-Relationen}} ein.
+\href{https://de.wikipedia.org/wiki/Ordnungsrelation}{Ordnungs-Relationen} und 
+\href{https://en.wikipedia.org/wiki/Equivalence_relation}{Äquivalenz-Relationen} ein.
 Dabei handelt es sich um grundlegende Konzepte, die jeder Informatiker kennen sollte.
 
 Ist eine Menge $R$ als Teilmenge des kartesischen Produkts zweier Mengen $M$ und $N$ gegeben, gilt
@@ -18,7 +18,7 @@ also
 $R \subseteq M \times N$, 
 \\[0.2cm]
 so bezeichnen wir $R$ auch als 
-\href{https://en.wikipedia.org/wiki/Binary_relation}{\emph{binäre Relation}}.  In diesem Fall definieren
+\href{https://en.wikipedia.org/wiki/Binary_relation}{binäre Relation}.  In diesem Fall definieren
 wir den  \blue{Definitions-Bereich} von $R$ als 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -43,8 +43,8 @@ Dann gilt
 \\[0.2cm]
 Dieses Beispiel zeigt, dass der Begriff der \blue{Relation} eine Verallgemeinerung des Begriffs
 der Funktion ist.  Das liegt daran, dass eine Funktion jedem Argument genau ein Wert zugeordnet
-wird.  Bei einer Relation können hingegen einem Argument auch mehrere Werte zugeordnet werden.
-Ebenso ist es bei einer Relation möglich, dass einem Argument kein Wert zugeordnet wird.
+wird.  Bei einer Relation können hingegen einem Argument auch \emph{mehrere} Werte zugeordnet werden.
+Ebenso ist es bei einer Relation möglich, dass einem Argument \emph{kein} Wert zugeordnet wird.
 Beispielsweise ordnet die oben angegebene Relation $R$ der Zahl $1$ sowohl die Zahl $1$ als auch die
 Zahl $2$ zu, während der Zahl $2$ kein Wert zugeordnet wird.
 \eox
@@ -72,9 +72,9 @@ beispielsweise durch die folgende Menge gegeben sein:
 \hspace*{1.3cm}
 $\{ \pair(\mathrm{Bauer}, \mathrm{Golf}), \pair(\mathrm{Bauer}, \mathrm{Fox}), \pair(\mathrm{Schmidt}, \mathrm{Polo})\}$.
 \\[0.2cm]
-Diese Relation würde ausdrücken, dass der Kunde Bauer einen Golf und einen Fox erworben
-hat, der Kunde Schmidt hat einen Polo gekauft und Herr Maier hat bisher noch kein Auto erworben.
-In der Theorie der \blue{relationalen} Datenbanken werden Relationen üblicherweise in Form von Tabellen
+Diese Relation würde ausdrücken, dass der Kunde Herr Bauer einen Golf und einen Fox erworben
+hat, die Kundin Frau Schmidt hat einen Polo gekauft und Herr Maier hat bisher noch kein Auto erworben.
+In der Theorie der \blue{relationalen} Datenbanken werden Relationen üblicherweise in Form von \blue{Tabellen}
 dargestellt. Die oben angegebene Relation hätte dann die folgende Form:
 \begin{center}
   \begin{tabular}[c]{|l|l|}
@@ -106,14 +106,14 @@ werden kann.  Zu diesem Zweck folgt nun eine Definition.
   \hspace*{1.3cm} 
   $\forall x \el M \colon \forall y_1, y_2 \el N \colon \bigl(\langle x, y_1 \rangle \in R \wedge \langle x, y_2 \rangle \in R \rightarrow y_1 = y_2\bigr)$.
   \\[0.2cm]
-  Bei einer rechts-eindeutigen Relation $R \subseteq M \times N$ gibt es also zu jedem $x\in M$ höchstens ein $y \in N$, 
+  Bei einer rechts-eindeutigen Relation $R \subseteq M \times N$ gibt es also zu jedem $x\in M$ \emph{höchstens} ein $y \in N$, 
   so dass $\langle x, y \rangle \in R$ gilt.  Entsprechend nennen wir eine Relation $R \subseteq M \times N$ 
   \colorbox{yellow}{\blue{links-eindeutig},} wenn gilt: \\[0.2cm]
   \hspace*{1.3cm} 
   $\forall y \el N \colon \forall x_1, x_2 \el M \colon \bigl(\langle x_1, y \rangle \in R \wedge \langle x_2, y \rangle \in R \rightarrow x_1 = x_2\bigr)$.
   \\[0.2cm]
   Bei einer links-eindeutigen Relation $R \subseteq M \times N$ 
-  gibt es also zu jedem $y\in N$ höchstens ein $x \in M$, so
+  gibt es also zu jedem $y\in N$ \emph{höchstens} ein $x \in M$, so
   dass $\langle x, y \rangle \in R$ gilt. \eox
 \end{Definition}
 
@@ -167,27 +167,28 @@ bezeichnet.  Rechts-totale Relationen heißen dann \blue{rechts-vollständig}. \eo
 
 \begin{Definition}
 Eine Relation $R \subseteq M \times N$, die sowohl links-total auf $M$ als auch rechts-eindeutig
-ist, nennen wir eine \colorbox{yellow}{\blue{funktionale}} Relation auf $M$.    \eoxs
+ist, nennen wir eine \colorbox{yellow}{\blue{funktionale Relation auf $M$.}}    \eoxs
 \end{Definition}
 
 
 \begin{Satz}
-Ist $R \subseteq M \times N$ eine
-funktionale Relation, so können wir eine Funktion $f_R\colon M \rightarrow N$ wie folgt
-definieren: \\[0.2cm]
-\hspace*{1.3cm} $f_R(x) := y \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \pair(x,y) \in R$. 
+  Ist $R \subseteq M \times N$ eine funktionale Relation auf $M$, so können wir eine Funktion
+  $f_R\colon M \rightarrow N$ wie folgt definieren:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $f_R(x) := y \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \pair(x,y) \in R$. 
 \end{Satz}
 
 
 \proof
-Diese Definition funktioniert, denn aus der Links-Totalität von $R$ folgt, dass es für
+Diese Definition funktioniert, denn aus der Links-Totalität von $R$ auf $M$ folgt, dass es für 
 jedes $x\in M$ auch ein $y \in N$ gibt, so dass $\pair(x,y) \in R$ ist.  Aus der
 Rechts-Eindeutigkeit von $R$ folgt dann, dass dieses $y$ eindeutig bestimmt ist. \qeds
 
 \remark
 Ist umgekehrt eine Funktion \mbox{$f:M \rightarrow N$} gegeben, so können wir dieser Funktion
 eine Relation $\textsl{graph}(f) \subseteq M \times N$ zuordnen, indem wir definieren: 
-\[ \textsl{graph}(f) := \bigl\{ \pair(x,f(x)) \mid  x\in M \bigr\}. \]
+\[ \textsl{graph}(f) := \bigl\{ \langle x,f(x) \rangle \mid  x\in M \bigr\}. \]
 Die so definierte Relation $\textsl{graph}(f)$ ist links-total auf $M$, denn die Funktion $f$
 berechnet ja für jedes $x \el M$ ein Ergebnis und die Relation ist rechts-eindeutig,
 denn die Funktion berechnet für jedes Argument immer nur ein Ergebnis. \eox
@@ -196,15 +197,18 @@ Aufgrund der gerade diskutierten Korrespondenz zwischen Funktionen und Relatione
 werden wir daher im Folgenden alle Funktionen als spezielle binäre Relationen auffassen.
 Für die Menge aller Funktionen von $M$ nach $N$ schreiben wir auch $N^M$, genauer
 definieren wir
-\[ N^M := \{ R \subseteq M \times N \mid \mbox{$R$ ist funktionale Relation}\, \}. \]
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds N^M := \bigl\{ R \subseteq M \times N \mid \mbox{$R$ ist funktionale Relation auf $M$}\, \bigr\}$. 
+\\[0.2cm]
 Diese Schreibweise erklärt sich wie folgt: Sind $M$ und $N$ endliche Mengen mit $m$
 bzw.~$n$ Elementen, so gibt es genau $n^m$ verschiedene Funktionen von $M$ nach $N$, es
 gilt also
 \[ \textsl{card}\left(N^M\right) = \textsl{card}(N)^{\textsl{card}(M)}. \]
 Wir werden daher funktionale Relationen und die entsprechenden Funktionen identifizieren.
-Damit ist dann für eine funktionale Relation $R \subseteq M \times N$ und ein $x \in M$
-auch die Schreibweise $R(x)$ zulässig: Mit $R(x)$ bezeichnen wir das eindeutig bestimmte $y \in N$,
-für das $\pair(x,y) \in R$ gilt.
+Damit ist dann für eine funktionale Relation $R \subseteq M \times N$ auf $M$ und ein $x \in M$
+auch die Schreibweise $R(x)$ zulässig: Mit $R(x)$ bezeichnen wir dasjenige eindeutig bestimmte $y \in N$,
+für welches $\pair(x,y) \in R$ gilt.
 \pagebreak
 
 \examples
@@ -228,11 +232,12 @@ für das $\pair(x,y) \in R$ gilt.
 \begin{Definition}[Bild]
   Ist $R \subseteq M \times N$ eine binäre Relation und ist weiter $X \subseteq M$, so
   definieren wir das \blue{Bild von $X$ unter $R$} als \\[0.2cm]
-  \hspace*{1.3cm} $R(X) := \{ y \mid \exists x \in X \colon \pair(x,y) \in R \}$. \eox
+  \hspace*{1.3cm}
+  $R(X) := \bigl\{ y \mid \exists x \in X \colon \pair(x,y) \in R \bigr\}$. \eox
 \end{Definition}
 
 \section{Inverse Relation}
-Zu einer  Relation $R \subseteq M \times N$ definieren wir die \colorbox{yellow}{\blue{inverse}} Relation 
+Zu einer  Relation $R \subseteq M \times N$ definieren wir die \colorbox{yellow}{\blue{inverse Relation}}  
 $R^{-1} \subseteq N \times M$ wie folgt: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -246,7 +251,7 @@ außerdem sowohl links-total auf $M$ als auch rechts-total auf $N$, so nennen wir
 In diesem Fall lässt sich neben der Funktion
 $f_R$ auch eine Funktion $f_{R^{-1}}$ definieren.  Die Definition der letzten Funktion
 lautet ausgeschrieben: \\[0.2cm]
-\hspace*{1.3cm} $f_{R^{-1}}(y) := x \;\stackrel{de\!f}{\Longleftrightarrow}\; \pair(y,x) \in R^{-1} \Longleftrightarrow \pair(x,y) \in R$. \\[0.2cm]
+\hspace*{1.3cm} $f_{R^{-1}}(y) := x \;\stackrel{\mathrm{def}}{\Longleftrightarrow}\; \pair(y,x) \in R^{-1} \Longleftrightarrow \pair(x,y) \in R$. \\[0.2cm]
 Diese Funktion ist dann aber genau die Umkehr-Funktion von $f_R$, es gilt \\[0.2cm]
 \hspace*{1.3cm}
  $\forall y \in N \colon f_R\bigl(f_{R^{-1}}(y)\bigr) = y$ \quad und \quad
@@ -257,15 +262,16 @@ Dieser Umstand rechtfertigt im Nachhinein die Schreibweise $R^{-1}$.
 Ähnlich wie wir Funktionen verknüpfen können, können auch Relationen verknüpft werden.
 Wir betrachten zunächst Mengen $L$, $M$ und $N$.
 Sind dort zwei Relationen $R \subseteq L \times M$ und $Q \subseteq M \times N$ definiert,
-so ist das \colorbox{yellow}{\blue{relationale Produkt}} $R \circ Q$ wie folgt definiert: \\[0.2cm]
+so ist das \colorbox{yellow}{\blue{relationale Produkt}} $R \circ Q$ von $R$ und $Q$ als die folgende Relation definiert:
+\\[0.2cm]
 \hspace*{1.3cm}
 $R \circ Q := \bigl\{ \pair(x,z) \mid \exists y \in M \colon\bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q\bigr) \bigr\}$ 
 \\[0.2cm]
 Offenbar gilt $R \circ Q \subseteq L \times N$.
-Das relationale Produkt von $Q$ und $R$ wird gelegentlich auch als die \colorbox{yellow}{\blue{Komposition}} von
+Das relationale Produkt von $R$ und $Q$ wird gelegentlich auch als die \colorbox{yellow}{\blue{Komposition}} von
 $Q$ und $R$ bezeichnet.  In der Theorie der relationalen Datenbanken werden Sie dem relationalen Produkt
 wiederbegegnen, denn der 
-\href{http://en.wikipedia.org/wiki/Join_(SQL)}{\emph{Join}-Operator}, der in
+\href{http://en.wikipedia.org/wiki/Join_(SQL)}{Join-Operator}, der in
 Datenbankabfrage-Sprachen wie 
 \href{http://en.wikipedia.org/wiki/SQL}{\textsc{Sql}} benutzt wird, ist eine Verallgemeinerung des
 relationalen Produkts.
@@ -490,7 +496,7 @@ zeigen.  Wir formen zunächst den Ausdruck $\pair(x,z) \in (R_1 \cup R_2) \circ Q
 \end{array}
 \]
 Diese Formel stellen wir mit Hilfe des Distributiv-Gesetzes der Aussagen-Logik um.
-In der Aussagenlogik werden wir im Rahmen der Informatik-Vorlesung sehen, dass für beliebige Formeln
+In der Aussagenlogik werden wir im Rahmen der Logik-Vorlesung sehen, dass für beliebige Formeln
 $F_1$, $F_2$ und $G$ die Äquivalenz 
 \[ (F_1 \vee F_2) \wedge G \;\Leftrightarrow\; (F_1 \wedge G) \vee (F_2 \wedge G) \]
 gilt.  Die Anwendung dieses Gesetzes liefert:
@@ -543,27 +549,26 @@ Es seien $M$, $N$ und $L$ Mengen und es gelte $R \subseteq M \times N$ und $Q_1,
 \item Beweisen oder widerlegen Sie die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}  $R \circ (Q_1 \cup Q_2) = R \circ Q_1 \cup R \circ Q_2$.
-\item Beweisen oder widerlegen Sie die Behauptung 
+\item Beweisen oder widerlegen Sie die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
       $R \circ (Q_1 \cap Q_2) = R \circ Q_1 \cap R \circ Q_2$. \eox
 \end{enumerate}
 
 
-\begin{Definition}[Identische Relation]
-  Ist $M$ eine Menge, so definieren wir die \colorbox{yellow}{\blue{identische Relation}} $\mathrm{id}_M \subseteq M \times M$
+\begin{Definition}[Identische Relation] \hspace*{\fill} \linebreak
+  Ist $M$ eine Menge, so definieren wir die \colorbox{yellow}{\blue{identische Relation auf $M$}} $\mathrm{id}_M \subseteq M \times M$
   wie folgt: \\[0.2cm]
-  \hspace*{1.3cm} $\mathrm{id}_M := \bigl\{ \pair(x,x) \mid x \in M \bigr\}$.  \eox
+  \hspace*{1.3cm} $\mathrm{id}_M := \bigl\{ \pair(x,x) \mid x \in M \bigr\}$.  \eoxs
 \end{Definition}
 
 \example
 Es sei $M = \{1,2,3\}$.  Dann gilt \\[0.2cm]
 \hspace*{1.3cm}  $\mathrm{id}_M := \bigl\{ \pair(1,1),  \pair(2,2),  \pair(3,3) \bigr\}$.  \eox
-\vspace*{0.2cm}
 
 \remark
-Aus der Definition folgt sofort \\[0.2cm]
-\hspace*{1.3cm} $\mathrm{id}_M^{-1} = \mathrm{id}_M$. \eox
+Aus der Definition der identischen Relation $\mathrm{id}_M$ folgt sofort \\[0.2cm]
+\hspace*{1.3cm} $\mathrm{id}_M^{-1} = \mathrm{id}_M$. \eoxs
 
 \begin{Satz}
   Ist $R \subseteq M \times N$  eine binäre Relation, so gilt 
@@ -589,7 +594,7 @@ Wegen  $R \subseteq M \times N$ besteht $R$ nur aus geordneten
 Paaren und daher gilt
 \[ R = \bigl\{ \pair(x,z) \mid \pair(x,z) \in R \bigr\}. \]
 Damit ist $\mathrm{id}_M \circ R = R$ gezeigt. \qeds
-
+\pagebreak
 
 \exercise
 Es sei $R \subseteq M \times N$.  Welche Eigenschaften muss die Relation $R$ besitzen, damit die Gleichung 
@@ -614,7 +619,7 @@ Statt $M \times M$ schreiben wir dann kürzer $M^2$.
 
 Ist $R$ eine Relation auf $M$ und sind $x, y \in M$, so verwenden wir gelegentlich die
 Infix-Schreibweise und schreiben statt
-$\pair(x,y) \in R$ auch $x\, R\, y$.  Beispielsweise lässt sich die Relation $\leq$ 
+$\pair(x,y) \in R$ kürzer $x\, R\, y$.  Beispielsweise lässt sich die Relation $\leq$ 
 auf $\mathbb{N}$ wie folgt definieren: 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -623,8 +628,8 @@ auf $\mathbb{N}$ wie folgt definieren:
 Statt $\pair(x,y) \in\; \leq$ hat sich in der Mathematik die Schreibweise $x \leq y$ eingebürgert.
   
 \begin{Definition}[reflexiv] 
-Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{reflexiv}} auf der Menge $M$ falls gilt: \\[0.2cm]
-\hspace*{1.3cm} $\forall x\in M \colon \pair(x,x) \in R$. \eox
+Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{reflexiv auf der Menge $M$}} falls gilt: \\[0.2cm]
+\hspace*{1.3cm} $\forall x\in M \colon \pair(x,x) \in R$. \eoxs
 \end{Definition}
 
 \begin{Satz}
@@ -741,13 +746,14 @@ $R \cap R^{-1} \subseteq \mbox{\rm id}_{M}$ gilt.
       $\pair(x,y) \in \mathrm{id}_M$ und daraus folgt sofort $x = y$. 
       \qeds
 \end{enumerate}
+\pagebreak
 
 \exercise
 \begin{enumerate}[(a)]
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
       sowohl anti-symmetrisch als auch symmetrisch ist.
 \item Geben Sie eine Menge $M$ und eine Relation $R \subseteq M \times M$ an, so dass $R$
-      weder anti-symmetrisch noch symmetrisch ist. \eox
+      weder anti-symmetrisch noch symmetrisch ist. \eoxs
 \end{enumerate}
 
 \remark
@@ -758,17 +764,17 @@ $R \subseteq M^2$ als \colorbox{yellow}{\blue{asymmetrisch}} definiert, wenn
 $\forall x, y \in M: \bigl(\pair(x,y) \in R \rightarrow \pair(y,x) \not\in R \bigr)$
 \\[0.2cm]
 gilt.  Beachten Sie, dass der Begriff der \blue{Asymmetrie} \underline{nicht} die Negation des Begriffs der
-\blue{Symmetrie} ist:  Zwar kann eine symmetrische Relation nicht asymmetrisch sein, aber es gibt
-Relationen, die weder asymmetrisch noch symmetrisch sind.  In dieser Vorlesung spielt der Begriff
+\blue{Symmetrie} ist:  Einerseits gibt es eine symmetrische Relation, die auch asymmetrisch ist, andererseits
+gibt es auch Relationen, die weder asymmetrisch noch symmetrisch sind.  In dieser Vorlesung spielt der Begriff
 der \blue{Asymmetrie} keine Rolle.  Für Sie reicht es zu wissen, dass \blue{Anti-Symmetrie} und
-\blue{Asymmetrie} zwei verschiedene Begriffe sind.
+\blue{Asymmetrie} zwei verschiedene Begriffe sind, die nichts mit einander zu tun haben.
 \eox
 
 \begin{Definition}[transitiv]
 Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{transitiv}} falls gilt: \\[0.2cm]
 \hspace*{1.3cm} 
 $\forall x, y, z \in M \colon \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R\bigr)$. 
-\eox
+\eoxs
 \end{Definition}
 
 \begin{Satz}
@@ -819,6 +825,7 @@ $R \circ R \subseteq R$ ist.
       $\pair(x,z) \in R$. 
       \qeds
 \end{enumerate} 
+\pagebreak
 
 \examples 
 In den ersten beiden Beispielen sei $M = \{1,2,3\}$.
@@ -911,7 +918,7 @@ transitiven Relation erweitern können.
 \begin{Definition}[transitiver Abschluss einer Relation, $R^+$]\hspace*{\fill} \\
   Es sei $R \subseteq M^2$.
   Wir definieren den 
-  \href{https://en.wikipedia.org/wiki/Transitive_closure}{\emph{transitiven Abschluss}} der Relation
+  \href{https://en.wikipedia.org/wiki/Transitive_closure}{transitiven Abschluss} der Relation
   $R$ als die Menge \\[0.2cm]  
   \hspace*{1.3cm} $R^+ := \bigcup\limits_{n\in\mathbb{N}^*} R^n$. \\[0.2cm]
   Dabei ist für eine Folge $(A_n)_n$ von Mengen der Ausdruck $\bigcup\limits_{n\in\mathbb{N}^*} A_n$ 
@@ -1070,7 +1077,7 @@ Berechnen Sie den transitiven Abschluss $R^+$.
 \section{Äquivalenz-Relationen \label{section:aequivalenz_relation}}
 \begin{Definition}[Äquivalenz-Relation]
 Eine Relation $R \subseteq M \times M$  ist eine 
-\href{https://en.wikipedia.org/wiki/Equivalence_relation}{\emph{Äquivalenz-Relation}} auf $M$
+\href{https://en.wikipedia.org/wiki/Equivalence_relation}{Äquivalenz-Relation} auf $M$
 genau dann, wenn folgende Bedingungen erfüllt sind: 
 \begin{enumerate}
 \item $R$ ist reflexiv auf $M$,
@@ -1083,6 +1090,7 @@ Der Begriff der Äquivalenz-Relationen verallgemeinert den Begriff der Gleichheit
 ein triviales Beispiel für eine Äquivalenz-Relation auf $M$ ist die Relation $\mathrm{id}_M$.
 Das folgende Beispiel zeigt eine nicht-triviale Äquivalenz-Relation, die später noch eine wichtige
 Rolle spielen wird.
+\pagebreak
 
 \example
 Wir betrachten die Menge $\mathbb{Z}$ der ganzen Zahlen
@@ -1467,7 +1475,7 @@ der geraden Zahlen und die Menge der ungeraden Zahlen.
 
 \begin{Definition}[Partition] 
 Ist ${\cal P} \subseteq 2^M$ eine Menge von Teilmengen von $M$, so sagen wir, dass ${\cal P}$ eine 
-\href{https://de.wikipedia.org/wiki/Partition_(Mengenlehre)}{\emph{Partition}} von $M$ ist, falls
+\href{https://de.wikipedia.org/wiki/Partition_(Mengenlehre)}{Partition} von $M$ ist, falls
 $\mathcal{P}$ die folgenden Eigenschaften hat: 
 \begin{enumerate}
 \item \colorbox{yellow}{\blue{Vollständigkeits-Eigenschaft}} 
@@ -1521,6 +1529,7 @@ $R := \bigl\{ \pair(x,y) \in M \times M \mid \exists K \in \mathcal{P}: \bigl(x 
 \\[0.2cm]
 so ist $R$ eine Äquivalenz-Relation auf $M$.
 \end{Satz}
+\pagebreak
 
 \proof
 Wir haben zu zeigen, dass die Relation $R$ reflexiv, symmetrisch und
