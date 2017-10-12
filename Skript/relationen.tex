@@ -661,14 +661,33 @@ Eine Relation $R \subseteq M \times M$ ist genau dann symmetrisch, wenn $R^{-1} 
 \end{Satz}
 
 \proof
-Die Äquivalenz der beiden Bedingungen wird offensichtlich, wenn wir die Inklusions-Bedingung
-$R^{-1} \subseteq R$ expandieren, indem wir die Gleichung
-\[ R^{-1} = \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\}  \]
-berücksichtigen, denn dann hat die Inklusions-Bedingung die Form
-\[ \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\} \subseteq  R. \]
-Falls nun $\pair(x,y) \in R$ ist, gilt $\pair(y,x) \in \bigl\{ \pair(y,x) \mid \pair(x,y) \in R \bigr\}$.
-Da diese Menge eine Teilmenge von $R$ ist, folgt $\pair(y,x)  \in R$ und das ist gerade die Bedingung, dass
-die Relation $R$ symmetrisch ist. \qeds
+Wir spalten den Beweis in zwei Teile auf.
+\begin{enumerate}
+\item[``$\Rightarrow$'']: Wir setzen voraus, dass $R$ symmetrisch ist und zeigen, das $R^{-1} \subseteq R$
+               gilt.  Sei also $\pair(b, a)$ in $R^{-1}$.  Wir müssen dann $\pair(b, a) \in R$ zeigen.
+               Aus $\pair(b, a) \in R^{-1}$ folgt nach Definition von $R^{-1}$ 
+               \\[0.2cm]
+               \hspace*{1.3cm}
+               $\pair(b, a) \in \bigl\{ \pair(y, x) \mid \pair(x, y) \in R \bigr\}$.
+               \\[0.2cm]
+               Daraus folgt zunächst $\pair(a, b) \in R$.  Da die Relation $R$ symmetrisch ist, folgt
+               \\[0.2cm]
+               \hspace*{1.3cm}
+               $\pair(b,a) \in R$.
+               \green{$\surd$}
+\item[``$\Leftarrow$'']: Wir nehmen nun an, dass $R^{-1} \subseteq R$ gilt und müssen zeigen, dass $R$
+               symmetrisch ist.  Dazu nehmen wir an, dass $\pair(a,b) \in R$.  Dann müssen wir nachweisen, dass
+               dann auch $\pair(b,a) \in R$ gilt.  Aus $\pair(a,b) \in R$ folgt nach Definition von $R^{-1}$, dass
+               \\[0.2cm]
+               \hspace*{1.3cm}
+               $\pair(b,a) \in R^{-1}$
+               \\[0.2cm]
+               gilt.  Aus der Voraussetzung $R^{-1} \subseteq R$ folgt nun
+               \\[0.2cm]
+               \hspace*{1.3cm}
+               $\pair(b,a) \in R$. \green{$\surd$}
+               \qeds
+\end{enumerate}
 
 \begin{Definition}[anti-symmetrisch]
 Eine Relation $R \subseteq M \times M$  ist \colorbox{yellow}{\blue{anti-symmetrisch}} falls gilt: \\[0.2cm]
