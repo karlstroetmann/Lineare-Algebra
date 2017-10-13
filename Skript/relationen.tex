@@ -919,13 +919,13 @@ folgende Gesetz.
              \[
              \begin{array}{lcll}
                R^{k+1} \circ R^l & = & (R \circ R^k) \circ R^l &
-                                       \mbox{nach Def. von}\; R^{k+1} \\
+                                       (\mbox{nach Def. von}\; R^{k+1}) \\
                                  & = & R \circ (R^k \circ R^l) &
-                                       \mbox{aufgrund des Assoziativ-Gesetzes für $\circ$}                                       \\
+                                       (\mbox{aufgrund des Assoziativ-Gesetzes für $\circ$}) \\
                                  & = & R \circ R^{k+l} &
-                                       \mbox{nach Induktions-Voraussetzung} \\
+                                       (\mbox{nach Induktions-Voraussetzung}) \\
                                  & = & R^{(k+l)+1} &
-                                       \mbox{nach Def. von}\; R^{n+1} \\
+                                       (\mbox{nach Def. von}\; R^{n+1}) \\
                                  & = & R^{(k+1)+l}.\; \mbox{\color{green}{$\surd$}} & \hspace*{\fill} \Box
              \end{array}
              \]
@@ -943,7 +943,7 @@ transitiven Relation erweitern können.
   Dabei ist für eine Folge $(A_n)_n$ von Mengen der Ausdruck $\bigcup\limits_{n\in\mathbb{N}^*} A_n$ 
   als \\[0.2cm]
   \hspace*{1.3cm}
-  $\bigcup\limits_{n\in\mathbb{N}} A_n := \bigl\{ x \,\big|\, \exists n \in \mathbb{N}^*: x \in A_n \bigr\}$.
+  $\bigcup\limits_{n\in\mathbb{N}^*} A_n := \bigcup \bigl\{ A_n \mid n \in \mathbb{N}^* \bigr\} = \bigl\{ x \,\big|\, \exists n \in \mathbb{N}^*: x \in A_n \bigr\}$.
   \\[0.2cm]
   definiert.  Etwas weniger formal (aber dafür anschaulicher) können wir auch schreiben
   \\[0.2cm]
@@ -956,7 +956,7 @@ Es sei $M$ eine Menge und $R \subseteq M \times M$ eine binäre Relation auf $M$.
 Dann hat die oben definierte Relation $R^+$ die folgenden Eigenschaften:
 \begin{enumerate}
 \item $R^+$ ist transitiv.
-\item $R^+$   ist die bezüglich der Inklusions-Ordnung $\subseteq$ kleinste Relation
+\item $R^+$   ist die bezüglich der Inklusions-Ordnung $\subseteq$ \blue{kleinste} Relation
       $T$ auf $M$, die einerseits transitiv ist und andererseits die Relation $R$ enthält.
       Anders ausgedrückt: Ist $T$ eine transitive Relation mit $R \subseteq T$, so
       muss $R^+ \subseteq T$ gelten.
@@ -1099,14 +1099,15 @@ Eine Relation $R \subseteq M \times M$  ist eine
 \href{https://en.wikipedia.org/wiki/Equivalence_relation}{Äquivalenz-Relation} auf $M$
 genau dann, wenn folgende Bedingungen erfüllt sind: 
 \begin{enumerate}
-\item $R$ ist reflexiv auf $M$,
-\item $R$ ist symmetrisch und
-\item $R$ ist transitiv. \eox
+\item $R$ ist \blue{reflexiv auf $M$},
+\item $R$ ist \blue{symmetrisch} und
+\item $R$ ist \blue{transitiv}. \eox
 \end{enumerate}
 \end{Definition}
 
-Der Begriff der Äquivalenz-Relationen verallgemeinert den Begriff der Gleichheit, denn
-ein triviales Beispiel für eine Äquivalenz-Relation auf $M$ ist die Relation $\mathrm{id}_M$.
+Der Begriff der \blue{Äquivalenz-Relation} verallgemeinert den Begriff der \blue{Gleichheit}, denn
+ein triviales Beispiel für eine Äquivalenz-Relation auf $M$ ist die Relation $\mathrm{id}_M$ und diese Relation
+ist die Gleichheits-Relation auf $M$.
 Das folgende Beispiel zeigt eine nicht-triviale Äquivalenz-Relation, die später noch eine wichtige
 Rolle spielen wird.
 \pagebreak
@@ -1118,22 +1119,21 @@ als \\[0.2cm]
 \hspace*{1.3cm}
  $\approx_n \;:=\; \{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z} \colon k \cdot n = x - y \}$
 \\[0.2cm]
-definieren.  Falls $x \approx_n y$ gilt, so sagen wir, dass \colorbox{yellow}{$x$ und $y$ kongruent modulo $n$} sind.
+definieren.  Falls $x \approx_n y$ gilt, so sagen wir, dass \colorbox{yellow}{$x$ und $y$ \blue{kongruent} modulo $n$} sind.
 Anstelle der Notation
 \\[0.2cm]
 \hspace*{1.3cm}
 $x \approx_n y$ 
-\\[0.2cm]
+\quad
 finden Sie in der Literatur auch die Schreibweise
-\\[0.2cm]
-\hspace*{1.3cm}
+\quad
 $x \equiv y \;\; (\mathrm{mod}\; n)$.
 \\[0.2cm]
 Wir zeigen, dass die Relation $\approx_n$ für $n \in \mathbb{N}^*$ eine Äquivalenz-Relation auf
 $\mathbb{Z}$ definiert. 
 
 \begin{enumerate}
-\item Um zu zeigen, dass $\approx_n$ reflexiv ist, müssen wir nachweisen, dass für alle
+\item Um zu zeigen, dass $\approx_n$ \blue{reflexiv} ist, müssen wir nachweisen, dass für alle
       $x \in \mathbb{Z}$ die Beziehung
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1144,16 +1144,16 @@ $\mathbb{Z}$ definiert.
       \hspace*{1.3cm}
       $\pair(x,x) \in \bigl\{ \pair(x,y) \in \mathbb{Z}^2 \mid \exists k \in \mathbb{Z}: k \cdot n = x - y \bigr\}$.
       \\[0.2cm]
-      Für eine vorgegebene Zahl $x$ ist dies gleichbedeutend mit \\[0.2cm]
+      Für eine vorgegebene Zahl $x$ ist dies gleichbedeutend damit, dass \\[0.2cm]
       \hspace*{1.3cm}
-      $\exists k \in \mathbb{Z}: k \cdot n = x - x$.
+      $\exists k \in \mathbb{Z}: k \cdot n = x - x$
       \\[0.2cm]
-      Offenbar erfüllt $k=0$ diese Gleichung, denn es gilt: \\[0.2cm]
+      gilt.  Offenbar erfüllt $k=0$ diese Gleichung, denn es gilt: \\[0.2cm]
       \hspace*{1.3cm}
       $0\cdot n = 0 = x - x$. 
       \\[0.2cm]
       Damit ist die Reflexivität nachgewiesen. {\color{green}{$\surd$}}
-\item Um die Symmetrie von $\approx_n$ nachzuweisen nehmen wir an, dass 
+\item Um die \blue{Symmetrie} von $\approx_n$ nachzuweisen nehmen wir an, dass 
       $\pair(x,y) \in\; \approx_n$ ist.  Dann gibt es also ein $k \in \mathbb{Z}$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}      
@@ -1166,7 +1166,7 @@ $\mathbb{Z}$ definiert.
       \\[0.2cm]
       Dies zeigt aber, dass $\pair(y,x) \in\; \approx_n$ ist und damit ist die Symmetrie
       nachgewiesen. {\color{green}{$\surd$}}
-\item Zum Nachweis der Transitivität von $\approx$ nehmen wir an, dass
+\item Zum Nachweis der \blue{Transitivität} von $\approx$ nehmen wir an, dass
       sowohl
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1233,9 +1233,9 @@ so ist $R_f$ eine Äquivalenz-Relation.
 
 
 \noindent
-\textbf{Beweis}: Wir weisen der Reihe nach die Reflexivität, Symmetrie und Transitivität der Relation $R_f$ nach:
+\textbf{Beweis}: Wir weisen der Reihe nach die \blue{Reflexivität}, \blue{Symmetrie} und \blue{Transitivität} der Relation $R_f$ nach:
 \begin{enumerate}
-\item $R_f$ ist reflexiv auf $M$, denn es gilt 
+\item $R_f$ ist \blue{reflexiv} auf $M$, denn es gilt 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \in M: f(x) = f(x)$.
@@ -1244,7 +1244,7 @@ so ist $R_f$ eine Äquivalenz-Relation.
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \in M: \pair(x,x) \in R_f$. {\color{green}{$\surd$}}
-\item Um die Symmetrie von $R_f$ nachzuweisen, müssen wir
+\item Um die \blue{Symmetrie} von $R_f$ nachzuweisen, müssen wir
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x,y \in M: (\pair(x,y) \in R_f \rightarrow \pair(y,x) \in R_f)$
@@ -1263,7 +1263,7 @@ so ist $R_f$ eine Äquivalenz-Relation.
       \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(y,x) \in R_f$. {\color{green}{$\surd$}}
-\item Um die Transitivität von $R_f$ nachzuweisen, müssen wir 
+\item Um die \blue{Transitivität} von $R_f$ nachzuweisen, müssen wir 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x,y,z \in M: \bigl(\pair(x,y) \in R_f \wedge \pair(y,z) \in R_f \rightarrow 
@@ -1366,21 +1366,20 @@ Wir beweisen die Behauptungen in derselben Reihenfolge wie oben angegeben.
       $[x]_R \subseteq [y]_R$ und $[y]_R \subseteq [x]_R$.
 
       \begin{enumerate}
-      \item Zeige $[x]_R \subseteq [y]_R$:
-        
+      \item Zeige $[x]_R \subseteq [y]_R$:        
             Sei $u \el [x]_R$.  Dann gilt
             \\[0.2cm]
             \hspace*{1.3cm}
             $\pair(x,u) \in R$.  
             \\[0.2cm]
             Aus der Voraussetzung
-            $\pair(x,y) \in R$ folgt wegen der Symmetrie der Relation $R$, dass auch
+            $\pair(x,y) \in R$ folgt wegen der \blue{Symmetrie} der Relation $R$, dass auch
             \\[0.2cm]
             \hspace*{1.3cm}
             $\pair(y,x) \in R$ 
             \\[0.2cm]
             gilt.  Aus 
-            $\pair(y,x) \in R$ und $\pair(x,u) \in R$ folgt wegen der Transitivität der Relation
+            $\pair(y,x) \in R$ und $\pair(x,u) \in R$ folgt wegen der \blue{Transitivität} der Relation
             $R$, dass
             \\[0.2cm]
             \hspace*{1.3cm}
@@ -1390,16 +1389,15 @@ Wir beweisen die Behauptungen in derselben Reihenfolge wie oben angegeben.
             Menge $[y]_R$ folgt damit $u \el [y]_R$. 
             Damit ist $[x]_R \subseteq [y]_R$ nachgewiesen.
       \item Zeige $[y]_R \subseteq [x]_R$:
-
             Um $[y]_R \subseteq [x]_R$ zu zeigen nehmen wir $u \el [y]_R$ an.
             Dann gilt $\pair(y,u) \in R$.  Aus der Voraussetzung $\pair(x,y) \in R$ und
-            $\pair(y,u) \in R$ folgt wegen der Transitivität der Relation $R$ sofort
+            $\pair(y,u) \in R$ folgt wegen der \blue{Transitivität} der Relation $R$ sofort
             $\pair(x,u) \in R$.  Dann gilt aber $u \el [x]_R$ und damit ist auch die Inklusion
             $[y]_R \subseteq [x]_R$ nachgewiesen. 
       \end{enumerate}
       Damit haben wir insgesamt die Gleichung $[x]_R = [y]_R$ gezeigt. {\color{green}{$\surd$}}
 \item Sei nun $\pair(x,y) \not\in R$ vorausgesetzt.  Um nachzuweisen,
-      dass  $[x]_R \cap [y]_R = \emptyset$ ist nehmen wir an, dass
+      dass  $[x]_R \cap [y]_R = \emptyset$ ist, nehmen wir an, dass
       es ein $z \el [x]_R \cap [y]_R$ gibt.  Aus dieser Annahme werden wir einen
       Widerspruch zu der Voraussetzung $\pair(x,y) \not\in R$ 
         herleiten.  Sei also $z \el[x]_R$ und $z \el [y]_R$.  Nach Definition
@@ -1408,12 +1406,12 @@ Wir beweisen die Behauptungen in derselben Reihenfolge wie oben angegeben.
       \hspace*{1.3cm}      
       $\pair(x,z) \in R$ \quad und \quad $\pair(y,z) \in R$.
       \\[0.2cm]
-      Aufgrund der Symmetrie von $R$ können wir $\pair(y,z) \in R$ umdrehen und haben dann
+      Aufgrund der \blue{Symmetrie} von $R$ können wir $\pair(y,z) \in R$ umdrehen und haben dann
       \\[0.2cm]
       \hspace*{1.3cm}      
       $\pair(x,z) \in R$ \quad und \quad $\pair(z,y) \in R$.
       \\[0.2cm]
-      Aus der Transitivität der Äquivalenz-Relation $R$ folgt jetzt
+      Aus der \blue{Transitivität} der Äquivalenz-Relation $R$ folgt jetzt
       $\pair(x,y) \in R$.
       Dies steht aber im Widerspruch zu der Voraussetzung $\pair(x,y) \not\in R$.
       Damit ist die Annahme, dass es ein $z \el [x]_R \cap [y]_R$ gibt, widerlegt.
@@ -1422,12 +1420,10 @@ Wir beweisen die Behauptungen in derselben Reihenfolge wie oben angegeben.
 \end{enumerate}
 
 \begin{Korollar}
-Aus dem letzten Satzes folgt sofort, dass 
+Aus dem letzten Satzes folgt sofort, dass für eine Äquivalenz-Relation $R$ auf $M$ gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\pair(x,y) \in R \;\Leftrightarrow\; [x]_R = [y]_R$
-\\[0.2cm]
-gilt. \eoxs
+$\pair(x,y) \in R \;\Leftrightarrow\; [x]_R = [y]_R$. \eoxs
 \end{Korollar}
 
 \remark
@@ -1442,19 +1438,17 @@ durch die Festlegung
 $f_R(x) := [x]_R = \bigl\{ y \in M \,|\, \pair(x,y) \in R \bigr\}$
 \\[0.2cm]
 definieren.   Das Korollar zum letzten Satz zeigt dann, dass die Funktion $f_R$ die Äquivalenz-Relation
-$R$ erzeugt, denn es gilt
+$R$ \blue{erzeugt}, denn es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
-\begin{array}[t]{lcl}
+\begin{array}[b]{lcl}
 R_{f_R} & = & \bigl\{ \pair(x, y) \in M \times M \mid f_R(x) = f_R(y)  \bigr\}  \\[0.2cm]
         & = & \bigl\{ \pair(x, y) \in M \times M \mid [x]_R = [y]_R    \bigr\}  \\[0.2cm]
         & = & \bigl\{ \pair(x, y) \in M \times M \mid \pair(x,y) \in R \bigr\}  \\[0.2cm]
-        & = & R,
+        & = & R.
 \end{array}
-$
-\\[0.2cm]
-denn  $R \subseteq M \times M$. \eoxs
+$ \eoxs
 
 
 \begin{Definition}[Quotienten-Raum]
@@ -1473,6 +1467,7 @@ Setzen wir das letzte Beispiel fort, in dem alle die Menschen äquivalent waren, 
 Staatsbürgerschaft haben, so finden wir, dass die Äquivalenz-Klassen, die von dieser
 Äquivalenz-Relation erzeugt werden, gerade aus den Menschen bestehen, die dieselbe
 Staatsbürgerschaft besitzen.  \eoxs
+\pagebreak
 
 \example
 Auf der Menge $\mathbb{Z}$ definieren wir für $n\in\mathbb{N}$ und $n \geq 2$ die Relation $\approx_n$ wie folgt:
@@ -1487,8 +1482,8 @@ $\mathbb{Z}/\!\approx_n \;=\;
   \bigl\{ \{ z \in \mathbb{Z} \mid z \;\mathtt{\%}\; n = k \} \mid k \in \{0,1,\cdots, k-1\} \bigr\}$.
 \\[0.2cm]
 Der Quotienten-Raum besteht also aus $k$ verschiedenen Mengen.  Falls wir den Fall $n=2$ genauer
-betrachten, so stellen wir fest, dass $\mathbb{Z}/\!\approx_2$ genau zwei Mengen enthält:  Die Menge
-der geraden Zahlen und die Menge der ungeraden Zahlen.  
+betrachten, so stellen wir fest, dass $\mathbb{Z}/\!\approx_2$ aus zwei Mengen besteht:  Der Menge
+der geraden Zahlen und der Menge der ungeraden Zahlen.  
 \eoxs
 
 
@@ -1551,10 +1546,10 @@ so ist $R$ eine Äquivalenz-Relation auf $M$.
 \pagebreak
 
 \proof
-Wir haben zu zeigen, dass die Relation $R$ reflexiv, symmetrisch und
-transitiv ist.
+Wir haben zu zeigen, dass die Relation $R$ \blue{reflexiv}, \blue{symmetrisch} und
+\blue{transitiv} ist.
 \begin{enumerate}
-\item Reflexivität: Zu zeigen ist 
+\item \blue{Reflexivität}: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x \in M: \pair(x,x) \in R$.
@@ -1571,7 +1566,7 @@ transitiv ist.
       \\[0.2cm]
       vereinfachen.  Diese Formel ist nichts anderes als die Vollständigkeit
       der Partition $\mathcal{P}$. {\color{green}{$\surd$}}
-\item Symmetrie: Zu zeigen ist 
+\item \blue{Symmetrie}: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x, y \in M:\bigl( \pair(x,y) \in R \rightarrow \pair(y,x) \in R\bigr)$.
@@ -1596,7 +1591,7 @@ transitiv ist.
       \\[0.2cm]
       \hspace*{1.3cm}
       $\pair(y,x) \in R$. {\color{green}{$\surd$}}
-\item Transitivität: Zu zeigen ist 
+\item \blue{Transitivität}: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\forall x,y,z \in M:\bigl( \pair(x,y) \in R \wedge \pair(y,z) \in R \rightarrow \pair(x,z) \in R\bigr)$.
@@ -1643,9 +1638,9 @@ Relationen, die sich ähnlich verhalten wie die Relation $\leq$ auf den Zahlen.
   Eine Relation $R \subseteq M \times M$  ist eine 
   \colorbox{yellow}{\blue{partielle Ordnung (im Sinne von $\leq$) auf $M$}} genau dann, wenn die Relation $R$
   \begin{enumerate}
-  \item reflexiv auf $M$,
-  \item anti-symmetrisch und
-  \item transitiv ist.
+  \item \blue{reflexiv} auf $M$,
+  \item \blue{anti}-symmetrisch und
+  \item \blue{transitiv} ist.
   \end{enumerate}
   Die Relation ist darüber hinaus eine \colorbox{yellow}{\blue{totale Ordnung auf $M$}}, wenn zusätzlich
   \\[0.2cm]
@@ -1658,47 +1653,47 @@ Relationen, die sich ähnlich verhalten wie die Relation $\leq$ auf den Zahlen.
 Eine totale Ordnung wird gelegentlich auch als \colorbox{yellow}{\blue{lineare Ordnung}} bezeichnet. \eoxs
 
 \example 
-Die Teilbarkeitsrelation $\mathop{\mathtt{div}}$ kann auf den natürlichen Zahlen
+Die Teilbarkeitsrelation $\mathop{\mathtt{div}}$ kann auf den positiven natürlichen Zahlen
 wie folgt definiert werden 
 \\[0.2cm]
 \hspace*{1.3cm}
 $ \mathop{\mathtt{div}} := 
-   \bigl\{ \pair(x,y) \in \mathbb{N} \times \mathbb{N} \mid \exists k \in \mathbb{N}: k \cdot x = y\bigr\}$.
+   \bigl\{ \pair(x,y) \in \mathbb{N}^* \times \mathbb{N}^* \mid \exists k \in \mathbb{N}^*: k \cdot x = y\bigr\}$.
 \\[0.2cm] 
 Wir zeigen, dass diese Relation eine partielle Ordnung auf $\mathbb{N}$ ist und weisen dazu
-Reflexivität, Anti-Symmetrie und Transitivität nach.
+\blue{Reflexivität}, \blue{Anti-Symmetrie} und \blue{Transitivität} nach.
 \begin{enumerate}
-\item Reflexivität: Zu zeigen ist 
+\item \blue{Reflexivität}: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x \in \mathbb{N}: x \mathop{\mathtt{div}} x$.
+      $\forall x \in \mathbb{N}^*: x \mathop{\mathtt{div}} x$.
       \\[0.2cm]
       Nach Definition der Relation $\mathop{\mathtt{div}}$ ist  das äquivalent zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\exists k \in \mathbb{N}: k \cdot x = x$. 
+      $\exists k \in \mathbb{N}^*: k \cdot x = x$. 
       \\[0.2cm]
       Wir müssen also ein $k$ finden, so dass die Gleichung $k \cdot x = x$ gilt.
       Setzen wir $k=1$, so ist diese Gleichung sicher erfüllt und damit ist die Reflexivität
       gezeigt. {\color{green}{$\surd$}}
-\item Anti-Symmetrie: Zu zeigen ist 
+\item \blue{Anti-Symmetrie}: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x, y \in \mathbb{N}:\bigl( x \mathop{\mathtt{div}} y \wedge y \mathop{\mathtt{div}} x \rightarrow x = y\bigr)$
+      $\forall x, y \in \mathbb{N}^*:\bigl( x \mathop{\mathtt{div}} y \wedge y \mathop{\mathtt{div}} x \rightarrow x = y\bigr)$
       \\[0.2cm] 
       Wir nehmen also an, dass 
       \\[0.2cm]
       \hspace*{1.3cm}
       $x \mathop{\mathtt{div}} y \wedge y \mathop{\mathtt{div}} x$
       \\[0.2cm]
-      gilt (und werden $x=y$ zeigen).  Nach Definition der Relation $\mathop{\mathtt{div}}$
+      gilt und werden $x=y$ zeigen.  Nach Definition der Relation $\mathop{\mathtt{div}}$
       ist die Annahme äquivalent zu 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\bigl(\exists k_1 \in \mathbb{N}: k_1 \cdot x = y \bigr) \wedge
-       \bigl(\exists k_2 \in \mathbb{N}: k_2 \cdot y = x \bigr)$ 
+      $\bigl(\exists k_1 \in \mathbb{N}^*: k_1 \cdot x = y \bigr) \wedge
+       \bigl(\exists k_2 \in \mathbb{N}^*: k_2 \cdot y = x \bigr)$ 
       \\[0.2cm]
-      Also gibt es natürliche Zahlen $k_1$ und $k_2$, so dass 
+      Also gibt es positive natürliche Zahlen $k_1$ und $k_2$, so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
       $k_1 \cdot x = y \wedge k_2 \cdot y = x$
@@ -1709,7 +1704,7 @@ Reflexivität, Anti-Symmetrie und Transitivität nach.
       $k_1 \cdot k_2 \cdot y = y$ \quad und \quad
       $k_2 \cdot k_1 \cdot x = x$.
       \\[0.2cm] 
-      Da $x$ und $y$ als natürliche Zahlen von $0$ verschieden sind, muss dann
+      Da $x$ und $y$ als positive natürliche Zahlen von $0$ verschieden sind, muss dann
       \\[0.2cm]
       \hspace*{1.3cm}
       $k_1 \cdot k_2 = 1$
@@ -1718,22 +1713,22 @@ Reflexivität, Anti-Symmetrie und Transitivität nach.
       $k_2$ sind ja natürliche Zahlen, 
       können wir wegen der ursprünglichen Gleichungen $k_1 \cdot x = y$ und $k_2 \cdot y = x$
       sofort auf $x = y$ schließen.  Damit ist die Anti-Symmetrie gezeigt. {\color{green}{$\surd$}}
-\item Transitivität: Zu zeigen ist 
+\item \blue{Transitivität}: Zu zeigen ist 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall x, y, z \in \mathbb{N}:\bigl( x \mathop{\mathtt{div}} y \wedge y \mathop{\mathtt{div}} z \rightarrow x \mathop{\mathtt{div}} z\bigr)$
+      $\forall x, y, z \in \mathbb{N}^*:\bigl( x \mathop{\mathtt{div}} y \wedge y \mathop{\mathtt{div}} z \rightarrow x \mathop{\mathtt{div}} z\bigr)$
       \\[0.2cm] 
       Wir nehmen also an, dass 
       \\[0.2cm]
       \hspace*{1.3cm}
       $x \mathop{\mathtt{div}} y \wedge y \mathop{\mathtt{div}} z$
       \\[0.2cm]
-      gilt (und werden $x \mathop{\mathtt{div}} z$ zeigen).  Nach Definition der Relation $\mathop{\mathtt{div}}$
+      gilt und werden $x \mathop{\mathtt{div}} z$ zeigen.  Nach Definition der Relation $\mathop{\mathtt{div}}$
       ist die Annahme äquivalent zu 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\bigl(\exists k_1 \in \mathbb{N}: k_1 \cdot x = y \bigr) \wedge
-       \bigl(\exists k_2 \in \mathbb{N}: k_2 \cdot y = z \bigr)$ 
+      $\bigl(\exists k_1 \in \mathbb{N}^*: k_1 \cdot x = y \bigr) \wedge
+       \bigl(\exists k_2 \in \mathbb{N}^*: k_2 \cdot y = z \bigr)$ 
       \\[0.2cm]
       Also gibt es natürliche Zahlen $k_1$ und $k_2$, so dass 
       \\[0.2cm]
@@ -1785,6 +1780,22 @@ Zeigen Sie, dass $\sqsubseteq$ eine totale Ordnung auf $\mathbb{N} \times \mathb
 Wir schließen damit unseren Ausflug in die Mengenlehre ab und verweisen für weitere
 Details auf die Literatur, wobei ich Ihnen hier besonders das Buch von Seymour Lipschutz
 \cite{lipschutz:1998} empfehlen möchte.  
+\vspace*{0.2cm}
+
+\noindent
+\textbf{Reflektion}
+\begin{enumerate}[(a)]
+\item Was ist eine \blue{binäre Relation}?
+\item Warum haben wir die Begriffe \blue{rechts-eindeutig}, \blue{links-eindeutig}, \blue{rechts-total} und
+      \blue{links-total} eingeführt?
+\item Wie ist das \blue{relationale Produkt} zweier Relationen definiert?
+\item Wann ist eine Relation $R$ auf einer Menge $M$ \blue{reflexiv}, \blue{symmetrisch},
+      \blue{anti-symmetrisch} bzw. \\ \blue{transitiv}?
+\item Wie können wir den \blue{transitiven Abschluss} einer Relation berechnen?
+\item Was ist eine \blue{Äquivalenz-Relation}?
+\item Wie hängen \blue{Äquivalenz-Relationen} mit \blue{Partitionen} zusammen?
+\item Was ist eine \blue{partielle Ordnung}?
+\end{enumerate}
 
 %%% Local Variables:
 %%% mode: latex
