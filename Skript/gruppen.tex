@@ -4,12 +4,13 @@ In diesem Kapitel und dem nächsten Kapitel untersuchen wir algebraische Struktur
 \href{http://de.wikipedia.org/wiki/Ring_(Algebra)}{\emph{Ringe}}
  und 
 \href{http://en.wikipedia.org/wiki/Field_(mathematics)}{\emph{Körper}}, 
-wobei wir in diesem Kapitel mit den Gruppen beginnen.
+wobei wir in diesem Kapitel mit den \blue{Gruppen} beginnen.
 Die Theorie der Gruppen ist ursprünglich aus dem Bestreben entstanden, Formeln für die
-Nullstellen von beliebigen Polynomen zu finden.  Später hat die Gruppentheorie auch in
+Nullstellen von beliebigen Polynomen zu finden.  Später hat die 
+\href{https://de.wikipedia.org/wiki/Gruppentheorie}{Gruppen-Theorie} auch in
 anderen Gebieten der Mathematik, Physik und Informatik zahlreiche Anwendungen gefunden.
-Wir werden die Definition einer Gruppe später bei der Definition eines Vektorraums benötigen, 
-denn ein Vektorraum ist eine kommutative Gruppe, für die zusätzlich eine Skalar-Multiplikation
+Wir werden die Definition einer Gruppe später bei der Definition eines \blue{Vektor-Raums} benötigen, 
+denn ein Vektor-Raum ist eine \blue{kommutative} Gruppe, für die zusätzlich eine \blue{Skalar-Multiplikation}
 definiert ist.
 
 \section{Die Definition der Gruppe}
@@ -39,7 +40,7 @@ Ein Tripel $\langle G, e, \circ \rangle$ heißt {\emph{\color{blue}Gruppe}} falls
       \\[0.2cm]
       gilt.  Wir sagen, dass $y$ ein zu $x$ bezüglich der Operation $\circ$
       {\emph{\color{blue}links-inverses}} Element ist.
-\item Es gilt das folgende {\emph{\color{blue}Assoziativ-Gesetz}}:
+\item Es gilt das {\emph{\color{blue}Assoziativ-Gesetz}}
       \\[0.2cm]
       \hspace*{1.3cm}
       $(x \circ y) \circ z = x \circ (y \circ z)$ \quad für alle $x,y,z \in G$.
@@ -68,26 +69,26 @@ derer klar wird, worum es bei Gruppen überhaupt geht.
       \end{enumerate}
       Dieses Beispiel zeigt, dass der Begriff der Gruppe versucht, die Eigenschaften der
       Addition auf den ganzen Zahlen zu verallgemeinern.
-\item Definieren wir $\mathbb{Q}_+$ als die Menge der positiven rationalen Zahlen, also als
+\item Definieren wir $\mathbb{Q}^+$ als die Menge der positiven rationalen Zahlen, also als
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathbb{Q}_+ := \{ q \in \mathbb{Q} \mid q > 0 \}$
+      $\mathbb{Q}^+ := \{ q \in \mathbb{Q} \mid q > 0 \}$
       \\[0.2cm]
       und bezeichnen wir mit
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\cdot : \mathbb{Q}_+ \times \mathbb{Q}_+ \rightarrow \mathbb{Q}_+$
+      $\cdot : \mathbb{Q}^+ \times \mathbb{Q}^+ \rightarrow \mathbb{Q}^+$
       \\[0.2cm]
       die Multiplikation, so ist die Struktur $\langle \mathbb{Q}, 1, \cdot \rangle$ eine
       kommutative Gruppe, denn es gilt: 
       \begin{enumerate}
-      \item $1 \cdot q = q$ \quad für alle $q \in \mathbb{Q}_+$.
-      \item $\frac{1}{q} \cdot q = 1$ \quad für alle $q \in \mathbb{Q}_+$,
+      \item $1 \cdot q = q$ \quad für alle $q \in \mathbb{Q}^+$.
+      \item $\frac{1}{q} \cdot q = 1$ \quad für alle $q \in \mathbb{Q}^+$,
         
             und damit ist die Zahl $\frac{1}{q}$ das \emph{\color{blue}Links-Inverse} der Zahl $x$ bezüglich der
             Multiplikation.
-      \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ \quad für alle $x,y,z \in \mathbb{Q}_+$.
-      \item $x \cdot y = y \cdot x$ \quad für alle $x,y \in \mathbb{Q}_+$.
+      \item $(x \cdot y) \cdot z = x \cdot (y \cdot z)$ \quad für alle $x,y,z \in \mathbb{Q}^+$.
+      \item $x \cdot y = y \cdot x$ \quad für alle $x,y \in \mathbb{Q}^+$.
       \end{enumerate}
 \item In den letzten beiden Beispielen war die der Gruppe zu Grunde liegende Menge $G$
       jedes Mal unendlich.  Das dies keineswegs immer so ist, zeigt das nächste Beispiel.
@@ -113,7 +114,7 @@ derer klar wird, worum es bei Gruppen überhaupt geht.
       $
       \\[0.2cm]
       Dann ist $\langle G, e, \circ \rangle$ eine kommutative Gruppe, denn offenbar gilt für alle $x \in G$, dass 
-      $e \circ x = x$ ist und wir finden auch für jedes der beiden Elemente ein links-inverses Element:
+      $e \circ x = x$ ist und wir finden auch für jedes der beiden Elemente der Menge $G$ ein links-inverses Element:
       Das Links-Inverse zu $e$ ist $e$ und das Links-Inverse zu $a$ ist $a$.  Es bleibt das
       Assoziativ-Gesetz nachzuweisen.  Dazu müssen wir die Gleichung
       \\[0.2cm]
@@ -122,14 +123,14 @@ derer klar wird, worum es bei Gruppen überhaupt geht.
       \\[0.2cm]
       für alle Werte $x,y,z \in G$ prüfen.  Es gibt insgesamt 8 Fälle:
       \begin{enumerate}
-      \item $(e \circ e) \circ e = e \circ e = e$ und $e \circ (e \circ e) = e \circ e = e$. $\checkmark$
-      \item $(e \circ e) \circ a = e \circ a = a$ und $e \circ (e \circ a) = e \circ a = a$. $\checkmark$
-      \item $(e \circ a) \circ e = a \circ e = a$ und $e \circ (a \circ e) = e \circ a = a$. $\checkmark$
-      \item $(e \circ a) \circ a = a \circ a = e$ und $e \circ (a \circ a) = e \circ e = e$. $\checkmark$
-      \item $(a \circ e) \circ e = a \circ e = a$ und $a \circ (e \circ e) = a \circ e = a$. $\checkmark$
-      \item $(a \circ e) \circ a = a \circ a = e$ und $a \circ (e \circ a) = a \circ a = e$. $\checkmark$
-      \item $(a \circ a) \circ e = e \circ e = e$ und $a \circ (a \circ e) = a \circ a = e$. $\checkmark$
-      \item $(a \circ a) \circ a = e \circ a = a$ und $a \circ (a \circ a) = a \circ e = a$. $\checkmark$
+      \item $(e \circ e) \circ e = e \circ e = e$ und $e \circ (e \circ e) = e \circ e = e$. $\green{\checkmark}$
+      \item $(e \circ e) \circ a = e \circ a = a$ und $e \circ (e \circ a) = e \circ a = a$. $\green{\checkmark}$
+      \item $(e \circ a) \circ e = a \circ e = a$ und $e \circ (a \circ e) = e \circ a = a$. $\green{\checkmark}$
+      \item $(e \circ a) \circ a = a \circ a = e$ und $e \circ (a \circ a) = e \circ e = e$. $\green{\checkmark}$
+      \item $(a \circ e) \circ e = a \circ e = a$ und $a \circ (e \circ e) = a \circ e = a$. $\green{\checkmark}$
+      \item $(a \circ e) \circ a = a \circ a = e$ und $a \circ (e \circ a) = a \circ a = e$. $\green{\checkmark}$
+      \item $(a \circ a) \circ e = e \circ e = e$ und $a \circ (a \circ e) = a \circ a = e$. $\green{\checkmark}$
+      \item $(a \circ a) \circ a = e \circ a = a$ und $a \circ (a \circ a) = a \circ e = a$. $\green{\checkmark}$
       \end{enumerate}
       Die Tatsache, dass die Verknüpfung $\circ$ kommutativ ist, folgt unmittelbar aus der Definition.
       Wir werden uns im Kapitel zur Zahlentheorie noch näher mit endlichen Gruppen beschäftigen.
@@ -141,12 +142,12 @@ Definition der Gruppen folgen.
 
 \begin{Satz}[Links-Inverses ist auch Rechts-Inverses] \lb
   Ist $\langle G, e, \circ \rangle$ eine Gruppe, ist $a \in G$ ein beliebiges Element aus
-  $G$ und ist $b$ ein Links-Inverses zu $a$, gilt also
+  $G$ und ist $b$ ein \blue{Links-Inverses} zu $a$, gilt also
   \\
   \hspace*{1.3cm}
   $b \circ a = e$,
   \\[0.2cm]
-  dann ist $b$ auch ein Rechts-Inverses zu $a$, es gilt folglich
+  dann ist $b$ auch ein \blue{Rechts-Inverses} zu $a$, es gilt folglich
   \\[0.2cm]
   \hspace*{1.3cm}
   $a \circ b = e$.  
@@ -370,7 +371,7 @@ Also gilt $(a^{-1})^{-1} = a$. \qed
   \hspace*{1.3cm}
   $x \not= y \rightarrow f(x) \not= f(y)$,
   \\[0.2cm]
-  verschiedene Argumente werden also auf verschiedene Werte abgebildet.
+  \blue{verschiedene} Argumente werden also auf \blue{verschiedene} Werte abgebildet.
 \eoxs
 \end{Definition}
 
@@ -380,7 +381,7 @@ Also gilt $(a^{-1})^{-1} = a$. \qed
   \hspace*{1.3cm}
   $\forall y \in N: \exists x \in M: f(x) = y$ 
   \\[0.2cm]
-  gilt.  Jedes Element $y$ aus $N$ tritt also als Funktionswert auf.
+  gilt.  \blue{Jedes} Element $y$ aus $N$ tritt also als Funktionswert auf.
 \eoxs
 \end{Definition}
 
@@ -459,7 +460,7 @@ gelten.  Dieser Widerspruch zeigt, dass $f$ injektiv sein muss.
 
 \remark
 Die letzten beiden Sätze können wir zusammenfassen indem wir sagen, dass eine auf einer endlichen
-Menge definierte Funktion $f:M \rightarrow M$ genau dann injektiv ist, wenn $f$ surjektiv ist.
+Menge definierte Funktion $f:M \rightarrow M$ genau dann injektiv ist, wenn die Funktion surjektiv ist.
 \eoxs
 \vspace*{-0.4cm}
 
@@ -486,8 +487,12 @@ Menge definierte Funktion $f:M \rightarrow M$ genau dann injektiv ist, wenn $f$ 
 
 \examples
 \begin{enumerate}
-\item Das Paar $\langle \mathbb{N}, + \rangle$ ist eine Halb-Gruppe.
-\item Das Paar $\langle \mathbb{Z}, \cdot \rangle$ ist eine Halb-Gruppe.
+\item Das Paar $\langle \mathbb{N}, + \rangle$ ist eine Halb-Gruppe.  Dieses Paar ist keine Gruppe, denn 
+      wenn wir das Paar zu dem Tripel $\langle \mathbb{N}, 0, + \rangle$ erweitern,
+      so finden wir im Allgemeinen kein inverses Element bezüglich der Addition.
+\item Das Paar $\langle \mathbb{Z}, \cdot \rangle$ ist eine Halb-Gruppe.  Auch dieses Paar lässt sich nicht zu
+      einer Gruppe erweitern, weil innerhalb der ganzen Zahlen bezüglich der Multiplikation im Allgemeinen kein
+      inverses Element existiert. 
 \end{enumerate}
 
 \noindent
@@ -549,7 +554,7 @@ $
 \end{array}
 $
 \\[0.2cm]
-Wir haben also insgesamt für jedes $a \in G$ gezeigt, dass $e \circ a = a$ ist und damit ist
+Wir haben also insgesamt für \blue{jedes} $a \in G$ gezeigt, dass $e \circ a = a$ ist und damit ist
 $e$ ein links-neutrales Element bezüglich der Operation $\circ$.  Nach Voraussetzung hat nun 
 die Gleichung
 \\[0.2cm]
@@ -563,7 +568,7 @@ $d \circ a = e$
 \\[0.2cm]
 und wir sehen, dass zu jedem $a \in G$ ein links-inverses Element existiert.
 Da das Assoziativ-Gesetz ebenfalls gültig ist, denn $\langle G, \circ \rangle$ ist eine Halb-Gruppe,
-ist $\langle G, e, \circ \rangle$ eine Gruppe.   \qed
+ist $\langle G, e, \circ \rangle$ damit eine Gruppe.   \qed
 
 \remark Es sei $\langle G, e, \circ \rangle$ eine Gruppe, weiter sei $a,b,c \in G$ und es gelte
 \\[0.2cm]
@@ -580,10 +585,8 @@ die Gleichung $a = b$.  In einer Gruppe gelten also die beiden folgenden \emph{\
 $a \circ c = b \circ c \rightarrow a = b$ \quad und \quad
 $c \circ a = c \circ b \rightarrow a = b$.
 \\[0.2cm]
-Interessant ist nun die Beobachtung, dass im Falle einer endlichen Halb-Gruppe 
-$\langle G, \circ \rangle$ aus der Gültigkeit der  
-Kürzungs-Regeln geschlossen werden kann, dass $G$ eine Gruppe ist.
-Um dies zu sehen, brauchen wir drei Definitionen und einen Satz.
+Interessant ist nun die Beobachtung, dass im Falle einer \blue{endlichen} Halb-Gruppe 
+$\langle G, \circ \rangle$ aus der Gültigkeit der Kürzungs-Regeln bereits folgt, dass $G$ eine Gruppe ist.
 \eoxs
 
 
@@ -629,7 +632,7 @@ $y \circ a = b$
 eine Lösung $y$ hat.  Dann ist $G$ nach Satz \ref{satz:solvable} eine Gruppe. \qed
 
 \begin{Definition}[Restklassen-Arithmetik]
-Für eine Primzahl $p$ definieren wir
+Für eine \blue{Primzahl} $p$ definieren wir
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathbb{Z}_p := \{ 0, 1, 2, \cdots, p - 1 \}$
@@ -638,7 +641,7 @@ als die Menge aller nicht-negativen ganzen Zahlen, die kleiner als $p$ sind.  Au
 $\mathbb{Z}_p$ definieren wir eine Multiplikation $\cdot_p$ wie folgt:
 \\[0.2cm]
 \hspace*{1.3cm}
-$a \cdot_p b := (a \cdot b) \;\mathtt{\%}\;p$.  \eoxs
+$a \cdot_p b := (a \cdot b) \;\texttt{\%}\;p$.  \eoxs
 \end{Definition}
 
 \begin{Satz}  
@@ -797,15 +800,15 @@ gilt.  Weiter sehen wir: Ist $R \in \mathcal{S}_n$, so haben wir
 $
 \begin{array}[t]{cll}
    & R^{-1} \circ R \\[0.2cm]
- = & \{ \pair(x,z) \in \mathbb{Z}_n^+\times \mathbb{Z}_n^+ \mid \exists y: 
-        (\pair(x,y) \in R^{-1} \wedge \pair(y,z) \in R )
-     \} \\[0.2cm]
- = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid 
-        \exists y: (\pair(y,x) \in R \wedge \pair(y,z) \in R )
-     \} 
+ = & \bigl\{ \pair(x,z) \in \mathbb{Z}_n^+\times \mathbb{Z}_n^+ \mid \exists y: 
+        \bigl(\pair(x,y) \in R^{-1} \wedge \pair(y,z) \in R \bigr)
+     \bigr\} \\[0.2cm]
+ = & \bigl\{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid 
+        \exists y: \bigl(\pair(y,x) \in R \wedge \pair(y,z) \in R \bigr)
+     \bigr\} 
    & \\[0.2cm]
- = & \{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \}
-    & \mbox{Begründung siehe unten}    \\[0.2cm]
+ = & \bigl\{ \pair(x,z) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid x = z \bigr\}
+    & \mbox{(Begründung siehe unten)}    \\[0.2cm]
  = & \mathtt{id}_n.
 \end{array}
 $
@@ -820,7 +823,7 @@ ist, während die Richtung von rechts nach links daraus folgt, dass die Relation 
 Folglich ist für eine Permutation $R$ der Ausdruck $R^{-1}$ tatsächlich das Inverse bezüglich des
 relationalen Produkts $\circ$.  Damit ist klar, dass die 
 Struktur $\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ eine Gruppe ist.
-Diese Gruppe trägt den Namen \emph{\color{blue}Permutations-Gruppe}.
+Diese Gruppe trägt den Namen \blue{Permutations-Gruppe}.
 \eoxs
 
 
@@ -833,21 +836,21 @@ Kommutativ-Gesetz gilt.
 \section{Untergruppen und Faktor-Gruppen}
 \begin{Definition}[Untergruppe]
   Es sei $\langle G, e, \circ \rangle$ eine Gruppe und es sei $U \subseteq G$.  Dann ist $U$ eine 
-  \emph{\color{blue}Untergruppe} von $G$, geschrieben $U \leq G$, falls folgendes gilt:
+  \emph{\color{blue}Untergruppe} von $G$, geschrieben \blue{$U \leq G$}, falls folgendes gilt:
   \begin{enumerate}
   \item $\forall x, y \in U: x \circ y \in U$,
 
-        die Menge $U$ ist also unter der Operation $\circ$ abgeschlossen.
+        die Menge $U$ ist also \blue{unter der Operation $\circ$ abgeschlossen}.
   \item $e \in U$,
 
-        das neutrale Element der Gruppe $G$ ist also auch ein Element der Menge $U$.
+        das \blue{neutrale Element} der Gruppe $G$ ist also auch ein Element der Menge $U$.
   \item Bezeichnen wir das zu $x \in G$ bezüglich der Operation $\circ$ inverse Element mit $x^{-1}$, 
         so gilt
         \\[0.2cm]
         \hspace*{1.3cm}
         $\forall x \in U: x^{-1} \in U$,
         \\[0.2cm]
-        die Menge $U$ ist also unter der Operation $\cdot^{-1}: x \mapsto x^{-1}$ abgeschlossen.
+        die Menge $U$ ist also \blue{unter der Operation $\cdot^{-1}: x \mapsto x^{-1}$ abgeschlossen}.
         \eoxs
   \end{enumerate}
 \end{Definition}
@@ -855,7 +858,7 @@ Kommutativ-Gesetz gilt.
 \remark
 Falls $U$ eine Untergruppe der Gruppe $\langle G, e, \circ \rangle$ ist, dann ist 
 $\langle U, e, \circ_{|U} \rangle$
-offenbar eine Gruppe.  Hierbei bezeichnet $\circ_{|U}$ die Einschränkung der Funktion $\circ$ auf $U$, es
+offenbar eine Gruppe.  Hierbei bezeichnet $\circ_{|U}$ die \blue{Einschränkung} der Funktion $\circ$ auf $U$, es
 gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -895,7 +898,7 @@ $\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$
       $G := \{ e, a, b, c \}$
       \\[0.2cm]
       und definieren auf der Menge $G$ eine Funktion $\circ: G \times G \rightarrow G$ durch
-      die folgende Verknüpfungs-Tafel:
+      die folgende \blue{Verknüpfungs-Tafel}:
       \\[0.2cm]
       \hspace*{1.3cm}
       \begin{tabular}[t]{l|llll}
@@ -910,7 +913,15 @@ $\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$
       Wollen wir zu gegeben $x,y \in G$ den Wert $x \circ y$ mit Hilfe dieser Tabelle finden, so können
       wir den Wert $x \circ y$ in der Zeile, die mit $x$ beschriftet ist und der Spalte, die mit $y$
       beschriftet ist, finden.  Beispielsweise gilt $a \circ b = c$.  Es lässt sich zeigen, dass
-      $\langle G, e, \circ \rangle$ eine Gruppe ist.  Definieren wir die Mengen
+      $\langle G, e, \circ \rangle$ eine Gruppe ist:  
+      \begin{enumerate}
+      \item $e$ ist links-neutrales Element, denn in der ersten Zeile im Inneren der Tabelle stehen
+            die selben Elemente wie in der Zeilen-Überschrift der Tabelle.
+      \item Da in der Diagonale der Tabelle überall $e$ steht, ist jedes Element sein eigenes Inverses.
+      \item Der Nachweis des Assoziativ-Gesetzes ist mit etwas Rechenaufwand verbunden, den Sie aber bei Bedarf
+            durch ein geeignetes \textsc{SetlX}-Programm automatisieren können.
+      \end{enumerate}
+      Definieren wir die Mengen
       \\[0.2cm]
       \hspace*{1.3cm} $U := \{ e, a \}$, \quad $V := \{ e, b \}$, \quad und \quad $W := \{ e, c \}$, 
       \\[0.2cm]
@@ -920,7 +931,8 @@ $\circ_{|U}: U \times U \rightarrow U$ \quad mit $\circ_{|U}(x,y) := \circ(x,y)$
 \end{enumerate}
 
 \exercise
-Berechnen Sie alle Untergruppen der Gruppe $\langle \mathcal{S}_3, \mathtt{id}_3, \circ \rangle$.
+Berechnen Sie alle Untergruppen der Gruppe $\langle \mathcal{S}_3, \mathtt{id}_3, \circ \rangle$.  Erweitern
+Sie dazu das \textsc{SetlX}-Programm aus der letzten Aufgabe in geeigneter Weise.
 \exend
 \vspace*{0.3cm}
 
@@ -953,7 +965,17 @@ Zunächst ist gar nicht klar, dass die Definition
 \hspace*{1.3cm}
   $(a {\color{blue}{+}} U) {\color{red}{+}} (b {\color{blue}{+}} U) := (a + b) {\color{blue}{+}} U$
 \\[0.2cm]
-überhaupt Sinn macht.  Wir müssen zeigen, dass für alle $a_1,a_2, b_1, b_2 \in G$
+überhaupt Sinn macht, denn es könnte ja theoretisch sein, dass sowohl
+\\[0.2cm]
+\hspace*{1.3cm}
+$a_1 \blue{+} U = a_2 \blue{+} U$ \quad als auch \quad $b_1 \blue{+} U = b_2 \blue{+} U$ \quad gilt, 
+\\[0.2cm]
+aber trotzdem die Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(a_1+b_1)\blue{+}U = (a_2+b_2)\blue{+}U$
+\\[0.2cm]
+falsch ist.  Wir müssen also zeigen, dass für alle $a_1,a_2, b_1, b_2 \in G$
 \\[0.2cm]
 \hspace*{1.3cm}
 $a_1 {\color{blue}{+}} U = a_2 {\color{blue}{+}} U \;\wedge\; b_1 {\color{blue}{+}} U = b_2 {\color{blue}{+}} U \;\Rightarrow\; (a_1 + b_1) {\color{blue}{+}} U = (a_2 + b_2) {\color{blue}{+}} U$
@@ -1320,8 +1342,9 @@ gilt.  Lösen Sie die folgenden Teilaufgaben:
       \exend
 \end{enumerate} 
 
-\section{Monoide}
-Zum Schluss dieses Kapitels definieren wir den Begriff eines \emph{\color{blue}Monoiden}.  Vereinfacht gesagt sind
+\section{Monoide$^*$}
+Zum Schluss dieses Kapitels definieren wir den Begriff eines
+\href{https://en.wikipedia.org/wiki/Monoid}{Monoiden}.  Vereinfacht gesagt sind 
 Monoide solche Halbgruppen, in denen es ein neutrales Element gibt.  Die formale Definition folgt.
 
 
