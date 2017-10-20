@@ -65,7 +65,7 @@ Ein $5$-Tupel $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ist ein \emph{\c
       $x \cdot (y + z) = x \cdot y + x \cdot z$ \quad und \quad
       $(x + y) \cdot z = x \cdot z + y \cdot z$ \quad für alle $x, y,z \in R$.
 \end{enumerate}
-Die Struktur $\mathcal{R}$ ist ein {\color{blue}\emph{kommutativer Ring}} falls zusätzlich für die Multiplikation
+Die Struktur $\mathcal{R}$ ist ein \blue{kommutativer Ring} falls zusätzlich für die Multiplikation
 das Kommutativ-Gesetz
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -146,12 +146,12 @@ Wir werden im Folgenden nur Ringe betrachten, die kommutativ sind.}}}}}
 Ein wichtiger Spezialfall ist der Fall eines kommutativen Rings 
 $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$, für den die Struktur $\langle R \backslash \{0\}, 1, \cdot \rangle$
 eine Gruppe ist.  Dieser Spezialfall liegt beispielsweise bei dem Ring  
-$\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ vor.  In einem solchen Fall sprechen wir von einem {\color{blue}\emph{Körper}}.  Die formale
+$\langle \mathbb{Q}, 0, 1, +, \cdot \rangle$ vor.  In einem solchen Fall sprechen wir von einem \blue{Körper}.  Die formale
 Definition folgt.
 
 
 \begin{Definition}[Körper]
-Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein {\color{blue}\emph{Körper}}, falls gilt:
+Ein $5$-Tupel $\mathcal{K} = \langle K, 0, 1, +, \cdot \rangle$ ist ein \blue{Körper}, falls gilt:
 \begin{enumerate}
 \item $\langle K, 0, + \rangle$ ist eine kommutative Gruppe,
 \item $\langle K \backslash \{ 0 \}, 1, \cdot \rangle$ ist ebenfalls eine kommutative Gruppe,
@@ -196,13 +196,13 @@ hergeleitet.  Dieser Widerspruch zeigt, dass sich der Ring $\mathcal{R}$ sicher 
 einem Körper erweitern lässt.
 
 \begin{Definition}[Integritäts-Ring]
-  Ein Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ heißt {\color{blue}\emph{nullteilerfrei}}, wenn
+  Ein Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ heißt \blue{nullteilerfrei}, wenn
   \\[0.2cm]
   \hspace*{1.3cm}
   $\forall a, b \in R: \bigl(a \cdot b = 0 \rightarrow a = 0 \vee b = 0\bigr)$
   \\[0.2cm]
   gilt, die Zahl $0$ lässt sich in einem nullteilerfreien Ring also nur als triviales Produkt darstellen.
-  Ein nullteilerfreier, kommutativer Ring wird als {\color{blue}\emph{Integritäts-Ring}}
+  Ein nullteilerfreier, kommutativer Ring wird als \blue{Integritäts-Ring}
   bezeichnet.
 \eoxs
 \end{Definition}
@@ -221,45 +221,43 @@ Wir formen die Voraussetzung  $a \cdot c = b \cdot c$ wie folgt um
 \\[0.2cm]
 \hspace*{1.3cm}
 $
-\begin{array}[t]{cll}
+\begin{array}[b]{cll}
             & a \cdot c = b \cdot c      & \mid - b \cdot c \\[0.2cm]
 \Rightarrow & a \cdot c - b \cdot c  = 0                    \\[0.2cm]
 \Rightarrow & (a - b) \cdot c = 0                           \\[0.2cm]
 \Rightarrow & (a - b) = 0 & \mbox{denn $\mathcal{R}$ ist nullteilerfreier und $c \not= 0$} \\[0.2cm]
 \Rightarrow & a = b.
 \end{array}
-$
-\\[0.2cm]
-Damit ist der Beweis abgeschlossen. \qed
-\vspace*{0.2cm}
+$\qed
+\pagebreak
 
 Ist $R$ ein Ring und ist $\sim$ eine Äquivalenz-Relationen auf $R$,
 so lässt sich auf dem Quotienten-Raum $R/\!\sim$ unter bestimmten Umständen ebenfalls eine Ring-Struktur
 definieren.   Das funktioniert aber nur, wenn die Addition und die Multiplikation des Rings in gewisser
-Weise mit der Äquivalenz-Relationen \emph{verträglich} sind.  In diesem Fall nennen wir dann $\sim$ eine
-\emph{Kongruenz-Relation} auf $R$.  Die formale Definition folgt.
+Weise mit der Äquivalenz-Relationen \blue{verträglich} sind.  In diesem Fall nennen wir dann $\sim$ eine
+\blue{Kongruenz-Relation} auf $R$.  Die formale Definition folgt.
 
 \begin{Definition}[Kongruenz-Relation]
 Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring und $\sim\; \subseteq R \times R$ sei eine
-Äquivalenz-Relation auf $R$.   Wir nennen $\sim$ eine {\color{blue}\emph{Kongruenz-Relation}} auf $\mathcal{R}$ 
+Äquivalenz-Relation auf $R$.   Wir nennen $\sim$ eine \blue{Kongruenz-Relation} auf $\mathcal{R}$ 
 falls zusätzlich die folgenden beiden Bedingungen erfüllt sind:
 \begin{enumerate}
 \item $\forall a_1, a_2, b_1, b_2 \in R: 
        \bigl(a_1 \sim a_2 \wedge b_1 \sim b_2 \rightarrow a_1 + b_1 \sim a_2 + b_2\bigr)
       $,
 
-      die Relation $\sim$ ist also \emph{verträglich} mit der Addition auf $R$.
+      die Relation $\sim$ ist also \blue{verträglich} mit der Addition auf $R$.
 \item $\forall a_1, a_2, b_1, b_2 \in R: 
        \bigl(a_1 \sim a_2 \wedge b_1 \sim b_2 \rightarrow a_1 \cdot b_1 \sim a_2 \cdot b_2\bigr)
       $,
 
-      die Relation $\sim$ ist also auch mit der Multiplikation auf $R$ \emph{verträglich}.
+      die Relation $\sim$ ist also auch mit der Multiplikation auf $R$ \blue{verträglich}.
       \eoxs
 \end{enumerate}
 \end{Definition}
   
 Falls $\sim$ eine Kongruenz-Relation auf einem Ring $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ist,
-lassen sich die Operationen ``$+$'' und ``$\cdot$'' auf die Menge $R/\!\sim$ der von $\sim$ erzeugten
+lassen sich die Operationen ``$+$'' und ``$\cdot$'' auf den Quotienten-Raum $R/\!\sim$ der von $\sim$ auf $R$ erzeugten
 Äquivalenz-Klassen fortsetzen, denn in diesem Fall können wir für $a,b \in R$ definieren:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -267,13 +265,13 @@ $[a]_\sim + [b]_\sim := [ a + b ]_\sim$ \quad und \quad
 $[a]_\sim \cdot [b]_\sim := [ a \cdot b ]_\sim$.
 \\[0.2cm]
 Um nachzuweisen, dass diese Definitionen tatsächlich Sinn machen, betrachten wir vier
- Elemente $[a_1]_\sim, [a_2]_\sim, [b_1]_\sim, [b_2]_\sim \in R/\!\sim$, für die
+ Elemente $[a_1]_\sim, [a_2]_\sim, [b_1]_\sim, [b_2]_\sim \in R/\!\sim$, für welche die Gleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $[a_1]_\sim = [a_2]_\sim$ \quad und \quad
 $[b_1]_\sim = [b_2]_\sim$ 
 \\[0.2cm]
-gilt.  Wir müssen zeigen, dass dann auch 
+gelten.  Wir müssen zeigen, dass dann auch 
 \\[0.2cm]
 \hspace*{1.3cm}
 $[a_1 + b_1]_\sim = [a_2 + b_2]_\sim$
@@ -284,12 +282,12 @@ allgemein für eine beliebige Äquivalenz-Relation $R$ auf einer Menge $M$ die Bez
 \hspace*{1.3cm}
 $[a]_R = [b]_R \;\leftrightarrow\; \langle a, b \rangle \in R$
 \\[0.2cm]
-gilt.  Damit folgt aus den Voraussetzungen $[a_1]_\sim = [a_2]_\sim$ und $[b_1]_\sim = [b_2]_\sim$, dass
+gilt.  Damit folgt aus den Voraussetzungen $[a_1]_\sim = [a_2]_\sim$ und $[b_1]_\sim = [b_2]_\sim$, dass die Gleichungen
 \\[0.2cm]
 \hspace*{1.3cm}
 $a_1 \sim a_2$ \quad und \quad $b_1 \sim b_2$
 \\[0.2cm]
-gilt.
+gelten.
 Da die Äquivalenz-Relation $\sim$ mit der Operation ``$+$'' verträglich ist, folgt daraus
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -300,16 +298,19 @@ und damit gilt wieder nach Satz \ref{satz:aequivalenz-klassen}
 \hspace*{1.3cm}
 $[a_1 + b_1]_\sim = [a_2 + b_2]_\sim$. 
 \\[0.2cm]
-Genauso lässt sich zeigen, dass auch die Multiplikation $\cdot$ auf $R/\!\sim$ wohldefiniert ist.
+Genauso lässt sich zeigen, dass auch die Multiplikation $\cdot$ auf $R/\!\!\sim$ wohldefiniert ist.
 Mit den obigen  Definitionen von $+$ und $\cdot$ haben wir nun eine Struktur 
-$\mathcal{R}/\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$ geschaffen, die als der
-{\color{blue}\emph{Faktor-Ring}} $\mathcal{R}$ modulo $\sim$ bezeichnet wird. 
+$\mathcal{R}/\!\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$ geschaffen, die als der
+\blue{Faktor-Ring} $\mathcal{R}$ modulo $\sim$ bezeichnet wird. 
 Der nächste Satz zeigt, dass es sich bei dieser Struktur tatsächlich um einen Ring handelt.
 
 \begin{Satz}[Faktor-Ring] \label{satz:faktor_ring} 
   Ist $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring und ist
   $\sim$ eine Kongruenz-Relation auf diesem Ring, so ist die Struktur 
-  $\mathcal{R}/\!\!\sim\; = \langle R/\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\mathcal{R}/\!\!\sim\; = \langle R/\!\!\sim, [0]_\sim, [1]_\sim, +, \cdot \rangle$
+  \\[0.2cm]
   mit den oben für Äquivalenz-Klassen definierten Operationen $+$ und $\cdot$ ein kommutativer 
   Ring.  
 \end{Satz}
@@ -338,20 +339,20 @@ Wir weisen die Eigenschaften, die einen Ring auszeichnen, einzeln nach.
 \item $[0]_\sim$ ist das neutrale Element bezüglich der Addition, denn für alle $[a]_\sim \in R/\!\sim$ gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $[a]_\sim + [0]_\sim = [a + 0]_\sim = [a]_\sim$.
+      $[0]_\sim + [a]_\sim = [0 + a]_\sim = [a]_\sim$.
 \item Ist $[a]_\sim \in R/\!\sim$ und bezeichnet $-a$ das additive Inverse von $a$ in $R$, so ist das
       additive Inverse von  $[a]_\sim$ durch 
       die Äquivalenz-Klasse $[-a]_\sim$ gegeben, denn wir haben
       \\[0.2cm]
       \hspace*{1.3cm}
-      $[a]_\sim + [-a]_\sim = [a + -a]_\sim = [0]_\sim$.
+      $[-a]_\sim + [a]_\sim = [-a + a]_\sim = [0]_\sim$.
 \item Die Nachweise, dass auch für den  Operator ``$\cdot$'' dass Assoziativ- und das Kommutativ-Gesetz gilt,
       sind völlig analog zu den entsprechenden Beweisen für den Operator ``$+$''.
       Ebenso ist der Nachweis, dass die Äquivalenz-Klasse $[1]_\sim$ das neutrale Element bezüglich des Operators 
       ``$\cdot$'' ist, analog zu dem Nachweis, dass die Äquivalenz-Klasse $[0]_\sim$ das neutrale Element
       bezüglich des Operators ``$+$'' ist.
 \item Als letztes weisen wir die Gültigkeit des Distributiv-Gesetzes nach.
-      Es seien  $[a]_\sim, [b]_\sim, [c]_\sim$ beliebige Äquivalenz-Klassen aus $R/\!\sim$. Dann gilt
+      Es seien  $[a]_\sim, [b]_\sim, [c]_\sim$ beliebige Äquivalenz-Klassen aus $R/\!\!\sim$. Dann gilt
       \\[0.2cm]
       \hspace*{1.3cm}
       $
@@ -392,7 +393,7 @@ von $\mathtt{count}$ erfolgt durch Induktion:
              während die $1_K$ auf der rechten Seite dieser Gleichung das neutrale Element der
              Multiplikation in dem Körper $\mathcal{K}$ bezeichnet.
 \end{enumerate}
-Falls die Menge $K$ endlich ist, definieren wir die {\color{blue}\emph{Charakteristik}}
+Falls die Menge $K$ endlich ist, definieren wir die \blue{Charakteristik}
 $\mathtt{char}(\mathcal{K})$ des Körpers $\mathcal{K}$ als die kleinste natürliche Zahl $k$, für die
 $\mathtt{count}(k) = 0_K$ gilt:
 \\[0.2cm]
@@ -447,7 +448,7 @@ gegeben.  Dann definieren wir zunächst die Menge
 \hspace*{1.3cm}
 $Q := \bigl\{ \pair(x,y) \in R \times R \mid y \not= 0 \bigr\}$
 \\[0.2cm]
-der {\color{blue}\emph{formalen Brüche}}.  Die Idee dabei ist, dass wir das Paar
+der \blue{formalen Brüche}.  Die Idee dabei ist, dass wir das Paar
 $\pair(x,y)$ als den Bruch $\ds\frac{x}{y}$ interpretieren.  Weiter definieren wir eine Relation 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -891,11 +892,11 @@ ein Körper ist.  Dieser Körper wird als der von $\mathcal{R}$ erzeugte \emph{\co
 
 
 \section{Ideale und Faktor-Ringe$^*$}
-Der im Folgenden definierte Begriff des \emph{Ideals} hat in der Theorie der Ringe eine ähnliche
+Der im Folgenden definierte Begriff des \blue{Ideals} hat in der Theorie der Ringe eine ähnliche
 Stellung wie der Begriff der Untergruppe in der Theorie der Gruppen.
 \begin{Definition}[Ideal]
 Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring.
-Eine Teilmenge $I \subseteq R$ ist ein {\color{blue}\emph{Ideal in $\mathcal{R}$}} falls folgendes gilt:
+Eine Teilmenge $I \subseteq R$ ist ein {\color{blue}\blue{Ideal in $\mathcal{R}$}} falls folgendes gilt:
 \begin{enumerate}
 \item $I \leq R$,
 
@@ -992,12 +993,12 @@ der zweite All-Quantor nicht nur über die Elemente aus $I$ läuft, sondern über
             \hspace*{1.3cm}
             $a \cdot b = (k \cdot x) \cdot b = k \cdot (x \cdot b) \in \textsl{gen}(k)$.
       \end{enumerate}
-      Die Menge $\textsl{gen}(a)$ wird das von $a$ {\color{blue}\emph{erzeugte Ideal}} genannt.
-      Ideale dieser Form werden in der Literatur als {\color{blue}\emph{Haupt-Ideale}} bezeichnet.
+      Die Menge $\textsl{gen}(a)$ wird das von $a$ \blue{erzeugte Ideal} genannt.
+      Ideale dieser Form werden in der Literatur als \blue{Haupt-Ideale} bezeichnet.
 \item Wieder sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring.  Dann
       sind die Mengen $\{0\}$ und $R$ offenbar wieder Ideale von $R$.  Wir nennen  die Menge $\{0\}$
-      das {\color{blue}\emph{Null-Ideal}} und $R$ das {\color{blue}\emph{Eins-Ideal}}.  Diese
-      beiden Ideale werden auch als die \emph{\color{blue}trivialen} Ideale bezeichnet.
+      das \blue{Null-Ideal} und $R$ das \blue{Eins-Ideal}.  Diese
+      beiden Ideale werden auch als die \blue{trivialen} Ideale bezeichnet.
       \eoxs
 \end{enumerate}
 
@@ -1158,7 +1159,7 @@ untersuchen.
 
 \begin{Definition}[maximales Ideal]
   Es sei $\mathcal{R} = \langle R, 0, 1, +, \cdot \rangle$ ein kommutativer Ring.  Ein Ideal
-  $I$ von $\mathcal{R}$ mit $I \not= R$ ist ein {\color{blue}\emph{maximales Ideal}} genau dann, wenn für jedes andere Ideal
+  $I$ von $\mathcal{R}$ mit $I \not= R$ ist ein \blue{maximales Ideal} genau dann, wenn für jedes andere Ideal
   $J$ von $\mathcal{R}$ gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
