@@ -9,7 +9,7 @@ für dieses $i$ also
 \hspace*{1.3cm}
 $i \cdot i = -1$
 \\[0.2cm]
-gelten.  Wir definieren dazu die Menge $\mathbb{C}$ der \emph{komplexen Zahlen} als Menge
+gelten.  Wir definieren dazu die Menge $\mathbb{C}$ der \blue{komplexen Zahlen} als Menge
 von Paaren
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -21,7 +21,8 @@ wobei wir das Paar $\pair(x,y)$ als die Zahl $x + i \cdot y$ interpretieren:
 \hspace*{1.3cm}
 $\pair(x,y) \;\widehat{=}\; x + i \cdot y$.
 \\[0.2cm]
-Unser Ziel ist es, auf der Menge $\mathbb{C}$ Operationen $+$ und $\cdot$ so einzuführen, dass
+Ist $x + i \cdot y = z$, so nennen wir $x$ den \blue{Realteil} und $y$ den \blue{Imaginärteil} der komplexen
+Zahl $z$.  Unser Ziel ist es, auf der Menge $\mathbb{C}$ Operationen $+$ und $\cdot$ so einzuführen, dass
 die Struktur
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -68,7 +69,7 @@ $\langle \mathbb{C}, \pair(0,0), + \rangle$
 eine kommutative Gruppe.
 Als nächstes wollen wir für die komplexen Zahlen eine Multiplikation einführen.   Das Ziel ist, 
 diese Definition so zu wählen, dass wir mit den komplexen Zahlen suggestiv rechnen können
-und dass dabei $i \cdot i = -1$ gilt.  Wir rechnen ganz unbefangen das Produkt 
+und dass dabei $i \cdot i = -1$ gilt.  Wir rechnen dazu ganz unbefangen das Produkt 
 $(x_1 + i \cdot y_1) \cdot (x_2 + i \cdot y_2)$ aus und erhalten unter Verwendung des
 Distributiv-Gesetzes 
 \\[0.2cm]
@@ -114,9 +115,9 @@ zu berechnen, versuchen wir eine komplexe Zahl $a + i \cdot b$ so zu bestimmen, 
 gilt.  Dazu führen wir das obige Produkt aus und erhalten
 \\[0.2cm]
 \hspace*{1.3cm}
-$a \cdot x - b \cdot y + i \cdot (a \cdot y + b \cdot x) = 1$.
+$a \cdot x - b \cdot y + i \cdot (a \cdot y + b \cdot x) = 1 = 1 + i \cdot 0$.
 \\[0.2cm]
-Das führt auf die beiden Gleichungen
+Vergleichen wir hier Real- und Imaginärteil, so führt das auf die beiden Gleichungen
 \begin{equation}
   \label{eq:komplex_mult}  
  a \cdot x - b \cdot y = 1 \quad \mbox{und} \quad a \cdot y + b \cdot x = 0.
@@ -138,7 +139,7 @@ $b \cdot (x^2 + y^2) = -y$,
 woraus
 \\[0.2cm]
 \hspace*{1.3cm}
-$b = \bruch{-y}{x^2 + y^2}$
+$\ds b = \frac{-y}{x^2 + y^2}$
 \\[0.2cm]
 folgt.  Da wir vorausgesetzt hatten, dass $\pair(x, y) \not= \pair(0, 0)$ ist, wissen wir, dass 
 \\[0.2cm]
@@ -148,7 +149,7 @@ $x^2 + y^2 > 0$
 ist, so dass der Bruch 
 \\[0.2cm]
 \hspace*{1.3cm}
-$b = \bruch{-y}{x^2 + y^2}$
+$\ds b = \frac{-y}{x^2 + y^2}$
 \\[0.2cm]
 definiert ist.  Um $a$ zu bestimmen, multiplizieren wir die erste der beiden Gleichungen in
 (\ref{eq:komplex_mult}) mit $x$ und die zweite mit $y$.  Das liefert
@@ -164,18 +165,18 @@ $a \cdot x^2 + a \cdot y^2 = x$, \quad also \quad $a \cdot (x^2 + y^2) = x$,
 woraus sofort
 \\[0.2cm]
 \hspace*{1.3cm}
-$a = \bruch{x}{x^2 + y^2}$
+$\ds a = \frac{x}{x^2 + y^2}$
 \\[0.2cm]
 folgt, was wegen $x^2 + y^2 > 0$ definiert ist.  Damit sehen wir, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
-$\ds\frac{1}{x + i \cdot y} = \bruch{x}{x^2 + y^2} - i \cdot \bruch{y}{x^2 + y^2}$}}}}}
+$\ds\frac{1}{x + i \cdot y} = \frac{x}{x^2 + y^2} - i \cdot \frac{y}{x^2 + y^2}$}}}}}
 \\[0.2cm]
 gilt.  Wir können auch unmittelbar nachrechnen, dass für $\pair(x,y) \not= \pair(0,0)$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{1}{x^2 + y^2} \cdot (x  - i \cdot y) \cdot (x + i \cdot y) = 1 + i \cdot 0 = 1$ 
+$\ds \frac{1}{x^2 + y^2} \cdot (x  - i \cdot y) \cdot (x + i \cdot y) = 1 + i \cdot 0 = 1$ 
 \\[0.2cm]
 erfüllt ist.  Damit haben wir nun insgesamt gezeigt, dass die Struktur
 \\[0.2cm]
@@ -186,9 +187,17 @@ ein Körper ist.  Die Zahl $i$ wird in diesem Körper durch das Paar $\pair(0,1)$ 
 In dem so definierten Körper $\mathbb{C}$ hat die Gleichung $z^2 = -1$ die Lösung
 $i = \pair(0,1)$.  Wir schreiben daher auch $i = \sqrt{-1}$.
 
-\remark
-Ist $z = \pair(x,y) = x + i \cdot y$ eine komplexe Zahl, so bezeichnen wir $x$ als den \emph{\color{blue}Realteil}
-und $y$ als den \emph{\color{blue}Imaginärteil} von $z$.
+Da wir das multiplikative Inverse der komplexen Zahl $z = x + i \cdot y$ wie oben gezeigt nach der Formel
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \frac{1}{x + i \cdot y} = \frac{x}{x^2 + y^2} - i \cdot \frac{y}{x^2 + y^2} $
+\\[0.2cm]
+berechnen können, sind wir nun auch in der Lage, komplexe Zahlen zu dividieren.  Sie können leicht nachrechnen, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds \frac{a + i \cdot b}{x + i \cdot y} = \frac{a \cdot x + b \cdot y}{x^2 + y ^2} - i \cdot \frac{a \cdot y - b \cdot x}{x^2 + y^2}$
+\\[0.2cm]
+gilt.
 
 \exerciseStar
 \renewcommand{\labelenumi}{(\alph{enumi})}
@@ -221,66 +230,66 @@ Wir betrachten zunächst den Fall $a \not= 0$ und
 lösen die zweite Gleichung nach $b$ auf.  Wir erhalten
 \begin{equation}
   \label{eq:komplex_root2}
-  b = \bruch{y}{2 \cdot a}  
+  b = \frac{y}{2 \cdot a}  
 \end{equation}
 Setzen wir diesen Ausdruck in der ersten Gleichung von (\ref{eq:komplex_root1}) ein, so erhalten wir die
 Gleichung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x = a^2 - \bruch{y^2}{4 \cdot a^2}$.
+$x = a^2 - \frac{y^2}{4 \cdot a^2}$.
 \\[0.2cm]
 Wir multiplizieren diese Gleichung mit $a^2$. Das liefert 
 \\[0.2cm]
 \hspace*{1.3cm}
-$x \cdot a^2 = a^4 - \bruch{y^2}{4}$,
+$x \cdot a^2 = a^4 - \frac{y^2}{4}$,
 \\[0.2cm] 
 was wir als quadratische Gleichung für die  Unbekannte $a^2$ auffassen können.
  Diese Gleichung stellen wir um und addieren außerdem die quadratische Ergänzung 
-$\left(\bruch{x}{2}\right)^2 = \bruch{x^2}{4}$ auf 
+$\left(\frac{x}{2}\right)^2 = \frac{x^2}{4}$ auf 
 beiden Seiten: 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{y^2}{4} + \bruch{x^2}{4} = a^4 - x \cdot a^2 + \left(\bruch{x}{2}\right)^2$.
+$\frac{y^2}{4} + \frac{x^2}{4} = a^4 - x \cdot a^2 + \left(\frac{x}{2}\right)^2$.
 \\[0.2cm]
 Diese Gleichung können wir auch anders als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{y^2}{4} + \bruch{x^2}{4} = \left(a^2 - \bruch{x}{2}\right)^2$
+$\frac{y^2}{4} + \frac{x^2}{4} = \left(a^2 - \frac{x}{2}\right)^2$
 \\[0.2cm]
 schreiben.  Ziehen wir jetzt die Quadrat-Wurzel, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{1}{2} \cdot \sqrt{y^2 + x^2} = a^2 - \bruch{x}{2}$.
+$\frac{1}{2} \cdot \sqrt{y^2 + x^2} = a^2 - \frac{x}{2}$.
 \\[0.2cm]
 An dieser Stelle ist klar, dass bei der Wurzel nur das positive Vorzeichen in Frage kommt, denn
 $a^2$ muss positiv sein und der Ausdruck
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{x}{2} - \bruch{1}{2} \cdot \sqrt{y^2 + x^2}$
+$\frac{x}{2} - \frac{1}{2} \cdot \sqrt{y^2 + x^2}$
 \\[0.2cm]
 ist sicher negativ.  Für $a$ erhalten wir dann
 \\[0.2cm]
 \hspace*{1.3cm}
-$a = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$ \quad oder \quad 
-$a = -\sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$.
+$a = \sqrt{\frac{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$ \quad oder \quad 
+$a = -\sqrt{\frac{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}$.
 \\[0.2cm]
 Setzen wir diesen Wert in Gleichung (\ref{eq:komplex_root2}) ein, so ergibt sich für $b$ der Wert
 \\[0.2cm]
 \hspace*{1.3cm}
-$b = \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$ \quad oder \quad 
-$b = -\bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$.
+$b = \frac{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$ \quad oder \quad 
+$b = -\frac{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}$.
 \\[0.2cm]
 Insgesamt erhalten wir damit für das Ergebnis 
 \\[0.2cm]
 \hspace*{1.3cm}
-$a + i \cdot b = \sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
-                 + i \cdot \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}
+$a + i \cdot b = \sqrt{\frac{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
+                 + i \cdot \frac{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}}
 $ 
 \quad oder \quad
 \\[0.2cm]
 \hspace*{1.3cm}
-$a + i \cdot b = -\sqrt{\bruch{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
-                 - i \cdot \bruch{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}},
+$a + i \cdot b = -\sqrt{\frac{1}{2} \cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}
+                 - i \cdot \frac{y}{\sqrt{2\cdot \Bigl(x + \sqrt{x^2 + y^2\,}\Bigr)\;}},
 $ 
 \\[0.2cm]
 was allerdings im Falle $y = 0$ nur richtig ist, solange $x > 0$ ist.  Wenn $y = 0$ und $x < 0$ gilt stattdessen
@@ -302,10 +311,10 @@ Wir testen die obige Formel  an zwei Beispielen:
      $
        \begin{array}[t]{lcl}
        a + i \cdot b & = & \sqrt{0 + i \cdot 1\,} \\[0.2cm]
-                     & = & \pm\sqrt{\bruch{1}{2} \cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;} \pm
-                           i \cdot \bruch{1}{\sqrt{2\cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;}}    \\[0.2cm]
-                     & = & \pm\sqrt{\bruch{1}{2} \cdot 1\;} \pm i \cdot \bruch{1}{\sqrt{2\cdot 1\;}} \\[0.4cm]
-                     & = & \pm\bruch{1}{\sqrt{2}} \cdot \bigl(1 + i\bigr).
+                     & = & \pm\sqrt{\frac{1}{2} \cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;} \pm
+                           i \cdot \frac{1}{\sqrt{2\cdot \Bigl(0 + \sqrt{0 + 1\,}\Bigr)\;}}    \\[0.2cm]
+                     & = & \pm\sqrt{\frac{1}{2} \cdot 1\;} \pm i \cdot \frac{1}{\sqrt{2\cdot 1\;}} \\[0.4cm]
+                     & = & \pm\frac{1}{\sqrt{2}} \cdot \bigl(1 + i\bigr).
        \end{array}
        $
 \item Wir suchen eine komplexe Zahl $a + i \cdot b$, so dass
@@ -319,12 +328,12 @@ Wir testen die obige Formel  an zwei Beispielen:
        $
        \begin{array}[t]{lcl}
              a + i \cdot b 
-       & = & \pm \sqrt{\bruch{1}{2} \cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;} \pm
-             i \cdot \bruch{4}{\sqrt{2\cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;}}    \\[0.2cm]
-       & = & \pm\sqrt{\bruch{1}{2} \cdot (3 + 5)\;} \pm i \cdot \bruch{4}{\sqrt{2\cdot (3 + 5)\;}}     \\[0.2cm]
-       & = & \pm\sqrt{\bruch{1}{2} \cdot (8)\;} \pm i \cdot \bruch{4}{\sqrt{2\cdot 8\;}}     \\[0.2cm]
-       & = & \pm\sqrt{4\,} \pm i \cdot \bruch{4}{\sqrt{16\,}}     \\[0.2cm]
-       & = & \pm \left(2 + i \cdot \bruch{4}{4}\right)     \\[0.2cm]
+       & = & \pm \sqrt{\frac{1}{2} \cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;} \pm
+             i \cdot \frac{4}{\sqrt{2\cdot \Bigl(3 + \sqrt{9 + 16\,}\Bigr)\;}}    \\[0.2cm]
+       & = & \pm\sqrt{\frac{1}{2} \cdot (3 + 5)\;} \pm i \cdot \frac{4}{\sqrt{2\cdot (3 + 5)\;}}     \\[0.2cm]
+       & = & \pm\sqrt{\frac{1}{2} \cdot (8)\;} \pm i \cdot \frac{4}{\sqrt{2\cdot 8\;}}     \\[0.2cm]
+       & = & \pm\sqrt{4\,} \pm i \cdot \frac{4}{\sqrt{16\,}}     \\[0.2cm]
+       & = & \pm \left(2 + i \cdot \frac{4}{4}\right)     \\[0.2cm]
        & = & \pm(2 + i)
        \end{array}
        $
@@ -387,12 +396,12 @@ $b$ die Beziehung
 \\[0.2cm]
 Durch Division der zweiten Gleichung durch die erste Gleichung erhalten wir die Beziehung
 \\[0.2cm]
-\hspace*{1.3cm} $\tan(\varphi) = \bruch{b}{a}$.
+\hspace*{1.3cm} $\ds\tan(\varphi) = \frac{b}{a}$.
 \\[0.2cm]
 Solange wir uns im ersten Quadranten der Ebene befinden, können wir daraus den Winkel $\varphi$ mit Hilfe
 der Gleichung
 \\[0.2cm]
-\hspace*{1.3cm} $\varphi = \arctan\Bigl(\bruch{b}{a}\Bigr)$
+\hspace*{1.3cm} $\ds\varphi = \arctan\Bigl(\frac{b}{a}\Bigr)$
 \\[0.2cm]
 ausrechnen.  Das Paar $\pair(r, \varphi)$ bezeichnen wir als die {\emph{\color{blue}Polarform}} der
 komplexen Zahl $a + i \cdot b$, während wir das Paar $\pair(a,b)$ die {\emph{\color{blue}kartesische Darstellung}}
@@ -483,7 +492,7 @@ erfüllt sein, wenn $z^n = 1$ sein soll.  Die Gleichung \ref{eq:komplex_wurzel0} 
 erfüllt, wenn 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\varphi = \bruch{2 \cdot k \cdot \pi}{n}$
+$\varphi = \frac{2 \cdot k \cdot \pi}{n}$
 \\[0.2cm]
 gilt, wobei wir $k$ auf die Elemente der Menge $\{0,1, \cdots, n-1\}$ beschränken können, denn größere
 Werte von $k$ liefern Winkel, die größer als $2 \cdot \pi$ sind.  Wir definieren daher
@@ -505,14 +514,14 @@ Für die primitive dritte Einheitswurzel $\zeta_3$ gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\zeta_3 = \cos\Bigl(\frac{2 \cdot \pi}{3}\Bigr) + i \cdot \sin\Bigl(\frac{2 \cdot \pi}{3}\Bigr)
- = - \bruch{1}{2} + i \cdot \bruch{\sqrt{3\,}}{2}. 
+ = - \frac{1}{2} + i \cdot \frac{\sqrt{3\,}}{2}. 
 $
 \\[0.2cm] 
 Für $\zeta_3^2$ finden wir nach kurzer Rechnung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\zeta_3^2 = \cos\Bigl(\frac{4 \cdot \pi}{3}\Bigr) + i \cdot \sin\Bigl(\frac{4 \cdot \pi}{3}\Bigr)
- = - \bruch{1}{2} - i \cdot \bruch{\sqrt{3\,}}{2}. 
+ = - \frac{1}{2} - i \cdot \frac{\sqrt{3\,}}{2}. 
 $
 \\[0.2cm]
 Sie können leicht nachrechnen, dass sowohl $\zeta_3^3 = 1$ als auch $(\zeta_3^2)^3 = 1$ gilt.
@@ -538,7 +547,7 @@ eine Lösung der Gleichung $s^n = z$.
 Wir berechnen alle Lösungen der Gleichung $r^3 = 1 + i$.  Dazu müssen wir zunächst die Zahl
 $1 + i$ in Polar-Koordinaten darstellen.  Setzen wir  
 \\[0.2cm]
-\hspace*{1.3cm} $\varphi = \arctan\Bigl(\bruch{1}{1}\Bigr) = \arctan(1) = \bruch{\pi}{4}$,
+\hspace*{1.3cm} $\varphi = \arctan\Bigl(\frac{1}{1}\Bigr) = \arctan(1) = \frac{\pi}{4}$,
 \\[0.2cm]
 so gilt wegen $\sqrt{1^2 + 1^2\,} = \sqrt{2\,}$ offenbar
 \\[0.2cm]
@@ -679,43 +688,43 @@ $p^3 = 27 \cdot \alpha \cdot \beta$ \quad und \quad $q = \alpha + \beta$
 Ist $\alpha \not= 0$, so folgt aus der ersten Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\beta = \bruch{p^3}{27 \cdot \alpha}$.
+$\ds \beta = \frac{p^3}{27 \cdot \alpha}$.
 \\[0.2cm]
 Setzen wir diesen Wert in die zweite Gleichung ein, so erhalten wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$q = \alpha + \bruch{p^3}{27 \cdot \alpha}$.
+$\ds q = \alpha + \frac{p^3}{27 \cdot \alpha}$.
 \\[0.2cm]
 Multiplikation dieser Gleichung mit $\alpha$ liefert uns eine quadratische Gleichung für $\alpha$:
 \\[0.2cm]
 \hspace*{1.3cm}
-$q \cdot \alpha = \alpha^2 + \bruch{p^3}{27}$.
+$\ds q \cdot \alpha = \alpha^2 + \frac{p^3}{27}$.
 \\[0.2cm]
 Diese Gleichung stellen wir zu 
 \\[0.2cm]
 \hspace*{1.3cm}
-$- \bruch{p^3}{27} = \alpha^2 - q \cdot \alpha$
+$\ds - \frac{p^3}{27} = \alpha^2 - q \cdot \alpha$
 \\[0.2cm]
 um.  Addieren wir auf beiden Seiten die quadratische Ergänzung $\ds\frac{q^2}{4}$, so erhalten wir
 die quadratische Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{q^2}{4} - \bruch{p^3}{27} = \left(\alpha - \bruch{q}{2}\right)^2$.
+$\ds\frac{q^2}{4} - \frac{p^3}{27} = \left(\alpha - \frac{q}{2}\right)^2$.
 \\[0.2cm]
 Diese Gleichung hat offenbar die Lösung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\alpha = \bruch{q}{2} + \sqrt{\bruch{q^2}{4} - \bruch{p^3}{27}}$.
+$\ds\alpha = \frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}$.
 \\[0.2cm]
 Wegen $q = \alpha + \beta$ folgt daraus für $\beta$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\beta = \bruch{q}{2} - \sqrt{\bruch{q^2}{4} - \bruch{p^3}{27}}$.
+$\ds\beta = \frac{q}{2} - \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}$.
 \\[0.2cm]
 Wir prüfen, ob für diese Werte von $\alpha$ und $\beta$ auch die zweite Bedingung 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\alpha \cdot \beta = \Bigl(\bruch{p}{3}\Bigr)^3$
+$\ds\alpha \cdot \beta = \Bigl(\frac{p}{3}\Bigr)^3$
 \\[0.2cm]
 erfüllt ist und finden tatsächlich
 \\[0.2cm]
@@ -723,10 +732,10 @@ erfüllt ist und finden tatsächlich
 $
 \begin{array}[t]{lcl}
       \alpha \cdot \beta 
-& = & \left(\bruch{q}{2} + \sqrt{\bruch{q^2}{4} - \bruch{p^3}{27}}\right) \cdot
-      \left(\bruch{q}{2} - \sqrt{\bruch{q^2}{4} - \bruch{p^3}{27}}\right)        \\[0.2cm]
-& = & \bruch{q^2}{4} - \left(\bruch{q^2}{4} - \bruch{p^3}{27}\right)             \\[0.2cm]
-& = & \bruch{p^3}{27}.                                            
+& = & \ds\left(\frac{q}{2} + \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}\right) \cdot
+      \left(\frac{q}{2} - \sqrt{\frac{q^2}{4} - \frac{p^3}{27}}\right)        \\[0.2cm]
+& = & \ds\frac{q^2}{4} - \left(\frac{q^2}{4} - \frac{p^3}{27}\right)             \\[0.2cm]
+& = & \ds\frac{p^3}{27}.                                            
 \end{array}
 $
 \\[0.2cm]
@@ -742,14 +751,14 @@ erstmals 1545 von \href{http://de.wikipedia.org/wiki/Gerolamo_Cardano}{Geralomo 
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
-$x = \sqrt[3]{\bruch{q}{2} + \sqrt{\left(\bruch{q}{2}\right)^2 - \left(\bruch{p}{3}\right)^3\,}\;} +
-     \sqrt[3]{\bruch{q}{2} - \sqrt{\left(\bruch{q}{2}\right)^2 - \left(\bruch{p}{3}\right)^3\,}\;}
+$\ds x = \sqrt[3]{\frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3\,}\;} +
+     \sqrt[3]{\frac{q}{2} - \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3\,}\;}
 $.}}}}}
 \\[0.2cm]
 In unserem ursprünglichen Problem gilt $p = 15$ und $q = 4$.  Dann haben wir 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\alpha = \bruch{q}{2} + \sqrt{\left(\bruch{q}{2}\right)^2 - \left(\bruch{p}{3}\right)^3\,} =
+$\ds\alpha = \frac{q}{2} + \sqrt{\left(\frac{q}{2}\right)^2 - \left(\frac{p}{3}\right)^3\,} =
  2 + \sqrt{4 - 125} = 2 + \sqrt{-121} = 2 + i \cdot 11
 $.
 \\[0.2cm]
@@ -801,9 +810,9 @@ $
 \begin{array}[t]{lcl}
 x_2 & = & \zeta_3 \cdot u + \zeta_3^2 \cdot v                               \\[0.2cm]
     & = & \zeta_3 \cdot (2 + i) + \zeta_3^2 \cdot (2 - i)                    \\[0.2cm]
-    & = & \Bigl(- \bruch{1}{2} + i \cdot \bruch{\sqrt{3\,}}{2}\Bigr) \cdot (2 + i) + 
-          \Bigl(- \bruch{1}{2} - i \cdot \bruch{\sqrt{3\,}}{2}\Bigr) \cdot (2 - i)   \\[0.3cm]
-    & = & \bruch{1}{2} \cdot \bigl(-2 - \sqrt{3} + i \cdot (-1 + 2 \cdot \sqrt{3}) 
+    & = & \Bigl(- \frac{1}{2} + i \cdot \frac{\sqrt{3\,}}{2}\Bigr) \cdot (2 + i) + 
+          \Bigl(- \frac{1}{2} - i \cdot \frac{\sqrt{3\,}}{2}\Bigr) \cdot (2 - i)   \\[0.3cm]
+    & = & \frac{1}{2} \cdot \bigl(-2 - \sqrt{3} + i \cdot (-1 + 2 \cdot \sqrt{3}) 
                                    -2 - \sqrt{3} + i \cdot ( 1 - 2 \cdot \sqrt{3})\bigr) \\[0.2cm]
     & = & - 2 - \sqrt{3}.  \\[0.2cm]
 \end{array}
@@ -834,7 +843,7 @@ Kapitel auf algebraischem Wege mit Hilfe der komplexen Zahlen gefunden haben.
 Für welche $z \in \mathbb{C}$ gilt die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\left(\bruch{1+z}{1-z}\right)^2 = -1$?
+$\ds\left(\frac{1+z}{1-z}\right)^2 = -1$?
 \exend
 
 \exercise
@@ -848,7 +857,7 @@ $(5 + 6 \cdot i) \cdot (x - 3 \cdot i) = y - 3 \cdot i$?
 Welche komplexen Zahlen $z \in \mathbb{C}$ lassen sich in der Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bruch{1 + i \cdot x}{1 - i \cdot x} = z$ \quad mit $x \in \mathbb{R}$
+$\ds\frac{1 + i \cdot x}{1 - i \cdot x} = z$ \quad mit $x \in \mathbb{R}$
 \\[0.2cm]
 schreiben? 
 \vspace*{0.2cm}
