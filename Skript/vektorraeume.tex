@@ -609,13 +609,14 @@ $\vec{z}$ den Raum $U$ erzeugt, sondern der Untervektor-Raum durch eine beliebig
 erzeugt wird.
 
 \example
-Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $M \subseteq V$ sei eine nicht-leere Menge von Vektoren.  Dann definieren wir die Menge
+Es sei $V$ ein $\mathbb{K}$-Vektor-Raum und $M = \{\vec{x}_1,\cdots,\vec{x}_n\} \subseteq V$ sei eine nicht-leere Menge von Vektoren.  Dann definieren wir die Menge
 $\textsl{span}_\mathbb{K}(M)$ als die Menge aller endlichen Linear-Kombinationen von Vektoren aus $M$, wir setzen also
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{span}_\mathbb{K}(M) := 
- \bigl\{ \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n \mid n \in \mathbb{N} \wedge \forall i \in
- \{1,\cdots,n\}:\alpha_i \in \mathbb{K} \wedge \vec{x}_i \in M \bigr\}
+\bigl\{   \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n
+     \mid \alpha_i \in \mathbb{K} \;\;\mbox{f.a. $i\in\{1,\cdots,n\}$}
+\bigr\}
 $.
 \\[0.2cm]
 Dann ist die so definierte Menge $\textsl{span}_\mathbb{K}(M)$ ein Untervektor-Raum von $V$.
@@ -623,42 +624,37 @@ Dann ist die so definierte Menge $\textsl{span}_\mathbb{K}(M)$ ein Untervektor-R
 \proof
 Es sind drei Eigenschaften zu prüfen.
 \begin{enumerate}
-\item Da $M$ nicht leer ist, finden wir ein $\vec{v} \in M$.  Offenbar gilt dann
+\item Es gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{0} = 0 \cdot \vec{v} \in \textsl{span}_\mathbb{K}(M)$.      
-\item Es seien $\vec{x}, \vec{y} \in \textsl{span}_\mathbb{K}(M)$.  Dann gibt es $m,n \in \mathbb{N}$,
-      sowie $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ und
-      $\vec{x}_1, \cdots, \vec{x}_m, \vec{y}_1, \cdots, \vec{y}_n \in M$, so dass 
+      $\vec{0} = 0 \cdot \vec{x}_1 + \cdots + 0 \cdot \vec{x}_n$
+      \\[0.2cm]
+      und daraus folgt $\vec{0} \in \textsl{span}_\mathbb{K}(M)$.
+\item Es seien $\vec{x}, \vec{y} \in \textsl{span}_\mathbb{K}(M)$.  Dann gibt es $\alpha_1, \cdots, \alpha_n, \beta_1, \cdots, \beta_n \in \mathbb{K}$ 
+      so dass 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{x} = \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m$ \quad und \quad
-      $\vec{y} = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$ 
+      $\vec{x} = \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n$ \quad und \quad
+      $\vec{y} = \beta_1 \cdot \vec{x}_1 + \cdots + \beta_n \cdot \vec{x}_n$ 
       \\[0.2cm]
       gilt. Damit haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
       $
        \vec{x} + \vec{y} =  
-          \alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m +
-          \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n \in \textsl{span}_\mathbb{K}(M)
-      $
-      \\[0.2cm]
-      denn die Summe 
-      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
-      ist auch wieder eine Linear-Kombination von Vektoren aus $M$.
+          (\alpha_1 + \beta_1) \cdot \vec{x}_1 + \cdots + (\alpha_n + \beta_n) \cdot \vec{x}_n \in \textsl{span}_\mathbb{K}(M)
+      $.
 \item Nun sei $\vec{x} \in \textsl{span}_\mathbb{K}(M)$ und $\alpha \in \mathbb{K}$.
-      Dann gibt es zunächst ein $n \in \mathbb{N}$ sowie Skalare $\beta_1, \cdots, \beta_n$
-      und Vektoren $\vec{x}_1, \cdots, \vec{x}_n \in M$, so dass
+      Dann gibt es Skalare $\beta_1, \cdots, \beta_n$, so dass
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\vec{x} = \beta_1 \cdot \vec{x}_1 + \cdots + \beta_m \cdot \vec{x}_m$
+      $\vec{x} = \beta_1 \cdot \vec{x}_1 + \cdots + \beta_n \cdot \vec{x}_n$
       \\[0.2cm]
       gilt.  Damit haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\alpha \cdot \vec{x} = \alpha \cdot (\beta_1 \cdot \vec{x}_1 + \cdots + \beta_m \cdot \vec{x}_m) =
-       (\alpha \cdot \beta_1) \cdot \vec{x}_1 + \cdots + (\alpha \cdot \beta_m) \cdot \vec{x}_m \in
+      $\alpha \cdot \vec{x} = \alpha \cdot (\beta_1 \cdot \vec{x}_1 + \cdots + \beta_n \cdot \vec{x}_n) =
+       (\alpha \cdot \beta_1) \cdot \vec{x}_1 + \cdots + (\alpha \cdot \beta_n) \cdot \vec{x}_n \in
        \textsl{span}_\mathbb{K}(M)$.
       \qeds
 \end{enumerate}
@@ -754,11 +750,7 @@ führen diesen Begriff jetzt ein.
         \begin{enumerate}
         \item $\langle \vec{x} + \vec{y}\mid \vec{z} \rangle = \langle \vec{x}\mid \vec{z} \rangle + \langle \vec{y}\mid \vec{z} \rangle$
               \quad für alle $\vec{x}, \vec{y}, \vec{z} \in V$.
-        \item $\langle \vec{x}\mid \vec{y} + \vec{z} \rangle = \langle \vec{x}\mid \vec{y} \rangle + \langle \vec{x}\mid \vec{z} \rangle$
-              \quad für alle $\vec{x}, \vec{y}, \vec{z} \in V$.
         \item $\langle \alpha \cdot \vec{x}\mid \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$
-              \quad für alle $\vec{x}, \vec{y} \in V$ und alle $\alpha \in \mathbb{R}$.
-        \item $\langle \vec{x}\mid \alpha \cdot \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$
               \quad für alle $\vec{x}, \vec{y} \in V$ und alle $\alpha \in \mathbb{R}$.
         \end{enumerate}
   \item Die Abbildung  $\langle \cdot\mid \cdot \rangle$ ist \blue{symmetrisch}, das heißt es gilt
@@ -776,6 +768,25 @@ führen diesen Begriff jetzt ein.
   Falls auf einem Vektor-Raum $V$ ein Skalar-Produkt $\langle \cdot \mid \cdot \rangle$ definiert
   ist, so nennen wir $V$ einen \blue{euklidischen Vektor-Raum}.  \eoxs
 \end{Definition}
+
+\remark
+Aus der Symmetrie und der Gleichung $\langle \vec{x} + \vec{y}\mid \vec{z} \rangle = \langle \vec{x}\mid\vec{z} \rangle + \langle \vec{y}\mid \vec{z} \rangle$
+folgt sofort, dass auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$\langle \vec{x}\mid \vec{y} + \vec{z} \rangle = \langle \vec{x}\mid \vec{y} \rangle + \langle \vec{x}\mid \vec{z} \rangle$
+für alle $\vec{x}, \vec{y}, \vec{z} \in V$ gilt.
+\\[0.2cm]
+Ähnlich folgt aus der Symmetrie und der Gleichung  $\langle \alpha \cdot \vec{x}\mid \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$,
+dass auch
+\\[0.2cm]
+\hspace*{1.3cm}
+$\langle \vec{x}\mid \alpha \cdot \vec{y} \rangle = \alpha \cdot \langle \vec{x}\mid \vec{y} \rangle$
+\quad für alle $\vec{x}, \vec{y} \in V$ und alle $\alpha \in \mathbb{R}$ gilt.
+\\[0.2cm]
+Damit sehen wir, dass ein Skalar-Produkt in beiden Argumenten linear ist.  Wir sagen daher, dass das
+Skalar-Produkt \blue{bilinear} ist.
+\eox
 
 \example
 Definieren wir auf der Menge $\mathbb{R}^n$ ein Produkt $\langle \cdot \mid \cdot \rangle$ durch die Festlegung 
@@ -889,6 +900,7 @@ $-1 \leq \cos(\varphi) \leq 1$
 gilt und damit sichergestellt ist, dass diese Größe tatsächlich als Kosinus eines Winkels interpretiert werden
 kann.  
 \eoxs
+\pagebreak
 
 \exercise
 Beweisen Sie, dass im $\mathbb{R}^2$ der Winkel, der zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$
