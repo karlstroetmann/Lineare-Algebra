@@ -511,15 +511,246 @@ Zeigen Sie:  $B$ ist genau dann eine Basis von $\mathcal{V}$, wenn sich jeder Ve
 eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben lässt.
 \eoxs
 
-\begin{Theorem}
-  Es sei $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum 
-  und $B_1, B_2 \subseteq V$ seien Basen von $\mathcal{V}$.
-  Dann gilt $\textsl{card}(B_1) = \textsl{card}(B_2)$, zwei verschiedene Basen haben also die selbe Anzahl von
-  Elementen.  Diese Anzahl bezeichnen wir als die \blue{Dimension} des Vektor-Raums.
-\end{Theorem}
+\begin{LemmaStar}[Basis-Austausch-Lemma]
+  Es gelte:
+  \begin{enumerate}
+  \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum, 
+  \item $B$ eine Basis von $\mathcal{V}$,
+  \item $U \subseteq B$,
+  \item $\vec{x} \in V\backslash B$ und 
+  \item $U \cup \{ \vec{x} \}$ ist linear unabhängig.
+  \end{enumerate}
+  Dann gibt es einen Vektor $\vec{y} \in B \backslash U$, so dass die Menge
+  $\bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ wieder eine Basis von $\mathcal{V}$ ist:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\exists \vec{y} \in B \backslash U: \bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ Basis von $\mathcal{V}$.
+  \\[0.2cm]
+  Wir können also den Vektor $\vec{x}$ so gegen einen Vektor $\vec{y}$ aus der Basis $B$
+  austauschen, dass die Vektoren aus der Menge $U$ weiterhin Bestandteil der Basis sind.
+\end{LemmaStar}
 
-\noindent
-Der Beweis dieses Satzes ist für eine einführende Vorlesung zu langwierig.
+\proof
+Da $B$ eine Basis ist, lässt sich $\vec{x}$ als Linear-Kombination von Vektoren aus $B$
+darstellen.  Es gibt also ein $n \in \mathbb{N}$, Skalare $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ 
+und Vektoren $\vec{y}_1, \cdots, \vec{y}_n\in B$, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i$ 
+\\[0.2cm]
+gilt.  Da die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, ist $\vec{x}$ sicher von $\vec{0}$
+verschieden und damit können in der Gleichung für $\vec{x}$ 
+nicht alle $\alpha_i$ den Wert $0$ haben.  O.B.d.A.~können wir sogar fordern,
+dass alle $\alpha_i \not= 0$ sind, denn falls $\alpha_i = 0$ wäre, würden wir den Term $\alpha_i \cdot \vec{y}_i$
+in der obigen Summe einfach weglassen.
+Aus der Tatsache, dass die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, folgt außerdem, dass in der obigen Darstellung
+nicht alle Vektoren $\vec{y}_i$ Elemente der Menge $U$ sind, denn wir können die obige Gleichung zu
+1\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\vec{0} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i + (-1) \cdot \vec{x}$ 
+\\[0.2cm]
+umstellen und wenn nun alle $\vec{y}_i \in U$ wären, dann würde das der linearen Unabhängigkeit von
+$U \cup \{\vec{x} \}$ widersprechen.  Es gibt also ein $k \in \{1,\cdots,n\}$, so dass $\vec{y}_k \in B \backslash U$ ist.  Wir definieren
+\\[0.2cm]
+\hspace*{1.3cm}
+$\vec{y} := \vec{y}_k$, \quad woraus bereits $\vec{y} \in B \backslash U$ folgt.
+\\[0.2cm]
+Außerdem bemerken wir, dass $\vec{y}_i \in B \backslash \{\vec{y}\}$ ist für alle
+$i \in \{1,\cdots,n\} \backslash \{k\}$, denn die Vektoren $\vec{y}_i$ sind für alle $i\in \{1,\cdots,n\}$ paarweise verschieden.
+Wir stellen die obige Gleichung für $\vec{x}$ wie folgt um:
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\vec{x} = \sum\limits_{i=1 \atop i \not= k}^n \alpha_i \cdot \vec{y}_i +  \alpha_k \cdot \vec{y}$.
+\\[0.2cm]
+Diese Gleichung lösen wir nach $\vec{y}$ auf und erhalten
+\\[0.2cm]
+\hspace*{1.3cm}
+$\ds\vec{y} = \bruch{1}{\alpha_k} \cdot \vec{x} - \sum\limits_{i=1 \atop i \not= k}^n
+\bruch{\alpha_i}{\alpha_k} \cdot \vec{y}_i$. \hspace*{\fill} $(*)$
+\\[0.2cm]
+Wir müssen nun zeigen, dass die Menge 
+\\[0.2cm]
+\hspace*{1.3cm}
+ $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
+\\[0.2cm]
+eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
+\begin{enumerate}
+\item Als erstes zeigen wir, dass  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
+
+      Dazu betrachten wir einen beliebigen Vektor $\vec{z} \in V$.  Da $B$ ein Erzeugenden-System
+      von $\mathcal{V}$ ist, lässt sich $\vec{z}$ als Linear-Kombination von Vektoren aus $B$ darstellen.  Es gibt
+      also ein $m \in \mathbb{N}$, Skalare $\beta_1, \cdots, \beta_m \in \mathbb{K}$ und 
+      Vektoren $\vec{u}_1, \cdots, \vec{u}_m \in B$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\vec{z} = \sum\limits_{j=1}^m \beta_j \cdot \vec{u}_j$
+      \\[0.2cm]
+      gilt.   Falls nun alle $\vec{u}_j$ von dem Vektor $\vec{y}$ verschieden sind, 
+      dann haben wir $\vec{z}$ bereits als Linear-Kombination von Vektoren der Menge
+      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$ dargestellt und der Beweis ist
+      abgeschlossen.  Andernfalls gilt $\vec{u}_l = \vec{y}$ für ein $l \in \{1,\cdots,m\}$.
+      In diesem Fall haben wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j + \beta_l \cdot \vec{y}$.
+      \\[0.2cm]
+      Hier setzen wir für $\vec{y}$ den Wert ein, den wir in der Gleichung $(*)$ oben gefunden
+      haben. Das liefert
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j +
+      \bruch{\beta_l}{\alpha_k} \cdot \vec{x} - \sum\limits_{i=1 \atop i \not= k}^n
+      \bruch{\beta_l \cdot \alpha_i}{\alpha_k} \cdot \vec{y}_i$.
+      \\[0.2cm]
+      In dieser Darstellung sind nun alle der beteiligten Vektoren Elemente der Menge
+      $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$.  Damit haben wir also gezeigt, dass der
+      Vektor $\vec{z}$ als Linear-Kombination dieser Menge dargestellt werden kann.
+      Da $\vec{z}$ ein beliebiger Vektor aus $V$ war, ist damit gezeigt, dass die Menge
+      $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
+\item Als nächstes ist nachzuweisen, dass die Menge  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
+      linear unabhängig ist.  Dazu nehmen wir an, dass wir eine Linear-Kombination von Vektoren aus
+      der Menge $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ haben, die den Null-Vektor ergibt.
+      Wir haben dann also ein $m \in \mathbb{N}$, Skalare $\gamma_1, \cdots, \gamma_m, \delta \in \mathbb{K}$,
+      sowie paarweise verschiedene Vektoren $\vec{v}_1, \cdots, \vec{v}_m \in B \backslash \{ \vec{y} \}$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \delta \cdot \vec{x}$
+      \\[0.2cm]
+      gilt.  Wir müssen nun zeigen, dass $\gamma_j = 0$ für alle $j \in \{1,\cdots,n\}$ gilt und dass außerdem 
+      $\delta = 0$ ist.  Wir führen diesen Nachweis durch eine Fallunterscheidung.
+      \begin{enumerate}
+      \item $\delta = 0$:  Dann haben wir
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$
+            \\[0.2cm]
+            und da die Vektoren $\vec{v}_j$ Elemente der linear unabhängigen Menge $B$ sind, folgt 
+            $\gamma_j = 0$ für alle $j \in \{1,\cdots,m\}$.   
+      \item $\delta \not= 0$:  Jetzt setzen wir für $\vec{x}$ in der Darstellung des Null-Vektors den Wert 
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\ds\vec{x} = \sum\limits_{j=1 \atop j \not= k}^n \alpha_j \cdot \vec{y}_j +  \alpha_k \cdot \vec{y}$
+            \\[0.2cm]
+            ein und erhalten
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \sum\limits_{i=1 \atop i \not= k}^n \delta\cdot \alpha_i \cdot \vec{y}_i + \delta\cdot \alpha_k \cdot \vec{y}$.
+            \\[0.2cm]
+            Die Vektoren $\vec{v}_j$ sowie die Vektoren $\vec{y}_i$ mit $i \not= k$ sind Elemente der Menge
+            $B \backslash \{ \vec{y} \}$.  Da $\vec{y} = \vec{y}_k \in B$ ist,  haben wir dann insgesamt eine Linear-Kombination des Null-Vektors aus
+            Elementen der Menge $B$.  Da die Menge $B$ linear unabhängig ist, folgt zunächst, dass der Koeffizient
+            $\delta\cdot \alpha_k = 0$  ist.  Wegen $\alpha_k \not= 0$ folgt daraus $\delta = 0$.  Das widerspricht aber der Annahme $\delta \not= 0$
+            und damit sehen wir, dass dieser Fall gar nicht eintreten kann.
+            \qed
+      \end{enumerate}
+\end{enumerate}
+
+Das gerade bewiesene Lemma zeigt uns, dass wir in einer Basis einen beliebigen von dem Nullvektor
+verschiedenen Vektor $\vec{x}$ 
+gegen einen Vektor der Basis austauschen können.  Der nächste Satz verallgemeinert diesen Tatbestand
+und zeigt, dass wir 
+in einer Basis $B$ eine linear unabhängige Menge $U$ gegen eine Teilmenge $W$ von $B$ austauschen
+können, welche dieselbe Anzahl an Elementen hat wie $U$.
+
+\begin{Satz}[Basis-Austausch-Satz]
+  Es gelte:
+  \begin{enumerate}
+  \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum,
+  \item $B$ ist eine Basis von $\mathcal{V}$,
+  \item $U \subseteq V$ ist linear unabhängig,
+  \item $U$ ist endlich. 
+  \end{enumerate}
+  Dann gibt es eine Teilmenge $W \subseteq B$, so dass gilt:
+  \begin{enumerate}
+  \item $\bigl(B \backslash W\bigr) \cup U$ ist eine Basis von V,
+  \item $\textsl{card}(W) = \textsl{card}(U)$.
+  \end{enumerate}
+  Wir können also eine gegebene linear unabhängige Menge $U$ in eine gegebene Basis einbinden,
+  indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge enthält dieselbe
+  Anzahl von Elementen wie die Menge $U$.
+\end{Satz}
+
+\proofStar
+Die Idee bei diesem Beweis besteht darin, dass wir die Elemente der Menge $U$ mit Hilfe
+des Basis-Austausch-Lemmas sukzessive gegen Elemente der Menge $B$ austauschen.  Für jedes
+Element $\vec{x}$ aus der Menge $U$ finden wir dabei ein $\vec{y}$ aus der Menge
+$B$, so dass wir in der Basis $B$ das Element $\vec{y}$ durch $\vec{x}$ ersetzen können.
+Um diese Argumentation formal wasserdicht zu machen, definieren wir $n :=
+\textsl{card}(U)$ und führen 
+den exakten Beweis durch Induktion nach $n$. 
+\begin{enumerate}
+\item[I.A.:] $n = 0$. 
+
+             Dann gilt offenbar $U = \{\}$ und wir können $W := \{\}$ definieren.  Wegen
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\bigl(B \backslash W\bigr) \cup U = \bigl(B \backslash \{\}\bigr) \cup \{\} = B$ \quad und \quad
+             $\textsl{card}(W) = \textsl{card}(\{\}) = \textsl{card}(U)$
+             \\[0.2cm]
+             ist dann nichts mehr zu zeigen, denn $B$ ist nach Voraussetzung eine Basis von $V$.
+\item[I.S.:] $n \mapsto n+1$. 
+
+             Es gilt jetzt $\textsl{card}(U) = n + 1$. Da $U$ damit nicht leer ist, gibt es einen Vektor $\vec{x} \in U$. Wir definieren 
+             $U' := U \backslash \{ \vec{x} \}$.  Damit folgt $\textsl{card}(U') = n$.  Nach Induktions-Voraussetzung
+             finden wir daher eine Menge $W' \subseteq B$, so dass einerseits
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\textsl{card}(W')= \textsl{card}(U') = n$ 
+             \\[0.2cm]
+             und andererseits die Menge $\bigl(B \backslash W'\bigr) \cup U'$  eine Basis von $V$ ist.  Wir wenden nun das Basis-Austausch-Lemma
+             auf die Basis $\bigl(B \backslash W'\bigr) \cup U'$, den Vektor $\vec{x}$ und die Menge $U'$ an.  Damit finden wir 
+             ein $\vec{y} \in B \backslash W'$, so dass
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$
+             \\[0.2cm]
+             eine Basis von $\mathcal{V}$ ist.  Wir definieren 
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $W := W' \cup \{ \vec{y} \}$ \quad und erinnern daran, dass \quad
+             $U = U' \cup \{ \vec{x} \}$ 
+             \\[0.2cm]
+             gilt.  Damit haben wir 
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \} = (B \backslash W) \cup U$.
+             \\[0.2cm]
+             Außerdem gilt
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $
+             \begin{array}[t]{lcl}
+               \textsl{card}(W) & = & \textsl{card}(W' \cup \{\vec{y}\}) \\
+                                & = & \textsl{card}(W') + 1        \\
+                                & = & \textsl{card}(U') + 1        \\
+                                & = & \textsl{card}(U' \cup \{ \vec{x} \}) \\
+                                & = & \textsl{card}(U).
+             \end{array}
+             $.
+             \\[0.2cm]
+             Damit ist der Beweis abgeschlossen.  \qeds
+\end{enumerate}
+
+\begin{Korollar}
+  Ist $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ein $\mathbb{K}$-Vektor-Raum, $B$ eine Basis von $\mathcal{V}$ und $U \subseteq V$ linear unabhängig,
+  so gilt $\textsl{card}(U) \leq \textsl{card}(B)$.
+\end{Korollar}
+
+\proof
+Der Basis-Austausch-Satz besagt, dass wir eine Teilmenge $W \subseteq B$ finden, so dass einerseits 
+$\textsl{card}(W) = \textsl{card}(U)$ gilt und dass andererseits $(B\backslash W) \cup U$ eine Basis
+von $B$ ist.  Aus $W \subseteq B$ folgt $\textsl{card}(W) \leq \textsl{card}(B)$ und 
+wegen $\textsl{card}(W) = \textsl{card}(U)$ folgt die Behauptung. \qed
+
+Haben wir zwei verschiedene Basen $B_1$ und $B_2$ eines Vektor-Raums $B$, so können wir mit dem letzten Korollar sowohl
+$\textsl{card}(B_2) \leq \textsl{card}(B_1)$ als auch $\textsl{card}(B_1) \leq \textsl{card}(B_2)$ folgern.   Das zeigt,
+dass zwei verschiedene Basen eines Vektor-Raums dieselbe Anzahl von Elementen haben. 
+Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir diese Anzahl als die
+\emph{\color{blue}Dimension} des Vektor-Raums $\mathcal{V}$ und definieren 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{dim}(\mathcal{V}) := n$.
+\pagebreak
 
 \exercise
 \begin{enumerate}[(a)]
@@ -887,9 +1118,9 @@ Die Cauchy-Schwarzsche Ungleichung ermöglicht es, den Winkel $\varphi$ zwischen 
 eines euklidischen Vektor-Raums zu definieren, denn wir können vereinbaren, dass
 \\[0.2cm]
 \hspace*{1.3cm}
-  \colorbox{red}{\framebox{\colorbox{blue}{\framebox{\colorbox{yellow}{
+  \colorbox{blue}{\framebox{\colorbox{yellow}{
 $\ds\cos(\varphi) := \frac{\langle \vec{x} \mid \vec{y} \rangle}{\|\vec{x}\| \cdot \|\vec{y}\|}$
-}}}}}
+}}}
 \\[0.2cm]
 gilt.  Aus der Cauchy-Schwarzschen Ungleichung folgt dann, dass für den so definierten Wert
 $\cos(\varphi)$ die Ungleichung
@@ -900,7 +1131,6 @@ $-1 \leq \cos(\varphi) \leq 1$
 gilt und damit sichergestellt ist, dass diese Größe tatsächlich als Kosinus eines Winkels interpretiert werden
 kann.  
 \eoxs
-\pagebreak
 
 \exercise
 Beweisen Sie, dass im $\mathbb{R}^2$ der Winkel, der zwischen zwei Vektoren $\vec{a}$ und $\vec{b}$

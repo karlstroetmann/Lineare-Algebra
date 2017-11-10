@@ -301,7 +301,7 @@ Zeigen Sie: Ist $f: V \rightarrow W$ eine lineare Abbildung, so ist $\textsl{Bil
 Das Bild und der Kern einer linearen Abbildung sind über den
 \href{https://de.wikipedia.org/wiki/Rangsatz}{Dimensions-Satz} verknüpft.
 
-\begin{Satz}[Dimensions-Satz]
+\begin{Satz}[Dimensions-Satz, \href{https://de.wikipedia.org/wiki/Rangsatz}{Rang-Satz}]
   Es seien $V_1$ und $V_2$ endlich-dimensionale $\mathbb{K}$-Vektor-Räume und die Funktion $f: V_1 \rightarrow V_2$ sei eine lineare Abbildung.
   Dann gilt
   \\[0.2cm]
@@ -309,102 +309,96 @@ Das Bild und der Kern einer linearen Abbildung sind über den
   \colorbox{blue}{\framebox{\colorbox{yellow}{
   $\textsl{dim}(V_1) = \textsl{dim}\bigl(\textsl{Kern}(f)\bigr) + \textsl{dim}\bigl(\textsl{Bild}(f)\bigr)$.}}}
 \end{Satz}
-Der Beweis dieses Satzes ist nur mit Hilfe des Basis-Austausch-Satzes möglich, den wir aus Zeitgründen nicht
-behandelt haben.
 
-% \proof
-% Es sei $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$.  Ist $B$ eine Basis von $V_1$, so können wir mit Hilfe des
-% Basis-Austausch-Satzes eine Menge $W$ finden, so dass 
-% \\[0.2cm]
-% \hspace*{1.3cm}
-% $(B \backslash W) \cup \{ \vec{x}_1, \cdots, \vec{x}_m \}$
-% \\[0.2cm]
-% wieder eine Basis von $V_1$ ist.  Es gelte
-% \\[0.2cm]
-% \hspace*{1.3cm}
-% $B \backslash W = \{ \vec{y}_1, \cdots, \vec{y}_n \}$.
-% \\[0.2cm]
-% Dann ist also insgesamt die Menge
-% \\[0.2cm]
-% \hspace*{1.3cm}
-% $\{  \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
-% \\[0.2cm]
-% eine Basis von $V_1$, so dass $\textsl{dim}(V_1) = m + n$.  Wir müssen daher nur noch zeigen, dass 
-% \\[0.2cm]
-% \hspace*{1.3cm}
-% $\textsl{dim}\bigl(\textsl{Bild}(f)\bigr) = n$ 
-% \\[0.2cm] 
-% gilt.  Dazu zeigen wir, dass die Menge
-% \\[0.2cm]
-% \hspace*{1.3cm}
-% $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$
-% \\[0.2cm]
-% eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
-% \begin{enumerate}
-% \item Wir zeigen:
-%       Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigl\}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
+\proof
+Es sei $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$.  Ist $B$ eine Basis von $V_1$, so können wir mit Hilfe des
+Basis-Austausch-Satzes eine Menge $W$ finden, so dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(B \backslash W) \cup \{ \vec{x}_1, \cdots, \vec{x}_m \}$
+\\[0.2cm]
+wieder eine Basis von $V_1$ ist.  Es gelte
+\\[0.2cm]
+\hspace*{1.3cm}
+$B \backslash W = \{ \vec{y}_1, \cdots, \vec{y}_n \}$.
+\\[0.2cm]
+Dann ist also insgesamt die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{  \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
+\\[0.2cm]
+eine Basis von $V_1$, so dass $\textsl{dim}(V_1) = m + n$.  Wir müssen daher nur noch zeigen, dass 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\textsl{dim}\bigl(\textsl{Bild}(f)\bigr) = n$ 
+\\[0.2cm] 
+gilt.  Dazu zeigen wir, dass die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$
+\\[0.2cm]
+eine Basis von $\textsl{Bild}(f)$ ist.  Hier sind zwei Sachen nachzuweisen.
+\begin{enumerate}
+\item Wir zeigen:
+      Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigl\}$ ist ein Erzeugenden-System von $\textsl{Bild}(f)$.
 
-%       Sei $\vec{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\vec{y} \in V_1$, so dass $\vec{z} = f(\vec{y})$ ist.
-%       Nun ist die Menge
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ 
-%       \\[0.2cm]
-%       eine Basis von $V_1$. 
-%       Folglich muss es Skalare $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ geben, so dass 
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n = \vec{y}$
-%       \\[0.2cm]
-%       ist.  Wenden wir auf diese Gleichung die lineare Abbildung $f$ an und berücksichtigen, dass
-%       $f(\vec{x}_i) = \vec{0}$ ist für alle $i \in \{1,\cdots,m\}$, denn $\vec{x}_i \in \textsl{Kern}(f)$, so erhalten wir
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\beta_1 \cdot f(\vec{y}_1) + \cdots + \beta_n \cdot f(\vec{y}_n) = \vec{z}$.
-%       \\[0.2cm]
-%       Damit haben wir $\vec{z}$ aber als Linear-Kombination der Menge  $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ 
-%       dargestellt und das war zu zeigen.
-% \item Wir zeigen: Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigr\}$ ist linear unabhängig.
-  
-%       Seien $\beta_1, \cdots, \beta_n \in \mathbb{K}$ und gelte
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\beta_1 \cdot f(\vec{y}_1) + \cdots + \beta_n \cdot f(\vec{y}_n) = \vec{0}$.
-%       \\[0.2cm]
-%       Da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $f(\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n) = \vec{0}$
-%       \\[0.2cm]
-%       umschreiben.  Daraus folgt aber
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n \in \textsl{Kern}(f)$.
-%       \\[0.2cm]
-%       Da $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$ ist, muss es also
-%       Skalare $\alpha_1, \cdots, \alpha_m \in \mathbb{K}$ geben, so dass
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
-%       \\[0.2cm]
-%       gilt.  Diese Gleichung können wir zu
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + (-\beta_1) \cdot \vec{y}_1 + \cdots + (-\beta_n) \cdot \vec{y}_n = \vec{0}$
-%       \\[0.2cm]
-%       umstellen.  Da die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
-%       eine Basis von $V_1$ ist, ist diese Menge insbesondere linear unabhängig.  Also
-%       folgt aus der letzten Gleichung
-%       \\[0.2cm]
-%       \hspace*{1.3cm}
-%       $\alpha_1 = 0 \wedge \cdots \wedge \alpha_m = 0 \wedge -\beta_1 = 0 \wedge \cdots \wedge -\beta_n = 0$.
-%       \\[0.2cm]
-%       Damit haben also die $\beta_i$ alle den Wert $0$ und das war zu zeigen. \qeds
-% \end{enumerate}
+      Sei $\vec{z} \in \textsl{Bild}(f)$.  Dann gibt es ein $\vec{y} \in V_1$, so dass $\vec{z} = f(\vec{y})$ ist.
+      Nun ist die Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$ 
+      \\[0.2cm]
+      eine Basis von $V_1$. 
+      Folglich muss es Skalare $\alpha_1, \cdots, \alpha_m, \beta_1, \cdots, \beta_n \in \mathbb{K}$ geben, so dass 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n = \vec{y}$
+      \\[0.2cm]
+      ist.  Wenden wir auf diese Gleichung die lineare Abbildung $f$ an und berücksichtigen, dass
+      $f(\vec{x}_i) = \vec{0}$ ist für alle $i \in \{1,\cdots,m\}$, denn $\vec{x}_i \in \textsl{Kern}(f)$, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_1 \cdot f(\vec{y}_1) + \cdots + \beta_n \cdot f(\vec{y}_n) = \vec{z}$.
+      \\[0.2cm]
+      Damit haben wir $\vec{z}$ aber als Linear-Kombination der Menge  $\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \}$ 
+      dargestellt und das war zu zeigen.
+\item Wir zeigen: Die Menge $\bigl\{ f(\vec{y}_1), \cdots, f(\vec{y}_n) \bigr\}$ ist linear unabhängig.
 
-\remark
-Der Dimensions-Satz wird in der Literatur auch als \href{https://de.wikipedia.org/wiki/Rangsatz}{Rang-Satz} bezeichnet.
-\eoxs
+      Seien $\beta_1, \cdots, \beta_n \in \mathbb{K}$ und gelte
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_1 \cdot f(\vec{y}_1) + \cdots + \beta_n \cdot f(\vec{y}_n) = \vec{0}$.
+      \\[0.2cm]
+      Da $f$ eine lineare Abbildung ist, können wir diese Gleichung zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $f(\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n) = \vec{0}$
+      \\[0.2cm]
+      umschreiben.  Daraus folgt aber
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n \in \textsl{Kern}(f)$.
+      \\[0.2cm]
+      Da $\{ \vec{x}_1, \cdots, \vec{x}_m \}$ eine Basis von $\textsl{Kern}(f)$ ist, muss es also
+      Skalare $\alpha_1, \cdots, \alpha_m \in \mathbb{K}$ geben, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_n \cdot \vec{y}_n$
+      \\[0.2cm]
+      gilt.  Diese Gleichung können wir zu
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 \cdot \vec{x}_1 + \cdots + \alpha_m \cdot \vec{x}_m + (-\beta_1) \cdot \vec{y}_1 + \cdots + (-\beta_n) \cdot \vec{y}_n = \vec{0}$
+      \\[0.2cm]
+      umstellen.  Da die Menge $\{ \vec{x}_1, \cdots, \vec{x}_m,  \vec{y}_1, \cdots, \vec{y}_n \}$
+      eine Basis von $V_1$ ist, ist diese Menge insbesondere linear unabhängig.  Also
+      folgt aus der letzten Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\alpha_1 = 0 \wedge \cdots \wedge \alpha_m = 0 \wedge -\beta_1 = 0 \wedge \cdots \wedge -\beta_n = 0$.
+      \\[0.2cm]
+      Damit haben also die $\beta_i$ alle den Wert $0$ und das war zu zeigen. \qeds
+\end{enumerate}
 
 \exercise
 Es sei $V$ ein endlich-dimensionaler $\mathbb{K}$-Vektor-Raum und es sei $f \in \mathcal{L}(V)$.
@@ -632,7 +626,6 @@ als auch die Definition der Multiplikation eines Skalars mit einer Matrix.
 Sie zeigen, dass $\mathcal{M}$ eine lineare Abbildung des $\mathbb{K}$-Vektor-Raums $\mathcal{L}(V,W)$ in den $\mathbb{K}$-Vektor-Raum $\mathbb{K}^{m \times n}$ ist.  
 Es handelt sich bei dieser Abbildung um einen Isomorphismus.
 \eoxs
-\pagebreak
 
 
 \subsection{Matrizen-Multiplikation}
