@@ -1587,16 +1587,16 @@ definieren können.  Dann berechnet der Befehl
 \\[0.2cm]
 das Inverse der Matrix \texttt{A}, allerdings rechnet \textsc{SetlX} in diesem Fall mit
 Fließkomma-Zahlen, so dass bei der Berechnung von $\mathtt{A}^{-1}$ Rundungs-Fehler auftreten.
-Daher ist das Ergebnis dieser Rechnung dann wie folgt:
+Daher ist das Ergebnis dieser Rechnung wie folgt:
 \begin{verbatim}
 << << -0.27777777777777785   0.05555555555555556 0.38888888888888884>>
    <<  0.055555555555555546  0.3888888888888889 -0.27777777777777773>>
    <<  0.38888888888888895  -0.2777777777777778  0.05555555555555556>>
 >>
 \end{verbatim}
-Leider lässt sich zeigen, dass bei einer exakter Berechnung des Inversen einer $n \times n$ Matrix
+Es lässt sich zeigen, dass bei einer \blue{exakter} Berechnung des Inversen einer $n \times n$ Matrix
 $A$, die aus rationalen Zahlen besteht, die Rechenzeit zur Berechnung von $A^{-1}$ exponentiell mit
-der Dimension $n$ wächst, so dass eine exakte Rechnung für größere Werte von $n$ nicht
+der Dimension $n$ wächst, so dass eine exakte Rechnung für große Werte von $n$ nicht
 praktikabel ist.  Der Grund dafür ist, dass die Zähler und Nenner der Brüche, mit denen wir es
 dann zu tun haben, sehr stark anwachsen.  Daher rechnen alle Programmiersprachen, die Pakete zur Linearen
 Algebra enthalten, mit Fließkomma-Zahlen.

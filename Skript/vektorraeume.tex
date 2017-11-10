@@ -319,6 +319,12 @@ bezüglich der Anzahl der Elemente \blue{minimal} sind.  Dies führt zu der folgen
   \end{enumerate}
 \end{Definition}
 
+\remark
+Wir haben hier die Begriffe \blue{lineare Unabhängigkeit}, \blue{Erzeugenden-System} und \blue{Basis} nur für
+endliche Mengen von Vektoren definiert.  Diese Begriffe können auch so verallgemeinert werden, dass Sie für
+unendliche Mengen von Vektoren gelten.  Das führt aber zu einer etwas umständlicheren Theorie.
+\eox
+
 \noindent
 Der nächste Satz zeigt, dass eine Basis eine \red{maximale} Menge linear unabhängiger Vektoren ist.
 
@@ -511,139 +517,110 @@ Zeigen Sie:  $B$ ist genau dann eine Basis von $\mathcal{V}$, wenn sich jeder Ve
 eindeutiger Weise als Linear-Kombination der Vektoren aus $B$ schreiben lässt.
 \eoxs
 
-\begin{LemmaStar}[Basis-Austausch-Lemma]
+\begin{Lemma}[Basis-Austausch-Lemma]
   Es gelte:
   \begin{enumerate}
   \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum, 
-  \item $B$ eine Basis von $\mathcal{V}$,
-  \item $U \subseteq B$,
-  \item $\vec{x} \in V\backslash B$ und 
-  \item $U \cup \{ \vec{x} \}$ ist linear unabhängig.
+  \item $B = \{ \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis von $\mathcal{V}$,
+  \item $\vec{x} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n$ und $\alpha_k \not= 0$ 
   \end{enumerate}
-  Dann gibt es einen Vektor $\vec{y} \in B \backslash U$, so dass die Menge
-  $\bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ wieder eine Basis von $\mathcal{V}$ ist:
-  \\[0.2cm]
-  \hspace*{1.3cm}
-  $\exists \vec{y} \in B \backslash U: \bigl(B \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$ Basis von $\mathcal{V}$.
-  \\[0.2cm]
-  Wir können also den Vektor $\vec{x}$ so gegen einen Vektor $\vec{y}$ aus der Basis $B$
-  austauschen, dass die Vektoren aus der Menge $U$ weiterhin Bestandteil der Basis sind.
-\end{LemmaStar}
+  Dann ist die Menge
+\\[0.2cm]
+\hspace*{1.3cm}
+$(B \backslash \{ \vec{y}_k \}) \cup \{\vec{x}\} =
+  \{ \vec{y}_1, \cdots \vec{y}_{k-1}, \vec{x}, \vec{y}_{k+1},  \cdots, \vec{n}\}
+$
+\\[0.2cm]
+wieder eine Basis von $\mathcal{V}$.
+Wir können also den Vektor $\vec{x}$ gegen den Vektor $\vec{y}_k$ aus der Basis $B$ austauschen.
+\end{Lemma}
 
 \proof
-Da $B$ eine Basis ist, lässt sich $\vec{x}$ als Linear-Kombination von Vektoren aus $B$
-darstellen.  Es gibt also ein $n \in \mathbb{N}$, Skalare $\alpha_1, \cdots, \alpha_n \in \mathbb{K}$ 
-und Vektoren $\vec{y}_1, \cdots, \vec{y}_n\in B$, so dass 
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\vec{x} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i$ 
-\\[0.2cm]
-gilt.  Da die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, ist $\vec{x}$ sicher von $\vec{0}$
-verschieden und damit können in der Gleichung für $\vec{x}$ 
-nicht alle $\alpha_i$ den Wert $0$ haben.  O.B.d.A.~können wir sogar fordern,
-dass alle $\alpha_i \not= 0$ sind, denn falls $\alpha_i = 0$ wäre, würden wir den Term $\alpha_i \cdot \vec{y}_i$
-in der obigen Summe einfach weglassen.
-Aus der Tatsache, dass die Menge $U \cup \{ \vec{x} \}$ linear unabhängig ist, folgt außerdem, dass in der obigen Darstellung
-nicht alle Vektoren $\vec{y}_i$ Elemente der Menge $U$ sind, denn wir können die obige Gleichung zu
-1\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\vec{0} = \sum\limits_{i=1}^n \alpha_i \cdot \vec{y}_i + (-1) \cdot \vec{x}$ 
-\\[0.2cm]
-umstellen und wenn nun alle $\vec{y}_i \in U$ wären, dann würde das der linearen Unabhängigkeit von
-$U \cup \{\vec{x} \}$ widersprechen.  Es gibt also ein $k \in \{1,\cdots,n\}$, so dass $\vec{y}_k \in B \backslash U$ ist.  Wir definieren
-\\[0.2cm]
-\hspace*{1.3cm}
-$\vec{y} := \vec{y}_k$, \quad woraus bereits $\vec{y} \in B \backslash U$ folgt.
-\\[0.2cm]
-Außerdem bemerken wir, dass $\vec{y}_i \in B \backslash \{\vec{y}\}$ ist für alle
-$i \in \{1,\cdots,n\} \backslash \{k\}$, denn die Vektoren $\vec{y}_i$ sind für alle $i\in \{1,\cdots,n\}$ paarweise verschieden.
-Wir stellen die obige Gleichung für $\vec{x}$ wie folgt um:
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\vec{x} = \sum\limits_{i=1 \atop i \not= k}^n \alpha_i \cdot \vec{y}_i +  \alpha_k \cdot \vec{y}$.
-\\[0.2cm]
-Diese Gleichung lösen wir nach $\vec{y}$ auf und erhalten
-\\[0.2cm]
-\hspace*{1.3cm}
-$\ds\vec{y} = \bruch{1}{\alpha_k} \cdot \vec{x} - \sum\limits_{i=1 \atop i \not= k}^n
-\bruch{\alpha_i}{\alpha_k} \cdot \vec{y}_i$. \hspace*{\fill} $(*)$
-\\[0.2cm]
-Wir müssen nun zeigen, dass die Menge 
-\\[0.2cm]
-\hspace*{1.3cm}
- $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
-\\[0.2cm]
-eine Basis von $V$ ist.  Dazu sind zwei Dinge nachzuweisen.
+Da es auf die Reihenfolge der Vektoren in der Menge $B$ nicht ankommt, können wir o.B.d.A.~annehmen, dass $k=n$
+gilt.  Dadurch vereinfacht sich im Folgenden die Schreibweise.  Da $\alpha_n \not= 0$ ist, können wir die
+Gleichung
+\begin{equation}
+  \label{eq:atl1}
+  \vec{x} = \alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n
+\end{equation}
+nach dem Vektor $\vec{y}_n$ auflösen und erhalten
+\begin{equation}
+  \label{eq:atl2}
+  \ds \vec{y}_n = \frac{1}{\alpha_n} \cdot \vec{x} -
+  \frac{\alpha_1}{\alpha_n} \cdot \vec{y}_1 - \cdots - \frac{\alpha_{n-1}}{\alpha_n} \cdot \vec{y}_{n-1}.
+\end{equation}
+Den Rest des Beweises spalten wir in zwei Teile auf.
 \begin{enumerate}
-\item Als erstes zeigen wir, dass  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
-
-      Dazu betrachten wir einen beliebigen Vektor $\vec{z} \in V$.  Da $B$ ein Erzeugenden-System
-      von $\mathcal{V}$ ist, lässt sich $\vec{z}$ als Linear-Kombination von Vektoren aus $B$ darstellen.  Es gibt
-      also ein $m \in \mathbb{N}$, Skalare $\beta_1, \cdots, \beta_m \in \mathbb{K}$ und 
-      Vektoren $\vec{u}_1, \cdots, \vec{u}_m \in B$, so dass
+\item Wir zeigen, dass $\{ \vec{y}_1, \cdots \vec{y}_{n-1}, \vec{x} \}$ linear unabhängig ist.
+      Dazu nehmen wir an, dass
+      \begin{equation}
+        \label{eq:atl3}
+        \lambda_1 \cdot \vec{y}_1 + \cdots + \lambda_{n-1} \cdot \vec{y}_{n-1} + \lambda_n \cdot \vec{x} = \vec{0}        
+      \end{equation}
+      ist.  Wir müssen dann zeigen, dass
+      \begin{equation}
+        \label{eq:atl4}
+      \forall i \in \{1,\cdots,n\}:\lambda_i = 0        
+      \end{equation}
+      gilt.  Ersetzen wir in Gleichung (\ref{eq:atl3}) den Vektor $\vec{x}$ durch die Linear-Kombination aus
+      Gleichung (\ref{eq:atl1}), so erhalten wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\vec{z} = \sum\limits_{j=1}^m \beta_j \cdot \vec{u}_j$
+      $\lambda_1 \cdot \vec{y}_1 + \cdots + \lambda_{n-1} \cdot \vec{y}_{n-1} + \lambda_n \cdot (\alpha_1 \cdot \vec{y}_1 + \cdots + \alpha_n \cdot \vec{y}_n) = \vec{0}$,
       \\[0.2cm]
-      gilt.   Falls nun alle $\vec{u}_j$ von dem Vektor $\vec{y}$ verschieden sind, 
-      dann haben wir $\vec{z}$ bereits als Linear-Kombination von Vektoren der Menge
-      $B \backslash \{ \vec{y} \} \cup \{ \vec{x} \}$ dargestellt und der Beweis ist
-      abgeschlossen.  Andernfalls gilt $\vec{u}_l = \vec{y}$ für ein $l \in \{1,\cdots,m\}$.
-      In diesem Fall haben wir
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\ds\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j + \beta_l \cdot \vec{y}$.
-      \\[0.2cm]
-      Hier setzen wir für $\vec{y}$ den Wert ein, den wir in der Gleichung $(*)$ oben gefunden
-      haben. Das liefert
+      was wir noch zu
+      \begin{equation}
+        \label{eq:atl5}
+        (\lambda_1 + \lambda_n \cdot \alpha_1) \cdot \vec{y}_1 + \cdots +
+        (\lambda_{n-1} + \lambda_n \cdot \alpha_{n-1}) \cdot \vec{y}_{n-1} +
+        \lambda_n \cdot \alpha_n \cdot \vec{y}_n = \vec{0}
+      \end{equation}
+      umordnen können.  Da die Menge $B = \{ \vec{y}_1, \cdots, \vec{y}_n \}$ eine Basis ist, ist sie auch
+      linear unabhängig und daher folgen aus Gleichung (\ref{eq:atl5}) die Gleichungen
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\vec{z} = \sum\limits_{j=1 \atop j \not= l}^m \beta_j \cdot \vec{u}_j +
-      \bruch{\beta_l}{\alpha_k} \cdot \vec{x} - \sum\limits_{i=1 \atop i \not= k}^n
-      \bruch{\beta_l \cdot \alpha_i}{\alpha_k} \cdot \vec{y}_i$.
+      $\lambda_1 + \lambda_n \cdot \alpha_1 = 0$, \quad $\cdots$, \quad $\lambda_{n-1} + \lambda_n \cdot \alpha_{n-1} = 0 $
+      \quad und \quad $\lambda_n \cdot \alpha_n = 0$.
       \\[0.2cm]
-      In dieser Darstellung sind nun alle der beteiligten Vektoren Elemente der Menge
-      $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$.  Damit haben wir also gezeigt, dass der
-      Vektor $\vec{z}$ als Linear-Kombination dieser Menge dargestellt werden kann.
-      Da $\vec{z}$ ein beliebiger Vektor aus $V$ war, ist damit gezeigt, dass die Menge
-      $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ ein Erzeugenden-System von $\mathcal{V}$ ist.
-\item Als nächstes ist nachzuweisen, dass die Menge  $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$
-      linear unabhängig ist.  Dazu nehmen wir an, dass wir eine Linear-Kombination von Vektoren aus
-      der Menge $(B \backslash \{ \vec{y} \}) \cup \{ \vec{x} \}$ haben, die den Null-Vektor ergibt.
-      Wir haben dann also ein $m \in \mathbb{N}$, Skalare $\gamma_1, \cdots, \gamma_m, \delta \in \mathbb{K}$,
-      sowie paarweise verschiedene Vektoren $\vec{v}_1, \cdots, \vec{v}_m \in B \backslash \{ \vec{y} \}$, so dass
+      Da nach Voraussetzung $\alpha_n \not= 0$ ist, folgt aus der Gleichungen $\lambda_n \cdot \alpha_n = 0$
+      sofort $\lambda_n = 0$ und damit vereinfachen sich die anderen Gleichungen zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \delta \cdot \vec{x}$
+      $\lambda_1 = 0$, \quad $\cdots$, \quad $\lambda_{n-1} = 0$,
       \\[0.2cm]
-      gilt.  Wir müssen nun zeigen, dass $\gamma_j = 0$ für alle $j \in \{1,\cdots,n\}$ gilt und dass außerdem 
-      $\delta = 0$ ist.  Wir führen diesen Nachweis durch eine Fallunterscheidung.
-      \begin{enumerate}
-      \item $\delta = 0$:  Dann haben wir
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j$
-            \\[0.2cm]
-            und da die Vektoren $\vec{v}_j$ Elemente der linear unabhängigen Menge $B$ sind, folgt 
-            $\gamma_j = 0$ für alle $j \in \{1,\cdots,m\}$.   
-      \item $\delta \not= 0$:  Jetzt setzen wir für $\vec{x}$ in der Darstellung des Null-Vektors den Wert 
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $\ds\vec{x} = \sum\limits_{j=1 \atop j \not= k}^n \alpha_j \cdot \vec{y}_j +  \alpha_k \cdot \vec{y}$
-            \\[0.2cm]
-            ein und erhalten
-            \\[0.2cm]
-            \hspace*{1.3cm}
-            $\ds\vec{0} = \sum\limits_{j=1}^m \gamma_j \cdot \vec{v}_j + \sum\limits_{i=1 \atop i \not= k}^n \delta\cdot \alpha_i \cdot \vec{y}_i + \delta\cdot \alpha_k \cdot \vec{y}$.
-            \\[0.2cm]
-            Die Vektoren $\vec{v}_j$ sowie die Vektoren $\vec{y}_i$ mit $i \not= k$ sind Elemente der Menge
-            $B \backslash \{ \vec{y} \}$.  Da $\vec{y} = \vec{y}_k \in B$ ist,  haben wir dann insgesamt eine Linear-Kombination des Null-Vektors aus
-            Elementen der Menge $B$.  Da die Menge $B$ linear unabhängig ist, folgt zunächst, dass der Koeffizient
-            $\delta\cdot \alpha_k = 0$  ist.  Wegen $\alpha_k \not= 0$ folgt daraus $\delta = 0$.  Das widerspricht aber der Annahme $\delta \not= 0$
-            und damit sehen wir, dass dieser Fall gar nicht eintreten kann.
-            \qed
-      \end{enumerate}
+      so dass wir insgesamt die Gleichung (\ref{eq:atl4}) gezeigt haben.  Damit ist die lineare Unabhängigkeit
+      der Menge  $\{ \vec{y}_1, \cdots \vec{y}_{n-1}, \vec{x} \}$ nachgewiesen.  $\green{\surd}$
+\item Wir zeigen, dass $\{ \vec{y}_1, \cdots \vec{y}_{n-1}, \vec{x} \}$ ein Erzeugenden-System ist.  Dazu
+      nehmen wir an, dass $\vec{z}$ ein beliebiger Vektor aus der $V$ ist.  Wir müssen dann $\vec{z}$ als
+      Linear-Kombination von Vektoren aus $\{ \vec{y}_1, \cdots \vec{y}_{n-1}, \vec{x} \}$ darstellen.
+      Zunächst wissen wir, dass die Menge $\{ \vec{y}_1, \cdots \vec{y}_{n-1}, \vec{y}_n \}$ eine Basis on
+      $\mathcal{V}$ ist.  Daher können wir $\vec{z}$ als Linear-Kombination dieser Vektoren darstellen.
+      Damit gibt es Skalare $\beta_1, \cdots, \beta_n \in \mathbb{K}$, so dass
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\vec{z} = \beta_1 \cdot \vec{y}_1 + \cdots \beta_n \cdot \vec{y}_n$
+      \\[0.2cm]
+      gilt.  In dieser Gleichung ersetzen wir $\vec{y}_n$ durch den Wert, den wir in Gleichung (\ref{eq:atl2})
+      erhalten haben.  Das liefert die Gleichung
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \vec{z} = \beta_1 \cdot \vec{y}_1 + \cdots + \beta_{n-1} \cdot \vec{y}_{n-1} +
+      \beta_n \cdot \left(\frac{1}{\alpha_n} \cdot \vec{x} -
+      \frac{\alpha_1}{\alpha_n} \cdot \vec{y}_1 - \cdots - \frac{\alpha_{n-1}}{\alpha_n} \cdot \vec{y}_{n-1}\right)$.      
+      \\[0.2cm]
+      Gruppieren wir die Terme um, so erhalten wir
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds \vec{z} = \left(\beta_1 - \beta_n \cdot \frac{\alpha_1}{\alpha_n}\right) \cdot \vec{y}_1 + \cdots +
+                     \left(\beta_{n-1} - \beta_n \cdot \frac{\alpha_{n-1}}{\alpha_n} \right) \cdot \vec{y}_{n-1} +
+                     \frac{\beta_n}{\alpha_n} \cdot \vec{x}
+      $.      
+      \\[0.2cm]
+      Das ist aber eine Linear-Kombination von $\vec{z}$ aus den Vektoren der Menge
+      $\{ \vec{y}_1, \cdots \vec{y}_{n-1}, \vec{x} \}$ und damit ist klar, dass diese Menge
+      ein Erzeugenden-System ist. \qed
 \end{enumerate}
+
 
 Das gerade bewiesene Lemma zeigt uns, dass wir in einer Basis einen beliebigen von dem Nullvektor
 verschiedenen Vektor $\vec{x}$ 
@@ -651,14 +628,14 @@ gegen einen Vektor der Basis austauschen können.  Der nächste Satz verallgemeine
 und zeigt, dass wir 
 in einer Basis $B$ eine linear unabhängige Menge $U$ gegen eine Teilmenge $W$ von $B$ austauschen
 können, welche dieselbe Anzahl an Elementen hat wie $U$.
+\pagebreak
 
 \begin{Satz}[Basis-Austausch-Satz]
   Es gelte:
   \begin{enumerate}
   \item $\mathcal{V} = \bigl\langle \langle V, \vec{0}, + \rangle, \cdot \bigr\rangle$ ist ein $\mathbb{K}$-Vektor-Raum,
-  \item $B$ ist eine Basis von $\mathcal{V}$,
-  \item $U \subseteq V$ ist linear unabhängig,
-  \item $U$ ist endlich. 
+  \item $B = \{ \vec{y}_1, \cdots, \vec{y}_m \}$ ist eine Basis von $\mathcal{V}$,
+  \item $U = \{ \vec{x}_1, \cdots, \vec{x}_n \} \subseteq V$ ist linear unabhängig,
   \end{enumerate}
   Dann gibt es eine Teilmenge $W \subseteq B$, so dass gilt:
   \begin{enumerate}
@@ -666,18 +643,17 @@ können, welche dieselbe Anzahl an Elementen hat wie $U$.
   \item $\textsl{card}(W) = \textsl{card}(U)$.
   \end{enumerate}
   Wir können also eine gegebene linear unabhängige Menge $U$ in eine gegebene Basis einbinden,
-  indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge enthält dieselbe
+  indem wir eine Teilmenge $W$ von $B$ durch $U$ ersetzten.  Diese Teilmenge $W$ enthält dieselbe
   Anzahl von Elementen wie die Menge $U$.
 \end{Satz}
 
-\proofStar
+\proof
 Die Idee bei diesem Beweis besteht darin, dass wir die Elemente der Menge $U$ mit Hilfe
 des Basis-Austausch-Lemmas sukzessive gegen Elemente der Menge $B$ austauschen.  Für jedes
 Element $\vec{x}$ aus der Menge $U$ finden wir dabei ein $\vec{y}$ aus der Menge
 $B$, so dass wir in der Basis $B$ das Element $\vec{y}$ durch $\vec{x}$ ersetzen können.
-Um diese Argumentation formal wasserdicht zu machen, definieren wir $n :=
-\textsl{card}(U)$ und führen 
-den exakten Beweis durch Induktion nach $n$. 
+Um diese Argumentation formal wasserdicht zu machen, führen wir 
+den exakten Beweis durch Induktion nach der Anzahl $n$ der Elemente der linear unabhängigen Menge $U$. 
 \begin{enumerate}
 \item[I.A.:] $n = 0$. 
 
@@ -690,45 +666,51 @@ den exakten Beweis durch Induktion nach $n$.
              ist dann nichts mehr zu zeigen, denn $B$ ist nach Voraussetzung eine Basis von $V$.
 \item[I.S.:] $n \mapsto n+1$. 
 
-             Es gilt jetzt $\textsl{card}(U) = n + 1$. Da $U$ damit nicht leer ist, gibt es einen Vektor $\vec{x} \in U$. Wir definieren 
-             $U' := U \backslash \{ \vec{x} \}$.  Damit folgt $\textsl{card}(U') = n$.  Nach Induktions-Voraussetzung
+             Es gilt jetzt $\textsl{card}(U) = n + 1$.
+             Also hat $U$ die Form $U = \{ \vec{x}_1, \cdots, \vec{x}_n, \vec{x}_{n+1} \}$.
+             Wir definieren 
+             $U' := U \backslash \{ \vec{x}_{n+1} \} = \{ \vec{x}_1, \cdots, \vec{x}_n\}$.
+             Damit folgt $\textsl{card}(U') = n$.  Nach Induktions-Voraussetzung
              finden wir daher eine Menge $W' \subseteq B$, so dass einerseits
              \\[0.2cm]
              \hspace*{1.3cm}
              $\textsl{card}(W')= \textsl{card}(U') = n$ 
              \\[0.2cm]
-             und andererseits die Menge $\bigl(B \backslash W'\bigr) \cup U'$  eine Basis von $V$ ist.  Wir wenden nun das Basis-Austausch-Lemma
-             auf die Basis $\bigl(B \backslash W'\bigr) \cup U'$, den Vektor $\vec{x}$ und die Menge $U'$ an.  Damit finden wir 
-             ein $\vec{y} \in B \backslash W'$, so dass
+             und andererseits die Menge $\bigl(B \backslash W'\bigr) \cup U'$  eine Basis von $V$ ist.  Um die
+             Dinge konkret zu machen, nehmen wir an, dass sich die Menge $B \backslash W'$ als
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \}$
+             $B \backslash W' = \{ \vec{z}_1, \cdots, \vec{z}_{m-n} \}$.
              \\[0.2cm]
-             eine Basis von $\mathcal{V}$ ist.  Wir definieren 
-             \\[0.2cm]
-             \hspace*{1.3cm}
-             $W := W' \cup \{ \vec{y} \}$ \quad und erinnern daran, dass \quad
-             $U = U' \cup \{ \vec{x} \}$ 
-             \\[0.2cm]
-             gilt.  Damit haben wir 
+             schreiben lässt.  Da die Menge $\bigl(B \backslash W'\bigr) \cup U'$ als Basis auch ein
+             Erzeugenden-System ist, können wir den Vektor $\vec{x}_{n+1}$ als 
+             Linear-Kombination der Vektoren aus  $\bigl(B \backslash W'\bigr) \cup U'$ darstellen.  Diese
+             Linear-Kombination hat die Form
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\bigl(\bigl((B \backslash W') \cup U'\bigr)  \backslash \{ \vec{y} \}\bigr) \cup \{ \vec{x} \} = (B \backslash W) \cup U$.
-             \\[0.2cm]
-             Außerdem gilt
-             \\[0.2cm]
-             \hspace*{1.3cm}
+             $ \vec{x}_{n+1} = \beta_1 \cdot \vec{z}_1 + \cdots + \beta_{m-n} \cdot \vec{z}_{m-n} 
+                              + \alpha_{1} \cdot \vec{x}_1 + \cdots + \alpha_n \cdot \vec{x}_n
              $
-             \begin{array}[t]{lcl}
-               \textsl{card}(W) & = & \textsl{card}(W' \cup \{\vec{y}\}) \\
-                                & = & \textsl{card}(W') + 1        \\
-                                & = & \textsl{card}(U') + 1        \\
-                                & = & \textsl{card}(U' \cup \{ \vec{x} \}) \\
-                                & = & \textsl{card}(U).
-             \end{array}
-             $.
              \\[0.2cm]
-             Damit ist der Beweis abgeschlossen.  \qeds
+             In dieser Linear-Kombination können nicht alle Koeffizienten $\beta_i$ der Vektoren aus der  $B \backslash W'$ den
+             Wert $0$ haben, denn sonst würde der Vektor $\vec{x}_{n+1}$ sich als Linear-Kombination von
+             Vektoren aus $\{\vec{x}_1,\cdots, \vec{x}_n \}$ und dann wäre die Menge
+             $U = \{\vec{x}_1,\cdots, \vec{x}_n, \vec{x}_{n+1} \}$ sicher nicht linear unabhängig.  Wir finden
+             also ein $k \in \{1,\cdots,m-n\}$, so dass der Koeffizient $\beta_k \not= 0$ ist.  Damit können
+             wir das Basis-Austausch-Lemma auf die Basis $\bigl(B \backslash W'\bigr) \cup U'$ und den Vektor
+             $\vec{x}_{n+1}$ anwenden und den Vektor $\vec{z}_k$ durch den Vektor $\vec{x}_{n+1}$ ersetzen.
+             Definieren wir
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $W := W' \cup \{ \vec{z}_k \}$
+             \\[0.2cm]
+             so gilt $(B \backslash W') \backslash \{\vec{z}_k\} = B \backslash W$ und die Menge
+             \\[0.2cm]
+             \hspace*{1.3cm}
+             $(B \backslash W) \cup U' \cup \{\vec{x}_{n+1}\} = (B \backslash W) \cup U$
+             \\[0.2cm]
+             ist eine Basis von $\mathcal{V}$.  Offenbar gilt auch $\textsl{card}(W) = \textsl{card}(U) = n+1$.
+             \qeds
 \end{enumerate}
 
 \begin{Korollar}
@@ -750,7 +732,7 @@ Ist diese Anzahl endlich und hat den Wert $n$, so bezeichnen wir diese Anzahl al
 \\[0.2cm]
 \hspace*{1.3cm}
 $\textsl{dim}(\mathcal{V}) := n$.
-\pagebreak
+
 
 \exercise
 \begin{enumerate}[(a)]
