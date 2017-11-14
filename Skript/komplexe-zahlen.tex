@@ -918,7 +918,7 @@ In diesem Abschnitt zitieren wir (ohne Beweis) den sogenannten \emph{\color{blue
 besagt, dass jedes nicht-konstante Polynom  
 \\[0.2cm]
 \hspace*{1.3cm}
-$p(z) = \sum\limits_{i=0}^n a_i \cdot z^i$ \quad mit $n \geq 1$ und $a_n \not=0$
+$\ds p(z) = \sum\limits_{i=0}^n a_i \cdot z^i$ \quad mit $n \geq 1$ und $a_n \not=0$
 \\[0.2cm]
 {\color{red}im Körper der komplexen Zahlen} eine Nullstelle hat, d.h.~es gibt ein $z_1 \in \mathbb{C}$, so dass
 $p(z_1) = 0$ ist.  Mit Hilfe der \href{https://de.wikipedia.org/wiki/Polynomdivision}{Polynom-Division} können
@@ -935,14 +935,14 @@ in der Form
 $p_1(z) = (z- z_2) \cdot p_2(z)$
 \\[0.2cm]
 schreiben können, wobei $p_2(z)$ ein Polynom vom Grad $n-2$ ist.  Durch Iteration dieses Verfahrens
-finden wir also insgesamt $n$ Zahlen $z_1, z_2, \cdots, z_n$, so dass wir $p(z)$ als das Produkt
+finden wir also insgesamt $n$ Zahlen $z_1, z_2, \cdots, z_n \in \mathbb{C}$, so dass wir $p(z)$ als das Produkt
 \\[0.2cm]
 \hspace*{1.3cm}
-$p(z) = (z-z_1) \cdot (z-z_2) \cdot \mbox{\dots} \cdot (z-z_{n-1}) \cdot (z - z_n)$
+$p(z) = (z-z_1) \cdot (z-z_2) \cdot \mbox{\dots} \cdot (z-z_{n-1}) \cdot (z - z_n) \cdot a_n$
 \\[0.2cm]
-schreiben können.  Dabei brauchen die komplexen Zahlen $z_i$ keineswegs paarweise verschieden zu sein,
-sondern sie können auch durchaus gleich sein.  Wir bemerken noch, dass diese Darstellung bis auf die
-Reihenfolge der $z_i$ eindeutig sein muss, denn die $z_i$ sind genau die Nullstellen des Polynoms
+schreiben können.  Dabei brauchen die komplexen Zahlen $z_i$ keineswegs paarweise verschieden zu sein.
+Wir bemerken noch, dass diese Darstellung bis auf die
+Reihenfolge der komplexen Zahlen $z_i$ eindeutig sein muss, denn die $z_i$ sind genau die Nullstellen des Polynoms
 $p(z)$ und ein Polynom vom Grade $n$ hat, wie die obigen Überlegungen zeigen, höchstens $n$
 verschiedene Nullstellen.
 \pagebreak
