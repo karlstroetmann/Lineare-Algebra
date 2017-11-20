@@ -131,7 +131,7 @@ In der englischen Literatur wird ein  Endomorphismus $f \in \mathcal{L}(V,V)$ au
 \hspace*{1.3cm}
 $\blue{\mathcal{L}(V)} := \mathcal{L}(V,V)$.
 \\[0.2cm]
-Folglich bezeichnet $\mathcal{L}(V)$ die Menge der Operatoren auf dem Vektor-Raum $V$.
+Folglich bezeichnet $\mathcal{L}(V)$ die Menge der \blue{Operatoren} auf dem Vektor-Raum $V$.
 \eoxs
 
 \example
@@ -142,12 +142,12 @@ links schiebt.  Formal setzen wir
 \hspace*{1.3cm}
 $L\bigl( (x_n)_{n\in \mathbb{N}} \bigr) := (x_{n+1})_{n\in\mathbb{N}}$.
 \\[0.2cm]
-Weniger formal aber dafür intuitiver könnten wir auch
+Weniger formal aber dafür intuitiver könnten wir auch schreiben
 \\[0.2cm]
 \hspace*{1.3cm}
-$L\bigl( [x_0, x_1, x_2, x_3, \cdots] \bigr) := [x_1, x_2, x_3, \cdots]$
+$L\bigl( [x_0, x_1, x_2, x_3, \cdots] \bigr) := [x_1, x_2, x_3, \cdots]$.
 \\[0.2cm]
-schreiben.  Dann ist die Abbildung $L$ eine lineare Abbildung auf $\mathbb{K}^\mathbb{N}$.
+Dann ist die Abbildung $L$ eine lineare Abbildung auf $\mathbb{K}^\mathbb{N}$, es gilt also $L \in \mathcal{L}\bigl(\mathbb{K}^\mathbb{N}\bigr)$.
 \eoxs
 
 \example
@@ -427,10 +427,10 @@ so erhalten wir
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  f(\vec{x}) & = & \ds f\left(\sum\limits_{j=1}^m \beta_j \cdot \vec{x}_j\right)                    \\[0.5cm]
+  f(\vec{x}) & = & \ds f\biggl(\sum\limits_{j=1}^m \beta_j \cdot \vec{x}_j\biggr)                    \\[0.5cm]
              & = & \ds \sum\limits_{j=1}^m \beta_j \cdot f(\vec{x}_j)                               \\[0.5cm]
              & = & \ds \sum\limits_{j=1}^m \beta_j \cdot \sum\limits_{i=1}^n a_{i,j} \cdot \vec{y}_i \\[0.5cm]
-             & = & \ds \sum\limits_{i=1}^n \left(\sum\limits_{j=1}^m a_{i,j} \cdot \beta_j\right) \cdot \vec{y}_i. \\[0.5cm]
+             & = & \ds \sum\limits_{i=1}^n \biggl(\sum\limits_{j=1}^m a_{i,j} \cdot \beta_j\biggr) \cdot \vec{y}_i. \\[0.5cm]
 \end{array}
 $
 \\[0.2cm]
@@ -451,8 +451,7 @@ $A := \left(
 $}}}
 \\[0.2cm]
 zusammengefasst.  Die Menge aller $n \times m$ Matrizen mit Koeffizienten $a_{i,j} \in \mathbb{K}$
-für alle $i \in \{1,\cdots,n\}$ und $j \in \{1,\cdots,m\}$ schreiben wir als $\mathbb{K}^{n \times
-  m}$.
+für alle $i \in \{1,\cdots,n\}$ und $j \in \{1,\cdots,m\}$ schreiben wir als \blue{$\mathbb{K}^{n \times m}$}.
 
 \begin{Definition}[$\mathcal{M}(f)$]
 Es gelte:
@@ -528,7 +527,7 @@ dann aufaddiert.
 
 \remark
 Wir hatten die Vektoren aus $\mathbb{K}^n$ ursprünglich als Listen der Form $\vec{x} = [x_1, \cdots, x_n]$ mit
-$x_i \in \mathbb{K}$ für alle $i\in\{1,\cdots,n\}$ definiert.  Diese Schreibweise ist wesentlich
+$x_i \in \mathbb{K}$ für alle $i\in\{1,\cdots,n\}$ definiert.  Diese \blue{Listen-Schreibweise} ist wesentlich
 platzsparender als die Schreibweise
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -542,9 +541,9 @@ $\vec{x} = \left(
 $
 \\[0.2cm]
 bei der wir $\vec{x}$ als {\blue{Spalten-Vektor}} bezeichnen.  Im Zusammenhang mit der
-Multiplikation von Matrizen mit Vektoren ist die Spaltenschreibweise allerdings 
+Multiplikation von Matrizen mit Vektoren ist die \blue{Spalten-Schreibweise} allerdings 
 suggestiver, so dass wir Vektoren in Zusammenhang mit der Matrizen-Multiplikation in der
-Spaltenschreibweise darstellen.
+Spalten-Schreibweise darstellen.
 \eoxs 
 
 
@@ -686,7 +685,7 @@ $
 Definieren wir also die Komponenten der Matrix $C = (c_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq l}$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad für alle $i \in \{1,\cdots,n\}$ und $j \in\{1,\cdots,l\}$,
+$\ds c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad für alle $i \in \{1,\cdots,n\}$ und $j \in\{1,\cdots,l\}$,
 \\[0.2cm]
 so sehen wir, dass diese Matrix dasselbe bewirkt, wie die sukzessive Anwendung der Matrizen $A$ und
 $B$.  Daher definieren wir für eine 
@@ -696,12 +695,12 @@ $A \in \mathbb{K}^{m \times l}$ der Form $A = (a_{k,j})_{1\leq i \leq m \atop 1 
 Matrix
 \\[0.2cm]
 \hspace*{1.3cm}
-$C = (c_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq l}$, 
+$\ds C = (c_{i,j})_{1\leq i \leq n \atop 1 \leq j \leq l}$, 
 \\[0.2cm]
 deren Komponenten durch die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad für alle $i \in \{1,\cdots,n\}, j \in\{1,\cdots,l\}$,
+$\ds c_{i,j} := \sum\limits_{k=1}^m b_{i,k} \cdot a_{k,j}$ \quad für alle $i \in \{1,\cdots,n\}, j \in\{1,\cdots,l\}$,
 \\[0.2cm]
 gegeben sind.
 
@@ -711,12 +710,10 @@ Sind $V_1$, $V_2$ und $V_3$ $\mathbb{K}$-Vektor-Räume und gilt
 \hspace*{1.3cm}
  $f \in \mathcal{L}(V_1, V_2)$ und $g \in \mathcal{L}(V_2, V_3)$,
 \\[0.2cm]
-dann haben wir die Matrizen-Multiplikation gerade so definiert, dass
+dann haben wir die Matrizen-Multiplikation gerade so definiert, dass gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathcal{M}(g \circ f) = \mathcal{M}(g) \cdot \mathcal{M}(f)$
-\\[0.2cm]
-gilt.  \eoxs
+$\mathcal{M}(g \circ f) = \mathcal{M}(g) \cdot \mathcal{M}(f)$.  \eoxs
 
 \exerciseStar
 Zeigen Sie, dass für die Matrizen-Multiplikation das Assoziativ-Gesetz gilt.
@@ -725,6 +722,7 @@ Zeigen Sie, dass für die Matrizen-Multiplikation das Assoziativ-Gesetz gilt.
 \exercise
 Beweisen oder widerlegen Sie, dass die Matrizen-Multiplikation kommutativ ist.
 \eox
+\pagebreak
 
 Unser Ziel im Rest dieses Abschnittes ist es zu zeigen, dass bestimmte \blue{quadratische Matrizen} ein
 Inverses besitzen.  Dabei nennen wir eine Matrix $A \in \mathbb{K}^{m \times n}$ {\blue{quadratisch}}
@@ -753,7 +751,7 @@ fallenden Diagonale mit Einsen besetzt ist, alle anderen Einträge sind Null.  Fo
 gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$,
+$\ds\mathrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$,
 \\[0.2cm]
 wobei $\delta_{i,j}$ das eben definierte Kronecker-Delta bezeichnet.  
 Im Falle $n = 2$ haben wir beispielsweise
@@ -846,8 +844,9 @@ gelten muss.
 
 \remark
 Ein \href{https://de.wikipedia.org/wiki/Lineares_Gleichungssystem}{lineares Gleichungs-System} mit
-$n$ Gleichungen und $n$ Variablen lässt sich in der Form $A \cdot \vec{x} = \vec{x}$ schreiben, wobei $A \in \mathbb{K}^{n \times n}$ ist.
-  Beispielsweise können wir das lineare Gleichungs-System
+$n$ Gleichungen und $n$ Variablen lässt sich in der Form $A \cdot \vec{x} = \vec{b}$ schreiben, wobei
+$A \in \mathbb{K}^{n \times n}$ und $\vec{b} \in \mathbb{K}^n$ ist.
+ Beispielsweise können wir das lineare Gleichungs-System
 \\[0.2cm]
 \hspace*{1.3cm}
 $
@@ -960,11 +959,12 @@ falls $l < k$ ist.
 \eox
 
 Wir definieren nun drei verschiedene Arten von sogenannten
-\href{https://de.wikipedia.org/wiki/Elementarmatrix}{Elementar-Matrizen}.  Die  
-Zeilen-Additions-Matrizen $\mathrm{ZA}_n(k,l, \alpha)$ addieren das $\alpha$-fache der $l$-ten Zeile zur
-$k$-ten Zeile, die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauscht die $k$-te Zeile mit der
-$l$-ten Zeile und schließlich multipliziert die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$  die $k$-te Zeile
-mit $\alpha$.  
+\href{https://de.wikipedia.org/wiki/Elementarmatrix}{Elementar-Matrizen}.  
+\begin{enumerate}
+\item Die Zeilen-Additions-Matrizen $\mathrm{ZA}_n(k,l, \alpha)$ addieren das $\alpha$-fache der $l$-ten Zeile zu $k$-ten Zeile.
+\item Die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauscht die $k$-te Zeile mit der $l$-ten Zeile.
+\item Die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ multipliziert die $k$-te Zeile mit $\alpha$.  
+\end{enumerate}
 
 \begin{Definition}[Elementar-Matrizen]
   Es sei $n \in \mathbb{N}$.  Weiter seien $k,l \in \{1,\cdots,n\}$ und es sei
