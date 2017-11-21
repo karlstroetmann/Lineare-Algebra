@@ -1086,7 +1086,7 @@ Wir definieren nun drei verschiedene Arten von sogenannten
       \hspace*{1.3cm}
       $\mathrm{ZM}_n(k, \alpha) \cdot B = B + (\alpha - 1) \cdot \mathrm{A}_n(k,k) \cdot B$
       \\[0.2cm]
-      Es wir also zu $B$ das $(1-\alpha)$-fache der $k$-ten Zeile von $B$ zur $k$-ten Zeile hinzu
+      Es wir also zu $B$ das $(\alpha-1)$-fache der $k$-ten Zeile von $B$ zur $k$-ten Zeile hinzu
       addiert und damit steht die $k$-te Zeile im Ergebnis insgesamt $1 + (\alpha-1) = \alpha$-mal.  \eoxs
  \end{enumerate}
 \end{Definition}
@@ -1133,7 +1133,7 @@ Die entscheidende Beobachtung ist nun die, dass die oben definierten Elementar-M
 \end{enumerate}
 
 \section{Berechnung des Inversen einer Matrix}
-Wir haben nun alles Material zusammen um für eine gegebene Matrix $A \in \mathbb{K}^{n \times n}$
+Wir haben nun alles Material zusammen, um für eine gegebene Matrix $A \in \mathbb{K}^{n \times n}$
 überprüfen zu können, ob es zu $A$ eine inverse Matrix $A^{-1}$ gibt und diese gegebenenfalls auch
 zu berechnen.  Die Idee, die dem Verfahren, dass wir gleich präsentieren werden, zu Grunde liegt,
 besteht darin, dass wir die Matrix $A$ solange mit Elementar-Matrizen $\mathrm{ZE}_i$
@@ -1166,21 +1166,26 @@ $\mathrm{B}$ hat:  Je nachdem, um was für eine Elementar-Matrix es sich handelt,
 $\alpha$-fache einer Zeile zu einer anderen Zeile, wir vertauschen zwei Zeilen oder wir
 multiplizieren eine Zeile mit einem Skalar. 
 
-Die Transformation der Matrix $A \in \mathbb{K}^n$ verläuft in $n$ Schritten, wobei wir im $i$-ten
+Für die Transformation der Matrix $A \in \mathbb{K}^{n\times n}$ nehmen wir an, dass
+\\[0.2cm]
+\hspace*{1.3cm}
+ $A = \bigl(a_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$
+\\[0.2cm]
+gilt.  Die Transformation verläuft in $n$ Schritten, wobei wir im $i$-ten
 Schritt dafür sorgen, dass die $i$-te Spalte der Matrix gleich dem $i$-ten Einheits-Vektor
 $\vec{e}_i$ wird.  Dabei hat der $i$-te Einheits-Vektor in der $i$-ten Komponente eine $1$, alle
 anderen Komponenten sind $0$.  Im $i$-ten Schritt können wir davon ausgehen, dass in den ersten $i-1$
 Spalten bereits die Einheits-Vektoren $\vec{e}_1$ bis $\vec{e}_{i-1}$ stehen.
 Um auch die $i$-te Spalte entsprechend zu transformieren, suchen wir zunächst diejenige Zeile 
-$j \in \{i, \cdots, n\}$ für die $|A_{j,i}|$ maximal wird.  Theoretisch würde es bei exakter Rechnung an dieser Stelle
-reichen, einfach irgendeine Zeile $j \in \{i, \cdots, n\}$ zu wählen, für die $A_{j,i} \not= 0$ 
+$j \in \{i, \cdots, n\}$ für die $|a_{j,i}|$ maximal wird.  Theoretisch würde es bei exakter Rechnung an dieser Stelle
+reichen, einfach irgendeine Zeile $j \in \{i, \cdots, n\}$ zu wählen, für die $a_{j,i} \not= 0$ 
 ist.  Das hier vorgestellte Verfahren, bei dem wir immer den Zeilen-Index $j$ bestimmen, für den
-$A_{j,i}$ maximal ist, hat aber den Vorteil, dass es weniger anfällig für Rundungs-Fehler ist als
-das naive Vorgehen, bei dem $j$ einfach so gewählt wird, dass $A_{j,i} \not= 0$ ist.  Das liegt daran, dass
-beim Rechnen mit \href{https://de.wikipedia.org/wiki/Gleitkommazahl}{Fließkomma-zahlen} häufig Werte
+$a_{j,i}$ maximal ist, hat aber den Vorteil, dass es weniger anfällig für Rundungs-Fehler ist als
+das naive Vorgehen, bei dem $j$ einfach so gewählt wird, dass $a_{j,i} \not= 0$ ist.  Das liegt daran, dass
+beim Rechnen mit \href{https://de.wikipedia.org/wiki/Gleitkommazahl}{Fließkommazahlen} häufig Werte
 auftreten, die bei exakter Rechnung den Wert $0$ haben 
 müssten, die aber bei Fließkomma-Rechnung stattdessen einen sehr kleinen Wert wie etwa 
-$2 \cdot 10^{-16}$ annehmen.  Wäre nun $A_{j,i}$ bei exakter Rechnung $0$ und würde durch einen
+$2 \cdot 10^{-16}$ annehmen.  Wäre nun $a_{j,i}$ bei exakter Rechnung $0$ und würde durch einen
 Rundungs-Fehler stattdessen ein sehr kleiner Wert übrig bleiben, so würden wir in der folgenden Rechnung
 mit diesem Wert weiter rechnen.  Insbesondere würden wir durch diesen sehr kleinen Wert später teilen.
 Das macht aber keinen Sinn, denn wenn wir korrekt gerechnet hätten, würden wir an der Stelle dann durch $0$ teilen, was
@@ -1189,14 +1194,14 @@ gar nicht möglich ist.  Im Endeffekt würden wir dann völlig unsinnige Werte als 
 Falls 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\forall j \in \{i, \cdots, n\} : A_{j,i} = 0$ 
+$\forall j \in \{i, \cdots, n\} : a_{j,i} = 0$ 
 \\[0.2cm]
 gilt, dann lässt sich die Matrix nicht mehr zur Einheits-Matrix umformen und es kann gezeigt werden,
-dass die Matrix $A$ dann nicht invertierbar ist.  Falls wir einen Index $j$ wie oben beschrieben
-finden können, dann vertauschen wir die $i$-te Zeile mit der $j$-ten Zeile und dividieren
-anschließend die $i$-te Zeile durch das Element $A_{i,i}$.  Damit steht in der $i$-ten Zeile der
+dass die Matrix $A$ in diesem Fall nicht invertierbar ist.  Falls wir statt dessen einen Index $j \in \{1,\cdots,n\}$ 
+finden können, bei dem $a_{j,i} \not= 0$ ist, dann vertauschen wir die $i$-te Zeile mit der $j$-ten Zeile und dividieren
+anschließend die $i$-te Zeile durch das Element $a_{i,i}$.  Damit steht in der $i$-ten Zeile der
 $i$-ten Spalte schon mal eine $1$.  Damit die anderen Einträge der $i$-ten Spalte $0$ werden,
-subtrahieren wir anschließend für alle $k \in \{ 1, \cdots, n \} \backslash \{i\}$ das $A_{k,i}$-fache der $i$-ten
+subtrahieren wir anschließend für alle $k \in \{ 1, \cdots, n \} \backslash \{i\}$ das $a_{k,i}$-fache der $i$-ten
 Zeile von der $k$-ten Zeile.
 
 
@@ -1242,8 +1247,8 @@ Zeile von der $k$-ten Zeile.
 \label{fig:inverse.stlx}
 \end{figure} 
 
-Abbildung \ref{fig:inverse.stlx} auf Seite \pageref{fig:inverse.stlx} zeigt eine Implementierung des oben beschriebenen Algorithmus in
-der Sprache \href{http://randoom.org/Software/SetlX}{\textsc{SetlX}}, 
+Abbildung \ref{fig:inverse.stlx} auf Seite \pageref{fig:inverse.stlx} zeigt eine Implementierung des oben
+beschriebenen Algorithmus in der Sprache \href{http://randoom.org/Software/SetlX}{\textsc{SetlX}}, 
 die leichter zu verstehen ist, als die oben gegebene rein textuelle Beschreibung.  Wir diskutieren
 diese Implementierung jetzt Zeile für Zeile:
 \begin{enumerate}
@@ -1254,9 +1259,9 @@ diese Implementierung jetzt Zeile für Zeile:
       $\mathtt{A} = [\mathtt{A}[1], \cdots, \mathtt{A}[n]]$.
       \\[0.2cm]
       Dabei ist $\mathtt{A}[i]$ gerade die $i$-te Zeile der Matrix $\mathtt{A}$.  Auf die Komponente
-      $\mathtt{A}_{i,j}$ kann dann mittels des Ausdrucks $\mathtt{A}[i][j]$ zugegriffen werden.
-\item Zunächst wird in Zeile 2 mit Hilfe des Operators \texttt{\#}
-      die Dimension $n$ der Matrix berechnet: Das ist gerade die Länge der
+      $a_{i,j}$ der Matrix $\mathtt{A}$ kann dann mittels des Ausdrucks $\mathtt{A}[i][j]$ zugegriffen werden.
+\item Zunächst wird in Zeile 2 mit Hilfe des Operators ``\texttt{\#}''
+      die Dimension $n$ der Matrix berechnet: Dies ist gerade die Länge der
       Liste \texttt{A}.
 \item Das Prinzip der Berechnung der inversen Matrix $\mathtt{A}^{-1}$ ist, dass $\mathtt{A}$
       mittels elementarer Zeilen-Umformungen in die Einheits-Matrix $\mathrm{E}_n$ überführt wird.
@@ -1280,15 +1285,16 @@ diese Implementierung jetzt Zeile für Zeile:
             $\mathtt{A}[i][i]$ den Wert $0$ hat, dann haben alle
             Elemente in der $i$-ten Spalte ab dem Index $i$ den Wert $0$ und dann kann $\mathtt{A}$ nicht
             invertierbar sein.  Dies wird in Zeile 8 des Programms überprüft: Falls 
-            $\mathtt{A}[i][i] = 0$ ist, wird die Funktion abgebrochen, ohne ein Ergebnis zurück zu
-            liefern. 
-      \item Ansonsten teilen wir in Zeile 11 des Programms die $i$-Zeile von \texttt{A} und
-            \texttt{E} durch $\mathtt{A}[i][i]$.  Anschließend hat $A[i][i]$ natürlich den Wert $1$.
-      \item In der Schleife in Zeile 13 des Programms subtrahieren wir das $\mathtt{A}[k][i]$-fache
+            $\mathtt{A}[i][i] = 0$ ist, wird als Ergebnis der undefinierte Wert $\Omega$ zurück gegeben. 
+      \item Ansonsten teilen wir in Zeile 13 des Programms die $i$-Zeile von $\mathtt{A}$ durch
+            $\mathtt{A}[i][i]$.  Anschließend hat $A[i][i]$ dann offenbar den Wert $1$. 
+            Die selbe Operation wird in Zeile 14 auf die Matrix $\mathtt{E}$ angewendet.
+      \item In Zeile 19 des Programms subtrahieren wir das $\mathtt{A}[k][i]$-fache
             der $i$-ten Zeile von der $k$-ten Zeile für alle $k \not= i$.  Da die $i$-te Zeile an der Position $i$
             mittlerweile den Wert $1$ hat, führt das dazu, dass danach der Wert von
             $\mathtt{A}[k][i]$ verschwindet, so dass in der $i$-ten Spalte alle Werte
             $\mathtt{A}[i][k]$ für $k \not= i$ gleich $0$ sind.
+            Die selbe Operation wird in Zeile 20 auf die Matrix $E$ angewendet.
       \end{enumerate}
       Nachdem $i$ den Wert $n$ erreicht hat, ist die ursprüngliche Matrix $\mathtt{A}$ zur
       Einheits-Matrix reduziert worden, sofern die Funktion nicht vorher in Zeile 9 ergebnislos  
@@ -1328,6 +1334,37 @@ diese Implementierung jetzt Zeile für Zeile:
 \label{fig:inverse.stlx-pivot}
 \end{figure}
 
+Abbildung \ref{fig:inverse.stlx-pivot} zeigt die Implementierung der Hilfs-Funktionen \texttt{identity} und
+\texttt{pivot}.  
+\begin{enumerate}
+\item Zunächst implementiert die Funktion \texttt{delta} das Kronecker-Delta, es gilt
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\texttt{delta}(i,j) = \delta_{i,j} := \left\{
+                  \begin{array}[c]{ll}
+                    1 & \mbox{falls $i = j$;} \\
+                    0 & \mbox{falls $i \not= j$}.
+                  \end{array}
+                  \right.
+      $
+\item Mit Hilfe des Kronecker-Deltas wird dann die Funktion \texttt{identity}, welche die Einheits-Matrix $\mathrm{E}_n$
+      berechnet, implementiert.  Dabei wird die Definierten der Einheits-Matrix 
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\mathrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$
+      \\[0.2cm]
+      unmittelbar umgesetzt.
+\item Die Funktion \texttt{pivot} sucht das betragsmäßig größte Element aus der Menge
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\ds\bigl\{ \mathtt{A}[j][i] \mid j \in \{i,\cdots,n\}\bigr\}$
+      \\[0.2cm]
+      und gibt die Zeile $\mathtt{r}$ zurück, an der dieses Element gefunden wird.  Falls
+      $\mathtt{pivot}(A, n, i) = r$ ist, gilt also
+      \\[0.2cm]
+      \hspace*{1.3cm}
+      $\forall j \in \{i,\cdots,n\}: |\mathtt{A}[r][i]| \geq |\mathtt{A}[j][i]|$.
+\end{enumerate}
 
 \example
 Wir testen das oben vorgestellte Verfahren, indem wir versuchen, das Inverse der Matrix
@@ -1570,8 +1607,9 @@ $\left(
   \end{array}\right)
 $.
 \eox
+\pagebreak
 
-\section{Native Berechnung des Inversen mit \textsc{SetlX}}
+\section{Native Berechnung des Inversen mit \textsc{SetlX}$^*$}
 Die Programmiersprache \textsc{SetlX} unterstützt reelle Vektoren und reelle Matrizen nativ.  Um die oben
 angegeben Matrix \texttt{A} zu invertieren, hätten wir die Matrix \texttt{A} in \textsc{SetlX} auch als
 \begin{verbatim}

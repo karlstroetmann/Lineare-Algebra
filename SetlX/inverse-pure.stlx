@@ -39,7 +39,7 @@ identity := procedure(n) {
     return [ [ delta(i,j) : j in [1 .. n] ] : i in [1 .. n] ];
 };
 // Compute the row index j such that the absolute value of
-// a[j][i] is maximal among all j in in {i .. n}.
+// A[j][i] is maximal among all j in {i .. n}.
 pivot := procedure(A, n, i) {
     r := i;  // index of row containing maximal element
     for (j in [i+1 .. n]) {
