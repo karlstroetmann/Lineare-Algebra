@@ -14,7 +14,7 @@ Letzteres ist mit einem nicht unerheblichen technischen Aufwand verbunden.
 
 
 \section{Permutationen und Transpositionen}
-Wir erinnern an die Definition der Permutations-Gruppe $\mathcal{S}_n$.
+Wir erinnern an die Definition der \blue{Permutations-Gruppe} $\mathcal{S}_n$.
 Ist $R \in \mathcal{S}_n$, so hat $R$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -24,7 +24,7 @@ Da $R$ durch die Angabe der Zahlen $x_1,\cdots,x_n$ vollständig bestimmt ist, ve
 Zukunft der Kürze halber die oben angegebene Permutation $R$ auch als die Liste 
 \\[0.2cm]
 \hspace*{1.3cm}
-$R = [x_1,\cdots,x_n]$
+$R \;\widehat{=}\; [x_1,\cdots,x_n]$
 \\[0.2cm]
 zu schreiben.  Weiterhin werden wir $R$ oft als Funktion auffassen und dann beispielsweise
 \\[0.2cm]
@@ -36,7 +36,7 @@ Es gilt $\mathtt{card}(\mathcal{S}_n) = n!$, wobei der Ausdruck $n!$ (gelesen: \
 durch die Formel 
 \\[0.2cm]
 \hspace*{1.3cm}
-$n! := \prod\limits_{i=1}^n i = 1 \cdot 2 \cdot 3 \cdot \mbox{\dots} \cdot (n-1) \cdot n$ 
+$\ds n! := \prod\limits_{i=1}^n i = 1 \cdot 2 \cdot 3 \cdot \mbox{\dots} \cdot (n-1) \cdot n$ 
 \\[0.2cm] 
 definiert ist. \eoxs
 
@@ -53,9 +53,10 @@ festgelegt sind, haben wir bei der Wahl von $x_i$ noch $n - (i - 1)$ Wahlmöglich
 haben wir also
 \\[0.2cm]
 \hspace*{1.3cm}
-$\prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \cdot 2 \cdot 1 = n!$
+$\ds \prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \cdot 2 \cdot 1 = n!$
 \\[0.2cm]
 Möglichkeiten bei der Wahl der Elemente $x_i$. \qed 
+\pagebreak
 
 Der folgende Begriff des {\emph{\color{blue}Vorzeichens}} oder auch
 {\emph{\color{blue}Signums}} einer Permutation ist zentral für die  
@@ -71,13 +72,13 @@ von der wir später zeigen werden, dass die Gleichung
 $\mathtt{sgn}(R_1 \circ R_2) = \mathtt{sgn}(R_1) \cdot \mathtt{sgn}(R_2)$}}}}
 \end{equation}
 für beliebige Permutationen $R_1,R_2 \in \mathcal{S}_n$ gilt,  die Funktion $\mathtt{sgn}$ ist also
-mit dem Produkt zweier Permutationen verträglich und damit ein Homomorphismus der Gruppe
+mit dem Produkt zweier Permutationen verträglich und damit ein \blue{Homomorphismus} der Gruppe
 $\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ auf die Gruppe $\langle \{-1,+1\}, 1, \cdot \rangle$.  Die Definition der Funktion $\mathtt{sgn}$ selbst
 ist nicht besonders aufwendig,  aber der Nachweis, dass es sich bei dieser Funktion um einen
 Gruppen-Homomorphismus handelt, erfordert  mehr Zeit, als in einer einführenden Vorlesung zur
-Verfügung steht.
+Verfügung steht.  Der Vollständigkeit halber ist der Beweis trotzdem in diesem Skript enthalten.
 
-\begin{Definition}[Signum]
+\begin{Definition}[\blue{Signum}]
   Für Permutationen $R \in \mathcal{S}_n$ definieren wir für alle natürlichen Zahlen $n$ eine Funktion
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -100,10 +101,10 @@ Verfügung steht.
   $R$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
-  ${\color{blue}\mathtt{sgn}(R)} := (-1)^{\mathtt{card}(\mathtt{inv}(R))} = \left\{
+  $\blue{\mathtt{sgn}(R)} := (-1)^{\mathtt{card}(\mathtt{inv}(R))} = \left\{
    \begin{array}{ll}
-     +1 & \mbox{falls $\mathtt{card}(\mathtt{inv}(R)) \,\texttt{\%}\, 2 = 0$;} \\[0.2cm]     
-     -1 & \mbox{falls $\mathtt{card}(\mathtt{inv}(R)) \,\texttt{\%}\, 2 = 1$.} 
+     +1 & \mbox{falls  $\,\mathtt{card}\bigl(\mathtt{inv}(R)\bigr) \,\texttt{\%}\, 2 = 0$;} \\[0.2cm]     
+     -1 & \mbox{falls  $\,\mathtt{card}\bigl(\mathtt{inv}(R)\bigr) \,\texttt{\%}\, 2 = 1$.} 
    \end{array}
    \right.
   $ %$
@@ -115,10 +116,7 @@ Verfügung steht.
 
 Abbildung \ref{fig:signum.stlx} auf Seite \pageref{fig:signum.stlx} zeigt eine Implementierung der
 Funktion \texttt{sgn} in der Sprache \textsc{SetlX}.  Die Permutationen werden in diesem Programm
-als Listen dargestellt.  Beachten Sie, dass der Ausdruck $M \,\texttt{**}\, 2$ für eine Menge $M$
- in \textsc{SetlX} das kartesische Produkt $M \times M$ berechnet.
-
-
+als Listen dargestellt.  
 
 \begin{figure}[!ht]
 \centering
@@ -133,7 +131,7 @@ als Listen dargestellt.  Beachten Sie, dass der Ausdruck $M \,\texttt{**}\, 2$ f
                 ]
     inv := procedure(L) {
         n := #L;
-        return { [k,l] : [k, l] in {1..n} ** 2 | k < l && L[k] > L[l] };
+        return { [k,l] : k in {1 .. n}, l in {k+1 .. n} | L[k] > L[l] };
     };
     signum := procedure(L) {
         return (-1) ** #inv(L);
@@ -166,9 +164,9 @@ Im Allgemeinen können Permutationen beliebig kompliziert sein.  Es lohnt sich, z
 spezielle Permutationen zu betrachten, die nur zwei Elemente vertauschen.  Das führt zu der
 folgenden Definition.
 
-\begin{Definition}[Transposition]
+\begin{Definition}[\blue{Transposition}]
   Eine Permutation $R \in \mathcal{S}_n$ ist eine {\emph{\color{blue}Transposition}} genau dann, wenn
-  die folgende Bedingung erfüllt ist:
+  nur zwei Elemente vertauscht werden.  Das ist äquivalent zu der Bedingung
   \\[0.2cm]
   \hspace*{1.3cm}
   $\mathtt{card}\bigl(\bigl\{ \pair(k,l) \in R \mid k \not= l \}\bigr) = 2$.
@@ -231,9 +229,16 @@ und es gelte $k < l$.  Berechnen Sie die Ausdrücke $\mathtt{inv}(\tau)$ und $\ma
 
 \subsection{Die Homomorphie-Eigenschaft der Signum-Funktion$^*$}
 Der Rest dieses Abschnitts beschäftigt sich mit dem Nachweis, dass die Funktion $\mathtt{sgn}$ ein
-Gruppen-Homomorphismus ist.  Die bei diesem Beweis benötigten Ideen sind zwar alle elementar, aber
-insgesamt sprengt der technische Aufwand den zeitlichen Rahmen einer einführenden Vorlesung.  Daher
-ist dieser Abschnitt als optional markiert. 
+Gruppen-Homomorphismus ist.  Die in der folgenden Aufgabe zu zeigende Eigenschaft wird später mehrfach
+benötigt. 
+\pagebreak
+
+\exercise
+Es seien $\mu,\sigma \in \mathcal{S}_n$ und es sei $k \in \mathbb{Z}_n^+$.  Zeigen Sie, dass gilt:
+Gleichung 
+\\[0.2cm]
+\hspace*{1.3cm}
+$(\mu \circ \sigma)(k) = \sigma\bigl(\mu(k)\bigr)$. \eox
 
 Der nächste Satz zeigt uns, dass
 sich alle nicht-trivialen Permutationen als Produkt von Transpositionen schreiben lassen.  
@@ -311,7 +316,7 @@ Wir beweisen diesen Satz durch vollständige Induktion nach $n$.
                    gilt.  Setzen wir hier die Definition von $\tau'$ ein, so erhalten wir
                    \\[0.2cm]
                    \hspace*{1.3cm}
-                   $\tau \circ \pair(k, n+1) =  \tau_1 \circ \cdots \circ \tau_m$
+                   $\tau \circ \pair(k, n+1) =  \tau_1 \circ \cdots \circ \tau_m$.
                    \\[0.2cm]
                    Da jede Transposition bezüglich des relationalen Produktes ihr eigenes Inverses
                    ist, können wir diese Gleichung von rechts mit $\pair(k, n+1)$ multiplizieren um
@@ -332,29 +337,29 @@ Wir beweisen diesen Satz durch vollständige Induktion nach $n$.
   \hspace*{1.3cm}
   $\tau = \pair(k, k+1)$
   \\[0.2cm]
-  gilt.  Eine elementare Transposition vertauscht also benachbarte Indizes.  \eoxs
+  gilt.  Eine elementare Transposition vertauscht also \blue{benachbarte} Indizes.  \eoxs
 \end{Definition}
 
 \remark
 Ist $\tau = \pair(k, k+1)$ eine elementare Transposition, so gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{inv}(\tau) = \{ \pair(k, k+1) \}$
+  $\mathtt{inv}(\tau) = \bigl\{ \pair(k, k+1) \bigr\}$
   \\[0.2cm]
   und daraus folgt sofort
   $\mathtt{sgn}(\pair(k, k+1)) = -1$.
 \eoxs
 
 \begin{Lemma} \hspace*{\fill} \\
-  Jede Transposition $\tau \in \mathcal{S}_n$ lässt sich als Produkt einer ungeraden Anzahl elementarer Transpositionen
+  Jede Transposition $\tau \in \mathcal{S}_n$ lässt sich als Produkt einer \blue{ungeraden} Anzahl elementarer Transpositionen
   darstellen.  
 \end{Lemma}
 
 \proof
-Es gilt 
+Ist $k < l$, so gilt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\pair(k,k+1) \circ \cdots \circ \pair(l-1,l) \circ \pair(l-1,l-2) \circ \cdots \circ \pair(k+2,k+1)\circ \pair(k+1,k) = \pair(k,l)$.  
+$\pair(k,k+1) \circ \cdots \circ \pair(l-1,l) \circ \pair(l-1,l-2) \circ \cdots \circ \pair(k+1,k) = \pair(k,l)$.  
 \\[0.2cm]
 Diese Gleichung können Sie nachrechnen, wenn Sie die Permutation auf der linken Seite
 auf alle $i \in \{1,\cdots,n\}$ anwenden.  Dazu ist lediglich eine Fallunterscheidung erforderlich,
@@ -463,10 +468,10 @@ wobei das Zeichen $\uplus$ zum Ausdruck bringt, dass die Mengen $P_i$ paarweise 
 Diese Mengen werden wie folgt definiert:
 \begin{enumerate}
 \item $P_1 := \bigl\{ \pair(i,j) \in P \mid i,j \not\in \{k,k+1\} \bigr\}$,
-\item $P_2 := \bigl\{ \pair(k,j) \in P \mid j > k+1 \bigr\}$, 
-\item $P_3 := \bigl\{ \pair(k+1,j) \in P \mid j > k+1 \bigr\}$, 
-\item $P_4 := \bigl\{ \pair(i,k) \in P \mid i < k \bigr\}$, 
-\item $P_5 := \bigl\{ \pair(i,k+1) \in P \mid i < k \bigr\}$, 
+\item $P_2 := \bigl\{ \pair(i,j) \in P \mid i = k \wedge j > k+1 \bigr\}$, 
+\item $P_3 := \bigl\{ \pair(i,j) \in P \mid i = k+1 \wedge j > k+1 \bigr\}$, 
+\item $P_4 := \bigl\{ \pair(i,j) \in P \mid i < k \wedge j = k \bigr\}$, 
+\item $P_5 := \bigl\{ \pair(i,j) \in P \mid i < k \wedge j = k+1 \bigr\}$, 
 \item $P_6 := \bigl\{ \pair(k,k+1) \bigr\}$.
 \end{enumerate} 
 Entsprechend der Zerlegung von $P$ können wir nun auch die Menge $\mathtt{inv}(\sigma)$ in sechs
@@ -777,8 +782,8 @@ einer $n \times n$ Matrix so zu definieren, wie dies 1690 von
 \href{http://de.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz\footnote{
   Den erfreuliche Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
   Begriff ist, haben wir   der Firma \href{http://www.bahlsen.com}{Bahlsen} zu verdanken, die ihre
-  \href{http://en.wikipedia.org/wiki/Leibniz-Keks}{Butterkekse} tatsächlich nach diesem Mathematiker
-  benannt haben.
+  \href{http://en.wikipedia.org/wiki/Leibniz-Keks}{Butterkekse} nach diesem Mathematiker, Philosophen und
+  Naturwissenschaftler benannt haben.
 }} 
 vorgeschlagen wurde.  Ist $A = (a_{i,j}) \in \mathbb{K}^{n \times n}$, wobei entweder 
 $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir die
@@ -859,12 +864,11 @@ $
 \end{array}
 $
 \\[0.2cm]
-Diese Formel wird auch als \emph{\color{blue}Regel von Sarrus} bezeichnet.  Abbildung \ref{fig:sarrus.eps}
-zeigt, wie Sie sich die Formel leicht merken können:  Dazu wiederholen Sie neben der Matrix $A$ die
-ersten beiden Spalten von $A$.  Anschließend bilden Sie alle Produkte von Elementen der Matrix, die
+Diese Formel wird auch als \href{https://de.wikipedia.org/wiki/Regel_von_Sarrus}{Regel von Sarrus} bezeichnet.
+Abbildung \ref{fig:sarrus.eps} zeigt, wie Sie sich die Formel leicht merken können:  Dazu wiederholen Sie neben
+der Matrix $A$ die ersten beiden Spalten von $A$.  Anschließend bilden Sie alle Produkte von Elementen der Matrix, die
 auf einer fallenden oder steigenden Diagonalen liegen.  Die Produkte auf den fallenden Diagonalen
-werden addiert, während die Produkte auf den steigenden Diagonalen subtrahiert werden.
-\eoxs
+werden addiert, während die Produkte auf den steigenden Diagonalen subtrahiert werden.  
 
 \begin{figure}[h]
   \centering
@@ -872,6 +876,11 @@ werden addiert, während die Produkte auf den steigenden Diagonalen subtrahiert w
   \caption{Die Regel von Sarrus.}
   \label{fig:sarrus.eps}
 \end{figure}
+\noindent
+\underline{\red{Beachten}}
+Sie, dass die Regel von Sarrus nur für $3 \times 3$ Matrizen gilt, eine Verallgemeinerung dieser Regel für 
+$4 \times 4$ Matrizen ist \red{falsch}!
+\eoxs
 
 \exercise
 Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab. 
@@ -891,39 +900,29 @@ Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab.
                 ]
    inv := procedure(r) {
        n := #r;
-       return { [k,l]: [k,l] in {1 .. n} >< {1 .. n} | k<l && r[k]>r[l] };
+       return { [k,l] : k in {1 .. n}, l in {k+1 .. n} | L[k] > L[l] };
    };
    signum := procedure(l) {
        return (-1) ** #inv(l);
    };
-   allPermutations := procedure(n) {
-       if (n == 1) {
-           return { [1] };
+   allPermutations := procedure(S) {
+       if (S == {}) {
+           return { [] };
        }
-       return { p[..k-1]+[n]+p[k..]: p in allPermutations(n-1), k in [1..n] };
+       return { [k] + L : k in S, L in allPermutations(S - {k}) };
    };
    determinant := procedure(n) {
-        det := "";
-        for (l in allPermutations(n)) {
-            if (signum(l) == 1) {
-                det += " " * 6 + " +" + product(n, l);
-            } else {
-                det += " " * 6 + " -" + product(n, l);
-            }
-        }
-        return det[10..];
-    };   
-    product := procedure(n, l) {
-        p := " ";
-        for (i in [1 .. n]) {
-            if (i > 1) {
-                p += " * ";
-            }
-            p += "a[$i$, $l[i]$]";
-        }
-        return p + "\n";
-    };
-\end{Verbatim}
+       det := "";
+       Sn  := allPermutations({1 .. n});
+       assert(#Sn == n!, "Wrong number of permutations!");
+       for (L in Sn) {
+           if (sgn(L) == 1) { sign := " + "; } else { sign := " - "; }
+           product := join(["a[$i$][$L[i]$]" : i in [1 .. n]], " * ");
+           det += " " * 6 + sign + product + "\n";
+       }
+       return det;
+   };
+\end{Verbatim} 
 \vspace*{-0.3cm}
 \caption{Berechnung der Leibniz-Formel in \textsc{SetlX}.}
 \label{fig:determinant-formula.stlx}
@@ -986,7 +985,8 @@ Determinante.
 \caption{Ausgabe der Funktion \texttt{determinant} aus Abbildung \ref{fig:determinant-formula.stlx} für $n=4$.}
 \label{fig:determinant.out}
 \end{figure}
-Beim Beweis des nächsten Satzes wird sich das folgende Lemma als nützlich erweisen.
+
+
 
 \begin{Lemma} \label{lemma:sigmatau}
 Es sei $\tau$ eine Transposition.  Dann gilt
@@ -1005,7 +1005,8 @@ Wir zerlegen den Beweis in zwei Teile:
       $\tau \circ \mu \in \mathcal{S}_n$ für alle $\mu \in \mathcal{S}_n$ impliziert.
 \item $\mathcal{S}_n \subseteq \{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \}$.
 
-      Sei $\sigma \in \mathcal{S}_n$.  Wir definieren die Permutation $\mu$ als
+      Sei $\sigma \in \mathcal{S}_n$.  Es ist zu zeigen, dass es eine Permutation $\mu \in \mathcal{S}_n$ gibt,
+      so dass $\sigma = \tau \circ \mu$ gilt.  Wir definieren diese Permutation $\mu$ als
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mu := \tau \circ \sigma$.
@@ -1016,11 +1017,8 @@ Wir zerlegen den Beweis in zwei Teile:
       $\tau \circ \mu = \tau \circ \tau \circ \sigma = \mathtt{id}_n \circ \sigma = \sigma$,
       \\[0.2cm]
       denn da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = \mathtt{id}_n$, wobei
-      $\mathtt{id}_n$ die identische Permutation bezeichnet.  Aus $\sigma = \tau \circ \mu$ und $\mu \in \mathcal{S}_n$ 
-      folgt 
-      \\[0.2cm]
-      \hspace*{1.3cm}
-      $\sigma \in \{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \}$. \qed
+      $\mathtt{id}_n$ die identische Permutation bezeichnet.  
+      \qeds
 \end{enumerate}
 
 \noindent
@@ -1035,8 +1033,8 @@ $A = \left(
   \right)
 $
 \\[0.2cm]
-angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = (a_{i,j})$, es
-gilt also
+angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = \bigl(a_{i,j}\bigr)_{1 \leq i \leq n \atop 1 \leq j \leq n}$, 
+es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
 $\vec{a}_i = [a_{i,1}, \cdots, a_{i,n}]$.
@@ -1133,12 +1131,11 @@ $
  \end{array}
 $
 \qed
-\pagebreak
 
 \remark
 Der gerade bewiesene Satz ist der am schwersten zu beweisende Satz in der Theorie der
 Determinanten.  Das liegt daran, dass dies der einzige Satz in dieser Theorie ist, bei dessen Beweis
-wir die Eigenschaften der Funktion $\mathtt{sgn}$ tatsächlich benötigen.  
+wir die Eigenschaften der Vorzeichen-Funktion $\mathtt{sgn}$ tatsächlich benötigen.  
 \eoxs
 
 \exercise
@@ -1209,7 +1206,7 @@ Wir zeigen zunächst die beiden als Hinweis gegebenen Lemmata.
       \hspace*{1.3cm}
       $\sigma^{-1} = \bigl(\mu^{-1}\bigr)^{-1} = \mu$
       \\[0.2cm]
-      und damit ist  $\mu \in \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \}$ gezeigt.  $\surd$
+      und damit ist  $\mu \in \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \}$ gezeigt.  $\green{\surd}$
 \item Wir zeigen, dass für alle $\sigma \in \mathcal{S}_n$ die Gleichung
       \\[0.2cm]
       \hspace*{1.3cm}
@@ -1233,7 +1230,7 @@ Wir zeigen zunächst die beiden als Hinweis gegebenen Lemmata.
                      $j = \sigma(i)$ \quad und \quad  $\sigma^{-1}(j) = i$ 
                      \\[0.2cm]
                      äquivalent und es ist klar, dass beide Gleichungen richtig sind, wenn wir $i := \sigma^{-1}(j)$
-                     definieren. $\surd$
+                     definieren. $\green{\surd}$
       \item[``$\supseteq$'']: Sei $i \in \{1, \cdots, n\}$ gegeben.  Um zu zeigen, dass
                      \\[0.2cm]
                      \hspace*{1.3cm}
@@ -1250,7 +1247,7 @@ Wir zeigen zunächst die beiden als Hinweis gegebenen Lemmata.
                      $\sigma(i) = j$ \quad und \quad $i = \sigma^{-1}(j)$
                      \\[0.2cm]
                      äquivalent und es ist klar, dass beide Gleichungen gelten, wenn wir $j := \sigma(i)$
-                     definieren. $\surd$
+                     definieren. $\green{\surd}$
       \end{description}
 \end{enumerate}
 Nach diesen Vorüberlegungen führen wir jetzt den eigentlichen Beweis der Behauptung

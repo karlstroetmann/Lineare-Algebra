@@ -2,9 +2,7 @@
 // of all inversions.
 inv := procedure(L) {
     n := #L;
-    return { [k,l] : k in {1 .. n}, l in {1 .. n}
-                   | k < l && L[k] > L[l]
-	       };
+    return { [k,l] : k in {1 .. n}, l in {k+1 .. n} | L[k] > L[l] };
 };
 // This function computes the sign of the permutation L.  
 sgn := procedure(L) {
@@ -13,35 +11,33 @@ sgn := procedure(L) {
 // For a given positive natural number n, this function computes the set 
 // Sn, which is the set of all permutations of n elements.  These permutations
 // are represented as lists.
-allPermutations := procedure(n) {
-    if (n == 1) {
-        return { [1] };
+allPermutations := procedure(S) {
+    if (S == {}) {
+        return { [] };
     }
-    return { L[..k-1] + [n] + L[k..] : L in allPermutations(n-1), k in [1..n] };
+    return { [k] + L : k in S, L in allPermutations(S - {k}) };
 };
 // This procedure computes the formula for det(A) where A is an n >< n matrix.
 determinant := procedure(n) {
     det := "";
-    Sn  := allPermutations(n);
+    Sn  := allPermutations({1 .. n});
     assert(#Sn == n!, "Wrong number of permutations!");
     for (L in Sn) {
         if (sgn(L) == 1) {
-            det += " " * 6 + " + " + product(n, L);
+            sign := " + ";
         } else {
-            det += " " * 6 + " - " + product(n, L);
+            sign := " - ";
         }
+        product := join([ "a[$i$][$L[i]$]" : i in [1 .. n] ], " * ");
+        det += " " * 6 + sign + product + "\n";
     }
     return det;
-};
-product := procedure(n, L) {
-    return join([ "A[$i$][$L[i]$]" : i in [1 .. n] ], " * ") + "\n";
 };
 
 test := procedure(n) {
     print("n = $n$:\ndet(A) = \n$determinant(n)$");
 };
+for (n in [2..5]) {
+    test(n);
+}
 
-test(2);
-test(3);
-test(4);
-test(5);
