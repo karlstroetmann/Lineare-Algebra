@@ -2,7 +2,7 @@
 // inversions of R. The permutation R is represented as a list L.
 inv := procedure(L) {
     n := #L;
-    return { [k,l] : k in {1 .. n}, l in {k+1 .. n} | L[k] > L[l] };
+    return { [k,l] : k in {1 .. n - 1}, l in {k+1 .. n} | L[k] > L[l] };
 };
 // Tis function computes the sign of the permutation L.  
 signum := procedure(L) {
@@ -25,7 +25,7 @@ test := procedure(m) {
         Sn := allPermutations(n);
         print("For n = $n$ there are $#Sn$ permutations.");
         for (L in Sn) {
-            print("inv($L$) = $inv(L)$");    
+            print("inv($L$)    = $inv(L)   $");    
             print("signum($L$) = $signum(L)$");    
         }
     }
