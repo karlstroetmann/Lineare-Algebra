@@ -1247,6 +1247,8 @@ Zeile von der $k$-ten Zeile.
 \label{fig:inverse.stlx}
 \end{figure} 
 
+
+\pagebreak
 Abbildung \ref{fig:inverse.stlx} auf Seite \pageref{fig:inverse.stlx} zeigt eine Implementierung des oben
 beschriebenen Algorithmus in der Sprache \href{http://randoom.org/Software/SetlX}{\textsc{SetlX}}, 
 die leichter zu verstehen ist, als die oben gegebene rein textuelle Beschreibung.  Wir diskutieren
@@ -1256,50 +1258,50 @@ diese Implementierung jetzt Zeile für Zeile:
       als Liste von Listen dargestellt wird, es gilt also
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{A} = [\mathtt{A}[1], \cdots, \mathtt{A}[n]]$.
+      $\texttt{A} = \texttt{[}\texttt{A}\texttt{[}1\texttt{]}, \cdots, \texttt{A}\texttt{[}n\texttt{]}\texttt{]}$.
       \\[0.2cm]
-      Dabei ist $\mathtt{A}[i]$ gerade die $i$-te Zeile der Matrix $\mathtt{A}$.  Auf die Komponente
-      $a_{i,j}$ der Matrix $\mathtt{A}$ kann dann mittels des Ausdrucks $\mathtt{A}[i][j]$ zugegriffen werden.
+      Dabei ist $\texttt{A[i]}$ gerade die $i$-te Zeile der Matrix $\texttt{A}$.  Auf die Komponente
+      $a_{i,j}$ der Matrix $\texttt{A}$ kann dann mittels des Ausdrucks $\texttt{A[i][j]}$ zugegriffen werden.
 \item Zunächst wird in Zeile 2 mit Hilfe des Operators ``\texttt{\#}''
       die Dimension $n$ der Matrix berechnet: Dies ist gerade die Länge der
       Liste \texttt{A}.
-\item Das Prinzip der Berechnung der inversen Matrix $\mathtt{A}^{-1}$ ist, dass $\mathtt{A}$
-      mittels elementarer Zeilen-Umformungen in die Einheits-Matrix $\mathrm{E}_n$ überführt wird.
-      Gleichzeitig werden diese Umformungen auf die Einheits-Matrix $\mathrm{E}_n$ angewendet
-      und am Ende enthält dann die umgeformte Einheits-Matrix das Inverse der Matrix $\mathtt{A}$.
+\item Das Prinzip der Berechnung der inversen Matrix $\texttt{A}^{-1}$ ist, dass $\texttt{A}$
+      mittels elementarer Zeilen-Umformungen in die Einheits-Matrix $\textrm{E}_n$ überführt wird.
+      Gleichzeitig werden diese Umformungen auf die Einheits-Matrix $\textrm{E}_n$ angewendet
+      und am Ende enthält dann die umgeformte Einheits-Matrix das Inverse der Matrix $\texttt{A}$.
  
-      Zu diesem Zweck berechnen wir in Zeile 3 die Einheits-Matrix $\mathrm{E}_n$ mit Hilfe der
+      Zu diesem Zweck berechnen wir in Zeile 3 die Einheits-Matrix $\textrm{E}_n$ mit Hilfe der
       Funktion \texttt{identity}.  Die Implementierung dieser Funktion wird in Abbildung
       \ref{fig:inverse.stlx-pivot} auf Seite \pageref{fig:inverse.stlx-pivot} gezeigt.
 \item Im $i$-ten Durchlauf der Schleife in Zeile 4 wird erreicht, dass die $i$-te Spalte von
-      $\mathtt{A}$ mit dem $i$-ten Einheits-Vektor $\vec{e}_i$ übereinstimmt.
+      $\texttt{A}$ mit dem $i$-ten Einheits-Vektor $\vec{e}_i$ übereinstimmt.
       \begin{enumerate}
       \item Zunächst suchen wir mit der in Zeile $5$ aufgerufenen Funktion \texttt{pivot}
-            nach der Zeile $r$, für die der Betrag $|\mathtt{A}[i][r]|$ unter allen 
+            nach der Zeile $r$, für die der Betrag $|\texttt{A[}i\texttt{][}r\texttt{]}|$ unter allen 
             $r \in \{i, \cdots,n \}$ maximal wird.  Diese Zeile wird dann in Zeile 6 des Programms mit der $i$-ten Zeile
-            vertauscht.  Anschließend wird in Zeile 7 dieselbe Operation auf der Matrix $\mathtt{E}$ ausgeführt.
+            vertauscht.  Anschließend wird in Zeile 7 dieselbe Operation auf der Matrix $\texttt{E}$ ausgeführt.
 
-              Die Implementierung der dabei verwendeten Funktion $\mathtt{pivot}$ wird in Abbildung
+              Die Implementierung der dabei verwendeten Funktion $\texttt{pivot}$ wird in Abbildung
               \ref{fig:inverse.stlx-pivot} gezeigt.
       \item Falls nach der Vertauschung von Zeile $i$ und Zeile $r$ die Komponente
-            $\mathtt{A}[i][i]$ den Wert $0$ hat, dann haben alle
-            Elemente in der $i$-ten Spalte ab dem Index $i$ den Wert $0$ und dann kann $\mathtt{A}$ nicht
+            $\texttt{A[}i\texttt{][}i\texttt{]}$ den Wert $0$ hat, dann haben alle
+            Elemente in der $i$-ten Spalte ab dem Index $i$ den Wert $0$ und dann kann $\texttt{A}$ nicht
             invertierbar sein.  Dies wird in Zeile 8 des Programms überprüft: Falls 
-            $\mathtt{A}[i][i] = 0$ ist, wird als Ergebnis der undefinierte Wert $\Omega$ zurück gegeben. 
-      \item Ansonsten teilen wir in Zeile 13 des Programms die $i$-Zeile von $\mathtt{A}$ durch
-            $\mathtt{A}[i][i]$.  Anschließend hat $A[i][i]$ dann offenbar den Wert $1$. 
-            Die selbe Operation wird in Zeile 14 auf die Matrix $\mathtt{E}$ angewendet.
-      \item In Zeile 19 des Programms subtrahieren wir das $\mathtt{A}[k][i]$-fache
+            $\texttt{A[}i\texttt{][}i\texttt{]} = 0$ ist, wird als Ergebnis der undefinierte Wert $\Omega$ zurück gegeben. 
+      \item Ansonsten teilen wir in Zeile 13 des Programms die $i$-Zeile von $\texttt{A}$ durch
+            $\texttt{A[}i\texttt{][}i\texttt{]}$.  Anschließend hat $\texttt{A[}i\texttt{][}i\texttt{]}$ dann offenbar den Wert $1$. 
+            Die selbe Operation wird in Zeile 14 auf die Matrix $\texttt{E}$ angewendet.
+      \item In Zeile 19 des Programms subtrahieren wir das $\texttt{A[}k\texttt{][}i\texttt{]}$-fache
             der $i$-ten Zeile von der $k$-ten Zeile für alle $k \not= i$.  Da die $i$-te Zeile an der Position $i$
             mittlerweile den Wert $1$ hat, führt das dazu, dass danach der Wert von
-            $\mathtt{A}[k][i]$ verschwindet, so dass in der $i$-ten Spalte alle Werte
-            $\mathtt{A}[i][k]$ für $k \not= i$ gleich $0$ sind.
+            $\texttt{A[}k\texttt{][}i\texttt{]}$ verschwindet, so dass in der $i$-ten Spalte alle Werte
+            $\texttt{A[}i\texttt{][}k\texttt{]}$ für $k \not= i$ gleich $0$ sind.
             Die selbe Operation wird in Zeile 20 auf die Matrix $E$ angewendet.
       \end{enumerate}
-      Nachdem $i$ den Wert $n$ erreicht hat, ist die ursprüngliche Matrix $\mathtt{A}$ zur
+      Nachdem $i$ den Wert $n$ erreicht hat, ist die ursprüngliche Matrix $\texttt{A}$ zur
       Einheits-Matrix reduziert worden, sofern die Funktion nicht vorher in Zeile 9 ergebnislos  
-      beendet wurde.  Gleichzeitig enthält dann die Variable $\mathtt{E}$ das Inverse der
-      ursprünglich gegebenen Matrix $\mathtt{A}$.
+      beendet wurde.  Gleichzeitig enthält dann die Variable $\texttt{E}$ das Inverse der
+      ursprünglich gegebenen Matrix $\texttt{A}$.
 \end{enumerate}
 
 \begin{figure}[!ht]
@@ -1347,23 +1349,23 @@ Abbildung \ref{fig:inverse.stlx-pivot} zeigt die Implementierung der Hilfs-Funkt
                   \end{array}
                   \right.
       $
-\item Mit Hilfe des Kronecker-Deltas wird dann die Funktion \texttt{identity}, welche die Einheits-Matrix $\mathrm{E}_n$
+\item Mit Hilfe des Kronecker-Deltas wird dann die Funktion \texttt{identity}, welche die Einheits-Matrix $\textrm{E}_n$
       berechnet, implementiert.  Dabei wird die Definierten der Einheits-Matrix 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\mathrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$
+      $\ds\textrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$
       \\[0.2cm]
       unmittelbar umgesetzt.
 \item Die Funktion \texttt{pivot} sucht das betragsmäßig größte Element aus der Menge
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\bigl\{ \mathtt{A}[j][i] \mid j \in \{i,\cdots,n\}\bigr\}$
+      $\ds\bigl\{ \texttt{A[}j\texttt{][}i\texttt{]} \mid j \in \{i,\cdots,n\}\bigr\}$
       \\[0.2cm]
-      und gibt die Zeile $\mathtt{r}$ zurück, an der dieses Element gefunden wird.  Falls
-      $\mathtt{pivot}(A, n, i) = r$ ist, gilt also
+      und gibt die Zeile $\texttt{r}$ zurück, an der dieses Element gefunden wird.  Falls
+      $\texttt{pivot}(\texttt{A}, n, i) = r$ ist, gilt also
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\forall j \in \{i,\cdots,n\}: |\mathtt{A}[r][i]| \geq |\mathtt{A}[j][i]|$.
+      $\forall j \in \{i,\cdots,n\}: |\texttt{A[}r\texttt{][}i\texttt{]}| \geq |\texttt{A[}j\texttt{][}i\texttt{]}|$.
 \end{enumerate}
 
 \example
@@ -1378,11 +1380,11 @@ $A = \left(
   \end{array}\right)
 $
 \\[0.2cm]
-zu berechnen.  Dazu wird zunächst die Variable $\mathtt{E}$ mit der Einheits-Matrix $\mathrm{E}_3$
+zu berechnen.  Dazu wird zunächst die Variable $\texttt{E}$ mit der Einheits-Matrix $\textrm{E}_3$
 initialisiert.  Danach haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{lll}
     1 & 2 & 3     \\
     2 & 3 & 1     \\
@@ -1390,7 +1392,7 @@ $\mathtt{A} = \left(
   \end{array}\right)
 $
 \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{lll}
     1 & 0 & 0     \\
     0 & 1 & 0     \\
@@ -1399,20 +1401,20 @@ $\mathtt{E} = \left(
 $
  \\[0.2cm]
 \begin{enumerate}
-\item Im ersten Schritt suchen wir die Zeile der Matrix $\mathtt{A}$, für die in der ersten Spalte
-      das größte Element steht.  Im vorliegenden Fall ist das die dritte Zeile, denn es gilt $\mathtt{A}_{3,1} = 3$
+\item Im ersten Schritt suchen wir die Zeile der Matrix $\texttt{A}$, für die in der ersten Spalte
+      das größte Element steht.  Im vorliegenden Fall ist das die dritte Zeile, denn es gilt $\texttt{A[3][1]} = 3$
       und alle anderen Einträge in der ersten Spalte sind kleiner als $3$.  Daher vertauschen wir die
-      erste Zeile mit der dritten Zeile und finden für die Matrizen $\mathtt{A}$ und $\mathtt{E}$
+      erste Zeile mit der dritten Zeile und finden für die Matrizen $\texttt{A}$ und $\texttt{E}$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{lll}
     3 & 1 & 2     \\
     2 & 3 & 1     \\
     1 & 2 & 3     
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{lll}
     0 & 0 & 1     \\
     0 & 1 & 0     \\
@@ -1421,18 +1423,18 @@ $\mathtt{E} = \left(
 $
 \\[0.2cm]
 
-\item Im nächsten Schritt normalisieren wir die erste Zeile, indem wir durch $\mathtt{A}_{1,1}$
+\item Im nächsten Schritt normalisieren wir die erste Zeile, indem wir durch $\texttt{A[1][1]}$
       teilen.  Danach haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{lll}
     1 & \frac{1}{3} & \frac{2}{3} \\[0.2cm]
     2 &           3 &          1  \\[0.2cm]
     1 &           2 &          3     
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{lll}
     0 & 0 & \frac{1}{3}     \\
     0 & 1 &           0     \\
@@ -1440,21 +1442,21 @@ $\mathtt{E} = \left(
   \end{array}\right)
 $
 \\[0.2cm]
-      Unser nächstes Ziel ist es, alle Einträge $\mathtt{A}_{i,1}$ in der ersten Spalte, für die 
+      Unser nächstes Ziel ist es, alle Einträge $\texttt{A[}i\texttt{][1]}$ in der ersten Spalte, für die 
       $i \not=1$ ist, durch Addition der ersten Zeile zur $i$-ten Zeile zu entfernen.  Dazu dienen
       die folgenden beiden Schritte:
 \item Im nächsten Schritt subtrahieren wir das $2$-fache der ersten Zeile von der zweiten Zeile
       und erhalten:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 & \frac{1}{3} &  \frac{2}{3} \\[0.2cm]
     0 & \frac{7}{3} & -\frac{1}{3} \\[0.2cm]
     1 &           2 &          3     
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
     0 & 0 &  \frac{1}{3}     \\[0.2cm]
     0 & 1 & -\frac{2}{3}     \\[0.2cm]
@@ -1464,126 +1466,126 @@ $
 \item Jetzt subtrahieren wir die erste Zeile von der dritten Zeile:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 & \frac{1}{3} &  \frac{2}{3} \\[0.2cm]
     0 & \frac{7}{3} & -\frac{1}{3} \\[0.2cm]
     0 & \frac{5}{3} &  \frac{7}{3}      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
     0 & 0 &  \frac{1}{3}     \\[0.2cm] 
     0 & 1 & -\frac{2}{3}     \\[0.2cm]
     1 & 0 & -\frac{1}{3}            
   \end{array}\right)
 $
-\item In den folgenden Schritten geht es darum, die zweite Spalte der Matrix $\mathtt{A}$ in den
+\item In den folgenden Schritten geht es darum, die zweite Spalte der Matrix $\texttt{A}$ in den
       Einheits-Vektor $\vec{e}_2$ zu überführen.  Zunächst überprüfen wir, für welches $j \geq 2$
-      der Betrag $|\mathtt{A}_{j,2}|$ maximal wird.  In diesem Fall ist der Betrag in der zweiten
+      der Betrag $|\texttt{A[}j\texttt{][2]}|$ maximal wird.  In diesem Fall ist der Betrag in der zweiten
       Zeile bereits maximal, so dass wir an dieser Stelle keine Zeilen-Vertauschung vornehmen müssen.
       Wir müssen die zweite Zeile aber noch normalisieren und multiplizieren daher die zweite Zeile
-      mit $\frac{3}{7}$:
+      mit $\ds\frac{3}{7}$:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 & \frac{1}{3} &  \frac{2}{3} \\[0.2cm]
     0 &           1 & -\frac{1}{7} \\[0.2cm]
     0 & \frac{5}{3} &  \frac{7}{3}      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
     0 &           0 &  \frac{1}{3}   \\[0.2cm] 
     0 & \frac{3}{7} & -\frac{2}{7}   \\[0.2cm]
     1 &           0 & -\frac{1}{3}            
   \end{array}\right)
 $
-\item Im nächsten Schritt geht es darum, die Matrix $\mathtt{A}$ durch Addition eines geeigneten
-      Vielfachen der zweiten Zeile zur ersten Zeile so zu verändern, dass $\mathtt{A}_{2,1} = 0$
-      wird.  Wir subtrahieren daher $\frac{1}{3}$ der zweiten Zeile von der ersten Zeile und
+\item Im nächsten Schritt geht es darum, die Matrix $\texttt{A}$ durch Addition eines geeigneten
+      Vielfachen der zweiten Zeile zur ersten Zeile so zu verändern, dass $\texttt{A[2,1]} = 0$
+      wird.  Wir subtrahieren daher $\ds\frac{1}{3}$ der zweiten Zeile von der ersten Zeile und
       erhalten 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 &           0 &  \frac{5}{7} \\[0.2cm]
     0 &           1 & -\frac{1}{7} \\[0.2cm]
     0 & \frac{5}{3} &  \frac{7}{3}      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
     0 & -\frac{1}{7} &  \frac{3}{7}   \\[0.2cm] 
     0 &  \frac{3}{7} & -\frac{2}{7}   \\[0.2cm]
     1 &            0 & -\frac{1}{3}            
   \end{array}\right)
 $
-\item Anschließend subtrahieren wir $\frac{5}{3}$ der zweiten Zeile von der dritten Zeile und finden
+\item Anschließend subtrahieren wir $\ds\frac{5}{3}$ der zweiten Zeile von der dritten Zeile und finden
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 &           0 &  \frac{5}{7} \\[0.2cm]
     0 &           1 & -\frac{1}{7} \\[0.2cm]
     0 &           0 &  \frac{18}{7}      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
     0 & -\frac{1}{7} &  \frac{3}{7}   \\[0.2cm] 
     0 &  \frac{3}{7} & -\frac{2}{7}   \\[0.2cm]
     1 & -\frac{5}{7} &  \frac{1}{7}            
   \end{array}\right)
 $
-\item In den verbleibenden Schritten geht es darum, die dritte Spalte der Matrix $\mathtt{A}$ in den
+\item In den verbleibenden Schritten geht es darum, die dritte Spalte der Matrix $\texttt{A}$ in den
       Einheits-Vektor $\vec{e}_3$ zu überführen.  Wir beginnen damit, dass wir die dritte Zeile
       durch $\frac{18}{7}$ teilen:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 &           0 &  \frac{5}{7} \\[0.2cm]
     0 &           1 & -\frac{1}{7} \\[0.2cm]
     0 &           0 &            1      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
     0            & -\frac{1}{7}  &  \frac{3}{7}   \\[0.2cm] 
     0            &  \frac{3}{7}  & -\frac{2}{7}   \\[0.2cm]
     \frac{7}{18} & -\frac{5}{18} &  \frac{1}{18}            
   \end{array}\right)
 $
-\item Jetzt ziehen wir $\frac{5}{7}$ der dritten Zeile von der ersten Zeile ab:
+\item Jetzt ziehen wir $\ds\frac{5}{7}$ der dritten Zeile von der ersten Zeile ab:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 &           0 &            0 \\[0.2cm]
     0 &           1 & -\frac{1}{7} \\[0.2cm]
     0 &           0 &            1      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
    -\frac{5}{18} &  \frac{1}{18} &  \frac{7}{18}  \\[0.2cm] 
     0            &  \frac{3}{7}  & -\frac{2}{7}   \\[0.2cm]
     \frac{7}{18} & -\frac{5}{18} &  \frac{1}{18}            
   \end{array}\right)
 $
-\item Im letzten Schritt addieren wir $\frac{1}{7}$ der dritten Zeile zur zweiten Zeile:
+\item Im letzten Schritt addieren wir $\ds\frac{1}{7}$ der dritten Zeile zur zweiten Zeile:
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{A} = \left(
+$\texttt{A} = \left(
   \begin{array}[c]{rrr}
     1 &           0 &            0 \\[0.2cm]
     0 &           1 &            0 \\[0.2cm]
     0 &           0 &            1      
   \end{array}\right)
 $ \quad und \quad
-$\mathtt{E} = \left(
+$\texttt{E} = \left(
   \begin{array}[c]{rrr}
    -\frac{5}{18} &  \frac{1}{18} &  \frac{7}{18}  \\[0.2cm] 
     \frac{1}{18} &  \frac{7}{18} & -\frac{5}{18}   \\[0.2cm]
@@ -1624,7 +1626,7 @@ definieren können.  Dann berechnet der Befehl
 \texttt{B := A ** -1;}
 \\[0.2cm]
 das Inverse der Matrix \texttt{A}, allerdings rechnet \textsc{SetlX} in diesem Fall mit
-Fließkomma-Zahlen, so dass bei der Berechnung von $\mathtt{A}^{-1}$ Rundungs-Fehler auftreten.
+Fließkomma-Zahlen, so dass bei der Berechnung von $\texttt{A}^{-1}$ Rundungs-Fehler auftreten.
 Daher ist das Ergebnis dieser Rechnung wie folgt:
 \begin{verbatim}
 << << -0.27777777777777785   0.05555555555555556 0.38888888888888884>>
