@@ -15,6 +15,10 @@ Letzteres ist mit einem nicht unerheblichen technischen Aufwand verbunden.
 
 \section{Permutationen und Transpositionen}
 Wir erinnern an die Definition der \blue{Permutations-Gruppe} $\mathcal{S}_n$.
+\\[0.2cm]
+\hspace*{1.3cm}
+$\mathcal{S}_n = \bigl\{ R \subseteq \{1,\cdots,n\}\times\{1,\cdots,n\} \bigm| \mbox{$R$ ist Permutation} \bigr\}$.
+\\[0.2cm]
 Ist $R \in \mathcal{S}_n$, so hat $R$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -56,24 +60,23 @@ haben wir also
 $\ds \prod\limits_{i=1}^n \bigl(n - (i-1)\bigr) = n \cdot (n-1) \cdot \mbox{\dots} \cdot 2 \cdot 1 = n!$
 \\[0.2cm]
 Möglichkeiten bei der Wahl der Elemente $x_i$. \qed 
-\pagebreak
 
 Der folgende Begriff des {\emph{\color{blue}Vorzeichens}} oder auch
 {\emph{\color{blue}Signums}} einer Permutation ist zentral für die  
 Definition der Determinante.  Für Permutationen definieren wir eine Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}: \mathcal{S}_n \rightarrow \{-1, +1 \}$,
+$\texttt{sgn}: \mathcal{S}_n \rightarrow \{-1, +1 \}$,
 \\[0.2cm]
 von der wir später zeigen werden, dass die Gleichung
 \begin{equation}
   \label{eq:sgn-homomorph}
   \mbox{\colorbox{blue}{\framebox{\colorbox{yellow}{
-$\mathtt{sgn}(R_1 \circ R_2) = \mathtt{sgn}(R_1) \cdot \mathtt{sgn}(R_2)$}}}}
+$\texttt{sgn}(R_1 \circ R_2) = \texttt{sgn}(R_1) \cdot \texttt{sgn}(R_2)$}}}}
 \end{equation}
-für beliebige Permutationen $R_1,R_2 \in \mathcal{S}_n$ gilt,  die Funktion $\mathtt{sgn}$ ist also
+für beliebige Permutationen $R_1,R_2 \in \mathcal{S}_n$ gilt,  die Funktion $\texttt{sgn}$ ist also
 mit dem Produkt zweier Permutationen verträglich und damit ein \blue{Homomorphismus} der Gruppe
-$\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ auf die Gruppe $\langle \{-1,+1\}, 1, \cdot \rangle$.  Die Definition der Funktion $\mathtt{sgn}$ selbst
+$\langle \mathcal{S}_n, \mathtt{id}_n, \circ \rangle$ auf die Gruppe $\langle \{-1,+1\}, 1, \cdot \rangle$.  Die Definition der Funktion $\texttt{sgn}$ selbst
 ist nicht besonders aufwendig,  aber der Nachweis, dass es sich bei dieser Funktion um einen
 Gruppen-Homomorphismus handelt, erfordert  mehr Zeit, als in einer einführenden Vorlesung zur
 Verfügung steht.  Der Vollständigkeit halber ist der Beweis trotzdem in diesem Skript enthalten.
@@ -84,7 +87,7 @@ Verfügung steht.  Der Vollständigkeit halber ist der Beweis trotzdem in diesem S
   \hspace*{1.3cm}
   $\mathtt{\color{blue}inv} : \mathcal{S}_n \mapsto 2^{\mathbb{Z}_n^+ \times \mathbb{Z}_n^+}$,
   \\[0.2cm]
-  welche jeder Permutation $R \in \mathcal{S}_n$ die Menge von Paaren derjenigen natürlicher Zahlen $k$ und $l$
+  welche jeder Permutation $R \in \mathcal{S}_n$ die Menge derjeniger Paare natürlicher Zahlen $k$ und $l$
   zuordnet, für die
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -93,18 +96,18 @@ Verfügung steht.  Der Vollständigkeit halber ist der Beweis trotzdem in diesem S
   gilt.  Formal definieren wir
   \\[0.2cm]
   \hspace*{1.3cm}
-  ${\color{blue}\mathtt{inv}(R)} := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
+  ${\color{blue}\texttt{inv}(R)} := \bigl\{ \pair(k,l) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid k < l \wedge  R(k) > R(l) \bigr\}$.
   \\[0.2cm]
-  Die Menge $\mathtt{inv}(R)$ bezeichnen wir als die Menge der {\emph{\color{blue}Inversionen}} von $R$.
+  Die Menge $\texttt{inv}(R)$ bezeichnen wir als die Menge der {\emph{\color{blue}Inversionen}} von $R$.
   Darauf aufbauend definieren wir das {\emph{\color{blue}Vorzeichen}} (oder auch
   {\emph{\color{blue}Signum}}) der Permutation 
   $R$ als 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\blue{\mathtt{sgn}(R)} := (-1)^{\mathtt{card}(\mathtt{inv}(R))} = \left\{
+  $\blue{\texttt{sgn}(R)} := (-1)^{\mathtt{card}(\texttt{inv}(R))} = \left\{
    \begin{array}{ll}
-     +1 & \mbox{falls  $\,\mathtt{card}\bigl(\mathtt{inv}(R)\bigr) \,\texttt{\%}\, 2 = 0$;} \\[0.2cm]     
-     -1 & \mbox{falls  $\,\mathtt{card}\bigl(\mathtt{inv}(R)\bigr) \,\texttt{\%}\, 2 = 1$.} 
+     +1 & \mbox{falls  $\,\mathtt{card}\bigl(\texttt{inv}(R)\bigr) \,\texttt{\%}\, 2 = 0$;} \\[0.2cm]     
+     -1 & \mbox{falls  $\,\mathtt{card}\bigl(\texttt{inv}(R)\bigr) \,\texttt{\%}\, 2 = 1$.} 
    \end{array}
    \right.
   $ %$
@@ -140,8 +143,7 @@ als Listen dargestellt.
 \vspace*{-0.3cm}
 \caption{Berechnung des Signums einer Permutation.}
 \label{fig:signum.stlx}
-\end{figure}
-
+\end{figure}  %$
 
 \exercise
 Es sei $\mathtt{id}_n \in \mathcal{S}_n$ die identische Permutation aus $R_n$.  Stellen wir diese Permutation
@@ -151,14 +153,14 @@ durch eine Liste dar, so gilt also
 $\mathtt{id}_n = [1,2,3, \cdots, n]$.
 \\[0.2cm]
 Zeigen Sie, dass für alle natürlichen Zahlen $n$ die Gleichung
- $\mathtt{sgn}(\mathtt{id}_n) = 1$
+ $\texttt{sgn}(\mathtt{id}_n) = 1$
  gilt.  \eoxs
 
 
 \exercise
 Überlegen Sie, für welche Permutation $R \in \mathcal{S}_n$ die Kardinalität der Menge
-$\mathtt{inv}(R)$ maximal wird und berechnen Sie für diese Permutationen den Ausdruck
-$\mathtt{card}(\mathtt{inv}(R))$. \eox
+$\texttt{inv}(R)$ maximal wird und berechnen Sie für diese Permutationen den Ausdruck
+$\mathtt{card}(\texttt{inv}(R))$. \eox
 
 Im Allgemeinen können Permutationen beliebig kompliziert sein.  Es lohnt sich, zunächst ganz
 spezielle Permutationen zu betrachten, die nur zwei Elemente vertauschen.  Das führt zu der
@@ -219,16 +221,16 @@ unwichtig, denn jede Permutation $\sigma \in \mathcal{S}_n$ kann in trivialer We
 $\sigma'\in \mathcal{S}_m$ erweitert werden, falls $m \geq n$ gilt. \eox
 
 Transpositionen sind einfacher als beliebige Permutationen und in der nächsten Aufgabe werden wir
-sehen, dass sich  für eine Transpositionen $\tau$ das Vorzeichen $\mathtt{sgn}(\tau)$ sofort berechnen lässt, denn es gilt
-$\mathtt{sgn}\bigl(\pair(k,l)\bigr) = -1$.
+sehen, dass sich  für eine Transpositionen $\tau$ das Vorzeichen $\texttt{sgn}(\tau)$ sofort berechnen lässt, denn es gilt
+$\texttt{sgn}\bigl(\pair(k,l)\bigr) = -1$.
 
 \exercise
 Die Transposition $\tau$ habe die Form  $\tau = \pair(k,l)$ 
-und es gelte $k < l$.  Berechnen Sie die Ausdrücke $\mathtt{inv}(\tau)$ und $\mathtt{sgn}(\tau)$.
+und es gelte $k < l$.  Berechnen Sie die Ausdrücke $\texttt{inv}(\tau)$ und $\texttt{sgn}(\tau)$.
 \eox
 
 \subsection{Die Homomorphie-Eigenschaft der Signum-Funktion$^*$}
-Der Rest dieses Abschnitts beschäftigt sich mit dem Nachweis, dass die Funktion $\mathtt{sgn}$ ein
+Der Rest dieses Abschnitts beschäftigt sich mit dem Nachweis, dass die Funktion $\texttt{sgn}$ ein
 Gruppen-Homomorphismus ist.  Die in der folgenden Aufgabe zu zeigende Eigenschaft wird später mehrfach
 benötigt. 
 \pagebreak
@@ -344,10 +346,10 @@ Wir beweisen diesen Satz durch vollständige Induktion nach $n$.
 Ist $\tau = \pair(k, k+1)$ eine elementare Transposition, so gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{inv}(\tau) = \bigl\{ \pair(k, k+1) \bigr\}$
+  $\texttt{inv}(\tau) = \bigl\{ \pair(k, k+1) \bigr\}$
   \\[0.2cm]
   und daraus folgt sofort
-  $\mathtt{sgn}(\pair(k, k+1)) = -1$.
+  $\texttt{sgn}(\pair(k, k+1)) = -1$.
 \eoxs
 
 \begin{Lemma} \hspace*{\fill} \\
@@ -438,27 +440,27 @@ weniger geübten Studenten leichter nachvollziehbar als die entsprechenden Beweis
   Es sei $\sigma \in \mathcal{S}_n$ und $\tau = \pair(k, k + 1)$ sei eine elementare Transposition.  Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau \circ \sigma) = - \mathtt{sgn}(\sigma)$.
+  $\texttt{sgn}(\tau \circ \sigma) = - \texttt{sgn}(\sigma)$.
 \end{Satz}
 
 \proof
-Das Signum einer Permutation $\sigma$ wird mit Hilfe der Menge der Inversionen $\mathtt{inv}(\sigma)$
-berechnet, wobei die Menge $\mathtt{inv}(\sigma)$ als
+Das Signum einer Permutation $\sigma$ wird mit Hilfe der Menge der Inversionen $\texttt{inv}(\sigma)$
+berechnet, wobei die Menge $\texttt{inv}(\sigma)$ als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(\sigma) := \bigl\{ \pair(i,j) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid i < j \wedge \sigma(i) > \sigma(j) \bigr\}$
+$\texttt{inv}(\sigma) := \bigl\{ \pair(i,j) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid i < j \wedge \sigma(i) > \sigma(j) \bigr\}$
 \\[0.2cm]
 definiert ist.  Zur Vereinfachung der Notation definieren wir (nur für diesen Beweis) die Menge
 \\[0.2cm]
 \hspace*{1.3cm}
 $P := \bigl\{ \pair(i,j) \in \mathbb{Z}_n^+ \times \mathbb{Z}_n^+ \mid i < j \bigr\}$.
 \\[0.2cm]
-Damit schreibt sich die Menge $\mathtt{inv}(\sigma)$ kürzer als
+Damit schreibt sich die Menge $\texttt{inv}(\sigma)$ kürzer als
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(\sigma) = \bigl\{ \pair(i,j) \in P \mid \sigma(i) > \sigma(j) \bigr\}$.
+$\texttt{inv}(\sigma) = \bigl\{ \pair(i,j) \in P \mid \sigma(i) > \sigma(j) \bigr\}$.
 \\[0.2cm]
-Wir müssen untersuchen, wie sich die Mengen $\mathtt{inv}(\sigma)$ und $\mathtt{inv}(\tau \circ \sigma)$
+Wir müssen untersuchen, wie sich die Mengen $\texttt{inv}(\sigma)$ und $\texttt{inv}(\tau \circ \sigma)$
 unterscheiden.  Dafür zerlegen wir die Menge $P$ in sechs Teile:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -474,7 +476,7 @@ Diese Mengen werden wie folgt definiert:
 \item $P_5 := \bigl\{ \pair(i,j) \in P \mid i < k \wedge j = k+1 \bigr\}$, 
 \item $P_6 := \bigl\{ \pair(k,k+1) \bigr\}$.
 \end{enumerate} 
-Entsprechend der Zerlegung von $P$ können wir nun auch die Menge $\mathtt{inv}(\sigma)$ in sechs
+Entsprechend der Zerlegung von $P$ können wir nun auch die Menge $\texttt{inv}(\sigma)$ in sechs
 paarweise disjunkte Teile zerlegen.  Wir definieren
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -483,9 +485,9 @@ $A_s := \bigl\{ \pair(i,j) \in P_s \mid \sigma(i) > \sigma(j) \bigr\}$ \quad für
 Damit gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(\sigma) = A_1 \uplus A_2 \uplus A_3 \uplus A_4 \uplus A_5 \uplus A_6$. 
+$\texttt{inv}(\sigma) = A_1 \uplus A_2 \uplus A_3 \uplus A_4 \uplus A_5 \uplus A_6$. 
 \\[0.2cm]
-Zur Berechnung von $\mathtt{inv}(\tau \circ \sigma)$ definieren wir entsprechend 
+Zur Berechnung von $\texttt{inv}(\tau \circ \sigma)$ definieren wir entsprechend 
 \\[0.2cm]
 \hspace*{1.3cm}
 $B_s := \bigl\{ \pair(i,j) \in P_s \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\}$ \quad für $s \in \{1,\cdots,6\}$.
@@ -493,7 +495,7 @@ $B_s := \bigl\{ \pair(i,j) \in P_s \mid \sigma(\tau(i)) > \sigma(\tau(j)) \bigr\
 Damit gilt offenbar
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}(\tau \circ \sigma) = B_1 \uplus B_2 \uplus B_3 \uplus B_4 \uplus B_5 \uplus B_6$. 
+$\texttt{inv}(\tau \circ \sigma) = B_1 \uplus B_2 \uplus B_3 \uplus B_4 \uplus B_5 \uplus B_6$. 
 \\[0.2cm]
 Als nächstes vergleichen wir die Mengen $A_s$ und $B_s$ für alle $s \in \{1,\cdots,6\}$.
 Unser Ziel ist es, folgende Gleichungen nachzuweisen:
@@ -508,14 +510,14 @@ Unser Ziel ist es, folgende Gleichungen nachzuweisen:
 Daraus folgt dann, dass auch
 \\[0.2cm]
 \hspace*{1.3cm}
-$\bigl|\mathtt{card}\bigl(\mathtt{inv}(\sigma)\bigr)-\mathtt{card}\bigl(\mathtt{inv}(\tau \circ \sigma)\bigr)\bigr| = 1$
+$\bigl|\mathtt{card}\bigl(\texttt{inv}(\sigma)\bigr)-\mathtt{card}\bigl(\texttt{inv}(\tau \circ \sigma)\bigr)\bigr| = 1$
 \\[0.2cm]
 und nach der Definition des Signums als 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}(\sigma) = (-1)^{\mathtt{card}(\mathtt{inv}(\sigma))}$
+$\texttt{sgn}(\sigma) = (-1)^{\mathtt{card}(\texttt{inv}(\sigma))}$
 \\[0.2cm]
-folgt daraus, dass $\mathtt{sgn}(\sigma)$ und $\mathtt{sgn}(\tau \circ \sigma)$ verschiedenes Vorzeichen
+folgt daraus, dass $\texttt{sgn}(\sigma)$ und $\texttt{sgn}(\tau \circ \sigma)$ verschiedenes Vorzeichen
 haben, also die Behauptung.  Was bleibt ist der Nachweis der oben bezüglich der Kardinalitäten der
 Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch eine Fallunterscheidung.
 \begin{enumerate}
@@ -679,7 +681,7 @@ Mengen $A_i$ und $B_i$ aufgestellten Gleichungen.  Dieser Nachweis erfolgt durch
   Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_k \circ \sigma) = (-1)^k \cdot \mathtt{sgn}(\sigma)$.
+  $\texttt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_k \circ \sigma) = (-1)^k \cdot \texttt{sgn}(\sigma)$.
 \end{Lemma}
 
 \proof
@@ -695,11 +697,11 @@ Der Beweis erfolgt durch Induktion über $k$.
              \hspace*{1.3cm}
              $
              \begin{array}[b]{lcl}
-                 \mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma)
-                 & = & \mathtt{sgn}\bigl(\tau_1 \circ (\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma)\bigr) \\[0.2cm]
-                 & = & -\mathtt{sgn}(\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma) \\[0.2cm]
-                 & \stackrel{IV}{=} & - (-1)^k \cdot \mathtt{sgn}(\sigma) \\[0.2cm]
-                 & = & (-1)^{k+1} \cdot \mathtt{sgn}(\sigma).  
+                 \texttt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma)
+                 & = & \texttt{sgn}\bigl(\tau_1 \circ (\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma)\bigr) \\[0.2cm]
+                 & = & -\texttt{sgn}(\tau_2 \circ \mbox{\dots} \circ \tau_{k+1} \circ \sigma) \\[0.2cm]
+                 & \stackrel{IV}{=} & - (-1)^k \cdot \texttt{sgn}(\sigma) \\[0.2cm]
+                 & = & (-1)^{k+1} \cdot \texttt{sgn}(\sigma).  
              \end{array}
              $\qed
 \end{enumerate}
@@ -708,7 +710,7 @@ Der Beweis erfolgt durch Induktion über $k$.
   Ist $\tau \in \mathcal{S}_n$ eine Transposition und ist $\sigma \in \mathcal{S}_n$, so gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau \circ \sigma) = -\mathtt{sgn}(\sigma)$.
+  $\texttt{sgn}(\tau \circ \sigma) = -\texttt{sgn}(\sigma)$.
 \end{Korollar}
 
 \proof
@@ -719,7 +721,7 @@ Produkt einer ungeraden Anzahl von elementaren Transpositionen darstellen lässt.
   Sind $\tau_1, \cdots, \tau_k \in \mathcal{S}_n$ Transpositionen, so gilt 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_k) = (-1)^k$.
+  $\texttt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_k) = (-1)^k$.
 \end{Korollar}
 
 \proof
@@ -728,14 +730,14 @@ Die Behauptung kann mit Hilfe des letzten Korollars durch eine Induktion nach $k
 \item[I.A.:] $k=1$. Es gilt
              \\[0.2cm]
              \hspace*{1.3cm}
-             $\mathtt{sgn}(\tau) = \mathtt{sgn}(\tau \circ \mathtt{id}_n) = -\mathtt{sgn}(\mathtt{id}_n) = -1 = (-1)^1$.
+             $\texttt{sgn}(\tau) = \texttt{sgn}(\tau \circ \mathtt{id}_n) = -\texttt{sgn}(\mathtt{id}_n) = -1 = (-1)^1$.
 \item[I.A.:] $k \mapsto k+1$. Wir haben
              \\[0.2cm]
              \hspace*{1.3cm}
              $
              \begin{array}[b]{lcl}
-               \mathtt{sgn}(\tau_1 \circ \tau_2 \circ \mbox{\dots} \circ \tau_{k+1}) 
-               & = & - \mathtt{sgn}(\tau_2 \circ \mbox{\dots} \circ \tau_{k+1}) \\[0.2cm]
+               \texttt{sgn}(\tau_1 \circ \tau_2 \circ \mbox{\dots} \circ \tau_{k+1}) 
+               & = & - \texttt{sgn}(\tau_2 \circ \mbox{\dots} \circ \tau_{k+1}) \\[0.2cm]
                & \stackrel{IV}{=} & - (-1)^k \\[0.2cm]
                & = & (-1)^{k+1}.
              \end{array}
@@ -743,15 +745,15 @@ Die Behauptung kann mit Hilfe des letzten Korollars durch eine Induktion nach $k
 \end{enumerate}
 
 Da sich jede Permutation $\sigma \in \mathcal{S}_n$ als Produkt von Transpositionen darstellen lässt,
-sehen wir nun, dass das Vorzeichen $\mathtt{sgn}(\sigma)$ genau dann den Wert $+1$ hat, wenn $\sigma$ sich
-als Produkt einer geraden Anzahl von Permutationen darstellen lässt.  Andernfalls hat $\mathtt{sgn}(\sigma)$
+sehen wir nun, dass das Vorzeichen $\texttt{sgn}(\sigma)$ genau dann den Wert $+1$ hat, wenn $\sigma$ sich
+als Produkt einer geraden Anzahl von Permutationen darstellen lässt.  Andernfalls hat $\texttt{sgn}(\sigma)$
 den Wert $-1$.  Damit können wir nun den folgenden Satz beweisen.
 
 \begin{Satz} \label{satz:signum}
 Es seien $\varrho_1, \varrho_2 \in \mathcal{S}_n$.  Dann gilt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}(\varrho_1 \circ \varrho_2) =\mathtt{sgn}(\varrho_1) \circ \mathtt{sgn}(\varrho_2)$.
+$\texttt{sgn}(\varrho_1 \circ \varrho_2) =\texttt{sgn}(\varrho_1) \circ \texttt{sgn}(\varrho_2)$.
 \end{Satz}
 
 \proof
@@ -765,15 +767,15 @@ $\varrho_1 = \sigma_1 \circ \mbox{\dots} \circ \sigma_{k}$ \quad und \quad
 \\[0.2cm]
 gilt.   Nach dem letzten Korollar haben wir dann: 
 \begin{enumerate}
-\item $\mathtt{sgn}(\varrho_1) = \mathtt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k}) = (-1)^k$, 
-\item $\mathtt{sgn}(\varrho_2) = \mathtt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^l$,
-\item $\mathtt{sgn}(\varrho_1 \circ \varrho_2) = 
-       \mathtt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k} \circ \tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^{k+l}$.
+\item $\texttt{sgn}(\varrho_1) = \texttt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k}) = (-1)^k$, 
+\item $\texttt{sgn}(\varrho_2) = \texttt{sgn}(\tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^l$,
+\item $\texttt{sgn}(\varrho_1 \circ \varrho_2) = 
+       \texttt{sgn}(\sigma_1 \circ \mbox{\dots} \circ \sigma_{k} \circ \tau_1 \circ \mbox{\dots} \circ \tau_l) = (-1)^{k+l}$.
 \end{enumerate}
 Also haben wir insgesamt
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{sgn}(\varrho_1 \circ \varrho_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \mathtt{sgn}(\varrho_1) \cdot \mathtt{sgn}(\varrho_2)$.  
+$\texttt{sgn}(\varrho_1 \circ \varrho_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \texttt{sgn}(\varrho_1) \cdot \texttt{sgn}(\varrho_2)$.  
 \qed
 
 \section{Die Definition der Determinante nach Leibniz}
@@ -791,8 +793,8 @@ $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir d
 \\[0.2cm]
 \hspace*{1.3cm}
 \colorbox{blue}{\framebox{\colorbox{yellow}{
-$\ds\mathtt{det}(A) :=  \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)} 
-  := \sum \Bigl\{ \mathtt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \bigm| \sigma \in \mathcal{S}_n \Bigr\}
+$\ds\texttt{det}(A) :=  \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)} 
+  := \sum \Bigl\{ \texttt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \bigm| \sigma \in \mathcal{S}_n \Bigr\}
 $.}}}
 
 \example
@@ -807,7 +809,7 @@ $A = \left(
   \right)
 $
 \\[0.2cm]
-Zur Berechnung von $\mathtt{det}(A)$ müssen wir uns überlegen, wie $\mathcal{S}_2$ aussieht.  Es gilt
+Zur Berechnung von $\texttt{det}(A)$ müssen wir uns überlegen, wie $\mathcal{S}_2$ aussieht.  Es gilt
 \\[0.2cm]
 \hspace*{1.3cm}
 $\mathcal{S}_2 := \bigl\{ [1,2], [2,1] \bigr\}$.
@@ -815,19 +817,19 @@ $\mathcal{S}_2 := \bigl\{ [1,2], [2,1] \bigr\}$.
 Für die Permutation $[1,2]$ finden wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}([1,2]) = \{\}$ \quad und damit gilt \quad 
-$\mathtt{sgn}([1,2]) = (-1)^0 = +1$.
+$\texttt{inv}([1,2]) = \{\}$ \quad und damit gilt \quad 
+$\texttt{sgn}([1,2]) = (-1)^0 = +1$.
 \\[0.2cm]
 Für die  Permutation $[2,1]$ ergibt sich
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{inv}([2,1]) = \{ \pair(1,2) \}$ \quad und damit gilt \quad
-$\mathtt{sgn}([2,1]) = (-1)^1 = -1$.
+$\texttt{inv}([2,1]) = \{ \pair(1,2) \}$ \quad und damit gilt \quad
+$\texttt{sgn}([2,1]) = (-1)^1 = -1$.
 \\[0.2cm]
 Insgesamt haben wir
 \\[0.2cm]
 \hspace*{0.5cm}
-$\mathtt{det}(A) = \mathtt{det}\left(\begin{array}{ll}
+$\texttt{det}(A) = \texttt{det}\left(\begin{array}{ll}
     a_{1,1} & a_{1,2} \\[0.2cm] 
     a_{2,1} & a_{2,2} 
   \end{array}
@@ -850,12 +852,12 @@ $A = \left(
   \right),
 $
 \\[0.2cm]
-so finden wir für $\mathtt{det}(A)$ die folgende Formel:
+so finden wir für $\texttt{det}(A)$ die folgende Formel:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}{lcl}
-  \mathtt{det}(A) & = & a_{1,1} \cdot a_{2,2} \cdot a_{3,3}  \\
+  \texttt{det}(A) & = & a_{1,1} \cdot a_{2,2} \cdot a_{3,3}  \\
                   & + & a_{1,2} \cdot a_{2,3} \cdot a_{3,1}  \\
                   & + & a_{1,3} \cdot a_{2,1} \cdot a_{3,2}  \\
                   & - & a_{3,1} \cdot a_{2,2} \cdot a_{1,3}  \\
@@ -1001,12 +1003,12 @@ Wir zerlegen den Beweis in zwei Teile:
 \item $\{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \} \subseteq \mathcal{S}_n$.
 
       Der Nachweis dieser Inklusion folgt aus der Tatsache, dass die Gruppe der Permutationen
-      $\mathcal{S}_n$ unter Multiplikation abgeschlossen ist, was  
-      $\tau \circ \mu \in \mathcal{S}_n$ für alle $\mu \in \mathcal{S}_n$ impliziert.
+      $\mathcal{S}_n$ unter dem relationalen Produkt abgeschlossen ist, was $\tau \circ \mu \in \mathcal{S}_n$ für alle $\mu \in \mathcal{S}_n$ impliziert.
 \item $\mathcal{S}_n \subseteq \{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \}$.
 
       Sei $\sigma \in \mathcal{S}_n$.  Es ist zu zeigen, dass es eine Permutation $\mu \in \mathcal{S}_n$ gibt,
-      so dass $\sigma = \tau \circ \mu$ gilt.  Wir definieren diese Permutation $\mu$ als
+      so dass sich $\sigma$ als das relationale Produkt $\tau \circ \mu$ schreiben lässt.  Wir definieren diese
+      Permutation $\mu$ als 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\mu := \tau \circ \sigma$.
@@ -1033,7 +1035,7 @@ $A = \left(
   \right)
 $
 \\[0.2cm]
-angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = \bigl(a_{i,j}\bigr)_{1 \leq i \leq n \atop 1 \leq j \leq n}$, 
+angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = \bigl(a_{i,j}\bigr)_{i = 1,\cdots n \atop j=1,\cdots n}$, 
 es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1041,16 +1043,16 @@ $\vec{a}_i = [a_{i,1}, \cdots, a_{i,n}]$.
 
 
 \begin{Satz}
-  Die Funktion $\mathtt{det}(A)$ ist \emph{\color{blue}alternierend}: Vertauschen wir zwei Zeilen der Matrix
+  Die Funktion $\texttt{det}(A)$ ist \emph{\color{blue}alternierend}: Vertauschen wir zwei Zeilen der Matrix
   $A$, so dreht sich das Vorzeichen der Determinante um, genauer gilt für $k,l \in \{1,\cdots,n\}$
   mit $k < l$:
   \\[0.2cm]
   \hspace*{1.3cm}
-$\mathtt{det}\left(
+$\texttt{det}\left(
   \begin{array}{ll}
     \vec{a}_1 \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
-  \right) = - \mathtt{det}\left(
+  \right) = - \texttt{det}\left(
   \begin{array}{ll}
     \vec{a}_1 \\ \vdots \\ \vec{a_k} \\ \vdots \\ \vec{a}_l \\ \vdots \\ \vec{a}_n
   \end{array} 
@@ -1090,44 +1092,44 @@ Nach Definition der Determinante gilt
 \hspace*{0.8cm}
 $
 \begin{array}[b]{lcl}
-\mathtt{det}\bigl(\tau(A)\bigr) & = & \ds
- \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{\tau(1),\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{\tau(k),\sigma(k)} \cdot 
+\texttt{det}\bigl(\tau(A)\bigr) & = & \ds
+ \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{\tau(1),\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{\tau(k),\sigma(k)} \cdot 
             \cdot  \mbox{$\dots$} \cdot a_{\tau(l),\sigma(l)} \cdot  \mbox{$\dots$} \cdot a_{\tau(n),\sigma(n)} \\[0.5cm]
 & = & \ds
- \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} 
+ \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} 
             \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}, \\[0.4cm]
-& & \mbox{denn $\tau(i) = i$ für alle $i \not\in \{k,l\}$ und $\tau(k) = l$ und $\tau(l) = k$.} \\[0.2cm]
+& & \mbox{denn $\tau(i) = i$ für alle $i \not\in \{k,l\}$, $\tau(k) = l$ und $\tau(l) = k$.} \\[0.2cm]
 & = & \ds
- \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} 
+ \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{1,\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(l)} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(k)} \cdot \mbox{$\dots$} \cdot a_{n,\sigma(n)}
             \\[0.4cm]
 & & \mbox{Hier wird nur das Kommutativ-Gesetz benutzt.} \\[0.2cm]
 & = & \ds
- \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
+ \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{1,\sigma(\tau(1))} \cdot \mbox{$\dots$} \cdot a_{k,\sigma(\tau(k))} 
             \cdot \mbox{$\dots$} \cdot a_{l,\sigma(\tau(l))} \cdot \mbox{$\dots$} \cdot
             a_{n,\sigma(\tau(n))}, \\[0.4cm]
-& & \mbox{denn $\tau(k) = l$ und $\tau(l) = k$ und für $i \not\in \{k,l\}$ gilt $\tau(i) = i$.} \\[0.2cm]
+& & \mbox{denn $\tau(k) = l$, $\tau(l) = k$ und für $i \not\in \{k,l\}$ gilt $\tau(i) = i$.} \\[0.2cm]
 & = & \ds
- \sum\limits_{\sigma \in \mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot a_{1,\tau\circ\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\tau\circ\sigma(n)} \\[0.4cm]
+ \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{1,\tau\circ\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\tau\circ\sigma(n)} \\[0.4cm]
 & = & \ds
- \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\tau\circ\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
+ \sum\limits_{\mu \in \mathcal{S}_n} \texttt{sgn}(\tau\circ\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\tau\circ(\tau\circ\mu)(n)} \\[0.4cm]
 && \mbox{In diesem Schritt haben wir alle $\sigma$ durch $\tau\circ\mu$ ersetzt,} \\
 && \mbox{was nach dem Lemma \ref{lemma:sigmatau} erlaubt ist.} \\[0.2cm]
 & = & \ds
- \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\tau) \cdot \mathtt{sgn}(\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
+ \sum\limits_{\mu \in \mathcal{S}_n} \texttt{sgn}(\tau) \cdot \texttt{sgn}(\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\tau\circ(\tau\circ\mu)(n)}, \\[0.4cm]
-&& \mbox{denn nach Satz \ref{satz:signum} gilt $\mathtt{sgn}(\tau \circ \mu) = \mathtt{sgn}(\tau) \cdot \mathtt{sgn}(\mu)$} \\[0.2cm]
+&& \mbox{denn nach Satz \ref{satz:signum} gilt $\texttt{sgn}(\tau \circ \mu) = \texttt{sgn}(\tau) \cdot \texttt{sgn}(\mu)$} \\[0.2cm]
 & = & \ds
- - \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\mu) \cdot a_{1,(\tau\circ\tau)\circ\mu(1)} \cdot \mbox{$\dots$} \cdot 
+ - \sum\limits_{\mu \in \mathcal{S}_n} \texttt{sgn}(\mu) \cdot a_{1,(\tau\circ\tau)\circ\mu(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,(\tau\circ\tau)\circ\mu(n)}, \\[0.4cm]
-&& \mbox{denn da $\tau$ eine Transposition ist, gilt $\mathtt{sgn}(\tau) = -1$.} \\
+&& \mbox{denn da $\tau$ eine Transposition ist, gilt $\texttt{sgn}(\tau) = -1$.} \\
 && \mbox{Außerdem haben wir benutzt, dass $\tau \circ(\tau\circ\mu) = (\tau \circ\tau)\circ\mu$ ist.} \\[0.2cm]
 & = & \ds
- - \sum\limits_{\mu \in \mathcal{S}_n} \mathtt{sgn}(\mu) \cdot a_{1,\mu(1)} \cdot \mbox{$\dots$} \cdot 
+ - \sum\limits_{\mu \in \mathcal{S}_n} \texttt{sgn}(\mu) \cdot a_{1,\mu(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\mu(n)} \\[0.4cm]
 && \mbox{Da $\tau$ eine Transposition ist, gilt $\tau \circ \tau = \mathtt{id}_n$ und $\mathtt{id}_n \circ \mu = \mu$.} \\[0.2cm]
-& = & -\mathtt{det}(A).
+& = & -\texttt{det}(A).
  \end{array}
 $
 \qed
@@ -1135,7 +1137,7 @@ $
 \remark
 Der gerade bewiesene Satz ist der am schwersten zu beweisende Satz in der Theorie der
 Determinanten.  Das liegt daran, dass dies der einzige Satz in dieser Theorie ist, bei dessen Beweis
-wir die Eigenschaften der Vorzeichen-Funktion $\mathtt{sgn}$ tatsächlich benötigen.  
+wir die Eigenschaften der Vorzeichen-Funktion $\texttt{sgn}$ tatsächlich benötigen.  
 \eoxs
 
 \exercise
@@ -1168,11 +1170,11 @@ $.
 Zeigen Sie, dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\texttt{det}(A^\mathrm{T}) = \mathtt{det}(A)$
+$\texttt{det}(A^\mathrm{T}) = \texttt{det}(A)$
 \\[0.2cm]
 gilt.  Zum Nachweis dieses Satzes ist es nützlich, die beiden folgenden Lemmata nachzuweisen:
 \begin{enumerate}
-\item $\mathcal{S}^{-1} := \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$.
+\item $\mathcal{S}_n^{-1} := \{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$.
 \item $\bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\} = \bigl\{ \langle \sigma(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$
        \quad für alle $\sigma \in \mathcal{S}_n$.
        \eox
@@ -1253,25 +1255,25 @@ Wir zeigen zunächst die beiden als Hinweis gegebenen Lemmata.
 Nach diesen Vorüberlegungen führen wir jetzt den eigentlichen Beweis der Behauptung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}\bigl(A^\mathrm{T}\bigr) = \mathtt{det}(A)$.
+$\texttt{det}\bigl(A^\mathrm{T}\bigr) = \texttt{det}(A)$.
 \\[0.2cm]
-Wir berechnen dazu $\mathtt{det}\bigl(A^\mathrm{T}\bigr)$ nach der Formel von Leibniz:
+Wir berechnen dazu $\texttt{det}\bigl(A^\mathrm{T}\bigr)$ nach der Formel von Leibniz:
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-      \mathtt{det}\bigl(A^\mathrm{T}\bigr) 
-& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)}^\mathrm{T} \\[0.4cm] 
-& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{\sigma(i),i} \\[0.4cm] 
+      \texttt{det}\bigl(A^\mathrm{T}\bigr) 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \texttt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)}^\mathrm{T} \\[0.4cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \texttt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{\sigma(i),i} \\[0.4cm] 
 &   & \mbox{wegen $a_{i,j}^\mathrm{T} = a_{j,i}$} \\[0.2cm] 
-& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{j=1}^n a_{j,\sigma^{-1}(j)} \\[0.4cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \texttt{sgn}(\sigma) \cdot \prod\limits_{j=1}^n a_{j,\sigma^{-1}(j)} \\[0.4cm] 
 &   & \mbox{wegen $\bigl\{ \langle j, \sigma^{-1}(j)\rangle \mid j \in \{1,\cdots,n\} \bigr\} = \bigl\{ \langle \sigma(i),i\rangle \mid i \in \{1,\cdots,n\} \bigr\}$} 
       \\[0.2cm] 
-& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}\bigl(\sigma^{-1}\bigr) \cdot \prod\limits_{j=1}^n a_{j,\sigma(j)} \\[0.4cm] 
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \texttt{sgn}\bigl(\sigma^{-1}\bigr) \cdot \prod\limits_{j=1}^n a_{j,\sigma(j)} \\[0.4cm] 
 &   & \mbox{wegen $\{ \sigma^{-1} \mid \sigma \in \mathcal{S}_n \} = \mathcal{S}_n$} \\[0.2cm] 
-& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \mathtt{sgn}(\sigma) \cdot \prod\limits_{j=1}^n a_{j,\sigma(j)} \\[0.4cm] 
-&   & \mbox{wegen $\mathtt{sgn}\bigl(\sigma^{-1}\bigr) = \mathtt{sgn}(\sigma)$} \\[0.2cm] 
-& = & \mathtt{det}(A)
+& = & \ds\sum\limits_{\sigma\in\mathcal{S}_n} \texttt{sgn}(\sigma) \cdot \prod\limits_{j=1}^n a_{j,\sigma(j)} \\[0.4cm] 
+&   & \mbox{wegen $\texttt{sgn}\bigl(\sigma^{-1}\bigr) = \texttt{sgn}(\sigma)$} \\[0.2cm] 
+& = & \texttt{det}(A)
 \end{array}
 $
 \\[0.2cm]
@@ -1281,17 +1283,17 @@ Damit ist der Beweis abgeschlossen.  \qed
 Zeigen Sie, dass für die $n \times n$ Einheits-Matrix $\mathrm{E}_n = (\delta_{i,j})_{{i =1,\cdots n} \atop {j=1,\cdots,n}}$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(\mathrm{E}_n) = 1$
+$\texttt{det}(\mathrm{E}_n) = 1$
 \\[0.2cm]
 gilt. 
 \eoxs
 
 \exercise 
-Zeigen Sie, dass die Funktion $\mathtt{det}$ bezüglich jeder Zeile der Matrix \emph{\color{blue}additiv} ist: Zeigen Sie
+Zeigen Sie, dass die Funktion $\texttt{det}$ bezüglich jeder Zeile der Matrix \emph{\color{blue}additiv} ist: Zeigen Sie
 also, dass in dem Fall, dass die Matrix $A$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}\left(
+$\texttt{det}\left(
   \begin{array}{ll}
     \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} \right)
@@ -1305,22 +1307,22 @@ $\vec{a}_k = \vec{b} + \vec{c}$
 schreiben lässt, das Folgende gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-$\mathtt{det}\left(
+$\texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right) =
-\mathtt{det}\left(
+\texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \vec{b} + \vec{c}\\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
- = \mathtt{det}\left(
+ = \texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \vec{b} \\ \vdots \\ \vec{a}_n
   \end{array}  \right)
 +
-   \mathtt{det}\left(
+   \texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \vec{c} \\ \vdots \\ \vec{a}_n
   \end{array} 
@@ -1329,11 +1331,11 @@ $.
 \eoxs
 
 \exercise 
-Zeigen Sie, dass die Funktion $\mathtt{det}$ bezüglich jeder Zeile der Matrix \emph{\color{blue}homogen} ist: Zeigen Sie
+Zeigen Sie, dass die Funktion $\texttt{det}$ bezüglich jeder Zeile der Matrix \emph{\color{blue}homogen} ist: Zeigen Sie
 also, dass in dem Fall, dass die Matrix $A$ die Form
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}\left(
+$\texttt{det}\left(
   \begin{array}{ll}
     \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} \right)
@@ -1347,17 +1349,17 @@ $\vec{a}_k = \lambda \cdot \vec{b}$
 schreiben lässt, das Folgende gilt:
   \\[0.2cm]
   \hspace*{1.3cm}
-$\mathtt{det}\left(
+$\texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right) =
-\mathtt{det}\left(
+\texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \lambda \cdot \vec{b} \\ \vdots \\ \vec{a}_n
   \end{array} 
   \right)
- = \lambda \cdot \mathtt{det}\left(
+ = \lambda \cdot \texttt{det}\left(
   \begin{array}{c}
     \vec{a}_1 \\ \vdots \\ \vec{b} \\ \vdots \\ \vec{a}_n
   \end{array}  \right)
@@ -1367,35 +1369,35 @@ $.
 
 \remark
 Die letzten Lemmata und die dazugehörigen Aufgaben können wir so zusammenfassen, dass wir sagen, dass
-die Determinante eine \emph{\color{blue}normierte}, \emph{\color{blue}alternierende} \emph{Multilinear-Form} ist:
+die Determinante eine \blue{normierte}, \blue{alternierende} \blue{Multilinear-Form} ist:
 \begin{enumerate}
 \item Normiertheit bedeutet
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}(\mathrm{E}_n) = 1$.
+      $\texttt{det}(\mathrm{E}_n) = 1$.
 \item Alternierend ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}(\cdots, \vec{a}_ k, \cdots, \vec{a}_l, \cdots) = -\mathtt{det}(\cdots, \vec{a}_l, \cdots, \vec{a}_k, \cdots)$
+      $\texttt{det}(\cdots, \vec{a}_ k, \cdots, \vec{a}_l, \cdots) = -\texttt{det}(\cdots, \vec{a}_l, \cdots, \vec{a}_k, \cdots)$
       \\[0.2cm]
       gilt.  Das Vertauschen zweier Spalten ändert das Vorzeichen der Determinante.  
 
       \textbf{Bemerkung:} 
       Eine analoge Gleichung gilt, wenn wir zwei Zeilen vertauschen.  Dies liegt einfach daran,
-      dass $\mathtt{det}(A^\mathrm{T}) = \mathtt{det}(A)$ ist.
+      dass $\texttt{det}(A^\mathrm{T}) = \texttt{det}(A)$ ist.
 \item Multilinear ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}(\cdots, \alpha \cdot \vec{a} + \beta \cdot \vec{b}, \cdots) = 
-         \alpha \cdot \mathtt{det}(\cdots, \vec{a}, \cdots) +
-         \beta  \cdot \mathtt{det}(\cdots, \vec{b}, \cdots)
+      $\texttt{det}(\cdots, \alpha \cdot \vec{a} + \beta \cdot \vec{b}, \cdots) = 
+         \alpha \cdot \texttt{det}(\cdots, \vec{a}, \cdots) +
+         \beta  \cdot \texttt{det}(\cdots, \vec{b}, \cdots)
       $
       \\[0.2cm]
       gilt.  Die Determinanten-Funktion ist also in jeder Spalte sowohl additiv als auch homogen.
 
       \textbf{Bemerkung:} 
       Eine analoge Gleichung gilt, wenn wir statt zweier Spalten zwei Zeilen addieren.
-      Dies liegt wieder daran, dass $\mathtt{det}(A^\mathrm{T}) = \mathtt{det}(A)$ ist.
+      Dies liegt wieder daran, dass $\texttt{det}(A^\mathrm{T}) = \texttt{det}(A)$ ist.
 \end{enumerate}
 \href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass} (1815-1897)
 hat gezeigt, dass die obigen Eigenschaften die Determinante bereits vollständig bestimmen: Jede Funktion
@@ -1414,7 +1416,7 @@ Eigenschaften benutzen.
   Zeile von $A$ sei mit der $l$-ten Zeile von $A$ identisch.  Dann gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{det}(A) = 0$.
+  $\texttt{det}(A) = 0$.
 \end{Lemma}
 
 \proof
@@ -1423,18 +1425,18 @@ identisch ist, gilt  $\tau(A) = A$.  Andererseits wissen wir, dass sich bei dem 
 Zeilen das Vorzeichen der Determinante umdreht.  Also haben wir
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(A) = \mathtt{det}(\tau(A)) = -\mathtt{det}(A)$.
+$\texttt{det}(A) = \texttt{det}(\tau(A)) = -\texttt{det}(A)$.
 \\[0.2cm]
 Daraus folgt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$2 \cdot \mathtt{det}(A) = 0$
+$2 \cdot \texttt{det}(A) = 0$
 \\[0.2cm]
 und da wir annehmen\footnote{
-  In einem endlichen Körper kann es passieren, dass $1 + 1 = 0$
-  ist.  In einem solchen Fall dürften wir die obige Gleichung nicht durch 2 dividieren.
+  Es gibt endliche Körper. in denen $1 + 1 = 0$ ist.  In einem solchen Fall dürften wir die obige Gleichung
+  nicht durch 2 dividieren, denn dort gilt $2 = 0$. 
 }, dass der Körper $\mathbb{K}$ entweder der Körper $\mathbb{R}$ der reellen
-Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, folgt $\mathtt{det}(A) = 0$.
+Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, folgt $\texttt{det}(A) = 0$.
 \qed
 
 
@@ -1460,7 +1462,7 @@ $.
   Dann gilt 
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{det}(B) = \mathtt{det}(A)$.
+  $\texttt{det}(B) = \texttt{det}(A)$.
 \end{Lemma}
 
 \proof
@@ -1477,45 +1479,45 @@ die aus $A$ dadurch hervorgeht, dass wir die $l$-te Zeile durch die $k$-te Zeile
 $C$ dann die $k$-te Zeile mit der $l$-ten Zeile identisch ist, gilt nach dem gerade bewiesenen Lemma
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(C) = 0$. 
+$\texttt{det}(C) = 0$. 
 \\[0.2cm]
 Definieren wir die Matrix $D$ dadurch, dass wir in $C$ die $l$-te Zeile mit $\lambda$
-multiplizieren, so haben wir wegen der Homogenität der Funktion $\mathtt{det}$
+multiplizieren, so haben wir wegen der Homogenität der Funktion $\texttt{det}$
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(D) = \mathtt{det}\left(
+$\texttt{det}(D) = \texttt{det}\left(
   \begin{array}{c}
     \vdots \\ \vec{a}_k \\ \vdots \\ \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} \right) =
-  \lambda \cdot \mathtt{det}\left(
+  \lambda \cdot \texttt{det}\left(
   \begin{array}{c}
     \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_k \\ \vdots 
   \end{array} \right)
-= \lambda \cdot \mathtt{det}(C) = \lambda \cdot 0 = 0
+= \lambda \cdot \texttt{det}(C) = \lambda \cdot 0 = 0
 $.
 \\[0.2cm]
-Aufgrund der Additivität der Funktion $\mathtt{det}$ haben wir insgesamt
+Aufgrund der Additivität der Funktion $\texttt{det}$ haben wir insgesamt
 \\[0.2cm]
 \hspace*{1.3cm}
 $
 \begin{array}[b]{lcl}
-\mathtt{det}(B) & = & 
-  \mathtt{det}\left(\begin{array}{c}
+\texttt{det}(B) & = & 
+  \texttt{det}\left(\begin{array}{c}
     \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l + \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} 
   \right) \\[1.5cm]
  & = &
-\mathtt{det}\left(\begin{array}{c}
+\texttt{det}\left(\begin{array}{c}
   \vdots \\ \vec{a}_k \\ \vdots \\ \vec{a}_l \\ \vdots 
   \end{array} 
   \right) +
-  \mathtt{det}\left(\begin{array}{c}
+  \texttt{det}\left(\begin{array}{c}
     \vdots \\ \vec{a}_k \\ \vdots \\ \lambda \cdot \vec{a}_k \\ \vdots 
   \end{array} 
   \right) \\[1.5cm]
- & = & \mathtt{det}(A) + \mathtt{det}(D) \\[0.2cm]
- & = & \mathtt{det}(A) + 0 \\[0.2cm] 
- & = & \mathtt{det}(A). 
+ & = & \texttt{det}(A) + \texttt{det}(D) \\[0.2cm]
+ & = & \texttt{det}(A) + 0 \\[0.2cm] 
+ & = & \texttt{det}(A). 
 \end{array}$ \qed
 
 \remark
@@ -1531,7 +1533,7 @@ Spalten der Matrix $A$ die Zeilen der Matrix $A^\mathrm{T}$.
   so gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{det}(A) = 0$.
+  $\texttt{det}(A) = 0$.
 \end{Lemma}
 
 \proof
@@ -1548,22 +1550,23 @@ Dann haben wir
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
- \mathtt{det}(B) & = & \mathtt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm] 
-                 & = & \mathtt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, 0 \cdot \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm]  
-                 & = & 0 \cdot \mathtt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm]  
+ \texttt{det}(B) & = & \texttt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm] 
+                 & = & \texttt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, 0 \cdot \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm]  
+                 & = & 0 \cdot \texttt{det}(\vec{b}_1,\cdots, \vec{b}_{i-1}, \vec{0}, \vec{b}_{i+1}, \cdots, \vec{b}_n) \\[0.2cm]  
                  & = & 0.
 \end{array}
 $
 \\[0.2cm]
-Aus der Voraussetzung, dass die Menge $\{\vec{a}_1, \cdots, \vec{a}_n\}$ linear abhängig ist, folgt,
-dass es Skalare $\lambda_1,\cdots, \lambda_n \in \mathbb{K}$ gibt, so dass 
+Aus der Voraussetzung, dass die Menge $\{\vec{a}_1, \cdots, \vec{a}_n\}$ linear abhängig ist, folgt, dass es Skalare \\
+ $\lambda_1,\cdots, \lambda_n \in \mathbb{K}$ gibt, so dass 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\lambda_1 \cdot \vec{a}_1 + \cdots + \lambda_n \cdot \vec{a}_n = \vec{0}$,
+$\lambda_1 \cdot \vec{a}_1 + \cdots + \lambda_n \cdot \vec{a}_n = \vec{0}$
 \\[0.2cm]
-wobei wenigstens für ein $k \in \{1,\cdots,n\}$ die Ungleichung $\lambda_k \not= 0$ gilt.
+ist, wobei wenigstens für ein $k \in \{1,\cdots,n\}$ die Ungleichung $\lambda_k \not= 0$ gilt.
 Teilen wir die obige Gleichung dann durch dieses $\lambda_k$ und bringen die Ausdrücke mit $i\not=k$
-auf die andere Seite der Gleichung, so folgt
+auf die andere Seite der Gleichung, so lässt sich der Vektor $\vec{a}_k$ wie folgt als Linear-Kombination 
+der übrigen Vektoren $\vec{a}_i$ mit $i \not= k$ schreiben:
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds\vec{a}_k = - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i$.
@@ -1575,17 +1578,17 @@ hinzuaddieren, ohne dass sich dabei der Wert der Determinante der Matrix ändert:
 \hspace*{1.3cm}
 $
 \begin{array}[t]{lcl}
-  \mathtt{det}(A) & = & \mathtt{det}(\vec{a}_1, \cdots, \vec{a}_k, \cdots, \vec{a}_n) \\[0.2cm]
-                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+  \texttt{det}(A) & = & \texttt{det}(\vec{a}_1, \cdots, \vec{a}_k, \cdots, \vec{a}_n) \\[0.2cm]
+                  & = & \texttt{det}(\vec{a}_1, \cdots, 
                         \vec{a}_k - \bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1, \cdots, \vec{a}_n) \\[0.2cm]
-                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                  & = & \texttt{det}(\vec{a}_1, \cdots, 
                         \vec{a}_k -\bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1 - \bruch{\lambda_2}{\lambda_k} \cdot \vec{a}_2,
                         \cdots, \vec{a}_n) \\[0.2cm] 
                   & = & \vdots \\
-                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                  & = & \texttt{det}(\vec{a}_1, \cdots, 
                         \vec{a}_k - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i,
                         \cdots, \vec{a}_n) \\[0.2cm] 
-                  & = & \mathtt{det}(\vec{a}_1, \cdots, 
+                  & = & \texttt{det}(\vec{a}_1, \cdots, 
                         \vec{0},
                         \cdots, \vec{a}_n) \\[0.2cm] 
                  & = & 0.
@@ -1725,10 +1728,10 @@ $
 
 \begin{Lemma} \label{lemma:ze}
 Es sei $B \in \mathbb{K}^{n \times n}$ und es $\mathrm{ZE}$ sei eine Elementar-Matrix.
-Weiter sei $\mathtt{det}(B) \not= 0$.  Dann gilt auch 
+Weiter sei $\texttt{det}(B) \not= 0$.  Dann gilt auch 
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(\mathrm{ZE} \cdot B) \not= 0$.  
+$\texttt{det}(\mathrm{ZE} \cdot B) \not= 0$.  
 \end{Lemma}
 
 \proof
@@ -1742,9 +1745,9 @@ Wir erbringen den Beweis der Behauptung durch eine Fallunterscheidung nach der F
       ändert sich der Wert der Determinante dabei nicht und folglich gilt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}\bigl(\mathrm{ZA}_n(k,l,\alpha) \cdot B\bigr) = \mathtt{det}(B) \not= 0$,
+      $\texttt{det}\bigl(\mathrm{ZA}_n(k,l,\alpha) \cdot B\bigr) = \texttt{det}(B) \not= 0$,
       \\[0.2cm]
-      denn wir haben vorausgesetzt, dass $\mathtt{det}(B) \not= 0$ gilt.
+      denn wir haben vorausgesetzt, dass $\texttt{det}(B) \not= 0$ gilt.
 \item Fall: $\mathrm{ZE} = \mathrm{ZP}_n(k,l)$.
 
       Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
@@ -1753,9 +1756,9 @@ Wir erbringen den Beweis der Behauptung durch eine Fallunterscheidung nach der F
       Da das Vertauschen zweier Zeilen das Vorzeichen der Determinante umdreht, haben wir
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}\bigl(\mathrm{ZP}_n(k,l) \cdot B\bigr) = -\mathtt{det}(B) \not= 0$,
+      $\texttt{det}\bigl(\mathrm{ZP}_n(k,l) \cdot B\bigr) = -\texttt{det}(B) \not= 0$,
       \\[0.2cm]
-      denn wir haben vorausgesetzt, dass $\mathtt{det}(B) \not= 0$ gilt.
+      denn wir haben vorausgesetzt, dass $\texttt{det}(B) \not= 0$ gilt.
 \item Fall: $\mathrm{ZE} = \mathrm{ZM}_n(k, \alpha)$ \quad mit $\alpha \not= 0$.
 
       Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
@@ -1764,15 +1767,15 @@ Wir erbringen den Beweis der Behauptung durch eine Fallunterscheidung nach der F
       Auf Grund der Homogenität der Determinanten-Funktion folgt
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\mathtt{det}\bigl(\mathrm{ZM}_n(k,\alpha) \cdot B) = \alpha \cdot \mathtt{det}(B) \not= 0$,
+      $\texttt{det}\bigl(\mathrm{ZM}_n(k,\alpha) \cdot B) = \alpha \cdot \texttt{det}(B) \not= 0$,
       \\[0.2cm]
       denn einerseits ist $\alpha \not= 0$ und andererseits       
-      haben wir vorausgesetzt, dass $\mathtt{det}(B) \not= 0$ gilt. \qed
+      haben wir vorausgesetzt, dass $\texttt{det}(B) \not= 0$ gilt. \qed
 \end{enumerate}
 
 
 \begin{Satz}
-  Die Matrix $A \in \mathbb{K}^{n \times n}$ sei invertierbar.  Dann gilt $\mathtt{det}(A) \not= 0$.
+  Die Matrix $A \in \mathbb{K}^{n \times n}$ sei invertierbar.  Dann gilt $\texttt{det}(A) \not= 0$.
 \end{Satz}
 
 \proof
@@ -1805,7 +1808,7 @@ Zeigen Sie, dass für eine invertierbare Matrix $A \in \mathbb{K}^{n \times n}$ u
 Matrix $B \in \mathbb{K}^{n \times n}$ die Gleichung
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(A) \cdot \mathtt{det}(B) = \mathtt{det}(A \cdot B)$
+$\texttt{det}(A) \cdot \texttt{det}(B) = \texttt{det}(A \cdot B)$
 \\[0.2cm]
 richtig ist.
 \vspace*{0.2cm}
@@ -1820,7 +1823,7 @@ invertierbare Matrix als Produkt von Elementar-Matrizen dargestellt werden kann.
   Für eine $n \times n$ Matrix $A \in \mathbb{K}^{n \times n}$ gilt
   \\[0.2cm]
   \hspace*{1.3cm}
-  $\mathtt{det}(A) = 0$ \quad g.d.w. \quad $A$ ist nicht invertierbar.
+  $\texttt{det}(A) = 0$ \quad g.d.w. \quad $A$ ist nicht invertierbar.
 \end{Satz}
 
 \proof
@@ -1828,8 +1831,8 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
 \begin{enumerate}
 \item[``$\Rightarrow$'']
   
-     Es sei als $\mathtt{det}(A) = 0$.  Wäre $A$ invertierbar, so würde nach dem eben bewiesenen
-     Satz folgen, dass $\mathtt{det}(A) \not= 0$ wäre.  Folglich kann $A$ nicht invertierbar sein.
+     Es sei als $\texttt{det}(A) = 0$.  Wäre $A$ invertierbar, so würde nach dem eben bewiesenen
+     Satz folgen, dass $\texttt{det}(A) \not= 0$ wäre.  Folglich kann $A$ nicht invertierbar sein.
 \item[``$\Leftarrow$'']
 
      Nun sei $A$ nicht invertierbar.  Dann gilt $\mathtt{Kern}(A) \not= \{\vec{0}\}$.  Also gibt
@@ -1848,14 +1851,14 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      wobei hier die $x_i$ die Komponenten des Vektors $\vec{x}$ bezeichnen.  Damit sind aber die
      Spalten-Vektoren der Matrix $A$ linear abhängig und nach einem früher bewiesenen Lemma folgt
      die Gleichung
-     $\mathtt{det}(A) = 0$. \qed
+     $\texttt{det}(A) = 0$. \qed
 \end{enumerate}
 
 \exercise  
 Zeigen Sie, dass die Gleichung  
 \\[0.2cm] 
 \hspace*{1.3cm}
-$\mathtt{det}(A) \cdot \mathtt{det}(B) = \mathtt{det}(A \cdot B)$ 
+$\texttt{det}(A) \cdot \texttt{det}(B) = \texttt{det}(A \cdot B)$ 
 \\[0.2cm] 
 für beliebige Matrizen  $A, B \in \mathbb{K}^{n \times n}$ gilt.  
 \eoxs  
@@ -1871,7 +1874,7 @@ Zeigen Sie, dass für eine obere Dreiecks-Matrix $A = (a_{i,j}) \in \mathbb{K}^{n
 Determinante nach der Formel
 \\[0.2cm]
 \hspace*{1.3cm}
-$\mathtt{det}(A) = \prod\limits_{i=1}^n a_{i,i}$
+$\texttt{det}(A) = \prod\limits_{i=1}^n a_{i,i}$
 \\[0.2cm]
 berechnet werden kann.  
 \vspace*{0.2cm}
@@ -1901,26 +1904,26 @@ sich als Produkt der Diagonal-Elemente der Matrix $D$ berechnen.
                   xleftmargin   = 0.8cm,
                   xrightmargin  = 0.8cm,
                 ]
-    determinant := procedure(a) {
-        n := #a;              
+    determinant := procedure(A) {
+        n := #A;              
         sign := 1;
         for (i in [1 .. n]) {
-            r := pivot(a, n, i);
+            r := pivot(A, n, i);
             if (r != i) {
-                [ a[i], a[r] ] := [ a[r], a[i] ];   
+                [ A[i], A[r] ] := [ A[r], A[i] ];   
                 sign := -sign;
             }
-            if (a[i][i] == 0) {
+            if (A[i][i] == 0) {
                 return 0;
             }
-            for (k in [i+1 .. n] | k != i) {
-                f := a[k][i]/a[i][i];
+            for (k in [i+1 .. n]) {
+                f := A[k][i]/A[i][i];
                 for (j in [i .. n]) {
-                    a[k][j] -= f * a[i][j];
+                    A[k][j] -= f * A[i][j];
                 }
             }    
         }
-        return sign */ { a[i][i] : i in {1 .. n} };
+        return sign */ [ A[i][i] : i in {1 .. n} ];
     };
 \end{Verbatim}
 \vspace*{-0.3cm}
@@ -1931,35 +1934,35 @@ sich als Produkt der Diagonal-Elemente der Matrix $D$ berechnen.
 Abbildung zeigt ein \href{http://randoom.org/Software/SetlX}{\textsc{SetlX}}-Programm, das den oben
 beschriebenen Algorithmus zur Berechnung umsetzt.  Wir diskutieren es Zeile für Zeile.
 \begin{enumerate}
-\item Die Matrix \texttt{a}, deren Determinante berechnet werden soll, wird als Liste ihrer Zeilen
+\item Die Matrix \texttt{A}, deren Determinante berechnet werden soll, wird als Liste ihrer Zeilen
       dargestellt.  Das ist dieselbe Darstellung, die wir auch bei dem in Abbildung
       \ref{fig:inverse.stlx} auf Seite \pageref{fig:inverse.stlx} gezeigten Programm zur Berechnung
-      der Inversen einer Matrix verwendet haben.
+      des \blue{Inversen} einer Matrix verwendet haben.
 \item \texttt{n} ist die Anzahl der Zeilen der Matrix.
 \item In der Variablen \texttt{sign} merken wir uns, wie oft wir bei der Berechnung der
       Determinanten Zeilen vertauscht haben.  Solange diese Anzahl gerade ist, hat \texttt{sign} den
       Wert $+1$, aber wenn die Anzahl ungerade ist, hat \texttt{sign} den Wert $-1$.
-\item Die Schleife in Zeile 4 des Programms hat die Aufgabe, die Elemente von \texttt{a}, die in der Spalte
-      unter dem Element \texttt{a[i][i]} stehen, durch Addition geeignete Vielfacher der
+\item Die Schleife in Zeile 4 des Programms hat die Aufgabe, die Elemente von \texttt{A}, die in der Spalte
+      unter dem Element \texttt{A[i][i]} stehen, durch Addition geeignete Vielfacher der
       \texttt{i}-ten Zeile zu $0$ zu reduzieren.
 \item Aus Gründen der numerischen Stabilität des Verfahrens ist es sinnvoll, zunächst die Zeile
-      \texttt{r} zu bestimmen, für die der Absolutbetrag \texttt{a[r][i]} maximal wird.  Die
+      \texttt{r} zu bestimmen, für die der Absolutbetrag \texttt{A[r][i]} maximal wird.  Die
       Berechnung dieser Zeile geschieht mit Hilfe der Funktion \texttt{pivot}, deren Implementierung
       in Abbildung \ref{fig:inverse.stlx-pivot} gezeigt ist.  Wir hatten diese Funktion bereits bei
       der Berechnung des Inversen der Matrix $A$ benutzt.
 \item Falls wir tatsächlich eine Vertauschung von Zeilen vornehmen, falls also $\mathtt{r} \not= \mathtt{i}$ ist,
       drehen wir das Vorzeichen \texttt{sign} um.
-\item Sollte \texttt{a[i][i]} den Wert $0$ haben, so brauchen wir nicht weitermachen, denn wenn ein
+\item Sollte \texttt{A[i][i]} den Wert $0$ haben, so brauchen wir nicht weitermachen, denn wenn ein
       Element auf der Diagonalen einer Dreiecks-Matrix $0$ ist, ist natürlich auch das Produkt aller
       Diagonal-Elemente $0$.  Wir geben daher in diesem Fall in Zeile 11 den Wert $0$ zurück.
 \item Ansonsten ziehen wir nun das 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\bruch{a_{k,i}}{a_{i,i}}$-fache der $i$-ten Zeile von der $k$-ten Zeile ab,
+      $\ds\frac{\texttt{A[k][i]}}{\texttt{A[i][i]}}$-fache der $i$-ten Zeile von der $k$-ten Zeile ab,
       \\[0.2cm]
-      so dass danach \texttt{a[k][i]} den Wert $0$ hat.
+      so dass danach \texttt{A[k][i]} den Wert $0$ hat.
 \item Am Ende berechnen wir das Produkt aller Diagonal-Elemente und multiplizieren es noch mit dem
-      Vorzeichen \texttt{sign}, denn dies ist die gesuchte Determinante der Matrix \texttt{a}.
+      Vorzeichen \texttt{sign}, denn dies ist die gesuchte Determinante der Matrix \texttt{A}.
       \eoxs
 \end{enumerate}
 
@@ -1980,6 +1983,20 @@ $
 mit dem Algorithmus, der in dem in Abbildung \ref{fig:determinant-algorithm.stlx} gezeigten
 Programm implementiert ist.
 \exend
+
+\remark
+In \textsc{SetlX} kann die Determinante einer Matrix nativ mit Hilfe der Funktion \texttt{la\_det} berechnet
+werden.  Definieren wir beispielsweise die Matrix \texttt{A} als
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{A := << <<1 2 3>> <<2 1 3>> <<3 2 1>> >>;}
+\\[0.2cm]
+so können wir die Determinante dieser Matrix durch den Ausdruck
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{la\_det(A)}
+\\[0.2cm]
+berechnen und erhalten als Ergebnis $12.0$.
 
 %%% Local Variables: 
 %%% mode: latex
