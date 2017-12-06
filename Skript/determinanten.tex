@@ -1476,7 +1476,7 @@ die Determinante eine \blue{normierte}, \blue{alternierende} \blue{Multilinear-F
       Dies liegt wieder daran, dass $\texttt{det}(A^\mathrm{T}) = \texttt{det}(A)$ ist.
 \end{enumerate}
 \href{http://en.wikipedia.org/wiki/Karl_Weierstrass}{Karl Theodor Wilhelm Weierstrass} (1815-1897)
-hat gezeigt, dass die obigen Eigenschaften die Determinante bereits vollständig bestimmen: Jede Funktion
+hat gezeigt, dass die obigen Eigenschaften die Determinante bereits \red{vollständig} bestimmen: Jede Funktion
 \\[0.2cm]
 \hspace*{1.3cm}
 $f: \mathbb{K}^{n \times n} \rightarrow \mathbb{K}$,
@@ -1498,21 +1498,22 @@ Eigenschaften benutzen.
 \proof
 Wir definieren die Transposition $\tau := \pair(k,l)$.  Da die $k$-te Zeile mit der $l$-ten Zeile
 identisch ist, gilt  $\tau(A) = A$.  Andererseits wissen wir, dass sich bei dem Vertauschen zweier
-Zeilen das Vorzeichen der Determinante umdreht.  Also haben wir
+Zeilen das Vorzeichen der Determinante umdreht.  Also haben wir einerseits
 \\[0.2cm]
 \hspace*{1.3cm}
-$\texttt{det}(A) = \texttt{det}(\tau(A)) = -\texttt{det}(A)$.
+$\texttt{det}\bigl(\tau(A)\bigr) = \texttt{det}(A)$ \quad und andererseits \quad $\texttt{det}\bigl(\tau(A)\bigr) = -\texttt{det}(A)$.
 \\[0.2cm]
 Daraus folgt 
 \\[0.2cm]
 \hspace*{1.3cm}
-$2 \cdot \texttt{det}(A) = 0$
+$\texttt{det}(A) = -\texttt{det}(A)$ \quad und also \quad
+$2 \cdot \texttt{det}(A) = 0$.
 \\[0.2cm]
-und da wir annehmen\footnote{
+Da wir annehmen\footnote{
   Es gibt endliche Körper. in denen $1 + 1 = 0$ ist.  In einem solchen Fall dürften wir die obige Gleichung
   nicht durch 2 dividieren, denn dort gilt $2 = 0$. 
 }, dass der Körper $\mathbb{K}$ entweder der Körper $\mathbb{R}$ der reellen
-Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, folgt $\texttt{det}(A) = 0$.
+Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, impliziert dies $\texttt{det}(A) = 0$.
 \qed
 
 
@@ -2075,6 +2076,16 @@ so können wir die Determinante dieser Matrix durch den Ausdruck
 \\[0.2cm]
 berechnen und erhalten als Ergebnis $12.0$.
 
+\section{Reflexion}
+\begin{enumerate}
+\item Wie ist das Vorzeichen einer Permutation definiert?
+\item Wie ist die Determinante einer Matrix definiert?
+\item Welche Eigenschaften charakterisieren die Determinanten-Funktion?
+\item Welcher Zusammenhang besteht zwischen der Invertierbarkeit einer Matrix und der Determinante der Matrix?
+\item Wie kann die Determinante einer Matrix praktisch berechnet werden?
+\item warum gilt für beliebige $n \times n$ Matrizen die Gleichung
+      $\texttt{det}(A) \cdot \texttt{det}(B) = \texttt{det}(A \cdot B)$?
+\end{enumerate}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "lineare-algebra"
