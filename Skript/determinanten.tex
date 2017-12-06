@@ -794,7 +794,7 @@ $\mathbb{K}= \mathbb{R}$ oder $\mathbb{K}= \mathbb{C}$ gilt, so definieren wir d
 \hspace*{1.3cm}
 \colorbox{blue}{\framebox{\colorbox{yellow}{
 $\ds\texttt{det}(A) :=  \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot \prod\limits_{i=1}^n a_{i,\sigma(i)} 
-  := \sum \Bigl\{ \texttt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \bigm| \sigma \in \mathcal{S}_n \Bigr\}
+  := \sum \Bigl\{ \texttt{sgn}(\sigma) \cdot  \prod\limits_{i=1}^n a_{i,\sigma(i)} \Bigm| \sigma \in \mathcal{S}_n \Bigr\}
 $.}}}
 
 \example
@@ -828,7 +828,7 @@ $\texttt{sgn}([2,1]) = (-1)^1 = -1$.
 \\[0.2cm]
 Insgesamt haben wir
 \\[0.2cm]
-\hspace*{0.5cm}
+\hspace*{0.3cm}
 $\texttt{det}(A) = \texttt{det}\left(\begin{array}{ll}
     a_{1,1} & a_{1,2} \\[0.2cm] 
     a_{2,1} & a_{2,2} 
@@ -836,7 +836,7 @@ $\texttt{det}(A) = \texttt{det}\left(\begin{array}{ll}
   \right)
   = (+1) \cdot a_{1,1} \cdot a_{2,2} + (-1) \cdot a_{1,2} \cdot a_{2,1} 
   = a_{1,1} \cdot a_{2,2} - a_{1,2} \cdot a_{2,1} 
-$
+$.
 \eoxs
 
 \example
@@ -900,30 +900,34 @@ Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab.
                   xleftmargin   = 0.0cm,
                   xrightmargin  = 0.0cm,
                 ]
-   inv := procedure(r) {
-       n := #r;
-       return { [k,l] : k in {1 .. n}, l in {k+1 .. n} | L[k] > L[l] };
-   };
-   signum := procedure(l) {
-       return (-1) ** #inv(l);
-   };
-   allPermutations := procedure(S) {
-       if (S == {}) {
-           return { [] };
-       }
-       return { [k] + L : k in S, L in allPermutations(S - {k}) };
-   };
-   determinant := procedure(n) {
-       det := "";
-       Sn  := allPermutations({1 .. n});
-       assert(#Sn == n!, "Wrong number of permutations!");
-       for (L in Sn) {
-           if (sgn(L) == 1) { sign := " + "; } else { sign := " - "; }
-           product := join(["a[$i$][$L[i]$]" : i in [1 .. n]], " * ");
-           det += " " * 6 + sign + product + "\n";
-       }
-       return det;
-   };
+    inv := procedure(L) {
+        n := #L;
+        return {[k,l] : k in {1..n}, l in {1..n} | k<l && L[k]>L[l]};
+    };
+    sgn := procedure(L) {
+        return (-1) ** #inv(L);
+    };
+    allPermutations := procedure(S) {
+        if (S == {}) {
+            return { [] };
+        }
+        return { [k] + L : k in S, L in allPermutations(S - {k}) };
+    };
+    determinant := procedure(n) {
+        det := "";
+        Sn  := allPermutations({1 .. n});
+        assert(#Sn == n!, "Wrong number of permutations!");
+        for (L in Sn) {
+            if (sgn(L) == 1) {
+                sign := " + ";
+            } else {
+                sign := " - ";
+            }
+            product := join(["a[$i$][$L[i]$]" : i in [1..n]], " * ");
+            det += " " * 6 + sign + product + "\n";
+        }
+        return det;
+    };
 \end{Verbatim} 
 \vspace*{-0.3cm}
 \caption{Berechnung der Leibniz-Formel in \textsc{SetlX}.}
@@ -931,19 +935,80 @@ Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab.
 \end{figure}
 
 Abbildung \ref{fig:determinant-formula.stlx} auf Seite \pageref{fig:determinant-formula.stlx} zeigt ein Programm zur
-Berechnung der oben angegebenen Leibniz-Formel zur Berechnung der Determinante.  Für $n=4$ erhalten
+Berechnung der oben angegebenen Leibniz-Formel zur Berechnung der Determinante.  
+\begin{enumerate}
+\item Die Funktionen $\texttt{inv}$ erhält als Eingabe eine Permutation, die als Liste $\texttt{L}$ dargestellt
+      ist und berechnet die Menge der Inversionen dieser Permutation.  Die Implementierung von $\texttt{inv}$
+      setzt die mathematische Definition der Funktion $\mathtt{inv}$ unmittelbar um.
+\item Die Funktionen $\texttt{sgn}$ erhält ebenfalls als Eingabe eine Permutation, die als Liste $\texttt{L}$ dargestellt
+      ist und berechnet das Vorzeichen dieser Permutation.
+\item Die Funktion $\texttt{allPermutations}$ erhält als Eingabe eine Menge $\texttt{S}$ von Zahlen und
+      berechnet die Menge aller der Listen, in der jedes Element der Menge $\texttt{S}$ genau einmal auftritt.
+      Diese Funktion wird später mit dem Argument $\{1,\cdots, n\}$ aufgerufen, um alle Permutationen der
+      natürlichen Zahlen von $1$ bis $n$ zu berechnen.
+
+      Falls die Menge $\texttt{S}$ leer ist, ist die leere Liste die einzige Permutation der Elemente aus $\texttt{S}$.
+
+      Falls die Menge $\texttt{S}$ nicht leer ist, beginnt eine Permutation $\texttt{R}$ der Elemente aus
+      $\texttt{S}$ mit einer beliebigen Zahl $\texttt{k}$ aus $\texttt{S}$.  Auf diese Zahl $\texttt{k}$ folgt
+      dann eine Liste, die rekursiv aus den restlichen Zahlen der Menge $\texttt{S}$ gebildet wird.
+\item Die Funktion $\texttt{determinant}$ erhält als Eingabe eine positive natürliche Zahl $\texttt{n}$ und
+      liefert als Ergebnis einen String $\texttt{det}$ zurück, der den Inhalt der Leibniz-Formel wiedergibt. 
+      Dabei wird die Definition der Determinante nach Leibniz unmittelbar umgesetzt:
+      \begin{enumerate}
+      \item Zunächst wird die Menge $\texttt{Sn}$ aller Permutationen der Zahlen von $1$ bis $\texttt{n}$ berechnet.
+      \item Anschließend wird für jede Liste $\texttt{L}$ aus der Menge $\texttt{Sn}$ das Vorzeichen berechnet.
+            Je nach dem, ob dieses Vorzeichen den Wert $1$ oder $-1$ hat, wird der String $\texttt{sign}$ auf
+            den Wert $\texttt{\symbol{34} + \symbol{34}}$ oder $\texttt{\symbol{34} - \symbol{34}}$ gesetzt.
+      \item Erklärungsbedürftig ist eventuell die Funktion $\texttt{join}$:  Diese wird im Allgemeinen mit
+            zwei Argumenten aufgerufen in der Form
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{join}(L, s)$
+            \\[0.2cm]
+            aufgerufen.  Dabei ist $L$ eine Liste von Strings und $s$ ist ein einzelner String.  Der Aufruf von
+            $\texttt{join}$ verkettet die Strings aus $L$ und fügt dabei jeweils zwischen zwei Strings aus $L$
+            den String $s$ ein.  Beispielsweise liefert der Ausdruck
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{join([\symbol{34}a\symbol{34}, \symbol{34}b\symbol{34}, \symbol{34}c\symbol{34}], \symbol{34}+\symbol{34})}$
+            \\[0.2cm]
+            als Ergebnis den String
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{\symbol{34}a+b+c\symbol{34}}$
+            \\[0.2cm]
+            zurück.  In der Funktion $\texttt{determinant}$ wird die Funktion $\texttt{join}$ mit der Liste
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\texttt{[} a_{\texttt{1,L[1]}}, \cdots, a_{\texttt{n,L[n]}} \texttt{]}$ \quad und dem String \quad $\texttt{\symbol{34} * \symbol{34}}$
+            \\[0.2cm]
+            aufgerufen.  Daher berechnet der Aufruf von $\texttt{join}$ dann eine String-Darstellung des Produkts
+            \\[0.2cm]
+            \hspace*{1.3cm}
+            $\ds\prod\limits_{i=1}^n a_{i,\sigma(i)}$,
+            \\[0.2cm]
+            wobei die Permutation $\sigma$ durch die Liste $\texttt{L}$ dargestellt wird.
+      \end{enumerate}
+\end{enumerate}
+Für $n=4$ erhalten
 wir beispielsweise die in Abbildung \ref{fig:determinant.out} auf Seite
 \pageref{fig:determinant.out} gezeigte Ausgabe.  Es ist offensichtlich, dass die Leibniz-Formel für
 große Werte von $n$ in der Praxis unbrauchbar ist, denn die
 Menge $\mathcal{S}_n$ aller Permutationen der Zahlen $\{1,\cdots,n\}$ enthält $n!$ verschiedene
-Elemente und die Fakultätsfunktion wächst schneller als jede Potenz.  Genauer gilt die 
+Elemente und die Fakultätsfunktion wächst schneller als jede Potenz.  Für $n = 50$ haben wir beispielsweise
+\\[0.2cm]
+\hspace*{1.3cm}
+$50! = 30\,414\,093\,201\,713\,378\,043\,612\,608\,166\,064\,768\,844\,377\,641\,568\,960\,512\,000\,000\,000\,000$
+\\[0.2cm]
+und diese Zahl hat 66 Stellen.  Genauer gilt die 
 \href{https://de.wikipedia.org/wiki/Stirlingformel}{Stirling-Formel}
 \\[0.2cm]
 \hspace*{1.3cm}
 $\ds n! \approx \sqrt{2 \cdot \pi \cdot n\;} \cdot \left(\frac{n}{e}\right)^n$.
 \\[0.2cm]
-Wir werden daher
-ein anderes Verfahren zur Berechnung der Determinante entwickeln, bei dem nur etwa $n^3$
+Diese Formel zeigt, dass die Fakultätsfunktion superexponentiell wächst.  Wir werden daher ein anderes
+Verfahren zur Berechnung der Determinante entwickeln, bei dem nur etwa $n^3$ 
 Rechenoperationen notwendig sind.  Zu diesem Zweck beweisen wir zunächst einige Eigenschaften der
 Determinante.  
 
@@ -1003,7 +1068,8 @@ Wir zerlegen den Beweis in zwei Teile:
 \item $\{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \} \subseteq \mathcal{S}_n$.
 
       Der Nachweis dieser Inklusion folgt aus der Tatsache, dass die Gruppe der Permutationen
-      $\mathcal{S}_n$ unter dem relationalen Produkt abgeschlossen ist, was $\tau \circ \mu \in \mathcal{S}_n$ für alle $\mu \in \mathcal{S}_n$ impliziert.
+      $\mathcal{S}_n$ unter dem relationalen Produkt abgeschlossen ist, was $\tau \circ \mu \in \mathcal{S}_n$
+      für alle $\tau, \mu \in \mathcal{S}_n$ impliziert.
 \item $\mathcal{S}_n \subseteq \{ \tau \circ \mu \mid \mu \in \mathcal{S}_n \}$.
 
       Sei $\sigma \in \mathcal{S}_n$.  Es ist zu zeigen, dass es eine Permutation $\mu \in \mathcal{S}_n$ gibt,
@@ -1618,7 +1684,7 @@ Im Falle eine quadratischen Matrix gilt $m = n$ und folglich gilt in diesem Fall
 \hspace*{1.3cm}
 $\mathtt{dim}(\mathtt{Kern}(A)) = 0 \;\Leftrightarrow\; n = \mathtt{dim}(\mathtt{Bild}(A))$. 
 \\[0.2cm]
-Aus dieser \"{A}quivalenz ergibt sich der folgende Satz:
+Aus dieser Äquivalenz ergibt sich der folgende Satz:
 
 \begin{Satz}
 Ist $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix, dann gilt:

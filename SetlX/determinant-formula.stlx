@@ -2,7 +2,7 @@
 // of all inversions.
 inv := procedure(L) {
     n := #L;
-    return { [k,l] : k in {1 .. n}, l in {k+1 .. n} | L[k] > L[l] };
+    return { [k,l] : k in {1 .. n}, l in {1 .. n} | k < l && L[k] > L[l] };
 };
 // This function computes the sign of the permutation L.  
 sgn := procedure(L) {
