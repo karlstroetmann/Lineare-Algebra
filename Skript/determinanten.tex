@@ -953,15 +953,16 @@ Berechnung der oben angegebenen Leibniz-Formel zur Berechnung der Determinante.
       $\texttt{S}$ mit einer beliebigen Zahl $\texttt{k}$ aus $\texttt{S}$.  Auf diese Zahl $\texttt{k}$ folgt
       dann eine Liste, die rekursiv aus den restlichen Zahlen der Menge $\texttt{S}$ gebildet wird.
 \item Die Funktion $\texttt{determinant}$ erhält als Eingabe eine positive natürliche Zahl $\texttt{n}$ und
-      liefert als Ergebnis einen String $\texttt{det}$ zurück, der den Inhalt der Leibniz-Formel wiedergibt. 
+      liefert als Ergebnis einen String $\texttt{det}$ zurück, der den Inhalt der Leibniz-Formel als String wiedergibt. 
       Dabei wird die Definition der Determinante nach Leibniz unmittelbar umgesetzt:
       \begin{enumerate}
-      \item Zunächst wird die Menge $\texttt{Sn}$ aller Permutationen der Zahlen von $1$ bis $\texttt{n}$ berechnet.
-      \item Anschließend wird für jede Liste $\texttt{L}$ aus der Menge $\texttt{Sn}$ das Vorzeichen berechnet.
+      \item Zunächst wird die Menge $\texttt{Sn}$ aller Permutationen der Zahlen von $1$ bis $\texttt{n}$
+            berechnet.  Diese Permutationen werden als Listen dargestellt. 
+      \item Anschließend wird für jede Permutation $\texttt{L}$ aus der Menge $\texttt{Sn}$ das Vorzeichen berechnet.
             Je nach dem, ob dieses Vorzeichen den Wert $1$ oder $-1$ hat, wird der String $\texttt{sign}$ auf
             den Wert $\texttt{\symbol{34} + \symbol{34}}$ oder $\texttt{\symbol{34} - \symbol{34}}$ gesetzt.
       \item Erklärungsbedürftig ist eventuell die Funktion $\texttt{join}$:  Diese wird im Allgemeinen mit
-            zwei Argumenten aufgerufen in der Form
+            zwei Argumenten in der Form
             \\[0.2cm]
             \hspace*{1.3cm}
             $\texttt{join}(L, s)$
@@ -1007,7 +1008,16 @@ und diese Zahl hat 66 Stellen.  Genauer gilt die
 \hspace*{1.3cm}
 $\ds n! \approx \sqrt{2 \cdot \pi \cdot n\;} \cdot \left(\frac{n}{e}\right)^n$.
 \\[0.2cm]
-Diese Formel zeigt, dass die Fakultätsfunktion superexponentiell wächst.  Wir werden daher ein anderes
+Diese Formel zeigt, dass die Fakultätsfunktion \blue{superexponentiell}\footnote{
+  Eine Funktion $f:\mathbb{N} \rightarrow \mathbb{N}$ wächst  \blue{superexponentiell} genau dann, wenn sie
+  schneller als jede Potenz wächst.  Als mathematische Formel schreibt sich dies wie folgt:
+  \\[0.2cm]
+  \hspace*{1.3cm}
+  $\forall a \in \mathbb{R}: \Bigl(a > 1 \rightarrow \exists K\in \mathbb{N}: \forall n \in \mathbb{N}: 
+   \bigl(K \leq n \rightarrow a^n < f(n)\bigr)\Bigr)
+  $.
+}
+wächst.  Wir werden daher ein anderes
 Verfahren zur Berechnung der Determinante entwickeln, bei dem nur etwa $n^3$ 
 Rechenoperationen notwendig sind.  Zu diesem Zweck beweisen wir zunächst einige Eigenschaften der
 Determinante.  
@@ -1101,7 +1111,7 @@ $A = \left(
   \right)
 $
 \\[0.2cm]
-angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten Zeilenvektor der Matrix $A = \bigl(a_{i,j}\bigr)_{i = 1,\cdots n \atop j=1,\cdots n}$, 
+angeben.  Dabei bezeichnet $\vec{a}_i$ den $i$-ten \blue{Zeilenvektor} der Matrix $A = \bigl(a_{i,j}\bigr)_{i = 1,\cdots n \atop j=1,\cdots n}$, 
 es gilt also
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1142,7 +1152,7 @@ $\left(
   \right) =: \tau(A)
 $
 \\[0.2cm]
-aus $A$ dadurch entsteht, dass wir die $k$-te Zeile von $A$ mit der $l$-ten Zeile $A$ vertauschen.
+aus $A$ dadurch entsteht, dass wir die $k$-te Zeile von $A$ mit der $l$-ten Zeile von $A$ vertauschen.
 \end{Satz}
 
 \proof
@@ -1176,7 +1186,7 @@ $
             a_{n,\sigma(\tau(n))}, \\[0.4cm]
 & & \mbox{denn $\tau(k) = l$, $\tau(l) = k$ und für $i \not\in \{k,l\}$ gilt $\tau(i) = i$.} \\[0.2cm]
 & = & \ds
- \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{1,\tau\circ\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\tau\circ\sigma(n)} \\[0.4cm]
+ \sum\limits_{\sigma \in \mathcal{S}_n} \texttt{sgn}(\sigma) \cdot a_{1,\tau\circ\sigma(1)} \cdot \mbox{$\dots$} \cdot a_{n,\tau\circ\sigma(n)} \\[0.5cm]
 & = & \ds
  \sum\limits_{\mu \in \mathcal{S}_n} \texttt{sgn}(\tau\circ\mu) \cdot a_{1,\tau\circ(\tau\circ\mu)(1)} \cdot \mbox{$\dots$} \cdot 
             a_{n,\tau\circ(\tau\circ\mu)(n)} \\[0.4cm]
@@ -1318,7 +1328,7 @@ Wir zeigen zunächst die beiden als Hinweis gegebenen Lemmata.
                      definieren. $\green{\surd}$
       \end{description}
 \end{enumerate}
-Nach diesen Vorüberlegungen führen wir jetzt den eigentlichen Beweis der Behauptung
+Nach diesen Vorüberlegungen führen wir jetzt den Beweis der eigentlichen Behauptung
 \\[0.2cm]
 \hspace*{1.3cm}
 $\texttt{det}\bigl(A^\mathrm{T}\bigr) = \texttt{det}(A)$.
@@ -1437,11 +1447,11 @@ $.
 Die letzten Lemmata und die dazugehörigen Aufgaben können wir so zusammenfassen, dass wir sagen, dass
 die Determinante eine \blue{normierte}, \blue{alternierende} \blue{Multilinear-Form} ist:
 \begin{enumerate}
-\item Normiertheit bedeutet
+\item \blue{Normiertheit} bedeutet
       \\[0.2cm]
       \hspace*{1.3cm}
       $\texttt{det}(\mathrm{E}_n) = 1$.
-\item Alternierend ist die Determinante, weil
+\item \blue{Alternierend} ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
       $\texttt{det}(\cdots, \vec{a}_ k, \cdots, \vec{a}_l, \cdots) = -\texttt{det}(\cdots, \vec{a}_l, \cdots, \vec{a}_k, \cdots)$
@@ -1451,7 +1461,7 @@ die Determinante eine \blue{normierte}, \blue{alternierende} \blue{Multilinear-F
       \textbf{Bemerkung:} 
       Eine analoge Gleichung gilt, wenn wir zwei Zeilen vertauschen.  Dies liegt einfach daran,
       dass $\texttt{det}(A^\mathrm{T}) = \texttt{det}(A)$ ist.
-\item Multilinear ist die Determinante, weil
+\item \blue{Multilinear} ist die Determinante, weil
       \\[0.2cm]
       \hspace*{1.3cm}
       $\texttt{det}(\cdots, \alpha \cdot \vec{a} + \beta \cdot \vec{b}, \cdots) = 
@@ -1638,7 +1648,7 @@ der übrigen Vektoren $\vec{a}_i$ mit $i \not= k$ schreiben:
 $\ds\vec{a}_k = - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i$.
 \\[0.2cm]
 Durch wiederholtes Anwenden des letzten Satzes können wir zur $k$-ten Spalte der Matrix $A$
-nacheinander das $-\bruch{\lambda_i}{\lambda_k}$-fache der $i$-ten Spalte für alle $i \in \{1,\cdots,n\} \backslash \{k\}$ 
+nacheinander das $\bruch{\lambda_i}{\lambda_k}$-fache der $i$-ten Spalte für alle $i \in \{1,\cdots,n\} \backslash \{k\}$ 
 hinzuaddieren, ohne dass sich dabei der Wert der Determinante der Matrix ändert:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1646,13 +1656,13 @@ $
 \begin{array}[t]{lcl}
   \texttt{det}(A) & = & \texttt{det}(\vec{a}_1, \cdots, \vec{a}_k, \cdots, \vec{a}_n) \\[0.2cm]
                   & = & \texttt{det}(\vec{a}_1, \cdots, 
-                        \vec{a}_k - \bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1, \cdots, \vec{a}_n) \\[0.2cm]
+                        \vec{a}_k + \bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1, \cdots, \vec{a}_n) \\[0.2cm]
                   & = & \texttt{det}(\vec{a}_1, \cdots, 
-                        \vec{a}_k -\bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1 - \bruch{\lambda_2}{\lambda_k} \cdot \vec{a}_2,
+                        \vec{a}_k + \bruch{\lambda_1}{\lambda_k} \cdot \vec{a}_1 + \bruch{\lambda_2}{\lambda_k} \cdot \vec{a}_2,
                         \cdots, \vec{a}_n) \\[0.2cm] 
                   & = & \vdots \\
                   & = & \texttt{det}(\vec{a}_1, \cdots, 
-                        \vec{a}_k - \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i,
+                        \vec{a}_k + \sum\limits_{i=1 \atop i \not= k}^n \bruch{\lambda_i}{\lambda_k} \cdot \vec{a}_i,
                         \cdots, \vec{a}_n) \\[0.2cm] 
                   & = & \texttt{det}(\vec{a}_1, \cdots, 
                         \vec{0},
@@ -1944,6 +1954,7 @@ $\texttt{det}(A) = \prod\limits_{i=1}^n a_{i,i}$
 \\[0.2cm]
 berechnet werden kann.  
 \vspace*{0.2cm}
+\pagebreak
 
 \noindent
 \textbf{Hinweis}:  Der Beweis der Behauptung kann am einfachsten unter Verwendung der Definition

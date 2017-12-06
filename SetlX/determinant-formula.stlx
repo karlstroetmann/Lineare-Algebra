@@ -1,5 +1,5 @@
-// For a given permutation represented as list L, this function computes the set
-// of all inversions.
+// For a permutation represented as list L, this function computes the set
+// of all inversions of the given permutation.
 inv := procedure(L) {
     n := #L;
     return { [k,l] : k in {1 .. n}, l in {1 .. n} | k < l && L[k] > L[l] };
