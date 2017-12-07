@@ -611,6 +611,45 @@ $a_{n+2} = 3 \cdot a_{n+1} - 2 \cdot a_n$ \quad für die Anfangs-Bedingungen $a_0
 \\[0.2cm]
 mit Hilfe der in diesem Abschnitt vorgestellten Methode. \eox
 
+\section{Berechnung von Eigenwerten in \textsc{SetlX}}
+Die Sprache \textsc{SetlX} stellt die Funktionen \texttt{la\_eigenValues} und \texttt{la\_eigenVectors} zur
+Verfügung, mit denen Sie sowohl die Eigenwerte als auch die Eigenvektoren einer quadratischen Matrix berechnen
+können.  Ist $A$ eine quadratische Matrix, so berechnet der Ausdruck
+\\[0.2cm]
+\hspace*{1.3cm}
+$\texttt{la\_eigenValues}(A)$
+\\[0.2cm]
+die Liste der Eigenwerte, während der Ausdruck 
+\\[0.2cm]
+\hspace*{1.3cm}
+$\texttt{la\_eigenVectors}(A)$
+\\[0.2cm]
+die Liste der diesen Eigenwerten zugeordneten Eigenvektoren zurück gibt.  Definieren wir beispielsweise
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{A := << <<1 2>> <<2 1>> >>;}
+\\[0.2cm]
+so liefert der Ausdruck $\texttt{la\_eigenValues(A)}$ das Ergebnis
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{[-0.9999999999999996, 3.0]},
+\\[0.2cm]
+während der Ausdruck $\texttt{la\_eigenVectors(A)}$ die Liste
+\\[0.2cm]
+\hspace*{1.3cm}
+\texttt{[<<0.7071067811865475 -0.7071067811865475>>,}\\
+\hspace*{1.5cm}
+\texttt{<<0.7071067811865475 \ 0.7071067811865475>>]}
+\\[0.2cm]
+zurück gibt.  Wie wir sehen, werden die Eigenvektoren so normiert, dass Sie die Länge 1 haben.
+
+\section{Reflexion}
+\begin{enumerate}
+\item Wie sind Eigenwerte und Eigenvektoren einer quadratischen Matrix definiert?
+\item Wie ist das charakteristische Polynom einer Matrix definiert?
+\item Wie können Sie die Eigenwerte einer quadratischen Matrix berechnen?
+\item Wie können Sie eine lineare Rekurrenz-Gleichung mit Hilfe von Eigenvektoren lösen?
+\end{enumerate}
 %%% Local Variables: 
 %%% mode: latex
 %%% TeX-master: "lineare-algebra"
