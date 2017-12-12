@@ -6,7 +6,7 @@
 // This procedure computes the determinant of the matrix a. The matrix a 
 // is represented as a list of its rows.
 determinant := procedure(A) {
-    n := #A;              
+    n    := #A;              
     sign := 1;
     for (i in [1 .. n]) {
         r := pivot(A, n, i);

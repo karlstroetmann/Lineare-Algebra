@@ -1604,7 +1604,7 @@ Determinante von $A$ und beim Übergang von $A$ zur transponierten Matrix $A^\mat
 Spalten der Matrix $A$ die Zeilen der Matrix $A^\mathrm{T}$. 
 \eox
 
-\begin{Lemma}
+\begin{Lemma} \label{lemma:la_det0}
   Ist $A = (\vec{a}_1, \cdots, \vec{a}_n) \in \mathbb{K}^{n \times n}$ und ist die Menge der
   Spalten der Matrix $A$, also die Menge $\{ \vec{a}_1, \cdots, \vec{a}_n \}$, linear abhängig,
   so gilt
@@ -1697,7 +1697,7 @@ $\mathtt{dim}(\mathtt{Kern}(A)) = 0 \;\Leftrightarrow\; n = \mathtt{dim}(\mathtt
 \\[0.2cm]
 Aus dieser Äquivalenz ergibt sich der folgende Satz:
 
-\begin{Satz}
+\begin{Satz} \label{satz:12.17}
 Ist $A \in \mathbb{K}^{n \times n}$ eine quadratische Matrix, dann gilt:
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1804,7 +1804,7 @@ $
 \end{enumerate}
 
 \begin{Lemma} \label{lemma:ze}
-Es sei $B \in \mathbb{K}^{n \times n}$ und es $\mathrm{ZE}$ sei eine Elementar-Matrix.
+Es sei $B \in \mathbb{K}^{n \times n}$ und $\mathrm{ZE}$ sei eine Elementar-Matrix.
 Weiter sei $\texttt{det}(B) \not= 0$.  Dann gilt auch 
 \\[0.2cm]
 \hspace*{1.3cm}
@@ -1814,7 +1814,7 @@ $\texttt{det}(\mathrm{ZE} \cdot B) \not= 0$.
 \proof
 Wir erbringen den Beweis der Behauptung durch eine Fallunterscheidung nach der Form der Elementar-Matrix $\mathrm{ZE}$.
 \begin{enumerate}
-\item Fall: $\mathrm{ZE} = \mathrm{ZA}_n(k,l,\alpha)$. 
+\item Fall: $\mathrm{ZE} = \mathrm{ZA}_n(k,l,\alpha)$ mit $k \not= l$. 
   
       Multiplizieren wir die Matrix $B$ mit der Zeilen-Additions-Matrix $\mathrm{ZA}_n(k,l,\alpha)$,
       so besteht die Wirkung dieser Multiplikation darin, dass die $l$-te Zeile von $B$  mit $\alpha$ multipliziert
@@ -1825,12 +1825,12 @@ Wir erbringen den Beweis der Behauptung durch eine Fallunterscheidung nach der F
       $\texttt{det}\bigl(\mathrm{ZA}_n(k,l,\alpha) \cdot B\bigr) = \texttt{det}(B) \not= 0$,
       \\[0.2cm]
       denn wir haben vorausgesetzt, dass $\texttt{det}(B) \not= 0$ gilt.
-\item Fall: $\mathrm{ZE} = \mathrm{ZP}_n(k,l)$.
+\item Fall: $\mathrm{ZE} = \mathrm{ZP}_n(k,l)$ mit $k \not = l$.
 
       Multiplizieren wir eine $n \times n$ Matrix $B$ von links mit
-      $\mathrm{ZP}_n(k,l)$, so besteht der Effekt auf $B$ darin, dass die $k$-te Zeile von $B$ mit der
-      $l$-ten Zeile von $B$ vertauscht wird.
-      Da das Vertauschen zweier Zeilen das Vorzeichen der Determinante umdreht, haben wir
+      $\mathrm{ZP}_n(k,l)$, so besteht der Effekt dieser Multiplikation darin, dass die $k$-te Zeile von $B$ mit der
+      $l$-ten Zeile von $B$ vertauscht wird. Da das Vertauschen zweier Zeilen das Vorzeichen der Determinante
+      umdreht, haben wir 
       \\[0.2cm]
       \hspace*{1.3cm}
       $\texttt{det}\bigl(\mathrm{ZP}_n(k,l) \cdot B\bigr) = -\texttt{det}(B) \not= 0$,
@@ -1912,7 +1912,7 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      Satz folgen, dass $\texttt{det}(A) \not= 0$ wäre.  Folglich kann $A$ nicht invertierbar sein.
 \item[``$\Leftarrow$'']
 
-     Nun sei $A$ nicht invertierbar.  Dann gilt $\mathtt{Kern}(A) \not= \{\vec{0}\}$.  Also gibt
+     Nun sei $A$ nicht invertierbar.  Dann gilt nach Satz \ref{satz:12.17} $\mathtt{Kern}(A) \not= \{\vec{0}\}$.  Also gibt
      es einen Vektor $\vec{x}$, so dass $A \cdot \vec{x} = \vec{0}$ ist.  Schreiben wir
      $A$ als
      \\[0.2cm]
@@ -1926,8 +1926,10 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
      $\ds\sum\limits_{i=1}^n x_i \cdot \vec{a}_i = \vec{0}$,
      \\[0.2cm]
      wobei hier die $x_i$ die Komponenten des Vektors $\vec{x}$ bezeichnen.  Damit sind aber die
-     Spalten-Vektoren der Matrix $A$ linear abhängig und nach einem früher bewiesenen Lemma folgt
-     die Gleichung
+     Spalten-Vektoren der Matrix $A$ linear abhängig und nach Lemma \ref{lemma:la_det0} folgt
+     die Gleichung 
+     \\[0.2cm]
+     \hspace*{1.3cm}
      $\texttt{det}(A) = 0$. \qed
 \end{enumerate}
 
@@ -2026,8 +2028,8 @@ beschriebenen Algorithmus zur Berechnung umsetzt.  Wir diskutieren es Zeile für 
 \item Aus Gründen der numerischen Stabilität des Verfahrens ist es sinnvoll, zunächst die Zeile
       \texttt{r} zu bestimmen, für die der Absolutbetrag \texttt{A[r][i]} maximal wird.  Die
       Berechnung dieser Zeile geschieht mit Hilfe der Funktion \texttt{pivot}, deren Implementierung
-      in Abbildung \ref{fig:inverse.stlx-pivot} gezeigt ist.  Wir hatten diese Funktion bereits bei
-      der Berechnung des Inversen der Matrix $A$ benutzt.
+      in Abbildung \ref{fig:inverse.stlx-pivot} auf Seite \pageref{fig:inverse.stlx-pivot} gezeigt ist.  Wir
+      hatten diese Funktion bereits bei der Berechnung des Inversen der Matrix $A$ benutzt.
 \item Falls wir tatsächlich eine Vertauschung von Zeilen vornehmen, falls also $\mathtt{r} \not= \mathtt{i}$ ist,
       drehen wir das Vorzeichen \texttt{sign} um.
 \item Sollte \texttt{A[i][i]} den Wert $0$ haben, so brauchen wir nicht weitermachen, denn wenn ein
@@ -2036,7 +2038,7 @@ beschriebenen Algorithmus zur Berechnung umsetzt.  Wir diskutieren es Zeile für 
 \item Ansonsten ziehen wir nun das 
       \\[0.2cm]
       \hspace*{1.3cm}
-      $\ds\frac{\texttt{A[k][i]}}{\texttt{A[i][i]}}$-fache der $i$-ten Zeile von der $k$-ten Zeile ab,
+      $\ds\frac{\texttt{A[k][i]}}{\texttt{A[i][i]}}$-fache \quad der $i$-ten Zeile von der $k$-ten Zeile ab,
       \\[0.2cm]
       so dass danach \texttt{A[k][i]} den Wert $0$ hat.
 \item Am Ende berechnen wir das Produkt aller Diagonal-Elemente und multiplizieren es noch mit dem
