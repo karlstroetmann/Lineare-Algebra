@@ -1197,7 +1197,7 @@ Falls
 $\forall j \in \{i, \cdots, n\} : a_{j,i} = 0$ 
 \\[0.2cm]
 gilt, dann lässt sich die Matrix nicht mehr zur Einheits-Matrix umformen und es kann gezeigt werden,
-dass die Matrix $A$ in diesem Fall nicht invertierbar ist.  Falls wir statt dessen einen Index $j \in \{1,\cdots,n\}$ 
+dass die Matrix $A$ in diesem Fall nicht invertierbar ist.  Falls wir stattdessen einen Index $j \in \{1,\cdots,n\}$ 
 finden können, bei dem $a_{j,i} \not= 0$ ist, dann vertauschen wir die $i$-te Zeile mit der $j$-ten Zeile und dividieren
 anschließend die $i$-te Zeile durch das Element $a_{i,i}$.  Damit steht in der $i$-ten Zeile der
 $i$-ten Spalte schon mal eine $1$.  Damit die anderen Einträge der $i$-ten Spalte $0$ werden,
@@ -1290,13 +1290,13 @@ diese Implementierung jetzt Zeile für Zeile:
             $\texttt{A[}i\texttt{][}i\texttt{]} = 0$ ist, wird als Ergebnis der undefinierte Wert $\Omega$ zurück gegeben. 
       \item Ansonsten teilen wir in Zeile 13 des Programms die $i$-Zeile von $\texttt{A}$ durch
             $\texttt{A[}i\texttt{][}i\texttt{]}$.  Anschließend hat $\texttt{A[}i\texttt{][}i\texttt{]}$ dann offenbar den Wert $1$. 
-            Die selbe Operation wird in Zeile 14 auf die Matrix $\texttt{E}$ angewendet.
+            Dieselbe Operation wird in Zeile 14 auf die Matrix $\texttt{E}$ angewendet.
       \item In Zeile 19 des Programms subtrahieren wir das $\texttt{A[}k\texttt{][}i\texttt{]}$-fache
             der $i$-ten Zeile von der $k$-ten Zeile für alle $k \not= i$.  Da die $i$-te Zeile an der Position $i$
             mittlerweile den Wert $1$ hat, führt das dazu, dass danach der Wert von
             $\texttt{A[}k\texttt{][}i\texttt{]}$ verschwindet, so dass in der $i$-ten Spalte alle Werte
             $\texttt{A[}i\texttt{][}k\texttt{]}$ für $k \not= i$ gleich $0$ sind.
-            Die selbe Operation wird in Zeile 20 auf die Matrix $E$ angewendet.
+            Dieselbe Operation wird in Zeile 20 auf die Matrix $E$ angewendet.
       \end{enumerate}
       Nachdem $i$ den Wert $n$ erreicht hat, ist die ursprüngliche Matrix $\texttt{A}$ zur
       Einheits-Matrix reduziert worden, sofern die Funktion nicht vorher in Zeile 9 ergebnislos  
