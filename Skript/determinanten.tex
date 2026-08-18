@@ -87,7 +87,7 @@ Verfügung steht.  Der Vollständigkeit halber ist der Beweis trotzdem in diesem S
   \hspace*{1.3cm}
   $\mathtt{\color{blue}inv} : \mathcal{S}_n \mapsto 2^{\mathbb{Z}_n^+ \times \mathbb{Z}_n^+}$,
   \\[0.2cm]
-  welche jeder Permutation $R \in \mathcal{S}_n$ die Menge derjeniger Paare natürlicher Zahlen $k$ und $l$
+  welche jeder Permutation $R \in \mathcal{S}_n$ die Menge derjenigen Paare natürlicher Zahlen $k$ und $l$
   zuordnet, für die
   \\[0.2cm]
   \hspace*{1.3cm}
@@ -781,7 +781,7 @@ $\texttt{sgn}(\varrho_1 \circ \varrho_2) = (-1)^{k+l} = (-1)^k \cdot (-1)^l = \t
 Wir haben nun alles Material zusammen um die \href{https://de.wikipedia.org/wiki/Determinante}{Determinante}
 einer $n \times n$ Matrix so zu definieren, wie dies 1690 von
 \href{http://de.wikipedia.org/wiki/Gottfried_Wilhelm_Leibniz}{Gottfried Wilhelm Leibniz\footnote{
-  Den erfreuliche Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
+  Den erfreulichen Umstand, dass der Name ``Leibniz'' selbst in bildungsfernen Schichten ein fester
   Begriff ist, haben wir   der Firma \href{http://www.bahlsen.com}{Bahlsen} zu verdanken, die ihre
   \href{http://en.wikipedia.org/wiki/Leibniz-Keks}{Butterkekse} nach diesem Mathematiker, Philosophen und
   Naturwissenschaftler benannt haben.
@@ -936,10 +936,10 @@ Leiten Sie die Formel von Sarrus aus der von Leibniz angegebenen Formel ab.
 Abbildung \ref{fig:determinant-formula.stlx} auf Seite \pageref{fig:determinant-formula.stlx} zeigt ein Programm zur
 Berechnung der oben angegebenen Leibniz-Formel zur Berechnung der Determinante.  
 \begin{enumerate}
-\item Die Funktionen $\texttt{inv}$ erhält als Eingabe eine Permutation, die als Liste $\texttt{L}$ dargestellt
+\item Die Funktion $\texttt{inv}$ erhält als Eingabe eine Permutation, die als Liste $\texttt{L}$ dargestellt
       ist und berechnet die Menge der Inversionen dieser Permutation.  Die Implementierung von $\texttt{inv}$
       setzt die mathematische Definition der Funktion $\mathtt{inv}$ unmittelbar um.
-\item Die Funktionen $\texttt{sgn}$ erhält ebenfalls als Eingabe eine Permutation, die als Liste $\texttt{L}$ dargestellt
+\item Die Funktion $\texttt{sgn}$ erhält ebenfalls als Eingabe eine Permutation, die als Liste $\texttt{L}$ dargestellt
       ist und berechnet das Vorzeichen dieser Permutation.
 \item Die Funktion $\texttt{allPermutations}$ erhält als Eingabe eine Menge $\texttt{S}$ von Zahlen und
       berechnet die Menge aller der Listen, in der jedes Element der Menge $\texttt{S}$ genau einmal auftritt.
@@ -1509,7 +1509,7 @@ $\texttt{det}(A) = -\texttt{det}(A)$ \quad und also \quad
 $2 \cdot \texttt{det}(A) = 0$.
 \\[0.2cm]
 Da wir annehmen\footnote{
-  Es gibt endliche Körper. in denen $1 + 1 = 0$ ist.  In einem solchen Fall dürften wir die obige Gleichung
+  Es gibt endliche Körper, in denen $1 + 1 = 0$ ist.  In einem solchen Fall dürften wir die obige Gleichung
   nicht durch 2 dividieren, denn dort gilt $2 = 0$. 
 }, dass der Körper $\mathbb{K}$ entweder der Körper $\mathbb{R}$ der reellen
 Zahlen oder der Körper $\mathbb{C}$ der komplexen Zahlen ist, impliziert dies $\texttt{det}(A) = 0$.
@@ -1907,7 +1907,7 @@ Wir zerlegen den Beweis dieses Satzes in zwei Teile.
 \begin{enumerate}
 \item[``$\Rightarrow$'']
   
-     Es sei als $\texttt{det}(A) = 0$.  Wäre $A$ invertierbar, so würde nach dem eben bewiesenen
+     Es sei also $\texttt{det}(A) = 0$.  Wäre $A$ invertierbar, so würde nach dem eben bewiesenen
      Satz folgen, dass $\texttt{det}(A) \not= 0$ wäre.  Folglich kann $A$ nicht invertierbar sein.
 \item[``$\Leftarrow$'']
 
