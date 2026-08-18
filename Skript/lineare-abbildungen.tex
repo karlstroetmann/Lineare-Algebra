@@ -962,7 +962,7 @@ Wir definieren nun drei verschiedene Arten von sogenannten
 \href{https://de.wikipedia.org/wiki/Elementarmatrix}{Elementar-Matrizen}.  
 \begin{enumerate}
 \item Die Zeilen-Additions-Matrizen $\mathrm{ZA}_n(k,l, \alpha)$ addieren das $\alpha$-fache der $l$-ten Zeile zu $k$-ten Zeile.
-\item Die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauscht die $k$-te Zeile mit der $l$-ten Zeile.
+\item Die Zeilen-Permutations-Matrizen $\mathrm{ZP}_n(k,l)$ vertauschen die $k$-te Zeile mit der $l$-ten Zeile.
 \item Die Zeilen-Multiplikations-Matrix $\mathrm{ZM}_n(k, \alpha)$ multipliziert die $k$-te Zeile mit $\alpha$.  
 \end{enumerate}
 
@@ -1086,7 +1086,7 @@ Wir definieren nun drei verschiedene Arten von sogenannten
       \hspace*{1.3cm}
       $\mathrm{ZM}_n(k, \alpha) \cdot B = B + (\alpha - 1) \cdot \mathrm{A}_n(k,k) \cdot B$
       \\[0.2cm]
-      Es wir also zu $B$ das $(\alpha-1)$-fache der $k$-ten Zeile von $B$ zur $k$-ten Zeile hinzu
+      Es wird also zu $B$ das $(\alpha-1)$-fache der $k$-ten Zeile von $B$ zur $k$-ten Zeile hinzu
       addiert und damit steht die $k$-te Zeile im Ergebnis insgesamt $1 + (\alpha-1) = \alpha$-mal.  \eoxs
  \end{enumerate}
 \end{Definition}
@@ -1350,7 +1350,7 @@ Abbildung \ref{fig:inverse.stlx-pivot} zeigt die Implementierung der Hilfs-Funkt
                   \right.
       $
 \item Mit Hilfe des Kronecker-Deltas wird dann die Funktion \texttt{identity}, welche die Einheits-Matrix $\textrm{E}_n$
-      berechnet, implementiert.  Dabei wird die Definierten der Einheits-Matrix 
+      berechnet, implementiert.  Dabei wird die Definition der Einheits-Matrix
       \\[0.2cm]
       \hspace*{1.3cm}
       $\ds\textrm{E}_n = \bigl(\delta_{i,j}\bigr)_{i=1,\cdots,n \atop j=1,\cdots,n}$
