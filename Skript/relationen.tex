@@ -73,7 +73,7 @@ beispielsweise durch die folgende Menge gegeben sein:
 $\{ \pair(\mathrm{Bauer}, \mathrm{Golf}), \pair(\mathrm{Bauer}, \mathrm{Fox}), \pair(\mathrm{Schmidt}, \mathrm{Polo})\}$.
 \\[0.2cm]
 Diese Relation würde ausdrücken, dass der Kunde Herr Bauer einen Golf und einen Fox erworben
-hat, die Kundin Frau Schmidt hat einen Polo gekauft und Herr Maier hat bisher noch kein Auto erworben.
+hat, dass die Kundin Frau Schmidt einen Polo gekauft hat und dass Herr Maier bisher noch kein Auto erworben hat.
 In der Theorie der \blue{relationalen} Datenbanken werden Relationen üblicherweise in Form von \blue{Tabellen}
 dargestellt. Die oben angegebene Relation hätte dann die folgende Form:
 \begin{center}
@@ -397,8 +397,7 @@ Wir zeigen, dass
   \label{eq:ass0}
    \pair(x,u) \in (R \circ Q) \circ P \leftrightarrow \pair(x,u) \in R \circ (Q \circ P)   
 \end{equation}
-gilt.  Dazu formen wir zunächst die linke Seite $\pair(x,u) \in (R \circ Q) \circ P$ der Äquivalenz
-\ref{eq:ass0} um.  Es gilt
+gilt.  Dazu formen wir zunächst die linke Seite $\pair(x,u) \in (R \circ Q) \circ P$ der Äquivalenz (\ref{eq:ass0}) um.  Es gilt
 \[
 \begin{array}{cll}
                   & \pair(x,u) \in (R \circ Q) \circ P \\[0.2cm]
@@ -415,8 +414,7 @@ Existenz-Quantor über $y$ auch herausziehen, so dass wir die obige Kette von Äqu
   \Leftrightarrow \quad 
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
-fortsetzen können.  Wir formen nun die rechte Seite der Äquivalenz
-\ref{eq:ass0} um:
+fortsetzen können.  Wir formen nun die rechte Seite der Äquivalenz (\ref{eq:ass0}) um:
 \[
 \begin{array}{cll}
                 & \pair(x,u) \in R \circ (Q \circ P) \\[0.2cm] 
@@ -434,8 +432,7 @@ Existenz-Quantor über $z$ auch vorziehen und können daher diese Kette von Äquiva
   \Leftrightarrow \quad
   \exists z: \exists y: \bigl(\pair(x,y) \in R \wedge \pair(y,z) \in Q \wedge \pair(z,u) \in P\bigr)
 \end{equation}
-fortsetzen. Die Formeln (\ref{eq:ass1}) und (\ref{eq:ass2}) sind identisch.  Damit ist die Äquivalenz
-(\ref{eq:ass0}) nachgewiesen und der Nachweis der Assoziativität des Kompositions-Operators
+fortsetzen. Die Formeln (\ref{eq:ass1}) und (\ref{eq:ass2}) sind identisch.  Damit ist die Äquivalenz (\ref{eq:ass0}) nachgewiesen und der Nachweis der Assoziativität des Kompositions-Operators
 ist erbracht.  \hspace*{\fill} $\Box$
 \vspace{0.2cm}
 
