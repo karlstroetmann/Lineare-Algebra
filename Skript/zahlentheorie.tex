@@ -203,7 +203,7 @@ Wir zerlegen den Beweis in zwei Teile:
       was wir zu
       \\[0.2cm]
       \hspace*{1.3cm}
-      $a = (h + l) \cdot l + b \modulo n$,
+      $a = (h + l) \cdot n + b \modulo n$,
       \\[0.2cm]
       umstellen k\"{o}nnen.  Aus dieser Gleichung folgt wegen der im Satz von der Division mit Rest 
       (Satz \ref{satz:division_mit_rest})
@@ -775,7 +775,7 @@ Berechnung des gr\"{o}\3ten gemeinsamen Teilers.
                   xrightmargin  = 0.8cm,
                 ]
     // Precondition: x > 0 and y > 0.
-    ggtS := procedure(x, y) {
+    ggt := procedure(x, y) {
         if (x < y) {
             return ggt(x, y - x);
         }
