@@ -382,7 +382,11 @@ Die wichtigste Beweismethode in der Informatik ist der Beweis durch
 \href{https://de.wikipedia.org/wiki/Vollständige_Induktion}{vollständige Induktion}. 
 Die Induktion ist in der Informatik deshalb so wichtig, weil sie zum Beweis der Korrektheit
 \blue{rekursiver} Funktionen benötigt wird.  Es sei
-$F(n)$ eine Formel, in der die Variable $n$ vorkommt.  Um eine Aussage der Form
+$F$ eine Formel, in der die Variable $n$ vorkommt.  Wir schreiben $F = F(n)$ um dies auszudrücken und schreiben
+analog $F(n+1)$,  wenn wir in der Formel $F$ die Variable $n$ überall durch den Term $n+1$ ersetzen.  Genauso
+schreiben wir $F(0)$, wenn wir die Variable $n$ in der Formel $F$ überall durch die Zahl $0$ ersetzen.
+
+Um nun eine Aussage der Form
 \\[0.2cm]
 \hspace*{1.3cm}
 $\forall n \in \mathbb{N}: F(n)$
